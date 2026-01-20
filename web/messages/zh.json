@@ -3,21 +3,216 @@
     "title": "UI UX Pro Max",
     "description": "Claude Code 的设计智能助手",
     "switchTheme": "切换主题",
+    "switchToLight": "切换到浅色模式",
+    "switchToDark": "切换到深色模式",
     "switchLanguage": "切换语言"
   },
   "navbar": {
+    "home": "首页",
+    "docs": "文档",
+    "tutorial": "教程",
+    "examples": "示例",
+    "gallerySubtitle": "查看全部 39+ 设计系统演示",
     "features": "功能特性",
     "stacks": "技术栈",
     "styles": "设计风格",
-    "github": "18.3k"
+    "github": "Star on GitHub",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
   },
   "hero": {
     "title1": "UI UX Pro Max",
     "title2": "设计智能",
     "subtitle": "可搜索的 UI 风格、配色方案、字体搭配、图表类型和 UX 指南数据库。利用 AI 驱动的设计建议构建精美界面。",
-    "terminalCmd": "uipro init --ai",
-    "btnHow": "工作原理",
-    "btnDemos": "查看演示"
+    "terminalCmd": "uipro init --ai cursor",
+    "btnHow": "开始上手",
+    "btnDemos": "快速上手"
+  },
+  "quickStart": {
+    "title": "快速上手",
+    "subtitle": "按步骤操作，几分钟内从提示词生成完整设计系统。",
+    "step1": {
+      "title": "1）安装技能",
+      "body": "在 Claude Code 内直接安装 UI UX Pro Max。",
+      "codeTitle": "Claude Code"
+    },
+    "step2": {
+      "title": "2）生成设计系统",
+      "body": "运行生成器，获得布局模式、风格、配色、字体与 UX 规则建议。",
+      "codeTitle": "Design System Generator"
+    },
+    "tip": {
+      "title": "提示",
+      "body": "你可以指定技术栈（React/Next.js 等），不指定则默认 HTML + Tailwind。"
+    },
+    "ctaDocs": "阅读完整教程",
+    "ctaExamples": "浏览示例"
+  },
+  "demo": {
+    "title": "看懂流程",
+    "subtitle": "了解提示词如何变成量身定制的设计系统。",
+    "tabs": { "video": "视频", "flow": "动画" },
+    "videoMissing": {
+      "title": "未找到演示视频",
+      "body": "请把 demo.mp4 放到 public/demo.mp4，或切换到动画标签。"
+    },
+    "videoHint": "提示：将 demo.mp4 放入 public 目录即可替换演示视频。",
+    "flow": {
+      "request": "你的需求",
+      "engine": "推理引擎",
+      "output": "推荐输出"
+    }
+  },
+  "search": {
+    "open": "搜索",
+    "title": "搜索",
+    "placeholder": "搜索文档、命令与示例…",
+    "close": "关闭",
+    "noResults": "没有结果",
+    "hint": "提示：随时按 Cmd/Ctrl+K"
+  },
+  "docs": {
+    "sidebarTitle": "文档",
+    "toc": "本页目录",
+    "prev": "上一页",
+    "next": "下一页",
+    "sections": {
+      "overview": "概览",
+      "next": "下一步"
+    },
+    "nav": {
+      "gettingStarted": {
+        "title": "开始上手",
+        "description": "安装并运行你的第一次设计系统生成。"
+      },
+      "designSystemGenerator": {
+        "title": "设计系统生成器",
+        "description": "v2.0 旗舰能力如何工作，以及会输出什么。"
+      },
+      "cliReference": {
+        "title": "命令速查",
+        "description": "按域搜索、按技术栈指南与常用命令组合。"
+      },
+      "examples": {
+        "title": "示例库",
+        "description": "通过真实 Demo 与可复制 Prompt 学得更快。"
+      },
+      "faq": {
+        "title": "常见问题",
+        "description": "常见问题解答与排错建议。"
+      }
+    },
+    "gettingStarted": {
+      "overview": "UI UX Pro Max 能把你的提示词转成专业 UI/UX 决策（风格、配色、字体、落地页结构、UX 规则）。",
+      "highlights": [
+        { "title": "设计系统", "desc": "生成模式、风格、配色、字体与关键效果。"},
+        { "title": "可搜索数据库", "desc": "查询风格、配色、字体、图表、落地页模式与 UX 指南。"},
+        { "title": "栈感知", "desc": "按框架/技术栈输出更贴合的实现建议。"}
+      ],
+      "defaultStack": {
+        "title": "默认技术栈",
+        "body": "如果不指定技术栈，默认按 HTML + Tailwind 输出。"
+      },
+      "prerequisites": {
+        "title": "前置条件",
+        "body": "使用 CLI 搜索工具前，请确保已安装 Python。",
+        "checkPython": "检查 Python"
+      },
+      "install": {
+        "title": "安装",
+        "body": "在 Claude Code 中使用内置插件命令安装技能。",
+        "claudeCode": "安装命令"
+      },
+      "quickstart": {
+        "title": "第一次运行",
+        "body": "先用设计系统生成器获得完整建议，再用按域/按栈搜索细化。",
+        "designSystem": "生成设计系统"
+      },
+      "next": "继续阅读“设计系统生成器”页，了解更深入用法与交付检查清单。"
+    },
+    "dsg": {
+      "overview": "设计系统生成器（v2.0 新增）会分析你的提示词，几秒内生成完整且可执行的设计系统建议。",
+      "workflow": {
+        "title": "流程",
+        "steps": [
+          "从提示词提取产品类型、风格关键词与转化目标。",
+          "对 style/color/typography/landing/ux 等域进行检索与规则推理。",
+          "合成推荐设计系统，并给出需要避免的反模式。"
+        ]
+      },
+      "output": {
+        "title": "示例输出",
+        "body": "你会得到结构化建议，可直接复制到实现中。",
+        "exampleTitle": "样例",
+        "example": "TARGET: Serenity Spa\\nPATTERN: Hero-Centric + Social Proof\\nSTYLE: Soft UI Evolution\\nCOLORS: Primary #E8B4B8, Secondary #A8D5BA, CTA #D4AF37\\nTYPOGRAPHY: Cormorant Garamond / Montserrat\\nCHECKLIST: 悬停态、对比度、焦点态、减少动效"
+      },
+      "checklist": {
+        "title": "交付前检查清单",
+        "body": "快速质量检查，保证专业与可访问性。",
+        "boxTitle": "Checklist",
+        "items": [
+          { "id": "no-emoji-icons", "label": "不要用 emoji 作为图标（用 SVG）" },
+          { "id": "cursor-pointer", "label": "所有可点击元素使用 cursor-pointer" },
+          { "id": "hover-transitions", "label": "悬停态使用 150–300ms 平滑过渡" },
+          { "id": "contrast", "label": "浅色模式文本对比度至少 4.5:1" },
+          { "id": "focus", "label": "键盘导航的可见焦点态" },
+          { "id": "reduced-motion", "label": "尊重 prefers-reduced-motion" },
+          { "id": "responsive", "label": "在 375/768/1024/1440 响应式检查" }
+        ]
+      },
+      "next": "下一步：阅读“命令速查”，学习按域与按技术栈搜索。"
+    },
+    "cli": {
+      "overview": "使用搜索 CLI 按域或按技术栈查询设计数据库。",
+      "designSystem": {
+        "title": "设计系统生成",
+        "exampleTitle": "示例"
+      },
+      "domain": {
+        "title": "按域搜索",
+        "body": "一次只搜索一个域，获得更聚焦的建议。",
+        "examplesTitle": "示例"
+      },
+      "stack": {
+        "title": "按技术栈指南",
+        "body": "请求指定技术栈（React/Next.js/HTML+Tailwind 等）的最佳实践。",
+        "examplesTitle": "示例"
+      },
+      "next": "下一步：浏览示例库，复制 Prompt 快速复用。"
+    },
+    "examples": {
+      "overview": "通过示例学得更快：选一个 Demo，查看其 Prompt，并作为你项目的起点。",
+      "gallery": {
+        "title": "示例画廊",
+        "body": "用筛选与搜索找到合适 Demo，展开卡片即可复制 Prompt。",
+        "openCta": "打开画廊",
+        "jumpCta": "跳转到画廊"
+      },
+      "path": {
+        "title": "学习路径",
+        "body": "用最简单的方式把想法落地为实现。",
+        "steps": [
+          { "title": "1）生成", "desc": "运行 --design-system 获得完整建议。" },
+          { "title": "2）细化", "desc": "用 --domain 与 --stack 精准补齐细节。" },
+          { "title": "3）实现", "desc": "从 Demo Prompt 出发，改成你的产品。" }
+        ],
+        "promptTitle": "起步 Prompt",
+        "prompt": "为高端健康/疗愈服务构建落地页。Soft UI 风格，平静配色，首屏就有预约 CTA。"
+      },
+      "next": "下一步：遇到安装或命令问题请查看常见问题。"
+    },
+    "faq": {
+      "overview": "常见问题与快速排错。",
+      "questions": {
+        "title": "问题列表",
+        "items": [
+          { "q": "search.py 在哪里？", "a": "它位于项目的 .claude/skills/ui-ux-pro-max/scripts/search.py。" },
+          { "q": "必须指定技术栈吗？", "a": "不必。不指定则默认 HTML + Tailwind。" },
+          { "q": "如何输出 Markdown？", "a": "在 --design-system 后加 -f markdown。" }
+        ]
+      },
+      "next": "如果仍不清楚，欢迎在页面底部提交反馈。"
+    }
   },
   "stats": {
     "styles": "UI 风格",
@@ -64,32 +259,59 @@
     }
   },
   "howItWorks": {
-    "title": "工作原理",
+    "titlePrefix": "工作",
+    "titleAccent": "原理",
     "subtitle": "通过 6 个智能步骤，从提示词到生产级 UI",
     "steps": {
       "1": {
         "title": "你的提示词",
-        "content": "为宠物美容服务构建一个落地页。风格俏皮友好，带有预约 CTA。"
+        "prompt": "为宠物美容服务构建一个落地页。风格俏皮友好，带有预约 CTA。"
       },
       "2": {
         "title": "AI 推理",
-        "content": "产品: 宠物服务\n风格: 俏皮, 友好\n页面: 落地页\nCTA: 预约"
+        "tags": {
+          "product": { "label": "产品", "value": "pet-service" },
+          "style": { "label": "风格", "value": "playful, friendly" },
+          "page": { "label": "页面", "value": "landing" },
+          "cta": { "label": "CTA", "value": "booking" }
+        },
+        "searching": "→ 正在搜索: product, style, typography, color, landing, ux ..."
       },
       "3": {
         "title": "搜索设计库",
-        "content": "产品: 宠物科技 App\n风格: 微交互\n字体: Fredoka + Nunito"
+        "product": { "label": "PRODUCT", "value": "Pet Tech App" },
+        "style": { "label": "STYLE", "value": "Micro-interactions" },
+        "typography": { "label": "TYPOGRAPHY", "value": "Fredoka + Nunito" },
+        "landing": { "label": "LANDING", "value": "Hero + Features + CTA" },
+        "ux": { "label": "UX RULE", "value": "Use animations for loading only" },
+        "colorsLabel": "COLORS",
+        "colors": [
+          { "name": "Primary", "hex": "#3B82F6" },
+          { "name": "Secondary", "hex": "#60A5FA" },
+          { "name": "CTA", "hex": "#F97316" },
+          { "name": "Background", "hex": "#F8FAFC" },
+          { "name": "Text", "hex": "#1E293B" }
+        ]
       },
       "4": {
         "title": "生成代码",
-        "content": "<section class=\"bg-[#F8FAFC]\">..."
+        "comment": "<!-- Pet Grooming Landing -->",
+        "sectionClass": "bg-[#F8FAFC]",
+        "h1Class": "font-['Fredoka'] text-[#1E293B]",
+        "h1Text": "Happy Pets, Happy Life",
+        "buttonClass": "bg-[#F97316] hover:bg-[#EA580C]",
+        "buttonText": "Book Grooming"
       },
       "5": {
         "title": "质量检查",
-        "content": "SVG 图标 (无 emoji)\n悬停反馈\n深色模式对比度"
+        "items": ["SVG 图标 (无 emoji)", "悬停反馈", "深色模式对比度", "响应式布局"]
       },
       "6": {
         "title": "最终结果",
-        "content": "宠物美容 & Spa 演示"
+        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
+        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "imageAlt": "Pet Grooming & Spa Demo",
+        "cta": "查看实时演示"
       }
     }
   },
@@ -110,22 +332,45 @@
   "gallery": {
     "title": "39 个网站演示画廊",
     "subtitle": "浏览使用 UI UX Pro Max 构建的真实网站演示。点击查看实时演示。",
+    "searchPlaceholder": "搜索演示（名称、风格、分类、提示词）…",
+    "clearSearch": "清除搜索",
     "filters": {
       "category": "分类",
       "mode": "模式"
     },
     "viewDemo": "查看演示",
     "showPrompt": "显示提示词",
+    "promptTitle": "提示词",
+    "closeModal": "关闭弹窗",
+    "close": "关闭",
+    "mode": { "light": "浅色", "dark": "深色" },
+    "colors": "颜色:",
+    "loadMore": "加载更多",
+    "showing": "显示 {shown} / {total} 个演示",
+    "stats": "共 {total} 个演示 • {categories} 个分类 • {light} 个浅色 • {dark} 个深色",
     "readyTitle": "准备好构建精美界面了吗？",
     "readySubtitle": "开始使用 UI UX Pro Max for Claude Code。触手可及的设计智能。",
     "getOnGithub": "访问 GitHub",
+    "quickStart": "快速上手",
     "learnMore": "了解更多",
     "features": ["开源", "兼容 Claude Code", "生产就绪"]
+  },
+  "feedback": {
+    "title": "这页内容有帮助吗？",
+    "subtitle": "你的反馈会帮助我们持续优化教程与示例。",
+    "privacy": "无后端：提交前仅本地保存",
+    "helpful": "有帮助",
+    "notHelpful": "没帮助",
+    "detailsLabel": "希望改进什么？",
+    "detailsPlaceholder": "告诉我们哪里不清楚/缺了什么，以及你期望看到什么。",
+    "copy": "复制反馈内容",
+    "openIssue": "打开 GitHub Issue",
+    "issueTitlePrefix": "【文档反馈】"
   },
   "footer": {
     "description": "Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
     "resources": "资源",
     "database": "数据库",
-    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)。来自 NextLevelBuilder 核心团队的微型项目"
+    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)\n来自 NextLevelBuilder 核心团队的微型项目"
   }
 }

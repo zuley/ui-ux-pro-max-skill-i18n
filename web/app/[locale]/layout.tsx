@@ -1,19 +1,32 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/lib/theme-context';
-import { Inter } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-heading" });
 
-export const metadata: Metadata = {
-  title: "OpenNext Multi-language App",
-  description: "A modern Next.js application with multi-language support and theme switching",
-};
+type AppLocale = (typeof routing.locales)[number];
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t('common.title')} - ${t('common.description')}`,
+    description: t('hero.subtitle')
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -28,7 +41,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as AppLocale)) {
     notFound();
   }
 
@@ -36,8 +49,16 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang={locale} suppressHydrationWarning className="dark">
+      <body className={`${dmSans.className} ${dmSans.variable} ${spaceGrotesk.variable}`}>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html:
+              "(()=>{try{const t=localStorage.getItem('theme');const d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.style.colorScheme='light';}else{d.classList.add('dark');d.style.colorScheme='dark';}}catch{}})();"
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             {children}

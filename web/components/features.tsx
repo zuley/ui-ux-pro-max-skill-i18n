@@ -45,10 +45,19 @@ export function Features() {
     }
   ];
 
+  const exampleById: Record<string, string> = {
+    styles: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"glassmorphism\" --domain style',
+    colors: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"saas\" --domain color',
+    typography: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"elegant serif\" --domain typography',
+    charts: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"dashboard\" --domain chart',
+    landing: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"hero social-proof\" --domain landing',
+    ux: 'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"accessibility focus\" --domain ux'
+  };
+
   return (
     <section id="features" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {t('title')}
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -60,6 +69,7 @@ export function Features() {
         {features.map((feature) => {
           const sectionT = t.raw(`sections.${feature.id}`);
           const tags = sectionT.tags as string[];
+          const example = exampleById[feature.id] ?? '';
           const Icon = feature.icon;
 
           return (
@@ -68,13 +78,20 @@ export function Features() {
                 <Icon className={`w-6 h-6 ${feature.color}`} />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-3">
                 {sectionT.title}
               </h3>
               
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 {sectionT.description}
               </p>
+
+              {example ? (
+                <div className="mb-6 rounded-lg bg-gray-900 text-gray-100 px-3 py-2 font-mono text-xs overflow-x-auto">
+                  <span className="text-gray-500">$</span>{' '}
+                  <span className="text-emerald-400">{example}</span>
+                </div>
+              ) : null}
 
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag, i) => (

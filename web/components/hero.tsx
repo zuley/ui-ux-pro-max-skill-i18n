@@ -8,14 +8,11 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0F172A] pt-20">
-      {/* Background Effects */}
       <div className="absolute inset-0 aurora-bg opacity-60 dark:opacity-100"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }}></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-[72px] min-[400px]:pt-[88px] sm:pt-28 pb-6 sm:pb-16">
-        
-        {/* Tool Icons */}
         <div className="flex items-center justify-center gap-1.5 min-[400px]:gap-2 sm:gap-2 mb-3 min-[400px]:mb-4 sm:mb-8 flex-wrap">
           <ToolBadge name="Claude Code" icon={<ClaudeIcon />} />
           <ToolBadge name="Cursor" icon={<CursorIcon />} />
@@ -27,8 +24,7 @@ export function Hero() {
           <ToolBadge name="Qoder" icon={<QoderIcon />} />
         </div>
 
-        {/* Title */}
-        <h1 className="text-2xl min-[400px]:text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-2 min-[400px]:mb-3 sm:mb-6 text-balance leading-tight">
+        <h1 className="font-heading text-2xl min-[400px]:text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-2 min-[400px]:mb-3 sm:mb-6 text-balance leading-tight">
           <span className="gradient-text">{t('title1')}</span>
           <br />
           <span className="text-lg min-[400px]:text-xl sm:text-4xl md:text-5xl lg:text-6xl">
@@ -36,26 +32,25 @@ export function Hero() {
           </span>
         </h1>
 
-        {/* Subtitle */}
         <p className="text-xs min-[400px]:text-sm sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4 min-[400px]:mb-5 sm:mb-8 text-balance leading-relaxed px-2 min-[400px]:px-0">
           {t('subtitle')}
         </p>
 
-        {/* Terminal */}
         <div className="flex justify-center mb-4 min-[400px]:mb-6 sm:mb-10">
           <div className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left">
             <div className="text-gray-400">
-              <span className="text-orange-500">$</span> <span className="text-white">uipro init --ai </span><span className="animate-pulse text-white">▋</span>
+              <span className="text-gray-500">$</span>{' '}
+              <span className="text-emerald-400">{t('terminalCmd')}</span>{' '}
+              <span className="animate-pulse text-white">▋</span>
             </div>
           </div>
         </div>
 
-        {/* Buttons */}
         <div className="flex flex-row items-center justify-center gap-2 min-[400px]:gap-3 sm:gap-4 mb-6 min-[400px]:mb-8 sm:mb-16">
-          <Link href="#how-it-works" className="btn-primary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
+          <Link href="/docs/getting-started" className="btn-primary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
             {t('btnHow')}
           </Link>
-          <Link href="#styles" className="btn-secondary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
+          <Link href="#quick-start" className="btn-secondary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
             {t('btnDemos')}
           </Link>
         </div>
@@ -73,7 +68,6 @@ function ToolBadge({ name, icon, color = "text-gray-900 dark:text-white" }: { na
   );
 }
 
-// Icons (Simplified versions or copied paths)
 const ClaudeIcon = () => (
   <svg viewBox="0 0 512 509.64" className="w-5 h-5">
     <path fill="#D77655" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.612-115.613 115.612H115.612C52.026 509.639 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z"></path>

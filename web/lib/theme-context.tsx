@@ -1,78 +1,61 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useSyncExternalStore } from 'react';
 
 type Theme = 'light' | 'dark';
 
 interface ThemeContextType {
   theme: Theme;
-  toggleTheme: (event: React.MouseEvent) => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: 'dark',
   toggleTheme: () => {}
 });
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+const THEME_KEY = 'theme';
+const THEME_EVENT = 'themechange';
 
-  useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem('theme') as Theme;
-    if (stored) {
-      setTheme(stored);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
-    }
-  }, []);
+function readTheme(): Theme {
+  if (typeof window === 'undefined') return 'dark';
+  const stored = localStorage.getItem(THEME_KEY);
+  return stored === 'light' || stored === 'dark' ? stored : 'dark';
+}
 
-  useEffect(() => {
-    if (mounted) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      localStorage.setItem('theme', theme);
-    }
-  }, [theme, mounted]);
+function subscribeTheme(onStoreChange: () => void) {
+  if (typeof window === 'undefined') return () => {};
 
-  const toggleTheme = (event: React.MouseEvent) => {
-    const x = event.clientX;
-    const y = event.clientY;
-    const endRadius = Math.hypot(
-      Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y)
-    );
+  const handler = () => onStoreChange();
+  window.addEventListener('storage', handler);
+  window.addEventListener(THEME_EVENT, handler);
 
-    // @ts-ignore
-    if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // @ts-ignore
-      const transition = document.startViewTransition(() => {
-        setTheme(prev => prev === 'light' ? 'dark' : 'light');
-      });
-
-      transition.ready.then(() => {
-        const clipPath = [
-          `circle(0px at ${x}px ${y}px)`,
-          `circle(${endRadius}px at ${x}px ${y}px)`
-        ];
-        document.documentElement.animate(
-          { clipPath },
-          {
-            duration: 500,
-            easing: 'ease-in-out',
-            pseudoElement: '::view-transition-new(root)'
-          }
-        );
-      });
-    } else {
-      setTheme(prev => prev === 'light' ? 'dark' : 'light');
-    }
+  return () => {
+    window.removeEventListener('storage', handler);
+    window.removeEventListener(THEME_EVENT, handler);
   };
+}
+
+function writeTheme(theme: Theme) {
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch {}
+  window.dispatchEvent(new Event(THEME_EVENT));
+}
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const theme = useSyncExternalStore<Theme>(subscribeTheme, readTheme, () => 'dark');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    document.documentElement.style.colorScheme = theme;
+  }, [theme]);
+
+  const toggleTheme = () => writeTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

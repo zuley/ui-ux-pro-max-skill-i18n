@@ -3,21 +3,216 @@
     "title": "UI UX Pro Max",
     "description": "Design Intelligence for Claude Code",
     "switchTheme": "Switch Theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
     "switchLanguage": "Switch Language"
   },
   "navbar": {
+    "home": "Home",
+    "docs": "Docs",
+    "tutorial": "Tutorial",
+    "examples": "Examples",
     "features": "Features",
     "stacks": "Stacks",
     "styles": "Styles",
-    "github": "18.3k"
+    "gallerySubtitle": "View all 39+ design system demos",
+    "github": "Star on GitHub",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu"
   },
   "hero": {
     "title1": "UI UX Pro Max",
     "title2": "Design Intelligence",
     "subtitle": "Searchable database of UI styles, color palettes, font pairings, chart types, and UX guidelines. Build beautiful interfaces with AI-powered design recommendations.",
-    "terminalCmd": "uipro init --ai",
-    "btnHow": "How it Works",
-    "btnDemos": "View Demos"
+    "terminalCmd": "uipro init --ai cursor",
+    "btnHow": "Bắt đầu",
+    "btnDemos": "Quick Start"
+  },
+  "quickStart": {
+    "title": "Quick Start",
+    "subtitle": "Làm theo các bước để tạo design system chỉ trong vài phút.",
+    "step1": {
+      "title": "1) Cài đặt Skill",
+      "body": "Cài UI UX Pro Max trực tiếp trong Claude Code.",
+      "codeTitle": "Claude Code"
+    },
+    "step2": {
+      "title": "2) Tạo Design System",
+      "body": "Chạy generator để nhận pattern, style, màu sắc, typography và UX rules.",
+      "codeTitle": "Design System Generator"
+    },
+    "tip": {
+      "title": "Mẹo",
+      "body": "Bạn có thể chỉ định stack (React/Next.js/…), nếu không sẽ mặc định HTML + Tailwind."
+    },
+    "ctaDocs": "Đọc hướng dẫn",
+    "ctaExamples": "Xem ví dụ"
+  },
+  "demo": {
+    "title": "Xem luồng hoạt động",
+    "subtitle": "Từ prompt đến design system được cá nhân hoá.",
+    "tabs": { "video": "Video", "flow": "Animation" },
+    "videoMissing": {
+      "title": "Không tìm thấy video demo",
+      "body": "Thêm file public/demo.mp4 hoặc chuyển sang tab Animation."
+    },
+    "videoHint": "Mẹo: thả demo.mp4 vào thư mục public để thay video.",
+    "flow": {
+      "request": "Yêu cầu",
+      "engine": "Bộ suy luận",
+      "output": "Kết quả"
+    }
+  },
+  "search": {
+    "open": "Tìm kiếm",
+    "title": "Tìm kiếm",
+    "placeholder": "Tìm trong docs, lệnh, và ví dụ…",
+    "close": "Đóng",
+    "noResults": "Không có kết quả",
+    "hint": "Mẹo: nhấn Cmd/Ctrl+K"
+  },
+  "docs": {
+    "sidebarTitle": "Docs",
+    "toc": "Mục lục",
+    "prev": "Trang trước",
+    "next": "Trang sau",
+    "sections": {
+      "overview": "Tổng quan",
+      "next": "Bước tiếp theo"
+    },
+    "nav": {
+      "gettingStarted": {
+        "title": "Getting Started",
+        "description": "Cài đặt và chạy lần đầu."
+      },
+      "designSystemGenerator": {
+        "title": "Design System Generator",
+        "description": "Cách hoạt động và output của tính năng v2.0."
+      },
+      "cliReference": {
+        "title": "CLI Reference",
+        "description": "Tìm theo domain/stack và các công thức lệnh."
+      },
+      "examples": {
+        "title": "Examples",
+        "description": "Học nhanh với demo và prompt có thể copy."
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Câu hỏi thường gặp và troubleshooting."
+      }
+    },
+    "gettingStarted": {
+      "overview": "UI UX Pro Max giúp tạo quyết định UI/UX (style, màu, font, landing structure, UX rules) từ một prompt.",
+      "highlights": [
+        { "title": "Design System", "desc": "Tạo pattern, style, colors, typography, effects." },
+        { "title": "Searchable DB", "desc": "Tìm styles, palettes, fonts, charts, landing, UX guidelines." },
+        { "title": "Stack-aware", "desc": "Gợi ý phù hợp framework/stack của bạn." }
+      ],
+      "defaultStack": {
+        "title": "Stack mặc định",
+        "body": "Nếu không chỉ định stack, mặc định HTML + Tailwind."
+      },
+      "prerequisites": {
+        "title": "Prerequisites",
+        "body": "Đảm bảo đã cài Python trước khi dùng CLI.",
+        "checkPython": "Kiểm tra Python"
+      },
+      "install": {
+        "title": "Cài đặt",
+        "body": "Cài trong Claude Code bằng lệnh plugin có sẵn.",
+        "claudeCode": "Lệnh cài đặt"
+      },
+      "quickstart": {
+        "title": "Chạy lần đầu",
+        "body": "Bắt đầu với --design-system, sau đó refine với domain/stack.",
+        "designSystem": "Tạo design system"
+      },
+      "next": "Tiếp theo: trang Design System Generator để xem hướng dẫn sâu hơn và checklist."
+    },
+    "dsg": {
+      "overview": "Design System Generator (mới trong v2.0) phân tích prompt và tạo design system phù hợp trong vài giây.",
+      "workflow": {
+        "title": "Workflow",
+        "steps": [
+          "Trích xuất product type, style keywords, conversion goal từ prompt.",
+          "Search các domain (style, color, typography, landing, UX) với ranking + rules.",
+          "Tổng hợp design system và anti-patterns cần tránh."
+        ]
+      },
+      "output": {
+        "title": "Ví dụ output",
+        "body": "Output có cấu trúc để copy vào implement.",
+        "exampleTitle": "Sample",
+        "example": "TARGET: Serenity Spa\\nPATTERN: Hero-Centric + Social Proof\\nSTYLE: Soft UI Evolution\\nCOLORS: Primary #E8B4B8, Secondary #A8D5BA, CTA #D4AF37\\nTYPOGRAPHY: Cormorant Garamond / Montserrat\\nCHECKLIST: hover, contrast, focus, reduced motion"
+      },
+      "checklist": {
+        "title": "Pre-delivery Checklist",
+        "body": "Kiểm tra nhanh để UI chuyên nghiệp và accessible.",
+        "boxTitle": "Checklist",
+        "items": [
+          { "id": "no-emoji-icons", "label": "Không dùng emoji làm icon (dùng SVG)" },
+          { "id": "cursor-pointer", "label": "cursor-pointer cho mọi phần tử clickable" },
+          { "id": "hover-transitions", "label": "Hover transitions mượt (150–300ms)" },
+          { "id": "contrast", "label": "Contrast light mode tối thiểu 4.5:1" },
+          { "id": "focus", "label": "Focus state rõ ràng cho keyboard" },
+          { "id": "reduced-motion", "label": "Tôn trọng prefers-reduced-motion" },
+          { "id": "responsive", "label": "Test responsive 375/768/1024/1440" }
+        ]
+      },
+      "next": "Tiếp theo: CLI Reference để search domain và stack guidelines."
+    },
+    "cli": {
+      "overview": "Dùng CLI để tìm theo domain hoặc theo tech stack.",
+      "designSystem": {
+        "title": "Design system generation",
+        "exampleTitle": "Example"
+      },
+      "domain": {
+        "title": "Domain search",
+        "body": "Tìm theo từng domain để kết quả tập trung.",
+        "examplesTitle": "Examples"
+      },
+      "stack": {
+        "title": "Stack guidelines",
+        "body": "Xin best practices cho một stack cụ thể (React, Next.js, HTML+Tailwind…).",
+        "examplesTitle": "Examples"
+      },
+      "next": "Tiếp theo: xem examples và copy prompt để tái sử dụng."
+    },
+    "examples": {
+      "overview": "Học nhanh hơn với examples: chọn demo, xem prompt và tái sử dụng.",
+      "gallery": {
+        "title": "Examples Gallery",
+        "body": "Dùng filter và search để tìm demo phù hợp. Mở card để copy prompt.",
+        "openCta": "Mở gallery",
+        "jumpCta": "Đi tới gallery"
+      },
+      "path": {
+        "title": "Learning Path",
+        "body": "Cách đơn giản để đi từ ý tưởng đến implement.",
+        "steps": [
+          { "title": "1) Generate", "desc": "Chạy --design-system để nhận gợi ý đầy đủ." },
+          { "title": "2) Refine", "desc": "Dùng --domain và --stack để làm rõ chi tiết." },
+          { "title": "3) Implement", "desc": "Chọn prompt demo và adapt cho sản phẩm." }
+        ],
+        "promptTitle": "Starter prompt",
+        "prompt": "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold."
+      },
+      "next": "Tiếp theo: xem FAQ nếu gặp vấn đề khi cài đặt hoặc chạy lệnh."
+    },
+    "faq": {
+      "overview": "Câu hỏi thường gặp và quick fixes.",
+      "questions": {
+        "title": "Questions",
+        "items": [
+          { "q": "search.py nằm ở đâu?", "a": "Nó nằm trong .claude/skills/ui-ux-pro-max/scripts/search.py của project." },
+          { "q": "Có cần chỉ định stack không?", "a": "Không. Nếu bỏ qua sẽ mặc định HTML + Tailwind." },
+          { "q": "Làm sao xuất Markdown?", "a": "Dùng -f markdown cùng --design-system." }
+        ]
+      },
+      "next": "Nếu vẫn chưa rõ, hãy gửi feedback ở cuối trang."
+    }
   },
   "stats": {
     "styles": "UI Styles",
@@ -64,32 +259,59 @@
     }
   },
   "howItWorks": {
-    "title": "How It Works",
+    "titlePrefix": "How It ",
+    "titleAccent": "Works",
     "subtitle": "From prompt to production-ready UI in 6 intelligent steps",
     "steps": {
       "1": {
         "title": "Your Prompt",
-        "content": "Build a landing page for a pet grooming service. Playful and friendly style, with booking CTA."
+        "prompt": "Build a landing page for a pet grooming service. Playful and friendly style, with booking CTA."
       },
       "2": {
         "title": "AI Reasoning",
-        "content": "Product: pet-service\nStyle: playful, friendly\nPage: landing\nCTA: booking"
+        "tags": {
+          "product": { "label": "Product", "value": "pet-service" },
+          "style": { "label": "Style", "value": "playful, friendly" },
+          "page": { "label": "Page", "value": "landing" },
+          "cta": { "label": "CTA", "value": "booking" }
+        },
+        "searching": "→ Searching: product, style, typography, color, landing, ux domains..."
       },
       "3": {
         "title": "Search Design Database",
-        "content": "PRODUCT: Pet Tech App\nSTYLE: Micro-interactions\nTYPOGRAPHY: Fredoka + Nunito"
+        "product": { "label": "PRODUCT", "value": "Pet Tech App" },
+        "style": { "label": "STYLE", "value": "Micro-interactions" },
+        "typography": { "label": "TYPOGRAPHY", "value": "Fredoka + Nunito" },
+        "landing": { "label": "LANDING", "value": "Hero + Features + CTA" },
+        "ux": { "label": "UX RULE", "value": "Use animations for loading only" },
+        "colorsLabel": "COLORS",
+        "colors": [
+          { "name": "Primary", "hex": "#3B82F6" },
+          { "name": "Secondary", "hex": "#60A5FA" },
+          { "name": "CTA", "hex": "#F97316" },
+          { "name": "Background", "hex": "#F8FAFC" },
+          { "name": "Text", "hex": "#1E293B" }
+        ]
       },
       "4": {
         "title": "Generate Code",
-        "content": "<section class=\"bg-[#F8FAFC]\">..."
+        "comment": "<!-- Pet Grooming Landing -->",
+        "sectionClass": "bg-[#F8FAFC]",
+        "h1Class": "font-['Fredoka'] text-[#1E293B]",
+        "h1Text": "Happy Pets, Happy Life",
+        "buttonClass": "bg-[#F97316] hover:bg-[#EA580C]",
+        "buttonText": "Book Grooming"
       },
       "5": {
         "title": "Quality Checklist",
-        "content": "SVG icons (no emoji)\nHover feedback\nDark mode contrast"
+        "items": ["SVG icons (no emoji)", "Hover feedback", "Dark mode contrast", "Responsive layout"]
       },
       "6": {
         "title": "Final Result",
-        "content": "Pet Grooming & Spa Demo"
+        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
+        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "imageAlt": "Pet Grooming & Spa Demo",
+        "cta": "View Live Demo"
       }
     }
   },
@@ -110,22 +332,45 @@
   "gallery": {
     "title": "39 Website Demos Gallery",
     "subtitle": "Browse real-world website demos built with UI UX Pro Max. Click to view live demos.",
+    "searchPlaceholder": "Search demos (name, style, category, prompt)…",
+    "clearSearch": "Clear search",
     "filters": {
       "category": "Category",
       "mode": "Mode"
     },
     "viewDemo": "View Demo",
     "showPrompt": "Show Prompt",
+    "promptTitle": "Prompt",
+    "closeModal": "Close modal",
+    "close": "Close",
+    "mode": { "light": "Light", "dark": "Dark" },
+    "colors": "Colors:",
+    "loadMore": "Load More",
+    "showing": "Showing {shown} of {total} demos",
+    "stats": "{total} demos available • {categories} categories • {light} light • {dark} dark",
     "readyTitle": "Ready to Build Beautiful Interfaces?",
     "readySubtitle": "Get started with UI UX Pro Max skill for Claude Code. Design intelligence at your fingertips.",
     "getOnGithub": "Get on GitHub",
+    "quickStart": "Quick Start",
     "learnMore": "Learn More",
     "features": ["Open Source", "Claude Code Compatible", "Production Ready"]
+  },
+  "feedback": {
+    "title": "Was this page helpful?",
+    "subtitle": "Your feedback helps improve the tutorial and examples.",
+    "privacy": "No backend: stored locally until you submit",
+    "helpful": "Yes",
+    "notHelpful": "No",
+    "detailsLabel": "What should we improve?",
+    "detailsPlaceholder": "Tell us what was confusing or missing, and what you expected to see.",
+    "copy": "Copy feedback",
+    "openIssue": "Open GitHub Issue",
+    "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
     "description": "Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
     "resources": "Resources",
     "database": "Database",
-    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max). A nano project from NextLevelBuilder Core Team"
+    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)\nA nano project from NextLevelBuilder Core Team"
   }
 }
