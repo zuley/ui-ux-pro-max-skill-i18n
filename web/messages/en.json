@@ -1,0 +1,19 @@
+{
+  "common": {
+    "title": "OpenNext Multi-language App",
+    "description": "A modern Next.js application with multi-language support and theme switching",
+    "switchTheme": "Switch Theme",
+    "switchLanguage": "Switch Language"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "subtitle": "Experience seamless theme transitions and multi-language support",
+    "features": "Features",
+    "feature1": "Dark/Light Theme",
+    "feature1Desc": "Smooth circular expansion theme switching animation",
+    "feature2": "Multi-language",
+    "feature2Desc": "Support for English, Chinese, and Vietnamese",
+    "feature3": "Cloudflare Workers",
+    "feature3Desc": "Optimized for edge deployment"
+  }
+}

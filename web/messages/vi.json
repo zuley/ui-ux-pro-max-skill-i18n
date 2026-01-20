@@ -1,0 +1,19 @@
+{
+  "common": {
+    "title": "Ứng dụng Đa ngôn ngữ OpenNext",
+    "description": "Ứng dụng Next.js hiện đại với hỗ trợ đa ngôn ngữ và chuyển đổi chủ đề",
+    "switchTheme": "Chuyển Chủ đề",
+    "switchLanguage": "Chuyển Ngôn ngữ"
+  },
+  "home": {
+    "welcome": "Chào mừng",
+    "subtitle": "Trải nghiệm chuyển đổi chủ đề mượt mà và hỗ trợ đa ngôn ngữ",
+    "features": "Tính năng",
+    "feature1": "Chủ đề Tối/Sáng",
+    "feature1Desc": "Hiệu ứng chuyển đổi chủ đề mở rộng hình tròn mượt mà",
+    "feature2": "Đa ngôn ngữ",
+    "feature2Desc": "Hỗ trợ tiếng Anh, tiếng Trung và tiếng Việt",
+    "feature3": "Cloudflare Workers",
+    "feature3Desc": "Tối ưu hóa cho triển khai edge"
+  }
+}

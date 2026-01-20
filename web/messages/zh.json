@@ -1,0 +1,19 @@
+{
+  "common": {
+    "title": "OpenNext 多语言应用",
+    "description": "一个现代化的 Next.js 应用，支持多语言和主题切换",
+    "switchTheme": "切换主题",
+    "switchLanguage": "切换语言"
+  },
+  "home": {
+    "welcome": "欢迎",
+    "subtitle": "体验流畅的主题过渡和多语言支持",
+    "features": "特性",
+    "feature1": "深色/浅色主题",
+    "feature1Desc": "平滑的圆形扩展主题切换动画",
+    "feature2": "多语言支持",
+    "feature2Desc": "支持英语、中文和越南语",
+    "feature3": "Cloudflare Workers",
+    "feature3Desc": "针对边缘部署优化"
+  }
+}
