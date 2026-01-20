@@ -143,7 +143,7 @@ export function HowItWorks() {
             <a
               href={t('steps.6.href')}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="block relative rounded-lg overflow-hidden group cursor-pointer"
             >
               <img

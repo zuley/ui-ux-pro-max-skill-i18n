@@ -127,7 +127,7 @@ export function Navbar() {
             <a 
               href="https://github.com/zuley/ui-ux-pro-max-skill-i18n" 
               target="_blank" 
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer nofollow" 
               aria-label={t('github')}
               title={t('github')}
               className="inline-flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

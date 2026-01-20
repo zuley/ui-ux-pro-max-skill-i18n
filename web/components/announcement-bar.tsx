@@ -12,7 +12,7 @@ export function AnnouncementBar() {
         <a
           href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow"
           className="underline underline-offset-2 hover:text-white/90 transition-colors"
         >
           {t('link')}

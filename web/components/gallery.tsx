@@ -210,7 +210,7 @@ export function Gallery() {
                   className="flex-1 btn-primary text-xs py-2 text-center"
                   href={toAbsoluteUrl(demo.url)}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                 >
                   {t('viewDemo')}
                 </a>
