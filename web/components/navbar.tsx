@@ -135,15 +135,11 @@ export function Navbar() {
               href="https://github.com/zuley/ui-ux-pro-max-skill-i18n" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-1.5 min-[400px]:gap-2 px-2 min-[400px]:px-3 py-1 min-[400px]:py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs min-[400px]:text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label={t('github')}
+              title={t('github')}
+              className="inline-flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
-              <Github className="w-3.5 h-3.5 min-[400px]:w-4 min-[400px]:h-4" />
-              <span className="inline-flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                <svg className="w-3 h-3 min-[400px]:w-3.5 min-[400px]:h-3.5 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                </svg>
-                {t('github')}
-              </span>
+              <Github className="w-4 h-4" />
             </a>
 
               <button

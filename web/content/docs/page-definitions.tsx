@@ -123,63 +123,60 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
               {t('docs.gettingStarted.install.body')}
             </p>
             <div className="mt-4">
-              <CodeBlock
-                title={t('docs.gettingStarted.install.title')}
-                tabs={[
-                  {
-                    label: t('docs.gettingStarted.install.claudeCode'),
-                    language: 'text',
-                    code: [
-                      '/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill',
-                      '/plugin install ui-ux-pro-max@ui-ux-pro-max-skill'
-                    ].join('\n')
-                  },
-                  {
-                    label: t('docs.gettingStarted.install.cli'),
-                    language: 'bash',
-                    code: [
-                      '# Install CLI globally',
-                      'npm install -g uipro-cli',
-                      '',
-                      '# Install for your AI assistant',
-                      'uipro init --ai claude      # Claude Code',
-                      'uipro init --ai cursor      # Cursor',
-                      'uipro init --ai windsurf    # Windsurf',
-                      'uipro init --ai antigravity # Antigravity',
-                      'uipro init --ai copilot     # GitHub Copilot',
-                      'uipro init --ai kiro        # Kiro',
-                      'uipro init --ai codex       # Codex CLI',
-                      'uipro init --ai qoder       # Qoder',
-                      'uipro init --ai roocode     # Roo Code',
-                      'uipro init --ai gemini      # Gemini CLI',
-                      'uipro init --ai trae        # Trae',
-                      'uipro init --ai opencode    # OpenCode',
-                      'uipro init --ai continue    # Continue (Skills)',
-                      'uipro init --ai all         # All assistants'
-                    ].join('\n')
-                  },
-                  {
-                    label: t('docs.gettingStarted.install.manual'),
-                    language: 'bash',
-                    code: [
-                      '# Copy folders to your project',
-                      '.claude/skills/ui-ux-pro-max/',
-                      '.cursor/commands/ui-ux-pro-max.md',
-                      '.windsurf/workflows/ui-ux-pro-max.md',
-                      '.agent/workflows/ui-ux-pro-max.md',
-                      '.shared/ui-ux-pro-max/',
-                      '.github/prompts/ui-ux-pro-max.prompt.md',
-                      '.kiro/steering/ui-ux-pro-max.md',
-                      '.codex/skills/ui-ux-pro-max/',
-                      '.qoder/skills/ui-ux-pro-max.md',
-                      '.roo/rules/ui-ux-pro-max.md',
-                      '.gemini/skills/ui-ux-pro-max/',
-                      '.trae/skills/ui-ux-pro-max/',
-                      '.continue/skills/ui-ux-pro-max/'
-                    ].join('\n')
-                  }
-                ]}
-              />
+              <div className="space-y-3">
+                <CodeBlock
+                  title={t('docs.gettingStarted.install.claudeCode')}
+                  language="text"
+                  code={[
+                    '/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill',
+                    '/plugin install ui-ux-pro-max@ui-ux-pro-max-skill'
+                  ].join('\n')}
+                />
+                <CodeBlock
+                  title={t('docs.gettingStarted.install.cli')}
+                  language="bash"
+                  code={[
+                    '# Install CLI globally',
+                    'npm install -g uipro-cli',
+                    '',
+                    '# Install for your AI assistant',
+                    'uipro init --ai claude      # Claude Code',
+                    'uipro init --ai cursor      # Cursor',
+                    'uipro init --ai windsurf    # Windsurf',
+                    'uipro init --ai antigravity # Antigravity',
+                    'uipro init --ai copilot     # GitHub Copilot',
+                    'uipro init --ai kiro        # Kiro',
+                    'uipro init --ai codex       # Codex CLI',
+                    'uipro init --ai qoder       # Qoder',
+                    'uipro init --ai roocode     # Roo Code',
+                    'uipro init --ai gemini      # Gemini CLI',
+                    'uipro init --ai trae        # Trae',
+                    'uipro init --ai opencode    # OpenCode',
+                    'uipro init --ai continue    # Continue (Skills)',
+                    'uipro init --ai all         # All assistants'
+                  ].join('\n')}
+                />
+                <CodeBlock
+                  title={t('docs.gettingStarted.install.manual')}
+                  language="bash"
+                  code={[
+                    '# Copy folders to your project',
+                    '.claude/skills/ui-ux-pro-max/',
+                    '.cursor/commands/ui-ux-pro-max.md',
+                    '.windsurf/workflows/ui-ux-pro-max.md',
+                    '.agent/workflows/ui-ux-pro-max.md',
+                    '.shared/ui-ux-pro-max/',
+                    '.github/prompts/ui-ux-pro-max.prompt.md',
+                    '.kiro/steering/ui-ux-pro-max.md',
+                    '.codex/skills/ui-ux-pro-max/',
+                    '.qoder/skills/ui-ux-pro-max.md',
+                    '.roo/rules/ui-ux-pro-max.md',
+                    '.gemini/skills/ui-ux-pro-max/',
+                    '.trae/skills/ui-ux-pro-max/',
+                    '.continue/skills/ui-ux-pro-max/'
+                  ].join('\n')}
+                />
+              </div>
             </div>
           </section>
 
@@ -191,23 +188,22 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
               {t('docs.gettingStarted.quickstart.body')}
             </p>
             <div className="mt-4">
-              <CodeBlock
-                title={t('docs.gettingStarted.quickstart.designSystem')}
-                tabs={[
-                  {
-                    label: 'ASCII',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"beauty spa wellness\" --design-system -p \"Serenity Spa\"'
-                  },
-                  {
-                    label: 'Markdown',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"fintech banking\" --design-system -f markdown'
+              <div className="space-y-3">
+                <CodeBlock
+                  title={`${t('docs.gettingStarted.quickstart.designSystem')} (ASCII)`}
+                  language="bash"
+                  code={
+                    'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --design-system -p "Serenity Spa"'
                   }
-                ]}
-              />
+                />
+                <CodeBlock
+                  title={`${t('docs.gettingStarted.quickstart.designSystem')} (Markdown)`}
+                  language="bash"
+                  code={
+                    'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech banking" --design-system -f markdown'
+                  }
+                />
+              </div>
             </div>
           </section>
 
@@ -468,29 +464,23 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
               {t('docs.cli.domain.body')}
             </p>
             <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.domain.examplesTitle')}
-                tabs={[
-                  {
-                    label: 'style',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"glassmorphism\" --domain style'
-                  },
-                  {
-                    label: 'typography',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"elegant serif\" --domain typography'
-                  },
-                  {
-                    label: 'chart',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"dashboard\" --domain chart'
-                  }
-                ]}
-              />
+              <div className="space-y-3">
+                <CodeBlock
+                  title={`${t('docs.cli.domain.examplesTitle')} — style`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "glassmorphism" --domain style'
+                />
+                <CodeBlock
+                  title={`${t('docs.cli.domain.examplesTitle')} — typography`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant serif" --domain typography'
+                />
+                <CodeBlock
+                  title={`${t('docs.cli.domain.examplesTitle')} — chart`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "dashboard" --domain chart'
+                />
+              </div>
             </div>
           </section>
 
@@ -502,29 +492,23 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
               {t('docs.cli.stack.body')}
             </p>
             <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.stack.examplesTitle')}
-                tabs={[
-                  {
-                    label: 'react',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"form validation\" --stack react'
-                  },
-                  {
-                    label: 'nextjs',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"routing seo\" --stack nextjs'
-                  },
-                  {
-                    label: 'html-tailwind',
-                    language: 'bash',
-                    code:
-                      'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"responsive layout\" --stack html-tailwind'
-                  }
-                ]}
-              />
+              <div className="space-y-3">
+                <CodeBlock
+                  title={`${t('docs.cli.stack.examplesTitle')} — react`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "form validation" --stack react'
+                />
+                <CodeBlock
+                  title={`${t('docs.cli.stack.examplesTitle')} — nextjs`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "routing seo" --stack nextjs'
+                />
+                <CodeBlock
+                  title={`${t('docs.cli.stack.examplesTitle')} — html-tailwind`}
+                  language="bash"
+                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "responsive layout" --stack html-tailwind'
+                />
+              </div>
             </div>
           </section>
 
@@ -651,8 +635,7 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
     case 'faq': {
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
-        { id: 'questions', title: t('docs.faq.questions.title') },
-        { id: 'next', title: t('docs.sections.next') }
+        { id: 'questions', title: t('docs.faq.questions.title') }
       ];
 
       const content = (
@@ -685,15 +668,6 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
                 </details>
               ))}
             </div>
-          </section>
-
-          <section id="next" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.sections.next')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.faq.next')}
-            </p>
           </section>
         </>
       );

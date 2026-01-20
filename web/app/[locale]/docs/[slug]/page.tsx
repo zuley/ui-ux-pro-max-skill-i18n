@@ -6,7 +6,6 @@ import { Link } from '@/i18n/routing';
 import { DocsShell } from '@/components/docs/docs-shell';
 import { docsNav, type DocSlug } from '@/content/docs/nav';
 import { getDocDefinition, type Translator } from '@/content/docs/page-definitions';
-import { FeedbackWidget } from '@/components/feedback-widget';
 import { ClientOnly } from '@/components/client-only';
 
 type PageParams = { locale: string; slug: string };
@@ -71,7 +70,6 @@ export default async function DocPage({
         {content}
 
         <ClientOnly>
-          <FeedbackWidget pageTitle={t(current.titleKey)} pagePath={`/docs/${slug}`} />
         </ClientOnly>
 
         <div className="mt-10 pt-6 border-t border-gray-200/70 dark:border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3">
