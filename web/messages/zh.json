@@ -51,7 +51,10 @@
   "demo": {
     "title": "看懂流程",
     "subtitle": "了解提示词如何变成量身定制的设计系统。",
-    "tabs": { "video": "视频", "flow": "动画" },
+    "tabs": {
+      "video": "视频",
+      "flow": "动画"
+    },
     "videoMissing": {
       "title": "未找到演示视频",
       "body": "请把 demo.mp4 放到 public/demo.mp4，或切换到动画标签。"
@@ -83,32 +86,70 @@
     "nav": {
       "gettingStarted": {
         "title": "开始上手",
-        "description": "安装并运行你的第一次设计系统生成。"
+        "description": "安装技能并运行第一次设计系统。"
       },
       "designSystemGenerator": {
         "title": "设计系统生成器",
-        "description": "v2.0 旗舰能力如何工作，以及会输出什么。"
+        "description": "v2.0 如何通过推理生成完整设计系统。"
       },
       "cliReference": {
-        "title": "命令速查",
-        "description": "按域搜索、按技术栈指南与常用命令组合。"
+        "title": "CLI 与命令",
+        "description": "安装 CLI、按域搜索与按栈指南。"
       },
       "examples": {
-        "title": "示例库",
-        "description": "通过真实 Demo 与可复制 Prompt 学得更快。"
+        "title": "使用方式与提示词",
+        "description": "如何触发技能与可复制的提示词。"
       },
       "faq": {
         "title": "常见问题",
-        "description": "常见问题解答与排错建议。"
+        "description": "常见问题与排错建议。"
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max 能把你的提示词转成专业 UI/UX 决策（风格、配色、字体、落地页结构、UX 规则）。",
+      "overview": "UI UX Pro Max 是一个设计智能技能，可将一个提示词转化为专业 UI/UX 决策（风格、配色、字体、布局与 UX 规则）。",
       "highlights": [
-        { "title": "设计系统", "desc": "生成模式、风格、配色、字体与关键效果。"},
-        { "title": "可搜索数据库", "desc": "查询风格、配色、字体、图表、落地页模式与 UX 指南。"},
-        { "title": "栈感知", "desc": "按框架/技术栈输出更贴合的实现建议。"}
+        {
+          "title": "设计系统生成器",
+          "desc": "生成模式、风格、配色、字体与关键效果。"
+        },
+        {
+          "title": "可搜索数据库",
+          "desc": "查询风格、配色、字体、图表、落地页模式与 UX 指南。"
+        },
+        {
+          "title": "栈感知输出",
+          "desc": "按框架/技术栈输出更贴合的实现建议。"
+        }
       ],
+      "whatsNew": {
+        "title": "v2.0 新特性",
+        "body": "2.0 新增推理引擎，可生成完整、项目定制的设计系统。",
+        "items": [
+          {
+            "title": "智能设计系统生成",
+            "desc": "根据产品类型与目标推荐页面结构、风格、配色与字体。"
+          },
+          {
+            "title": "推理引擎",
+            "desc": "100 条行业规则用于排序与过滤，避免常见反模式。"
+          },
+          {
+            "title": "交付前检查清单",
+            "desc": "覆盖可访问性、悬停反馈、动效与响应式质量门槛。"
+          }
+        ]
+      },
+      "features": {
+        "title": "你将获得",
+        "items": [
+          "57 种 UI 风格，覆盖极简、粗野、AI 原生与 Bento Grid 等。",
+          "95 套行业配色，覆盖 SaaS、电商、医疗、金融等场景。",
+          "56 组字体搭配，附 Google Fonts 引用与 Tailwind 配置。",
+          "24 种图表类型与可视化库建议。",
+          "11 个技术栈的实现指南与最佳实践。",
+          "98 条 UX 规范 + 100 条推理规则，保障专业度。"
+        ]
+      },
       "defaultStack": {
         "title": "默认技术栈",
         "body": "如果不指定技术栈，默认按 HTML + Tailwind 输出。"
@@ -120,52 +161,100 @@
       },
       "install": {
         "title": "安装",
-        "body": "在 Claude Code 中使用内置插件命令安装技能。",
-        "claudeCode": "安装命令"
+        "body": "选择适合你工作流的安装方式。",
+        "claudeCode": "使用 Claude Marketplace (Claude Code)",
+        "cli": "使用 CLI (推荐)",
+        "manual": "手动安装"
       },
       "quickstart": {
         "title": "第一次运行",
         "body": "先用设计系统生成器获得完整建议，再用按域/按栈搜索细化。",
         "designSystem": "生成设计系统"
       },
-      "next": "继续阅读“设计系统生成器”页，了解更深入用法与交付检查清单。"
+      "next": "继续阅读“设计系统生成器”，了解完整流程与交付清单。"
     },
     "dsg": {
-      "overview": "设计系统生成器（v2.0 新增）会分析你的提示词，几秒内生成完整且可执行的设计系统建议。",
+      "overview": "设计系统生成器是 v2.0 的旗舰功能，会分析你的提示词并快速输出完整设计系统。",
       "workflow": {
-        "title": "流程",
+        "title": "工作方式",
         "steps": [
-          "从提示词提取产品类型、风格关键词与转化目标。",
-          "对 style/color/typography/landing/ux 等域进行检索与规则推理。",
-          "合成推荐设计系统，并给出需要避免的反模式。"
+          "描述产品类型、目标用户与风格方向。",
+          "并行搜索 product/style/color/landing/typography 五个域。",
+          "推理引擎进行排序、规则匹配并过滤反模式。",
+          "生成包含结构、配色、字体、动效与检查清单的完整结果。"
         ]
       },
       "output": {
         "title": "示例输出",
-        "body": "你会得到结构化建议，可直接复制到实现中。",
+        "body": "输出为结构化建议，可直接用于实现。",
         "exampleTitle": "样例",
-        "example": "TARGET: Serenity Spa\\nPATTERN: Hero-Centric + Social Proof\\nSTYLE: Soft UI Evolution\\nCOLORS: Primary #E8B4B8, Secondary #A8D5BA, CTA #D4AF37\\nTYPOGRAPHY: Cormorant Garamond / Montserrat\\nCHECKLIST: 悬停态、对比度、焦点态、减少动效"
+        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
+      },
+      "rules": {
+        "title": "100 条行业推理规则",
+        "body": "规则覆盖行业类型与视觉预期，确保输出符合领域特性。",
+        "items": [
+          "科技与 SaaS",
+          "金融与 Fintech",
+          "医疗与健康",
+          "电商与市场平台",
+          "服务业与本地商家",
+          "创意与媒体",
+          "前沿技术"
+        ]
       },
       "checklist": {
         "title": "交付前检查清单",
         "body": "快速质量检查，保证专业与可访问性。",
         "boxTitle": "Checklist",
         "items": [
-          { "id": "no-emoji-icons", "label": "不要用 emoji 作为图标（用 SVG）" },
-          { "id": "cursor-pointer", "label": "所有可点击元素使用 cursor-pointer" },
-          { "id": "hover-transitions", "label": "悬停态使用 150–300ms 平滑过渡" },
-          { "id": "contrast", "label": "浅色模式文本对比度至少 4.5:1" },
-          { "id": "focus", "label": "键盘导航的可见焦点态" },
-          { "id": "reduced-motion", "label": "尊重 prefers-reduced-motion" },
-          { "id": "responsive", "label": "在 375/768/1024/1440 响应式检查" }
+          {
+            "id": "no-emoji-icons",
+            "label": "不要用 emoji 作为图标（用 SVG）"
+          },
+          {
+            "id": "cursor-pointer",
+            "label": "所有可点击元素使用 cursor-pointer"
+          },
+          {
+            "id": "hover-transitions",
+            "label": "悬停态使用 150–300ms 平滑过渡"
+          },
+          {
+            "id": "contrast",
+            "label": "浅色模式文本对比度至少 4.5:1"
+          },
+          {
+            "id": "focus",
+            "label": "键盘导航的可见焦点态"
+          },
+          {
+            "id": "reduced-motion",
+            "label": "尊重 prefers-reduced-motion"
+          },
+          {
+            "id": "responsive",
+            "label": "在 375/768/1024/1440 响应式检查"
+          }
         ]
       },
-      "next": "下一步：阅读“命令速查”，学习按域与按技术栈搜索。"
+      "next": "下一步：查看“CLI 与命令”，学习按域与按栈搜索。"
     },
     "cli": {
-      "overview": "使用搜索 CLI 按域或按技术栈查询设计数据库。",
+      "overview": "使用 CLI 安装技能并在项目内执行按域/按栈搜索。",
+      "install": {
+        "title": "安装 CLI",
+        "body": "全局安装 uipro-cli。",
+        "exampleTitle": "安装命令"
+      },
+      "init": {
+        "title": "为你的助手安装",
+        "body": "使用 uipro init 指定目标助手。",
+        "exampleTitle": "命令"
+      },
       "designSystem": {
-        "title": "设计系统生成",
+        "title": "设计系统命令",
+        "body": "直接使用 search.py 输出设计系统结果。",
         "exampleTitle": "示例"
       },
       "domain": {
@@ -178,40 +267,80 @@
         "body": "请求指定技术栈（React/Next.js/HTML+Tailwind 等）的最佳实践。",
         "examplesTitle": "示例"
       },
-      "next": "下一步：浏览示例库，复制 Prompt 快速复用。"
+      "persist": {
+        "title": "持久化设计系统",
+        "body": "将设计系统保存为文件，以便在不同会话中分层检索复用（Master + Overrides 模式）。",
+        "exampleTitle": "生成命令",
+        "structureTitle": "目录结构"
+      },
+      "other": {
+        "title": "其他 CLI 命令",
+        "exampleTitle": "命令"
+      },
+      "next": "下一步：查看“使用方式与提示词”，快速上手调用方式。"
     },
     "examples": {
-      "overview": "通过示例学得更快：选一个 Demo，查看其 Prompt，并作为你项目的起点。",
-      "gallery": {
-        "title": "示例画廊",
-        "body": "用筛选与搜索找到合适 Demo，展开卡片即可复制 Prompt。",
-        "openCta": "打开画廊",
-        "jumpCta": "跳转到画廊"
+      "overview": "使用这些调用方式与示例提示词快速上手。",
+      "usage": {
+        "title": "不同助手的调用方式",
+        "body": "在大多数工具中会自动触发，也可以显式调用。",
+        "codeTitle": "调用示例",
+        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
       },
-      "path": {
-        "title": "学习路径",
-        "body": "用最简单的方式把想法落地为实现。",
-        "steps": [
-          { "title": "1）生成", "desc": "运行 --design-system 获得完整建议。" },
-          { "title": "2）细化", "desc": "用 --domain 与 --stack 精准补齐细节。" },
-          { "title": "3）实现", "desc": "从 Demo Prompt 出发，改成你的产品。" }
-        ],
-        "promptTitle": "起步 Prompt",
-        "prompt": "为高端健康/疗愈服务构建落地页。Soft UI 风格，平静配色，首屏就有预约 CTA。"
-      },
-      "next": "下一步：遇到安装或命令问题请查看常见问题。"
-    },
-    "faq": {
-      "overview": "常见问题与快速排错。",
-      "questions": {
-        "title": "问题列表",
+      "prompts": {
+        "title": "示例提示词",
+        "body": "复制后替换产品类型、风格与约束条件即可。",
         "items": [
-          { "q": "search.py 在哪里？", "a": "它位于项目的 .claude/skills/ui-ux-pro-max/scripts/search.py。" },
-          { "q": "必须指定技术栈吗？", "a": "不必。不指定则默认 HTML + Tailwind。" },
-          { "q": "如何输出 Markdown？", "a": "在 --design-system 后加 -f markdown。" }
+          "为高端身心疗愈服务制作落地页，Soft UI 风格、柔和配色、首屏预约 CTA。",
+          "创建医疗分析仪表盘，强调可读性与高对比度。",
+          "设计深色模式的金融银行应用，突出信任与安全感。",
+          "为产品设计师做作品集站点，粗体字排与极简布局。",
+          "打造电商商品页，加入社交证明与转化向 CTA。"
         ]
       },
-      "next": "如果仍不清楚，欢迎在页面底部提交反馈。"
+      "stacks": {
+        "title": "支持的技术栈",
+        "body": "在提示词中提到技术栈即可获得对应指南。",
+        "items": [
+          "HTML + Tailwind（默认）",
+          "React",
+          "Next.js",
+          "Vue",
+          "Nuxt.js",
+          "Nuxt UI",
+          "Svelte",
+          "SwiftUI",
+          "React Native",
+          "Flutter",
+          "shadcn/ui"
+        ]
+      },
+      "next": "下一步：如果遇到安装或命令问题，请查看常见问题。"
+    },
+    "faq": {
+      "overview": "常见问题与快速解决方案。",
+      "questions": {
+        "title": "问题",
+        "items": [
+          {
+            "q": "search.py 在哪里？",
+            "a": "位于项目的 .claude/skills/ui-ux-pro-max/scripts/search.py。"
+          },
+          {
+            "q": "需要指定技术栈吗？",
+            "a": "不需要。不指定则默认 HTML + Tailwind。"
+          },
+          {
+            "q": "如何输出 Markdown？",
+            "a": "在 --design-system 后加 -f markdown。"
+          },
+          {
+            "q": "无法访问 GitHub 也能安装吗？",
+            "a": "可以，使用 uipro init --offline 跳过 GitHub 下载并使用内置资源。"
+          }
+        ]
+      },
+      "next": "如果仍有疑问，请在页面底部提交反馈。"
     }
   },
   "stats": {
@@ -229,32 +358,57 @@
       "styles": {
         "title": "设计风格",
         "description": "毛玻璃、新拟态、极简主义、粗野主义、极光 UI 以及 45+ 种更多风格，包含颜色、效果和框架兼容性。",
-        "tags": ["毛玻璃", "深色模式", "动效驱动"]
+        "tags": [
+          "毛玻璃",
+          "深色模式",
+          "动效驱动"
+        ]
       },
       "colors": {
         "title": "配色方案",
         "description": "针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
-        "tags": ["SaaS", "医疗", "电商"]
+        "tags": [
+          "SaaS",
+          "医疗",
+          "电商"
+        ]
       },
       "typography": {
         "title": "字体排印",
         "description": "50+ 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
-        "tags": ["Space Grotesk", "Inter", "Playfair"]
+        "tags": [
+          "Space Grotesk",
+          "Inter",
+          "Playfair"
+        ]
       },
       "charts": {
         "title": "图表类型",
         "description": "数据可视化建议，包含库推荐（Chart.js, Recharts, D3.js）和无障碍说明。",
-        "tags": ["折线图", "柱状图", "饼图", "热力图"]
+        "tags": [
+          "折线图",
+          "柱状图",
+          "饼图",
+          "热力图"
+        ]
       },
       "landing": {
         "title": "落地页模式",
         "description": "14 种转化率优化的页面结构，包含 CTA 放置策略和颜色建议。",
-        "tags": ["首屏 + 特性", "视频优先", "定价页"]
+        "tags": [
+          "首屏 + 特性",
+          "视频优先",
+          "定价页"
+        ]
       },
       "ux": {
         "title": "UX 指南",
         "description": "关于动画、无障碍、层级、加载状态等的最佳实践和反模式。",
-        "tags": ["动画", "无障碍", "性能"]
+        "tags": [
+          "动画",
+          "无障碍",
+          "性能"
+        ]
       }
     }
   },
@@ -270,27 +424,69 @@
       "2": {
         "title": "AI 推理",
         "tags": {
-          "product": { "label": "产品", "value": "pet-service" },
-          "style": { "label": "风格", "value": "playful, friendly" },
-          "page": { "label": "页面", "value": "landing" },
-          "cta": { "label": "CTA", "value": "booking" }
+          "product": {
+            "label": "产品",
+            "value": "pet-service"
+          },
+          "style": {
+            "label": "风格",
+            "value": "playful, friendly"
+          },
+          "page": {
+            "label": "页面",
+            "value": "landing"
+          },
+          "cta": {
+            "label": "CTA",
+            "value": "booking"
+          }
         },
         "searching": "→ 正在搜索: product, style, typography, color, landing, ux ..."
       },
       "3": {
         "title": "搜索设计库",
-        "product": { "label": "PRODUCT", "value": "Pet Tech App" },
-        "style": { "label": "STYLE", "value": "Micro-interactions" },
-        "typography": { "label": "TYPOGRAPHY", "value": "Fredoka + Nunito" },
-        "landing": { "label": "LANDING", "value": "Hero + Features + CTA" },
-        "ux": { "label": "UX RULE", "value": "Use animations for loading only" },
+        "product": {
+          "label": "PRODUCT",
+          "value": "Pet Tech App"
+        },
+        "style": {
+          "label": "STYLE",
+          "value": "Micro-interactions"
+        },
+        "typography": {
+          "label": "TYPOGRAPHY",
+          "value": "Fredoka + Nunito"
+        },
+        "landing": {
+          "label": "LANDING",
+          "value": "Hero + Features + CTA"
+        },
+        "ux": {
+          "label": "UX RULE",
+          "value": "Use animations for loading only"
+        },
         "colorsLabel": "COLORS",
         "colors": [
-          { "name": "Primary", "hex": "#3B82F6" },
-          { "name": "Secondary", "hex": "#60A5FA" },
-          { "name": "CTA", "hex": "#F97316" },
-          { "name": "Background", "hex": "#F8FAFC" },
-          { "name": "Text", "hex": "#1E293B" }
+          {
+            "name": "Primary",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Secondary",
+            "hex": "#60A5FA"
+          },
+          {
+            "name": "CTA",
+            "hex": "#F97316"
+          },
+          {
+            "name": "Background",
+            "hex": "#F8FAFC"
+          },
+          {
+            "name": "Text",
+            "hex": "#1E293B"
+          }
         ]
       },
       "4": {
@@ -304,7 +500,12 @@
       },
       "5": {
         "title": "质量检查",
-        "items": ["SVG 图标 (无 emoji)", "悬停反馈", "深色模式对比度", "响应式布局"]
+        "items": [
+          "SVG 图标 (无 emoji)",
+          "悬停反馈",
+          "深色模式对比度",
+          "响应式布局"
+        ]
       },
       "6": {
         "title": "最终结果",
@@ -316,17 +517,41 @@
     }
   },
   "techStacks": {
-    "title": "支持 8 种技术栈",
+    "title": "支持 11 种技术栈",
     "subtitle": "特定框架的最佳实践、模式和代码示例。获取为你技术栈量身定制的指南。",
     "stacks": {
-      "react": { "title": "React", "desc": "状态, Hooks, 性能模式" },
-      "nextjs": { "title": "Next.js", "desc": "SSR, 路由, API 路由" },
-      "vue": { "title": "Vue", "desc": "组合式 API, Pinia, Vue Router" },
-      "svelte": { "title": "Svelte", "desc": "Runes, Stores, SvelteKit" },
-      "swiftui": { "title": "SwiftUI", "desc": "视图, 状态, 导航" },
-      "reactnative": { "title": "React Native", "desc": "组件, 导航, 列表" },
-      "flutter": { "title": "Flutter", "desc": "Widgets, 状态, 主题" },
-      "tailwind": { "title": "Tailwind", "desc": "工具类, 响应式, 无障碍" }
+      "react": {
+        "title": "React",
+        "desc": "状态, Hooks, 性能模式"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "desc": "SSR, 路由, API 路由"
+      },
+      "vue": {
+        "title": "Vue",
+        "desc": "组合式 API, Pinia, Vue Router"
+      },
+      "svelte": {
+        "title": "Svelte",
+        "desc": "Runes, Stores, SvelteKit"
+      },
+      "swiftui": {
+        "title": "SwiftUI",
+        "desc": "视图, 状态, 导航"
+      },
+      "reactnative": {
+        "title": "React Native",
+        "desc": "组件, 导航, 列表"
+      },
+      "flutter": {
+        "title": "Flutter",
+        "desc": "Widgets, 状态, 主题"
+      },
+      "tailwind": {
+        "title": "Tailwind",
+        "desc": "工具类, 响应式, 无障碍"
+      }
     }
   },
   "gallery": {
@@ -343,7 +568,10 @@
     "promptTitle": "提示词",
     "closeModal": "关闭弹窗",
     "close": "关闭",
-    "mode": { "light": "浅色", "dark": "深色" },
+    "mode": {
+      "light": "浅色",
+      "dark": "深色"
+    },
     "colors": "颜色:",
     "loadMore": "加载更多",
     "showing": "显示 {shown} / {total} 个演示",
@@ -353,7 +581,11 @@
     "getOnGithub": "访问 GitHub",
     "quickStart": "快速上手",
     "learnMore": "了解更多",
-    "features": ["开源", "兼容 Claude Code", "生产就绪"]
+    "features": [
+      "开源",
+      "兼容 Claude Code",
+      "生产就绪"
+    ]
   },
   "feedback": {
     "title": "这页内容有帮助吗？",

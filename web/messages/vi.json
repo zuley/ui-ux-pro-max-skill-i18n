@@ -82,20 +82,20 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "Getting Started",
-        "description": "Cài đặt và chạy lần đầu."
+        "title": "Bắt đầu",
+        "description": "Cài skill và chạy design system đầu tiên."
       },
       "designSystemGenerator": {
         "title": "Design System Generator",
-        "description": "Cách hoạt động và output của tính năng v2.0."
+        "description": "Cách v2.0 tạo design system bằng reasoning."
       },
       "cliReference": {
-        "title": "CLI Reference",
-        "description": "Tìm theo domain/stack và các công thức lệnh."
+        "title": "CLI & Lệnh",
+        "description": "Cài CLI, tìm theo domain và stack guidelines."
       },
       "examples": {
-        "title": "Examples",
-        "description": "Học nhanh với demo và prompt có thể copy."
+        "title": "Cách dùng & Prompt",
+        "description": "Cách gọi skill và prompt mẫu để copy."
       },
       "faq": {
         "title": "FAQ",
@@ -103,48 +103,93 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max giúp tạo quyết định UI/UX (style, màu, font, landing structure, UX rules) từ một prompt.",
+      "overview": "UI UX Pro Max là skill thiết kế giúp chuyển một prompt thành quyết định UI/UX chuyên nghiệp về style, màu sắc, typography, layout và UX rules.",
       "highlights": [
-        { "title": "Design System", "desc": "Tạo pattern, style, colors, typography, effects." },
-        { "title": "Searchable DB", "desc": "Tìm styles, palettes, fonts, charts, landing, UX guidelines." },
-        { "title": "Stack-aware", "desc": "Gợi ý phù hợp framework/stack của bạn." }
+        { "title": "Design System Generator", "desc": "Tạo pattern, style, colors, typography và key effects." },
+        { "title": "Searchable Database", "desc": "Tìm styles, palettes, fonts, charts, landing patterns, UX guidelines." },
+        { "title": "Stack-aware Output", "desc": "Gợi ý phù hợp framework/stack của bạn." }
       ],
+      "whatsNew": {
+        "title": "Điểm mới v2.0",
+        "body": "Phiên bản 2.0 bổ sung reasoning engine để tạo design system đầy đủ, theo từng dự án.",
+        "items": [
+          {
+            "title": "Intelligent Design System Generation",
+            "desc": "Phân tích product type và mục tiêu để gợi ý pattern, style, colors, typography."
+          },
+          {
+            "title": "Reasoning Engine",
+            "desc": "100 quy tắc ngành giúp xếp hạng và loại bỏ anti-pattern."
+          },
+          {
+            "title": "Pre-delivery Checklist",
+            "desc": "Kiểm tra accessibility, hover states, motion và responsive breakpoints."
+          }
+        ]
+      },
+      "features": {
+        "title": "Bạn nhận được gì",
+        "items": [
+          "57 UI styles từ minimalism và brutalism đến AI-native và bento grids.",
+          "95 color palettes cho SaaS, e-commerce, healthcare, fintech và nhiều ngành khác.",
+          "56 font pairings kèm Google Fonts import và cấu hình Tailwind.",
+          "24 chart types với gợi ý thư viện và ghi chú sử dụng.",
+          "11 tech stacks hỗ trợ với hướng dẫn theo framework.",
+          "98 UX guidelines cộng 100 reasoning rules để hoàn thiện UI."
+        ]
+      },
       "defaultStack": {
         "title": "Stack mặc định",
         "body": "Nếu không chỉ định stack, mặc định HTML + Tailwind."
       },
       "prerequisites": {
         "title": "Prerequisites",
-        "body": "Đảm bảo đã cài Python trước khi dùng CLI.",
+        "body": "Đảm bảo đã cài Python trước khi dùng CLI search.",
         "checkPython": "Kiểm tra Python"
       },
       "install": {
         "title": "Cài đặt",
-        "body": "Cài trong Claude Code bằng lệnh plugin có sẵn.",
-        "claudeCode": "Lệnh cài đặt"
+        "body": "Chọn phương thức cài đặt phù hợp workflow.",
+        "claudeCode": "Claude Marketplace (Claude Code)",
+        "cli": "CLI (Khuyến nghị)",
+        "manual": "Cài thủ công"
       },
       "quickstart": {
         "title": "Chạy lần đầu",
-        "body": "Bắt đầu với --design-system, sau đó refine với domain/stack.",
+        "body": "Bắt đầu với Design System Generator, sau đó refine bằng domain/stack.",
         "designSystem": "Tạo design system"
       },
-      "next": "Tiếp theo: trang Design System Generator để xem hướng dẫn sâu hơn và checklist."
+      "next": "Tiếp theo: Design System Generator để xem chi tiết và checklist."
     },
     "dsg": {
-      "overview": "Design System Generator (mới trong v2.0) phân tích prompt và tạo design system phù hợp trong vài giây.",
+      "overview": "Design System Generator là tính năng chủ lực v2.0, phân tích prompt và tạo design system đầy đủ trong vài giây.",
       "workflow": {
-        "title": "Workflow",
+        "title": "Cách hoạt động",
         "steps": [
-          "Trích xuất product type, style keywords, conversion goal từ prompt.",
-          "Search các domain (style, color, typography, landing, UX) với ranking + rules.",
-          "Tổng hợp design system và anti-patterns cần tránh."
+          "Bạn mô tả sản phẩm, đối tượng và mục tiêu style.",
+          "Tìm kiếm song song 5 domain: product, style, color, landing, typography.",
+          "Reasoning engine xếp hạng, áp quy tắc ngành và loại anti-pattern.",
+          "Tổng hợp design system gồm pattern, colors, typography, effects và checklist."
         ]
       },
       "output": {
         "title": "Ví dụ output",
         "body": "Output có cấu trúc để copy vào implement.",
         "exampleTitle": "Sample",
-        "example": "TARGET: Serenity Spa\\nPATTERN: Hero-Centric + Social Proof\\nSTYLE: Soft UI Evolution\\nCOLORS: Primary #E8B4B8, Secondary #A8D5BA, CTA #D4AF37\\nTYPOGRAPHY: Cormorant Garamond / Montserrat\\nCHECKLIST: hover, contrast, focus, reduced motion"
+        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
+      },
+      "rules": {
+        "title": "100 quy tắc reasoning theo ngành",
+        "body": "Quy tắc bao phủ ngành nghề và kỳ vọng thẩm mỹ để output phù hợp bối cảnh.",
+        "items": [
+          "Tech & SaaS",
+          "Finance & Fintech",
+          "Healthcare & Wellness",
+          "E-commerce & Marketplace",
+          "Services & Local Businesses",
+          "Creative & Media",
+          "Emerging Tech"
+        ]
       },
       "checklist": {
         "title": "Pre-delivery Checklist",
@@ -160,13 +205,24 @@
           { "id": "responsive", "label": "Test responsive 375/768/1024/1440" }
         ]
       },
-      "next": "Tiếp theo: CLI Reference để search domain và stack guidelines."
+      "next": "Tiếp theo: CLI & Lệnh để tìm theo domain và stack guidelines."
     },
     "cli": {
-      "overview": "Dùng CLI để tìm theo domain hoặc theo tech stack.",
+      "overview": "Dùng CLI để cài skill và chạy tìm kiếm theo domain/stack trong project.",
+      "install": {
+        "title": "Cài CLI",
+        "body": "Cài uipro-cli global.",
+        "exampleTitle": "Cài đặt"
+      },
+      "init": {
+        "title": "Cài cho trợ lý",
+        "body": "Chạy uipro init với assistant target.",
+        "exampleTitle": "Lệnh"
+      },
       "designSystem": {
-        "title": "Design system generation",
-        "exampleTitle": "Example"
+        "title": "Design system commands",
+        "body": "Dùng search.py để tạo output design system.",
+        "exampleTitle": "Examples"
       },
       "domain": {
         "title": "Domain search",
@@ -178,28 +234,55 @@
         "body": "Xin best practices cho một stack cụ thể (React, Next.js, HTML+Tailwind…).",
         "examplesTitle": "Examples"
       },
-      "next": "Tiếp theo: xem examples và copy prompt để tái sử dụng."
+      "persist": {
+        "title": "Persist Design System",
+        "body": "Lưu design system vào file để tái sử dụng theo mô hình Master + Overrides.",
+        "exampleTitle": "Commands",
+        "structureTitle": "Cấu trúc thư mục"
+      },
+      "other": {
+        "title": "Lệnh CLI khác",
+        "exampleTitle": "Commands"
+      },
+      "next": "Tiếp theo: Cách dùng & Prompt để xem cách gọi và prompt mẫu."
     },
     "examples": {
-      "overview": "Học nhanh hơn với examples: chọn demo, xem prompt và tái sử dụng.",
-      "gallery": {
-        "title": "Examples Gallery",
-        "body": "Dùng filter và search để tìm demo phù hợp. Mở card để copy prompt.",
-        "openCta": "Mở gallery",
-        "jumpCta": "Đi tới gallery"
+      "overview": "Dùng các mẫu gọi và prompt này để bắt đầu nhanh.",
+      "usage": {
+        "title": "Cách gọi theo assistant",
+        "body": "Skill tự kích hoạt cho các tác vụ UI/UX, nhưng bạn cũng có thể gọi trực tiếp.",
+        "codeTitle": "Ví dụ gọi lệnh",
+        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
       },
-      "path": {
-        "title": "Learning Path",
-        "body": "Cách đơn giản để đi từ ý tưởng đến implement.",
-        "steps": [
-          { "title": "1) Generate", "desc": "Chạy --design-system để nhận gợi ý đầy đủ." },
-          { "title": "2) Refine", "desc": "Dùng --domain và --stack để làm rõ chi tiết." },
-          { "title": "3) Implement", "desc": "Chọn prompt demo và adapt cho sản phẩm." }
-        ],
-        "promptTitle": "Starter prompt",
-        "prompt": "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold."
+      "prompts": {
+        "title": "Prompt mẫu",
+        "body": "Copy prompt và thay đổi sản phẩm, phong cách, ràng buộc.",
+        "items": [
+          "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold.",
+          "Create a healthcare analytics dashboard with clean typography and accessible contrast.",
+          "Design a fintech banking app with dark mode and strong trust cues.",
+          "Make a portfolio site for a product designer with bold typography and minimal layout.",
+          "Build an e-commerce product page with social proof and conversion-focused CTAs."
+        ]
       },
-      "next": "Tiếp theo: xem FAQ nếu gặp vấn đề khi cài đặt hoặc chạy lệnh."
+      "stacks": {
+        "title": "Stacks hỗ trợ",
+        "body": "Nhắc tới stack trong prompt để nhận hướng dẫn theo framework.",
+        "items": [
+          "HTML + Tailwind (default)",
+          "React",
+          "Next.js",
+          "Vue",
+          "Nuxt.js",
+          "Nuxt UI",
+          "Svelte",
+          "SwiftUI",
+          "React Native",
+          "Flutter",
+          "shadcn/ui"
+        ]
+      },
+      "next": "Tiếp theo: xem FAQ nếu gặp lỗi khi cài đặt hoặc chạy lệnh."
     },
     "faq": {
       "overview": "Câu hỏi thường gặp và quick fixes.",
@@ -208,7 +291,8 @@
         "items": [
           { "q": "search.py nằm ở đâu?", "a": "Nó nằm trong .claude/skills/ui-ux-pro-max/scripts/search.py của project." },
           { "q": "Có cần chỉ định stack không?", "a": "Không. Nếu bỏ qua sẽ mặc định HTML + Tailwind." },
-          { "q": "Làm sao xuất Markdown?", "a": "Dùng -f markdown cùng --design-system." }
+          { "q": "Làm sao xuất Markdown?", "a": "Dùng -f markdown cùng --design-system." },
+          { "q": "Có thể cài đặt khi không truy cập GitHub?", "a": "Có, dùng uipro init --offline để bỏ qua tải từ GitHub và dùng bundled assets." }
         ]
       },
       "next": "Nếu vẫn chưa rõ, hãy gửi feedback ở cuối trang."

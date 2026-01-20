@@ -48,7 +48,10 @@
   "demo": {
     "title": "Watch the Flow",
     "subtitle": "See how your prompt turns into a tailored design system.",
-    "tabs": { "video": "Video", "flow": "Animation" },
+    "tabs": {
+      "video": "Video",
+      "flow": "Animation"
+    },
     "videoMissing": {
       "title": "Demo video not found",
       "body": "Add a file at public/demo.mp4 or switch to the animation tab."
@@ -80,32 +83,70 @@
     "nav": {
       "gettingStarted": {
         "title": "Getting Started",
-        "description": "Install and run your first design system generation."
+        "description": "Install the skill and run your first design system."
       },
       "designSystemGenerator": {
         "title": "Design System Generator",
-        "description": "How the flagship v2.0 feature works and what it outputs."
+        "description": "How v2.0 generates complete design systems with reasoning."
       },
       "cliReference": {
-        "title": "CLI Reference",
-        "description": "Domain search, stack guidelines, and common command recipes."
+        "title": "CLI & Commands",
+        "description": "Install the CLI, search domains, and use stack guidelines."
       },
       "examples": {
-        "title": "Examples",
-        "description": "Learn by browsing real demos and copyable prompts."
+        "title": "Usage & Prompts",
+        "description": "How to invoke the skill and example prompts to copy."
       },
       "faq": {
         "title": "FAQ",
-        "description": "Answers and troubleshooting for common issues."
+        "description": "Common questions, troubleshooting, and tips."
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max helps you generate professional UI/UX decisions (style, colors, typography, landing structure, UX rules) from a single prompt.",
+      "overview": "UI UX Pro Max is a design intelligence skill that turns a single prompt into professional UI/UX decisions across style, color, typography, layout, and UX rules.",
       "highlights": [
-        { "title": "Design System", "desc": "Generate pattern, style, colors, typography, and effects." },
-        { "title": "Searchable DB", "desc": "Query styles, palettes, fonts, charts, landing patterns, and UX guidelines." },
-        { "title": "Stack-aware", "desc": "Get recommendations tailored to your framework and stack." }
+        {
+          "title": "Design System Generator",
+          "desc": "Generate pattern, style, colors, typography, and key effects."
+        },
+        {
+          "title": "Searchable Database",
+          "desc": "Query styles, palettes, fonts, charts, landing patterns, and UX guidelines."
+        },
+        {
+          "title": "Stack-aware Output",
+          "desc": "Get recommendations tailored to your framework and stack."
+        }
       ],
+      "whatsNew": {
+        "title": "What's new in v2.0",
+        "body": "Version 2.0 adds a reasoning engine that produces complete, project-specific design systems.",
+        "items": [
+          {
+            "title": "Intelligent Design System Generation",
+            "desc": "Analyze your product type and goals to recommend pattern, style, colors, and typography."
+          },
+          {
+            "title": "Reasoning Engine",
+            "desc": "100 industry rules rank and filter results to avoid common anti-patterns."
+          },
+          {
+            "title": "Pre-delivery Checklist",
+            "desc": "Quality gates for accessibility, hover states, motion, and responsive breakpoints."
+          }
+        ]
+      },
+      "features": {
+        "title": "What you get",
+        "items": [
+          "57 UI styles, from minimalism and brutalism to AI-native and bento grids.",
+          "95 color palettes tailored to SaaS, e-commerce, healthcare, fintech, and more.",
+          "56 font pairings with Google Fonts imports and Tailwind-ready configs.",
+          "24 chart types with library recommendations and usage notes.",
+          "11 tech stacks supported with framework-specific guidance.",
+          "98 UX guidelines plus 100 reasoning rules for professional polish."
+        ]
+      },
       "defaultStack": {
         "title": "Default stack behavior",
         "body": "If you don’t specify a stack, it defaults to HTML + Tailwind."
@@ -117,53 +158,101 @@
       },
       "install": {
         "title": "Install",
-        "body": "Install the skill inside Claude Code using the built-in plugin commands.",
-        "claudeCode": "Install commands"
+        "body": "Choose the installation method that fits your workflow.",
+        "claudeCode": "Using Claude Marketplace (Claude Code)",
+        "cli": "Using CLI (Recommended)",
+        "manual": "Manual Installation"
       },
       "quickstart": {
         "title": "Your First Run",
         "body": "Start with the Design System Generator, then refine with domain/stack searches.",
         "designSystem": "Generate design system"
       },
-      "next": "Continue to the Design System Generator page for deeper guidance and the pre-delivery checklist."
+      "next": "Continue to Design System Generator for the deep dive and the pre-delivery checklist."
     },
     "dsg": {
-      "overview": "The Design System Generator (new in v2.0) analyzes your prompt and produces a complete, tailored design system in seconds.",
+      "overview": "The Design System Generator is the flagship v2.0 feature. It analyzes your prompt and outputs a complete, tailored design system in seconds.",
       "workflow": {
-        "title": "Workflow",
+        "title": "How it works",
         "steps": [
-          "Extract product type, style keywords, and conversion goal from your prompt.",
-          "Search domains (style, color, typography, landing, UX) with ranking and rules.",
-          "Synthesize a recommended design system with anti-patterns to avoid."
+          "You describe the product, audience, and style goals.",
+          "Five domains are searched in parallel: product, style, color, landing, and typography.",
+          "A reasoning engine ranks matches, applies industry rules, and removes anti-patterns.",
+          "A final design system is assembled with pattern, colors, typography, effects, and checklist."
         ]
       },
       "output": {
         "title": "Example Output",
         "body": "You’ll get a structured recommendation you can copy into implementation.",
         "exampleTitle": "Sample",
-        "example": "TARGET: Serenity Spa\\nPATTERN: Hero-Centric + Social Proof\\nSTYLE: Soft UI Evolution\\nCOLORS: Primary #E8B4B8, Secondary #A8D5BA, CTA #D4AF37\\nTYPOGRAPHY: Cormorant Garamond / Montserrat\\nCHECKLIST: Hover states, contrast, focus rings, reduced motion"
+        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
+      },
+      "rules": {
+        "title": "100 industry-specific reasoning rules",
+        "body": "Rules cover both product category and visual expectations so outputs align with your industry.",
+        "items": [
+          "Tech & SaaS",
+          "Finance & Fintech",
+          "Healthcare & Wellness",
+          "E-commerce & Marketplace",
+          "Services & Local Businesses",
+          "Creative & Media",
+          "Emerging Tech"
+        ]
       },
       "checklist": {
         "title": "Pre-delivery Checklist",
         "body": "Quick quality checks to keep UI professional and accessible.",
         "boxTitle": "Checklist",
         "items": [
-          { "id": "no-emoji-icons", "label": "No emoji as icons (use SVG icons)" },
-          { "id": "cursor-pointer", "label": "Cursor pointer on all clickable elements" },
-          { "id": "hover-transitions", "label": "Smooth hover transitions (150–300ms)" },
-          { "id": "contrast", "label": "Light mode contrast: 4.5:1 minimum" },
-          { "id": "focus", "label": "Visible focus states for keyboard navigation" },
-          { "id": "reduced-motion", "label": "Respects prefers-reduced-motion" },
-          { "id": "responsive", "label": "Responsive at 375 / 768 / 1024 / 1440" }
+          {
+            "id": "no-emoji-icons",
+            "label": "No emoji as icons (use SVG icons)"
+          },
+          {
+            "id": "cursor-pointer",
+            "label": "Cursor pointer on all clickable elements"
+          },
+          {
+            "id": "hover-transitions",
+            "label": "Smooth hover transitions (150–300ms)"
+          },
+          {
+            "id": "contrast",
+            "label": "Light mode contrast: 4.5:1 minimum"
+          },
+          {
+            "id": "focus",
+            "label": "Visible focus states for keyboard navigation"
+          },
+          {
+            "id": "reduced-motion",
+            "label": "Respects prefers-reduced-motion"
+          },
+          {
+            "id": "responsive",
+            "label": "Responsive at 375 / 768 / 1024 / 1440"
+          }
         ]
       },
-      "next": "Next: use the CLI Reference page to search domains and stack-specific guidelines."
+      "next": "Next: use CLI & Commands to search domains and stack-specific guidance."
     },
     "cli": {
-      "overview": "Use the search CLI to query the design database by domain or by tech stack.",
+      "overview": "Use the CLI to install the skill and run domain/stack searches from your project.",
+      "install": {
+        "title": "Install the CLI",
+        "body": "Install the uipro-cli package globally.",
+        "exampleTitle": "Install"
+      },
+      "init": {
+        "title": "Install for your assistant",
+        "body": "Run uipro init with your assistant target.",
+        "exampleTitle": "Commands"
+      },
       "designSystem": {
-        "title": "Design system generation",
-        "exampleTitle": "Example"
+        "title": "Design system commands",
+        "body": "Direct access to search.py for design-system output.",
+        "exampleTitle": "Examples"
       },
       "domain": {
         "title": "Domain search",
@@ -175,37 +264,77 @@
         "body": "Request best practices for a specific stack (React, Next.js, HTML+Tailwind, etc.).",
         "examplesTitle": "Examples"
       },
-      "next": "Next: browse examples and copy prompts you can reuse."
+      "persist": {
+        "title": "Persist Design System",
+        "body": "Save your design system to files to reuse it across different sessions (Master + Overrides pattern).",
+        "exampleTitle": "Commands",
+        "structureTitle": "Directory Structure"
+      },
+      "other": {
+        "title": "Other CLI commands",
+        "exampleTitle": "Commands"
+      },
+      "next": "Next: see Usage & Prompts for invocation patterns and sample requests."
     },
     "examples": {
-      "overview": "Examples help you learn faster: pick a demo, inspect its prompt, and reuse it as a starting point.",
-      "gallery": {
-        "title": "Examples Gallery",
-        "body": "Use filters and search to find relevant demos. Expand a card to copy its prompt.",
-        "openCta": "Open Gallery",
-        "jumpCta": "Jump to Gallery"
+      "overview": "Use these invocation patterns and prompt examples as a quick start.",
+      "usage": {
+        "title": "Usage by assistant",
+        "body": "The skill activates automatically for UI/UX tasks. You can also invoke it explicitly in most tools.",
+        "codeTitle": "Invocation examples",
+        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
       },
-      "path": {
-        "title": "Learning Path",
-        "body": "A simple way to go from idea to implementation with confidence.",
-        "steps": [
-          { "title": "1) Generate", "desc": "Run --design-system to get a complete recommendation." },
-          { "title": "2) Refine", "desc": "Use --domain and --stack to tighten details." },
-          { "title": "3) Implement", "desc": "Pick a demo prompt and adapt it to your product." }
-        ],
-        "promptTitle": "Starter prompt",
-        "prompt": "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold."
+      "prompts": {
+        "title": "Example prompts",
+        "body": "Copy a prompt and tweak the product, style, and constraints.",
+        "items": [
+          "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold.",
+          "Create a healthcare analytics dashboard with clean typography and accessible contrast.",
+          "Design a fintech banking app with dark mode and strong trust cues.",
+          "Make a portfolio site for a product designer with bold typography and minimal layout.",
+          "Build an e-commerce product page with social proof and conversion-focused CTAs."
+        ]
       },
-      "next": "Next: check the FAQ if you hit any setup or command issues."
+      "stacks": {
+        "title": "Supported stacks",
+        "body": "Mention a stack in your prompt to get stack-specific guidance.",
+        "items": [
+          "HTML + Tailwind (default)",
+          "React",
+          "Next.js",
+          "Vue",
+          "Nuxt.js",
+          "Nuxt UI",
+          "Svelte",
+          "SwiftUI",
+          "React Native",
+          "Flutter",
+          "shadcn/ui"
+        ]
+      },
+      "next": "Next: check the FAQ if you run into setup or command issues."
     },
     "faq": {
       "overview": "Common questions and quick fixes.",
       "questions": {
         "title": "Questions",
         "items": [
-          { "q": "Where is search.py located?", "a": "It lives under .claude/skills/ui-ux-pro-max/scripts/search.py in your project." },
-          { "q": "Do I need to specify a stack?", "a": "No. If omitted, it defaults to HTML + Tailwind." },
-          { "q": "How do I get Markdown output?", "a": "Use -f markdown with --design-system." }
+          {
+            "q": "Where is search.py located?",
+            "a": "It lives under .claude/skills/ui-ux-pro-max/scripts/search.py in your project."
+          },
+          {
+            "q": "Do I need to specify a stack?",
+            "a": "No. If omitted, it defaults to HTML + Tailwind."
+          },
+          {
+            "q": "How do I get Markdown output?",
+            "a": "Use -f markdown with --design-system."
+          },
+          {
+            "q": "Can I install without GitHub access?",
+            "a": "Yes. Use uipro init --offline to skip the GitHub download and use bundled assets."
+          }
         ]
       },
       "next": "If something still feels unclear, send feedback at the bottom of the page."
@@ -226,32 +355,57 @@
       "styles": {
         "title": "Design Styles",
         "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, and 45+ more styles with colors, effects, and framework compatibility.",
-        "tags": ["Glassmorphism", "Dark Mode", "Motion-Driven"]
+        "tags": [
+          "Glassmorphism",
+          "Dark Mode",
+          "Motion-Driven"
+        ]
       },
       "colors": {
         "title": "Color Palettes",
         "description": "Product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
-        "tags": ["SaaS", "Healthcare", "E-commerce"]
+        "tags": [
+          "SaaS",
+          "Healthcare",
+          "E-commerce"
+        ]
       },
       "typography": {
         "title": "Typography",
         "description": "50+ font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
-        "tags": ["Space Grotesk", "Inter", "Playfair"]
+        "tags": [
+          "Space Grotesk",
+          "Inter",
+          "Playfair"
+        ]
       },
       "charts": {
         "title": "Chart Types",
         "description": "Data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
-        "tags": ["Line", "Bar", "Pie", "Heatmap"]
+        "tags": [
+          "Line",
+          "Bar",
+          "Pie",
+          "Heatmap"
+        ]
       },
       "landing": {
         "title": "Landing Patterns",
         "description": "14 conversion-optimized page structures with CTA placement strategies and color recommendations.",
-        "tags": ["Hero + Features", "Video-First", "Pricing"]
+        "tags": [
+          "Hero + Features",
+          "Video-First",
+          "Pricing"
+        ]
       },
       "ux": {
         "title": "UX Guidelines",
         "description": "Best practices and anti-patterns for animation, accessibility, z-index, loading states, and more.",
-        "tags": ["Animation", "A11y", "Performance"]
+        "tags": [
+          "Animation",
+          "A11y",
+          "Performance"
+        ]
       }
     }
   },
@@ -267,27 +421,69 @@
       "2": {
         "title": "AI Reasoning",
         "tags": {
-          "product": { "label": "Product", "value": "pet-service" },
-          "style": { "label": "Style", "value": "playful, friendly" },
-          "page": { "label": "Page", "value": "landing" },
-          "cta": { "label": "CTA", "value": "booking" }
+          "product": {
+            "label": "Product",
+            "value": "pet-service"
+          },
+          "style": {
+            "label": "Style",
+            "value": "playful, friendly"
+          },
+          "page": {
+            "label": "Page",
+            "value": "landing"
+          },
+          "cta": {
+            "label": "CTA",
+            "value": "booking"
+          }
         },
         "searching": "→ Searching: product, style, typography, color, landing, ux domains..."
       },
       "3": {
         "title": "Search Design Database",
-        "product": { "label": "PRODUCT", "value": "Pet Tech App" },
-        "style": { "label": "STYLE", "value": "Micro-interactions" },
-        "typography": { "label": "TYPOGRAPHY", "value": "Fredoka + Nunito" },
-        "landing": { "label": "LANDING", "value": "Hero + Features + CTA" },
-        "ux": { "label": "UX RULE", "value": "Use animations for loading only" },
+        "product": {
+          "label": "PRODUCT",
+          "value": "Pet Tech App"
+        },
+        "style": {
+          "label": "STYLE",
+          "value": "Micro-interactions"
+        },
+        "typography": {
+          "label": "TYPOGRAPHY",
+          "value": "Fredoka + Nunito"
+        },
+        "landing": {
+          "label": "LANDING",
+          "value": "Hero + Features + CTA"
+        },
+        "ux": {
+          "label": "UX RULE",
+          "value": "Use animations for loading only"
+        },
         "colorsLabel": "COLORS",
         "colors": [
-          { "name": "Primary", "hex": "#3B82F6" },
-          { "name": "Secondary", "hex": "#60A5FA" },
-          { "name": "CTA", "hex": "#F97316" },
-          { "name": "Background", "hex": "#F8FAFC" },
-          { "name": "Text", "hex": "#1E293B" }
+          {
+            "name": "Primary",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Secondary",
+            "hex": "#60A5FA"
+          },
+          {
+            "name": "CTA",
+            "hex": "#F97316"
+          },
+          {
+            "name": "Background",
+            "hex": "#F8FAFC"
+          },
+          {
+            "name": "Text",
+            "hex": "#1E293B"
+          }
         ]
       },
       "4": {
@@ -301,7 +497,12 @@
       },
       "5": {
         "title": "Quality Checklist",
-        "items": ["SVG icons (no emoji)", "Hover feedback", "Dark mode contrast", "Responsive layout"]
+        "items": [
+          "SVG icons (no emoji)",
+          "Hover feedback",
+          "Dark mode contrast",
+          "Responsive layout"
+        ]
       },
       "6": {
         "title": "Final Result",
@@ -313,17 +514,41 @@
     }
   },
   "techStacks": {
-    "title": "8 Tech Stacks Supported",
+    "title": "11 Tech Stacks Supported",
     "subtitle": "Framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
     "stacks": {
-      "react": { "title": "React", "desc": "State, hooks, performance patterns" },
-      "nextjs": { "title": "Next.js", "desc": "SSR, routing, API routes" },
-      "vue": { "title": "Vue", "desc": "Composition API, Pinia, Vue Router" },
-      "svelte": { "title": "Svelte", "desc": "Runes, stores, SvelteKit" },
-      "swiftui": { "title": "SwiftUI", "desc": "Views, State, Navigation" },
-      "reactnative": { "title": "React Native", "desc": "Components, Navigation, Lists" },
-      "flutter": { "title": "Flutter", "desc": "Widgets, State, Theming" },
-      "tailwind": { "title": "Tailwind", "desc": "Utilities, responsive, a11y" }
+      "react": {
+        "title": "React",
+        "desc": "State, hooks, performance patterns"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "desc": "SSR, routing, API routes"
+      },
+      "vue": {
+        "title": "Vue",
+        "desc": "Composition API, Pinia, Vue Router"
+      },
+      "svelte": {
+        "title": "Svelte",
+        "desc": "Runes, stores, SvelteKit"
+      },
+      "swiftui": {
+        "title": "SwiftUI",
+        "desc": "Views, State, Navigation"
+      },
+      "reactnative": {
+        "title": "React Native",
+        "desc": "Components, Navigation, Lists"
+      },
+      "flutter": {
+        "title": "Flutter",
+        "desc": "Widgets, State, Theming"
+      },
+      "tailwind": {
+        "title": "Tailwind",
+        "desc": "Utilities, responsive, a11y"
+      }
     }
   },
   "gallery": {
@@ -340,7 +565,10 @@
     "promptTitle": "Prompt",
     "closeModal": "Close modal",
     "close": "Close",
-    "mode": { "light": "Light", "dark": "Dark" },
+    "mode": {
+      "light": "Light",
+      "dark": "Dark"
+    },
     "colors": "Colors:",
     "loadMore": "Load More",
     "showing": "Showing {shown} of {total} demos",
@@ -350,7 +578,11 @@
     "getOnGithub": "Get on GitHub",
     "quickStart": "Quick Start",
     "learnMore": "Learn More",
-    "features": ["Open Source", "Claude Code Compatible", "Production Ready"]
+    "features": [
+      "Open Source",
+      "Claude Code Compatible",
+      "Production Ready"
+    ]
   },
   "feedback": {
     "title": "Was this page helpful?",

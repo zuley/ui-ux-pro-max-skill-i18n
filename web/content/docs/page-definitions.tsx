@@ -4,7 +4,6 @@ import { CodeBlock } from '@/components/tutorial/code-block';
 import { Callout } from '@/components/tutorial/callout';
 import { Checklist } from '@/components/tutorial/checklist';
 import { ClientOnly } from '@/components/client-only';
-import { Link } from '@/i18n/routing';
 
 export type Translator = ((key: string, values?: Record<string, unknown>) => string) & {
   raw: (key: string) => unknown;
@@ -15,6 +14,8 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
     case 'getting-started': {
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
+        { id: 'whats-new', title: t('docs.gettingStarted.whatsNew.title') },
+        { id: 'features', title: t('docs.gettingStarted.features.title') },
         { id: 'prerequisites', title: t('docs.gettingStarted.prerequisites.title') },
         { id: 'install', title: t('docs.gettingStarted.install.title') },
         { id: 'quickstart', title: t('docs.gettingStarted.quickstart.title') },
@@ -56,6 +57,48 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </div>
           </section>
 
+          <section id="whats-new" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.gettingStarted.whatsNew.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.gettingStarted.whatsNew.body')}
+            </p>
+            <div className="mt-4 grid md:grid-cols-3 gap-3">
+              {(t.raw('docs.gettingStarted.whatsNew.items') as { title: string; desc: string }[]).map(
+                (item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4"
+                  >
+                    <div className="font-heading font-semibold text-gray-900 dark:text-white">
+                      {item.title}
+                    </div>
+                    <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                      {item.desc}
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </section>
+
+          <section id="features" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.gettingStarted.features.title')}
+            </h2>
+            <ul className="mt-3 grid gap-3 md:grid-cols-2">
+              {(t.raw('docs.gettingStarted.features.items') as string[]).map((item) => (
+                <li
+                  key={item}
+                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-700 dark:text-gray-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section id="prerequisites" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.gettingStarted.prerequisites.title')}
@@ -81,12 +124,61 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </p>
             <div className="mt-4">
               <CodeBlock
-                title={t('docs.gettingStarted.install.claudeCode')}
-                language="text"
-                code={[
-                  '/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill',
-                  '/plugin install ui-ux-pro-max@ui-ux-pro-max-skill'
-                ].join('\n')}
+                title={t('docs.gettingStarted.install.title')}
+                tabs={[
+                  {
+                    label: t('docs.gettingStarted.install.claudeCode'),
+                    language: 'text',
+                    code: [
+                      '/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill',
+                      '/plugin install ui-ux-pro-max@ui-ux-pro-max-skill'
+                    ].join('\n')
+                  },
+                  {
+                    label: t('docs.gettingStarted.install.cli'),
+                    language: 'bash',
+                    code: [
+                      '# Install CLI globally',
+                      'npm install -g uipro-cli',
+                      '',
+                      '# Install for your AI assistant',
+                      'uipro init --ai claude      # Claude Code',
+                      'uipro init --ai cursor      # Cursor',
+                      'uipro init --ai windsurf    # Windsurf',
+                      'uipro init --ai antigravity # Antigravity',
+                      'uipro init --ai copilot     # GitHub Copilot',
+                      'uipro init --ai kiro        # Kiro',
+                      'uipro init --ai codex       # Codex CLI',
+                      'uipro init --ai qoder       # Qoder',
+                      'uipro init --ai roocode     # Roo Code',
+                      'uipro init --ai gemini      # Gemini CLI',
+                      'uipro init --ai trae        # Trae',
+                      'uipro init --ai opencode    # OpenCode',
+                      'uipro init --ai continue    # Continue (Skills)',
+                      'uipro init --ai all         # All assistants'
+                    ].join('\n')
+                  },
+                  {
+                    label: t('docs.gettingStarted.install.manual'),
+                    language: 'bash',
+                    code: [
+                      '# Copy folders to your project',
+                      '.claude/skills/ui-ux-pro-max/',
+                      '.cursor/commands/ui-ux-pro-max.md',
+                      '.windsurf/workflows/ui-ux-pro-max.md',
+                      '.agent/workflows/ui-ux-pro-max.md',
+                      '.shared/ui-ux-pro-max/',
+                      '.github/prompts/ui-ux-pro-max.prompt.md',
+                      '.kiro/steering/ui-ux-pro-max.md',
+                      '.codex/skills/ui-ux-pro-max/',
+                      '.qoder/skills/ui-ux-pro-max.md',
+                      '.roo/rules/ui-ux-pro-max.md',
+                      '.gemini/skills/ui-ux-pro-max/',
+                      '.trae/skills/ui-ux-pro-max/',
+                      '.continue/skills/ui-ux-pro-max/'
+                    ].join('\n')
+                  }
+                ]}
               />
             </div>
           </section>
@@ -138,6 +230,7 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
         { id: 'overview', title: t('docs.sections.overview') },
         { id: 'workflow', title: t('docs.dsg.workflow.title') },
         { id: 'output', title: t('docs.dsg.output.title') },
+        { id: 'rules', title: t('docs.dsg.rules.title') },
         { id: 'checklist', title: t('docs.dsg.checklist.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
@@ -185,6 +278,25 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </div>
           </section>
 
+          <section id="rules" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.dsg.rules.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.dsg.rules.body')}
+            </p>
+            <ul className="mt-3 grid gap-3 md:grid-cols-2">
+              {(t.raw('docs.dsg.rules.items') as string[]).map((item) => (
+                <li
+                  key={item}
+                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-700 dark:text-gray-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section id="checklist" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.dsg.checklist.title')}
@@ -222,9 +334,13 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
     case 'cli-reference': {
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
+        { id: 'install-cli', title: t('docs.cli.install.title') },
+        { id: 'init', title: t('docs.cli.init.title') },
         { id: 'design-system', title: t('docs.cli.designSystem.title') },
+        { id: 'persist', title: t('docs.cli.persist.title') },
         { id: 'domain', title: t('docs.cli.domain.title') },
         { id: 'stack', title: t('docs.cli.stack.title') },
+        { id: 'other', title: t('docs.cli.other.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
 
@@ -239,17 +355,107 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </p>
           </section>
 
+          <section id="install-cli" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.cli.install.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.cli.install.body')}
+            </p>
+            <div className="mt-4">
+              <CodeBlock
+                title={t('docs.cli.install.exampleTitle')}
+                language="bash"
+                code={'npm install -g uipro-cli'}
+              />
+            </div>
+          </section>
+
+          <section id="init" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.cli.init.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.cli.init.body')}
+            </p>
+            <div className="mt-4">
+              <CodeBlock
+                title={t('docs.cli.init.exampleTitle')}
+                language="bash"
+                code={[
+                  'uipro init --ai claude      # Claude Code',
+                  'uipro init --ai cursor      # Cursor',
+                  'uipro init --ai windsurf    # Windsurf',
+                  'uipro init --ai antigravity # Antigravity',
+                  'uipro init --ai copilot     # GitHub Copilot',
+                  'uipro init --ai kiro        # Kiro',
+                  'uipro init --ai codex       # Codex CLI',
+                  'uipro init --ai qoder       # Qoder',
+                  'uipro init --ai roocode     # Roo Code',
+                  'uipro init --ai gemini      # Gemini CLI',
+                  'uipro init --ai trae        # Trae',
+                  'uipro init --ai opencode    # OpenCode',
+                  'uipro init --ai continue    # Continue (Skills)',
+                  'uipro init --ai all         # All assistants'
+                ].join('\n')}
+              />
+            </div>
+          </section>
+
           <section id="design-system" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.cli.designSystem.title')}
             </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.cli.designSystem.body')}
+            </p>
             <div className="mt-4">
               <CodeBlock
                 title={t('docs.cli.designSystem.exampleTitle')}
                 language="bash"
-                code={
-                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"beauty spa wellness\" --design-system -p \"Serenity Spa\"'
-                }
+                code={[
+                  '# Generate design system (ASCII)',
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --design-system -p "Serenity Spa"',
+                  '',
+                  '# Generate design system (Markdown)',
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech banking" --design-system -f markdown'
+                ].join('\n')}
+              />
+            </div>
+          </section>
+
+          <section id="persist" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.cli.persist.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.cli.persist.body')}
+            </p>
+            <div className="mt-4">
+              <CodeBlock
+                title={t('docs.cli.persist.exampleTitle')}
+                language="bash"
+                code={[
+                  '# Generate and persist to design-system/MASTER.md',
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp"',
+                  '',
+                  '# Create page-specific override',
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp" --page "dashboard"'
+                ].join('\n')}
+              />
+            </div>
+            <div className="mt-4">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-200 mb-2">
+                {t('docs.cli.persist.structureTitle')}
+              </h3>
+              <CodeBlock
+                language="text"
+                code={[
+                  'design-system/',
+                  '├── MASTER.md            # Global Source of Truth',
+                  '└── pages/',
+                  '    └── dashboard.md     # Page-specific overrides'
+                ].join('\n')}
               />
             </div>
           </section>
@@ -322,6 +528,24 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </div>
           </section>
 
+          <section id="other" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.cli.other.title')}
+            </h2>
+            <div className="mt-4">
+              <CodeBlock
+                title={t('docs.cli.other.exampleTitle')}
+                language="bash"
+                code={[
+                  'uipro versions              # List available versions',
+                  'uipro update                # Update to latest version',
+                  'uipro init --offline        # Skip GitHub download, use bundled assets',
+                  'uipro init --force          # Overwrite existing files'
+                ].join('\n')}
+              />
+            </div>
+          </section>
+
           <section id="next" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.sections.next')}
@@ -339,8 +563,9 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
     case 'examples': {
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
-        { id: 'gallery', title: t('docs.examples.gallery.title') },
-        { id: 'path', title: t('docs.examples.path.title') },
+        { id: 'usage', title: t('docs.examples.usage.title') },
+        { id: 'prompts', title: t('docs.examples.prompts.title') },
+        { id: 'stacks', title: t('docs.examples.stacks.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
 
@@ -355,52 +580,58 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </p>
           </section>
 
-          <section id="gallery" className="mt-10">
+          <section id="usage" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.examples.gallery.title')}
+              {t('docs.examples.usage.title')}
             </h2>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.examples.gallery.body')}
+              {t('docs.examples.usage.body')}
             </p>
-            <div className="mt-4 flex flex-col sm:flex-row gap-3">
-              <Link href="/#styles" className="btn-primary text-center">
-                {t('docs.examples.gallery.openCta')}
-              </Link>
-              <Link href="/#styles" className="btn-secondary text-center">
-                {t('docs.examples.gallery.jumpCta')}
-              </Link>
+            <div className="mt-4">
+              <CodeBlock
+                title={t('docs.examples.usage.codeTitle')}
+                language="text"
+                code={t('docs.examples.usage.code')}
+              />
             </div>
           </section>
 
-          <section id="path" className="mt-10">
+          <section id="prompts" className="mt-10">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.examples.path.title')}
+              {t('docs.examples.prompts.title')}
             </h2>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.examples.path.body')}
+              {t('docs.examples.prompts.body')}
             </p>
-            <div className="mt-4 grid md:grid-cols-3 gap-3">
-              {(t.raw('docs.examples.path.steps') as { title: string; desc: string }[]).map((s) => (
-                <div
-                  key={s.title}
-                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4"
+            <ul className="mt-3 grid gap-3 md:grid-cols-2">
+              {(t.raw('docs.examples.prompts.items') as string[]).map((item) => (
+                <li
+                  key={item}
+                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-700 dark:text-gray-300"
                 >
-                  <div className="font-heading font-semibold text-gray-900 dark:text-white">
-                    {s.title}
-                  </div>
-                  <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    {s.desc}
-                  </div>
-                </div>
+                  {item}
+                </li>
               ))}
-            </div>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.examples.path.promptTitle')}
-                language="text"
-                code={t('docs.examples.path.prompt')}
-              />
-            </div>
+            </ul>
+          </section>
+
+          <section id="stacks" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.examples.stacks.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.examples.stacks.body')}
+            </p>
+            <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {(t.raw('docs.examples.stacks.items') as string[]).map((item) => (
+                <li
+                  key={item}
+                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-3 text-sm text-gray-700 dark:text-gray-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section id="next" className="mt-10">
