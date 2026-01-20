@@ -51,7 +51,7 @@ export function FeedbackWidget({
   const issueUrl = useMemo(() => {
     const title = encodeURIComponent(`${t('issueTitlePrefix')} ${pageTitle}`);
     const encodedBody = encodeURIComponent(body);
-    return `https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/issues/new?title=${title}&body=${encodedBody}`;
+    return `https://github.com/zuley/ui-ux-pro-max-skill-i18n/issues/new?title=${title}&body=${encodedBody}`;
   }, [body, pageTitle, t]);
 
   async function copy() {

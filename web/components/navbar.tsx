@@ -132,7 +132,7 @@ export function Navbar() {
               <LanguageSwitcher />
             
             <a 
-              href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" 
+              href="https://github.com/zuley/ui-ux-pro-max-skill-i18n" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center gap-1.5 min-[400px]:gap-2 px-2 min-[400px]:px-3 py-1 min-[400px]:py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs min-[400px]:text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

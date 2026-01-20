@@ -6,8 +6,8 @@ import { Languages } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' }
 ];
 

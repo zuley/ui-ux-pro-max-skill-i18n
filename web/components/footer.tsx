@@ -23,7 +23,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+                href="https://github.com/zuley/ui-ux-pro-max-skill-i18n"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"

@@ -3,8 +3,11 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
+import { Rocket } from 'lucide-react';
+
 export function Hero() {
   const t = useTranslations('hero');
+  const tCommon = useTranslations('gallery');
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0F172A] pt-20">
@@ -47,11 +50,9 @@ export function Hero() {
         </div>
 
         <div className="flex flex-row items-center justify-center gap-2 min-[400px]:gap-3 sm:gap-4 mb-6 min-[400px]:mb-8 sm:mb-16">
-          <Link href="/docs/getting-started" className="btn-primary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
-            {t('btnHow')}
-          </Link>
-          <Link href="#quick-start" className="btn-secondary text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
-            {t('btnDemos')}
+          <Link href="/docs/getting-started" className="btn-primary flex items-center gap-2 text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
+            <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
+            {tCommon('quickStart')}
           </Link>
         </div>
       </div>
