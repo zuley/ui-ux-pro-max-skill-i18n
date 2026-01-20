@@ -1,176 +1,158 @@
 # UI UX Pro Max
 
-<p align="center">
-  <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/releases"><img src="https://img.shields.io/github/v/release/nextlevelbuilder/ui-ux-pro-max-skill?style=for-the-badge&color=blue" alt="GitHub Release"></a>
-  <img src="https://img.shields.io/badge/reasoning_rules-100-green?style=for-the-badge" alt="100 Reasoning Rules">
-  <img src="https://img.shields.io/badge/UI_styles-57-purple?style=for-the-badge" alt="57 UI Styles">
-  <img src="https://img.shields.io/badge/python-3.x-yellow?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.x">
-  <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/nextlevelbuilder/ui-ux-pro-max-skill?style=for-the-badge&color=green" alt="License"></a>
-</p>
+> [English](i18n/README.en.md) | 简体中文
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/uipro-cli"><img src="https://img.shields.io/npm/v/uipro-cli?style=flat-square&logo=npm&label=CLI" alt="npm"></a>
-  <a href="https://www.npmjs.com/package/uipro-cli"><img src="https://img.shields.io/npm/dm/uipro-cli?style=flat-square&label=downloads" alt="npm downloads"></a>
-  <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/stargazers"><img src="https://img.shields.io/github/stars/nextlevelbuilder/ui-ux-pro-max-skill?style=flat-square&logo=github" alt="GitHub stars"></a>
-  <a href="https://paypal.me/uiuxpromax"><img src="https://img.shields.io/badge/PayPal-Support%20Development-00457C?style=flat-square&logo=paypal&logoColor=white" alt="PayPal"></a>
-</p>
-
-An AI skill that provides design intelligence for building professional UI/UX across multiple platforms and frameworks.
+一个为跨多个平台和框架构建专业 UI/UX 提供设计智能的 AI 技能。
 
 <p align="center">
   <img src="screenshots/website.png" alt="UI UX Pro Max" width="800">
 </p>
 
-<p align="center">
-  <b>If you find this useful, consider supporting the project:</b><br><br>
-  <a href="https://paypal.me/uiuxpromax"><img src="https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal Donate"></a>
-</p>
+## v2.0 新功能
 
-## What's New in v2.0
+### 智能设计系统生成
 
-### Intelligent Design System Generation
-
-The flagship feature of v2.0 is the **Design System Generator** - an AI-powered reasoning engine that analyzes your project requirements and generates a complete, tailored design system in seconds.
+v2.0 的旗舰功能是**设计系统生成器** - 一个由 AI 驱动的推理引擎，可以分析您的项目需求并在几秒钟内生成完整、定制的设计系统。
 
 ```
 +----------------------------------------------------------------------------------------+
-|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |
+|  目标：Serenity Spa - 推荐设计系统                                                        |
 +----------------------------------------------------------------------------------------+
 |                                                                                        |
-|  PATTERN: Hero-Centric + Social Proof                                                  |
-|     Conversion: Emotion-driven with trust elements                                     |
-|     CTA: Above fold, repeated after testimonials                                       |
-|     Sections:                                                                          |
-|       1. Hero                                                                          |
-|       2. Services                                                                      |
-|       3. Testimonials                                                                  |
-|       4. Booking                                                                       |
-|       5. Contact                                                                       |
+|  模式：以英雄区为中心 + 社会证明                                                             |
+|     转化：情感驱动，包含信任元素                                                             |
+|     CTA：首屏可见，在客户评价后重复                                                          |
+|     板块：                                                                              |
+|       1. 英雄区                                                                         |
+|       2. 服务                                                                           |
+|       3. 客户评价                                                                        |
+|       4. 预约                                                                           |
+|       5. 联系方式                                                                        |
 |                                                                                        |
-|  STYLE: Soft UI Evolution                                                              |
-|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |
-|     Best For: Wellness, beauty, lifestyle brands, premium services                     |
-|     Performance: Excellent | Accessibility: WCAG AA                                    |
+|  风格：柔和 UI 进化                                                                       |
+|     关键词：柔和阴影、微妙深度、平静、高级感、有机形状                                           |
+|     最适合：健康、美容、生活方式品牌、高端服务                                                  |
+|     性能：优秀 | 可访问性：WCAG AA                                                        |
 |                                                                                        |
-|  COLORS:                                                                               |
-|     Primary:    #E8B4B8 (Soft Pink)                                                    |
-|     Secondary:  #A8D5BA (Sage Green)                                                   |
-|     CTA:        #D4AF37 (Gold)                                                         |
-|     Background: #FFF5F5 (Warm White)                                                   |
-|     Text:       #2D3436 (Charcoal)                                                     |
-|     Notes: Calming palette with gold accents for luxury feel                           |
+|  颜色：                                                                                 |
+|     主色：    #E8B4B8 (柔和粉色)                                                         |
+|     辅助色：  #A8D5BA (鼠尾草绿)                                                         |
+|     CTA：     #D4AF37 (金色)                                                            |
+|     背景：    #FFF5F5 (暖白色)                                                           |
+|     文本：    #2D3436 (炭灰色)                                                           |
+|     说明：平静的调色板，带有金色点缀以营造奢华感                                               |
 |                                                                                        |
-|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |
-|     Mood: Elegant, calming, sophisticated                                              |
-|     Best For: Luxury brands, wellness, beauty, editorial                               |
-|     Google Fonts: https://fonts.google.com/share?selection.family=...                  |
+|  字体：Cormorant Garamond / Montserrat                                                 |
+|     氛围：优雅、平静、精致                                                                 |
+|     最适合：奢侈品牌、健康、美容、编辑                                                       |
+|     Google Fonts：https://fonts.google.com/share?selection.family=...                  |
 |                                                                                        |
-|  KEY EFFECTS:                                                                          |
-|     Soft shadows + Smooth transitions (200-300ms) + Gentle hover states                |
+|  关键效果：                                                                              |
+|     柔和阴影 + 平滑过渡 (200-300ms) + 温和的悬停状态                                         |
 |                                                                                        |
-|  AVOID (Anti-patterns):                                                                |
-|     Bright neon colors + Harsh animations + Dark mode + AI purple/pink gradients       |
+|  避免（反模式）：                                                                         |
+|     明亮的霓虹色 + 生硬的动画 + 深色模式 + AI 紫色/粉色渐变                                    |
 |                                                                                        |
-|  PRE-DELIVERY CHECKLIST:                                                               |
-|     [ ] No emojis as icons (use SVG: Heroicons/Lucide)                                 |
-|     [ ] cursor-pointer on all clickable elements                                       |
-|     [ ] Hover states with smooth transitions (150-300ms)                               |
-|     [ ] Light mode: text contrast 4.5:1 minimum                                        |
-|     [ ] Focus states visible for keyboard nav                                          |
-|     [ ] prefers-reduced-motion respected                                               |
-|     [ ] Responsive: 375px, 768px, 1024px, 1440px                                       |
+|  交付前检查清单：                                                                         |
+|     [ ] 不使用表情符号作为图标（使用 SVG：Heroicons/Lucide）                                |
+|     [ ] 所有可点击元素添加 cursor-pointer                                                 |
+|     [ ] 悬停状态使用平滑过渡 (150-300ms)                                                  |
+|     [ ] 浅色模式：文本对比度最低 4.5:1                                                     |
+|     [ ] 键盘导航的焦点状态可见                                                             |
+|     [ ] 遵守 prefers-reduced-motion                                                    |
+|     [ ] 响应式：375px、768px、1024px、1440px                                             |
 |                                                                                        |
 +----------------------------------------------------------------------------------------+
 ```
 
-### How Design System Generation Works
+### 设计系统生成的工作原理
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  1. USER REQUEST                                                │
-│     "Build a landing page for my beauty spa"                    │
+│  1. 用户请求                                                      │
+│     "为我的美容水疗中心构建一个落地页"                                │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  2. MULTI-DOMAIN SEARCH (5 parallel searches)                   │
-│     • Product type matching (100 categories)                    │
-│     • Style recommendations (57 styles)                         │
-│     • Color palette selection (95 palettes)                     │
-│     • Landing page patterns (24 patterns)                       │
-│     • Typography pairing (56 font combinations)                 │
+│  2. 多领域搜索（5 个并行搜索）                                      │
+│     • 产品类型匹配（100 个类别）                                    │
+│     • 风格推荐（57 种风格）                                        │
+│     • 调色板选择（95 个调色板）                                     │
+│     • 落地页模式（24 种模式）                                       │
+│     • 字体配对（56 种字体组合）                                     │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  3. REASONING ENGINE                                            │
-│     • Match product → UI category rules                         │
-│     • Apply style priorities (BM25 ranking)                     │
-│     • Filter anti-patterns for industry                         │
-│     • Process decision rules (JSON conditions)                  │
+│  3. 推理引擎                                                      │
+│     • 匹配产品 → UI 类别规则                                       │
+│     • 应用风格优先级（BM25 排名）                                   │
+│     • 过滤行业反模式                                               │
+│     • 处理决策规则（JSON 条件）                                     │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  4. COMPLETE DESIGN SYSTEM OUTPUT                               │
-│     Pattern + Style + Colors + Typography + Effects             │
-│     + Anti-patterns to avoid + Pre-delivery checklist           │
+│  4. 完整设计系统输出                                               │
+│     模式 + 风格 + 颜色 + 字体 + 效果                                │
+│     + 要避免的反模式 + 交付前检查清单                                │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 100 Industry-Specific Reasoning Rules
+### 100 条行业特定推理规则
 
-The reasoning engine includes specialized rules for:
+推理引擎包含以下专业规则：
 
-| Category | Examples |
+| 类别 | 示例 |
 |----------|----------|
-| **Tech & SaaS** | SaaS, Micro SaaS, B2B Enterprise, Developer Tools, AI/Chatbot Platform |
-| **Finance** | Fintech, Banking, Crypto, Insurance, Trading Dashboard |
-| **Healthcare** | Medical Clinic, Pharmacy, Dental, Veterinary, Mental Health |
-| **E-commerce** | General, Luxury, Marketplace, Subscription Box |
-| **Services** | Beauty/Spa, Restaurant, Hotel, Legal, Consulting |
-| **Creative** | Portfolio, Agency, Photography, Gaming, Music Streaming |
-| **Emerging Tech** | Web3/NFT, Spatial Computing, Quantum Computing, Autonomous Systems |
+| **科技与 SaaS** | SaaS、微型 SaaS、B2B 企业、开发者工具、AI/聊天机器人平台 |
+| **金融** | 金融科技、银行、加密货币、保险、交易仪表板 |
+| **医疗保健** | 医疗诊所、药房、牙科、兽医、心理健康 |
+| **电子商务** | 通用、奢侈品、市场、订阅盒 |
+| **服务** | 美容/水疗、餐厅、酒店、法律、咨询 |
+| **创意** | 作品集、代理、摄影、游戏、音乐流媒体 |
+| **新兴技术** | Web3/NFT、空间计算、量子计算、自主系统 |
 
-Each rule includes:
-- **Recommended Pattern** - Landing page structure
-- **Style Priority** - Best matching UI styles
-- **Color Mood** - Industry-appropriate palettes
-- **Typography Mood** - Font personality matching
-- **Key Effects** - Animations and interactions
-- **Anti-Patterns** - What NOT to do (e.g., "AI purple/pink gradients" for banking)
+每条规则包括：
+- **推荐模式** - 落地页结构
+- **风格优先级** - 最佳匹配的 UI 风格
+- **颜色氛围** - 适合行业的调色板
+- **字体氛围** - 字体个性匹配
+- **关键效果** - 动画和交互
+- **反模式** - 不应该做什么（例如，银行业的"AI 紫色/粉色渐变"）
 
-## Features
+## 功能特性
 
-- **57 UI Styles** - Glassmorphism, Claymorphism, Minimalism, Brutalism, Neumorphism, Bento Grid, Dark Mode, AI-Native UI, and more
-- **95 Color Palettes** - Industry-specific palettes for SaaS, E-commerce, Healthcare, Fintech, Beauty, etc.
-- **56 Font Pairings** - Curated typography combinations with Google Fonts imports
-- **24 Chart Types** - Recommendations for dashboards and analytics
-- **11 Tech Stacks** - React, Next.js, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui
-- **98 UX Guidelines** - Best practices, anti-patterns, and accessibility rules
-- **100 Reasoning Rules** - Industry-specific design system generation (NEW in v2.0)
+- **57 种 UI 风格** - 玻璃态、粘土态、极简主义、野兽派、新拟态、便当网格、深色模式、AI 原生 UI 等
+- **95 个调色板** - 针对 SaaS、电子商务、医疗保健、金融科技、美容等行业的专用调色板
+- **56 种字体配对** - 精选的字体组合，包含 Google Fonts 导入
+- **24 种图表类型** - 仪表板和分析的推荐
+- **11 个技术栈** - React、Next.js、Vue、Nuxt.js、Nuxt UI、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind、shadcn/ui
+- **98 条 UX 指南** - 最佳实践、反模式和可访问性规则
+- **100 条推理规则** - 行业特定的设计系统生成（v2.0 新增）
 
-## Installation
+## 安装
 
-### Using Claude Marketplace (Claude Code)
+### 使用 Claude 市场（Claude Code）
 
-Install directly in Claude Code with two commands:
+在 Claude Code 中使用两个命令直接安装：
 
 ```
 /plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
 /plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 ```
 
-### Using CLI (Recommended)
+### 使用 CLI（推荐）
 
 ```bash
-# Install CLI globally
+# 全局安装 CLI
 npm install -g uipro-cli
 
-# Go to your project
+# 进入您的项目
 cd /path/to/your/project
 
-# Install for your AI assistant
+# 为您的 AI 助手安装
 uipro init --ai claude      # Claude Code
 uipro init --ai cursor      # Cursor
 uipro init --ai windsurf    # Windsurf
@@ -182,22 +164,22 @@ uipro init --ai qoder       # Qoder
 uipro init --ai roocode     # Roo Code
 uipro init --ai gemini      # Gemini CLI
 uipro init --ai trae        # Trae
-uipro init --ai all         # All assistants
+uipro init --ai all         # 所有助手
 ```
 
-### Other CLI Commands
+### 其他 CLI 命令
 
 ```bash
-uipro versions              # List available versions
-uipro update                # Update to latest version
-uipro init --offline        # Skip GitHub download, use bundled assets
+uipro versions              # 列出可用版本
+uipro update                # 更新到最新版本
+uipro init --offline        # 跳过 GitHub 下载，使用捆绑资源
 ```
 
-### Manual Installation
+### 手动安装
 
-Copy the appropriate folders to your project:
+将相应的文件夹复制到您的项目：
 
-| AI Assistant   | Folders to Copy                                                      |
+| AI 助手   | 要复制的文件夹                                                      |
 | -------------- | -------------------------------------------------------------------- |
 | Claude Code    | `.claude/skills/ui-ux-pro-max/`                                      |
 | Cursor         | `.cursor/commands/ui-ux-pro-max.md` + `.shared/ui-ux-pro-max/`       |
@@ -211,12 +193,12 @@ Copy the appropriate folders to your project:
 | Gemini CLI     | `.gemini/skills/ui-ux-pro-max/` + `.shared/ui-ux-pro-max/`           |
 | Trae           | `.trae/skills/ui-ux-pro-max/` + `.shared/ui-ux-pro-max/`             |
 
-## Prerequisites
+## 前置要求
 
-Python 3.x is required for the search script.
+搜索脚本需要 Python 3.x。
 
 ```bash
-# Check if Python is installed
+# 检查是否安装了 Python
 python3 --version
 
 # macOS
@@ -229,175 +211,171 @@ sudo apt update && sudo apt install python3
 winget install Python.Python.3.12
 ```
 
-## Usage
+## 使用方法
 
 ### Claude Code
 
-The skill activates automatically when you request UI/UX work. Just chat naturally:
+当您请求 UI/UX 工作时，该技能会自动激活。只需自然对话：
 
 ```
-Build a landing page for my SaaS product
+为我的 SaaS 产品构建一个落地页
 ```
 
 ### Cursor / Windsurf / Antigravity
 
-Use the slash command to invoke the skill:
+使用斜杠命令调用该技能：
 
 ```
-/ui-ux-pro-max Build a landing page for my SaaS product
+/ui-ux-pro-max 为我的 SaaS 产品构建一个落地页
 ```
 
 ### Kiro
 
-Type `/` in chat to see available commands, then select `ui-ux-pro-max`:
+在聊天中输入 `/` 查看可用命令，然后选择 `ui-ux-pro-max`：
 
 ```
-/ui-ux-pro-max Build a landing page for my SaaS product
+/ui-ux-pro-max 为我的 SaaS 产品构建一个落地页
 ```
 
 ### GitHub Copilot
 
-In VS Code with Copilot, type `/` in chat to see available prompts, then select `ui-ux-pro-max`:
+在 VS Code 中使用 Copilot，在聊天中输入 `/` 查看可用提示，然后选择 `ui-ux-pro-max`：
 
 ```
-/ui-ux-pro-max Build a landing page for my SaaS product
+/ui-ux-pro-max 为我的 SaaS 产品构建一个落地页
 ```
 
 ### Codex CLI
 
-The skill activates automatically for UI/UX requests. You can also invoke it explicitly:
+该技能会自动激活 UI/UX 请求。您也可以显式调用它：
 
 ```
-$ui-ux-pro-max Build a landing page for my SaaS product
+$ui-ux-pro-max 为我的 SaaS 产品构建一个落地页
 ```
 
 ### Qoder
 
-The skill activates automatically when you request UI/UX work:
+当您请求 UI/UX 工作时，该技能会自动激活：
 
 ```
-Build a landing page for my SaaS product
+为我的 SaaS 产品构建一个落地页
 ```
 
 ### Roo Code
 
-The skill activates automatically when you request UI/UX work:
+当您请求 UI/UX 工作时，该技能会自动激活：
 
 ```
-Build a landing page for my SaaS product
+为我的 SaaS 产品构建一个落地页
 ```
 
 ### Gemini CLI
 
-The skill activates automatically when you request UI/UX work:
+当您请求 UI/UX 工作时，该技能会自动激活：
 
 ```
-Build a landing page for my SaaS product
+为我的 SaaS 产品构建一个落地页
 ```
 
 ### Trae
 
-_Disclaimer: Trae skill is in beta. Please report any issues or feedback._
+_免责声明：Trae 技能处于测试阶段。请报告任何问题或反馈。_
 
-To use Trae skill, you need to switch to **SOLO** mode. If your request is related to skills, skills will be used:
-
-```
-Build a landing page (frontend ONLY) for my SaaS product.
-```
-
-### Example Prompts
+要使用 Trae 技能，您需要切换到 **SOLO** 模式。如果您的请求与技能相关，将使用技能：
 
 ```
-Build a landing page for my SaaS product
-
-Create a dashboard for healthcare analytics
-
-Design a portfolio website with dark mode
-
-Make a mobile app UI for e-commerce
-
-Build a fintech banking app with dark theme
+为我的 SaaS 产品构建一个落地页（仅前端）。
 ```
 
-### How It Works
+### 示例提示
 
-1. **You ask** - Request any UI/UX task (build, design, create, implement, review, fix, improve)
-2. **Design System Generated** - The AI automatically generates a complete design system using the reasoning engine
-3. **Smart recommendations** - Based on your product type and requirements, it finds the best matching styles, colors, and typography
-4. **Code generation** - Implements the UI with proper colors, fonts, spacing, and best practices
-5. **Pre-delivery checks** - Validates against common UI/UX anti-patterns
+```
+为我的 SaaS 产品构建一个落地页
 
-### Supported Stacks
+为医疗保健分析创建一个仪表板
 
-The skill provides stack-specific guidelines for:
+设计一个带深色模式的作品集网站
 
-- **HTML + Tailwind** (default)
+为电子商务制作一个移动应用 UI
+
+构建一个带深色主题的金融科技银行应用
+```
+
+### 工作原理
+
+1. **您提问** - 请求任何 UI/UX 任务（构建、设计、创建、实现、审查、修复、改进）
+2. **生成设计系统** - AI 使用推理引擎自动生成完整的设计系统
+3. **智能推荐** - 根据您的产品类型和需求，找到最佳匹配的风格、颜色和字体
+4. **代码生成** - 使用适当的颜色、字体、间距和最佳实践实现 UI
+5. **交付前检查** - 验证常见的 UI/UX 反模式
+
+### 支持的技术栈
+
+该技能为以下技术栈提供特定指南：
+
+- **HTML + Tailwind**（默认）
 - **React** / **Next.js** / **shadcn/ui**
 - **Vue** / **Nuxt.js** / **Nuxt UI** / **Svelte**
 - **SwiftUI** / **React Native** / **Flutter**
 
-Just mention your preferred stack in the prompt, or let it default to HTML + Tailwind.
+只需在提示中提及您首选的技术栈，或让它默认为 HTML + Tailwind。
 
-## Design System Command (Advanced)
+## 设计系统命令（高级）
 
-For direct access to the design system generator:
+直接访问设计系统生成器：
 
 ```bash
-# Generate design system with ASCII output
+# 使用 ASCII 输出生成设计系统
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --design-system -p "Serenity Spa"
 
-# Generate with Markdown output
+# 使用 Markdown 输出生成
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech banking" --design-system -f markdown
 
-# Domain-specific search
+# 特定领域搜索
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "glassmorphism" --domain style
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant serif" --domain typography
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "dashboard" --domain chart
 
-# Stack-specific guidelines
+# 特定技术栈指南
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "form validation" --stack react
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "responsive layout" --stack html-tailwind
 ```
 
-### Persist Design System (Master + Overrides Pattern)
+### 持久化设计系统（主文件 + 覆盖模式）
 
-Save your design system to files for **hierarchical retrieval across sessions**:
+将您的设计系统保存到文件以实现**跨会话的分层检索**：
 
 ```bash
-# Generate and persist to design-system/MASTER.md
+# 生成并持久化到 design-system/MASTER.md
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp"
 
-# Also create a page-specific override file
+# 同时创建页面特定的覆盖文件
 python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp" --page "dashboard"
 ```
 
-This creates a `design-system/` folder structure:
+这将创建一个 `design-system/` 文件夹结构：
 
 ```
 design-system/
-├── MASTER.md           # Global Source of Truth (colors, typography, spacing, components)
+├── MASTER.md           # 全局真实来源（颜色、字体、间距、组件）
 └── pages/
-    └── dashboard.md    # Page-specific overrides (only deviations from Master)
+    └── dashboard.md    # 页面特定覆盖（仅与主文件的偏差）
 ```
 
-**How hierarchical retrieval works:**
-1. When building a specific page (e.g., "Checkout"), first check `design-system/pages/checkout.md`
-2. If the page file exists, its rules **override** the Master file
-3. If not, use `design-system/MASTER.md` exclusively
+**分层检索的工作原理：**
+1. 构建特定页面（例如"结账"）时，首先检查 `design-system/pages/checkout.md`
+2. 如果页面文件存在，其规则**覆盖**主文件
+3. 如果不存在，则专门使用 `design-system/MASTER.md`
 
-**Context-aware retrieval prompt:**
+**上下文感知检索提示：**
 ```
-I am building the [Page Name] page. Please read design-system/MASTER.md.
-Also check if design-system/pages/[page-name].md exists.
-If the page file exists, prioritize its rules.
-If not, use the Master rules exclusively.
-Now, generate the code...
+我正在构建 [页面名称] 页面。请阅读 design-system/MASTER.md。
+同时检查 design-system/pages/[page-name].md 是否存在。
+如果页面文件存在，优先使用其规则。
+如果不存在，则专门使用主文件规则。
+现在，生成代码...
 ```
 
-## Star History
+## 许可证
 
-[![Star History Chart](https://api.star-history.com/svg?repos=nextlevelbuilder/ui-ux-pro-max-skill&type=Date)](https://star-history.com/#nextlevelbuilder/ui-ux-pro-max-skill&Date)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+本项目采用 [MIT 许可证](LICENSE)。
