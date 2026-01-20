@@ -20,6 +20,11 @@ export function Navbar() {
   }));
   const [searchOpen, setSearchOpen] = useState(false);
   const mobileOpen = mobileState.open && mobileState.path === pathname;
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    if (href.startsWith('/docs')) return pathname.startsWith('/docs');
+    return pathname === href;
+  };
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -76,35 +81,23 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
+                  className={[
+                    'transition-colors duration-200 cursor-pointer',
+                    isActive(l.href)
+                      ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  ].join(' ')}
                 >
                   {l.label}
                 </Link>
               ))}
 
-              <div className="relative group">
-                <button
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
-                  type="button"
-                >
-                  {t('examples')}
-                </button>
-                <div className="absolute left-0 top-full pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
-                  <div className="glass-card p-2 min-w-72">
-                    <Link
-                      href="/#styles"
-                      className="block rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
-                    >
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">
-                        {t('examples')}
-                      </div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">
-                        {t('gallerySubtitle')}
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <Link
+                href="/#styles"
+                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
+              >
+                {t('examples')}
+              </Link>
             </div>
 
             <div className="flex items-center gap-1.5 sm:gap-3">
@@ -164,7 +157,12 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                  className={[
+                    'rounded-lg px-3 py-2 text-sm font-medium transition-colors cursor-pointer',
+                    isActive(l.href)
+                      ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
+                      : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
+                  ].join(' ')}
                 >
                   {l.label}
                 </Link>
