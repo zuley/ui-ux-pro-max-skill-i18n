@@ -1,19 +1,131 @@
 {
   "common": {
-    "title": "OpenNext 多语言应用",
-    "description": "一个现代化的 Next.js 应用，支持多语言和主题切换",
+    "title": "UI UX Pro Max",
+    "description": "Claude Code 的设计智能助手",
     "switchTheme": "切换主题",
     "switchLanguage": "切换语言"
   },
-  "home": {
-    "welcome": "欢迎",
-    "subtitle": "体验流畅的主题过渡和多语言支持",
-    "features": "特性",
-    "feature1": "深色/浅色主题",
-    "feature1Desc": "平滑的圆形扩展主题切换动画",
-    "feature2": "多语言支持",
-    "feature2Desc": "支持英语、中文和越南语",
-    "feature3": "Cloudflare Workers",
-    "feature3Desc": "针对边缘部署优化"
+  "navbar": {
+    "features": "功能特性",
+    "stacks": "技术栈",
+    "styles": "设计风格",
+    "github": "18.3k"
+  },
+  "hero": {
+    "title1": "UI UX Pro Max",
+    "title2": "设计智能",
+    "subtitle": "可搜索的 UI 风格、配色方案、字体搭配、图表类型和 UX 指南数据库。利用 AI 驱动的设计建议构建精美界面。",
+    "terminalCmd": "uipro init --ai",
+    "btnHow": "工作原理",
+    "btnDemos": "查看演示"
+  },
+  "stats": {
+    "styles": "UI 风格",
+    "palettes": "配色方案",
+    "fonts": "字体搭配",
+    "stacks": "技术栈",
+    "charts": "图表类型",
+    "landing": "落地页模式"
+  },
+  "features": {
+    "title": "构建精美 UI 所需的一切",
+    "subtitle": "触手可及的全面设计智能。搜索、发现并利用 AI 驱动的建议实现令人惊叹的界面。",
+    "sections": {
+      "styles": {
+        "title": "设计风格",
+        "description": "毛玻璃、新拟态、极简主义、粗野主义、极光 UI 以及 45+ 种更多风格，包含颜色、效果和框架兼容性。",
+        "tags": ["毛玻璃", "深色模式", "动效驱动"]
+      },
+      "colors": {
+        "title": "配色方案",
+        "description": "针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
+        "tags": ["SaaS", "医疗", "电商"]
+      },
+      "typography": {
+        "title": "字体排印",
+        "description": "50+ 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
+        "tags": ["Space Grotesk", "Inter", "Playfair"]
+      },
+      "charts": {
+        "title": "图表类型",
+        "description": "数据可视化建议，包含库推荐（Chart.js, Recharts, D3.js）和无障碍说明。",
+        "tags": ["折线图", "柱状图", "饼图", "热力图"]
+      },
+      "landing": {
+        "title": "落地页模式",
+        "description": "14 种转化率优化的页面结构，包含 CTA 放置策略和颜色建议。",
+        "tags": ["首屏 + 特性", "视频优先", "定价页"]
+      },
+      "ux": {
+        "title": "UX 指南",
+        "description": "关于动画、无障碍、层级、加载状态等的最佳实践和反模式。",
+        "tags": ["动画", "无障碍", "性能"]
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "工作原理",
+    "subtitle": "通过 6 个智能步骤，从提示词到生产级 UI",
+    "steps": {
+      "1": {
+        "title": "你的提示词",
+        "content": "为宠物美容服务构建一个落地页。风格俏皮友好，带有预约 CTA。"
+      },
+      "2": {
+        "title": "AI 推理",
+        "content": "产品: 宠物服务\n风格: 俏皮, 友好\n页面: 落地页\nCTA: 预约"
+      },
+      "3": {
+        "title": "搜索设计库",
+        "content": "产品: 宠物科技 App\n风格: 微交互\n字体: Fredoka + Nunito"
+      },
+      "4": {
+        "title": "生成代码",
+        "content": "<section class=\"bg-[#F8FAFC]\">..."
+      },
+      "5": {
+        "title": "质量检查",
+        "content": "SVG 图标 (无 emoji)\n悬停反馈\n深色模式对比度"
+      },
+      "6": {
+        "title": "最终结果",
+        "content": "宠物美容 & Spa 演示"
+      }
+    }
+  },
+  "techStacks": {
+    "title": "支持 8 种技术栈",
+    "subtitle": "特定框架的最佳实践、模式和代码示例。获取为你技术栈量身定制的指南。",
+    "stacks": {
+      "react": { "title": "React", "desc": "状态, Hooks, 性能模式" },
+      "nextjs": { "title": "Next.js", "desc": "SSR, 路由, API 路由" },
+      "vue": { "title": "Vue", "desc": "组合式 API, Pinia, Vue Router" },
+      "svelte": { "title": "Svelte", "desc": "Runes, Stores, SvelteKit" },
+      "swiftui": { "title": "SwiftUI", "desc": "视图, 状态, 导航" },
+      "reactnative": { "title": "React Native", "desc": "组件, 导航, 列表" },
+      "flutter": { "title": "Flutter", "desc": "Widgets, 状态, 主题" },
+      "tailwind": { "title": "Tailwind", "desc": "工具类, 响应式, 无障碍" }
+    }
+  },
+  "gallery": {
+    "title": "39 个网站演示画廊",
+    "subtitle": "浏览使用 UI UX Pro Max 构建的真实网站演示。点击查看实时演示。",
+    "filters": {
+      "category": "分类",
+      "mode": "模式"
+    },
+    "viewDemo": "查看演示",
+    "showPrompt": "显示提示词",
+    "readyTitle": "准备好构建精美界面了吗？",
+    "readySubtitle": "开始使用 UI UX Pro Max for Claude Code。触手可及的设计智能。",
+    "getOnGithub": "访问 GitHub",
+    "learnMore": "了解更多",
+    "features": ["开源", "兼容 Claude Code", "生产就绪"]
+  },
+  "footer": {
+    "description": "Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
+    "resources": "资源",
+    "database": "数据库",
+    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)。来自 NextLevelBuilder 核心团队的微型项目"
   }
 }

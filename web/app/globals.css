@@ -1,51 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
+@config "../tailwind.config.ts";
+
+@theme {
   --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
   --color-secondary: #3B82F6;
-  --color-cta: #F97316;
+  --color-accent: #F97316;
   --color-background: #F8FAFC;
   --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-light-bg: #F8FAFC;
+  --color-light-card: #FFFFFF;
+  --color-light-text: #1E293B;
+  --color-light-muted: #64748B;
+  --color-light-border: #E2E8F0;
+  --color-dark-bg: #0F172A;
+  --color-dark-card: #1E293B;
+  --color-dark-text: #F1F5F9;
+  --color-dark-muted: #94A3B8;
+  --color-dark-border: #334155;
+}
+
+:root {
+  --background: var(--color-light-bg);
+  --foreground: var(--color-light-text);
 }
 
 .dark {
-  --color-background: #0F172A;
-  --color-text: #F1F5F9;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-::view-transition-old(root) {
-  z-index: 1;
-}
-
-::view-transition-new(root) {
-  z-index: 9999;
-}
-
-.dark::view-transition-old(root) {
-  z-index: 9999;
-}
-
-.dark::view-transition-new(root) {
-  z-index: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none !important;
-  }
+  --background: var(--color-dark-bg);
+  --foreground: var(--color-dark-text);
 }
 
 body {
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.glass-card {
+  @apply backdrop-blur-lg bg-white/80 border border-gray-200 shadow-lg rounded-xl transition-colors duration-300;
+}
+
+.dark .glass-card {
+  @apply bg-gray-800/80 border-gray-700;
+}
+
+.aurora-bg {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 100% 0%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  filter: blur(100px);
+  z-index: -1;
+  @apply transition-opacity duration-500;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-orange-500;
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all shadow-lg hover:shadow-blue-500/20;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-lg bg-white text-gray-900 border border-gray-200 hover:bg-gray-50 font-medium transition-all;
+}
+
+.dark .btn-secondary {
+  @apply bg-gray-800 text-white border-gray-700 hover:bg-gray-700;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

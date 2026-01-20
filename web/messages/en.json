@@ -1,19 +1,131 @@
 {
   "common": {
-    "title": "OpenNext Multi-language App",
-    "description": "A modern Next.js application with multi-language support and theme switching",
+    "title": "UI UX Pro Max",
+    "description": "Design Intelligence for Claude Code",
     "switchTheme": "Switch Theme",
     "switchLanguage": "Switch Language"
   },
-  "home": {
-    "welcome": "Welcome",
-    "subtitle": "Experience seamless theme transitions and multi-language support",
+  "navbar": {
     "features": "Features",
-    "feature1": "Dark/Light Theme",
-    "feature1Desc": "Smooth circular expansion theme switching animation",
-    "feature2": "Multi-language",
-    "feature2Desc": "Support for English, Chinese, and Vietnamese",
-    "feature3": "Cloudflare Workers",
-    "feature3Desc": "Optimized for edge deployment"
+    "stacks": "Stacks",
+    "styles": "Styles",
+    "github": "18.3k"
+  },
+  "hero": {
+    "title1": "UI UX Pro Max",
+    "title2": "Design Intelligence",
+    "subtitle": "Searchable database of UI styles, color palettes, font pairings, chart types, and UX guidelines. Build beautiful interfaces with AI-powered design recommendations.",
+    "terminalCmd": "uipro init --ai",
+    "btnHow": "How it Works",
+    "btnDemos": "View Demos"
+  },
+  "stats": {
+    "styles": "UI Styles",
+    "palettes": "Color Palettes",
+    "fonts": "Font Pairings",
+    "stacks": "Tech Stacks",
+    "charts": "Chart Types",
+    "landing": "Landing Patterns"
+  },
+  "features": {
+    "title": "Everything You Need for Beautiful UI",
+    "subtitle": "Comprehensive design intelligence at your fingertips. Search, discover, and implement stunning interfaces with AI-powered recommendations.",
+    "sections": {
+      "styles": {
+        "title": "Design Styles",
+        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, and 45+ more styles with colors, effects, and framework compatibility.",
+        "tags": ["Glassmorphism", "Dark Mode", "Motion-Driven"]
+      },
+      "colors": {
+        "title": "Color Palettes",
+        "description": "Product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
+        "tags": ["SaaS", "Healthcare", "E-commerce"]
+      },
+      "typography": {
+        "title": "Typography",
+        "description": "50+ font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
+        "tags": ["Space Grotesk", "Inter", "Playfair"]
+      },
+      "charts": {
+        "title": "Chart Types",
+        "description": "Data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
+        "tags": ["Line", "Bar", "Pie", "Heatmap"]
+      },
+      "landing": {
+        "title": "Landing Patterns",
+        "description": "14 conversion-optimized page structures with CTA placement strategies and color recommendations.",
+        "tags": ["Hero + Features", "Video-First", "Pricing"]
+      },
+      "ux": {
+        "title": "UX Guidelines",
+        "description": "Best practices and anti-patterns for animation, accessibility, z-index, loading states, and more.",
+        "tags": ["Animation", "A11y", "Performance"]
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "From prompt to production-ready UI in 6 intelligent steps",
+    "steps": {
+      "1": {
+        "title": "Your Prompt",
+        "content": "Build a landing page for a pet grooming service. Playful and friendly style, with booking CTA."
+      },
+      "2": {
+        "title": "AI Reasoning",
+        "content": "Product: pet-service\nStyle: playful, friendly\nPage: landing\nCTA: booking"
+      },
+      "3": {
+        "title": "Search Design Database",
+        "content": "PRODUCT: Pet Tech App\nSTYLE: Micro-interactions\nTYPOGRAPHY: Fredoka + Nunito"
+      },
+      "4": {
+        "title": "Generate Code",
+        "content": "<section class=\"bg-[#F8FAFC]\">..."
+      },
+      "5": {
+        "title": "Quality Checklist",
+        "content": "SVG icons (no emoji)\nHover feedback\nDark mode contrast"
+      },
+      "6": {
+        "title": "Final Result",
+        "content": "Pet Grooming & Spa Demo"
+      }
+    }
+  },
+  "techStacks": {
+    "title": "8 Tech Stacks Supported",
+    "subtitle": "Framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
+    "stacks": {
+      "react": { "title": "React", "desc": "State, hooks, performance patterns" },
+      "nextjs": { "title": "Next.js", "desc": "SSR, routing, API routes" },
+      "vue": { "title": "Vue", "desc": "Composition API, Pinia, Vue Router" },
+      "svelte": { "title": "Svelte", "desc": "Runes, stores, SvelteKit" },
+      "swiftui": { "title": "SwiftUI", "desc": "Views, State, Navigation" },
+      "reactnative": { "title": "React Native", "desc": "Components, Navigation, Lists" },
+      "flutter": { "title": "Flutter", "desc": "Widgets, State, Theming" },
+      "tailwind": { "title": "Tailwind", "desc": "Utilities, responsive, a11y" }
+    }
+  },
+  "gallery": {
+    "title": "39 Website Demos Gallery",
+    "subtitle": "Browse real-world website demos built with UI UX Pro Max. Click to view live demos.",
+    "filters": {
+      "category": "Category",
+      "mode": "Mode"
+    },
+    "viewDemo": "View Demo",
+    "showPrompt": "Show Prompt",
+    "readyTitle": "Ready to Build Beautiful Interfaces?",
+    "readySubtitle": "Get started with UI UX Pro Max skill for Claude Code. Design intelligence at your fingertips.",
+    "getOnGithub": "Get on GitHub",
+    "learnMore": "Learn More",
+    "features": ["Open Source", "Claude Code Compatible", "Production Ready"]
+  },
+  "footer": {
+    "description": "Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
+    "resources": "Resources",
+    "database": "Database",
+    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max). A nano project from NextLevelBuilder Core Team"
   }
 }

@@ -40,11 +40,11 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+        className="flex items-center gap-2 p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
         aria-label={t('switchLanguage')}
       >
-        <Languages className="w-5 h-5 text-gray-800 dark:text-gray-200" />
-        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+        <Languages className="w-5 h-5" />
+        <span className="text-sm font-medium hidden sm:inline">
           {currentLanguage?.code.toUpperCase()}
         </span>
       </button>
@@ -60,7 +60,7 @@ export function LanguageSwitcher() {
               }`}
             >
               <span className="text-2xl">{lang.flag}</span>
-              <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+              <span className="text-sm font-medium text-gray-900 dark:text-white">
                 {lang.name}
               </span>
             </button>
