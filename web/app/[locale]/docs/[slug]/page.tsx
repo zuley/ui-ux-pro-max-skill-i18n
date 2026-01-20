@@ -69,9 +69,6 @@ export default async function DocPage({
 
         {content}
 
-        <ClientOnly>
-        </ClientOnly>
-
         <div className="mt-10 pt-6 border-t border-gray-200/70 dark:border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {prev ? (
             <Link

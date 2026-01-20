@@ -1,6 +1,8 @@
 name = "opennext-multilang-app"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = "out"
+compatibility_flags = ["nodejs_compat"]
+main = ".open-next/worker.js"
 
-[site]
-bucket = "./out"
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
