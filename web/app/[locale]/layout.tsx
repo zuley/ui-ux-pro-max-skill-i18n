@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/lib/theme-context';
+import { AnnouncementBar } from '@/components/announcement-bar';
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
 
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+            <AnnouncementBar />
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>

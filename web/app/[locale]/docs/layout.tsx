@@ -15,9 +15,8 @@ export default async function DocsLayout({
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0F172A] transition-colors duration-300">
       <Navbar />
-      <div className="pt-24 pb-16">{children}</div>
+      <div className="pt-28 pb-16">{children}</div>
       <Footer />
     </div>
   );
 }
-

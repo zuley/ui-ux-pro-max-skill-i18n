@@ -7,6 +7,10 @@
     "switchToDark": "Switch to dark mode",
     "switchLanguage": "Switch Language"
   },
+  "announcement": {
+    "text": "This is an unofficial multilingual translation site for ui-ux-pro-max-skill.",
+    "link": "Official GitHub repo"
+  },
   "navbar": {
     "home": "Home",
     "docs": "Docs",

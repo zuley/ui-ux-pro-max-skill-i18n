@@ -7,6 +7,10 @@
     "switchToDark": "切换到深色模式",
     "switchLanguage": "切换语言"
   },
+  "announcement": {
+    "text": "本站为 ui-ux-pro-max-skill 的非官方多语言翻译站。",
+    "link": "GitHub 官方仓库"
+  },
   "navbar": {
     "home": "首页",
     "docs": "文档",

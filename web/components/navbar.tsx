@@ -48,7 +48,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-2 min-[400px]:top-4 left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto transition-all duration-300">
+      <nav className="fixed top-[36px] min-[400px]:top-[44px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-40 glass-card max-w-7xl mx-auto transition-all duration-300">
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
             <Link href="/" className="flex items-center gap-1.5 min-[400px]:gap-2 group">

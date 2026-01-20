@@ -7,6 +7,10 @@
     "switchToDark": "Switch to dark mode",
     "switchLanguage": "Switch Language"
   },
+  "announcement": {
+    "text": "Trang này là bản dịch đa ngôn ngữ không chính thức của ui-ux-pro-max-skill.",
+    "link": "Kho GitHub chính thức"
+  },
   "navbar": {
     "home": "Home",
     "docs": "Docs",
