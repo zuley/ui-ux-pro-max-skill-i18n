@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "WebSearch",
+      "Bash(pnpm run dev:*)"
+    ]
+  }
+}
