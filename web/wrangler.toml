@@ -1,5 +1,5 @@
-name = "opennext-multilang-app"
-compatibility_date = "2024-01-01"
+name = "ui-ux-pro-max-skill"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
 
