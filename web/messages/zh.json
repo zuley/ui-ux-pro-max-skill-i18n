@@ -20,7 +20,6 @@
     "features": "功能特性",
     "stacks": "技术栈",
     "styles": "设计风格",
-    "github": "Star on GitHub",
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单"
   },
@@ -607,6 +606,6 @@
     "description": "Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
     "resources": "资源",
     "database": "数据库",
-    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)\n来自 NextLevelBuilder 核心团队的微型项目"
+    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)"
   }
 }

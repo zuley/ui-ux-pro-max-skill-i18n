@@ -17,7 +17,6 @@
     "tutorial": "Tutorial",
     "examples": "Examples",
     "gallerySubtitle": "View all 39+ design system demos",
-    "github": "Star on GitHub",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -604,6 +603,6 @@
     "description": "Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
     "resources": "Resources",
     "database": "Database",
-    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)\nA nano project from NextLevelBuilder Core Team"
+    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"
   }
 }

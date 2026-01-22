@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { Link, usePathname } from '@/i18n/routing';
-import { Github, Menu, Search, X } from 'lucide-react';
+import { Menu, Search, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { SearchModal } from '@/components/search/search-modal';
 import { docsNav } from '@/content/docs/nav';
@@ -123,18 +123,6 @@ export function Navbar() {
 
               <ThemeToggle />
               <LanguageSwitcher />
-            
-            <a 
-              href="https://github.com/zuley/ui-ux-pro-max-skill-i18n" 
-              target="_blank" 
-              rel="noopener noreferrer nofollow" 
-              aria-label={t('github')}
-              title={t('github')}
-              className="inline-flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-            </a>
-
               <button
                 onClick={() =>
                   setMobileState((prev) => ({
