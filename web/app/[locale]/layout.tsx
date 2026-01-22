@@ -60,6 +60,18 @@ export default async function LocaleLayout({
               "(()=>{try{const t=localStorage.getItem('theme');const d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.style.colorScheme='light';}else{d.classList.add('dark');d.style.colorScheme='dark';}}catch{}})();"
           }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y3KXMDMBC1"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y3KXMDMBC1');"
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <AnnouncementBar />
