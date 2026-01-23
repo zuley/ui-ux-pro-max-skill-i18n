@@ -225,9 +225,6 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
         { id: 'workflow', title: t('docs.dsg.workflow.title') },
-        { id: 'output', title: t('docs.dsg.output.title') },
-        { id: 'rules', title: t('docs.dsg.rules.title') },
-        { id: 'checklist', title: t('docs.dsg.checklist.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
 
@@ -246,70 +243,28 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.dsg.workflow.title')}
             </h2>
-            <div className="mt-3 space-y-3">
-              {(t.raw('docs.dsg.workflow.steps') as string[]).map((s) => (
+            <p className="mt-2 mb-6 text-gray-600 dark:text-gray-400">
+              {t('docs.dsg.workflow.subtitle')}
+            </p>
+            <div className="flex flex-col gap-4">
+              {(t.raw('docs.dsg.workflow.steps') as { num: string; title: string; desc: string }[]).map((step, idx) => (
                 <div
-                  key={s}
-                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-800 dark:text-gray-200"
+                  key={idx}
+                  className="relative rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-5 flex items-start"
                 >
-                  {s}
+                  <div className="shrink-0 mr-4 w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl">
+                    {step.num}
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-1">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
-            </div>
-          </section>
-
-          <section id="output" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.dsg.output.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.dsg.output.body')}
-            </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.dsg.output.exampleTitle')}
-                language="text"
-                code={t('docs.dsg.output.example')}
-              />
-            </div>
-          </section>
-
-          <section id="rules" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.dsg.rules.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.dsg.rules.body')}
-            </p>
-            <ul className="mt-3 grid gap-3 md:grid-cols-2">
-              {(t.raw('docs.dsg.rules.items') as string[]).map((item) => (
-                <li
-                  key={item}
-                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-700 dark:text-gray-300"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section id="checklist" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.dsg.checklist.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.dsg.checklist.body')}
-            </p>
-            <div className="mt-4">
-              <ClientOnly>
-                <Checklist
-                  storageKey="pre-delivery"
-                  title={t('docs.dsg.checklist.boxTitle')}
-                  items={(t.raw('docs.dsg.checklist.items') as { id: string; label: string }[]).map(
-                    (i) => ({ id: i.id, label: i.label })
-                  )}
-                />
-              </ClientOnly>
             </div>
           </section>
 

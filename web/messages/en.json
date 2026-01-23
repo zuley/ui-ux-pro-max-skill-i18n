@@ -85,24 +85,24 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "Getting Started",
-        "description": "Install the skill and run your first design system."
+        "title": "What is UI/UX Pro Max?",
+        "description": "Learn about the core features of this AI design intelligence skill."
       },
       "designSystemGenerator": {
-        "title": "Design System Generator",
-        "description": "How v2.0 generates complete design systems with reasoning."
+        "title": "How It Works",
+        "description": "From prompt to code in just four steps."
       },
       "cliReference": {
-        "title": "CLI & Commands",
-        "description": "Install the CLI, search domains, and use stack guidelines."
+        "title": "Installation Guide",
+        "description": "Install the skill for your AI assistant: Claude, Cursor, Windsurf, and more."
       },
       "examples": {
-        "title": "Usage & Prompts",
-        "description": "How to invoke the skill and example prompts to copy."
+        "title": "How to Use",
+        "description": "Invocation patterns and example prompts, organized by AI assistant."
       },
       "faq": {
         "title": "FAQ",
-        "description": "Common questions, troubleshooting, and tips."
+        "description": "Common questions and quick solutions."
       }
     },
     "gettingStarted": {
@@ -174,71 +174,34 @@
       "next": "Continue to Design System Generator for the deep dive and the pre-delivery checklist."
     },
     "dsg": {
-      "overview": "The Design System Generator is the flagship v2.0 feature. It analyzes your prompt and outputs a complete, tailored design system in seconds.",
+      "overview": "From prompt to code in just four steps. AI automatically searches the design database to recommend the best matching design system for you.",
       "workflow": {
-        "title": "How it works",
+        "title": "Four-Step Workflow",
+        "subtitle": "From prompt to code in just four steps",
         "steps": [
-          "You describe the product, audience, and style goals.",
-          "Five domains are searched in parallel: product, style, color, landing, and typography.",
-          "A reasoning engine ranks matches, applies industry rules, and removes anti-patterns.",
-          "A final design system is assembled with pattern, colors, typography, effects, and checklist."
-        ]
-      },
-      "output": {
-        "title": "Example Output",
-        "body": "You’ll get a structured recommendation you can copy into implementation.",
-        "exampleTitle": "Sample",
-        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
-      },
-      "rules": {
-        "title": "100 industry-specific reasoning rules",
-        "body": "Rules cover both product category and visual expectations so outputs align with your industry.",
-        "items": [
-          "Tech & SaaS",
-          "Finance & Fintech",
-          "Healthcare & Wellness",
-          "E-commerce & Marketplace",
-          "Services & Local Businesses",
-          "Creative & Media",
-          "Emerging Tech"
-        ]
-      },
-      "checklist": {
-        "title": "Pre-delivery Checklist",
-        "body": "Quick quality checks to keep UI professional and accessible.",
-        "boxTitle": "Checklist",
-        "items": [
           {
-            "id": "no-emoji-icons",
-            "label": "No emoji as icons (use SVG icons)"
+            "num": "1",
+            "title": "You Ask",
+            "desc": "Request any UI/UX task: build, design, create, implement, review, fix, improve"
           },
           {
-            "id": "cursor-pointer",
-            "label": "Cursor pointer on all clickable elements"
+            "num": "2",
+            "title": "Skill Activates",
+            "desc": "AI automatically searches the design database for relevant styles, colors, typography, and guidelines"
           },
           {
-            "id": "hover-transitions",
-            "label": "Smooth hover transitions (150–300ms)"
+            "num": "3",
+            "title": "Smart Recommendations",
+            "desc": "Finds the best matching design system based on your product type and requirements"
           },
           {
-            "id": "contrast",
-            "label": "Light mode contrast: 4.5:1 minimum"
-          },
-          {
-            "id": "focus",
-            "label": "Visible focus states for keyboard navigation"
-          },
-          {
-            "id": "reduced-motion",
-            "label": "Respects prefers-reduced-motion"
-          },
-          {
-            "id": "responsive",
-            "label": "Responsive at 375 / 768 / 1024 / 1440"
+            "num": "4",
+            "title": "Code Generation",
+            "desc": "Implements UI with correct colors, fonts, spacing, and best practices"
           }
         ]
       },
-      "next": "Next: use CLI & Commands to search domains and stack-specific guidance."
+      "next": "Next: check the Installation Guide to install the skill for your AI assistant."
     },
     "cli": {
       "overview": "Use the CLI to install the skill and run domain/stack searches from your project.",

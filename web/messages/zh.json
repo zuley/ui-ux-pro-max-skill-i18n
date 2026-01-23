@@ -88,24 +88,24 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "开始上手",
-        "description": "安装技能并运行第一次设计系统。"
+        "title": "什么是 UI/UX Pro Max?",
+        "description": "了解这个 AI 设计智能技能的核心功能与特性。"
       },
       "designSystemGenerator": {
-        "title": "设计系统生成器",
-        "description": "v2.0 如何通过推理生成完整设计系统。"
+        "title": "它是如何运作的?",
+        "description": "从提问到生成代码，只需四步。"
       },
       "cliReference": {
-        "title": "CLI 与命令",
-        "description": "安装 CLI、按域搜索与按栈指南。"
+        "title": "安装指南",
+        "description": "为你的 AI 助手安装技能，支持 Claude、Cursor、Windsurf 等。"
       },
       "examples": {
-        "title": "使用方式与提示词",
-        "description": "如何触发技能与可复制的提示词。"
+        "title": "如何使用",
+        "description": "调用方式与示例提示词，按 AI 助手分类。"
       },
       "faq": {
         "title": "常见问题",
-        "description": "常见问题与排错建议。"
+        "description": "常见问题与快速解决方案。"
       }
     },
     "gettingStarted": {
@@ -177,71 +177,34 @@
       "next": "继续阅读“设计系统生成器”，了解完整流程与交付清单。"
     },
     "dsg": {
-      "overview": "设计系统生成器是 v2.0 的旗舰功能，会分析你的提示词并快速输出完整设计系统。",
+      "overview": "从提问到生成代码，只需四步。AI 自动搜索设计数据库，为你推荐最匹配的设计系统。",
       "workflow": {
-        "title": "工作方式",
+        "title": "四步工作流程",
+        "subtitle": "从提问到生成代码，只需四步",
         "steps": [
-          "描述产品类型、目标用户与风格方向。",
-          "并行搜索 product/style/color/landing/typography 五个域。",
-          "推理引擎进行排序、规则匹配并过滤反模式。",
-          "生成包含结构、配色、字体、动效与检查清单的完整结果。"
-        ]
-      },
-      "output": {
-        "title": "示例输出",
-        "body": "输出为结构化建议，可直接用于实现。",
-        "exampleTitle": "样例",
-        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
-      },
-      "rules": {
-        "title": "100 条行业推理规则",
-        "body": "规则覆盖行业类型与视觉预期，确保输出符合领域特性。",
-        "items": [
-          "科技与 SaaS",
-          "金融与 Fintech",
-          "医疗与健康",
-          "电商与市场平台",
-          "服务业与本地商家",
-          "创意与媒体",
-          "前沿技术"
-        ]
-      },
-      "checklist": {
-        "title": "交付前检查清单",
-        "body": "快速质量检查，保证专业与可访问性。",
-        "boxTitle": "Checklist",
-        "items": [
           {
-            "id": "no-emoji-icons",
-            "label": "不要用 emoji 作为图标（用 SVG）"
+            "num": "1",
+            "title": "你提问",
+            "desc": "请求任何 UI/UX 任务：构建、设计、创建、实现、审查、修复、改进"
           },
           {
-            "id": "cursor-pointer",
-            "label": "所有可点击元素使用 cursor-pointer"
+            "num": "2",
+            "title": "技能激活",
+            "desc": "AI 自动在设计数据库中搜索相关的风格、配色、排版和准则"
           },
           {
-            "id": "hover-transitions",
-            "label": "悬停态使用 150–300ms 平滑过渡"
+            "num": "3",
+            "title": "智能推荐",
+            "desc": "根据你的产品类型和需求，找到最匹配的设计系统"
           },
           {
-            "id": "contrast",
-            "label": "浅色模式文本对比度至少 4.5:1"
-          },
-          {
-            "id": "focus",
-            "label": "键盘导航的可见焦点态"
-          },
-          {
-            "id": "reduced-motion",
-            "label": "尊重 prefers-reduced-motion"
-          },
-          {
-            "id": "responsive",
-            "label": "在 375/768/1024/1440 响应式检查"
+            "num": "4",
+            "title": "代码生成",
+            "desc": "使用正确的颜色、字体、间距和最佳实践来实现 UI"
           }
         ]
       },
-      "next": "下一步：查看“CLI 与命令”，学习按域与按栈搜索。"
+      "next": "下一步：查看「安装指南」，为你的 AI 助手安装技能。"
     },
     "cli": {
       "overview": "使用 CLI 安装技能并在项目内执行按域/按栈搜索。",

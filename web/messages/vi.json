@@ -54,7 +54,10 @@
   "demo": {
     "title": "Xem luồng hoạt động",
     "subtitle": "Từ prompt đến design system được cá nhân hoá.",
-    "tabs": { "video": "Video", "flow": "Animation" },
+    "tabs": {
+      "video": "Video",
+      "flow": "Animation"
+    },
     "videoMissing": {
       "title": "Không tìm thấy video demo",
       "body": "Thêm file public/demo.mp4 hoặc chuyển sang tab Animation."
@@ -85,32 +88,41 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "Bắt đầu",
-        "description": "Cài skill và chạy design system đầu tiên."
+        "title": "UI/UX Pro Max là gì?",
+        "description": "Tìm hiểu các tính năng cốt lõi của skill thiết kế AI này."
       },
       "designSystemGenerator": {
-        "title": "Design System Generator",
-        "description": "Cách v2.0 tạo design system bằng reasoning."
+        "title": "Cách hoạt động",
+        "description": "Từ prompt đến code chỉ trong 4 bước."
       },
       "cliReference": {
-        "title": "CLI & Lệnh",
-        "description": "Cài CLI, tìm theo domain và stack guidelines."
+        "title": "Hướng dẫn cài đặt",
+        "description": "Cài skill cho AI assistant: Claude, Cursor, Windsurf và thêm."
       },
       "examples": {
-        "title": "Cách dùng & Prompt",
-        "description": "Cách gọi skill và prompt mẫu để copy."
+        "title": "Cách sử dụng",
+        "description": "Cách gọi và prompt mẫu, theo từng AI assistant."
       },
       "faq": {
         "title": "FAQ",
-        "description": "Câu hỏi thường gặp và troubleshooting."
+        "description": "Câu hỏi thường gặp và giải pháp nhanh."
       }
     },
     "gettingStarted": {
       "overview": "UI UX Pro Max là skill thiết kế giúp chuyển một prompt thành quyết định UI/UX chuyên nghiệp về style, màu sắc, typography, layout và UX rules.",
       "highlights": [
-        { "title": "Design System Generator", "desc": "Tạo pattern, style, colors, typography và key effects." },
-        { "title": "Searchable Database", "desc": "Tìm styles, palettes, fonts, charts, landing patterns, UX guidelines." },
-        { "title": "Stack-aware Output", "desc": "Gợi ý phù hợp framework/stack của bạn." }
+        {
+          "title": "Design System Generator",
+          "desc": "Tạo pattern, style, colors, typography và key effects."
+        },
+        {
+          "title": "Searchable Database",
+          "desc": "Tìm styles, palettes, fonts, charts, landing patterns, UX guidelines."
+        },
+        {
+          "title": "Stack-aware Output",
+          "desc": "Gợi ý phù hợp framework/stack của bạn."
+        }
       ],
       "whatsNew": {
         "title": "Điểm mới v2.0",
@@ -165,50 +177,34 @@
       "next": "Tiếp theo: Design System Generator để xem chi tiết và checklist."
     },
     "dsg": {
-      "overview": "Design System Generator là tính năng chủ lực v2.0, phân tích prompt và tạo design system đầy đủ trong vài giây.",
+      "overview": "Từ prompt đến code chỉ trong 4 bước. AI tự động tìm kiếm database thiết kế để gợi ý design system phù hợp nhất cho bạn.",
       "workflow": {
-        "title": "Cách hoạt động",
+        "title": "Quy trình 4 bước",
+        "subtitle": "Từ prompt đến code chỉ trong 4 bước",
         "steps": [
-          "Bạn mô tả sản phẩm, đối tượng và mục tiêu style.",
-          "Tìm kiếm song song 5 domain: product, style, color, landing, typography.",
-          "Reasoning engine xếp hạng, áp quy tắc ngành và loại anti-pattern.",
-          "Tổng hợp design system gồm pattern, colors, typography, effects và checklist."
+          {
+            "num": "1",
+            "title": "Bạn hỏi",
+            "desc": "Yêu cầu bất kỳ tác vụ UI/UX: xây dựng, thiết kế, tạo, triển khai, review, sửa, cải thiện"
+          },
+          {
+            "num": "2",
+            "title": "Skill kích hoạt",
+            "desc": "AI tự động tìm kiếm trong database thiết kế về styles, colors, typography và guidelines"
+          },
+          {
+            "num": "3",
+            "title": "Gợi ý thông minh",
+            "desc": "Tìm design system phù hợp nhất dựa trên loại sản phẩm và yêu cầu của bạn"
+          },
+          {
+            "num": "4",
+            "title": "Tạo code",
+            "desc": "Triển khai UI với đúng màu sắc, font, spacing và best practices"
+          }
         ]
       },
-      "output": {
-        "title": "Ví dụ output",
-        "body": "Output có cấu trúc để copy vào implement.",
-        "exampleTitle": "Sample",
-        "example": "+----------------------------------------------------------------------------------------+\\n|  TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM                                      |\\n+----------------------------------------------------------------------------------------+\\n|                                                                                        |\\n|  PATTERN: Hero-Centric + Social Proof                                                  |\\n|     Conversion: Emotion-driven with trust elements                                     |\\n|     CTA: Above fold, repeated after testimonials                                       |\\n|     Sections: Hero, Services, Testimonials, Booking, Contact                           |\\n|                                                                                        |\\n|  STYLE: Soft UI Evolution                                                              |\\n|     Keywords: Soft shadows, subtle depth, calming, premium feel, organic shapes        |\\n|     Best For: Wellness, beauty, lifestyle brands                                       |\\n|     Performance: Excellent | Accessibility: WCAG AA                                    |\\n|                                                                                        |\\n|  COLORS: Primary #E8B4B8 | Secondary #A8D5BA | CTA #D4AF37 | Background #FFF5F5          |\\n|  TYPOGRAPHY: Cormorant Garamond / Montserrat                                           |\\n|  KEY EFFECTS: Soft shadows + Smooth transitions (200-300ms)                            |\\n|  AVOID: Bright neon colors + Harsh animations + AI purple/pink gradients               |\\n|                                                                                        |\\n|  PRE-DELIVERY CHECKLIST: SVG icons, hover feedback, contrast, focus, reduced motion    |\\n+----------------------------------------------------------------------------------------+"
-      },
-      "rules": {
-        "title": "100 quy tắc reasoning theo ngành",
-        "body": "Quy tắc bao phủ ngành nghề và kỳ vọng thẩm mỹ để output phù hợp bối cảnh.",
-        "items": [
-          "Tech & SaaS",
-          "Finance & Fintech",
-          "Healthcare & Wellness",
-          "E-commerce & Marketplace",
-          "Services & Local Businesses",
-          "Creative & Media",
-          "Emerging Tech"
-        ]
-      },
-      "checklist": {
-        "title": "Pre-delivery Checklist",
-        "body": "Kiểm tra nhanh để UI chuyên nghiệp và accessible.",
-        "boxTitle": "Checklist",
-        "items": [
-          { "id": "no-emoji-icons", "label": "Không dùng emoji làm icon (dùng SVG)" },
-          { "id": "cursor-pointer", "label": "cursor-pointer cho mọi phần tử clickable" },
-          { "id": "hover-transitions", "label": "Hover transitions mượt (150–300ms)" },
-          { "id": "contrast", "label": "Contrast light mode tối thiểu 4.5:1" },
-          { "id": "focus", "label": "Focus state rõ ràng cho keyboard" },
-          { "id": "reduced-motion", "label": "Tôn trọng prefers-reduced-motion" },
-          { "id": "responsive", "label": "Test responsive 375/768/1024/1440" }
-        ]
-      },
-      "next": "Tiếp theo: CLI & Lệnh để tìm theo domain và stack guidelines."
+      "next": "Tiếp theo: xem Hướng dẫn cài đặt để cài skill cho AI assistant."
     },
     "cli": {
       "overview": "Dùng CLI để cài skill và chạy tìm kiếm theo domain/stack trong project.",
@@ -292,10 +288,22 @@
       "questions": {
         "title": "Questions",
         "items": [
-          { "q": "search.py nằm ở đâu?", "a": "Nó nằm trong .claude/skills/ui-ux-pro-max/scripts/search.py của project." },
-          { "q": "Có cần chỉ định stack không?", "a": "Không. Nếu bỏ qua sẽ mặc định HTML + Tailwind." },
-          { "q": "Làm sao xuất Markdown?", "a": "Dùng -f markdown cùng --design-system." },
-          { "q": "Có thể cài đặt khi không truy cập GitHub?", "a": "Có, dùng uipro init --offline để bỏ qua tải từ GitHub và dùng bundled assets." }
+          {
+            "q": "search.py nằm ở đâu?",
+            "a": "Nó nằm trong .claude/skills/ui-ux-pro-max/scripts/search.py của project."
+          },
+          {
+            "q": "Có cần chỉ định stack không?",
+            "a": "Không. Nếu bỏ qua sẽ mặc định HTML + Tailwind."
+          },
+          {
+            "q": "Làm sao xuất Markdown?",
+            "a": "Dùng -f markdown cùng --design-system."
+          },
+          {
+            "q": "Có thể cài đặt khi không truy cập GitHub?",
+            "a": "Có, dùng uipro init --offline để bỏ qua tải từ GitHub và dùng bundled assets."
+          }
         ]
       },
       "next": "Nếu vẫn chưa rõ, hãy gửi feedback ở cuối trang."
@@ -316,32 +324,57 @@
       "styles": {
         "title": "Design Styles",
         "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, and 45+ more styles with colors, effects, and framework compatibility.",
-        "tags": ["Glassmorphism", "Dark Mode", "Motion-Driven"]
+        "tags": [
+          "Glassmorphism",
+          "Dark Mode",
+          "Motion-Driven"
+        ]
       },
       "colors": {
         "title": "Color Palettes",
         "description": "Product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
-        "tags": ["SaaS", "Healthcare", "E-commerce"]
+        "tags": [
+          "SaaS",
+          "Healthcare",
+          "E-commerce"
+        ]
       },
       "typography": {
         "title": "Typography",
         "description": "50+ font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
-        "tags": ["Space Grotesk", "Inter", "Playfair"]
+        "tags": [
+          "Space Grotesk",
+          "Inter",
+          "Playfair"
+        ]
       },
       "charts": {
         "title": "Chart Types",
         "description": "Data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
-        "tags": ["Line", "Bar", "Pie", "Heatmap"]
+        "tags": [
+          "Line",
+          "Bar",
+          "Pie",
+          "Heatmap"
+        ]
       },
       "landing": {
         "title": "Landing Patterns",
         "description": "14 conversion-optimized page structures with CTA placement strategies and color recommendations.",
-        "tags": ["Hero + Features", "Video-First", "Pricing"]
+        "tags": [
+          "Hero + Features",
+          "Video-First",
+          "Pricing"
+        ]
       },
       "ux": {
         "title": "UX Guidelines",
         "description": "Best practices and anti-patterns for animation, accessibility, z-index, loading states, and more.",
-        "tags": ["Animation", "A11y", "Performance"]
+        "tags": [
+          "Animation",
+          "A11y",
+          "Performance"
+        ]
       }
     }
   },
@@ -357,27 +390,69 @@
       "2": {
         "title": "AI Reasoning",
         "tags": {
-          "product": { "label": "Product", "value": "pet-service" },
-          "style": { "label": "Style", "value": "playful, friendly" },
-          "page": { "label": "Page", "value": "landing" },
-          "cta": { "label": "CTA", "value": "booking" }
+          "product": {
+            "label": "Product",
+            "value": "pet-service"
+          },
+          "style": {
+            "label": "Style",
+            "value": "playful, friendly"
+          },
+          "page": {
+            "label": "Page",
+            "value": "landing"
+          },
+          "cta": {
+            "label": "CTA",
+            "value": "booking"
+          }
         },
         "searching": "→ Searching: product, style, typography, color, landing, ux domains..."
       },
       "3": {
         "title": "Search Design Database",
-        "product": { "label": "PRODUCT", "value": "Pet Tech App" },
-        "style": { "label": "STYLE", "value": "Micro-interactions" },
-        "typography": { "label": "TYPOGRAPHY", "value": "Fredoka + Nunito" },
-        "landing": { "label": "LANDING", "value": "Hero + Features + CTA" },
-        "ux": { "label": "UX RULE", "value": "Use animations for loading only" },
+        "product": {
+          "label": "PRODUCT",
+          "value": "Pet Tech App"
+        },
+        "style": {
+          "label": "STYLE",
+          "value": "Micro-interactions"
+        },
+        "typography": {
+          "label": "TYPOGRAPHY",
+          "value": "Fredoka + Nunito"
+        },
+        "landing": {
+          "label": "LANDING",
+          "value": "Hero + Features + CTA"
+        },
+        "ux": {
+          "label": "UX RULE",
+          "value": "Use animations for loading only"
+        },
         "colorsLabel": "COLORS",
         "colors": [
-          { "name": "Primary", "hex": "#3B82F6" },
-          { "name": "Secondary", "hex": "#60A5FA" },
-          { "name": "CTA", "hex": "#F97316" },
-          { "name": "Background", "hex": "#F8FAFC" },
-          { "name": "Text", "hex": "#1E293B" }
+          {
+            "name": "Primary",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Secondary",
+            "hex": "#60A5FA"
+          },
+          {
+            "name": "CTA",
+            "hex": "#F97316"
+          },
+          {
+            "name": "Background",
+            "hex": "#F8FAFC"
+          },
+          {
+            "name": "Text",
+            "hex": "#1E293B"
+          }
         ]
       },
       "4": {
@@ -391,7 +466,12 @@
       },
       "5": {
         "title": "Quality Checklist",
-        "items": ["SVG icons (no emoji)", "Hover feedback", "Dark mode contrast", "Responsive layout"]
+        "items": [
+          "SVG icons (no emoji)",
+          "Hover feedback",
+          "Dark mode contrast",
+          "Responsive layout"
+        ]
       },
       "6": {
         "title": "Final Result",
@@ -406,14 +486,38 @@
     "title": "8 Tech Stacks Supported",
     "subtitle": "Framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
     "stacks": {
-      "react": { "title": "React", "desc": "State, hooks, performance patterns" },
-      "nextjs": { "title": "Next.js", "desc": "SSR, routing, API routes" },
-      "vue": { "title": "Vue", "desc": "Composition API, Pinia, Vue Router" },
-      "svelte": { "title": "Svelte", "desc": "Runes, stores, SvelteKit" },
-      "swiftui": { "title": "SwiftUI", "desc": "Views, State, Navigation" },
-      "reactnative": { "title": "React Native", "desc": "Components, Navigation, Lists" },
-      "flutter": { "title": "Flutter", "desc": "Widgets, State, Theming" },
-      "tailwind": { "title": "Tailwind", "desc": "Utilities, responsive, a11y" }
+      "react": {
+        "title": "React",
+        "desc": "State, hooks, performance patterns"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "desc": "SSR, routing, API routes"
+      },
+      "vue": {
+        "title": "Vue",
+        "desc": "Composition API, Pinia, Vue Router"
+      },
+      "svelte": {
+        "title": "Svelte",
+        "desc": "Runes, stores, SvelteKit"
+      },
+      "swiftui": {
+        "title": "SwiftUI",
+        "desc": "Views, State, Navigation"
+      },
+      "reactnative": {
+        "title": "React Native",
+        "desc": "Components, Navigation, Lists"
+      },
+      "flutter": {
+        "title": "Flutter",
+        "desc": "Widgets, State, Theming"
+      },
+      "tailwind": {
+        "title": "Tailwind",
+        "desc": "Utilities, responsive, a11y"
+      }
     }
   },
   "gallery": {
@@ -430,7 +534,10 @@
     "promptTitle": "Prompt",
     "closeModal": "Close modal",
     "close": "Close",
-    "mode": { "light": "Light", "dark": "Dark" },
+    "mode": {
+      "light": "Light",
+      "dark": "Dark"
+    },
     "colors": "Colors:",
     "loadMore": "Load More",
     "showing": "Showing {shown} of {total} demos",
@@ -440,7 +547,11 @@
     "getOnGithub": "Get on GitHub",
     "quickStart": "Quick Start",
     "learnMore": "Learn More",
-    "features": ["Open Source", "Claude Code Compatible", "Production Ready"]
+    "features": [
+      "Open Source",
+      "Claude Code Compatible",
+      "Production Ready"
+    ]
   },
   "feedback": {
     "title": "Was this page helpful?",
