@@ -9,7 +9,7 @@ export function Stats() {
     { value: '57', label: t('styles') },
     { value: '95', label: t('palettes') },
     { value: '56', label: t('fonts') },
-    { value: '8', label: t('stacks') },
+    { value: '11', label: t('stacks') },
     { value: '24', label: t('charts') },
     { value: '29', label: t('landing') },
   ];

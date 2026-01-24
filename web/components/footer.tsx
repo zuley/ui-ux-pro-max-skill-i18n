@@ -23,7 +23,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4" />
           </div>
-          
+
           <div>
             <h4 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('resources')}</h4>
             <ul className="space-y-3">
@@ -32,7 +32,7 @@ export function Footer() {
               <li><Link href="#styles" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('styles')}</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('database')}</h4>
             <ul className="space-y-3">
@@ -40,11 +40,11 @@ export function Footer() {
               <li className="text-gray-600 dark:text-gray-400">95 Color Palettes</li>
               <li className="text-gray-600 dark:text-gray-400">56 Font Pairings</li>
               <li className="text-gray-600 dark:text-gray-400">24 Chart Types</li>
-              <li className="text-gray-600 dark:text-gray-400">8 Tech Stacks</li>
+              <li className="text-gray-600 dark:text-gray-400">11 Tech Stacks</li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
           <p className="text-sm text-gray-500 dark:text-gray-500">
             {t('builtWith').split('\n').map((line, idx) => (
