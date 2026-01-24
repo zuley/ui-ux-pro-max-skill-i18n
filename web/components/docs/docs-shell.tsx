@@ -27,21 +27,23 @@ export function DocsShell({
   }, [pathname, slug]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_220px] gap-6 lg:gap-10">
-        <aside className="lg:sticky lg:top-28 lg:h-[calc(100vh-8rem)] lg:overflow-auto">
-          <DocsSidebar
-            items={docsNav}
-            activeSlug={activeSlug}
-            getTitle={(key) => t(key)}
-          />
-        </aside>
+    <div className="relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-[260px_1fr_220px] lg:gap-10">
+          <aside className="hidden lg:block lg:fixed lg:left-[max(1rem,calc((100vw-80rem)/2+1rem))] lg:top-28 lg:w-[260px] lg:h-[calc(100vh-7rem)] lg:overflow-y-auto">
+            <DocsSidebar
+              items={docsNav}
+              activeSlug={activeSlug}
+              getTitle={(key) => t(key)}
+            />
+          </aside>
 
-        <main className="min-w-0">{children}</main>
+          <main className="min-w-0 lg:col-start-2">{children}</main>
 
-        <aside className="hidden lg:block lg:sticky lg:top-28 lg:h-[calc(100vh-8rem)] lg:overflow-auto">
-          <DocsToc items={toc} title={t('docs.toc')} />
-        </aside>
+          <aside className="hidden lg:block lg:fixed lg:top-28 lg:w-[220px] lg:h-[calc(100vh-7rem)] lg:overflow-y-auto lg:right-[max(1rem,calc((100vw-80rem)/2+1rem))]">
+            <DocsToc items={toc} title={t('docs.toc')} />
+          </aside>
+        </div>
       </div>
     </div>
   );

@@ -48,33 +48,33 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-[36px] min-[400px]:top-[44px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-40 glass-card max-w-7xl mx-auto transition-all duration-300">
+      <nav className="fixed top-[28px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto transition-all duration-300">
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
             <Link href="/" className="flex items-center gap-1.5 min-[400px]:gap-2 group">
-            <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6 min-[400px]:w-7 min-[400px]:h-7 sm:w-8 sm:h-8" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2563EB"></stop>
-                  <stop offset="50%" stopColor="#3B82F6"></stop>
-                  <stop offset="100%" stopColor="#F97316"></stop>
-                </linearGradient>
-                <linearGradient id="innerGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#F97316"></stop>
-                  <stop offset="100%" stopColor="#2563EB"></stop>
-                </linearGradient>
-              </defs>
-              <circle cx="24" cy="24" r="22" stroke="url(#logoGradient)" strokeWidth="3" fill="none"></circle>
-              <rect x="14" y="14" width="12" height="12" rx="2" fill="url(#logoGradient)" opacity="0.9"></rect>
-              <rect x="18" y="18" width="12" height="12" rx="2" fill="url(#innerGradient)" opacity="0.8"></rect>
-              <rect x="22" y="22" width="12" height="12" rx="2" fill="url(#logoGradient)" opacity="0.9"></rect>
-              <circle cx="36" cy="12" r="2" fill="#F97316"></circle>
-              <circle cx="12" cy="36" r="1.5" fill="#3B82F6"></circle>
-            </svg>
-            <span className="font-bold text-xs min-[400px]:text-sm sm:text-lg text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
-              {tCommon('title')}
-            </span>
-          </Link>
+              <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6 min-[400px]:w-7 min-[400px]:h-7 sm:w-8 sm:h-8" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#2563EB"></stop>
+                    <stop offset="50%" stopColor="#3B82F6"></stop>
+                    <stop offset="100%" stopColor="#F97316"></stop>
+                  </linearGradient>
+                  <linearGradient id="innerGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#F97316"></stop>
+                    <stop offset="100%" stopColor="#2563EB"></stop>
+                  </linearGradient>
+                </defs>
+                <circle cx="24" cy="24" r="22" stroke="url(#logoGradient)" strokeWidth="3" fill="none"></circle>
+                <rect x="14" y="14" width="12" height="12" rx="2" fill="url(#logoGradient)" opacity="0.9"></rect>
+                <rect x="18" y="18" width="12" height="12" rx="2" fill="url(#innerGradient)" opacity="0.8"></rect>
+                <rect x="22" y="22" width="12" height="12" rx="2" fill="url(#logoGradient)" opacity="0.9"></rect>
+                <circle cx="36" cy="12" r="2" fill="#F97316"></circle>
+                <circle cx="12" cy="36" r="1.5" fill="#3B82F6"></circle>
+              </svg>
+              <span className="font-bold text-xs min-[400px]:text-sm sm:text-lg text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                {tCommon('title')}
+              </span>
+            </Link>
 
             <div className="hidden lg:flex items-center gap-7">
               {primaryLinks.map((l) => (
@@ -135,9 +135,9 @@ export function Navbar() {
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
+            </div>
           </div>
         </div>
-      </div>
         {mobileOpen && (
           <div className="lg:hidden border-t border-gray-200/70 dark:border-white/10 px-3 min-[400px]:px-4 sm:px-6 lg:px-8 pb-4">
             <div className="pt-3 flex flex-col gap-2">
