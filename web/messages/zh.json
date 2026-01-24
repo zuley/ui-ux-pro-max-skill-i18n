@@ -1,6 +1,7 @@
 {
   "common": {
     "title": "UI UX Pro Max - Agent Skills",
+    "navTitle": "UI UX Pro Max",
     "description": "Claude Code 的设计智能助手",
     "switchTheme": "切换主题",
     "switchToLight": "切换到浅色模式",

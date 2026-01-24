@@ -1,6 +1,7 @@
 {
   "common": {
     "title": "UI UX Pro Max - Agent Skills",
+    "navTitle": "UI UX Pro Max",
     "description": "Design Intelligence for Claude Code",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",

@@ -72,7 +72,7 @@ export function Navbar() {
                 <circle cx="12" cy="36" r="1.5" fill="#3B82F6"></circle>
               </svg>
               <span className="font-bold text-xs min-[400px]:text-sm sm:text-lg text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
-                {tCommon('title')}
+                {tCommon('navTitle')}
               </span>
             </Link>
 
