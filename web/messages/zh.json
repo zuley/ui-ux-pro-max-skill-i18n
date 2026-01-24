@@ -207,43 +207,78 @@
       "next": "下一步：查看「安装指南」，为你的 AI 助手安装技能。"
     },
     "cli": {
-      "overview": "使用 CLI 安装技能并在项目内执行按域/按栈搜索。",
-      "install": {
-        "title": "安装 CLI",
-        "body": "全局安装 uipro-cli。",
-        "exampleTitle": "安装命令"
+      "overview": "选择最适合你的安装方式，为你的 AI 助手注入设计灵魂。",
+      "tabs": {
+        "cliInstall": "CLI 安装 (推荐)",
+        "manualInstall": "手动安装",
+        "prerequisites": "前置条件"
       },
-      "init": {
-        "title": "为你的助手安装",
-        "body": "使用 uipro init 指定目标助手。",
-        "exampleTitle": "命令"
+      "cliInstall": {
+        "step1": {
+          "title": "全局安装 CLI 工具",
+          "code": "npm install -g uipro-cli"
+        },
+        "step2": {
+          "title": "进入你的项目目录",
+          "code": "cd /path/to/your/project"
+        },
+        "step3": {
+          "title": "为指定 AI 助手安装技能",
+          "commands": [
+            "uipro init --ai claude        # Claude Code",
+            "uipro init --ai cursor        # Cursor",
+            "uipro init --ai windsurf      # Windsurf",
+            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai copilot       # GitHub Copilot",
+            "uipro init --ai kiro          # Kiro",
+            "uipro init --ai all           # 所有 AI 助手"
+          ]
+        }
       },
-      "designSystem": {
-        "title": "设计系统命令",
-        "body": "直接使用 search.py 输出设计系统结果。",
-        "exampleTitle": "示例"
+      "manualInstall": {
+        "description": "如果你更喜欢手动安装，只需将对应的文件夹复制到你的项目中：",
+        "table": {
+          "header": {
+            "assistant": "AI 助手",
+            "folders": "需要复制的文件夹"
+          },
+          "rows": [
+            {
+              "assistant": "Claude Code",
+              "folders": ".claude/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Cursor",
+              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Windsurf",
+              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Antigravity",
+              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            }
+          ]
+        }
       },
-      "domain": {
-        "title": "按域搜索",
-        "body": "一次只搜索一个域，获得更聚焦的建议。",
-        "examplesTitle": "示例"
+      "prerequisites": {
+        "warning": "⚠️ 前置条件",
+        "description": "搜索脚本需要 Python 3.x 环境支持。",
+        "checkPython": "检查 Python 是否已安装",
+        "checkCommand": "python3 --version",
+        "installMac": "macOS",
+        "installCommand": "brew install python3"
       },
-      "stack": {
-        "title": "按技术栈指南",
-        "body": "请求指定技术栈（React/Next.js/HTML+Tailwind 等）的最佳实践。",
-        "examplesTitle": "示例"
-      },
-      "persist": {
-        "title": "持久化设计系统",
-        "body": "将设计系统保存为文件，以便在不同会话中分层检索复用（Master + Overrides 模式）。",
-        "exampleTitle": "生成命令",
-        "structureTitle": "目录结构"
-      },
-      "other": {
+      "otherCommands": {
         "title": "其他 CLI 命令",
-        "exampleTitle": "命令"
+        "commands": [
+          "uipro versions              # 列出可用版本",
+          "uipro update                # 更新到最新版本",
+          "uipro init --version v1.0.0 # 安装指定版本"
+        ]
       },
-      "next": "下一步：查看“使用方式与提示词”，快速上手调用方式。"
+      "next": "下一步：查看\"使用方式与提示词\"，快速上手调用方式。"
     },
     "examples": {
       "overview": "使用这些调用方式与示例提示词快速上手。",

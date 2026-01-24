@@ -4,6 +4,7 @@ import { CodeBlock } from '@/components/tutorial/code-block';
 import { Callout } from '@/components/tutorial/callout';
 import { Checklist } from '@/components/tutorial/checklist';
 import { ClientOnly } from '@/components/client-only';
+import { Tabs } from '@/components/tabs';
 
 export type Translator = ((key: string, values?: Record<string, unknown>) => string) & {
   raw: (key: string) => unknown;
@@ -285,15 +286,19 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
     case 'cli-reference': {
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
-        { id: 'install-cli', title: t('docs.cli.install.title') },
-        { id: 'init', title: t('docs.cli.init.title') },
-        { id: 'design-system', title: t('docs.cli.designSystem.title') },
-        { id: 'persist', title: t('docs.cli.persist.title') },
-        { id: 'domain', title: t('docs.cli.domain.title') },
-        { id: 'stack', title: t('docs.cli.stack.title') },
-        { id: 'other', title: t('docs.cli.other.title') },
+        { id: 'cli-install', title: t('docs.cli.tabs.cliInstall') },
+        { id: 'manual-install', title: t('docs.cli.tabs.manualInstall') },
+        { id: 'prerequisites', title: t('docs.cli.tabs.prerequisites') },
+        { id: 'other-commands', title: t('docs.cli.otherCommands.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
+
+      const cliInstallCommands = t.raw('docs.cli.cliInstall.step3.commands') as string[];
+      const manualInstallTable = t.raw('docs.cli.manualInstall.table') as {
+        header: { assistant: string; folders: string };
+        rows: { assistant: string; folders: string }[];
+      };
+      const otherCommands = t.raw('docs.cli.otherCommands.commands') as string[];
 
       const content = (
         <>
@@ -306,182 +311,212 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </p>
           </section>
 
-          <section id="install-cli" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.install.title')}
+          {/* CLI 安装 (推荐) */}
+          <section id="cli-install" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6">
+              {t('docs.cli.tabs.cliInstall')}
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.install.body')}
-            </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.install.exampleTitle')}
-                language="bash"
-                code={'npm install -g uipro-cli'}
-              />
-            </div>
-          </section>
 
-          <section id="init" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.init.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.init.body')}
-            </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.init.exampleTitle')}
-                language="bash"
-                code={[
-                  'uipro init --ai claude      # Claude Code',
-                  'uipro init --ai cursor      # Cursor',
-                  'uipro init --ai windsurf    # Windsurf',
-                  'uipro init --ai antigravity # Antigravity',
-                  'uipro init --ai copilot     # GitHub Copilot',
-                  'uipro init --ai kiro        # Kiro',
-                  'uipro init --ai codex       # Codex CLI',
-                  'uipro init --ai qoder       # Qoder',
-                  'uipro init --ai roocode     # Roo Code',
-                  'uipro init --ai gemini      # Gemini CLI',
-                  'uipro init --ai trae        # Trae',
-                  'uipro init --ai opencode    # OpenCode',
-                  'uipro init --ai continue    # Continue (Skills)',
-                  'uipro init --ai all         # All assistants'
-                ].join('\n')}
-              />
-            </div>
-          </section>
+            <div className="space-y-6">
+              {/* Terminal-style container */}
+              <div className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 overflow-hidden">
+                {/* Terminal header */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100/50 dark:bg-white/5 border-b border-gray-200/70 dark:border-white/10">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  </div>
+                </div>
 
-          <section id="design-system" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.designSystem.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.designSystem.body')}
-            </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.designSystem.exampleTitle')}
-                language="bash"
-                code={[
-                  '# Generate design system (ASCII)',
-                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --design-system -p "Serenity Spa"',
-                  '',
-                  '# Generate design system (Markdown)',
-                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech banking" --design-system -f markdown'
-                ].join('\n')}
-              />
-            </div>
-          </section>
+                {/* Terminal content */}
+                <div className="p-6 space-y-6 font-mono text-sm">
+                  {/* Step 1 */}
+                  <div>
+                    <div className="text-gray-500 dark:text-gray-400 mb-2">
+                      # {t('docs.cli.cliInstall.step1.title')}
+                    </div>
+                    <div className="text-gray-900 dark:text-gray-100">
+                      <span className="text-purple-600 dark:text-purple-400">npm</span>{' '}
+                      <span className="text-blue-600 dark:text-blue-400">install</span>{' '}
+                      <span className="text-pink-600 dark:text-pink-400">-g</span>{' '}
+                      <span className="text-cyan-600 dark:text-cyan-400">uipro-cli</span>
+                    </div>
+                  </div>
 
-          <section id="persist" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.persist.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.persist.body')}
-            </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.persist.exampleTitle')}
-                language="bash"
-                code={[
-                  '# Generate and persist to design-system/MASTER.md',
-                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp"',
-                  '',
-                  '# Create page-specific override',
-                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp" --page "dashboard"'
-                ].join('\n')}
-              />
-            </div>
-            <div className="mt-4">
-              <h3 className="font-semibold text-gray-900 dark:text-gray-200 mb-2">
-                {t('docs.cli.persist.structureTitle')}
-              </h3>
-              <CodeBlock
-                language="text"
-                code={[
-                  'design-system/',
-                  '├── MASTER.md            # Global Source of Truth',
-                  '└── pages/',
-                  '    └── dashboard.md     # Page-specific overrides'
-                ].join('\n')}
-              />
-            </div>
-          </section>
+                  {/* Step 2 */}
+                  <div>
+                    <div className="text-gray-500 dark:text-gray-400 mb-2">
+                      # {t('docs.cli.cliInstall.step2.title')}
+                    </div>
+                    <div className="text-gray-900 dark:text-gray-100">
+                      <span className="text-purple-600 dark:text-purple-400">cd</span>{' '}
+                      <span className="text-pink-600 dark:text-pink-400">/path/to/your/project</span>
+                    </div>
+                  </div>
 
-          <section id="domain" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.domain.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.domain.body')}
-            </p>
-            <div className="mt-4">
-              <div className="space-y-3">
-                <CodeBlock
-                  title={`${t('docs.cli.domain.examplesTitle')} — style`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "glassmorphism" --domain style'
-                />
-                <CodeBlock
-                  title={`${t('docs.cli.domain.examplesTitle')} — typography`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant serif" --domain typography'
-                />
-                <CodeBlock
-                  title={`${t('docs.cli.domain.examplesTitle')} — chart`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "dashboard" --domain chart'
-                />
+                  {/* Step 3 */}
+                  <div>
+                    <div className="text-gray-500 dark:text-gray-400 mb-2">
+                      # {t('docs.cli.cliInstall.step3.title')}
+                    </div>
+                    <div className="space-y-1">
+                      {cliInstallCommands.map((cmd, idx) => {
+                        const [command, comment] = cmd.split('#');
+                        return (
+                          <div key={idx} className="text-gray-900 dark:text-gray-100">
+                            <span className="text-purple-600 dark:text-purple-400">uipro</span>{' '}
+                            <span className="text-blue-600 dark:text-blue-400">init</span>{' '}
+                            <span className="text-pink-600 dark:text-pink-400">--ai</span>{' '}
+                            <span className="text-cyan-600 dark:text-cyan-400">
+                              {command.trim().split(' ').pop()}
+                            </span>
+                            {comment && (
+                              <span className="text-gray-500 dark:text-gray-400">
+                                {' '}# {comment.trim()}
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          <section id="stack" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.stack.title')}
+          {/* 手动安装 */}
+          <section id="manual-install" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6">
+              {t('docs.cli.tabs.manualInstall')}
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.cli.stack.body')}
-            </p>
-            <div className="mt-4">
-              <div className="space-y-3">
-                <CodeBlock
-                  title={`${t('docs.cli.stack.examplesTitle')} — react`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "form validation" --stack react'
-                />
-                <CodeBlock
-                  title={`${t('docs.cli.stack.examplesTitle')} — nextjs`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "routing seo" --stack nextjs'
-                />
-                <CodeBlock
-                  title={`${t('docs.cli.stack.examplesTitle')} — html-tailwind`}
-                  language="bash"
-                  code='python3 .claude/skills/ui-ux-pro-max/scripts/search.py "responsive layout" --stack html-tailwind'
-                />
+
+            <div className="space-y-4">
+              <p className="text-gray-600 dark:text-gray-400">
+                {t('docs.cli.manualInstall.description')}
+              </p>
+
+              <div className="rounded-xl border border-gray-200/70 dark:border-white/10 overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-gray-100/50 dark:bg-white/5">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white border-b border-gray-200/70 dark:border-white/10">
+                        {manualInstallTable.header.assistant}
+                      </th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white border-b border-gray-200/70 dark:border-white/10">
+                        {manualInstallTable.header.folders}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white/70 dark:bg-black/20">
+                    {manualInstallTable.rows.map((row, idx) => (
+                      <tr key={idx} className="border-b border-gray-200/70 dark:border-white/10 last:border-0">
+                        <td className="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white">
+                          {row.assistant}
+                        </td>
+                        <td className="px-6 py-4 text-sm font-mono text-gray-700 dark:text-gray-300">
+                          {row.folders}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </section>
 
-          <section id="other" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.cli.other.title')}
+          {/* 前置条件 */}
+          <section id="prerequisites" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white mb-6">
+              {t('docs.cli.tabs.prerequisites')}
             </h2>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.cli.other.exampleTitle')}
-                language="bash"
-                code={[
-                  'uipro versions              # List available versions',
-                  'uipro update                # Update to latest version',
-                  'uipro init --offline        # Skip GitHub download, use bundled assets',
-                  'uipro init --force          # Overwrite existing files'
-                ].join('\n')}
-              />
+
+            <div className="space-y-4">
+              <div className="rounded-xl border border-yellow-200/70 dark:border-yellow-500/20 bg-yellow-50/50 dark:bg-yellow-900/10 p-4">
+                <div className="font-semibold text-yellow-900 dark:text-yellow-200 mb-2">
+                  {t('docs.cli.prerequisites.warning')}
+                </div>
+                <div className="text-sm text-yellow-800 dark:text-yellow-300">
+                  {t('docs.cli.prerequisites.description')}
+                </div>
+              </div>
+
+              {/* Terminal-style container */}
+              <div className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 overflow-hidden">
+                {/* Terminal header */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100/50 dark:bg-white/5 border-b border-gray-200/70 dark:border-white/10">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  </div>
+                </div>
+
+                {/* Terminal content */}
+                <div className="p-6 space-y-6 font-mono text-sm">
+                  {/* Check Python */}
+                  <div>
+                    <div className="text-gray-500 dark:text-gray-400 mb-2">
+                      # {t('docs.cli.prerequisites.checkPython')}
+                    </div>
+                    <div className="text-gray-900 dark:text-gray-100">
+                      <span className="text-purple-600 dark:text-purple-400">
+                        {t('docs.cli.prerequisites.checkCommand')}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Install on macOS */}
+                  <div>
+                    <div className="text-gray-500 dark:text-gray-400 mb-2">
+                      # {t('docs.cli.prerequisites.installMac')}
+                    </div>
+                    <div className="text-gray-900 dark:text-gray-100">
+                      <span className="text-purple-600 dark:text-purple-400">brew</span>{' '}
+                      <span className="text-blue-600 dark:text-blue-400">install</span>{' '}
+                      <span className="text-cyan-600 dark:text-cyan-400">python3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 其他 CLI 命令 */}
+          <section id="other-commands" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.cli.otherCommands.title')}
+            </h2>
+
+            <div className="mt-4 rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 overflow-hidden">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-gray-100/50 dark:bg-white/5 border-b border-gray-200/70 dark:border-white/10">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                </div>
+              </div>
+
+              {/* Terminal content */}
+              <div className="p-6 font-mono text-sm space-y-1">
+                {otherCommands.map((cmd, idx) => {
+                  const [command, comment] = cmd.split('#');
+                  return (
+                    <div key={idx} className="text-gray-900 dark:text-gray-100">
+                      <span className="text-purple-600 dark:text-purple-400">
+                        {command.trim()}
+                      </span>
+                      {comment && (
+                        <span className="text-gray-500 dark:text-gray-400">
+                          {' '}# {comment.trim()}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </section>
 

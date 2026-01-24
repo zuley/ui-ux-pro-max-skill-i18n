@@ -207,41 +207,76 @@
       "next": "Tiếp theo: xem Hướng dẫn cài đặt để cài skill cho AI assistant."
     },
     "cli": {
-      "overview": "Dùng CLI để cài skill và chạy tìm kiếm theo domain/stack trong project.",
-      "install": {
-        "title": "Cài CLI",
-        "body": "Cài uipro-cli global.",
-        "exampleTitle": "Cài đặt"
+      "overview": "Chọn phương thức cài đặt phù hợp với quy trình làm việc của bạn và tích hợp trí tuệ thiết kế vào AI assistant.",
+      "tabs": {
+        "cliInstall": "Cài CLI (Khuyến nghị)",
+        "manualInstall": "Cài thủ công",
+        "prerequisites": "Yêu cầu"
       },
-      "init": {
-        "title": "Cài cho trợ lý",
-        "body": "Chạy uipro init với assistant target.",
-        "exampleTitle": "Lệnh"
+      "cliInstall": {
+        "step1": {
+          "title": "Cài công cụ CLI toàn cục",
+          "code": "npm install -g uipro-cli"
+        },
+        "step2": {
+          "title": "Điều hướng đến thư mục dự án",
+          "code": "cd /path/to/your/project"
+        },
+        "step3": {
+          "title": "Cài skill cho AI assistant",
+          "commands": [
+            "uipro init --ai claude        # Claude Code",
+            "uipro init --ai cursor        # Cursor",
+            "uipro init --ai windsurf      # Windsurf",
+            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai copilot       # GitHub Copilot",
+            "uipro init --ai kiro          # Kiro",
+            "uipro init --ai all           # Tất cả AI assistants"
+          ]
+        }
       },
-      "designSystem": {
-        "title": "Design system commands",
-        "body": "Dùng search.py để tạo output design system.",
-        "exampleTitle": "Examples"
+      "manualInstall": {
+        "description": "Nếu bạn thích cài thủ công, chỉ cần copy các thư mục tương ứng vào dự án:",
+        "table": {
+          "header": {
+            "assistant": "AI Assistant",
+            "folders": "Thư mục cần copy"
+          },
+          "rows": [
+            {
+              "assistant": "Claude Code",
+              "folders": ".claude/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Cursor",
+              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Windsurf",
+              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Antigravity",
+              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            }
+          ]
+        }
       },
-      "domain": {
-        "title": "Domain search",
-        "body": "Tìm theo từng domain để kết quả tập trung.",
-        "examplesTitle": "Examples"
+      "prerequisites": {
+        "warning": "⚠️ Yêu cầu",
+        "description": "Script tìm kiếm yêu cầu môi trường Python 3.x.",
+        "checkPython": "Kiểm tra Python đã cài chưa",
+        "checkCommand": "python3 --version",
+        "installMac": "macOS",
+        "installCommand": "brew install python3"
       },
-      "stack": {
-        "title": "Stack guidelines",
-        "body": "Xin best practices cho một stack cụ thể (React, Next.js, HTML+Tailwind…).",
-        "examplesTitle": "Examples"
-      },
-      "persist": {
-        "title": "Persist Design System",
-        "body": "Lưu design system vào file để tái sử dụng theo mô hình Master + Overrides.",
-        "exampleTitle": "Commands",
-        "structureTitle": "Cấu trúc thư mục"
-      },
-      "other": {
+      "otherCommands": {
         "title": "Lệnh CLI khác",
-        "exampleTitle": "Commands"
+        "commands": [
+          "uipro versions              # Liệt kê phiên bản",
+          "uipro update                # Cập nhật phiên bản mới nhất",
+          "uipro init --version v1.0.0 # Cài phiên bản cụ thể"
+        ]
       },
       "next": "Tiếp theo: Cách dùng & Prompt để xem cách gọi và prompt mẫu."
     },

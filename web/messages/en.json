@@ -204,41 +204,76 @@
       "next": "Next: check the Installation Guide to install the skill for your AI assistant."
     },
     "cli": {
-      "overview": "Use the CLI to install the skill and run domain/stack searches from your project.",
-      "install": {
-        "title": "Install the CLI",
-        "body": "Install the uipro-cli package globally.",
-        "exampleTitle": "Install"
+      "overview": "Choose the installation method that fits your workflow and inject design intelligence into your AI assistant.",
+      "tabs": {
+        "cliInstall": "CLI Install (Recommended)",
+        "manualInstall": "Manual Install",
+        "prerequisites": "Prerequisites"
       },
-      "init": {
-        "title": "Install for your assistant",
-        "body": "Run uipro init with your assistant target.",
-        "exampleTitle": "Commands"
+      "cliInstall": {
+        "step1": {
+          "title": "Install CLI tool globally",
+          "code": "npm install -g uipro-cli"
+        },
+        "step2": {
+          "title": "Navigate to your project directory",
+          "code": "cd /path/to/your/project"
+        },
+        "step3": {
+          "title": "Install skill for your AI assistant",
+          "commands": [
+            "uipro init --ai claude        # Claude Code",
+            "uipro init --ai cursor        # Cursor",
+            "uipro init --ai windsurf      # Windsurf",
+            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai copilot       # GitHub Copilot",
+            "uipro init --ai kiro          # Kiro",
+            "uipro init --ai all           # All AI assistants"
+          ]
+        }
       },
-      "designSystem": {
-        "title": "Design system commands",
-        "body": "Direct access to search.py for design-system output.",
-        "exampleTitle": "Examples"
+      "manualInstall": {
+        "description": "If you prefer manual installation, simply copy the corresponding folders to your project:",
+        "table": {
+          "header": {
+            "assistant": "AI Assistant",
+            "folders": "Folders to Copy"
+          },
+          "rows": [
+            {
+              "assistant": "Claude Code",
+              "folders": ".claude/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Cursor",
+              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Windsurf",
+              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Antigravity",
+              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            }
+          ]
+        }
       },
-      "domain": {
-        "title": "Domain search",
-        "body": "Search one domain at a time for focused recommendations.",
-        "examplesTitle": "Examples"
+      "prerequisites": {
+        "warning": "⚠️ Prerequisites",
+        "description": "The search script requires Python 3.x environment support.",
+        "checkPython": "Check if Python is installed",
+        "checkCommand": "python3 --version",
+        "installMac": "macOS",
+        "installCommand": "brew install python3"
       },
-      "stack": {
-        "title": "Stack guidelines",
-        "body": "Request best practices for a specific stack (React, Next.js, HTML+Tailwind, etc.).",
-        "examplesTitle": "Examples"
-      },
-      "persist": {
-        "title": "Persist Design System",
-        "body": "Save your design system to files to reuse it across different sessions (Master + Overrides pattern).",
-        "exampleTitle": "Commands",
-        "structureTitle": "Directory Structure"
-      },
-      "other": {
-        "title": "Other CLI commands",
-        "exampleTitle": "Commands"
+      "otherCommands": {
+        "title": "Other CLI Commands",
+        "commands": [
+          "uipro versions              # List available versions",
+          "uipro update                # Update to latest version",
+          "uipro init --version v1.0.0 # Install specific version"
+        ]
       },
       "next": "Next: see Usage & Prompts for invocation patterns and sample requests."
     },
