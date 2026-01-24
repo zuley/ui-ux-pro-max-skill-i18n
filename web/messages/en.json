@@ -278,39 +278,62 @@
       "next": "Next: see Usage & Prompts for invocation patterns and sample requests."
     },
     "examples": {
-      "overview": "Use these invocation patterns and prompt examples as a quick start.",
+      "overview": "Choose the activation method based on your AI assistant.",
       "usage": {
-        "title": "Usage by assistant",
-        "body": "The skill activates automatically for UI/UX tasks. You can also invoke it explicitly in most tools.",
-        "codeTitle": "Invocation examples",
-        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
-      },
-      "prompts": {
-        "title": "Example prompts",
-        "body": "Copy a prompt and tweak the product, style, and constraints.",
-        "items": [
-          "Build a landing page for a premium wellness service. Soft UI style, calm palette, booking CTA above the fold.",
-          "Create a healthcare analytics dashboard with clean typography and accessible contrast.",
-          "Design a fintech banking app with dark mode and strong trust cues.",
-          "Make a portfolio site for a product designer with bold typography and minimal layout.",
-          "Build an e-commerce product page with social proof and conversion-focused CTAs."
+        "title": "How to Use",
+        "subtitle": "Choose the activation method based on your AI assistant",
+        "assistants": [
+          {
+            "name": "Claude Code",
+            "description": "The skill activates automatically. Just chat naturally:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Cursor / Windsurf / Antigravity",
+            "description": "Use slash command to invoke the skill:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Kiro",
+            "description": "Type / in chat to see available commands, then select ui-ux-pro-max:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "GitHub Copilot",
+            "description": "In VS Code, type / to see available prompts, select ui-ux-pro-max:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "Gemini / Qoder / Roo Code",
+            "description": "Use slash command to invoke:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Codex CLI",
+            "description": "Use $ prefix to invoke:",
+            "example": "$ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Continue",
+            "description": "The skill activates automatically, just chat:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Trae (SOLO mode)",
+            "description": "Need to explicitly specify frontend only:",
+            "example": "Build a landing page for my SaaS product (frontend ONLY)"
+          }
         ]
       },
-      "stacks": {
-        "title": "Supported stacks",
-        "body": "Mention a stack in your prompt to get stack-specific guidance.",
+      "prompts": {
+        "title": "💡 Example Prompts",
+        "body": "Here are some practical prompt examples you can use directly or adjust to your needs:",
         "items": [
-          "HTML + Tailwind (default)",
-          "React",
-          "Next.js",
-          "Vue",
-          "Nuxt.js",
-          "Nuxt UI",
-          "Svelte",
-          "SwiftUI",
-          "React Native",
-          "Flutter",
-          "shadcn/ui"
+          "Build a landing page for my SaaS product",
+          "Create a healthcare analytics dashboard",
+          "Design a personal portfolio website with dark mode",
+          "Make a mobile UI for an e-commerce app",
+          "Build a fintech app dashboard"
         ]
       },
       "next": "Next: check the FAQ if you run into setup or command issues."

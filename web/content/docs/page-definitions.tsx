@@ -539,9 +539,14 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
         { id: 'overview', title: t('docs.sections.overview') },
         { id: 'usage', title: t('docs.examples.usage.title') },
         { id: 'prompts', title: t('docs.examples.prompts.title') },
-        { id: 'stacks', title: t('docs.examples.stacks.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
+
+      const assistants = t.raw('docs.examples.usage.assistants') as Array<{
+        name: string;
+        description: string;
+        example: string;
+      }>;
 
       const content = (
         <>
@@ -558,15 +563,29 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
               {t('docs.examples.usage.title')}
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.examples.usage.body')}
+            <p className="mt-2 mb-6 text-gray-600 dark:text-gray-400">
+              {t('docs.examples.usage.subtitle')}
             </p>
-            <div className="mt-4">
-              <CodeBlock
-                title={t('docs.examples.usage.codeTitle')}
-                language="text"
-                code={t('docs.examples.usage.code')}
-              />
+
+            <div className="space-y-4">
+              {assistants.map((assistant, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-5"
+                >
+                  <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-2">
+                    {assistant.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    {assistant.description}
+                  </p>
+                  <div className="rounded-lg bg-gray-100/50 dark:bg-black/30 p-3 font-mono text-sm">
+                    <code className="text-gray-900 dark:text-gray-100 whitespace-pre-wrap">
+                      {assistant.example}
+                    </code>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -577,30 +596,11 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               {t('docs.examples.prompts.body')}
             </p>
-            <ul className="mt-3 grid gap-3 md:grid-cols-2">
+            <ul className="mt-4 grid gap-3 md:grid-cols-2">
               {(t.raw('docs.examples.prompts.items') as string[]).map((item) => (
                 <li
                   key={item}
                   className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-4 text-sm text-gray-700 dark:text-gray-300"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section id="stacks" className="mt-10">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-              {t('docs.examples.stacks.title')}
-            </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              {t('docs.examples.stacks.body')}
-            </p>
-            <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {(t.raw('docs.examples.stacks.items') as string[]).map((item) => (
-                <li
-                  key={item}
-                  className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-black/20 p-3 text-sm text-gray-700 dark:text-gray-300"
                 >
                   {item}
                 </li>

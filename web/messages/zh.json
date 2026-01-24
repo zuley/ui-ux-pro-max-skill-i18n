@@ -281,42 +281,65 @@
       "next": "下一步：查看\"使用方式与提示词\"，快速上手调用方式。"
     },
     "examples": {
-      "overview": "使用这些调用方式与示例提示词快速上手。",
+      "overview": "根据你使用的 AI 助手,选择对应的激活方式。",
       "usage": {
-        "title": "不同助手的调用方式",
-        "body": "在大多数工具中会自动触发，也可以显式调用。",
-        "codeTitle": "调用示例",
-        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
+        "title": "如何使用",
+        "subtitle": "根据你使用的 AI 助手,选择对应的激活方式",
+        "assistants": [
+          {
+            "name": "Claude Code",
+            "description": "技能会自动激活。像平时一样自然对话即可:",
+            "example": "为我的 SaaS 产品构建一个着陆页"
+          },
+          {
+            "name": "Cursor / Windsurf / Antigravity",
+            "description": "使用斜杠命令调用技能:",
+            "example": "/ui-ux-pro-max 为我的 SaaS 产品构建一个着陆页"
+          },
+          {
+            "name": "Kiro",
+            "description": "在聊天中输入 / 查看可用命令,然后选择 ui-ux-pro-max:",
+            "example": "/ui-ux-pro-max"
+          },
+          {
+            "name": "GitHub Copilot",
+            "description": "在 VS Code 中,输入 / 查看可用提示词,选择 ui-ux-pro-max:",
+            "example": "/ui-ux-pro-max"
+          },
+          {
+            "name": "Gemini / Qoder / Roo Code",
+            "description": "使用斜杠命令调用:",
+            "example": "/ui-ux-pro-max 为我的 SaaS 产品构建一个着陆页"
+          },
+          {
+            "name": "Codex CLI",
+            "description": "使用 $ 前缀调用:",
+            "example": "$ui-ux-pro-max 为我的 SaaS 产品构建一个着陆页"
+          },
+          {
+            "name": "Continue",
+            "description": "技能会自动激活,直接对话即可:",
+            "example": "为我的 SaaS 产品构建一个着陆页"
+          },
+          {
+            "name": "Trae (SOLO 模式)",
+            "description": "需要明确指定仅前端:",
+            "example": "为我的 SaaS 产品构建一个着陆页 (仅前端)"
+          }
+        ]
       },
       "prompts": {
-        "title": "示例提示词",
-        "body": "复制后替换产品类型、风格与约束条件即可。",
+        "title": "💡 示例提示词",
+        "body": "以下是一些实用的提示词示例,你可以直接使用或根据需求调整:",
         "items": [
-          "为高端身心疗愈服务制作落地页，Soft UI 风格、柔和配色、首屏预约 CTA。",
-          "创建医疗分析仪表盘，强调可读性与高对比度。",
-          "设计深色模式的金融银行应用，突出信任与安全感。",
-          "为产品设计师做作品集站点，粗体字排与极简布局。",
-          "打造电商商品页，加入社交证明与转化向 CTA。"
+          "为我的 SaaS 产品构建一个着陆页",
+          "创建一个医疗分析仪表盘",
+          "设计一个具有深色模式的个人作品集网站",
+          "为电商应用制作一个移动端 UI",
+          "构建一个金融科技应用的仪表盘"
         ]
       },
-      "stacks": {
-        "title": "支持的技术栈",
-        "body": "在提示词中提到技术栈即可获得对应指南。",
-        "items": [
-          "HTML + Tailwind（默认）",
-          "React",
-          "Next.js",
-          "Vue",
-          "Nuxt.js",
-          "Nuxt UI",
-          "Svelte",
-          "SwiftUI",
-          "React Native",
-          "Flutter",
-          "shadcn/ui"
-        ]
-      },
-      "next": "下一步：如果遇到安装或命令问题，请查看常见问题。"
+      "next": "下一步:如果遇到安装或命令问题,请查看常见问题。"
     },
     "faq": {
       "overview": "常见问题与快速解决方案。",
