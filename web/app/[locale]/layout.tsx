@@ -23,10 +23,54 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
+  const baseUrl = 'https://ui-ux-pro-max-skill.com';
+  const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+
   return {
     title: `${t('common.title')} - ${t('common.description')}`,
     description: t('hero.subtitle'),
-    keywords: t('common.keywords')
+    keywords: t('common.keywords'),
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'en': baseUrl,
+        'zh': `${baseUrl}/zh`,
+        'vi': `${baseUrl}/vi`,
+      },
+    },
+    openGraph: {
+      title: `${t('common.title')} - ${t('common.description')}`,
+      description: t('hero.subtitle'),
+      url: currentUrl,
+      siteName: 'UI UX Pro Max Skill',
+      locale: locale,
+      type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: 'UI UX Pro Max Skill - Agent Skills for Claude Code',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('common.title')} - ${t('common.description')}`,
+      description: t('hero.subtitle'),
+      images: [`${baseUrl}/og-image.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

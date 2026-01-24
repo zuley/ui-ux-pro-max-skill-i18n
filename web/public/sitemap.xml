@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English Homepage -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ui-ux-pro-max-skill.com/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ui-ux-pro-max-skill.com/zh" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ui-ux-pro-max-skill.com/vi" />
+  </url>
+
+  <!-- Chinese Homepage -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ui-ux-pro-max-skill.com/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ui-ux-pro-max-skill.com/zh" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ui-ux-pro-max-skill.com/vi" />
+  </url>
+
+  <!-- Vietnamese Homepage -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ui-ux-pro-max-skill.com/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ui-ux-pro-max-skill.com/zh" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ui-ux-pro-max-skill.com/vi" />
+  </url>
+
+  <!-- English Docs Pages -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/docs/getting-started</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/docs/how-it-works</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/docs/cli-reference</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/docs/how-to-use</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/docs/faq</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Chinese Docs Pages -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh/docs/getting-started</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh/docs/how-it-works</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh/docs/cli-reference</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh/docs/how-to-use</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/zh/docs/faq</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Vietnamese Docs Pages -->
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi/docs/getting-started</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi/docs/how-it-works</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi/docs/cli-reference</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi/docs/how-to-use</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ui-ux-pro-max-skill.com/vi/docs/faq</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
