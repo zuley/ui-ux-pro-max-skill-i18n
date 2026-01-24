@@ -25,7 +25,8 @@ export async function generateMetadata({
 
   return {
     title: `${t('common.title')} - ${t('common.description')}`,
-    description: t('hero.subtitle')
+    description: t('hero.subtitle'),
+    keywords: t('common.keywords')
   };
 }
 

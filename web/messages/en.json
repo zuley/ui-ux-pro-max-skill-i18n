@@ -1,8 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max - Agent Skills",
-    "navTitle": "UI UX Pro Max",
+    "title": "UI UX Pro Max Skill - Agent Skills",
+    "navTitle": "UI UX Pro Max Skill",
     "description": "Design Intelligence for Claude Code",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, UX guidelines",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
@@ -22,19 +23,19 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "title1": "UI UX Pro Max",
+    "title1": "UI UX Pro Max Skill",
     "title2": "Design Intelligence",
-    "subtitle": "Searchable database of UI styles, color palettes, font pairings, chart types, and UX guidelines. Build beautiful interfaces with AI-powered design recommendations.",
+    "subtitle": "UI UX Pro Max Skill - Agent Skills for Claude Code, Cursor, Windsurf \u0026 more AI assistants. 57 UI styles, 95 color palettes, 56 font pairings \u0026 98 UX guidelines to help AI build beautiful interfaces.",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Get Started",
     "btnDemos": "Quick Start"
   },
   "quickStart": {
-    "title": "Quick Start",
-    "subtitle": "Follow these steps to go from prompt to a complete design system in minutes.",
+    "title": "Quick Start with UI UX Pro Max Skill",
+    "subtitle": "Follow these steps to use UI UX Pro Max Skill and go from prompt to a complete design system in minutes.",
     "step1": {
       "title": "1) Install the Skill",
-      "body": "Install UI UX Pro Max directly inside Claude Code.",
+      "body": "Install UI UX Pro Max Skill directly inside Claude Code.",
       "codeTitle": "Claude Code"
     },
     "step2": {
@@ -338,8 +339,8 @@
     "landing": "Landing Patterns"
   },
   "features": {
-    "title": "Everything You Need for Beautiful UI",
-    "subtitle": "Comprehensive design intelligence at your fingertips. Search, discover, and implement stunning interfaces with AI-powered recommendations.",
+    "title": "UI UX Pro Max Skill - Everything You Need for Beautiful UI",
+    "subtitle": "UI UX Pro Max Skill provides comprehensive design intelligence at your fingertips. Search, discover, and implement stunning interfaces with AI-powered recommendations.",
     "sections": {
       "styles": {
         "title": "Design Styles",
@@ -399,9 +400,9 @@
     }
   },
   "howItWorks": {
-    "titlePrefix": "How It ",
+    "titlePrefix": "UI UX Pro Max Skill - How It ",
     "titleAccent": "Works",
-    "subtitle": "From prompt to production-ready UI in 6 intelligent steps",
+    "subtitle": "UI UX Pro Max Skill: From prompt to production-ready UI in 6 intelligent steps",
     "steps": {
       "1": {
         "title": "Your Prompt",
@@ -503,8 +504,8 @@
     }
   },
   "techStacks": {
-    "title": "11 Tech Stacks Supported",
-    "subtitle": "Framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
+    "title": "UI UX Pro Max Skill Supports 11 Tech Stacks",
+    "subtitle": "UI UX Pro Max Skill provides framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
     "stacks": {
       "react": {
         "title": "React",
@@ -542,7 +543,7 @@
   },
   "gallery": {
     "title": "39 Website Demos Gallery",
-    "subtitle": "Browse real-world website demos built with UI UX Pro Max. Click to view live demos.",
+    "subtitle": "Browse real-world website demos built with UI UX Pro Max Skill. Click to view live demos.",
     "searchPlaceholder": "Search demos (name, style, category, prompt)…",
     "clearSearch": "Clear search",
     "filters": {
@@ -563,7 +564,7 @@
     "showing": "Showing {shown} of {total} demos",
     "stats": "{total} demos available • {categories} categories • {light} light • {dark} dark",
     "readyTitle": "Ready to Build Beautiful Interfaces?",
-    "readySubtitle": "Get started with UI UX Pro Max skill for Claude Code. Design intelligence at your fingertips.",
+    "readySubtitle": "Get started with UI UX Pro Max Skill for Claude Code. Design intelligence at your fingertips.",
     "getOnGithub": "Get on GitHub",
     "quickStart": "Quick Start",
     "learnMore": "Learn More",
@@ -586,7 +587,7 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
+    "description": "UI UX Pro Max Skill - Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
     "resources": "Resources",
     "database": "Database",
     "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"

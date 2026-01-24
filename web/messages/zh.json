@@ -1,8 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max - Agent Skills",
-    "navTitle": "UI UX Pro Max",
+    "title": "UI UX Pro Max Skill - Agent Skills",
+    "navTitle": "UI UX Pro Max Skill",
     "description": "Claude Code 的设计智能助手",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI设计, UI风格, 配色方案, 字体搭配",
     "switchTheme": "切换主题",
     "switchToLight": "切换到浅色模式",
     "switchToDark": "切换到深色模式",
@@ -25,19 +26,19 @@
     "closeMenu": "关闭菜单"
   },
   "hero": {
-    "title1": "UI UX Pro Max",
+    "title1": "UI UX Pro Max Skill",
     "title2": "设计智能",
-    "subtitle": "可搜索的 UI 风格、配色方案、字体搭配、图表类型和 UX 指南数据库。利用 AI 驱动的设计建议构建精美界面。",
+    "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 57 种 UI 风格、95 种配色方案、56 种字体搭配和 98 条 UX 指南，让 AI 生成精美界面。",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "开始上手",
     "btnDemos": "快速上手"
   },
   "quickStart": {
-    "title": "快速上手",
-    "subtitle": "按步骤操作，几分钟内从提示词生成完整设计系统。",
+    "title": "快速上手 UI UX Pro Max Skill",
+    "subtitle": "按步骤操作，使用 UI UX Pro Max Skill 几分钟内从提示词生成完整设计系统。",
     "step1": {
       "title": "1）安装技能",
-      "body": "在 Claude Code 内直接安装 UI UX Pro Max。",
+      "body": "在 Claude Code 内直接安装 UI UX Pro Max Skill。",
       "codeTitle": "Claude Code"
     },
     "step2": {
@@ -341,8 +342,8 @@
     "landing": "落地页模式"
   },
   "features": {
-    "title": "构建精美 UI 所需的一切",
-    "subtitle": "触手可及的全面设计智能。搜索、发现并利用 AI 驱动的建议实现令人惊叹的界面。",
+    "title": "UI UX Pro Max Skill - 构建精美 UI 所需的一切",
+    "subtitle": "UI UX Pro Max Skill 提供触手可及的全面设计智能。搜索、发现并利用 AI 驱动的建议实现令人惊叹的界面。",
     "sections": {
       "styles": {
         "title": "设计风格",
@@ -402,9 +403,9 @@
     }
   },
   "howItWorks": {
-    "titlePrefix": "工作",
+    "titlePrefix": "UI UX Pro Max Skill 工作",
     "titleAccent": "原理",
-    "subtitle": "通过 6 个智能步骤，从提示词到生产级 UI",
+    "subtitle": "UI UX Pro Max Skill 通过 6 个智能步骤，从提示词到生产级 UI",
     "steps": {
       "1": {
         "title": "你的提示词",
@@ -506,8 +507,8 @@
     }
   },
   "techStacks": {
-    "title": "支持 11 种技术栈",
-    "subtitle": "特定框架的最佳实践、模式和代码示例。获取为你技术栈量身定制的指南。",
+    "title": "UI UX Pro Max Skill 支持 11 种技术栈",
+    "subtitle": "UI UX Pro Max Skill 为各框架提供最佳实践、模式和代码示例。获取为你技术栈量身定制的指南。",
     "stacks": {
       "react": {
         "title": "React",
@@ -545,7 +546,7 @@
   },
   "gallery": {
     "title": "39 个网站演示画廊",
-    "subtitle": "浏览使用 UI UX Pro Max 构建的真实网站演示。点击查看实时演示。",
+    "subtitle": "浏览使用 UI UX Pro Max Skill 构建的真实网站演示。点击查看实时演示。",
     "searchPlaceholder": "搜索演示（名称、风格、分类、提示词）…",
     "clearSearch": "清除搜索",
     "filters": {
@@ -566,7 +567,7 @@
     "showing": "显示 {shown} / {total} 个演示",
     "stats": "共 {total} 个演示 • {categories} 个分类 • {light} 个浅色 • {dark} 个深色",
     "readyTitle": "准备好构建精美界面了吗？",
-    "readySubtitle": "开始使用 UI UX Pro Max for Claude Code。触手可及的设计智能。",
+    "readySubtitle": "开始使用 UI UX Pro Max Skill for Claude Code。触手可及的设计智能。",
     "getOnGithub": "访问 GitHub",
     "quickStart": "快速上手",
     "learnMore": "了解更多",
@@ -589,7 +590,7 @@
     "issueTitlePrefix": "【文档反馈】"
   },
   "footer": {
-    "description": "Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
+    "description": "UI UX Pro Max Skill - Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
     "resources": "资源",
     "database": "数据库",
     "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)"
