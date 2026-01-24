@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "npm run build:cf && npx opennextjs-cloudflare deploy",
-    "preview": "npx opennextjs-cloudflare dev"
+    "preview": "npx opennextjs-cloudflare preview"
   },
   "dependencies": {
     "framer-motion": "^12.27.1",

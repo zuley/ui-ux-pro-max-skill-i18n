@@ -1,7 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max",
+    "title": "UI UX Pro Max Skill - Agent Skills",
+    "navTitle": "UI UX Pro Max Skill",
     "description": "Design Intelligence for Claude Code",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, UX guidelines",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
@@ -284,9 +286,49 @@
       "overview": "Dùng các mẫu gọi và prompt này để bắt đầu nhanh.",
       "usage": {
         "title": "Cách gọi theo assistant",
-        "body": "Skill tự kích hoạt cho các tác vụ UI/UX, nhưng bạn cũng có thể gọi trực tiếp.",
-        "codeTitle": "Ví dụ gọi lệnh",
-        "code": "Claude Code:\\nBuild a landing page for my SaaS product\\n\\nCursor / Windsurf / Antigravity:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nGitHub Copilot / Kiro / Gemini / Qoder / Roo Code:\\n/ui-ux-pro-max Build a landing page for my SaaS product\\n\\nCodex CLI:\\n$ui-ux-pro-max Build a landing page for my SaaS product\\n\\nContinue:\\nBuild a landing page for my SaaS product\\n\\nTrae (SOLO mode):\\nBuild a landing page (frontend ONLY) for my SaaS product."
+        "subtitle": "Chọn phương thức kích hoạt dựa trên AI assistant của bạn",
+        "assistants": [
+          {
+            "name": "Claude Code",
+            "description": "Skill tự động kích hoạt. Chỉ cần chat tự nhiên:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Cursor / Windsurf / Antigravity",
+            "description": "Dùng lệnh slash để gọi skill:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Kiro",
+            "description": "Gõ / trong chat để xem lệnh có sẵn, sau đó chọn ui-ux-pro-max:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "GitHub Copilot",
+            "description": "Trong VS Code, gõ / để xem prompts có sẵn, chọn ui-ux-pro-max:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "Gemini / Qoder / Roo Code",
+            "description": "Dùng lệnh slash để gọi:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Codex CLI",
+            "description": "Dùng tiền tố $ để gọi:",
+            "example": "$ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Continue",
+            "description": "Skill tự động kích hoạt, chỉ cần chat:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Trae (SOLO mode)",
+            "description": "Cần chỉ định rõ chỉ frontend:",
+            "example": "Build a landing page for my SaaS product (frontend ONLY)"
+          }
+        ]
       },
       "prompts": {
         "title": "Prompt mẫu",

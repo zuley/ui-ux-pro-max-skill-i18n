@@ -43,29 +43,9 @@ function writeTheme(theme: Theme) {
   window.dispatchEvent(new Event(THEME_EVENT));
 }
 
-// 圆形扩展动画函数
-function animateThemeTransition(x: number, y: number, isDark: boolean, callback: () => void) {
-  if (typeof window === 'undefined' || typeof document === 'undefined') {
-    callback();
-    return;
-  }
-
-  // 检查是否支持 View Transitions API
-  if ('startViewTransition' in document) {
-    // 设置 CSS 变量来控制圆形扩展的中心点
-    const xPercent = (x / window.innerWidth) * 100;
-    const yPercent = (y / window.innerHeight) * 100;
-
-    document.documentElement.style.setProperty('--x', `${xPercent}%`);
-    document.documentElement.style.setProperty('--y', `${yPercent}%`);
-
-    const transition = (document as any).startViewTransition(() => {
-      callback();
-    });
-    return;
-  }
-
-  // 降级方案：使用 CSS clip-path 动画
+// 降级方案：使用 CSS clip-path 动画
+function fallbackThemeAnimation(x: number, y: number, isDark: boolean, callback: () => void) {
+  // 这个函数只在客户端调用，所以 document 一定存在
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
     Math.max(y, window.innerHeight - y)
@@ -102,6 +82,32 @@ function animateThemeTransition(x: number, y: number, isDark: boolean, callback:
   setTimeout(() => {
     clipPath.remove();
   }, 600);
+}
+
+// 圆形扩展动画函数
+function animateThemeTransition(x: number, y: number, isDark: boolean, callback: () => void) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    callback();
+    return;
+  }
+
+  // 检查是否支持 View Transitions API
+  if ('startViewTransition' in document) {
+    // 设置 CSS 变量来控制圆形扩展的中心点
+    const xPercent = (x / window.innerWidth) * 100;
+    const yPercent = (y / window.innerHeight) * 100;
+
+    document.documentElement.style.setProperty('--x', `${xPercent}%`);
+    document.documentElement.style.setProperty('--y', `${yPercent}%`);
+
+    const transition = (document as any).startViewTransition(() => {
+      callback();
+    });
+    return;
+  }
+
+  // 使用降级方案
+  fallbackThemeAnimation(x, y, isDark, callback);
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
