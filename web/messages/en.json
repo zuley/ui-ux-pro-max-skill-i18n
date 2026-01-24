@@ -87,24 +87,24 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "What is UI/UX Pro Max?",
-        "description": "Learn about the core features of this AI design intelligence skill."
+        "title": "What is UI UX Pro Max Skill?",
+        "description": "Learn about the core features of UI UX Pro Max Skill, an AI design intelligence skill."
       },
       "designSystemGenerator": {
         "title": "How It Works",
-        "description": "From prompt to code in just four steps."
+        "description": "UI UX Pro Max Skill: From prompt to code in just four steps."
       },
       "cliReference": {
         "title": "Installation Guide",
-        "description": "Install the skill for your AI assistant: Claude, Cursor, Windsurf, and more."
+        "description": "Install UI UX Pro Max Skill for your AI assistant: Claude, Cursor, Windsurf, and more."
       },
       "examples": {
         "title": "How to Use",
-        "description": "Invocation patterns and example prompts, organized by AI assistant."
+        "description": "UI UX Pro Max Skill invocation patterns and example prompts, organized by AI assistant."
       },
       "faq": {
         "title": "FAQ",
-        "description": "Common questions and quick solutions."
+        "description": "UI UX Pro Max Skill common questions and quick solutions."
       }
     },
     "gettingStarted": {

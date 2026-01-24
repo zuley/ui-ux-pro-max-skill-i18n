@@ -29,13 +29,56 @@ export async function generateMetadata({
   if (!isDocSlug(slug)) return {};
   const nav = docsNav.find((n) => n.slug === slug)!;
 
+  const baseUrl = 'https://ui-ux-pro-max-skill.com';
+  const currentUrl = locale === 'en' ? `${baseUrl}/docs/${slug}` : `${baseUrl}/${locale}/docs/${slug}`;
+  const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
+  const pageDescription = `${t(nav.descriptionKey)} - UI UX Pro Max Skill 为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能。`;
+
   return {
-    title: `${t(nav.titleKey)} | ${t('common.title')}`,
-    description: t(nav.descriptionKey),
+    title: pageTitle,
+    description: pageDescription,
+    keywords: `UI UX Pro Max Skill, ${t(nav.titleKey)}, Agent Skills, Claude Code, AI 设计助手`,
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'en': `${baseUrl}/docs/${slug}`,
+        'zh': `${baseUrl}/zh/docs/${slug}`,
+        'vi': `${baseUrl}/vi/docs/${slug}`,
+      },
+    },
     openGraph: {
-      title: `${t(nav.titleKey)} | ${t('common.title')}`,
-      description: t(nav.descriptionKey)
-    }
+      title: pageTitle,
+      description: pageDescription,
+      url: currentUrl,
+      siteName: 'UI UX Pro Max Skill',
+      locale: locale,
+      type: 'article',
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: 'UI UX Pro Max Skill - Agent Skills for Claude Code',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: pageDescription,
+      images: [`${baseUrl}/og-image.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

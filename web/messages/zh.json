@@ -90,24 +90,24 @@
     },
     "nav": {
       "gettingStarted": {
-        "title": "什么是 UI/UX Pro Max?",
-        "description": "了解这个 AI 设计智能技能的核心功能与特性。"
+        "title": "什么是 UI UX Pro Max Skill?",
+        "description": "了解 UI UX Pro Max Skill 这个 AI 设计智能技能的核心功能与特性。"
       },
       "designSystemGenerator": {
         "title": "它是如何运作的?",
-        "description": "从提问到生成代码，只需四步。"
+        "description": "UI UX Pro Max Skill 从提问到生成代码，只需四步。"
       },
       "cliReference": {
         "title": "安装指南",
-        "description": "为你的 AI 助手安装技能，支持 Claude、Cursor、Windsurf 等。"
+        "description": "为你的 AI 助手安装 UI UX Pro Max Skill，支持 Claude、Cursor、Windsurf 等。"
       },
       "examples": {
         "title": "如何使用",
-        "description": "调用方式与示例提示词，按 AI 助手分类。"
+        "description": "UI UX Pro Max Skill 的调用方式与示例提示词，按 AI 助手分类。"
       },
       "faq": {
         "title": "常见问题",
-        "description": "常见问题与快速解决方案。"
+        "description": "UI UX Pro Max Skill 的常见问题与快速解决方案。"
       }
     },
     "gettingStarted": {
