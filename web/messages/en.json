@@ -106,72 +106,36 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max is a design intelligence skill that turns a single prompt into professional UI/UX decisions across style, color, typography, layout, and UX rules.",
-      "highlights": [
-        {
-          "title": "Design System Generator",
-          "desc": "Generate pattern, style, colors, typography, and key effects."
-        },
-        {
-          "title": "Searchable Database",
-          "desc": "Query styles, palettes, fonts, charts, landing patterns, and UX guidelines."
-        },
-        {
-          "title": "Stack-aware Output",
-          "desc": "Get recommendations tailored to your framework and stack."
-        }
-      ],
-      "whatsNew": {
-        "title": "What's new in v2.0",
-        "body": "Version 2.0 adds a reasoning engine that produces complete, project-specific design systems.",
+      "overview": "A searchable design database built specifically for AI coding assistants, providing design intelligence for Claude Code, Cursor, Windsurf, and more.",
+      "features": {
+        "title": "What's Included",
         "items": [
           {
-            "title": "Intelligent Design System Generation",
-            "desc": "Analyze your product type and goals to recommend pattern, style, colors, and typography."
+            "title": "57 UI Styles",
+            "desc": "From Glassmorphism to Claymorphism, from Minimalism to Brutalism, including Neumorphism, Bento Grid, Dark Mode, and more."
           },
           {
-            "title": "Reasoning Engine",
-            "desc": "100 industry rules rank and filter results to avoid common anti-patterns."
+            "title": "95 Color Palettes",
+            "desc": "Industry-specific color schemes: professional-grade palettes for SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, and more."
           },
           {
-            "title": "Pre-delivery Checklist",
-            "desc": "Quality gates for accessibility, hover states, motion, and responsive breakpoints."
+            "title": "56 Font Pairings",
+            "desc": "Carefully curated Google Fonts typography combinations with automatic font imports and typographic hierarchy."
+          },
+          {
+            "title": "24 Chart Types",
+            "desc": "Scientific visualization recommendations for dashboards and data analysis scenarios, making data presentation more professional."
+          },
+          {
+            "title": "8 Tech Stacks",
+            "desc": "Framework-specific guides for React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, and more."
+          },
+          {
+            "title": "98 UX Guidelines",
+            "desc": "Best practices, anti-pattern corrections, and Accessibility rules to ensure excellent user experience."
           }
         ]
-      },
-      "features": {
-        "title": "What you get",
-        "items": [
-          "57 UI styles, from minimalism and brutalism to AI-native and bento grids.",
-          "95 color palettes tailored to SaaS, e-commerce, healthcare, fintech, and more.",
-          "56 font pairings with Google Fonts imports and Tailwind-ready configs.",
-          "24 chart types with library recommendations and usage notes.",
-          "11 tech stacks supported with framework-specific guidance.",
-          "98 UX guidelines plus 100 reasoning rules for professional polish."
-        ]
-      },
-      "defaultStack": {
-        "title": "Default stack behavior",
-        "body": "If you don’t specify a stack, it defaults to HTML + Tailwind."
-      },
-      "prerequisites": {
-        "title": "Prerequisites",
-        "body": "Make sure Python is installed before using the CLI search tool.",
-        "checkPython": "Check Python"
-      },
-      "install": {
-        "title": "Install",
-        "body": "Choose the installation method that fits your workflow.",
-        "claudeCode": "Using Claude Marketplace (Claude Code)",
-        "cli": "Using CLI (Recommended)",
-        "manual": "Manual Installation"
-      },
-      "quickstart": {
-        "title": "Your First Run",
-        "body": "Start with the Design System Generator, then refine with domain/stack searches.",
-        "designSystem": "Generate design system"
-      },
-      "next": "Continue to Design System Generator for the deep dive and the pre-delivery checklist."
+      }
     },
     "dsg": {
       "overview": "From prompt to code in just four steps. AI automatically searches the design database to recommend the best matching design system for you.",

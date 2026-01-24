@@ -109,72 +109,36 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max 是一个设计智能技能，可将一个提示词转化为专业 UI/UX 决策（风格、配色、字体、布局与 UX 规则）。",
-      "highlights": [
-        {
-          "title": "设计系统生成器",
-          "desc": "生成模式、风格、配色、字体与关键效果。"
-        },
-        {
-          "title": "可搜索数据库",
-          "desc": "查询风格、配色、字体、图表、落地页模式与 UX 指南。"
-        },
-        {
-          "title": "栈感知输出",
-          "desc": "按框架/技术栈输出更贴合的实现建议。"
-        }
-      ],
-      "whatsNew": {
-        "title": "v2.0 新特性",
-        "body": "2.0 新增推理引擎，可生成完整、项目定制的设计系统。",
+      "overview": "一个专为 AI 编码助手打造的可搜索设计数据库，为 Claude Code、Cursor、Windsurf 等提供设计智能。",
+      "features": {
+        "title": "包含内容",
         "items": [
           {
-            "title": "智能设计系统生成",
-            "desc": "根据产品类型与目标推荐页面结构、风格、配色与字体。"
+            "title": "57 种 UI 风格",
+            "desc": "从玻璃拟态 (Glassmorphism) 到粘土拟态 (Claymorphism)，从极简主义 (Minimalism) 到野兽派 (Brutalism)，以及新拟态 (Neumorphism)、Bento Grid、深色模式等。"
           },
           {
-            "title": "推理引擎",
-            "desc": "100 条行业规则用于排序与过滤，避免常见反模式。"
+            "title": "95 种配色方案",
+            "desc": "行业专属配色：SaaS、电子商务、医疗健康、金融科技、美容护肤等各领域的专业级调色板。"
           },
           {
-            "title": "交付前检查清单",
-            "desc": "覆盖可访问性、悬停反馈、动效与响应式质量门槛。"
+            "title": "56 种字体配对",
+            "desc": "精心策划的 Google Fonts 排版组合，自动处理字体导入和排版层次结构。"
+          },
+          {
+            "title": "24 种图表类型",
+            "desc": "为仪表盘和数据分析场景提供最科学的可视化建议，让数据呈现更专业。"
+          },
+          {
+            "title": "8 种技术栈支持",
+            "desc": "React、Next.js、Vue、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind 等主流框架专属指南。"
+          },
+          {
+            "title": "98 条 UX 准则",
+            "desc": "最佳实践、反模式纠正以及无障碍访问 (Accessibility) 规则，确保用户体验卓越。"
           }
         ]
-      },
-      "features": {
-        "title": "你将获得",
-        "items": [
-          "57 种 UI 风格，覆盖极简、粗野、AI 原生与 Bento Grid 等。",
-          "95 套行业配色，覆盖 SaaS、电商、医疗、金融等场景。",
-          "56 组字体搭配，附 Google Fonts 引用与 Tailwind 配置。",
-          "24 种图表类型与可视化库建议。",
-          "11 个技术栈的实现指南与最佳实践。",
-          "98 条 UX 规范 + 100 条推理规则，保障专业度。"
-        ]
-      },
-      "defaultStack": {
-        "title": "默认技术栈",
-        "body": "如果不指定技术栈，默认按 HTML + Tailwind 输出。"
-      },
-      "prerequisites": {
-        "title": "前置条件",
-        "body": "使用 CLI 搜索工具前，请确保已安装 Python。",
-        "checkPython": "检查 Python"
-      },
-      "install": {
-        "title": "安装",
-        "body": "选择适合你工作流的安装方式。",
-        "claudeCode": "使用 Claude Marketplace (Claude Code)",
-        "cli": "使用 CLI (推荐)",
-        "manual": "手动安装"
-      },
-      "quickstart": {
-        "title": "第一次运行",
-        "body": "先用设计系统生成器获得完整建议，再用按域/按栈搜索细化。",
-        "designSystem": "生成设计系统"
-      },
-      "next": "继续阅读“设计系统生成器”，了解完整流程与交付清单。"
+      }
     },
     "dsg": {
       "overview": "从提问到生成代码，只需四步。AI 自动搜索设计数据库，为你推荐最匹配的设计系统。",
