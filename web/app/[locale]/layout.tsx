@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/lib/theme-context';
+import { adsenseMetadata } from '@/lib/adsense';
 import { AnnouncementBar } from '@/components/announcement-bar';
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
@@ -45,20 +46,11 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale: locale,
       type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: 'UI UX Pro Max Skill - Agent Skills for Claude Code',
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${t('common.title')} - ${t('common.description')}`,
       description: t('hero.subtitle'),
-      images: [`${baseUrl}/og-image.png`],
     },
     robots: {
       index: true,
@@ -71,6 +63,7 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
+    other: adsenseMetadata(),
   };
 }
 

@@ -53,20 +53,11 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale: locale,
       type: 'article',
-      images: [
-        {
-          url: `${baseUrl}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: 'UI UX Pro Max Skill - Agent Skills for Claude Code',
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: pageTitle,
       description: pageDescription,
-      images: [`${baseUrl}/og-image.png`],
     },
     robots: {
       index: true,

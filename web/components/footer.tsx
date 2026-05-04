@@ -24,7 +24,17 @@ export function Footer() {
             <p className="text-gray-600 dark:text-gray-400 max-w-sm mb-6">
               {t('description')}
             </p>
-            <div className="flex gap-4" />
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <Link href={localePath(locale, '/privacy')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {t('privacy')}
+              </Link>
+              <Link href={localePath(locale, '/terms')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {t('terms')}
+              </Link>
+              <Link href={localePath(locale, '/contact')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {t('contact')}
+              </Link>
+            </div>
           </div>
 
           <div>
