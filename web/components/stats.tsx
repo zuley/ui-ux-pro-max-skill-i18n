@@ -6,12 +6,12 @@ export function Stats() {
   const t = useTranslations('stats');
 
   const stats = [
-    { value: '57', label: t('styles') },
-    { value: '95', label: t('palettes') },
-    { value: '56', label: t('fonts') },
-    { value: '11', label: t('stacks') },
-    { value: '24', label: t('charts') },
-    { value: '29', label: t('landing') },
+    { value: '67', label: t('styles') },
+    { value: '161', label: t('palettes') },
+    { value: '57', label: t('fonts') },
+    { value: '16', label: t('stacks') },
+    { value: '25', label: t('charts') },
+    { value: '161', label: t('reasoning') },
   ];
 
   return (

@@ -100,7 +100,11 @@ function animateThemeTransition(x: number, y: number, isDark: boolean, callback:
     document.documentElement.style.setProperty('--x', `${xPercent}%`);
     document.documentElement.style.setProperty('--y', `${yPercent}%`);
 
-    const transition = (document as any).startViewTransition(() => {
+    const viewTransitionDocument = document as Document & {
+      startViewTransition: (callback: () => void) => unknown;
+    };
+
+    viewTransitionDocument.startViewTransition(() => {
       callback();
     });
     return;

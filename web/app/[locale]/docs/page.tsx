@@ -1,4 +1,4 @@
-import { redirect } from '@/i18n/routing';
+import { redirect } from 'next/navigation';
 
 
 
@@ -8,5 +8,5 @@ type Props = {
 
 export default async function DocsIndexPage({ params }: Props) {
   const { locale } = await params;
-  redirect({ href: '/docs/getting-started', locale });
+  redirect(`/${locale}/docs/getting-started`);
 }

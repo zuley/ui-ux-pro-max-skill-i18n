@@ -1,10 +1,6 @@
 import type { DocSlug } from '@/content/docs/nav';
 import type { TocItem } from '@/components/docs/docs-toc';
-import { Checklist } from '@/components/tutorial/checklist';
-import { ClientOnly } from '@/components/client-only';
-import { Tabs } from '@/components/tabs';
 import { CodeBlock } from '@/components/tutorial/code-block';
-import { Callout } from '@/components/tutorial/callout';
 
 export type Translator = ((key: string, values?: Record<string, unknown>) => string) & {
   raw: (key: string) => unknown;
@@ -61,6 +57,7 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
       const toc: TocItem[] = [
         { id: 'overview', title: t('docs.sections.overview') },
         { id: 'workflow', title: t('docs.dsg.workflow.title') },
+        { id: 'persist', title: t('docs.dsg.persist.title') },
         { id: 'next', title: t('docs.sections.next') }
       ];
 
@@ -101,6 +98,25 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section id="persist" className="mt-10">
+            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-white">
+              {t('docs.dsg.persist.title')}
+            </h2>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {t('docs.dsg.persist.body')}
+            </p>
+            <div className="mt-4">
+              <CodeBlock
+                title="Persist"
+                language="bash"
+                code={[
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp"',
+                  'python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS dashboard" --design-system --persist -p "MyApp" --page "dashboard"'
+                ].join('\n')}
+              />
             </div>
           </section>
 

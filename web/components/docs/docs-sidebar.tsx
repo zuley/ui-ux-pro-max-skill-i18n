@@ -1,7 +1,9 @@
 'use client';
 
-import { Link } from '@/i18n/routing';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 import type { DocsNavItem, DocSlug } from '@/content/docs/nav';
+import { docPath } from '@/lib/locale-path';
 
 export function DocsSidebar({
   items,
@@ -12,6 +14,8 @@ export function DocsSidebar({
   activeSlug: DocSlug;
   getTitle: (key: string) => string;
 }) {
+  const locale = useLocale();
+
   return (
     <div className="glass-card p-4">
       <div className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-3">
@@ -24,7 +28,7 @@ export function DocsSidebar({
           return (
             <Link
               key={item.slug}
-              href={`/docs/${item.slug}`}
+              href={docPath(locale, item.slug)}
               className={[
                 'rounded-lg px-3 py-2 text-sm font-medium transition-colors cursor-pointer',
                 isActive
@@ -48,4 +52,3 @@ export function DocsSidebar({
     </div>
   );
 }
-

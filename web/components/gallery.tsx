@@ -1,10 +1,11 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useMemo, useState } from 'react';
 import { Moon, Rocket, Sun } from 'lucide-react';
 import { PromptModal } from '@/components/prompt-modal';
-import { Link } from '@/i18n/routing';
+import Link from 'next/link';
+import { docPath } from '@/lib/locale-path';
 
 type Demo = {
   id: number;
@@ -25,6 +26,7 @@ type Demo = {
 
 export function Gallery() {
   const t = useTranslations('gallery');
+  const locale = useLocale();
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeMode, setActiveMode] = useState<'All Modes' | 'Light' | 'Dark'>('All Modes');
   const [query, setQuery] = useState('');
@@ -258,7 +260,7 @@ export function Gallery() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">{t('readySubtitle')}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/docs/getting-started"
+            href={docPath(locale, 'getting-started')}
             className="btn-primary flex items-center gap-2"
           >
             <Rocket className="w-5 h-5" />

@@ -3,7 +3,7 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Design Intelligence for Claude Code",
-    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, UX guidelines",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, color palettes, font pairings, UX guidelines, design system generator",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
@@ -28,7 +28,7 @@
   "hero": {
     "title1": "UI UX Pro Max Skill",
     "title2": "Design Intelligence",
-    "subtitle": "UI UX Pro Max Skill - Agent Skills for Claude Code, Cursor, Windsurf \u0026 more AI assistants. 57 UI styles, 95 color palettes, 56 font pairings \u0026 98 UX guidelines to help AI build beautiful interfaces.",
+    "subtitle": "UI UX Pro Max Skill - Agent Skills for Claude Code, Cursor, Windsurf & more AI assistants. Includes 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks, and 161 reasoning rules to help AI build beautiful interfaces.",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Get Started",
     "btnDemos": "Quick Start"
@@ -111,66 +111,74 @@
       }
     },
     "gettingStarted": {
-      "overview": "A searchable design database built specifically for AI coding assistants, providing design intelligence for Claude Code, Cursor, Windsurf, and more.",
+      "overview": "A searchable design database built specifically for AI coding assistants, providing design intelligence for Claude Code, Cursor, Windsurf, and more with the v2.0 Design System Generator.",
       "features": {
         "title": "What's Included",
         "items": [
           {
-            "title": "57 UI Styles",
-            "desc": "From Glassmorphism to Claymorphism, from Minimalism to Brutalism, including Neumorphism, Bento Grid, Dark Mode, and more."
+            "title": "67 UI Styles",
+            "desc": "From Glassmorphism to Claymorphism, from Minimalism to Brutalism, including AI-Native UI, Bento Grid, Dark Mode, and more."
           },
           {
-            "title": "95 Color Palettes",
-            "desc": "Industry-specific color schemes: professional-grade palettes for SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, and more."
+            "title": "161 Color Palettes",
+            "desc": "Industry-specific palettes aligned with 161 product types across SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, and more."
           },
           {
-            "title": "56 Font Pairings",
-            "desc": "Carefully curated Google Fonts typography combinations with automatic font imports and typographic hierarchy."
+            "title": "57 Font Pairings",
+            "desc": "Curated Google Fonts typography combinations with font imports and typographic hierarchy."
           },
           {
-            "title": "24 Chart Types",
-            "desc": "Scientific visualization recommendations for dashboards and data analysis scenarios, making data presentation more professional."
+            "title": "25 Chart Types",
+            "desc": "Visualization recommendations for dashboards and analytics, with library suggestions and accessibility notes."
           },
           {
-            "title": "11 Tech Stacks",
-            "desc": "Framework-specific guides for React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, and more."
+            "title": "16 Tech Stacks",
+            "desc": "Framework-specific guides for React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, and Three.js."
           },
           {
-            "title": "98 UX Guidelines",
-            "desc": "Best practices, anti-pattern corrections, and Accessibility rules to ensure excellent user experience."
+            "title": "99 UX Guidelines",
+            "desc": "Best practices, anti-pattern corrections, and accessibility rules to improve user experience."
+          },
+          {
+            "title": "161 Reasoning Rules",
+            "desc": "Industry-specific reasoning rules that match product type to patterns, style priorities, color mood, typography, effects, and anti-patterns."
           }
         ]
       }
     },
     "dsg": {
-      "overview": "From prompt to code in just four steps. AI automatically searches the design database to recommend the best matching design system for you.",
+      "overview": "The Design System Generator analyzes product type, industry, and intent, then searches product, style, color, landing, typography, and UX domains to produce a complete design system.",
       "workflow": {
-        "title": "Four-Step Workflow",
-        "subtitle": "From prompt to code in just four steps",
+        "title": "Design System Generation Workflow",
+        "subtitle": "From prompt to a tailored design system with reasoning, anti-patterns, and implementation guidance.",
         "steps": [
           {
             "num": "1",
-            "title": "You Ask",
-            "desc": "Request any UI/UX task: build, design, create, implement, review, fix, improve"
+            "title": "User Request",
+            "desc": "Ask for a UI/UX task and include product type, industry, style keywords, or target page when relevant."
           },
           {
             "num": "2",
-            "title": "Skill Activates",
-            "desc": "AI automatically searches the design database for relevant styles, colors, typography, and guidelines"
+            "title": "Multi-Domain Search",
+            "desc": "Search product categories, UI styles, color palettes, landing patterns, typography, and UX guidelines."
           },
           {
             "num": "3",
-            "title": "Smart Recommendations",
-            "desc": "Finds the best matching design system based on your product type and requirements"
+            "title": "Reasoning Engine",
+            "desc": "Apply 161 industry-specific rules to rank matches and filter anti-patterns."
           },
           {
             "num": "4",
-            "title": "Code Generation",
-            "desc": "Implements UI with correct colors, fonts, spacing, and best practices"
+            "title": "Design System Output",
+            "desc": "Return pattern, style, colors, typography, effects, anti-patterns, and a pre-delivery checklist."
           }
         ]
       },
-      "next": "Next: check the Installation Guide to install the skill for your AI assistant."
+      "next": "Next: check the Installation Guide to install the skill for your AI assistant.",
+      "persist": {
+        "title": "Persist Design System",
+        "body": "Add --persist to save design-system/MASTER.md as the project source of truth, and add --page to create page-specific overrides under design-system/pages/."
+      }
     },
     "cli": {
       "overview": "Choose the installation method that fits your workflow and inject design intelligence into your AI assistant.",
@@ -194,9 +202,21 @@
             "uipro init --ai claude        # Claude Code",
             "uipro init --ai cursor        # Cursor",
             "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai antigravity   # Antigravity",
             "uipro init --ai copilot       # GitHub Copilot",
             "uipro init --ai kiro          # Kiro",
+            "uipro init --ai codex         # Codex CLI",
+            "uipro init --ai qoder         # Qoder",
+            "uipro init --ai roocode       # Roo Code",
+            "uipro init --ai gemini        # Gemini CLI",
+            "uipro init --ai trae          # Trae",
+            "uipro init --ai opencode      # OpenCode",
+            "uipro init --ai continue      # Continue",
+            "uipro init --ai codebuddy     # CodeBuddy",
+            "uipro init --ai droid         # Droid (Factory)",
+            "uipro init --ai kilocode      # KiloCode",
+            "uipro init --ai warp          # Warp",
+            "uipro init --ai augment       # Augment",
             "uipro init --ai all           # All AI assistants"
           ]
         }
@@ -241,7 +261,10 @@
         "commands": [
           "uipro versions              # List available versions",
           "uipro update                # Update to latest version",
-          "uipro init --version v1.0.0 # Install specific version"
+          "uipro init --offline        # Skip GitHub download, use bundled assets",
+          "uipro uninstall             # Remove skill (auto-detect platform)",
+          "uipro uninstall --ai claude # Remove specific platform",
+          "uipro uninstall --global    # Remove global install"
         ]
       },
       "next": "Next: see Usage & Prompts for invocation patterns and sample requests."
@@ -339,7 +362,8 @@
     "fonts": "Font Pairings",
     "stacks": "Tech Stacks",
     "charts": "Chart Types",
-    "landing": "Landing Patterns"
+    "landing": "Landing Patterns",
+    "reasoning": "Reasoning Rules"
   },
   "features": {
     "title": "UI UX Pro Max Skill - Everything You Need for Beautiful UI",
@@ -347,7 +371,7 @@
     "sections": {
       "styles": {
         "title": "Design Styles",
-        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, and 45+ more styles with colors, effects, and framework compatibility.",
+        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, AI-Native UI, and 60+ more styles with colors, effects, and framework compatibility.",
         "tags": [
           "Glassmorphism",
           "Dark Mode",
@@ -356,7 +380,7 @@
       },
       "colors": {
         "title": "Color Palettes",
-        "description": "Product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
+        "description": "161 product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
         "tags": [
           "SaaS",
           "Healthcare",
@@ -365,7 +389,7 @@
       },
       "typography": {
         "title": "Typography",
-        "description": "50+ font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
+        "description": "57 font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -374,7 +398,7 @@
       },
       "charts": {
         "title": "Chart Types",
-        "description": "Data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
+        "description": "25 data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
         "tags": [
           "Line",
           "Bar",
@@ -384,7 +408,7 @@
       },
       "landing": {
         "title": "Landing Patterns",
-        "description": "14 conversion-optimized page structures with CTA placement strategies and color recommendations.",
+        "description": "34 conversion-optimized page structures with CTA placement strategies and color recommendations.",
         "tags": [
           "Hero + Features",
           "Video-First",
@@ -507,8 +531,8 @@
     }
   },
   "techStacks": {
-    "title": "UI UX Pro Max Skill Supports 11 Tech Stacks",
-    "subtitle": "UI UX Pro Max Skill provides framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
+    "title": "UI UX Pro Max Skill Supports 16 Tech Stacks",
+    "subtitle": "Framework-specific best practices, patterns, and code examples across the stacks included in the current upstream data.",
     "stacks": {
       "react": {
         "title": "React",
@@ -518,9 +542,21 @@
         "title": "Next.js",
         "desc": "SSR, routing, API routes"
       },
+      "astro": {
+        "title": "Astro",
+        "desc": "Content sites, islands, performance"
+      },
       "vue": {
         "title": "Vue",
         "desc": "Composition API, Pinia, Vue Router"
+      },
+      "nuxtjs": {
+        "title": "Nuxt.js",
+        "desc": "SSR, modules, server routes"
+      },
+      "nuxtui": {
+        "title": "Nuxt UI",
+        "desc": "Design tokens, components, theming"
       },
       "svelte": {
         "title": "Svelte",
@@ -539,8 +575,28 @@
         "desc": "Widgets, State, Theming"
       },
       "tailwind": {
-        "title": "Tailwind",
-        "desc": "Utilities, responsive, a11y"
+        "title": "HTML + Tailwind",
+        "desc": "Utilities, responsive, accessibility"
+      },
+      "shadcn": {
+        "title": "shadcn/ui",
+        "desc": "Composable components and theming"
+      },
+      "jetpack": {
+        "title": "Jetpack Compose",
+        "desc": "Android UI, state, Material"
+      },
+      "angular": {
+        "title": "Angular",
+        "desc": "Standalone components, RxJS, forms"
+      },
+      "laravel": {
+        "title": "Laravel",
+        "desc": "Blade, Livewire, app UI patterns"
+      },
+      "threejs": {
+        "title": "Three.js",
+        "desc": "3D scenes, WebGL, interactions"
       }
     }
   },
@@ -590,7 +646,7 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "UI UX Pro Max Skill - Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
+    "description": "UI UX Pro Max Skill - Design intelligence skill for Claude Code. Searchable database of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 reasoning rules.",
     "resources": "Resources",
     "database": "Database",
     "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"

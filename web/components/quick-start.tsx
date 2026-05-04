@@ -1,12 +1,15 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { CodeBlock } from '@/components/tutorial/code-block';
 import { Callout } from '@/components/tutorial/callout';
-import { Link } from '@/i18n/routing';
+import Link from 'next/link';
+import { docPath, localePath } from '@/lib/locale-path';
 
 export function QuickStart() {
   const t = useTranslations('quickStart');
+  const locale = useLocale();
 
   return (
     <section id="quick-start" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
@@ -75,14 +78,13 @@ export function QuickStart() {
       </div>
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Link href="/docs/getting-started" className="btn-primary">
+        <Link href={docPath(locale, 'getting-started')} className="btn-primary">
           {t('ctaDocs')}
         </Link>
-        <Link href="/#styles" className="btn-secondary">
+        <Link href={localePath(locale, '/#styles')} className="btn-secondary">
           {t('ctaExamples')}
         </Link>
       </div>
     </section>
   );
 }
-

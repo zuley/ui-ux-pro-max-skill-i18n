@@ -3,7 +3,7 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Claude Code 的设计智能助手",
-    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI设计, UI风格, 配色方案, 字体搭配",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI设计, UI风格, 配色方案, 字体搭配, 设计系统生成器",
     "switchTheme": "切换主题",
     "switchToLight": "切换到浅色模式",
     "switchToDark": "切换到深色模式",
@@ -28,7 +28,7 @@
   "hero": {
     "title1": "UI UX Pro Max Skill",
     "title2": "设计智能",
-    "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 57 种 UI 风格、95 种配色方案、56 种字体搭配和 98 条 UX 指南，让 AI 生成精美界面。",
+    "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南、25 种图表类型、16 种技术栈和 161 条推理规则，让 AI 生成精美界面。",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "开始上手",
     "btnDemos": "快速上手"
@@ -111,66 +111,74 @@
       }
     },
     "gettingStarted": {
-      "overview": "一个专为 AI 编码助手打造的可搜索设计数据库，为 Claude Code、Cursor、Windsurf 等提供设计智能。",
+      "overview": "一个专为 AI 编码助手打造的可搜索设计数据库，为 Claude Code、Cursor、Windsurf 等提供设计智能，并包含 v2.0 的 Design System Generator。",
       "features": {
         "title": "包含内容",
         "items": [
           {
-            "title": "57 种 UI 风格",
-            "desc": "从玻璃拟态 (Glassmorphism) 到粘土拟态 (Claymorphism)，从极简主义 (Minimalism) 到野兽派 (Brutalism)，以及新拟态 (Neumorphism)、Bento Grid、深色模式等。"
+            "title": "67 种 UI 风格",
+            "desc": "从玻璃拟态 (Glassmorphism) 到粘土拟态 (Claymorphism)，从极简主义 (Minimalism) 到野兽派 (Brutalism)，以及 AI 原生 UI、Bento Grid、深色模式等。"
           },
           {
-            "title": "95 种配色方案",
-            "desc": "行业专属配色：SaaS、电子商务、医疗健康、金融科技、美容护肤等各领域的专业级调色板。"
+            "title": "161 种配色方案",
+            "desc": "与 161 个产品类型对齐的行业专属配色，覆盖 SaaS、电子商务、医疗健康、金融科技、美容护肤等领域。"
           },
           {
-            "title": "56 种字体配对",
+            "title": "57 种字体配对",
             "desc": "精心策划的 Google Fonts 排版组合，自动处理字体导入和排版层次结构。"
           },
           {
-            "title": "24 种图表类型",
-            "desc": "为仪表盘和数据分析场景提供最科学的可视化建议，让数据呈现更专业。"
+            "title": "25 种图表类型",
+            "desc": "为仪表盘和数据分析场景提供可视化建议，包含库推荐与无障碍说明。"
           },
           {
-            "title": "11 种技术栈支持",
-            "desc": "React、Next.js、Vue、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind 等主流框架专属指南。"
+            "title": "16 种技术栈支持",
+            "desc": "React、Next.js、Astro、Vue、Nuxt.js、Nuxt UI、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind、shadcn/ui、Jetpack Compose、Angular、Laravel 和 Three.js 的专属指南。"
           },
           {
-            "title": "98 条 UX 准则",
+            "title": "99 条 UX 准则",
             "desc": "最佳实践、反模式纠正以及无障碍访问 (Accessibility) 规则，确保用户体验卓越。"
+          },
+          {
+            "title": "161 条推理规则",
+            "desc": "按行业匹配页面模式、风格优先级、配色氛围、字体个性、关键效果和需要避免的反模式。"
           }
         ]
       }
     },
     "dsg": {
-      "overview": "从提问到生成代码，只需四步。AI 自动搜索设计数据库，为你推荐最匹配的设计系统。",
+      "overview": "Design System Generator 会分析产品类型、行业与意图，并搜索 product、style、color、landing、typography 和 ux 等领域，生成完整设计系统。",
       "workflow": {
-        "title": "四步工作流程",
-        "subtitle": "从提问到生成代码，只需四步",
+        "title": "设计系统生成流程",
+        "subtitle": "从提示词到带有推理、反模式和实现建议的定制设计系统。",
         "steps": [
           {
             "num": "1",
-            "title": "你提问",
-            "desc": "请求任何 UI/UX 任务：构建、设计、创建、实现、审查、修复、改进"
+            "title": "用户需求",
+            "desc": "提出 UI/UX 任务，并尽量包含产品类型、行业、风格关键词或目标页面。"
           },
           {
             "num": "2",
-            "title": "技能激活",
-            "desc": "AI 自动在设计数据库中搜索相关的风格、配色、排版和准则"
+            "title": "多领域搜索",
+            "desc": "搜索产品分类、UI 风格、配色方案、落地页模式、字体排版和 UX 准则。"
           },
           {
             "num": "3",
-            "title": "智能推荐",
-            "desc": "根据你的产品类型和需求，找到最匹配的设计系统"
+            "title": "推理引擎",
+            "desc": "应用 161 条行业专属规则进行排序，并过滤反模式。"
           },
           {
             "num": "4",
-            "title": "代码生成",
-            "desc": "使用正确的颜色、字体、间距和最佳实践来实现 UI"
+            "title": "设计系统输出",
+            "desc": "返回页面模式、风格、配色、字体、效果、反模式和交付前检查清单。"
           }
         ]
       },
-      "next": "下一步：查看「安装指南」，为你的 AI 助手安装技能。"
+      "next": "下一步：查看「安装指南」，为你的 AI 助手安装技能。",
+      "persist": {
+        "title": "持久化设计系统",
+        "body": "添加 --persist 会把设计系统保存为 design-system/MASTER.md，作为项目的全局真实来源；再添加 --page 可在 design-system/pages/ 下生成页面级覆盖规则。"
+      }
     },
     "cli": {
       "overview": "选择最适合你的安装方式，为你的 AI 助手注入设计灵魂。",
@@ -194,9 +202,21 @@
             "uipro init --ai claude        # Claude Code",
             "uipro init --ai cursor        # Cursor",
             "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai antigravity   # Antigravity",
             "uipro init --ai copilot       # GitHub Copilot",
             "uipro init --ai kiro          # Kiro",
+            "uipro init --ai codex         # Codex CLI",
+            "uipro init --ai qoder         # Qoder",
+            "uipro init --ai roocode       # Roo Code",
+            "uipro init --ai gemini        # Gemini CLI",
+            "uipro init --ai trae          # Trae",
+            "uipro init --ai opencode      # OpenCode",
+            "uipro init --ai continue      # Continue",
+            "uipro init --ai codebuddy     # CodeBuddy",
+            "uipro init --ai droid         # Droid (Factory)",
+            "uipro init --ai kilocode      # KiloCode",
+            "uipro init --ai warp          # Warp",
+            "uipro init --ai augment       # Augment",
             "uipro init --ai all           # 所有 AI 助手"
           ]
         }
@@ -241,7 +261,10 @@
         "commands": [
           "uipro versions              # 列出可用版本",
           "uipro update                # 更新到最新版本",
-          "uipro init --version v1.0.0 # 安装指定版本"
+          "uipro init --offline        # 跳过 GitHub 下载，使用内置资源",
+          "uipro uninstall             # 移除技能（自动检测平台）",
+          "uipro uninstall --ai claude # 移除指定平台",
+          "uipro uninstall --global    # 移除全局安装"
         ]
       },
       "next": "下一步：查看\"使用方式与提示词\"，快速上手调用方式。"
@@ -339,7 +362,8 @@
     "fonts": "字体搭配",
     "stacks": "技术栈",
     "charts": "图表类型",
-    "landing": "落地页模式"
+    "landing": "落地页模式",
+    "reasoning": "推理规则"
   },
   "features": {
     "title": "UI UX Pro Max Skill - 构建精美 UI 所需的一切",
@@ -347,7 +371,7 @@
     "sections": {
       "styles": {
         "title": "设计风格",
-        "description": "毛玻璃、新拟态、极简主义、粗野主义、极光 UI 以及 45+ 种更多风格，包含颜色、效果和框架兼容性。",
+        "description": "毛玻璃、新拟态、极简主义、粗野主义、极光 UI、AI 原生 UI 以及 60+ 种更多风格，包含颜色、效果和框架兼容性。",
         "tags": [
           "毛玻璃",
           "深色模式",
@@ -356,7 +380,7 @@
       },
       "colors": {
         "title": "配色方案",
-        "description": "针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
+        "description": "161 套针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
         "tags": [
           "SaaS",
           "医疗",
@@ -365,7 +389,7 @@
       },
       "typography": {
         "title": "字体排印",
-        "description": "50+ 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
+        "description": "57 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -374,7 +398,7 @@
       },
       "charts": {
         "title": "图表类型",
-        "description": "数据可视化建议，包含库推荐（Chart.js, Recharts, D3.js）和无障碍说明。",
+        "description": "25 种数据可视化建议，包含库推荐（Chart.js, Recharts, D3.js）和无障碍说明。",
         "tags": [
           "折线图",
           "柱状图",
@@ -384,7 +408,7 @@
       },
       "landing": {
         "title": "落地页模式",
-        "description": "14 种转化率优化的页面结构，包含 CTA 放置策略和颜色建议。",
+        "description": "34 种转化率优化的页面结构，包含 CTA 放置策略和颜色建议。",
         "tags": [
           "首屏 + 特性",
           "视频优先",
@@ -507,40 +531,72 @@
     }
   },
   "techStacks": {
-    "title": "UI UX Pro Max Skill 支持 11 种技术栈",
-    "subtitle": "UI UX Pro Max Skill 为各框架提供最佳实践、模式和代码示例。获取为你技术栈量身定制的指南。",
+    "title": "UI UX Pro Max Skill 支持 16 种技术栈",
+    "subtitle": "基于当前上游数据，为多种框架提供专属最佳实践、模式和代码示例。",
     "stacks": {
       "react": {
         "title": "React",
-        "desc": "状态, Hooks, 性能模式"
+        "desc": "状态、Hooks、性能模式"
       },
       "nextjs": {
         "title": "Next.js",
-        "desc": "SSR, 路由, API 路由"
+        "desc": "SSR、路由、API 路由"
+      },
+      "astro": {
+        "title": "Astro",
+        "desc": "内容站、Islands 架构、性能优化"
       },
       "vue": {
         "title": "Vue",
-        "desc": "组合式 API, Pinia, Vue Router"
+        "desc": "组合式 API、Pinia、Vue Router"
+      },
+      "nuxtjs": {
+        "title": "Nuxt.js",
+        "desc": "SSR、模块、服务端路由"
+      },
+      "nuxtui": {
+        "title": "Nuxt UI",
+        "desc": "设计令牌、组件、主题"
       },
       "svelte": {
         "title": "Svelte",
-        "desc": "Runes, Stores, SvelteKit"
+        "desc": "Runes、Stores、SvelteKit"
       },
       "swiftui": {
         "title": "SwiftUI",
-        "desc": "视图, 状态, 导航"
+        "desc": "视图、状态、导航"
       },
       "reactnative": {
         "title": "React Native",
-        "desc": "组件, 导航, 列表"
+        "desc": "组件、导航、列表"
       },
       "flutter": {
         "title": "Flutter",
-        "desc": "Widgets, 状态, 主题"
+        "desc": "Widgets、状态、主题"
       },
       "tailwind": {
-        "title": "Tailwind",
-        "desc": "工具类, 响应式, 无障碍"
+        "title": "HTML + Tailwind",
+        "desc": "工具类、响应式、无障碍"
+      },
+      "shadcn": {
+        "title": "shadcn/ui",
+        "desc": "可组合组件与主题"
+      },
+      "jetpack": {
+        "title": "Jetpack Compose",
+        "desc": "Android UI、状态、Material"
+      },
+      "angular": {
+        "title": "Angular",
+        "desc": "独立组件、RxJS、表单"
+      },
+      "laravel": {
+        "title": "Laravel",
+        "desc": "Blade、Livewire、应用 UI 模式"
+      },
+      "threejs": {
+        "title": "Three.js",
+        "desc": "3D 场景、WebGL、交互"
       }
     }
   },
@@ -590,7 +646,7 @@
     "issueTitlePrefix": "【文档反馈】"
   },
   "footer": {
-    "description": "UI UX Pro Max Skill - Claude Code 的设计智能技能。可搜索的 UI 风格、配色方案、字体搭配和 UX 指南数据库。",
+    "description": "UI UX Pro Max Skill - Claude Code 的设计智能技能。可搜索 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南、25 种图表类型和 161 条推理规则。",
     "resources": "资源",
     "database": "数据库",
     "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)"

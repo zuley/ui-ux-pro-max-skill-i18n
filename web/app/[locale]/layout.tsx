@@ -24,7 +24,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
 
   const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+  const currentUrl = `${baseUrl}/${locale}`;
 
   return {
     title: `${t('common.title')} - ${t('common.description')}`,
@@ -33,7 +33,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': baseUrl,
+        'en': `${baseUrl}/en`,
         'zh': `${baseUrl}/zh`,
         'vi': `${baseUrl}/vi`,
       },

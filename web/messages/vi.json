@@ -3,7 +3,7 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Design Intelligence for Claude Code",
-    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, UX guidelines",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, color palettes, font pairings, UX guidelines, design system generator",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
@@ -28,7 +28,7 @@
   "hero": {
     "title1": "UI UX Pro Max",
     "title2": "Design Intelligence",
-    "subtitle": "Searchable database of UI styles, color palettes, font pairings, chart types, and UX guidelines. Build beautiful interfaces with AI-powered design recommendations.",
+    "subtitle": "UI UX Pro Max Skill cho Claude Code, Cursor, Windsurf và nhiều AI assistants khác. Bao gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks và 161 reasoning rules để AI tạo giao diện đẹp hơn.",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Bắt đầu",
     "btnDemos": "Quick Start"
@@ -111,7 +111,7 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max là skill thiết kế giúp chuyển một prompt thành quyết định UI/UX chuyên nghiệp về style, màu sắc, typography, layout và UX rules.",
+      "overview": "UI UX Pro Max là database thiết kế có thể tìm kiếm cho AI coding assistants, với Design System Generator v2.0 để tạo quyết định UI/UX theo từng dự án.",
       "highlights": [
         {
           "title": "Design System Generator",
@@ -147,12 +147,34 @@
       "features": {
         "title": "Bạn nhận được gì",
         "items": [
-          "57 UI styles từ minimalism và brutalism đến AI-native và bento grids.",
-          "95 color palettes cho SaaS, e-commerce, healthcare, fintech và nhiều ngành khác.",
-          "56 font pairings kèm Google Fonts import và cấu hình Tailwind.",
-          "24 chart types với gợi ý thư viện và ghi chú sử dụng.",
-          "11 tech stacks hỗ trợ với hướng dẫn theo framework.",
-          "98 UX guidelines cộng 100 reasoning rules để hoàn thiện UI."
+          {
+            "title": "67 UI Styles",
+            "desc": "Từ Glassmorphism, Claymorphism, Minimalism, Brutalism đến AI-Native UI, Bento Grid, Dark Mode và nhiều phong cách khác."
+          },
+          {
+            "title": "161 Color Palettes",
+            "desc": "Palette theo ngành, khớp với 161 product types cho SaaS, e-commerce, healthcare, fintech, beauty & wellness và hơn nữa."
+          },
+          {
+            "title": "57 Font Pairings",
+            "desc": "Cặp Google Fonts được tuyển chọn, kèm font imports và typography hierarchy."
+          },
+          {
+            "title": "25 Chart Types",
+            "desc": "Gợi ý visualization cho dashboard và analytics, kèm thư viện và ghi chú accessibility."
+          },
+          {
+            "title": "16 Tech Stacks",
+            "desc": "Hướng dẫn theo framework cho React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel và Three.js."
+          },
+          {
+            "title": "99 UX Guidelines",
+            "desc": "Best practices, anti-pattern fixes và accessibility rules để cải thiện trải nghiệm người dùng."
+          },
+          {
+            "title": "161 Reasoning Rules",
+            "desc": "Rules theo ngành để match product type với pattern, style priority, color mood, typography, effects và anti-patterns."
+          }
         ]
       },
       "defaultStack": {
@@ -179,34 +201,38 @@
       "next": "Tiếp theo: Design System Generator để xem chi tiết và checklist."
     },
     "dsg": {
-      "overview": "Từ prompt đến code chỉ trong 4 bước. AI tự động tìm kiếm database thiết kế để gợi ý design system phù hợp nhất cho bạn.",
+      "overview": "Design System Generator phân tích product type, ngành và intent, sau đó tìm trong product, style, color, landing, typography và UX domains để tạo design system hoàn chỉnh.",
       "workflow": {
-        "title": "Quy trình 4 bước",
-        "subtitle": "Từ prompt đến code chỉ trong 4 bước",
+        "title": "Design System Generation Workflow",
+        "subtitle": "Từ prompt đến design system có reasoning, anti-patterns và hướng dẫn triển khai.",
         "steps": [
           {
             "num": "1",
-            "title": "Bạn hỏi",
-            "desc": "Yêu cầu bất kỳ tác vụ UI/UX: xây dựng, thiết kế, tạo, triển khai, review, sửa, cải thiện"
+            "title": "User Request",
+            "desc": "Yêu cầu một tác vụ UI/UX và thêm product type, ngành, style keywords hoặc page mục tiêu khi cần."
           },
           {
             "num": "2",
-            "title": "Skill kích hoạt",
-            "desc": "AI tự động tìm kiếm trong database thiết kế về styles, colors, typography và guidelines"
+            "title": "Multi-Domain Search",
+            "desc": "Tìm product categories, UI styles, color palettes, landing patterns, typography và UX guidelines."
           },
           {
             "num": "3",
-            "title": "Gợi ý thông minh",
-            "desc": "Tìm design system phù hợp nhất dựa trên loại sản phẩm và yêu cầu của bạn"
+            "title": "Reasoning Engine",
+            "desc": "Áp dụng 161 industry-specific rules để xếp hạng kết quả và lọc anti-patterns."
           },
           {
             "num": "4",
-            "title": "Tạo code",
-            "desc": "Triển khai UI với đúng màu sắc, font, spacing và best practices"
+            "title": "Design System Output",
+            "desc": "Trả về pattern, style, colors, typography, effects, anti-patterns và pre-delivery checklist."
           }
         ]
       },
-      "next": "Tiếp theo: xem Hướng dẫn cài đặt để cài skill cho AI assistant."
+      "next": "Tiếp theo: xem Hướng dẫn cài đặt để cài skill cho AI assistant.",
+      "persist": {
+        "title": "Persist Design System",
+        "body": "Thêm --persist để lưu design-system/MASTER.md làm source of truth; thêm --page để tạo page-specific overrides trong design-system/pages/."
+      }
     },
     "cli": {
       "overview": "Chọn phương thức cài đặt phù hợp với quy trình làm việc của bạn và tích hợp trí tuệ thiết kế vào AI assistant.",
@@ -230,9 +256,21 @@
             "uipro init --ai claude        # Claude Code",
             "uipro init --ai cursor        # Cursor",
             "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity (.agent + .shared)",
+            "uipro init --ai antigravity   # Antigravity",
             "uipro init --ai copilot       # GitHub Copilot",
             "uipro init --ai kiro          # Kiro",
+            "uipro init --ai codex         # Codex CLI",
+            "uipro init --ai qoder         # Qoder",
+            "uipro init --ai roocode       # Roo Code",
+            "uipro init --ai gemini        # Gemini CLI",
+            "uipro init --ai trae          # Trae",
+            "uipro init --ai opencode      # OpenCode",
+            "uipro init --ai continue      # Continue",
+            "uipro init --ai codebuddy     # CodeBuddy",
+            "uipro init --ai droid         # Droid (Factory)",
+            "uipro init --ai kilocode      # KiloCode",
+            "uipro init --ai warp          # Warp",
+            "uipro init --ai augment       # Augment",
             "uipro init --ai all           # Tất cả AI assistants"
           ]
         }
@@ -277,7 +315,10 @@
         "commands": [
           "uipro versions              # Liệt kê phiên bản",
           "uipro update                # Cập nhật phiên bản mới nhất",
-          "uipro init --version v1.0.0 # Cài phiên bản cụ thể"
+          "uipro init --offline        # Bỏ qua GitHub download, dùng bundled assets",
+          "uipro uninstall             # Gỡ skill (auto-detect platform)",
+          "uipro uninstall --ai claude # Gỡ platform cụ thể",
+          "uipro uninstall --global    # Gỡ global install"
         ]
       },
       "next": "Tiếp theo: Cách dùng & Prompt để xem cách gọi và prompt mẫu."
@@ -392,7 +433,8 @@
     "fonts": "Font Pairings",
     "stacks": "Tech Stacks",
     "charts": "Chart Types",
-    "landing": "Landing Patterns"
+    "landing": "Landing Patterns",
+    "reasoning": "Reasoning Rules"
   },
   "features": {
     "title": "Everything You Need for Beautiful UI",
@@ -400,7 +442,7 @@
     "sections": {
       "styles": {
         "title": "Design Styles",
-        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, and 45+ more styles with colors, effects, and framework compatibility.",
+        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, AI-Native UI, và hơn 60 styles khác với colors, effects và framework compatibility.",
         "tags": [
           "Glassmorphism",
           "Dark Mode",
@@ -409,7 +451,7 @@
       },
       "colors": {
         "title": "Color Palettes",
-        "description": "Product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
+        "description": "161 product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
         "tags": [
           "SaaS",
           "Healthcare",
@@ -418,7 +460,7 @@
       },
       "typography": {
         "title": "Typography",
-        "description": "50+ font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
+        "description": "57 font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -427,7 +469,7 @@
       },
       "charts": {
         "title": "Chart Types",
-        "description": "Data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
+        "description": "25 data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
         "tags": [
           "Line",
           "Bar",
@@ -437,7 +479,7 @@
       },
       "landing": {
         "title": "Landing Patterns",
-        "description": "14 conversion-optimized page structures with CTA placement strategies and color recommendations.",
+        "description": "34 conversion-optimized page structures with CTA placement strategies and color recommendations.",
         "tags": [
           "Hero + Features",
           "Video-First",
@@ -560,8 +602,8 @@
     }
   },
   "techStacks": {
-    "title": "8 Tech Stacks Supported",
-    "subtitle": "Framework-specific best practices, patterns, and code examples. Get guidelines tailored to your technology stack.",
+    "title": "16 Tech Stacks Supported",
+    "subtitle": "Framework-specific best practices, patterns, và code examples từ dữ liệu upstream hiện tại.",
     "stacks": {
       "react": {
         "title": "React",
@@ -571,9 +613,21 @@
         "title": "Next.js",
         "desc": "SSR, routing, API routes"
       },
+      "astro": {
+        "title": "Astro",
+        "desc": "Content sites, islands, performance"
+      },
       "vue": {
         "title": "Vue",
         "desc": "Composition API, Pinia, Vue Router"
+      },
+      "nuxtjs": {
+        "title": "Nuxt.js",
+        "desc": "SSR, modules, server routes"
+      },
+      "nuxtui": {
+        "title": "Nuxt UI",
+        "desc": "Design tokens, components, theming"
       },
       "svelte": {
         "title": "Svelte",
@@ -592,8 +646,28 @@
         "desc": "Widgets, State, Theming"
       },
       "tailwind": {
-        "title": "Tailwind",
-        "desc": "Utilities, responsive, a11y"
+        "title": "HTML + Tailwind",
+        "desc": "Utilities, responsive, accessibility"
+      },
+      "shadcn": {
+        "title": "shadcn/ui",
+        "desc": "Composable components and theming"
+      },
+      "jetpack": {
+        "title": "Jetpack Compose",
+        "desc": "Android UI, state, Material"
+      },
+      "angular": {
+        "title": "Angular",
+        "desc": "Standalone components, RxJS, forms"
+      },
+      "laravel": {
+        "title": "Laravel",
+        "desc": "Blade, Livewire, app UI patterns"
+      },
+      "threejs": {
+        "title": "Three.js",
+        "desc": "3D scenes, WebGL, interactions"
       }
     }
   },
@@ -643,7 +717,7 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "Design intelligence skill for Claude Code. Searchable database of UI styles, color palettes, font pairings, and UX guidelines.",
+    "description": "Design intelligence skill for Claude Code. Searchable database of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 reasoning rules.",
     "resources": "Resources",
     "database": "Database",
     "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"

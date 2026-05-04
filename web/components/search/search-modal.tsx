@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useRouter } from '@/i18n/routing';
 import { Search, X } from 'lucide-react';
 import { docsNav } from '@/content/docs/nav';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { docPath, localePath } from '@/lib/locale-path';
 
 type SearchItem = {
   title: string;
@@ -12,14 +12,14 @@ type SearchItem = {
   keywords?: string[];
 };
 
-function buildDefaultItems(t: (key: string) => string): SearchItem[] {
+function buildDefaultItems(t: (key: string) => string, locale: string): SearchItem[] {
   const homeItems: SearchItem[] = [
-    { title: t('navbar.examples'), href: '/#styles', keywords: ['gallery', 'styles', 'demos'] }
+    { title: t('navbar.examples'), href: localePath(locale, '/#styles'), keywords: ['gallery', 'styles', 'demos'] }
   ];
 
   const docItems: SearchItem[] = docsNav.map((n) => ({
     title: t(n.titleKey),
-    href: `/docs/${n.slug}`,
+    href: docPath(locale, n.slug),
     keywords: [n.slug]
   }));
 
@@ -34,7 +34,7 @@ export function SearchModal({
   onClose: () => void;
 }) {
   const t = useTranslations();
-  const router = useRouter();
+  const locale = useLocale();
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
 
@@ -53,7 +53,7 @@ export function SearchModal({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [onClose, open]);
 
-  const items = useMemo(() => buildDefaultItems(t), [t]);
+  const items = useMemo(() => buildDefaultItems(t, locale), [locale, t]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -117,7 +117,7 @@ export function SearchModal({
                   key={r.href}
                   type="button"
                   onClick={() => {
-                    router.push(r.href);
+                    window.location.assign(r.href);
                     onClose();
                   }}
                   className="text-left rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"

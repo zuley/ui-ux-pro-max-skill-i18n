@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
+import Link from 'next/link';
 import { DocsShell } from '@/components/docs/docs-shell';
 import { docsNav, type DocSlug } from '@/content/docs/nav';
 import { getDocDefinition, type Translator } from '@/content/docs/page-definitions';
-import { ClientOnly } from '@/components/client-only';
+import { docPath } from '@/lib/locale-path';
 
 type PageParams = { locale: string; slug: string };
 
@@ -30,7 +30,7 @@ export async function generateMetadata({
   const nav = docsNav.find((n) => n.slug === slug)!;
 
   const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = locale === 'en' ? `${baseUrl}/docs/${slug}` : `${baseUrl}/${locale}/docs/${slug}`;
+  const currentUrl = `${baseUrl}/${locale}/docs/${slug}`;
   const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
   const pageDescription = `${t(nav.descriptionKey)} - UI UX Pro Max Skill 为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能。`;
 
@@ -41,7 +41,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': `${baseUrl}/docs/${slug}`,
+        'en': `${baseUrl}/en/docs/${slug}`,
         'zh': `${baseUrl}/zh/docs/${slug}`,
         'vi': `${baseUrl}/vi/docs/${slug}`,
       },
@@ -115,7 +115,7 @@ export default async function DocPage({
         <div className="mt-10 pt-6 border-t border-gray-200/70 dark:border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {prev ? (
             <Link
-              href={`/docs/${prev.slug}`}
+              href={docPath(locale, prev.slug)}
               className="rounded-lg border border-gray-200/70 dark:border-white/10 bg-white/60 dark:bg-black/20 p-4 hover:bg-white/80 dark:hover:bg-black/30 transition-colors cursor-pointer"
             >
               <div className="text-xs text-gray-500 dark:text-gray-400">{t('docs.prev')}</div>
@@ -129,7 +129,7 @@ export default async function DocPage({
 
           {next ? (
             <Link
-              href={`/docs/${next.slug}`}
+              href={docPath(locale, next.slug)}
               className="rounded-lg border border-gray-200/70 dark:border-white/10 bg-white/60 dark:bg-black/20 p-4 hover:bg-white/80 dark:hover:bg-black/30 transition-colors cursor-pointer text-left sm:text-right"
             >
               <div className="text-xs text-gray-500 dark:text-gray-400">{t('docs.next')}</div>

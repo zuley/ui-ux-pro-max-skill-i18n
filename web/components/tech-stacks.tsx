@@ -6,8 +6,10 @@ export function TechStacks() {
   const t = useTranslations('techStacks');
   
   const stacks = [
-    'react', 'nextjs', 'vue', 'svelte', 
-    'swiftui', 'reactnative', 'flutter', 'tailwind'
+    'react', 'nextjs', 'astro', 'vue',
+    'nuxtjs', 'nuxtui', 'svelte', 'swiftui',
+    'reactnative', 'flutter', 'tailwind', 'shadcn',
+    'jetpack', 'angular', 'laravel', 'threejs'
   ];
 
   return (

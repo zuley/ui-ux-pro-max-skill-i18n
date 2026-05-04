@@ -3,17 +3,21 @@
 import { useTranslations } from 'next-intl';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageSwitcher } from '@/components/language-switcher';
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
+import Link from 'next/link';
 import { Menu, Search, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { SearchModal } from '@/components/search/search-modal';
 import { docsNav } from '@/content/docs/nav';
+import { useLocale } from 'next-intl';
+import { docPath, localePath } from '@/lib/locale-path';
 
 export function Navbar() {
   const t = useTranslations('navbar');
   const tCommon = useTranslations('common');
   const tDocs = useTranslations();
   const pathname = usePathname();
+  const locale = useLocale();
   const [mobileState, setMobileState] = useState<{ open: boolean; path: string }>(() => ({
     open: false,
     path: ''
@@ -40,10 +44,10 @@ export function Navbar() {
 
   const primaryLinks = useMemo(
     () => [
-      { href: '/', label: t('home') },
-      { href: '/docs/getting-started', label: t('docs') }
+      { href: localePath(locale, '/'), label: t('home') },
+      { href: docPath(locale, 'getting-started'), label: t('docs') }
     ],
-    [t]
+    [locale, t]
   );
 
   return (
@@ -51,7 +55,7 @@ export function Navbar() {
       <nav className="fixed top-[28px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto transition-all duration-300">
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
-            <Link href="/" className="flex items-center gap-1.5 min-[400px]:gap-2 group">
+            <Link href={localePath(locale, '/')} className="flex items-center gap-1.5 min-[400px]:gap-2 group">
               <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6 min-[400px]:w-7 min-[400px]:h-7 sm:w-8 sm:h-8" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -93,7 +97,7 @@ export function Navbar() {
               ))}
 
               <Link
-                href="/#styles"
+                href={localePath(locale, '/#styles')}
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 {t('examples')}
@@ -162,7 +166,7 @@ export function Navbar() {
               {docsNav.map((n) => (
                 <Link
                   key={n.slug}
-                  href={`/docs/${n.slug}`}
+                  href={docPath(locale, n.slug)}
                   className="rounded-lg px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   {tDocs(n.titleKey)}
@@ -170,7 +174,7 @@ export function Navbar() {
               ))}
 
               <Link
-                href="/#styles"
+                href={localePath(locale, '/#styles')}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 {t('examples')}
