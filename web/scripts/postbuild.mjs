@@ -8,12 +8,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const outDir = path.join(__dirname, '../out');
-const defaultLocaleDir = path.join(outDir, 'zh');
+const defaultLocaleDir = path.join(outDir, 'en');
 
-console.log('📦 Post-build: Copying default locale (zh) to root...');
+console.log('📦 Post-build: Copying default locale (en) to root...');
 
 if (!fs.existsSync(defaultLocaleDir)) {
-  console.error('❌ Error: /zh directory not found in out/');
+  console.error('❌ Error: /en directory not found in out/');
   process.exit(1);
 }
 
@@ -45,6 +45,5 @@ files.forEach((file) => {
   }
 });
 
-console.log(`✅ Copied ${copiedCount} items from /zh to root`);
-console.log('✨ Build complete! Root path (/) now serves Chinese version.');
-
+console.log(`✅ Copied ${copiedCount} items from /en to root`);
+console.log('✨ Build complete! Root path (/) now serves English version.');

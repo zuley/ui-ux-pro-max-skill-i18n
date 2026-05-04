@@ -30,7 +30,7 @@ export async function generateMetadata({
   const nav = docsNav.find((n) => n.slug === slug)!;
 
   const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = `${baseUrl}/${locale}/docs/${slug}`;
+  const currentUrl = locale === 'en' ? `${baseUrl}/docs/${slug}` : `${baseUrl}/${locale}/docs/${slug}`;
   const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
   const pageDescription = `${t(nav.descriptionKey)} - UI UX Pro Max Skill 为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能。`;
 
@@ -41,7 +41,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': `${baseUrl}/en/docs/${slug}`,
+        'en': `${baseUrl}/docs/${slug}`,
         'zh': `${baseUrl}/zh/docs/${slug}`,
         'vi': `${baseUrl}/vi/docs/${slug}`,
       },
