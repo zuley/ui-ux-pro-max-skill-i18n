@@ -1,0 +1,657 @@
+{
+  "common": {
+    "title": "UI UX Pro Max Skill - Agent Skills",
+    "navTitle": "UI UX Pro Max Skill",
+    "description": "Claude Code のためのデザインインテリジェンス",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AIデザイン, UIスタイル, カラーパレット, フォントペアリング, UXガイドライン, デザインシステムジェネレーター",
+    "switchTheme": "テーマを切り替え",
+    "switchToLight": "ライトモードに切り替え",
+    "switchToDark": "ダークモードに切り替え",
+    "switchLanguage": "言語を切り替え"
+  },
+  "announcement": {
+    "text": "このサイトは ui-ux-pro-max-skill の非公式多言語翻訳サイトです。",
+    "link": "公式 GitHub リポジトリ"
+  },
+  "navbar": {
+    "home": "ホーム",
+    "docs": "ドキュメント",
+    "tutorial": "チュートリアル",
+    "examples": "例",
+    "gallerySubtitle": "39+ 件のデザインシステムデモを見る",
+    "features": "機能",
+    "stacks": "技術スタック",
+    "styles": "デザインスタイル",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
+  },
+  "hero": {
+    "title1": "UI UX Pro Max Skill",
+    "title2": "Design Intelligence",
+    "subtitle": "UI UX Pro Max Skill - Claude Code、Cursor、Windsurf などの AI アシスタント向け Agent Skills。67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、16 種類の技術スタック、161 個の推論ルールで、AI が美しいインターフェースを構築できるよう支援します。",
+    "terminalCmd": "uipro init --ai cursor",
+    "btnHow": "はじめる",
+    "btnDemos": "クイックスタート"
+  },
+  "quickStart": {
+    "title": "UI UX Pro Max Skill クイックスタート",
+    "subtitle": "次の手順に沿って、プロンプトから数分で完全なデザインシステムを作成できます。",
+    "step1": {
+      "title": "1) Skill をインストール",
+      "body": "Claude Code 内で UI UX Pro Max Skill を直接インストールします。",
+      "codeTitle": "Claude Code"
+    },
+    "step2": {
+      "title": "2) デザインシステムを生成",
+      "body": "ジェネレーターを実行し、レイアウト、スタイル、カラー、タイポグラフィ、UX ルールの推奨を取得します。",
+      "codeTitle": "Design System Generator"
+    },
+    "tip": {
+      "title": "ヒント",
+      "body": "好みのスタック (React/Next.js など) を指定できます。指定しない場合は HTML + Tailwind が既定になります。"
+    },
+    "ctaDocs": "完全なチュートリアルを読む",
+    "ctaExamples": "例を見る"
+  },
+  "demo": {
+    "title": "フローを見る",
+    "subtitle": "プロンプトが専用のデザインシステムに変わる流れを確認できます。",
+    "tabs": {
+      "video": "動画",
+      "flow": "アニメーション"
+    },
+    "videoMissing": {
+      "title": "デモ動画が見つかりません",
+      "body": "public/demo.mp4 にファイルを追加するか、アニメーションタブに切り替えてください。"
+    },
+    "videoHint": "ヒント: public フォルダに demo.mp4 を配置するとデモ動画を差し替えられます。",
+    "flow": {
+      "request": "あなたの依頼",
+      "engine": "推論エンジン",
+      "output": "推奨出力"
+    }
+  },
+  "search": {
+    "open": "検索",
+    "title": "検索",
+    "placeholder": "ドキュメント、コマンド、例を検索…",
+    "close": "閉じる",
+    "noResults": "結果がありません",
+    "hint": "ヒント: どこでも Cmd/Ctrl+K を押せます"
+  },
+  "docs": {
+    "sidebarTitle": "ドキュメント",
+    "toc": "このページの内容",
+    "prev": "前へ",
+    "next": "次へ",
+    "sections": {
+      "overview": "概要",
+      "next": "次のステップ"
+    },
+    "nav": {
+      "gettingStarted": {
+        "title": "UI UX Pro Max Skill とは?",
+        "description": "AI デザインインテリジェンス Skill である UI UX Pro Max Skill の主な機能を学びます。"
+      },
+      "designSystemGenerator": {
+        "title": "仕組み",
+        "description": "UI UX Pro Max Skill: プロンプトからコードまで、わずか 4 ステップ。"
+      },
+      "cliReference": {
+        "title": "インストールガイド",
+        "description": "Claude、Cursor、Windsurf など、AI アシスタント向けに UI UX Pro Max Skill をインストールします。"
+      },
+      "examples": {
+        "title": "使い方",
+        "description": "AI アシスタント別に整理された UI UX Pro Max Skill の呼び出し方法とサンプルプロンプト。"
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "UI UX Pro Max Skill に関するよくある質問と素早い解決策。"
+      }
+    },
+    "gettingStarted": {
+      "overview": "AI コーディングアシスタント専用に構築された検索可能なデザインデータベースです。Claude Code、Cursor、Windsurf などにデザインインテリジェンスを提供し、v2.0 の Design System Generator を含みます。",
+      "features": {
+        "title": "含まれる内容",
+        "items": [
+          {
+            "title": "67 種類の UI スタイル",
+            "desc": "Glassmorphism から Claymorphism、Minimalism から Brutalism まで、AI-Native UI、Bento Grid、Dark Mode などを含みます。"
+          },
+          {
+            "title": "161 種類のカラーパレット",
+            "desc": "SaaS、E-commerce、Healthcare、Fintech、Beauty & Wellness など、161 種類のプロダクトタイプに対応した業界別パレット。"
+          },
+          {
+            "title": "57 種類のフォントペアリング",
+            "desc": "Google Fonts のインポートとタイポグラフィ階層を含む、厳選されたフォント組み合わせ。"
+          },
+          {
+            "title": "25 種類のチャート",
+            "desc": "ダッシュボードと分析向けの可視化推奨。ライブラリ提案とアクセシビリティの注意点を含みます。"
+          },
+          {
+            "title": "16 種類の技術スタック",
+            "desc": "React、Next.js、Astro、Vue、Nuxt.js、Nuxt UI、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind、shadcn/ui、Jetpack Compose、Angular、Laravel、Three.js 向けのフレームワーク別ガイド。"
+          },
+          {
+            "title": "99 個の UX ガイドライン",
+            "desc": "ユーザー体験を改善するためのベストプラクティス、アンチパターン修正、アクセシビリティルール。"
+          },
+          {
+            "title": "161 個の推論ルール",
+            "desc": "プロダクトタイプをパターン、スタイル優先度、カラーのムード、タイポグラフィ、効果、アンチパターンに対応付ける業界別ルール。"
+          }
+        ]
+      }
+    },
+    "dsg": {
+      "overview": "Design System Generator はプロダクトタイプ、業界、意図を分析し、product、style、color、landing、typography、UX の各ドメインを検索して完全なデザインシステムを生成します。",
+      "workflow": {
+        "title": "デザインシステム生成ワークフロー",
+        "subtitle": "プロンプトから、推論、アンチパターン、実装ガイドを備えた専用デザインシステムへ。",
+        "steps": [
+          {
+            "num": "1",
+            "title": "ユーザーリクエスト",
+            "desc": "UI/UX タスクを依頼し、必要に応じてプロダクトタイプ、業界、スタイルキーワード、対象ページを含めます。"
+          },
+          {
+            "num": "2",
+            "title": "マルチドメイン検索",
+            "desc": "プロダクトカテゴリ、UI スタイル、カラーパレット、ランディングパターン、タイポグラフィ、UX ガイドラインを検索します。"
+          },
+          {
+            "num": "3",
+            "title": "推論エンジン",
+            "desc": "161 個の業界別ルールを適用して候補を順位付けし、アンチパターンを除外します。"
+          },
+          {
+            "num": "4",
+            "title": "デザインシステム出力",
+            "desc": "パターン、スタイル、カラー、タイポグラフィ、効果、アンチパターン、納品前チェックリストを返します。"
+          }
+        ]
+      },
+      "next": "次へ: インストールガイドを確認して、AI アシスタントに Skill を導入しましょう。",
+      "persist": {
+        "title": "デザインシステムを永続化",
+        "body": "--persist を追加すると design-system/MASTER.md をプロジェクトの信頼できる情報源として保存し、--page を追加すると design-system/pages/ にページ別の上書きルールを作成します。"
+      }
+    },
+    "cli": {
+      "overview": "ワークフローに合うインストール方法を選び、AI アシスタントにデザインインテリジェンスを組み込みます。",
+      "tabs": {
+        "cliInstall": "CLI インストール (推奨)",
+        "manualInstall": "手動インストール",
+        "prerequisites": "前提条件"
+      },
+      "cliInstall": {
+        "step1": {
+          "title": "CLI ツールをグローバルにインストール",
+          "code": "npm install -g uipro-cli"
+        },
+        "step2": {
+          "title": "プロジェクトディレクトリへ移動",
+          "code": "cd /path/to/your/project"
+        },
+        "step3": {
+          "title": "AI アシスタント向けに Skill をインストール",
+          "commands": [
+            "uipro init --ai claude        # Claude Code",
+            "uipro init --ai cursor        # Cursor",
+            "uipro init --ai windsurf      # Windsurf",
+            "uipro init --ai antigravity   # Antigravity",
+            "uipro init --ai copilot       # GitHub Copilot",
+            "uipro init --ai kiro          # Kiro",
+            "uipro init --ai codex         # Codex CLI",
+            "uipro init --ai qoder         # Qoder",
+            "uipro init --ai roocode       # Roo Code",
+            "uipro init --ai gemini        # Gemini CLI",
+            "uipro init --ai trae          # Trae",
+            "uipro init --ai opencode      # OpenCode",
+            "uipro init --ai continue      # Continue",
+            "uipro init --ai codebuddy     # CodeBuddy",
+            "uipro init --ai droid         # Droid (Factory)",
+            "uipro init --ai kilocode      # KiloCode",
+            "uipro init --ai warp          # Warp",
+            "uipro init --ai augment       # Augment",
+            "uipro init --ai all           # すべての AI アシスタント"
+          ]
+        }
+      },
+      "manualInstall": {
+        "description": "手動インストールを好む場合は、対応するフォルダをプロジェクトにコピーするだけです:",
+        "table": {
+          "header": {
+            "assistant": "AI アシスタント",
+            "folders": "コピーするフォルダ"
+          },
+          "rows": [
+            {
+              "assistant": "Claude Code",
+              "folders": ".claude/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Cursor",
+              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Windsurf",
+              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Antigravity",
+              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+            }
+          ]
+        }
+      },
+      "prerequisites": {
+        "warning": "⚠️ 前提条件",
+        "description": "検索スクリプトには Python 3.x 環境が必要です。",
+        "checkPython": "Python がインストールされているか確認",
+        "checkCommand": "python3 --version",
+        "installMac": "macOS",
+        "installCommand": "brew install python3"
+      },
+      "otherCommands": {
+        "title": "その他の CLI コマンド",
+        "commands": [
+          "uipro versions              # 利用可能なバージョンを一覧表示",
+          "uipro update                # 最新バージョンへ更新",
+          "uipro init --offline        # GitHub ダウンロードをスキップし、同梱アセットを使用",
+          "uipro uninstall             # Skill を削除 (プラットフォームを自動検出)",
+          "uipro uninstall --ai claude # 指定プラットフォームを削除",
+          "uipro uninstall --global    # グローバルインストールを削除"
+        ]
+      },
+      "next": "次へ: 使い方とプロンプトで、呼び出しパターンとサンプル依頼を確認しましょう。"
+    },
+    "examples": {
+      "overview": "AI アシスタントに応じて起動方法を選びます。",
+      "usage": {
+        "title": "使い方",
+        "subtitle": "AI アシスタントに応じて起動方法を選択",
+        "assistants": [
+          {
+            "name": "Claude Code",
+            "description": "Skill は自動的に有効になります。自然に話しかけるだけです:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Cursor / Windsurf / Antigravity",
+            "description": "スラッシュコマンドで Skill を呼び出します:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Kiro",
+            "description": "チャットで / を入力して利用可能なコマンドを表示し、ui-ux-pro-max を選択します:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "GitHub Copilot",
+            "description": "VS Code で / を入力して利用可能なプロンプトを表示し、ui-ux-pro-max を選択します:",
+            "example": "/\nui-ux-pro-max"
+          },
+          {
+            "name": "Gemini / Qoder / Roo Code",
+            "description": "スラッシュコマンドで呼び出します:",
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Codex CLI",
+            "description": "$ プレフィックスで呼び出します:",
+            "example": "$ui-ux-pro-max Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Continue",
+            "description": "Skill は自動的に有効になります。通常どおりチャットしてください:",
+            "example": "Build a landing page for my SaaS product"
+          },
+          {
+            "name": "Trae (SOLO mode)",
+            "description": "frontend only を明示的に指定する必要があります:",
+            "example": "Build a landing page for my SaaS product (frontend ONLY)"
+          }
+        ]
+      },
+      "prompts": {
+        "title": "💡 サンプルプロンプト",
+        "body": "そのまま使うことも、必要に応じて調整することもできる実用的なプロンプト例です:",
+        "items": [
+          "Build a landing page for my SaaS product",
+          "Create a healthcare analytics dashboard",
+          "Design a personal portfolio website with dark mode",
+          "Make a mobile UI for an e-commerce app",
+          "Build a fintech app dashboard"
+        ]
+      },
+      "next": "次へ: セットアップやコマンドで困ったら FAQ を確認してください。"
+    },
+    "faq": {
+      "overview": "よくある質問と素早い解決策。",
+      "questions": {
+        "title": "質問",
+        "items": [
+          {
+            "q": "search.py はどこにありますか?",
+            "a": "プロジェクト内の .claude/skills/ui-ux-pro-max/scripts/search.py にあります。"
+          },
+          {
+            "q": "スタックを指定する必要がありますか?",
+            "a": "いいえ。省略した場合は HTML + Tailwind が既定になります。"
+          },
+          {
+            "q": "Markdown 出力を取得するには?",
+            "a": "--design-system と一緒に -f markdown を使用してください。"
+          },
+          {
+            "q": "GitHub にアクセスできなくてもインストールできますか?",
+            "a": "はい。uipro init --offline を使うと GitHub ダウンロードをスキップし、同梱アセットを使用できます。"
+          }
+        ]
+      },
+      "next": "まだ不明点がある場合は、ページ下部からフィードバックを送ってください。"
+    }
+  },
+  "stats": {
+    "styles": "UI スタイル",
+    "palettes": "カラーパレット",
+    "fonts": "フォントペアリング",
+    "stacks": "技術スタック",
+    "charts": "チャートタイプ",
+    "landing": "ランディングパターン",
+    "reasoning": "推論ルール"
+  },
+  "features": {
+    "title": "UI UX Pro Max Skill - 美しい UI に必要なすべて",
+    "subtitle": "UI UX Pro Max Skill は包括的なデザインインテリジェンスをすぐに使える形で提供します。AI による推奨で、美しいインターフェースを検索、発見、実装できます。",
+    "sections": {
+      "styles": {
+        "title": "デザインスタイル",
+        "description": "Glassmorphism、Neumorphism、Minimalism、Brutalism、Aurora UI、AI-Native UI など、60 種類以上のスタイルをカラー、効果、フレームワーク互換性付きで提供します。",
+        "tags": [
+          "Glassmorphism",
+          "Dark Mode",
+          "Motion-Driven"
+        ]
+      },
+      "colors": {
+        "title": "カラーパレット",
+        "description": "SaaS、E-commerce、Healthcare、Fintech などに向けた 161 個のプロダクト別カラーシステム。Primary、Secondary、CTA、Background、Text、Border を含みます。",
+        "tags": [
+          "SaaS",
+          "Healthcare",
+          "E-commerce"
+        ]
+      },
+      "typography": {
+        "title": "タイポグラフィ",
+        "description": "Google Fonts 連携、Tailwind 設定、ムード別推奨を含む 57 種類のフォントペアリング。",
+        "tags": [
+          "Space Grotesk",
+          "Inter",
+          "Playfair"
+        ]
+      },
+      "charts": {
+        "title": "チャートタイプ",
+        "description": "Chart.js、Recharts、D3.js などのライブラリ提案とアクセシビリティノートを含む 25 種類のデータ可視化推奨。",
+        "tags": [
+          "Line",
+          "Bar",
+          "Pie",
+          "Heatmap"
+        ]
+      },
+      "landing": {
+        "title": "ランディングパターン",
+        "description": "CTA 配置戦略とカラー推奨を備えた、コンバージョン最適化済みの 34 種類のページ構成。",
+        "tags": [
+          "Hero + Features",
+          "Video-First",
+          "Pricing"
+        ]
+      },
+      "ux": {
+        "title": "UX ガイドライン",
+        "description": "アニメーション、アクセシビリティ、z-index、ローディング状態などに関するベストプラクティスとアンチパターン。",
+        "tags": [
+          "Animation",
+          "A11y",
+          "Performance"
+        ]
+      }
+    }
+  },
+  "howItWorks": {
+    "titlePrefix": "UI UX Pro Max Skill - ",
+    "titleAccent": "仕組み",
+    "subtitle": "UI UX Pro Max Skill: プロンプトから本番品質の UI まで、6 つの知的ステップで進めます",
+    "steps": {
+      "1": {
+        "title": "あなたのプロンプト",
+        "prompt": "Build a landing page for a pet grooming service. Playful and friendly style, with booking CTA."
+      },
+      "2": {
+        "title": "AI 推論",
+        "tags": {
+          "product": {
+            "label": "Product",
+            "value": "pet-service"
+          },
+          "style": {
+            "label": "Style",
+            "value": "playful, friendly"
+          },
+          "page": {
+            "label": "Page",
+            "value": "landing"
+          },
+          "cta": {
+            "label": "CTA",
+            "value": "booking"
+          }
+        },
+        "searching": "→ 検索中: product、style、typography、color、landing、ux ドメイン..."
+      },
+      "3": {
+        "title": "デザインデータベースを検索",
+        "product": {
+          "label": "PRODUCT",
+          "value": "Pet Tech App"
+        },
+        "style": {
+          "label": "STYLE",
+          "value": "Micro-interactions"
+        },
+        "typography": {
+          "label": "TYPOGRAPHY",
+          "value": "Fredoka + Nunito"
+        },
+        "landing": {
+          "label": "LANDING",
+          "value": "Hero + Features + CTA"
+        },
+        "ux": {
+          "label": "UX RULE",
+          "value": "Use animations for loading only"
+        },
+        "colorsLabel": "COLORS",
+        "colors": [
+          {
+            "name": "Primary",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Secondary",
+            "hex": "#60A5FA"
+          },
+          {
+            "name": "CTA",
+            "hex": "#F97316"
+          },
+          {
+            "name": "Background",
+            "hex": "#F8FAFC"
+          },
+          {
+            "name": "Text",
+            "hex": "#1E293B"
+          }
+        ]
+      },
+      "4": {
+        "title": "コードを生成",
+        "comment": "<!-- Pet Grooming Landing -->",
+        "sectionClass": "bg-[#F8FAFC]",
+        "h1Class": "font-['Fredoka'] text-[#1E293B]",
+        "h1Text": "Happy Pets, Happy Life",
+        "buttonClass": "bg-[#F97316] hover:bg-[#EA580C]",
+        "buttonText": "Book Grooming"
+      },
+      "5": {
+        "title": "品質チェックリスト",
+        "items": [
+          "SVG アイコン (絵文字なし)",
+          "ホバー時のフィードバック",
+          "ダークモードのコントラスト",
+          "レスポンシブレイアウト"
+        ]
+      },
+      "6": {
+        "title": "最終結果",
+        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
+        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "imageAlt": "Pet Grooming & Spa Demo",
+        "cta": "ライブデモを見る"
+      }
+    }
+  },
+  "techStacks": {
+    "title": "UI UX Pro Max Skill は 16 種類の技術スタックをサポート",
+    "subtitle": "現在の upstream データに含まれる各スタックに対応した、フレームワーク別のベストプラクティス、パターン、コード例。",
+    "stacks": {
+      "react": {
+        "title": "React",
+        "desc": "State、hooks、パフォーマンスパターン"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "desc": "SSR、ルーティング、API routes"
+      },
+      "astro": {
+        "title": "Astro",
+        "desc": "コンテンツサイト、islands、パフォーマンス"
+      },
+      "vue": {
+        "title": "Vue",
+        "desc": "Composition API、Pinia、Vue Router"
+      },
+      "nuxtjs": {
+        "title": "Nuxt.js",
+        "desc": "SSR、modules、server routes"
+      },
+      "nuxtui": {
+        "title": "Nuxt UI",
+        "desc": "Design tokens、components、theming"
+      },
+      "svelte": {
+        "title": "Svelte",
+        "desc": "Runes、stores、SvelteKit"
+      },
+      "swiftui": {
+        "title": "SwiftUI",
+        "desc": "Views、State、Navigation"
+      },
+      "reactnative": {
+        "title": "React Native",
+        "desc": "Components、Navigation、Lists"
+      },
+      "flutter": {
+        "title": "Flutter",
+        "desc": "Widgets、State、Theming"
+      },
+      "tailwind": {
+        "title": "HTML + Tailwind",
+        "desc": "Utilities、responsive、accessibility"
+      },
+      "shadcn": {
+        "title": "shadcn/ui",
+        "desc": "Composable components と theming"
+      },
+      "jetpack": {
+        "title": "Jetpack Compose",
+        "desc": "Android UI、state、Material"
+      },
+      "angular": {
+        "title": "Angular",
+        "desc": "Standalone components、RxJS、forms"
+      },
+      "laravel": {
+        "title": "Laravel",
+        "desc": "Blade、Livewire、アプリ UI パターン"
+      },
+      "threejs": {
+        "title": "Three.js",
+        "desc": "3D scenes、WebGL、interactions"
+      }
+    }
+  },
+  "gallery": {
+    "title": "39 件のウェブサイトデモギャラリー",
+    "subtitle": "UI UX Pro Max Skill で構築された実用的なウェブサイトデモを閲覧できます。クリックしてライブデモを表示してください。",
+    "searchPlaceholder": "デモを検索 (名前、スタイル、カテゴリ、プロンプト)…",
+    "clearSearch": "検索をクリア",
+    "filters": {
+      "category": "カテゴリ",
+      "mode": "モード"
+    },
+    "viewDemo": "デモを見る",
+    "showPrompt": "プロンプトを表示",
+    "promptTitle": "プロンプト",
+    "closeModal": "モーダルを閉じる",
+    "close": "閉じる",
+    "mode": {
+      "light": "ライト",
+      "dark": "ダーク"
+    },
+    "colors": "カラー:",
+    "loadMore": "さらに読み込む",
+    "showing": "{total} 件中 {shown} 件を表示",
+    "stats": "{total} 件のデモ • {categories} カテゴリ • ライト {light} 件 • ダーク {dark} 件",
+    "readyTitle": "美しいインターフェースを作り始めますか?",
+    "readySubtitle": "Claude Code 向け UI UX Pro Max Skill を始めましょう。デザインインテリジェンスをすぐに使えます。",
+    "getOnGithub": "GitHub で入手",
+    "quickStart": "クイックスタート",
+    "learnMore": "詳しく見る",
+    "features": [
+      "オープンソース",
+      "Claude Code 対応",
+      "本番対応"
+    ]
+  },
+  "feedback": {
+    "title": "このページは役に立ちましたか?",
+    "subtitle": "フィードバックはチュートリアルと例の改善に役立ちます。",
+    "privacy": "バックエンドなし: 送信するまでローカルに保存されます",
+    "helpful": "はい",
+    "notHelpful": "いいえ",
+    "detailsLabel": "何を改善すべきですか?",
+    "detailsPlaceholder": "わかりにくかった点、不足していた点、期待していた内容を教えてください。",
+    "copy": "フィードバックをコピー",
+    "openIssue": "GitHub Issue を開く",
+    "issueTitlePrefix": "[Docs Feedback]"
+  },
+  "footer": {
+    "description": "UI UX Pro Max Skill - Claude Code 向けデザインインテリジェンス Skill。67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、161 個の推論ルールを備えた検索可能なデータベース。",
+    "resources": "リソース",
+    "database": "データベース",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ",
+    "builtWith": "React + Tailwind CSS で構築 (by UI UX Pro Max)"
+  }
+}

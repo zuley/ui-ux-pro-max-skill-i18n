@@ -32,18 +32,19 @@ export async function generateMetadata({
   const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const currentUrl = locale === 'en' ? `${baseUrl}/docs/${slug}` : `${baseUrl}/${locale}/docs/${slug}`;
   const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
-  const pageDescription = `${t(nav.descriptionKey)} - UI UX Pro Max Skill 为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能。`;
+  const pageDescription = `${t(nav.descriptionKey)} - ${t('common.description')}.`;
 
   return {
     title: pageTitle,
     description: pageDescription,
-    keywords: `UI UX Pro Max Skill, ${t(nav.titleKey)}, Agent Skills, Claude Code, AI 设计助手`,
+    keywords: `UI UX Pro Max Skill, ${t(nav.titleKey)}, Agent Skills, Claude Code, ${t('common.description')}`,
     alternates: {
       canonical: currentUrl,
       languages: {
         'en': `${baseUrl}/docs/${slug}`,
         'zh': `${baseUrl}/zh/docs/${slug}`,
         'vi': `${baseUrl}/vi/docs/${slug}`,
+        'ja': `${baseUrl}/ja/docs/${slug}`,
       },
     },
     openGraph: {

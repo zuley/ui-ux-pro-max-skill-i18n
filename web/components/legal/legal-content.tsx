@@ -1,5 +1,5 @@
 type LegalPage = 'privacy' | 'terms' | 'contact';
-type LegalLocale = 'en' | 'zh' | 'vi';
+type LegalLocale = 'en' | 'zh' | 'vi' | 'ja';
 
 type Section = {
   title: string;
@@ -196,32 +196,189 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
   },
   vi: {
     privacy: {
-      title: 'Privacy Policy',
-      description: 'How UI UX Pro Max Skill handles analytics, advertising, cookies, and contact information.',
-      updated: 'Last updated: May 4, 2026',
-      sections: []
+      title: 'Chính sách quyền riêng tư',
+      description: 'Cách UI UX Pro Max Skill xử lý phân tích, quảng cáo, cookie và thông tin liên hệ.',
+      updated: 'Cập nhật lần cuối: 4 tháng 5, 2026',
+      sections: [
+        {
+          title: 'Thông tin chúng tôi thu thập',
+          body: [
+            'Website này là trang tài liệu và giới thiệu sản phẩm công khai. Bạn không cần tài khoản, đăng nhập hoặc thông tin thanh toán để duyệt website.',
+            'Nếu bạn liên hệ với chúng tôi, chúng tôi có thể nhận thông tin bạn tự nguyện cung cấp, chẳng hạn như tên, địa chỉ email, nội dung tin nhắn và ngữ cảnh kỹ thuật liên quan.'
+          ]
+        },
+        {
+          title: 'Công nghệ phân tích và quảng cáo',
+          body: [
+            'Chúng tôi sử dụng Google Analytics để hiểu cách sử dụng website ở dạng tổng hợp. Nếu Google AdSense được bật, Google và các nhà cung cấp bên thứ ba khác có thể dùng cookie, web beacon, địa chỉ IP, mã định danh thiết bị và công nghệ tương tự để phân phối, đo lường và cá nhân hóa quảng cáo.',
+            'Các bên thứ ba có thể đặt và đọc cookie trong trình duyệt của bạn, hoặc dùng web beacon và địa chỉ IP do hoạt động phân phối quảng cáo trên website này.'
+          ]
+        },
+        {
+          title: 'Cách sử dụng thông tin',
+          body: [
+            'Chúng tôi dùng dữ liệu phân tích tổng hợp để cải thiện tài liệu, điều hướng, chất lượng nội dung và hiệu năng website.',
+            'Đối tác quảng cáo có thể dùng dữ liệu để phân phối quảng cáo, chống gian lận, đo lường, báo cáo và cung cấp quảng cáo cá nhân hóa hoặc không cá nhân hóa khi được phép.'
+          ]
+        },
+        {
+          title: 'Lựa chọn của bạn',
+          body: [
+            'Bạn có thể quản lý cookie trong cài đặt trình duyệt. Bạn có thể tìm hiểu cách Google dùng dữ liệu trên website đối tác tại https://policies.google.com/technologies/partner-sites.',
+            'Ở những nơi khả dụng, bạn có thể tắt quảng cáo cá nhân hóa qua Google Ads Settings tại https://adssettings.google.com/.'
+          ]
+        },
+        {
+          title: 'Liên hệ',
+          body: [`Nếu có câu hỏi về quyền riêng tư, vui lòng gửi email tới ${supportEmail}.`]
+        }
+      ]
     },
     terms: {
-      title: 'Terms of Use',
-      description: 'Terms for using the UI UX Pro Max Skill website and documentation.',
-      updated: 'Last updated: May 4, 2026',
-      sections: []
+      title: 'Điều khoản sử dụng',
+      description: 'Điều khoản khi sử dụng website và tài liệu của UI UX Pro Max Skill.',
+      updated: 'Cập nhật lần cuối: 4 tháng 5, 2026',
+      sections: [
+        {
+          title: 'Sử dụng website này',
+          body: [
+            'Website này cung cấp tài liệu, ví dụ và tài liệu tham khảo cho UI UX Pro Max Skill. Bạn có thể dùng nội dung công khai để đánh giá, học tập và hỗ trợ triển khai, tùy theo điều khoản giấy phép trong repository dự án.',
+            'Không lạm dụng website, gây ảnh hưởng đến khả dụng của website, hoặc cố truy cập hệ thống hay dữ liệu không được công khai có chủ đích.'
+          ]
+        },
+        {
+          title: 'Độ chính xác của nội dung',
+          body: [
+            'Chúng tôi cố gắng giữ tài liệu chính xác và hữu ích, nhưng nội dung được cung cấp theo hiện trạng và có thể thay đổi theo thời gian.',
+            'Bạn chịu trách nhiệm xác minh rằng mọi khuyến nghị, prompt hoặc ví dụ triển khai phù hợp với dự án và yêu cầu tuân thủ của riêng bạn.'
+          ]
+        },
+        {
+          title: 'Dịch vụ bên thứ ba',
+          body: [
+            'Website có thể liên kết đến dịch vụ bên thứ ba như GitHub, Google, nhà cung cấp phân tích hoặc đối tác quảng cáo. Khi bạn dùng các dịch vụ đó, điều khoản và chính sách riêng của họ sẽ được áp dụng.'
+          ]
+        },
+        {
+          title: 'Liên hệ',
+          body: [`Nếu có câu hỏi về các điều khoản này, vui lòng gửi email tới ${supportEmail}.`]
+        }
+      ]
     },
     contact: {
-      title: 'Contact',
-      description: 'Ways to reach the UI UX Pro Max Skill project.',
-      updated: 'Last updated: May 4, 2026',
-      sections: []
+      title: 'Liên hệ',
+      description: 'Các cách liên hệ với dự án UI UX Pro Max Skill.',
+      updated: 'Cập nhật lần cuối: 4 tháng 5, 2026',
+      sections: [
+        {
+          title: 'Hỗ trợ dự án',
+          body: [
+            'Đối với báo cáo lỗi, vấn đề tài liệu, yêu cầu tính năng hoặc câu hỏi về giấy phép, hãy dùng repository GitHub được liên kết trên thanh thông báo của website.',
+            'Khi báo cáo vấn đề, vui lòng bao gồm URL trang, hành vi mong đợi, hành vi thực tế và ảnh chụp màn hình hoặc đầu ra lệnh liên quan nếu có.'
+          ]
+        },
+        {
+          title: 'Câu hỏi về quyền riêng tư và chính sách',
+          body: [`Nếu có câu hỏi về quyền riêng tư, quảng cáo hoặc chính sách, vui lòng gửi email tới ${supportEmail}.`]
+        }
+      ]
+    }
+  },
+  ja: {
+    privacy: {
+      title: 'プライバシーポリシー',
+      description: 'UI UX Pro Max Skill が分析、広告、Cookie、連絡先情報をどのように扱うかを説明します。',
+      updated: '最終更新日: 2026 年 5 月 4 日',
+      sections: [
+        {
+          title: '収集する情報',
+          body: [
+            'このウェブサイトは公開されたドキュメントおよび製品紹介サイトです。閲覧にあたって、アカウント、ログイン、支払い情報は必要ありません。',
+            'お問い合わせいただいた場合、氏名、メールアドレス、メッセージ内容、関連する技術的背景など、利用者が提供した情報を受け取ることがあります。'
+          ]
+        },
+        {
+          title: '分析および広告技術',
+          body: [
+            '当サイトでは、サイト利用状況を集計して把握するために Google Analytics を使用します。Google AdSense が有効な場合、Google およびその他の第三者ベンダーは、広告の配信、測定、パーソナライズのために Cookie、Web ビーコン、IP アドレス、デバイス識別子、類似技術を使用することがあります。',
+            '当サイトで広告が配信される結果として、第三者がブラウザに Cookie を配置または読み取ったり、Web ビーコンや IP アドレスを使用したりする場合があります。'
+          ]
+        },
+        {
+          title: '情報の利用目的',
+          body: [
+            '集計された分析データは、ドキュメント、ナビゲーション、コンテンツ品質、サイト性能の改善に使用します。',
+            '広告パートナーは、許可される範囲で、広告配信、不正防止、測定、レポート、パーソナライズ広告または非パーソナライズ広告の提供にデータを使用することがあります。'
+          ]
+        },
+        {
+          title: '利用者の選択肢',
+          body: [
+            'Cookie はブラウザ設定で管理できます。Google がパートナーサイトのデータをどのように使用するかは https://policies.google.com/technologies/partner-sites で確認できます。',
+            '利用可能な地域では、https://adssettings.google.com/ の Google 広告設定からパーソナライズ広告を無効にできます。'
+          ]
+        },
+        {
+          title: 'お問い合わせ',
+          body: [`プライバシーに関する質問は ${supportEmail} までメールでお問い合わせください。`]
+        }
+      ]
+    },
+    terms: {
+      title: '利用規約',
+      description: 'UI UX Pro Max Skill のウェブサイトおよびドキュメントを利用する際の規約です。',
+      updated: '最終更新日: 2026 年 5 月 4 日',
+      sections: [
+        {
+          title: '本サイトの利用',
+          body: [
+            '本サイトは UI UX Pro Max Skill のドキュメント、例、参考情報を提供します。プロジェクトリポジトリのライセンス条件に従い、公開コンテンツを評価、学習、実装支援のために利用できます。',
+            '本サイトを不正に利用したり、可用性を妨げたり、意図的に公開されていないシステムやデータへアクセスしようとしたりしないでください。'
+          ]
+        },
+        {
+          title: 'コンテンツの正確性',
+          body: [
+            'ドキュメントを正確で有用な状態に保つよう努めていますが、コンテンツは現状有姿で提供され、時間とともに変更される場合があります。',
+            '推奨事項、プロンプト、実装例がご自身のプロジェクトやコンプライアンス要件に適合するかは、利用者自身の責任で確認してください。'
+          ]
+        },
+        {
+          title: '第三者サービス',
+          body: [
+            '本サイトは GitHub、Google、分析プロバイダー、広告パートナーなどの第三者サービスへリンクする場合があります。これらのサービスを利用する際は、それぞれの規約とポリシーが適用されます。'
+          ]
+        },
+        {
+          title: 'お問い合わせ',
+          body: [`本規約に関する質問は ${supportEmail} までメールでお問い合わせください。`]
+        }
+      ]
+    },
+    contact: {
+      title: 'お問い合わせ',
+      description: 'UI UX Pro Max Skill プロジェクトへの連絡方法。',
+      updated: '最終更新日: 2026 年 5 月 4 日',
+      sections: [
+        {
+          title: 'プロジェクトサポート',
+          body: [
+            'バグ報告、ドキュメントの問題、機能リクエスト、ライセンスに関する質問は、サイトの告知バーからリンクされている GitHub リポジトリをご利用ください。',
+            '問題を報告する際は、ページ URL、期待される動作、実際の動作、関連するスクリーンショットやコマンド出力を含めてください。'
+          ]
+        },
+        {
+          title: 'プライバシーおよびポリシーに関する質問',
+          body: [`プライバシー、広告、ポリシーに関する質問は ${supportEmail} までメールでお問い合わせください。`]
+        }
+      ]
     }
   }
 };
 
-copy.vi.privacy.sections = copy.en.privacy.sections;
-copy.vi.terms.sections = copy.en.terms.sections;
-copy.vi.contact.sections = copy.en.contact.sections;
-
 export function getLegalPageCopy(page: LegalPage, locale: string): PageCopy {
-  const legalLocale: LegalLocale = locale === 'zh' || locale === 'vi' ? locale : 'en';
+  const legalLocale: LegalLocale =
+    locale === 'zh' || locale === 'vi' || locale === 'ja' ? locale : 'en';
   return copy[legalLocale][page];
 }
 

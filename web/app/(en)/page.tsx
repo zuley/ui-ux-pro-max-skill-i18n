@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     languages: {
       en: baseUrl,
       zh: `${baseUrl}/zh`,
-      vi: `${baseUrl}/vi`
+      vi: `${baseUrl}/vi`,
+      ja: `${baseUrl}/ja`
     }
   },
   openGraph: {

@@ -2,39 +2,39 @@
   "common": {
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
-    "description": "Design Intelligence for Claude Code",
-    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, color palettes, font pairings, UX guidelines, design system generator",
-    "switchTheme": "Switch Theme",
-    "switchToLight": "Switch to light mode",
-    "switchToDark": "Switch to dark mode",
-    "switchLanguage": "Switch Language"
+    "description": "Trí tuệ thiết kế cho Claude Code",
+    "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, thiết kế AI, phong cách UI, bảng màu, cặp font, hướng dẫn UX, trình tạo design system",
+    "switchTheme": "Đổi giao diện",
+    "switchToLight": "Chuyển sang chế độ sáng",
+    "switchToDark": "Chuyển sang chế độ tối",
+    "switchLanguage": "Đổi ngôn ngữ"
   },
   "announcement": {
     "text": "Trang này là bản dịch đa ngôn ngữ không chính thức của ui-ux-pro-max-skill.",
     "link": "Kho GitHub chính thức"
   },
   "navbar": {
-    "home": "Home",
-    "docs": "Docs",
-    "tutorial": "Tutorial",
-    "examples": "Examples",
-    "features": "Features",
-    "stacks": "Stacks",
-    "styles": "Styles",
-    "gallerySubtitle": "View all 39+ design system demos",
+    "home": "Trang chủ",
+    "docs": "Tài liệu",
+    "tutorial": "Hướng dẫn",
+    "examples": "Ví dụ",
+    "features": "Tính năng",
+    "stacks": "Tech stack",
+    "styles": "Phong cách",
+    "gallerySubtitle": "Xem tất cả 39+ demo design system",
     "openMenu": "Mở menu",
     "closeMenu": "Đóng menu"
   },
   "hero": {
     "title1": "UI UX Pro Max",
-    "title2": "Design Intelligence",
+    "title2": "Trí tuệ thiết kế",
     "subtitle": "UI UX Pro Max Skill cho Claude Code, Cursor, Windsurf và nhiều AI assistants khác. Bao gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks và 161 reasoning rules để AI tạo giao diện đẹp hơn.",
     "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Bắt đầu",
-    "btnDemos": "Quick Start"
+    "btnDemos": "Bắt đầu nhanh"
   },
   "quickStart": {
-    "title": "Quick Start",
+    "title": "Bắt đầu nhanh",
     "subtitle": "Làm theo các bước để tạo design system chỉ trong vài phút.",
     "step1": {
       "title": "1) Cài đặt Skill",
@@ -80,7 +80,7 @@
     "hint": "Mẹo: nhấn Cmd/Ctrl+K"
   },
   "docs": {
-    "sidebarTitle": "Docs",
+    "sidebarTitle": "Tài liệu",
     "toc": "Mục lục",
     "prev": "Trang trước",
     "next": "Trang sau",
@@ -182,7 +182,7 @@
         "body": "Nếu không chỉ định stack, mặc định HTML + Tailwind."
       },
       "prerequisites": {
-        "title": "Prerequisites",
+        "title": "Yêu cầu trước khi dùng",
         "body": "Đảm bảo đã cài Python trước khi dùng CLI search.",
         "checkPython": "Kiểm tra Python"
       },
@@ -404,7 +404,7 @@
     "faq": {
       "overview": "Câu hỏi thường gặp và quick fixes.",
       "questions": {
-        "title": "Questions",
+        "title": "Câu hỏi",
         "items": [
           {
             "q": "search.py nằm ở đâu?",
@@ -428,20 +428,20 @@
     }
   },
   "stats": {
-    "styles": "UI Styles",
-    "palettes": "Color Palettes",
-    "fonts": "Font Pairings",
-    "stacks": "Tech Stacks",
-    "charts": "Chart Types",
-    "landing": "Landing Patterns",
-    "reasoning": "Reasoning Rules"
+    "styles": "Phong cách UI",
+    "palettes": "Bảng màu",
+    "fonts": "Cặp font",
+    "stacks": "Tech stack",
+    "charts": "Loại biểu đồ",
+    "landing": "Mẫu landing page",
+    "reasoning": "Quy tắc suy luận"
   },
   "features": {
-    "title": "Everything You Need for Beautiful UI",
-    "subtitle": "Comprehensive design intelligence at your fingertips. Search, discover, and implement stunning interfaces with AI-powered recommendations.",
+    "title": "Mọi thứ bạn cần để tạo UI đẹp",
+    "subtitle": "Trí tuệ thiết kế toàn diện trong tầm tay. Tìm kiếm, khám phá và triển khai giao diện đẹp với gợi ý từ AI.",
     "sections": {
       "styles": {
-        "title": "Design Styles",
+        "title": "Phong cách thiết kế",
         "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, AI-Native UI, và hơn 60 styles khác với colors, effects và framework compatibility.",
         "tags": [
           "Glassmorphism",
@@ -450,8 +450,8 @@
         ]
       },
       "colors": {
-        "title": "Color Palettes",
-        "description": "161 product-specific color systems for SaaS, E-commerce, Healthcare, Fintech, and more. Includes Primary, Secondary, CTA, Background, Text, and Border.",
+        "title": "Bảng màu",
+        "description": "161 hệ màu theo từng loại sản phẩm cho SaaS, E-commerce, Healthcare, Fintech và nhiều lĩnh vực khác. Bao gồm Primary, Secondary, CTA, Background, Text và Border.",
         "tags": [
           "SaaS",
           "Healthcare",
@@ -460,7 +460,7 @@
       },
       "typography": {
         "title": "Typography",
-        "description": "57 font pairings with Google Fonts integration, Tailwind configs, and mood-based recommendations.",
+        "description": "57 cặp font với Google Fonts, cấu hình Tailwind và gợi ý theo mood.",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -468,8 +468,8 @@
         ]
       },
       "charts": {
-        "title": "Chart Types",
-        "description": "25 data visualization recommendations with library suggestions (Chart.js, Recharts, D3.js) and accessibility notes.",
+        "title": "Loại biểu đồ",
+        "description": "25 gợi ý trực quan hóa dữ liệu kèm đề xuất thư viện (Chart.js, Recharts, D3.js) và ghi chú accessibility.",
         "tags": [
           "Line",
           "Bar",
@@ -478,8 +478,8 @@
         ]
       },
       "landing": {
-        "title": "Landing Patterns",
-        "description": "34 conversion-optimized page structures with CTA placement strategies and color recommendations.",
+        "title": "Mẫu landing page",
+        "description": "34 cấu trúc trang tối ưu chuyển đổi, kèm chiến lược đặt CTA và gợi ý màu sắc.",
         "tags": [
           "Hero + Features",
           "Video-First",
@@ -487,8 +487,8 @@
         ]
       },
       "ux": {
-        "title": "UX Guidelines",
-        "description": "Best practices and anti-patterns for animation, accessibility, z-index, loading states, and more.",
+        "title": "Hướng dẫn UX",
+        "description": "Best practices và anti-patterns cho animation, accessibility, z-index, loading states và nhiều chủ đề khác.",
         "tags": [
           "Animation",
           "A11y",
@@ -498,16 +498,16 @@
     }
   },
   "howItWorks": {
-    "titlePrefix": "How It ",
-    "titleAccent": "Works",
-    "subtitle": "From prompt to production-ready UI in 6 intelligent steps",
+    "titlePrefix": "Cách ",
+    "titleAccent": "hoạt động",
+    "subtitle": "Từ prompt đến UI sẵn sàng production qua 6 bước thông minh",
     "steps": {
       "1": {
-        "title": "Your Prompt",
+        "title": "Prompt của bạn",
         "prompt": "Build a landing page for a pet grooming service. Playful and friendly style, with booking CTA."
       },
       "2": {
-        "title": "AI Reasoning",
+        "title": "AI suy luận",
         "tags": {
           "product": {
             "label": "Product",
@@ -529,7 +529,7 @@
         "searching": "→ Searching: product, style, typography, color, landing, ux domains..."
       },
       "3": {
-        "title": "Search Design Database",
+        "title": "Tìm trong database thiết kế",
         "product": {
           "label": "PRODUCT",
           "value": "Pet Tech App"
@@ -575,7 +575,7 @@
         ]
       },
       "4": {
-        "title": "Generate Code",
+        "title": "Tạo code",
         "comment": "<!-- Pet Grooming Landing -->",
         "sectionClass": "bg-[#F8FAFC]",
         "h1Class": "font-['Fredoka'] text-[#1E293B]",
@@ -584,7 +584,7 @@
         "buttonText": "Book Grooming"
       },
       "5": {
-        "title": "Quality Checklist",
+        "title": "Checklist chất lượng",
         "items": [
           "SVG icons (no emoji)",
           "Hover feedback",
@@ -593,16 +593,16 @@
         ]
       },
       "6": {
-        "title": "Final Result",
+        "title": "Kết quả cuối cùng",
         "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
         "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
         "imageAlt": "Pet Grooming & Spa Demo",
-        "cta": "View Live Demo"
+        "cta": "Xem demo"
       }
     }
   },
   "techStacks": {
-    "title": "16 Tech Stacks Supported",
+    "title": "Hỗ trợ 16 tech stack",
     "subtitle": "Framework-specific best practices, patterns, và code examples từ dữ liệu upstream hiện tại.",
     "stacks": {
       "react": {
@@ -672,57 +672,57 @@
     }
   },
   "gallery": {
-    "title": "39 Website Demos Gallery",
-    "subtitle": "Browse real-world website demos built with UI UX Pro Max. Click to view live demos.",
+    "title": "Thư viện 39 demo website",
+    "subtitle": "Khám phá các demo website thực tế được xây bằng UI UX Pro Max. Nhấp để xem demo trực tiếp.",
     "searchPlaceholder": "Search demos (name, style, category, prompt)…",
-    "clearSearch": "Clear search",
+    "clearSearch": "Xóa tìm kiếm",
     "filters": {
-      "category": "Category",
-      "mode": "Mode"
+      "category": "Danh mục",
+      "mode": "Chế độ"
     },
-    "viewDemo": "View Demo",
-    "showPrompt": "Show Prompt",
+    "viewDemo": "Xem demo",
+    "showPrompt": "Xem prompt",
     "promptTitle": "Prompt",
-    "closeModal": "Close modal",
-    "close": "Close",
+    "closeModal": "Đóng modal",
+    "close": "Đóng",
     "mode": {
-      "light": "Light",
-      "dark": "Dark"
+      "light": "Sáng",
+      "dark": "Tối"
     },
-    "colors": "Colors:",
-    "loadMore": "Load More",
-    "showing": "Showing {shown} of {total} demos",
+    "colors": "Màu sắc:",
+    "loadMore": "Tải thêm",
+    "showing": "Đang hiển thị {shown}/{total} demo",
     "stats": "{total} demos available • {categories} categories • {light} light • {dark} dark",
-    "readyTitle": "Ready to Build Beautiful Interfaces?",
-    "readySubtitle": "Get started with UI UX Pro Max skill for Claude Code. Design intelligence at your fingertips.",
-    "getOnGithub": "Get on GitHub",
-    "quickStart": "Quick Start",
-    "learnMore": "Learn More",
+    "readyTitle": "Sẵn sàng tạo giao diện đẹp?",
+    "readySubtitle": "Bắt đầu với UI UX Pro Max Skill cho Claude Code. Trí tuệ thiết kế ngay trong tầm tay.",
+    "getOnGithub": "Xem trên GitHub",
+    "quickStart": "Bắt đầu nhanh",
+    "learnMore": "Tìm hiểu thêm",
     "features": [
-      "Open Source",
-      "Claude Code Compatible",
-      "Production Ready"
+      "Mã nguồn mở",
+      "Tương thích Claude Code",
+      "Sẵn sàng production"
     ]
   },
   "feedback": {
-    "title": "Was this page helpful?",
-    "subtitle": "Your feedback helps improve the tutorial and examples.",
-    "privacy": "No backend: stored locally until you submit",
-    "helpful": "Yes",
+    "title": "Trang này có hữu ích không?",
+    "subtitle": "Phản hồi của bạn giúp cải thiện hướng dẫn và ví dụ.",
+    "privacy": "Không có backend: dữ liệu được lưu cục bộ cho đến khi bạn gửi",
+    "helpful": "Có",
     "notHelpful": "No",
-    "detailsLabel": "What should we improve?",
-    "detailsPlaceholder": "Tell us what was confusing or missing, and what you expected to see.",
-    "copy": "Copy feedback",
-    "openIssue": "Open GitHub Issue",
+    "detailsLabel": "Chúng tôi nên cải thiện điều gì?",
+    "detailsPlaceholder": "Hãy cho biết phần nào khó hiểu hoặc còn thiếu, và bạn kỳ vọng thấy điều gì.",
+    "copy": "Sao chép phản hồi",
+    "openIssue": "Mở GitHub Issue",
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "Design intelligence skill for Claude Code. Searchable database of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 reasoning rules.",
-    "resources": "Resources",
+    "description": "Skill trí tuệ thiết kế cho Claude Code. Database có thể tìm kiếm gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types và 161 reasoning rules.",
+    "resources": "Tài nguyên",
     "database": "Database",
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "contact": "Contact",
-    "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"
+    "privacy": "Quyền riêng tư",
+    "terms": "Điều khoản",
+    "contact": "Liên hệ",
+    "builtWith": "Xây dựng bằng React + Tailwind CSS (bởi UI UX Pro Max)"
   }
 }

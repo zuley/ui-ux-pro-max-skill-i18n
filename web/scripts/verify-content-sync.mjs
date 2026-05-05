@@ -77,7 +77,18 @@ function read(relPath) {
   return fs.readFileSync(path.join(root, relPath), 'utf8');
 }
 
-for (const locale of ['en', 'zh', 'vi']) {
+function getConfiguredLocales() {
+  const routing = read('i18n/routing.ts');
+  const match = routing.match(/locales:\s*\[([^\]]+)\]/);
+  if (!match) {
+    failures.push('routing.ts should define a locales array');
+    return [];
+  }
+
+  return [...match[1].matchAll(/['"]([^'"]+)['"]/g)].map((entry) => entry[1]);
+}
+
+for (const locale of getConfiguredLocales()) {
   const raw = read(path.join('messages', `${locale}.json`));
   const messages = JSON.parse(raw);
   for (const snippet of expectedSnippets) {
