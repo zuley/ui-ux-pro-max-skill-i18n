@@ -6,6 +6,17 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 
 Antigravity Kit is an AI-powered design intelligence toolkit providing searchable databases of UI styles, color palettes, font pairings, chart types, and UX guidelines. It works as a skill/workflow for AI coding assistants (Codex, Windsurf, Cursor, etc.).
 
+## SEO Link Publishing
+
+When using the `seo-link` skill in this repository, use this project's Feishu/Lark Base configuration. Do not reuse Base tokens or table IDs from other projects.
+
+- Base URL: `https://zley1991.feishu.cn/base/FcUabvEZFaXvJZsJG33coQBFnwd`
+- Base token: `FcUabvEZFaXvJZsJG33coQBFnwd`
+- `外链发布记录` table: `tblWNieYu3VN2fZ2`
+- `可投放站点池` table: `tbl2XuhLgHVD3QVK`
+
+Before writing records, run `lark-cli base +field-list --as user` for the target table and verify that the expected fields exist. If a user provides a different Base URL for a specific task, use the user-provided Base for that task only and do not update this project default unless explicitly asked.
+
 ## Search Command
 
 ```bash
