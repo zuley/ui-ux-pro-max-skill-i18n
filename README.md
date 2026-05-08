@@ -1,6 +1,6 @@
 # UI UX Pro Max
 
-> [English](i18n/README.en.md) | 简体中文
+> [English](README.en.md) | 简体中文
 
 一个为跨多个平台和框架构建专业 UI/UX 提供设计智能的 AI 技能。
 

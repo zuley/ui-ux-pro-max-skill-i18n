@@ -1,83 +1,39 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+本文件为 AI 代理在此仓库中工作时提供指导。
 
-## Project Overview
+## 架构
 
-Antigravity Kit is an AI-powered design intelligence toolkit providing searchable databases of UI styles, color palettes, font pairings, chart types, and UX guidelines. It works as a skill/workflow for AI coding assistants (Codex, Windsurf, Cursor, etc.).
+- **双布局策略**：`app/(en)/` 在根路径 `/` 提供英文版；`app/[locale]/` 提供 `/zh`、`/vi`、`/ja`。两棵路由树有独立的 layout 和 metadata。
+- **i18n**：使用 `next-intl` v4，`localePrefix: 'as-needed'`。默认语言 `en` 无前缀。支持语言：`en`、`zh`、`vi`、`ja`。
+- **Middleware 已禁用**（matcher 为空数组）。所有路由为静态路由，语言检测和重定向通过 route group + 客户端逻辑处理。
+- **构建后脚本**（`scripts/postbuild.mjs`）：构建后将 `/en` 输出复制到根路径。不要假设 `/` 由 `app/page.tsx` 提供。
+- **not-found.tsx**：必须用 `NextIntlClientProvider` 包裹并传入 messages——它运行在 `[locale]` layout 之外。参见已知的 intl context 运行时错误。
 
-## SEO Link Publishing
+## 添加新语言
 
-When using the `seo-link` skill in this repository, use this project's Feishu/Lark Base configuration. Do not reuse Base tokens or table IDs from other projects.
+1. 在 `i18n/routing.ts` 的 `locales` 数组中添加语言代码
+2. 创建 `messages/<locale>.json`（从 `en.json` 复制）
+3. 更新 `language-switcher.tsx` 中的选项
+4. 运行 `npm run test:content` 验证同步
 
-- Base URL: `https://zley1991.feishu.cn/base/FcUabvEZFaXvJZsJG33coQBFnwd`
-- Base token: `FcUabvEZFaXvJZsJG33coQBFnwd`
-- `外链发布记录` table: `tblWNieYu3VN2fZ2`
-- `可投放站点池` table: `tbl2XuhLgHVD3QVK`
+## 部署
 
-Before writing records, run `lark-cli base +field-list --as user` for the target table and verify that the expected fields exist. If a user provides a different Base URL for a specific task, use the user-provided Base for that task only and do not update this project default unless explicitly asked.
+- 目标平台：**Cloudflare Workers**（通过 `@opennextjs/cloudflare`）
+- 构建：`npm run build:cf`（执行 `opennextjs-cloudflare build`）
+- 部署：`npm run deploy`（build:cf + wrangler deploy）
+- 配置文件：项目根目录的 `wrangler.toml`
+- 不要启用 next.config.ts 中的 `output: 'export'`（已被注释掉，这是有意为之）
 
-## Search Command
+## 测试与验证
 
-```bash
-python3 .Codex/skills/ui-ux-pro-max/scripts/search.py "<query>" --domain <domain> [-n <max_results>]
-```
+- `npm run test:content` — 验证各语言内容同步（运行 `scripts/verify-content-sync.mjs`）
+- `npm run lint` — ESLint，使用 next/core-web-vitals + typescript 规则
+- 未配置单元测试框架；验证基于脚本
 
-**Domain search:**
-- `product` - Product type recommendations (SaaS, e-commerce, portfolio)
-- `style` - UI styles (glassmorphism, minimalism, brutalism)
-- `typography` - Font pairings with Google Fonts imports
-- `color` - Color palettes by product type
-- `landing` - Page structure and CTA strategies
-- `chart` - Chart types and library recommendations
-- `ux` - Best practices and anti-patterns
-- `prompt` - AI prompts and CSS keywords
+## 代码风格
 
-**Stack search:**
-```bash
-python3 .Codex/skills/ui-ux-pro-max/scripts/search.py "<query>" --stack <stack>
-```
-Available stacks: `html-tailwind` (default), `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`
-
-## Architecture
-
-```
-.Codex/skills/ui-ux-pro-max/    # Codex skill
-├── SKILL.md                      # Skill definition with workflow instructions
-├── scripts/
-│   ├── search.py                 # CLI entry point
-│   └── core.py                   # BM25 + regex hybrid search engine
-└── data/                         # CSV databases (styles, colors, typography, etc.)
-    └── stacks/                   # Stack-specific guidelines (8 CSV files)
-
-.opencode/skills/ui-ux-pro-max/   # OpenCode skill
-.windsurf/workflows/              # Windsurf workflow copy
-.agent/workflows/ui-ux-pro-max/   # Generic agent workflow copy
-.github/prompts/                  # GitHub Copilot prompt
-.kiro/steering/                   # Kiro steering file
-.trae/skills/ui-ux-pro-max/       # Trae skill copy
-.shared/ui-ux-pro-max/            # Shared data copy
-```
-
-The search engine uses BM25 ranking combined with regex matching. Domain auto-detection is available when `--domain` is omitted.
-
-## Sync Rules
-
-When modifying files, keep all agent workflows in sync:
-
-- **Data & Scripts** (`data/`, `scripts/`): Copy changes to `.shared/ui-ux-pro-max/` and `cli/assets/.shared/ui-ux-pro-max/`
-- **SKILL.md**: Update corresponding files in `.agent/`, `.cursor/`, `.windsurf/`, `.github/prompts/`, `.kiro/steering/`, `.trae/skills/`, `.opencode/skills/`
-- **CLI assets**: Copy all skill folders to `cli/assets/` (`.Codex/`, `.cursor/`, `.windsurf/`, `.agent/`, `.github/`, `.kiro/`, `.trae/`, `.shared/`)
-
-## Prerequisites
-
-Python 3.x (no external dependencies required)
-
-## Git Workflow
-
-Never push directly to `main`. Always:
-
-1. Create a new branch: `git checkout -b feat/... ` or `fix/...`
-2. Commit changes
-3. Push branch: `git push -u origin <branch>`
-4. Create PR: `gh pr create`
+- Tailwind CSS v4，`darkMode: 'class'`
+- 无 Prettier/Biome——仅依赖 ESLint
+- 路径别名：`@/*` 映射到项目根目录（`./`）
+- 组件放在 `components/`，工具函数放在 `lib/`
