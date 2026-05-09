@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:content": "node scripts/verify-content-sync.mjs",
-    "deploy": "npm run build:cf && npx opennextjs-cloudflare deploy",
-    "preview": "npx opennextjs-cloudflare preview"
+    "deploy": "pnpm run build:cf && pnpm exec opennextjs-cloudflare deploy",
+    "preview": "pnpm exec opennextjs-cloudflare preview"
   },
   "dependencies": {
     "framer-motion": "^12.27.1",
@@ -22,14 +22,15 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.5.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
-    "@opennextjs/cloudflare": "^1.5.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.90.0"
   }
 }
