@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "opennextjs-cloudflare build",
+    "build:cf": "next build && node scripts/postbuild.mjs",
     "start": "next start",
     "lint": "eslint",
     "test:content": "node scripts/verify-content-sync.mjs",
-    "deploy": "pnpm run build:cf && pnpm exec opennextjs-cloudflare deploy",
-    "preview": "pnpm exec opennextjs-cloudflare preview"
+    "deploy": "pnpm run build:cf && pnpm exec wrangler deploy",
+    "preview": "pnpm run build:cf && pnpm exec wrangler dev"
   },
   "dependencies": {
     "framer-motion": "^12.27.1",
@@ -22,7 +22,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.5.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

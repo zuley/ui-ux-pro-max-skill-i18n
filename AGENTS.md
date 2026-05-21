@@ -19,11 +19,11 @@
 
 ## 部署
 
-- 目标平台：**Cloudflare Workers**（通过 `@opennextjs/cloudflare`）
-- 构建：`npm run build:cf`（执行 `opennextjs-cloudflare build`）
-- 部署：`npm run deploy`（build:cf + wrangler deploy）
+- 目标平台：**Cloudflare Workers Static Assets**
+- 构建：`npm run build:cf`（执行 `next build && node scripts/postbuild.mjs`，输出到 `out/`）
+- 部署：`npm run deploy`（build:cf + `wrangler deploy`，通过 `wrangler.toml` 的 `[assets]` 上传 `out/`）
 - 配置文件：项目根目录的 `wrangler.toml`
-- 不要启用 next.config.ts 中的 `output: 'export'`（已被注释掉，这是有意为之）
+- `next.config.ts` 必须启用 `output: 'export'`，保持英文根路径 `/`、本地化路径 `/zh`、`/vi`、`/ja` 为静态导出页面。
 
 ## 测试与验证
 
