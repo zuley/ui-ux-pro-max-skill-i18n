@@ -8,6 +8,9 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/lib/theme-context';
 import { adsenseMetadata } from '@/lib/adsense';
 import { AnnouncementBar } from '@/components/announcement-bar';
+import { SearchIndexProvider } from '@/components/search/search-index-context';
+import { buildSearchIndex } from '@/lib/search-index';
+import type { Locale } from '@/lib/content/types';
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
 
@@ -87,6 +90,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const searchIndex = await buildSearchIndex(locale as Locale);
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
@@ -113,8 +117,10 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            <AnnouncementBar />
-            {children}
+            <SearchIndexProvider value={searchIndex}>
+              <AnnouncementBar />
+              {children}
+            </SearchIndexProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
