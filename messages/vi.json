@@ -870,6 +870,7 @@
     "empty": "Chưa có hướng dẫn nào.",
     "minRead": "Đọc {n} phút",
     "stepLabel": "Bước {n} / {total}",
+    "totalSteps": "{n} bước",
     "backToSeries": "Quay lại series",
     "backToIndex": "Tất cả hướng dẫn",
     "prev": "Trước",

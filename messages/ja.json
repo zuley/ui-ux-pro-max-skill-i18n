@@ -954,6 +954,7 @@
     "empty": "まだチュートリアルはありません。",
     "minRead": "約 {n} 分",
     "stepLabel": "ステップ {n} / {total}",
+    "totalSteps": "{n} ステップ",
     "backToSeries": "シリーズへ戻る",
     "backToIndex": "一覧へ戻る",
     "prev": "前へ",

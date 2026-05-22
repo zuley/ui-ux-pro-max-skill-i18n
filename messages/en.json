@@ -1252,6 +1252,7 @@
     "empty": "No tutorials yet — check back soon.",
     "minRead": "{n} min read",
     "stepLabel": "Step {n} of {total}",
+    "totalSteps": "{n} steps",
     "backToSeries": "Back to series",
     "backToIndex": "All tutorials",
     "prev": "Previous",

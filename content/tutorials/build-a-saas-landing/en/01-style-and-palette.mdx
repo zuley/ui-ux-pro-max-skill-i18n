@@ -1,0 +1,109 @@
+---
+title: "01 · Pick the style and palette first — and don't let the AI choose"
+summary: "The single most important decision in a SaaS landing page is what it looks like. This step is about doing that decision yourself, not delegating it to the model."
+date: 2026-05-22
+tags: [tutorial, design-system, prompt]
+author: admin
+step: 1
+---
+
+A landing page is one screen with one job. The hardest part is not writing
+the prompt — it is **deciding what the page should feel like before you
+start prompting**. If you skip this step, the model fills the vacuum with
+its house style, and you end up with another purple-gradient hero.
+
+This step does not generate anything yet. It is the boring 10 minutes
+that decide whether the next four steps go anywhere.
+
+## Why the AI is bad at this on its own
+
+When you ask Claude (or any model) to "pick a style for my SaaS landing
+page," it does roughly what a junior designer with no taste would do:
+default to the most-seen patterns of the last two years. That is a
+reasonable thing to do when you have nothing else to go on, but it is
+the wrong thing to do when **you** are the one with the brand.
+
+The Skill ships **50 styles** and **21 palettes** precisely because the
+choice should be a curated pick, not a vibes-based interpolation.
+
+## Decide three things before you prompt
+
+<Checklist
+  storageKey="saas-landing-step-01"
+  title="Before you generate anything"
+  items={[
+    { id: 'audience', label: 'Who is this page for? (one sentence, not a persona doc)' },
+    { id: 'feeling', label: 'What should the visitor feel in the first 2 seconds? (one adjective)' },
+    { id: 'style', label: 'Which of the 50 styles do you want? Write down the name.' },
+    { id: 'palette', label: 'Which of the 21 palettes? Write down the name.' },
+    { id: 'forbidden', label: 'Three things you explicitly do not want on this page.' }
+  ]}
+/>
+
+The checklist sounds trivial until you actually fill it in. The
+"forbidden" row is the one that hurts the most — it is where you commit
+to what your page is **not**.
+
+## How to pick the style
+
+Run the database search and read the actual style cards instead of
+guessing:
+
+<CodeBlock
+  title="Browse styles"
+  language="bash"
+  code={`# Inside Claude Code
++style list
+
+# Or filter by attribute
++style list --tag editorial --tag asymmetric`}
+/>
+
+Pick **one**, not three. The point of the curated set is that the
+hard work of judging taste has already been done — your job is to commit
+to a single choice, not to average them.
+
+<Callout tone="info" title="A useful default if you're stuck">
+  For a B2B SaaS landing page, "Editorial Brutalist" + the "Slate Ink"
+  palette is a strong out-of-the-box combination: serif display headings,
+  ample whitespace, a single accent colour, and no decorative gradients.
+  It looks intentional even before you add any content.
+</Callout>
+
+## How to pick the palette
+
+The palette decision is downstream of the style decision. Some styles
+have a recommended palette — use it. If yours doesn't, pick a palette
+whose accent colour matches the **one emotion** you wrote in the
+checklist above.
+
+<CodeBlock
+  title="Browse palettes"
+  language="bash"
+  code={`+palette list --style editorial-brutalist
++palette show slate-ink`}
+/>
+
+## What we have at the end of this step
+
+Open a scratch file (or just a note) and write down:
+
+```
+Audience: ____
+Feeling: ____
+Style: ____
+Palette: ____
+Forbidden: ____, ____, ____
+```
+
+That five-line note is the input for step 2, where we turn it into the
+first real prompt. We are not generating any UI yet — that's deliberate.
+**A page that survives contact with users is one where the style decision
+came before the layout decision**, and most teams get this backwards.
+
+## Next
+
+In step 02 we take this five-line note and turn it into a single prompt
+that produces a hero section you can actually keep. We will not be
+asking the model to "design a landing page." We will be asking it to
+**execute the decisions you already made**.
