@@ -3,7 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { localePath } from '@/lib/locale-path';
+import {
+  blogIndexPath,
+  docPath,
+  localePath,
+  tutorialsIndexPath,
+} from '@/lib/locale-path';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -40,6 +45,9 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('resources')}</h4>
             <ul className="space-y-3">
+              <li><Link href={docPath(locale, 'getting-started')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('docs')}</Link></li>
+              <li><Link href={tutorialsIndexPath(locale)} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('tutorials')}</Link></li>
+              <li><Link href={blogIndexPath(locale)} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('blog')}</Link></li>
               <li><Link href={localePath(locale, '/#features')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('features')}</Link></li>
               <li><Link href={localePath(locale, '/#stacks')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('stacks')}</Link></li>
               <li><Link href={localePath(locale, '/#styles')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('styles')}</Link></li>

@@ -17,6 +17,8 @@
     "home": "ホーム",
     "docs": "ドキュメント",
     "tutorial": "チュートリアル",
+    "tutorials": "チュートリアル",
+    "blog": "ブログ",
     "examples": "例",
     "gallerySubtitle": "39+ 件のデザインシステムデモを見る",
     "features": "機能",
@@ -946,7 +948,10 @@
     "empty": "まだ記事はありません。後ほどご確認ください。",
     "minRead": "約 {n} 分",
     "backToIndex": "一覧へ戻る",
-    "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。"
+    "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。",
+    "latestTitle": "ブログの最新記事",
+    "latestSubtitle": "チームとコミュニティからの現場メモと Prompt 技法。",
+    "seeAll": "すべての記事を見る"
   },
   "tutorials": {
     "title": "チュートリアル",
@@ -960,6 +965,9 @@
     "prev": "前へ",
     "next": "次へ",
     "fallbackBanner": "このステップはまだ翻訳されていません。英語版を表示しています。",
+    "featuredTitle": "おすすめチュートリアル",
+    "featuredSubtitle": "午後の時間で完走できる実践ガイド。",
+    "seeAll": "すべてのチュートリアルを見る",
     "series": {
       "saasLanding": {
         "title": "SaaS のランディングページを作る",

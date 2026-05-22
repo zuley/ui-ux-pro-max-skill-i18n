@@ -17,6 +17,8 @@
     "home": "首页",
     "docs": "文档",
     "tutorial": "教程",
+    "tutorials": "教程",
+    "blog": "博客",
     "examples": "示例",
     "gallerySubtitle": "查看全部 39+ 设计系统演示",
     "features": "功能特性",
@@ -1244,7 +1246,10 @@
     "empty": "暂无文章，请稍后再来。",
     "minRead": "约 {n} 分钟",
     "backToIndex": "查看全部",
-    "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。"
+    "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。",
+    "latestTitle": "博客最新",
+    "latestSubtitle": "来自团队和社区的一线笔记与 Prompt 经验。",
+    "seeAll": "查看全部文章"
   },
   "tutorials": {
     "title": "教程",
@@ -1258,6 +1263,9 @@
     "prev": "上一篇",
     "next": "下一篇",
     "fallbackBanner": "这一步暂未翻译为中文，正在展示英文原文。",
+    "featuredTitle": "精选教程",
+    "featuredSubtitle": "一个下午就能跟着做完的实操指南。",
+    "seeAll": "查看全部教程",
     "series": {
       "saasLanding": {
         "title": "从零做一个 SaaS 落地页",

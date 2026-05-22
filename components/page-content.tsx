@@ -1,5 +1,3 @@
-'use client';
-
 import { Navbar } from '@/components/navbar';
 import { Hero } from '@/components/hero';
 import { Stats } from '@/components/stats';
@@ -10,11 +8,24 @@ import { TechStacks } from '@/components/tech-stacks';
 import { Gallery } from '@/components/gallery';
 import { Footer } from '@/components/footer';
 
-export function PageContent() {
+/**
+ * Top-level homepage layout. Accepts an optional `latestContent` slot
+ * so a server component (which can fetch MDX content at build time)
+ * can be rendered between the static marketing sections without
+ * turning the entire shell into a server tree.
+ *
+ * Each child component declares its own `'use client'` where needed,
+ * so this wrapper itself is a server component now.
+ */
+export function PageContent({
+  latestContent,
+}: {
+  latestContent?: React.ReactNode;
+}) {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0F172A] transition-colors duration-300">
       <Navbar />
-      
+
       <main>
         <Hero />
         <Stats />
@@ -22,6 +33,7 @@ export function PageContent() {
         <Features />
         <HowItWorks />
         <TechStacks />
+        {latestContent}
         <Gallery />
       </main>
 

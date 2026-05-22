@@ -10,7 +10,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { SearchModal } from '@/components/search/search-modal';
 import { docsNav } from '@/content/docs/nav';
 import { useLocale } from 'next-intl';
-import { docPath, localePath } from '@/lib/locale-path';
+import {
+  blogIndexPath,
+  docPath,
+  localePath,
+  tutorialsIndexPath,
+} from '@/lib/locale-path';
 
 export function Navbar() {
   const t = useTranslations('navbar');
@@ -27,6 +32,8 @@ export function Navbar() {
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
     if (href.startsWith('/docs')) return pathname.startsWith('/docs');
+    if (href.startsWith('/tutorials')) return pathname.startsWith('/tutorials');
+    if (href.startsWith('/blog')) return pathname.startsWith('/blog');
     return pathname === href;
   };
 
@@ -45,7 +52,9 @@ export function Navbar() {
   const primaryLinks = useMemo(
     () => [
       { href: localePath(locale, '/'), label: t('home') },
-      { href: docPath(locale, 'getting-started'), label: t('docs') }
+      { href: docPath(locale, 'getting-started'), label: t('docs') },
+      { href: tutorialsIndexPath(locale), label: t('tutorials') },
+      { href: blogIndexPath(locale), label: t('blog') }
     ],
     [locale, t]
   );

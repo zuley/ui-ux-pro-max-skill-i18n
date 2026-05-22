@@ -17,6 +17,8 @@
     "home": "Home",
     "docs": "Docs",
     "tutorial": "Tutorial",
+    "tutorials": "Tutorials",
+    "blog": "Blog",
     "examples": "Examples",
     "gallerySubtitle": "View all 39+ design system demos",
     "features": "Features",
@@ -1244,7 +1246,10 @@
     "empty": "No posts here yet — check back soon.",
     "minRead": "{n} min read",
     "backToIndex": "All posts",
-    "fallbackBanner": "This article hasn't been translated yet — showing the English version."
+    "fallbackBanner": "This article hasn't been translated yet — showing the English version.",
+    "latestTitle": "Latest from the blog",
+    "latestSubtitle": "Field notes and prompt techniques from our team and community.",
+    "seeAll": "See all posts"
   },
   "tutorials": {
     "title": "Tutorials",
@@ -1258,6 +1263,9 @@
     "prev": "Previous",
     "next": "Next",
     "fallbackBanner": "This step hasn't been translated yet — showing the English version.",
+    "featuredTitle": "Featured tutorials",
+    "featuredSubtitle": "Step-by-step builds you can finish in an afternoon.",
+    "seeAll": "See all tutorials",
     "series": {
       "saasLanding": {
         "title": "Build a SaaS landing page",

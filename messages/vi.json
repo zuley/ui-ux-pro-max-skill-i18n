@@ -17,6 +17,8 @@
     "home": "Trang chủ",
     "docs": "Tài liệu",
     "tutorial": "Hướng dẫn",
+    "tutorials": "Hướng dẫn",
+    "blog": "Blog",
     "examples": "Ví dụ",
     "features": "Tính năng",
     "stacks": "Tech stack",
@@ -862,7 +864,10 @@
     "empty": "Chưa có bài viết — hãy quay lại sau.",
     "minRead": "Đọc {n} phút",
     "backToIndex": "Tất cả bài viết",
-    "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh."
+    "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "latestTitle": "Mới nhất từ blog",
+    "latestSubtitle": "Ghi chú thực địa và kỹ thuật Prompt từ team và cộng đồng.",
+    "seeAll": "Xem tất cả bài viết"
   },
   "tutorials": {
     "title": "Hướng dẫn",
@@ -876,6 +881,9 @@
     "prev": "Trước",
     "next": "Tiếp",
     "fallbackBanner": "Bước này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "featuredTitle": "Hướng dẫn nổi bật",
+    "featuredSubtitle": "Các bài thực hành có thể hoàn thành trong một buổi chiều.",
+    "seeAll": "Xem tất cả hướng dẫn",
     "series": {
       "saasLanding": {
         "title": "Dựng một landing page SaaS",
