@@ -14,6 +14,7 @@ import { getAuthor } from '@/lib/authors';
 import { tutorialSeriesPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
+import { ReadingProgress } from '@/components/content/reading-progress';
 import { SeriesSidebar } from '@/components/tutorials/series-sidebar';
 import { StepNav } from '@/components/tutorials/step-nav';
 import type { Locale } from '@/lib/content/types';
@@ -115,6 +116,7 @@ export default async function TutorialStepPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <ReadingProgress />
       <ArticleJsonLd
         type="TechArticle"
         url={canonicalUrl}

@@ -10,6 +10,7 @@ import { getAuthor } from '@/lib/authors';
 import { blogIndexPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
+import { ReadingProgress } from '@/components/content/reading-progress';
 import type { Locale } from '@/lib/content/types';
 
 type PageParams = { locale: string; slug: string };
@@ -94,6 +95,7 @@ export default async function BlogPostPage({
 
   return (
     <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <ReadingProgress />
       <ArticleJsonLd
         type="Article"
         url={canonicalUrl}
