@@ -8,8 +8,12 @@ import { SearchIndexProvider } from '@/components/search/search-index-context';
 import { buildSearchIndex } from '@/lib/search-index';
 import messages from '@/messages/en.json';
 
-export default async function EnglishLegalLayout({
-  children
+/**
+ * EN-default route-group shell mirroring app/[locale]/tutorials/layout.tsx
+ * so /tutorials/* (no /en/ prefix) is reachable.
+ */
+export default async function EnglishTutorialsLayout({
+  children,
 }: {
   children: React.ReactNode;
 }) {

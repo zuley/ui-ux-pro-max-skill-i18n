@@ -8,8 +8,13 @@ import { SearchIndexProvider } from '@/components/search/search-index-context';
 import { buildSearchIndex } from '@/lib/search-index';
 import messages from '@/messages/en.json';
 
-export default async function EnglishLegalLayout({
-  children
+/**
+ * EN-default route-group shell mirroring app/[locale]/blog/layout.tsx
+ * so /blog/* (no /en/ prefix) is reachable. Without this, the navbar
+ * links emitted by localePath('en', ...) all 404.
+ */
+export default async function EnglishBlogLayout({
+  children,
 }: {
   children: React.ReactNode;
 }) {

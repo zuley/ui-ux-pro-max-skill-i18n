@@ -3,7 +3,10 @@ import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { AnnouncementBar } from '@/components/announcement-bar';
 import { PageContent } from '@/components/page-content';
+import { LatestContent } from '@/components/home/latest-content';
 import { ThemeProvider } from '@/lib/theme-context';
+import { SearchIndexProvider } from '@/components/search/search-index-context';
+import { buildSearchIndex } from '@/lib/search-index';
 import messages from '@/messages/en.json';
 
 const baseUrl = 'https://ui-ux-pro-max-skill.com';
@@ -47,14 +50,17 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootPage() {
+export default async function RootPage() {
   setRequestLocale('en');
+  const searchIndex = await buildSearchIndex('en');
 
   return (
     <NextIntlClientProvider locale="en" messages={messages}>
       <ThemeProvider>
-        <AnnouncementBar />
-        <PageContent />
+        <SearchIndexProvider value={searchIndex}>
+          <AnnouncementBar />
+          <PageContent latestContent={<LatestContent locale="en" />} />
+        </SearchIndexProvider>
       </ThemeProvider>
     </NextIntlClientProvider>
   );
