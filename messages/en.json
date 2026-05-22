@@ -111,43 +111,185 @@
       }
     },
     "gettingStarted": {
-      "overview": "A searchable design database built specifically for AI coding assistants, providing design intelligence for Claude Code, Cursor, Windsurf, and more with the v2.0 Design System Generator.",
+      "overview": "UI UX Pro Max Skill is an open, searchable design intelligence layer that plugs into AI coding assistants such as Claude Code, Cursor, Windsurf, GitHub Copilot, and 15 more. Instead of asking the model to invent a design from scratch every time, the skill gives the model a curated knowledge base of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 industry-specific reasoning rules. The result is interfaces that look intentional, follow accessibility rules, and avoid the generic 'AI-generated' aesthetic.",
+      "problem": {
+        "title": "Why design intelligence matters for AI coding",
+        "lead": "Modern AI assistants are great at writing component code, but UI design taste is uneven. Without grounding, models tend to produce the same handful of layouts and color schemes across very different products. A medical dashboard ends up looking like a crypto app; a children's app uses fintech-grey. UI UX Pro Max Skill exists to fix that gap by pinning the model's choices to evidence-based, industry-aware design knowledge.",
+        "points": [
+          {
+            "title": "Generic patterns",
+            "body": "Without context, models default to a centered hero, three feature cards, and a CTA. The skill exposes 24 landing patterns and 67 visual styles so the model has real choices to reason about for each project."
+          },
+          {
+            "title": "No industry context",
+            "body": "A fintech dashboard and a wellness app have completely different color, density, and motion requirements. 161 industry-specific reasoning rules let the model pick palettes and patterns that feel native to the domain."
+          },
+          {
+            "title": "Hidden anti-patterns",
+            "body": "AI assistants happily generate code with poor contrast ratios, illegible font sizes, or interaction patterns that fail on mobile. The skill bundles 99 UX guidelines and explicit anti-pattern lists so the model knows what to avoid."
+          },
+          {
+            "title": "Inconsistent output across sessions",
+            "body": "Without a persisted design system, every conversation drifts. Using --persist writes a MASTER.md file in your repo that all future sessions reference, locking in tokens, typography, and spacing decisions."
+          }
+        ]
+      },
+      "audience": {
+        "title": "Who this is for",
+        "subtitle": "The skill is built for people who ship UI quickly with AI assistance but care about how the result looks and behaves.",
+        "items": [
+          {
+            "role": "Solo developers and indie hackers",
+            "body": "You move fast, you do not have a designer, and you do not want every project to look like a Tailwind starter template. The skill gives you a defensible visual identity in one command."
+          },
+          {
+            "role": "Design-engineering teams",
+            "body": "You already have opinions about tokens, density, and motion. The skill respects --persist overrides, so you can codify those decisions and have every AI session honor them."
+          },
+          {
+            "role": "Agencies and consultancies",
+            "body": "You ship interfaces across many industries. The 161 industry reasoning rules and per-page overrides let you spin up domain-appropriate starters without rebuilding the system each time."
+          },
+          {
+            "role": "Open-source maintainers",
+            "body": "Documentation sites, dashboards, and admin panels all benefit. Pair the skill with shadcn/ui or your stack of choice to get consistent docs and demo pages without a dedicated designer."
+          }
+        ]
+      },
+      "architecture": {
+        "title": "How it works at a glance",
+        "body": "When you make a UI request, the AI assistant loads the skill, the skill parses your request into product type and intent signals, runs a multi-domain search across the bundled knowledge base, applies industry-specific reasoning rules to rank candidates and filter anti-patterns, then returns a structured design system that the assistant uses to write code. Nothing is sent to an external service — the entire pipeline runs locally inside your AI client.",
+        "labels": {
+          "you": "You",
+          "assistant": "AI Assistant",
+          "skill": "UI UX Pro Max Skill",
+          "kb": "Knowledge Base",
+          "reasoning": "Reasoning Engine",
+          "output": "Design System Output",
+          "code": "Generated Code"
+        },
+        "captions": {
+          "step1": "Natural-language UI request",
+          "step2": "Skill loads locally",
+          "step3": "Multi-domain search",
+          "step4": "Rules + anti-patterns",
+          "step5": "Structured handoff",
+          "step6": "Production code"
+        }
+      },
       "features": {
         "title": "What's Included",
+        "intro": "Every number below is a separately curated dataset that the reasoning engine can search and combine. Together they give the model enough raw material to produce design systems that feel hand-crafted instead of templated.",
         "items": [
           {
             "title": "67 UI Styles",
-            "desc": "From Glassmorphism to Claymorphism, from Minimalism to Brutalism, including AI-Native UI, Bento Grid, Dark Mode, and more."
+            "desc": "From Glassmorphism to Claymorphism, from Minimalism to Brutalism, including AI-Native UI, Bento Grid, Dark Mode, Aurora, Skeuomorphism, Neumorphism, Flat 2.0, and more. Each style entry includes a description, when to use it, visual effects, and stack compatibility."
           },
           {
             "title": "161 Color Palettes",
-            "desc": "Industry-specific palettes aligned with 161 product types across SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, and more."
+            "desc": "Industry-specific palettes aligned with 161 product types across SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, Gaming, EdTech, and more. Each palette ships with accessible contrast pairings, dark-mode variants, and intended mood."
           },
           {
             "title": "57 Font Pairings",
-            "desc": "Curated Google Fonts typography combinations with font imports and typographic hierarchy."
+            "desc": "Curated Google Fonts typography combinations with import statements, recommended weights, line-height ratios, and a typographic hierarchy from display down to caption."
           },
           {
             "title": "25 Chart Types",
-            "desc": "Visualization recommendations for dashboards and analytics, with library suggestions and accessibility notes."
+            "desc": "Visualization recommendations for dashboards and analytics, with library suggestions (Recharts, Visx, Chart.js, ECharts) and accessibility notes for screen-reader labeling and colorblind-safe palettes."
           },
           {
             "title": "16 Tech Stacks",
-            "desc": "Framework-specific guides for React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, and Three.js."
+            "desc": "Framework-specific guides for React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, and Three.js. Each stack page covers idiomatic patterns and recommended libraries."
           },
           {
             "title": "99 UX Guidelines",
-            "desc": "Best practices, anti-pattern corrections, and accessibility rules to improve user experience."
+            "desc": "Best practices, anti-pattern corrections, and accessibility rules covering forms, navigation, empty states, error handling, loading patterns, mobile gestures, motion preferences, and WCAG compliance."
           },
           {
             "title": "161 Reasoning Rules",
-            "desc": "Industry-specific reasoning rules that match product type to patterns, style priorities, color mood, typography, effects, and anti-patterns."
+            "desc": "Industry-specific reasoning rules that match product type to patterns, style priorities, color mood, typography, effects, and anti-patterns. These rules are what let the model say 'this is a healthcare app, so saturation should be lower and density should be moderate' instead of guessing."
           }
         ]
-      }
+      },
+      "comparison": {
+        "title": "How it compares to alternatives",
+        "subtitle": "There are several ways to bring design taste into your AI workflow. Here is where each one fits.",
+        "headers": {
+          "approach": "Approach",
+          "strengths": "Strengths",
+          "limits": "Limits"
+        },
+        "rows": [
+          {
+            "approach": "Raw AI prompts",
+            "strengths": "Zero setup. Works in any assistant. Maximum flexibility for one-off experiments.",
+            "limits": "Output drifts session to session. No industry reasoning. Anti-patterns slip through. You re-explain your taste every time."
+          },
+          {
+            "approach": "Figma UI kits",
+            "strengths": "Strong visual fidelity. Good for handing off to humans.",
+            "limits": "Lives outside your repo. AI assistants cannot read or extend Figma files directly. Requires translation step to code."
+          },
+          {
+            "approach": "Design token libraries",
+            "strengths": "Codify colors, spacing, and typography. Survive across sessions when checked into the repo.",
+            "limits": "Only cover surface tokens. No guidance on layout, density, motion, or which style to use in the first place."
+          },
+          {
+            "approach": "Component libraries (shadcn/ui, Chakra)",
+            "strengths": "Production-ready primitives. Solve the implementation layer well.",
+            "limits": "Style-agnostic by design. You still need to decide colors, typography, and patterns per product."
+          },
+          {
+            "approach": "UI UX Pro Max Skill",
+            "strengths": "Lives in your AI client. Combines style, palette, typography, patterns, and reasoning. Plays well with shadcn/ui and design tokens. Persistable per project.",
+            "limits": "Tuned for web and app interfaces; not a print or motion-graphics tool. Best paired with a component library, not a replacement for one."
+          }
+        ]
+      },
+      "shouldYouUse": {
+        "title": "Should you use it?",
+        "subtitle": "Tick the boxes that apply. Three or more, and you will get strong ROI from installing the skill.",
+        "items": [
+          { "id": "ai-coding", "label": "I use an AI coding assistant (Claude Code, Cursor, Windsurf, Copilot, etc.) at least a few times per week." },
+          { "id": "ship-ui", "label": "I regularly ship user-facing interfaces — landing pages, dashboards, mobile screens, or admin panels." },
+          { "id": "no-designer", "label": "I do not have a dedicated designer for every project, or I am the designer-engineer." },
+          { "id": "generic-output", "label": "I have noticed my AI-generated UIs feel generic or interchangeable across very different products." },
+          { "id": "want-consistency", "label": "I want consistent design decisions across sessions instead of starting from scratch each conversation." },
+          { "id": "industry-fit", "label": "My products span multiple industries (SaaS, healthcare, fintech, e-commerce) and need to feel native to each." },
+          { "id": "tokens-already", "label": "I already use design tokens or shadcn/ui and want a reasoning layer on top of them." }
+        ]
+      },
+      "next": "Next: read How It Works to see exactly what the Design System Generator does when you make a request, or jump straight to the Installation Guide."
     },
     "dsg": {
-      "overview": "The Design System Generator analyzes product type, industry, and intent, then searches product, style, color, landing, typography, and UX domains to produce a complete design system.",
+      "overview": "The Design System Generator is the heart of UI UX Pro Max Skill. When the AI assistant detects a UI request, the generator parses what you actually want, runs a parallel search across five design domains, applies industry-specific reasoning rules, then hands the assistant a structured design system that gets translated into code. The whole process runs locally and finishes in seconds.",
+      "primer": {
+        "title": "What is a design system, in this context?",
+        "lead": "A design system here is not a 500-page Figma library. It is a compact, machine-readable bundle of decisions: which layout pattern to use, which color palette, which typography pairing, which motion vocabulary, which interactions to favor, and which anti-patterns to avoid. The generator produces one of these bundles per request, tailored to your product type and intent.",
+        "items": [
+          {
+            "title": "Pattern",
+            "body": "The structural choice — for example 'bento grid with sticky navigation', 'data-dense admin layout', or 'mobile-first card stack'. Drawn from 24 landing and product patterns."
+          },
+          {
+            "title": "Style",
+            "body": "The visual treatment — glassmorphism, brutalism, minimalism, neumorphism, claymorphism, aurora, AI-native, or one of 67 catalogued styles. Each style brings its own effect language."
+          },
+          {
+            "title": "Color & typography",
+            "body": "An industry-appropriate palette from 161 options and a font pairing from 57. Both include accessibility metadata: contrast pairings, recommended weights, line heights."
+          },
+          {
+            "title": "Effects, motion & micro-interactions",
+            "body": "Shadow scale, blur, gradient direction, hover transitions, page transitions, and reduced-motion fallbacks."
+          },
+          {
+            "title": "Anti-patterns",
+            "body": "Things to explicitly avoid for this product type — e.g. high-saturation reds in healthcare, novelty fonts in fintech, slow modal cascades in admin tools."
+          }
+        ]
+      },
       "workflow": {
         "title": "Design System Generation Workflow",
         "subtitle": "From prompt to a tailored design system with reasoning, anti-patterns, and implementation guidance.",
@@ -155,30 +297,107 @@
           {
             "num": "1",
             "title": "User Request",
-            "desc": "Ask for a UI/UX task and include product type, industry, style keywords, or target page when relevant."
+            "desc": "Ask for a UI/UX task and include product type, industry, style keywords, or target page when relevant. The richer the signal, the tighter the output."
           },
           {
             "num": "2",
             "title": "Multi-Domain Search",
-            "desc": "Search product categories, UI styles, color palettes, landing patterns, typography, and UX guidelines."
+            "desc": "Search product categories, UI styles, color palettes, landing patterns, typography, and UX guidelines in parallel. Each domain returns its top candidates with metadata."
           },
           {
             "num": "3",
             "title": "Reasoning Engine",
-            "desc": "Apply 161 industry-specific rules to rank matches and filter anti-patterns."
+            "desc": "Apply 161 industry-specific rules to rank candidates, resolve cross-domain conflicts (e.g. a style that clashes with a palette), and filter anti-patterns for the inferred industry."
           },
           {
             "num": "4",
             "title": "Design System Output",
-            "desc": "Return pattern, style, colors, typography, effects, anti-patterns, and a pre-delivery checklist."
+            "desc": "Return pattern, style, colors, typography, effects, anti-patterns, and a pre-delivery checklist. The AI assistant uses this as the source of truth while writing your components."
           }
         ]
       },
-      "next": "Next: check the Installation Guide to install the skill for your AI assistant.",
+      "deepDive": {
+        "title": "What each stage actually does",
+        "subtitle": "If you are curious about the internals, here is the long version.",
+        "stages": [
+          {
+            "label": "Stage 1 — Parsing the request",
+            "body": "The generator extracts four signals from your prompt: product type (SaaS, e-commerce, healthcare, fintech, portfolio, etc.), intent (build, redesign, fix, optimize), explicit style hints (glassmorphism, dark mode), and target surface (landing, dashboard, mobile screen, single component). Missing signals fall back to defaults that bias toward 'safe and accessible' rather than 'novel'."
+          },
+          {
+            "label": "Stage 2 — Parallel search",
+            "body": "Five searches fire in parallel against the bundled JSON indexes — products, styles, colors, landings, typography. Each search returns top-N candidates ranked by string similarity plus structured metadata. This stage typically completes in well under a second on a developer laptop."
+          },
+          {
+            "label": "Stage 3 — Reasoning and conflict resolution",
+            "body": "The 161 reasoning rules act as filters and tie-breakers. For example: 'healthcare + dashboard → prefer cool palettes, prefer Inter or IBM Plex Sans, suppress neumorphism, suppress brutalism, prefer medium density.' When two candidates score similarly, industry rules pick the winner. The reasoning engine also drops any combination that hits a known anti-pattern."
+          },
+          {
+            "label": "Stage 4 — Assembling the output",
+            "body": "The winning candidates are merged into a single design system bundle and serialized either as JSON for programmatic use or as Markdown for direct AI consumption. With --persist the same bundle is written to design-system/MASTER.md so future sessions can read it without re-running the generator."
+          }
+        ]
+      },
+      "anatomy": {
+        "title": "Anatomy of the output",
+        "body": "Below is a condensed view of what gets written to design-system/MASTER.md. The real file is more verbose — this is the shape, not the volume.",
+        "exampleTitle": "design-system/MASTER.md (excerpt)",
+        "exampleCode": "# Design System\n\nProduct type: SaaS analytics dashboard\nIndustry: B2B fintech\nGenerated: 2026-01-15\n\n## Pattern\nDense data layout — sticky sidebar, 12-column grid, sticky table headers.\nReference: landing/data-dashboard-sticky-sidebar\n\n## Style\nMinimalism with subtle glass accents on hover cards.\nWhy: fintech anti-pattern bans high-saturation hero gradients;\nminimalism + restrained glass keeps it credible.\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald, use sparingly for KPI deltas)\nWCAG AA pairings checked.\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / 1.55 line-height\nNumeric: IBM Plex Mono for tabular figures\n\n## Effects\nShadow scale: 0/1/2/4 only. Avoid deep shadows.\nMotion:      150-200ms ease-out. Honor prefers-reduced-motion.\n\n## Anti-patterns to avoid\n- Don't use red as a brand color (signals loss)\n- Don't auto-rotate carousels on the dashboard\n- Don't hide bulk actions behind hover-only UI\n\n## Pre-delivery checklist\n- [ ] All chart colors are colorblind-safe\n- [ ] Tabular numbers use mono font\n- [ ] Empty states have illustrations and CTA\n- [ ] Loading states show skeletons, not spinners-only\n"
+      },
       "persist": {
         "title": "Persist Design System",
-        "body": "Add --persist to save design-system/MASTER.md as the project source of truth, and add --page to create page-specific overrides under design-system/pages/."
-      }
+        "body": "By default, generated design systems live only in the current AI conversation. Add --persist to write the bundle to design-system/MASTER.md at the project root. From then on, every new session in this project will read MASTER.md first and follow its decisions, so a redesigned button still uses the project's spacing scale and color tokens.",
+        "scopes": {
+          "title": "Project-level vs page-level scope",
+          "body": "MASTER.md captures decisions that apply across the whole project. Sometimes one page needs to break the rules — a marketing campaign page with a more playful palette, or a print-friendly invoice view. Add --page [name] to write design-system/pages/[name].md as an override layered on top of MASTER. AI sessions targeting that page merge the two, with the page file winning on conflicts.",
+          "commandTitle": "Persist commands",
+          "commands": "# Project-level: writes design-system/MASTER.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"SaaS analytics dashboard\" --design-system --persist -p \"Acme\"\n\n# Page-level override: writes design-system/pages/pricing.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"playful pricing page with strong CTA\" --design-system \\\n  --persist -p \"Acme\" --page \"pricing\""
+        }
+      },
+      "tuning": {
+        "title": "Tuning the output",
+        "subtitle": "If the first generation does not feel right, you have three controls before reaching for a rewrite.",
+        "items": [
+          {
+            "title": "Add explicit style keywords",
+            "body": "Append words like 'glassmorphism', 'brutalist', 'bento grid', or 'aurora' to your prompt. These bias the style search toward your preferred direction without overriding other domain rules."
+          },
+          {
+            "title": "Name the industry",
+            "body": "'Healthcare', 'fintech', 'e-commerce', 'wellness', or 'gaming' anchor the reasoning rules. The more specific the industry, the more confident the anti-pattern filtering."
+          },
+          {
+            "title": "Specify the surface",
+            "body": "'Landing page', 'dashboard', 'mobile screen', 'pricing page', 'settings page' — surface keywords pick the right landing-pattern subset and density level."
+          },
+          {
+            "title": "Re-run with --page for one-offs",
+            "body": "If you like 90% of MASTER.md but want one page to be different, generate a page-level override instead of regenerating the whole project."
+          }
+        ]
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting common output issues",
+        "items": [
+          {
+            "q": "The output feels generic.",
+            "a": "Your prompt is probably missing industry or surface signals. Try 'Build a fintech analytics dashboard with dense tables' instead of 'Build a dashboard'."
+          },
+          {
+            "q": "The palette does not match my brand.",
+            "a": "Write your brand colors into design-system/MASTER.md after the first --persist run. The model will treat them as locked tokens in subsequent sessions."
+          },
+          {
+            "q": "I keep getting the same style across very different products.",
+            "a": "Likely two reasons. First, you may not be naming the industry. Second, you may have a stale MASTER.md from a previous project — delete or rename it before generating a new one."
+          },
+          {
+            "q": "Anti-patterns I do not care about keep being flagged.",
+            "a": "Anti-patterns are advisory in the output. You can ignore them, or edit MASTER.md to remove the lines you disagree with — they will not regenerate unless you re-run --persist."
+          }
+        ]
+      },
+      "next": "Next: pick your AI assistant in the Installation Guide and get the skill running locally."
     },
     "cli": {
       "overview": "Choose the installation method that fits your workflow and inject design intelligence into your AI assistant.",
@@ -267,6 +486,95 @@
           "uipro uninstall --global    # Remove global install"
         ]
       },
+      "decision": {
+        "title": "Choosing the right install method",
+        "subtitle": "Three options, each with a clear sweet spot.",
+        "options": [
+          {
+            "title": "CLI install (recommended)",
+            "when": "You have npm and want updates handled automatically.",
+            "why": "uipro-cli wraps download, versioning, and updates in one command. It also keeps the skill in sync across all the AI assistants you have configured in this project."
+          },
+          {
+            "title": "Manual install",
+            "when": "You work in an environment without npm (locked-down corporate, sandboxed CI) or you want to vendor the skill into your repo for reproducibility.",
+            "why": "Copying the folders gives you total control. The downside is you handle updates by re-copying when a new version ships."
+          },
+          {
+            "title": "Offline install",
+            "when": "You are behind a strict firewall or working on a flight without GitHub access.",
+            "why": "uipro init --offline uses assets bundled inside the CLI package itself, so no network calls are made after npm install."
+          }
+        ]
+      },
+      "platforms": {
+        "title": "Per-OS notes",
+        "items": [
+          {
+            "os": "macOS",
+            "body": "Python 3.x ships with recent macOS versions but is often outdated. We recommend Homebrew: brew install python3. uipro-cli installs via npm; if you do not have Node, install it with brew install node or use a version manager like fnm or nvm. Apple Silicon and Intel are both supported."
+          },
+          {
+            "os": "Windows",
+            "body": "Install Python 3 from python.org and tick 'Add Python to PATH' during setup. Use PowerShell or Windows Terminal for the npm and python3 commands. If python3 is not recognized, try py -3 --version. WSL2 works exactly like the Linux instructions below if you prefer a Unix shell."
+          },
+          {
+            "os": "Linux",
+            "body": "Most distributions already have Python 3. Install Node via your package manager (apt install nodejs npm on Debian/Ubuntu, dnf install nodejs on Fedora). For the latest Node, fnm or nvm is recommended over distribution packages, which often lag."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Updating and version pinning",
+        "body": "Run uipro update at any time to pull the latest skill assets. Use uipro versions to list all available releases. For reproducible installs across the team — or when GitHub is unreachable — use uipro init --offline, which installs from the assets bundled inside the CLI package itself.",
+        "commandsTitle": "Common update commands",
+        "commands": "uipro versions        # List all available releases\nuipro update          # Update to the latest release\nuipro init --offline  # Install from bundled assets (no network)"
+      },
+      "uninstall": {
+        "title": "Uninstall and cleanup",
+        "body": "Removing the skill is symmetric to installing it. Per-assistant uninstall leaves other assistants and the global CLI intact; full uninstall removes everything.",
+        "commandsTitle": "Uninstall commands",
+        "commands": "uipro uninstall                # Remove from auto-detected assistants in this project\nuipro uninstall --ai claude    # Remove only the Claude Code install\nuipro uninstall --global       # Remove the global uipro-cli tool itself\nrm -rf design-system           # Optionally remove persisted design systems"
+      },
+      "errors": {
+        "title": "Common install errors",
+        "headers": {
+          "error": "Error",
+          "cause": "Likely cause",
+          "fix": "Fix"
+        },
+        "rows": [
+          {
+            "error": "command not found: uipro",
+            "cause": "npm global bin is not on PATH, or you installed without -g.",
+            "fix": "Run npm config get prefix to find the global bin path and add it to PATH, or reinstall with npm install -g uipro-cli."
+          },
+          {
+            "error": "EACCES: permission denied",
+            "cause": "Global npm install attempting to write to a system-owned directory.",
+            "fix": "Prefer a Node version manager (fnm, nvm) so node lives under your user. Avoid sudo npm install -g, which causes more problems than it solves."
+          },
+          {
+            "error": "python3: command not found",
+            "cause": "Python 3 is not installed or not on PATH (common on Windows out of the box).",
+            "fix": "macOS: brew install python3. Windows: install from python.org with 'Add to PATH'. Linux: use the distro package manager."
+          },
+          {
+            "error": "Failed to fetch from GitHub",
+            "cause": "Network restrictions or rate limiting from GitHub raw downloads.",
+            "fix": "Use uipro init --offline to install from bundled assets, or retry behind a proxy with HTTPS_PROXY exported."
+          },
+          {
+            "error": "Skill not detected by AI assistant",
+            "cause": "Wrong target folder for that assistant, or the assistant was started before the skill was installed.",
+            "fix": "Re-run uipro init --ai [assistant] from inside the project root, then fully restart the assistant. See the Manual Install table for the exact folder each one watches."
+          }
+        ]
+      },
+      "offline": {
+        "title": "Offline mode in depth",
+        "body": "The uipro-cli package ships with a full copy of the skill assets in its node_modules entry. When you pass --offline, the CLI skips the GitHub fetch and reads from those bundled assets. This is the right choice when you cannot reach GitHub or when you want every developer to install the exact version that ships with the CLI release you pinned."
+      },
       "next": "Next: see Usage & Prompts for invocation patterns and sample requests."
     },
     "examples": {
@@ -328,32 +636,307 @@
           "Build a fintech app dashboard"
         ]
       },
-      "next": "Next: check the FAQ if you run into setup or command issues."
-    },
-    "faq": {
-      "overview": "Common questions and quick fixes.",
-      "questions": {
-        "title": "Questions",
-        "items": [
+      "anatomy": {
+        "title": "Anatomy of a great prompt",
+        "lead": "A weak prompt produces a generic result; a structured prompt produces a tailored one. Four signals do most of the work — include any three and the output quality jumps significantly.",
+        "parts": [
           {
-            "q": "Where is search.py located?",
-            "a": "It lives under .claude/skills/ui-ux-pro-max/scripts/search.py in your project."
+            "label": "1. Product type",
+            "body": "What kind of product is this? SaaS, e-commerce, healthcare app, fintech tool, portfolio, blog, mobile-first marketplace. This drives industry rules and color mood."
           },
           {
-            "q": "Do I need to specify a stack?",
-            "a": "No. If omitted, it defaults to HTML + Tailwind."
+            "label": "2. Surface",
+            "body": "Which page or screen? Landing page, dashboard, settings page, mobile checkout, pricing page, blog post template. Surface picks the right pattern subset and density."
           },
           {
-            "q": "How do I get Markdown output?",
-            "a": "Use -f markdown with --design-system."
+            "label": "3. Style hint (optional)",
+            "body": "Glassmorphism, brutalist, bento grid, minimalist, aurora, dark mode. Skip if you have no preference — the engine will pick a sensible default."
           },
           {
-            "q": "Can I install without GitHub access?",
-            "a": "Yes. Use uipro init --offline to skip the GitHub download and use bundled assets."
+            "label": "4. Constraints (optional)",
+            "body": "Accessibility level (WCAG AA, AAA), framework (Next.js + shadcn/ui), brand colors, mobile-first, or 'must work without JavaScript'."
           }
         ]
       },
-      "next": "If something still feels unclear, send feedback at the bottom of the page."
+      "worked": {
+        "title": "End-to-end worked examples",
+        "subtitle": "Each example shows the prompt, the design system the generator produces, and the kind of code the AI assistant writes from it.",
+        "items": [
+          {
+            "title": "SaaS analytics dashboard",
+            "prompt": "Build a SaaS analytics dashboard for a B2B fintech product. Dense tables, dark mode by default, must hit WCAG AA, stack is Next.js + shadcn/ui.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: dense data layout, sticky sidebar, 12-col grid\nStyle: minimalism with subtle glass on hover cards\nPalette: cool blue + emerald accent (#2563EB / #10B981)\nType:   Inter 400/600/700 + IBM Plex Mono for numerics\nEffects: shadow scale 0/1/2/4, 150-200ms ease-out\nAvoid:  red as brand color, auto-rotating carousels, hover-only bulk actions\nChecklist: colorblind-safe charts, mono tabular figures, skeleton loading"
+          },
+          {
+            "title": "Healthcare patient portal",
+            "prompt": "Design a patient portal for a hospital system. Reassuring tone, large touch targets, multilingual ready, must avoid medical-error anti-patterns.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: card-based information hierarchy with persistent quick-actions\nStyle: minimalism, low saturation, no novelty effects\nPalette: muted teal + warm neutrals (#0E7C7B / #F5F1E8)\nType:   Source Sans Pro 400/600, generous line-height (1.7)\nEffects: minimal shadows, no parallax, prefers-reduced-motion enforced\nAvoid:  red as default error color (suggests harm), red+green pairing,\n        dense data tables on landing surfaces\nChecklist: WCAG AAA where possible, 44px+ touch targets, RTL-ready"
+          },
+          {
+            "title": "Indie portfolio with dark mode",
+            "prompt": "Personal portfolio site for a creative developer. Strong visual identity, glassmorphism vibe, dark mode default with light fallback.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: scroll-driven case studies with sticky project nav\nStyle: glassmorphism + aurora gradient backgrounds\nPalette: deep indigo + violet aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:   Sora 600/800 display + Inter 400 body\nEffects: backdrop-blur 12px, soft glow on hover, 400ms cubic ease-in-out\nAvoid:  heavy noise textures, overlapping marquee text, motion-only nav\nChecklist: respects prefers-reduced-motion, light-mode parity, image alt text"
+          },
+          {
+            "title": "E-commerce mobile checkout",
+            "prompt": "Mobile checkout flow for an apparel store. Three steps maximum, Apple Pay first, must work on slow 4G.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: full-screen step pages, persistent total bar, no modal stacks\nStyle: flat 2.0 with strong typography, minimal decoration\nPalette: warm off-white + brand accent + green for success states\nType:   System fonts for speed (San Francisco / Roboto), 16px+ body\nEffects: instant transitions, skeleton placeholders, no carousel\nAvoid:  third-party scripts on checkout, sticky promos that obscure CTA,\n        forced account creation before payment\nChecklist: payment-request API tested, address autofill, error recovery"
+          },
+          {
+            "title": "Open-source docs site",
+            "prompt": "Documentation site for an open-source library. Sidebar + search + content + on-this-page TOC. Clean, fast, dark mode toggle.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: three-column docs (sidebar + content + TOC), sticky header\nStyle: minimalism, generous whitespace, monospace code blocks\nPalette: neutral grays + single brand accent (no rainbow)\nType:   Inter 400/600 + JetBrains Mono for code\nEffects: subtle hover states only, no animation on scroll\nAvoid:  fixed-height code blocks (use overflow), modal search,\n        marketing sections inside docs nav\nChecklist: cmd-K search, copyable code blocks, mobile sidebar drawer"
+          },
+          {
+            "title": "AI chat product landing",
+            "prompt": "Landing page for an AI chat product. Show the product in action, build trust, make pricing obvious. Bento-grid style.",
+            "outputTitle": "Generated design system",
+            "output": "Pattern: hero with live demo, bento-grid features, social proof, pricing\nStyle: AI-native UI with bento grid and soft gradients\nPalette: cool blue + warm coral accent, dark mode primary\nType:   Cal Sans display + Inter body, oversized headings\nEffects: bento card hover lift, gradient borders, animated dot grid bg\nAvoid:  empty bento cards, parallax that breaks on mobile,\n        pricing hidden behind 'Contact us' unless enterprise\nChecklist: live demo loads under 2s, pricing visible above fold on desktop"
+          }
+        ]
+      },
+      "iterating": {
+        "title": "Iterating on the result",
+        "lead": "Rarely is the first generation exactly what you want. Three refinement patterns cover almost every case.",
+        "patterns": [
+          {
+            "title": "Tighten one dimension",
+            "body": "Like the layout but want different colors? Say: 'Keep the pattern and typography, swap the palette for something warmer.' The AI re-runs only the color search and merges the result."
+          },
+          {
+            "title": "Add a constraint",
+            "body": "Need accessibility-locked output? 'Same design system, but enforce WCAG AAA and 16px minimum body text.' This filters the existing candidates rather than starting over."
+          },
+          {
+            "title": "Override at the page level",
+            "body": "If MASTER.md is right for 90% of the project, use --page to write a per-page override instead of regenerating the whole project."
+          }
+        ]
+      },
+      "library": {
+        "title": "Prompt library by domain",
+        "subtitle": "Copy-paste these as starting points and tweak the specifics.",
+        "domains": [
+          {
+            "name": "SaaS & B2B",
+            "prompts": [
+              "Build a project-management SaaS landing page with social proof and pricing above the fold",
+              "Create a settings page for a B2B SaaS with sidebar navigation and grouped sections",
+              "Design an onboarding flow for a developer-tool SaaS, three steps max",
+              "Build an analytics dashboard with KPI tiles, trend charts, and a recent-activity feed"
+            ]
+          },
+          {
+            "name": "Fintech",
+            "prompts": [
+              "Build a personal-finance dashboard with budgeting, accounts, and goals",
+              "Design a stock-trading mobile screen with a sparkline and order entry",
+              "Create a fintech landing page with trust badges, security highlights, and pricing",
+              "Build an admin panel for monitoring transactions with filters and bulk actions"
+            ]
+          },
+          {
+            "name": "Healthcare & wellness",
+            "prompts": [
+              "Design a patient portal with appointments, records, and messaging",
+              "Build a meditation app home screen with session library and streak tracker",
+              "Create a telehealth landing page with provider directory and booking",
+              "Design a clinician dashboard with patient list, alerts, and notes"
+            ]
+          },
+          {
+            "name": "E-commerce",
+            "prompts": [
+              "Build a product detail page for an apparel store with variant selection and reviews",
+              "Design a mobile checkout flow optimized for Apple Pay and Google Pay",
+              "Create a category listing page with filters, sort, and infinite scroll",
+              "Build a wishlist page with share, move-to-cart, and price-drop alerts"
+            ]
+          },
+          {
+            "name": "Portfolio & blog",
+            "prompts": [
+              "Design a developer portfolio with case studies and a writing index",
+              "Build a long-form blog post template with TOC, footnotes, and reading progress",
+              "Create a designer portfolio with image-heavy case studies and a contact CTA",
+              "Design a multi-author publication homepage with categories and editor's picks"
+            ]
+          },
+          {
+            "name": "Tools & utilities",
+            "prompts": [
+              "Build an open-source documentation site with sidebar, search, and on-this-page TOC",
+              "Design a CLI tool's homepage with installation, demo gif, and FAQ",
+              "Create a status page with regional uptime, incident history, and subscribe option",
+              "Build a code-snippet sharing app with syntax highlighting and per-language filters"
+            ]
+          }
+        ]
+      },
+      "antiPrompts": {
+        "title": "Prompts that produce weak output",
+        "lead": "These patterns systematically miss the signals the generator needs. Avoid them.",
+        "items": [
+          {
+            "bad": "Make me a website.",
+            "why": "No product type, no surface, no constraints. The model has nothing to ground on and falls back to a generic landing template."
+          },
+          {
+            "bad": "Make it look better.",
+            "why": "No reference for 'better'. Better than what? In which direction? Specify a style hint or a concrete dimension to change."
+          },
+          {
+            "bad": "Build a beautiful, modern, clean, professional dashboard.",
+            "why": "Adjective soup. None of those words narrow the search. Replace with industry, surface, and one concrete style keyword."
+          },
+          {
+            "bad": "Use the latest design trends.",
+            "why": "'Latest' is ambiguous and dates badly. Name the specific style (bento grid, glassmorphism) if that is what you want."
+          }
+        ]
+      },
+      "next": "Next: check the FAQ if you run into setup or command issues."
+    },
+    "faq": {
+      "overview": "A practical reference for common questions about installing, configuring, and getting the most out of UI UX Pro Max Skill. Questions are grouped by topic so you can scan for the area you care about. If you do not find your answer here, send feedback from the bottom of any docs page and we will fold it into the list.",
+      "groups": [
+        {
+          "title": "Installation and setup",
+          "items": [
+            {
+              "q": "Which AI assistants are supported?",
+              "a": "Out of the box: Claude Code, Cursor, Windsurf, Antigravity, GitHub Copilot, Kiro, Codex CLI, Qoder, Roo Code, Gemini CLI, Trae, OpenCode, Continue, CodeBuddy, Droid (Factory), KiloCode, Warp, and Augment. Run uipro init --ai all to install for every detected assistant in one go."
+            },
+            {
+              "q": "Do I need Node.js to use the skill itself?",
+              "a": "No. The skill runs through Python at request time. You only need Node.js if you install via uipro-cli (npm). The manual-install path requires nothing beyond Python 3."
+            },
+            {
+              "q": "Why Python 3? Can it run on Python 2?",
+              "a": "Python 3 only. The search script uses f-strings, type hints, and modern dict ordering that do not exist in Python 2. Python 2 also reached end-of-life in 2020 and is no longer security-supported."
+            },
+            {
+              "q": "Where is search.py located?",
+              "a": "It lives under .claude/skills/ui-ux-pro-max/scripts/search.py in your project for Claude Code, or under .shared/ui-ux-pro-max/scripts/search.py for assistants that share the .shared directory (Cursor, Windsurf, Antigravity)."
+            },
+            {
+              "q": "Can I install without GitHub access?",
+              "a": "Yes. Use uipro init --offline to skip the GitHub download and use the assets bundled inside the npm package. This is the right path for sandboxed CI environments and air-gapped networks."
+            },
+            {
+              "q": "Can I install the skill globally rather than per project?",
+              "a": "Yes, partly. The uipro-cli tool installs globally with npm install -g uipro-cli. Skill assets, however, are intentionally scoped per project so each repo can pin its own version and design system."
+            }
+          ]
+        },
+        {
+          "title": "Generating design systems",
+          "items": [
+            {
+              "q": "Do I need to specify a stack?",
+              "a": "No. If omitted, it defaults to HTML + Tailwind. Specify your stack (Next.js, Nuxt, SvelteKit, SwiftUI, React Native, Flutter, Astro, Angular, etc.) for stack-idiomatic output."
+            },
+            {
+              "q": "How do I get Markdown output instead of JSON?",
+              "a": "Pass -f markdown together with --design-system. Markdown is ideal when the output is going straight into a doc or chat; JSON is better for programmatic use."
+            },
+            {
+              "q": "How does the model decide which industry I am in?",
+              "a": "By keywords in your prompt and any persisted MASTER.md context. If you do not name the industry, the generator falls back to defaults that are intentionally conservative. Naming it explicitly always produces tighter output."
+            },
+            {
+              "q": "Can I lock my brand colors so the model never overrides them?",
+              "a": "Yes. After your first --persist run, open design-system/MASTER.md and replace the Colors block with your brand tokens. The model treats MASTER.md as the source of truth in subsequent sessions."
+            },
+            {
+              "q": "Can I generate just a single page's design without affecting the rest?",
+              "a": "Yes. Use --page [name] with --persist. The override file lives under design-system/pages/[name].md and only applies when that page is the target of a session."
+            }
+          ]
+        },
+        {
+          "title": "Output and customization",
+          "items": [
+            {
+              "q": "The output is missing my favorite style. Can I add one?",
+              "a": "Not yet through a public API. You can edit the JSON catalog under scripts/data/styles.json after a local install if you want to extend it for your own use. Upstream contributions are welcome via the project repo."
+            },
+            {
+              "q": "Can I change the anti-pattern list for a given industry?",
+              "a": "Edit design-system/MASTER.md after generation; remove the lines you disagree with. The model will respect the edited file on subsequent runs. Editing the catalog itself works for project-wide changes but requires re-applying after updates."
+            },
+            {
+              "q": "How do I get the model to use shadcn/ui by default?",
+              "a": "Either pass --stack shadcn when generating, or add 'Use shadcn/ui primitives' to your project's MASTER.md under a 'Conventions' section. The model honors prose conventions in MASTER.md."
+            }
+          ]
+        },
+        {
+          "title": "Privacy, cost, and data",
+          "items": [
+            {
+              "q": "Does the skill send anything to an external server?",
+              "a": "No. Search, ranking, and reasoning all run locally in your AI client. The only network call is the initial install download (skippable with --offline)."
+            },
+            {
+              "q": "Is the skill free?",
+              "a": "Yes, the skill itself is free and open source. You still pay for whatever AI assistant you use it with (Claude Code, Cursor, etc.) under their normal pricing."
+            },
+            {
+              "q": "Does using the skill increase my AI token usage?",
+              "a": "Slightly. The skill injects design-system context into the prompt. In practice the increase is small relative to the size of the code the assistant generates, and is offset by fewer back-and-forth correction turns."
+            }
+          ]
+        },
+        {
+          "title": "Updates and versioning",
+          "items": [
+            {
+              "q": "How often does the skill get updated?",
+              "a": "Catalog updates ship every few weeks; CLI updates as needed. Run uipro update at any time. For reproducible offline installs, use uipro init --offline."
+            },
+            {
+              "q": "Will an update overwrite my MASTER.md?",
+              "a": "No. Updates only touch the skill assets under .claude/skills/ or .shared/. Anything inside design-system/ is treated as user content and never overwritten."
+            },
+            {
+              "q": "How do I downgrade if a new version regresses my output?",
+              "a": "Run uipro versions to see what releases are available. To roll back, install the older CLI version with npm install -g uipro-cli@[version] and then run uipro init --offline to extract its bundled assets. Open an issue on the project repo if you can share a reproduction."
+            }
+          ]
+        },
+        {
+          "title": "Troubleshooting",
+          "items": [
+            {
+              "q": "My AI assistant does not seem to be using the skill.",
+              "a": "Three common causes: (1) the assistant was started before the skill was installed — restart it; (2) the wrong assistant target was used — check the Manual Install table for the folder that assistant watches; (3) the assistant's project root is not where you ran uipro init — make sure you are in the same directory."
+            },
+            {
+              "q": "uipro: command not found.",
+              "a": "npm global bin is not on PATH. Run npm config get prefix to find the bin path and add it to PATH, or reinstall with npm install -g uipro-cli. If you used sudo, see the next question."
+            },
+            {
+              "q": "I get EACCES permission errors when installing globally.",
+              "a": "Avoid sudo npm install -g. Use a Node version manager like fnm or nvm so your node install lives under your user. This sidesteps the permission issue and makes future upgrades safer."
+            },
+            {
+              "q": "search.py crashes with a JSON decode error.",
+              "a": "Usually a corrupted asset from an interrupted download. Run uipro update or uipro init --offline to re-extract a clean copy."
+            },
+            {
+              "q": "The output references libraries my stack does not use.",
+              "a": "Pass --stack [your-stack] on generation, or add a 'Stack' line to your MASTER.md. Without that signal, the model defaults to HTML + Tailwind."
+            }
+          ]
+        }
+      ],
+      "next": "If your question is not covered, open an issue on the project repo or send feedback from the bottom of any docs page."
     }
   },
   "stats": {
