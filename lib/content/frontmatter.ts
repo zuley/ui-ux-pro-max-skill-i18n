@@ -3,9 +3,16 @@ import matter from 'gray-matter';
 import { DEFAULT_AUTHOR_ID, AUTHORS } from '@/lib/authors';
 import type { PostFrontmatter, TutorialStepFrontmatter } from './types';
 
+// gray-matter / js-yaml auto-parses unquoted `2026-05-22` into a Date,
+// while quoted "2026-05-22" stays a string. Accept both and normalise to
+// an ISO yyyy-mm-dd string so the rest of the pipeline only sees strings.
 const isoDate = z
-  .string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/, 'date must be yyyy-mm-dd');
+  .union([z.string(), z.date()])
+  .transform((val) => {
+    if (val instanceof Date) return val.toISOString().slice(0, 10);
+    return val;
+  })
+  .pipe(z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'date must be yyyy-mm-dd'));
 
 const authorIds = Object.keys(AUTHORS) as [string, ...string[]];
 const authorEnum = z.enum(authorIds);

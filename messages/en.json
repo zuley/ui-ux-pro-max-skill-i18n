@@ -1236,5 +1236,32 @@
     "terms": "Terms",
     "contact": "Contact",
     "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notes, experiments, and field reports from designing with the UI UX Pro Max Skill.",
+    "allTags": "All",
+    "empty": "No posts here yet — check back soon.",
+    "minRead": "{n} min read",
+    "backToIndex": "All posts",
+    "fallbackBanner": "This article hasn't been translated yet — showing the English version."
+  },
+  "tutorials": {
+    "title": "Tutorials",
+    "subtitle": "Step-by-step walkthroughs for shipping real interfaces with the UI UX Pro Max Skill.",
+    "empty": "No tutorials yet — check back soon.",
+    "minRead": "{n} min read",
+    "stepLabel": "Step {n} of {total}",
+    "backToSeries": "Back to series",
+    "backToIndex": "All tutorials",
+    "prev": "Previous",
+    "next": "Next",
+    "fallbackBanner": "This step hasn't been translated yet — showing the English version.",
+    "series": {
+      "saasLanding": {
+        "title": "Build a SaaS landing page",
+        "description": "From a vague idea to a shipped landing page in five focused steps."
+      }
+    }
   }
 }

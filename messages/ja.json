@@ -938,5 +938,32 @@
     "terms": "利用規約",
     "contact": "お問い合わせ",
     "builtWith": "React + Tailwind CSS で構築 (by UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "ブログ",
+    "subtitle": "UI UX Pro Max Skill を使ったデザインの実験ノートと現場のメモ。",
+    "allTags": "すべて",
+    "empty": "まだ記事はありません。後ほどご確認ください。",
+    "minRead": "約 {n} 分",
+    "backToIndex": "一覧へ戻る",
+    "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。"
+  },
+  "tutorials": {
+    "title": "チュートリアル",
+    "subtitle": "UI UX Pro Max Skill で実際のインターフェースを作るためのステップガイド。",
+    "empty": "まだチュートリアルはありません。",
+    "minRead": "約 {n} 分",
+    "stepLabel": "ステップ {n} / {total}",
+    "backToSeries": "シリーズへ戻る",
+    "backToIndex": "一覧へ戻る",
+    "prev": "前へ",
+    "next": "次へ",
+    "fallbackBanner": "このステップはまだ翻訳されていません。英語版を表示しています。",
+    "series": {
+      "saasLanding": {
+        "title": "SaaS のランディングページを作る",
+        "description": "ぼんやりとしたアイデアから 5 ステップで公開できる LP まで。"
+      }
+    }
   }
 }

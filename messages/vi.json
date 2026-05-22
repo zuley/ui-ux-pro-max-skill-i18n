@@ -854,5 +854,32 @@
     "terms": "Điều khoản",
     "contact": "Liên hệ",
     "builtWith": "Xây dựng bằng React + Tailwind CSS (bởi UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Ghi chú, thử nghiệm và bài học khi thiết kế cùng UI UX Pro Max Skill.",
+    "allTags": "Tất cả",
+    "empty": "Chưa có bài viết — hãy quay lại sau.",
+    "minRead": "Đọc {n} phút",
+    "backToIndex": "Tất cả bài viết",
+    "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh."
+  },
+  "tutorials": {
+    "title": "Hướng dẫn",
+    "subtitle": "Hướng dẫn từng bước để dựng giao diện thực tế với UI UX Pro Max Skill.",
+    "empty": "Chưa có hướng dẫn nào.",
+    "minRead": "Đọc {n} phút",
+    "stepLabel": "Bước {n} / {total}",
+    "backToSeries": "Quay lại series",
+    "backToIndex": "Tất cả hướng dẫn",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "fallbackBanner": "Bước này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "series": {
+      "saasLanding": {
+        "title": "Dựng một landing page SaaS",
+        "description": "Từ một ý tưởng mơ hồ đến landing page xuất bản được, qua 5 bước."
+      }
+    }
   }
 }
