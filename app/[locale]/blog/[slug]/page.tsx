@@ -9,6 +9,7 @@ import { isFallback } from '@/lib/content/fallback';
 import { getAuthor } from '@/lib/authors';
 import { blogIndexPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
+import { ArticleJsonLd } from '@/components/content/article-jsonld';
 import type { Locale } from '@/lib/content/types';
 
 type PageParams = { locale: string; slug: string };
@@ -81,6 +82,11 @@ export default async function BlogPostPage({
   const t = await getTranslations({ locale });
   const author = getAuthor(post.frontmatter.author);
   const showFallback = isFallback(typedLocale, post.sourceLocale);
+  const baseUrl = 'https://ui-ux-pro-max-skill.com';
+  const canonicalUrl =
+    locale === 'en'
+      ? `${baseUrl}/blog/${slug}`
+      : `${baseUrl}/${locale}/blog/${slug}`;
 
   // Re-typed alias avoids TS narrowing churn when destructuring the
   // optional Body component below.
@@ -88,6 +94,18 @@ export default async function BlogPostPage({
 
   return (
     <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <ArticleJsonLd
+        type="Article"
+        url={canonicalUrl}
+        title={post.frontmatter.title}
+        description={post.frontmatter.summary}
+        datePublished={post.frontmatter.date}
+        authorName={author.name}
+        inLanguage={locale}
+        keywords={post.frontmatter.tags}
+        image={post.frontmatter.cover}
+      />
+
       <Link
         href={blogIndexPath(locale)}
         className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"

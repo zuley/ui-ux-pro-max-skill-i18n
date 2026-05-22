@@ -13,6 +13,7 @@ import { isFallback } from '@/lib/content/fallback';
 import { getAuthor } from '@/lib/authors';
 import { tutorialSeriesPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
+import { ArticleJsonLd } from '@/components/content/article-jsonld';
 import { SeriesSidebar } from '@/components/tutorials/series-sidebar';
 import { StepNav } from '@/components/tutorials/step-nav';
 import type { Locale } from '@/lib/content/types';
@@ -88,6 +89,11 @@ export default async function TutorialStepPage({
   const showFallback = isFallback(typedLocale, resolved.sourceLocale);
   const seriesMeta = (await listSeries()).find((s) => s.slug === series)!;
   const siblings = await getSeriesSteps(typedLocale, series);
+  const baseUrl = 'https://ui-ux-pro-max-skill.com';
+  const canonicalUrl =
+    locale === 'en'
+      ? `${baseUrl}/tutorials/${series}/${step}`
+      : `${baseUrl}/${locale}/tutorials/${series}/${step}`;
 
   // Use a local alias so TS treats Body as definitely-defined inside JSX.
   const Body = resolved.Body;
@@ -109,6 +115,18 @@ export default async function TutorialStepPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <ArticleJsonLd
+        type="TechArticle"
+        url={canonicalUrl}
+        title={resolved.frontmatter.title}
+        description={resolved.frontmatter.summary}
+        datePublished={resolved.frontmatter.date}
+        authorName={author.name}
+        inLanguage={locale}
+        keywords={resolved.frontmatter.tags}
+        image={resolved.frontmatter.cover}
+      />
+
       <Link
         href={tutorialSeriesPath(locale, series)}
         className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"

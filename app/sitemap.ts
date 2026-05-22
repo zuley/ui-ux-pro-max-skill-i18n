@@ -1,0 +1,125 @@
+import type { MetadataRoute } from 'next';
+import { routing } from '@/i18n/routing';
+import { docsNav } from '@/content/docs/nav';
+import { listAllSlugs, getAllPosts } from '@/lib/content/blog';
+import { listSeries, getSeriesSteps } from '@/lib/content/tutorials';
+import type { Locale } from '@/lib/content/types';
+
+// Required when next.config.ts uses output: 'export'. Without it the
+// sitemap route is treated as dynamic and the build fails.
+export const dynamic = 'force-static';
+
+const BASE_URL = 'https://ui-ux-pro-max-skill.com';
+
+function abs(locale: string, path: string): string {
+  if (locale === routing.defaultLocale) return `${BASE_URL}${path}`;
+  return `${BASE_URL}/${locale}${path}`;
+}
+
+function alternatesFor(path: string): {
+  languages: Record<string, string>;
+} {
+  const languages: Record<string, string> = {};
+  for (const l of routing.locales) {
+    languages[l] = abs(l, path);
+  }
+  return { languages };
+}
+
+/**
+ * Static sitemap covering every route the export emits — home, legal,
+ * docs, blog, and tutorials — across all locales. Per-route lastModified
+ * comes from frontmatter `date` where available so re-publishes propagate
+ * to crawlers.
+ */
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const entries: MetadataRoute.Sitemap = [];
+  const today = new Date();
+
+  // Marketing + legal routes — same for every locale.
+  const staticPaths: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
+    { path: '/', priority: 1.0, freq: 'weekly' },
+    { path: '/contact', priority: 0.4, freq: 'yearly' },
+    { path: '/privacy', priority: 0.3, freq: 'yearly' },
+    { path: '/terms', priority: 0.3, freq: 'yearly' },
+    { path: '/blog', priority: 0.8, freq: 'weekly' },
+    { path: '/tutorials', priority: 0.8, freq: 'weekly' },
+  ];
+  for (const { path, priority, freq } of staticPaths) {
+    for (const locale of routing.locales) {
+      entries.push({
+        url: abs(locale, path),
+        lastModified: today,
+        changeFrequency: freq,
+        priority,
+        alternates: alternatesFor(path),
+      });
+    }
+  }
+
+  // Docs slugs (handled by the existing static docs route — included for
+  // completeness so crawlers see the full set).
+  for (const doc of docsNav) {
+    const path = `/docs/${doc.slug}`;
+    for (const locale of routing.locales) {
+      entries.push({
+        url: abs(locale, path),
+        lastModified: today,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+        alternates: alternatesFor(path),
+      });
+    }
+  }
+
+  // Blog posts.
+  const slugs = await listAllSlugs();
+  for (const slug of slugs) {
+    const path = `/blog/${slug}`;
+    // Pull frontmatter once (from default locale) just for lastModified.
+    const posts = await getAllPosts(routing.defaultLocale as Locale);
+    const meta = posts.find((p) => p.slug === slug);
+    const lastModified = meta ? new Date(meta.frontmatter.date) : today;
+    for (const locale of routing.locales) {
+      entries.push({
+        url: abs(locale, path),
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: alternatesFor(path),
+      });
+    }
+  }
+
+  // Tutorials — series landing + each step.
+  const series = await listSeries();
+  for (const s of series) {
+    const seriesPath = `/tutorials/${s.slug}`;
+    for (const locale of routing.locales) {
+      entries.push({
+        url: abs(locale, seriesPath),
+        lastModified: today,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+        alternates: alternatesFor(seriesPath),
+      });
+    }
+
+    const steps = await getSeriesSteps(routing.defaultLocale as Locale, s.slug);
+    for (const step of steps) {
+      const stepPath = `/tutorials/${s.slug}/${step.stepSlug}`;
+      const lastModified = new Date(step.frontmatter.date);
+      for (const locale of routing.locales) {
+        entries.push({
+          url: abs(locale, stepPath),
+          lastModified,
+          changeFrequency: 'monthly',
+          priority: 0.6,
+          alternates: alternatesFor(stepPath),
+        });
+      }
+    }
+  }
+
+  return entries;
+}
