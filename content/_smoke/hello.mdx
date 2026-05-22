@@ -1,0 +1,50 @@
+export const meta = {
+  title: 'MDX pipeline smoke test',
+  date: '2026-05-22'
+};
+
+# MDX pipeline smoke test
+
+This page exists only to verify that `@next/mdx` is wired up correctly and
+that MDX files compile alongside the `next-intl` plugin with static export
+enabled.
+
+If you can see this page rendered with proper typography, the pipeline is
+working. **This file will be removed once PR3 (Blog) lands.**
+
+## Plain markdown
+
+Paragraphs, **bold**, *italic*, `inline code`, and [external links](https://example.com)
+should all be styled by the global MDX component map.
+
+- Bulleted list item one
+- Bulleted list item two
+- Bulleted list item three
+
+1. Numbered first
+2. Numbered second
+
+> Block quote, used sparingly for callouts that don't need an icon.
+
+| Column A | Column B |
+| --- | --- |
+| Cell A1 | Cell B1 |
+| Cell A2 | Cell B2 |
+
+## Custom components
+
+<Callout tone="info" title="Heads up">
+  This is rendered by the <code>Callout</code> component imported in
+  <code>mdx-components.tsx</code>. No extra import needed inside the MDX file.
+</Callout>
+
+<Callout tone="warning" title="Be careful">
+  Warning tone variant.
+</Callout>
+
+<CodeBlock
+  title="Example prompt"
+  language="text"
+  code={`Design a SaaS landing page hero for a meditation app.
+Style: glassmorphism. Palette: cool-mint. Avoid purple gradients.`}
+/>
