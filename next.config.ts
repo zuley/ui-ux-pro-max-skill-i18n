@@ -9,6 +9,19 @@ const withMDX = createMDX({
   // content/. Page-level .mdx files are not used as routes, but we still
   // register the extension so the loader picks them up.
   extension: /\.mdx?$/,
+  options: {
+    // Turbopack requires plugin options to be JSON-serialisable, so
+    // we pass plugin **names** as strings instead of imported function
+    // references; the loader resolves them from node_modules.
+    remarkPlugins: [
+      // Strip the `---` YAML block from the rendered body. Without this,
+      // Markdown parses the second `---` as a setext h2 underline and
+      // renders the frontmatter as a giant heading in the article.
+      ['remark-frontmatter', ['yaml']],
+      // GFM tables, strikethrough, task lists, autolinks.
+      ['remark-gfm'],
+    ],
+  },
 });
 
 const nextConfig: NextConfig = {
