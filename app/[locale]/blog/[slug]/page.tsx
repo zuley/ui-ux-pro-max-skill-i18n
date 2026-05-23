@@ -11,6 +11,7 @@ import { blogIndexPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
 import { ReadingProgress } from '@/components/content/reading-progress';
+import { ArticleToc } from '@/components/content/article-toc';
 import type { Locale } from '@/lib/content/types';
 
 type PageParams = { locale: string; slug: string };
@@ -105,10 +106,12 @@ export default async function BlogPostPage({
     .toUpperCase();
 
   return (
-    // Narrower measure (~680px) is the long-form reading optimum for
-    // mixed Latin/CJK at 17px. The outer max-w-3xl had ~76 chars per
-    // line at our font, which forces eye-jumps on every wrap.
-    <main className="mx-auto max-w-[680px] px-4 sm:px-6">
+    // Outer wrapper hosts the article (centered narrow measure on mobile,
+    // left-aligned in a flex row on desktop) plus the sticky TOC rail
+    // that appears at ≥1024px. The article body stays at ~680px (the
+    // long-form reading optimum) in both layouts.
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:flex lg:items-start lg:gap-12">
+      <main className="mx-auto lg:mx-0 max-w-[680px] lg:flex-1 lg:min-w-0">
       <ReadingProgress />
       <ArticleJsonLd
         type="Article"
@@ -193,6 +196,15 @@ export default async function BlogPostPage({
           <Body />
         </div>
       </article>
-    </main>
+      </main>
+
+      {post.toc && post.toc.length > 1 ? (
+        <aside className="hidden lg:block lg:w-56 lg:shrink-0">
+          <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
+            <ArticleToc items={post.toc} title={t('blog.tocTitle')} />
+          </div>
+        </aside>
+      ) : null}
+    </div>
   );
 }

@@ -21,6 +21,12 @@ const withMDX = createMDX({
       // GFM tables, strikethrough, task lists, autolinks.
       ['remark-gfm'],
     ],
+    rehypePlugins: [
+      // Give every heading a stable `id` so the TOC and direct
+      // `#section` links work. Slug algorithm matches github-slugger
+      // (used by lib/content/toc.ts to compute matching anchors).
+      ['rehype-slug'],
+    ],
   },
 });
 

@@ -1247,6 +1247,7 @@
     "minRead": "{n} min read",
     "backToIndex": "All posts",
     "fallbackBanner": "This article hasn't been translated yet — showing the English version.",
+    "tocTitle": "In this article",
     "latestTitle": "Latest from the blog",
     "latestSubtitle": "Field notes and prompt techniques from our team and community.",
     "seeAll": "See all posts"

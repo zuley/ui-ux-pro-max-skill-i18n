@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 import type { routing } from '@/i18n/routing';
+import type { TocHeading } from './toc';
 
 export type Locale = (typeof routing.locales)[number];
 
@@ -30,6 +31,8 @@ export type ResolvedPost = {
   frontmatter: PostFrontmatter;
   /** Estimated reading time in minutes (>=1). */
   readingMinutes: number;
+  /** h2/h3 outline extracted from the body — only set when includeBody:true. */
+  toc?: TocHeading[];
   /** The compiled MDX body — only set on detail pages, omitted in lists. */
   Body?: ComponentType;
 };
@@ -58,6 +61,7 @@ export type ResolvedTutorialStep = {
   sourceLocale: Locale;
   frontmatter: TutorialStepFrontmatter;
   readingMinutes: number;
+  toc?: TocHeading[];
   prev?: { seriesSlug: string; stepSlug: string };
   next?: { seriesSlug: string; stepSlug: string };
   Body?: ComponentType;

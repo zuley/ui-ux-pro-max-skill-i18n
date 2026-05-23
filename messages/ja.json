@@ -949,6 +949,7 @@
     "minRead": "約 {n} 分",
     "backToIndex": "一覧へ戻る",
     "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。",
+    "tocTitle": "目次",
     "latestTitle": "ブログの最新記事",
     "latestSubtitle": "チームとコミュニティからの現場メモと Prompt 技法。",
     "seeAll": "すべての記事を見る"

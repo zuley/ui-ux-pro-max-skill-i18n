@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(codex --version)",
+      "Bash(codex --help)",
+      "Bash(codex exec *)",
+      "Bash(node -e ' *)",
+      "Bash(pnpm build *)",
+      "Bash(gh api *)",
+      "Bash(sed -i '' -e 's/34 landing patterns/24 landing patterns/g' -e 's/34 landing and product patterns/24 landing and product patterns/g' messages/en.json)",
+      "Bash(sed -i '' -e 's/34 套落地页模式/24 套落地页模式/g' -e 's/34 套落地与产品模式/24 套落地与产品模式/g' messages/zh.json)",
+      "Bash(sed -i '' -e 's/34 種類のランディングパターン/24 種類のランディングパターン/g' -e 's/34 種類のパターン/24 種類のパターン/g' messages/ja.json)",
+      "Bash(sed -i '' -e 's/34 landing pattern/24 landing pattern/g' -e 's/34 landing\\\\/product pattern/24 landing\\\\/product pattern/g' messages/vi.json)",
+      "Bash(cat ~/.claude/settings.json)",
+      "WebSearch",
+      "WebFetch(domain:khumam.medium.com)",
+      "Bash(pnpm add *)"
+    ]
+  }
+}

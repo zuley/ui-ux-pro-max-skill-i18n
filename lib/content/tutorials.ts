@@ -8,6 +8,7 @@ import {
   stripFrontmatter,
 } from './frontmatter';
 import { fallbackChain } from './fallback';
+import { extractToc } from './toc';
 import type {
   Locale,
   ResolvedTutorialStep,
@@ -78,8 +79,10 @@ export async function getStep(
     const readingMinutes = estimateReadingMinutes(body);
 
     let Body: ComponentType | undefined;
+    let toc: ResolvedTutorialStep['toc'];
     if (options.includeBody) {
       Body = await loadStepBody(seriesSlug, sourceLocale, stepSlug);
+      toc = extractToc(body);
     }
 
     return {
@@ -91,6 +94,7 @@ export async function getStep(
       sourceLocale,
       frontmatter,
       readingMinutes,
+      toc,
       prev:
         index > 0
           ? { seriesSlug, stepSlug: meta.steps[index - 1]! }

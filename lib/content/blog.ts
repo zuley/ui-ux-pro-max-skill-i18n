@@ -8,6 +8,7 @@ import {
   stripFrontmatter,
 } from './frontmatter';
 import { fallbackChain } from './fallback';
+import { extractToc } from './toc';
 import type { Locale, PostSummary, ResolvedPost } from './types';
 
 const BLOG_ROOT = path.join(process.cwd(), 'content', 'blog');
@@ -54,8 +55,10 @@ export async function getPost(
     const readingMinutes = estimateReadingMinutes(body);
 
     let Body: ComponentType | undefined;
+    let toc: ResolvedPost['toc'];
     if (options.includeBody) {
       Body = await loadBlogBody(sourceLocale, slug);
+      toc = extractToc(body);
     }
 
     return {
@@ -64,6 +67,7 @@ export async function getPost(
       sourceLocale,
       frontmatter,
       readingMinutes,
+      toc,
       Body,
     };
   }

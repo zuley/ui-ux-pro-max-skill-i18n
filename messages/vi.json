@@ -865,6 +865,7 @@
     "minRead": "Đọc {n} phút",
     "backToIndex": "Tất cả bài viết",
     "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "tocTitle": "Trong bài viết này",
     "latestTitle": "Mới nhất từ blog",
     "latestSubtitle": "Ghi chú thực địa và kỹ thuật Prompt từ team và cộng đồng.",
     "seeAll": "Xem tất cả bài viết"

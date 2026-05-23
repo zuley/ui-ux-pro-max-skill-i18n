@@ -1247,6 +1247,7 @@
     "minRead": "约 {n} 分钟",
     "backToIndex": "查看全部",
     "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。",
+    "tocTitle": "本文目录",
     "latestTitle": "博客最新",
     "latestSubtitle": "来自团队和社区的一线笔记与 Prompt 经验。",
     "seeAll": "查看全部文章"
