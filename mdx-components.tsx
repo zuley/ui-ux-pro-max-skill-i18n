@@ -19,15 +19,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Headings — anchors are added later via rehype-slug (PR2).
     h1: ({ children, ...props }) => (
       <h1
-        className="mt-10 mb-4 text-3xl sm:text-4xl font-heading font-bold text-gray-900 dark:text-white tracking-tight"
+        className="mt-12 mb-5 text-4xl sm:text-5xl font-heading font-bold text-gray-900 dark:text-white tracking-tight"
         {...props}
       >
         {children}
       </h1>
     ),
     h2: ({ children, ...props }) => (
+      // Generous top margin gives chapters room to breathe; the small
+      // indigo bar to the left of the text acts as an anchor cue
+      // without resorting to numbered prefixes.
       <h2
-        className="mt-10 mb-3 text-2xl sm:text-3xl font-heading font-bold text-gray-900 dark:text-white tracking-tight"
+        className="group mt-16 mb-5 text-2xl sm:text-[28px] font-heading font-bold text-gray-900 dark:text-white tracking-tight scroll-mt-28 relative pl-4 -ml-4 before:content-[''] before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[3px] before:rounded-full before:bg-indigo-400/70 dark:before:bg-indigo-300/60"
         {...props}
       >
         {children}
@@ -35,7 +38,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h3: ({ children, ...props }) => (
       <h3
-        className="mt-8 mb-2 text-xl font-heading font-semibold text-gray-900 dark:text-white"
+        className="mt-10 mb-3 text-xl font-heading font-semibold text-gray-900 dark:text-white scroll-mt-28"
         {...props}
       >
         {children}
@@ -43,7 +46,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     h4: ({ children, ...props }) => (
       <h4
-        className="mt-6 mb-2 text-lg font-heading font-semibold text-gray-900 dark:text-white"
+        className="mt-8 mb-2 text-lg font-heading font-semibold text-gray-900 dark:text-white scroll-mt-28"
         {...props}
       >
         {children}
@@ -51,8 +54,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     p: ({ children, ...props }) => (
+      // 17px / 1.75 leading is the long-form reading optimum for this
+      // body font (DM Sans). text-gray-800 (not 700) holds enough
+      // contrast on light backgrounds without hitting pure black.
       <p
-        className="my-4 leading-7 text-gray-700 dark:text-gray-300"
+        className="my-6 text-[17px] leading-[1.75] text-gray-800 dark:text-gray-200"
         {...props}
       >
         {children}
@@ -86,7 +92,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     ul: ({ children, ...props }) => (
       <ul
-        className="my-4 list-disc pl-6 space-y-1.5 text-gray-700 dark:text-gray-300"
+        className="my-6 list-disc pl-6 space-y-2 text-[17px] text-gray-800 dark:text-gray-200 marker:text-gray-400 dark:marker:text-gray-500"
         {...props}
       >
         {children}
@@ -94,21 +100,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     ol: ({ children, ...props }) => (
       <ol
-        className="my-4 list-decimal pl-6 space-y-1.5 text-gray-700 dark:text-gray-300"
+        className="my-6 list-decimal pl-6 space-y-2 text-[17px] text-gray-800 dark:text-gray-200 marker:text-gray-400 dark:marker:text-gray-500"
         {...props}
       >
         {children}
       </ol>
     ),
     li: ({ children, ...props }) => (
-      <li className="leading-7" {...props}>
+      <li className="leading-[1.75] pl-1" {...props}>
         {children}
       </li>
     ),
 
     blockquote: ({ children, ...props }) => (
+      // Thinner border, bigger type, no italic (CJK reads worse italicised).
+      // Reads as "the author wants to say one thing", not as decoration.
       <blockquote
-        className="my-6 border-l-4 border-indigo-300 dark:border-indigo-500/40 pl-4 italic text-gray-700 dark:text-gray-300"
+        className="my-8 border-l-2 border-gray-900 dark:border-white pl-5 text-lg leading-[1.7] text-gray-900 dark:text-white font-medium"
         {...props}
       >
         {children}
@@ -116,14 +124,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     hr: () => (
-      <hr className="my-10 border-t border-gray-200 dark:border-white/10" />
+      // Centered short rule reads as "section break" rather than the
+      // default full-width divider which competes with the article frame.
+      <hr className="my-12 mx-auto w-16 border-0 h-px bg-gray-300 dark:bg-white/15" />
     ),
 
     // Inline + block code. The CodeBlock component handles its own styling,
-    // so we keep these simple — MDX `code` for inline only.
+    // so we keep these simple — MDX `code` for inline only. Tinted indigo
+    // to stay in the same colour family as links / accent UI.
     code: ({ children, ...props }) => (
       <code
-        className="rounded-md bg-gray-100 dark:bg-white/10 px-1.5 py-0.5 text-[0.9em] font-mono text-pink-700 dark:text-pink-300"
+        className="rounded-md bg-indigo-50 dark:bg-indigo-500/10 px-1.5 py-0.5 text-[0.875em] font-mono text-indigo-700 dark:text-indigo-200 ring-1 ring-indigo-100 dark:ring-indigo-400/10"
         {...props}
       >
         {children}
@@ -131,7 +142,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     pre: ({ children, ...props }) => (
       <pre
-        className="my-6 overflow-x-auto rounded-xl border border-gray-200/70 dark:border-white/10 bg-gray-950 text-gray-100 p-4 text-sm leading-relaxed"
+        className="my-8 overflow-x-auto rounded-xl ring-1 ring-white/5 bg-[#0E1116] text-gray-100 p-5 text-[13.5px] leading-relaxed"
         {...props}
       >
         {children}

@@ -45,8 +45,8 @@ export function CodeBlock({
   }
 
   return (
-    <div className="rounded-xl border border-gray-200/70 dark:border-white/10 bg-gray-950 text-gray-100 overflow-hidden">
-      <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/10">
+    <div className="my-8 rounded-xl ring-1 ring-white/5 bg-[#0E1116] text-gray-100 overflow-hidden">
+      <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/5">
         <div className="min-w-0">
           {title ? (
             <div className="text-xs font-medium text-gray-200 truncate">{title}</div>

@@ -93,8 +93,22 @@ export default async function BlogPostPage({
   // optional Body component below.
   const Body = post.Body;
 
+  // Author initials fallback for the metadata avatar — we don't ship
+  // photo avatars yet, so a tinted monogram is a cheap signal of
+  // authorship that beats "by Some Name" set in 12px gray.
+  const authorInitials = author.name
+    .split(/\s+/)
+    .map((w) => w[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+
   return (
-    <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    // Narrower measure (~680px) is the long-form reading optimum for
+    // mixed Latin/CJK at 17px. The outer max-w-3xl had ~76 chars per
+    // line at our font, which forces eye-jumps on every wrap.
+    <main className="mx-auto max-w-[680px] px-4 sm:px-6">
       <ReadingProgress />
       <ArticleJsonLd
         type="Article"
@@ -110,24 +124,26 @@ export default async function BlogPostPage({
 
       <Link
         href={blogIndexPath(locale)}
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+        className="inline-flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
       >
-        <ArrowLeft className="w-4 h-4" />
+        <ArrowLeft className="w-3.5 h-3.5" />
         {t('blog.backToIndex')}
       </Link>
 
-      <article className="mt-6">
+      <article className="mt-10">
         {showFallback ? (
           <LocaleFallbackBanner message={t('blog.fallbackBanner')} />
         ) : null}
 
+        {/* Header is four independent blocks with deliberate gaps so
+            the eye walks down them instead of taking them all at once. */}
         <header>
           {post.frontmatter.tags.length > 0 ? (
-            <div className="mb-3 flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5">
               {post.frontmatter.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300"
+                  className="text-[11px] font-medium uppercase tracking-wide px-2 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-200"
                 >
                   {tag}
                 </span>
@@ -135,29 +151,45 @@ export default async function BlogPostPage({
             </div>
           ) : null}
 
-          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="mt-6 font-heading text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight leading-[1.15]">
             {post.frontmatter.title}
           </h1>
 
-          <p className="mt-3 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          {/* Lead paragraph: bigger, lighter, gray-700, no `font-bold` so
+              it reads as introduction not as another headline. */}
+          <p className="mt-6 text-xl text-gray-700 dark:text-gray-300 leading-[1.55] font-light">
             {post.frontmatter.summary}
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-            <span>{author.name}</span>
-            <span>
-              <time dateTime={post.frontmatter.date}>
-                {post.frontmatter.date}
-              </time>
-            </span>
-            <span className="inline-flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" />
-              {t('blog.minRead', { n: post.readingMinutes })}
-            </span>
+          {/* Thin rule + avatar row. The hairline is what makes the
+              metadata feel like "metadata" instead of "another paragraph". */}
+          <div className="mt-10 pt-6 border-t border-gray-200/70 dark:border-white/10 flex items-center gap-3">
+            <div
+              aria-hidden
+              className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-white text-[11px] font-semibold flex items-center justify-center"
+            >
+              {authorInitials}
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                {author.name}
+              </div>
+              <div className="text-[12px] text-gray-500 dark:text-gray-400 flex items-center gap-1.5">
+                <time dateTime={post.frontmatter.date}>
+                  {post.frontmatter.date}
+                </time>
+                <span aria-hidden>·</span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="w-3 h-3" />
+                  {t('blog.minRead', { n: post.readingMinutes })}
+                </span>
+              </div>
+            </div>
           </div>
         </header>
 
-        <div className="mt-6">
+        {/* Generous gap before the body so the header has room to land. */}
+        <div className="mt-12">
           <Body />
         </div>
       </article>
