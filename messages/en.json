@@ -1248,6 +1248,12 @@
     "backToIndex": "All posts",
     "fallbackBanner": "This article hasn't been translated yet — showing the English version.",
     "tocTitle": "In this article",
+    "ctaEyebrow": "Liked this post?",
+    "ctaTitle": "Try the Skill Claude knows about",
+    "ctaDescription": "UI UX Pro Max ships 50 styles, 21 palettes, 50 font pairings and 99 UX guidelines — a curated set so Claude doesn't have to interpolate the average of the web.",
+    "ctaTry": "Install the Skill",
+    "ctaRss": "Subscribe via RSS",
+    "ctaMore": "More posts",
     "latestTitle": "Latest from the blog",
     "latestSubtitle": "Field notes and prompt techniques from our team and community.",
     "seeAll": "See all posts"

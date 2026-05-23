@@ -866,6 +866,12 @@
     "backToIndex": "Tất cả bài viết",
     "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh.",
     "tocTitle": "Trong bài viết này",
+    "ctaEyebrow": "Thích bài này?",
+    "ctaTitle": "Thử Skill mà Claude đang dùng",
+    "ctaDescription": "UI UX Pro Max đi kèm 50 styles, 21 palettes, 50 font pairings và 99 UX guidelines — một bộ chọn lọc để Claude không phải nội suy giá trị trung bình của cả web.",
+    "ctaTry": "Cài đặt Skill",
+    "ctaRss": "Đăng ký RSS",
+    "ctaMore": "Bài khác",
     "latestTitle": "Mới nhất từ blog",
     "latestSubtitle": "Ghi chú thực địa và kỹ thuật Prompt từ team và cộng đồng.",
     "seeAll": "Xem tất cả bài viết"

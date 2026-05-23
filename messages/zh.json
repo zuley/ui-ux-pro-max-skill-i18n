@@ -1248,6 +1248,12 @@
     "backToIndex": "查看全部",
     "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。",
     "tocTitle": "本文目录",
+    "ctaEyebrow": "这篇看完了？",
+    "ctaTitle": "试试 Claude 用的这个 Skill",
+    "ctaDescription": "UI UX Pro Max 预置 50 种风格、21 套配色、50 套字体搭配、99 条 UX 规则——一组精选集合，让 Claude 不用对整个 Web 求平均。",
+    "ctaTry": "安装 Skill",
+    "ctaRss": "订阅 RSS",
+    "ctaMore": "更多文章",
     "latestTitle": "博客最新",
     "latestSubtitle": "来自团队和社区的一线笔记与 Prompt 经验。",
     "seeAll": "查看全部文章"

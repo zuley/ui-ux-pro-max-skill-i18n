@@ -950,6 +950,12 @@
     "backToIndex": "一覧へ戻る",
     "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。",
     "tocTitle": "目次",
+    "ctaEyebrow": "気に入ったら",
+    "ctaTitle": "Claude が使っているこの Skill を試す",
+    "ctaDescription": "UI UX Pro Max には 50 種類のスタイル、21 種類のカラーパレット、50 種類のフォントペアリング、99 個の UX ガイドラインが入っています。Claude が Web の平均値で補間しなくて済むキュレーション済みセットです。",
+    "ctaTry": "Skill をインストール",
+    "ctaRss": "RSS を購読",
+    "ctaMore": "他の記事",
     "latestTitle": "ブログの最新記事",
     "latestSubtitle": "チームとコミュニティからの現場メモと Prompt 技法。",
     "seeAll": "すべての記事を見る"

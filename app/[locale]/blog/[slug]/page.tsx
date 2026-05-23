@@ -12,6 +12,7 @@ import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banne
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
 import { ReadingProgress } from '@/components/content/reading-progress';
 import { ArticleToc } from '@/components/content/article-toc';
+import { EndOfArticleCta } from '@/components/content/end-of-article-cta';
 import type { Locale } from '@/lib/content/types';
 
 type PageParams = { locale: string; slug: string };
@@ -195,6 +196,16 @@ export default async function BlogPostPage({
         <div className="mt-12">
           <Body />
         </div>
+
+        <EndOfArticleCta
+          locale={locale}
+          eyebrow={t('blog.ctaEyebrow')}
+          title={t('blog.ctaTitle')}
+          description={t('blog.ctaDescription')}
+          tryLabel={t('blog.ctaTry')}
+          rssLabel={t('blog.ctaRss')}
+          moreLabel={t('blog.ctaMore')}
+        />
       </article>
       </main>
 
