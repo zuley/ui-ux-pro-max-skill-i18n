@@ -210,10 +210,13 @@ export default async function BlogPostPage({
       </main>
 
       {post.toc && post.toc.length > 1 ? (
-        <aside className="hidden lg:block lg:w-56 lg:shrink-0">
-          <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
-            <ArticleToc items={post.toc} title={t('blog.tocTitle')} />
-          </div>
+        // `sticky` on the aside itself + `self-start` to opt out of
+        // the flex `items-stretch` default. Without self-start the
+        // aside would stretch to the article's full height and sticky
+        // would have nothing to stick to — which is the bug the
+        // previous "<aside><div sticky/></aside>" structure hit.
+        <aside className="hidden lg:block lg:w-56 lg:shrink-0 lg:self-start lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto pr-2">
+          <ArticleToc items={post.toc} title={t('blog.tocTitle')} />
         </aside>
       ) : null}
     </div>
