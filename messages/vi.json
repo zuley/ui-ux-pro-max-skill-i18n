@@ -17,6 +17,8 @@
     "home": "Trang chủ",
     "docs": "Tài liệu",
     "tutorial": "Hướng dẫn",
+    "tutorials": "Hướng dẫn",
+    "blog": "Blog",
     "examples": "Ví dụ",
     "features": "Tính năng",
     "stacks": "Tech stack",
@@ -854,5 +856,46 @@
     "terms": "Điều khoản",
     "contact": "Liên hệ",
     "builtWith": "Xây dựng bằng React + Tailwind CSS (bởi UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Ghi chú, thử nghiệm và bài học khi thiết kế cùng UI UX Pro Max Skill.",
+    "allTags": "Tất cả",
+    "empty": "Chưa có bài viết — hãy quay lại sau.",
+    "minRead": "Đọc {n} phút",
+    "backToIndex": "Tất cả bài viết",
+    "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "tocTitle": "Trong bài viết này",
+    "ctaEyebrow": "Thích bài này?",
+    "ctaTitle": "Thử Skill mà Claude đang dùng",
+    "ctaDescription": "UI UX Pro Max đi kèm 50 styles, 21 palettes, 50 font pairings và 99 UX guidelines — một bộ chọn lọc để Claude không phải nội suy giá trị trung bình của cả web.",
+    "ctaTry": "Cài đặt Skill",
+    "ctaRss": "Đăng ký RSS",
+    "ctaMore": "Bài khác",
+    "latestTitle": "Mới nhất từ blog",
+    "latestSubtitle": "Ghi chú thực địa và kỹ thuật Prompt từ team và cộng đồng.",
+    "seeAll": "Xem tất cả bài viết"
+  },
+  "tutorials": {
+    "title": "Hướng dẫn",
+    "subtitle": "Hướng dẫn từng bước để dựng giao diện thực tế với UI UX Pro Max Skill.",
+    "empty": "Chưa có hướng dẫn nào.",
+    "minRead": "Đọc {n} phút",
+    "stepLabel": "Bước {n} / {total}",
+    "totalSteps": "{n} bước",
+    "backToSeries": "Quay lại series",
+    "backToIndex": "Tất cả hướng dẫn",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "fallbackBanner": "Bước này chưa được dịch — đang hiển thị bản tiếng Anh.",
+    "featuredTitle": "Hướng dẫn nổi bật",
+    "featuredSubtitle": "Các bài thực hành có thể hoàn thành trong một buổi chiều.",
+    "seeAll": "Xem tất cả hướng dẫn",
+    "series": {
+      "saasLanding": {
+        "title": "Dựng một landing page SaaS",
+        "description": "Từ một ý tưởng mơ hồ đến landing page xuất bản được, qua 5 bước."
+      }
+    }
   }
 }

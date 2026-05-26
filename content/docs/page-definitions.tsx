@@ -842,7 +842,7 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             <div className="mt-5 space-y-3">
               {antiItems.map((it) => (
                 <div key={it.bad} className="rounded-xl border border-orange-200/70 dark:border-orange-400/20 bg-orange-50/60 dark:bg-orange-900/10 p-5">
-                  <div className="font-mono text-sm text-orange-900 dark:text-orange-200 mb-2">"{it.bad}"</div>
+                  <div className="font-mono text-sm text-orange-900 dark:text-orange-200 mb-2">&quot;{it.bad}&quot;</div>
                   <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{it.why}</div>
                 </div>
               ))}

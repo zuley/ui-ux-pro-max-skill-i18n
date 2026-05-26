@@ -17,6 +17,8 @@
     "home": "首页",
     "docs": "文档",
     "tutorial": "教程",
+    "tutorials": "教程",
+    "blog": "博客",
     "examples": "示例",
     "gallerySubtitle": "查看全部 39+ 设计系统演示",
     "features": "功能特性",
@@ -1236,5 +1238,46 @@
     "terms": "使用条款",
     "contact": "联系",
     "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "使用 UI UX Pro Max Skill 设计界面过程中的笔记、实验与一线踩坑记录。",
+    "allTags": "全部",
+    "empty": "暂无文章，请稍后再来。",
+    "minRead": "约 {n} 分钟",
+    "backToIndex": "查看全部",
+    "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。",
+    "tocTitle": "本文目录",
+    "ctaEyebrow": "这篇看完了？",
+    "ctaTitle": "试试 Claude 用的这个 Skill",
+    "ctaDescription": "UI UX Pro Max 预置 50 种风格、21 套配色、50 套字体搭配、99 条 UX 规则——一组精选集合，让 Claude 不用对整个 Web 求平均。",
+    "ctaTry": "安装 Skill",
+    "ctaRss": "订阅 RSS",
+    "ctaMore": "更多文章",
+    "latestTitle": "博客最新",
+    "latestSubtitle": "来自团队和社区的一线笔记与 Prompt 经验。",
+    "seeAll": "查看全部文章"
+  },
+  "tutorials": {
+    "title": "教程",
+    "subtitle": "用 UI UX Pro Max Skill 把真实界面跑通的分步指南。",
+    "empty": "暂无教程，请稍后再来。",
+    "minRead": "约 {n} 分钟",
+    "stepLabel": "第 {n} / {total} 步",
+    "totalSteps": "共 {n} 步",
+    "backToSeries": "返回系列",
+    "backToIndex": "查看全部",
+    "prev": "上一篇",
+    "next": "下一篇",
+    "fallbackBanner": "这一步暂未翻译为中文，正在展示英文原文。",
+    "featuredTitle": "精选教程",
+    "featuredSubtitle": "一个下午就能跟着做完的实操指南。",
+    "seeAll": "查看全部教程",
+    "series": {
+      "saasLanding": {
+        "title": "从零做一个 SaaS 落地页",
+        "description": "把一个模糊的想法拆成 5 步，做出一个能上线的落地页。"
+      }
+    }
   }
 }

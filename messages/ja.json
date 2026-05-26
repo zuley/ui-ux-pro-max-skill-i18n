@@ -17,6 +17,8 @@
     "home": "ホーム",
     "docs": "ドキュメント",
     "tutorial": "チュートリアル",
+    "tutorials": "チュートリアル",
+    "blog": "ブログ",
     "examples": "例",
     "gallerySubtitle": "39+ 件のデザインシステムデモを見る",
     "features": "機能",
@@ -938,5 +940,46 @@
     "terms": "利用規約",
     "contact": "お問い合わせ",
     "builtWith": "React + Tailwind CSS で構築 (by UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "ブログ",
+    "subtitle": "UI UX Pro Max Skill を使ったデザインの実験ノートと現場のメモ。",
+    "allTags": "すべて",
+    "empty": "まだ記事はありません。後ほどご確認ください。",
+    "minRead": "約 {n} 分",
+    "backToIndex": "一覧へ戻る",
+    "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。",
+    "tocTitle": "目次",
+    "ctaEyebrow": "気に入ったら",
+    "ctaTitle": "Claude が使っているこの Skill を試す",
+    "ctaDescription": "UI UX Pro Max には 50 種類のスタイル、21 種類のカラーパレット、50 種類のフォントペアリング、99 個の UX ガイドラインが入っています。Claude が Web の平均値で補間しなくて済むキュレーション済みセットです。",
+    "ctaTry": "Skill をインストール",
+    "ctaRss": "RSS を購読",
+    "ctaMore": "他の記事",
+    "latestTitle": "ブログの最新記事",
+    "latestSubtitle": "チームとコミュニティからの現場メモと Prompt 技法。",
+    "seeAll": "すべての記事を見る"
+  },
+  "tutorials": {
+    "title": "チュートリアル",
+    "subtitle": "UI UX Pro Max Skill で実際のインターフェースを作るためのステップガイド。",
+    "empty": "まだチュートリアルはありません。",
+    "minRead": "約 {n} 分",
+    "stepLabel": "ステップ {n} / {total}",
+    "totalSteps": "{n} ステップ",
+    "backToSeries": "シリーズへ戻る",
+    "backToIndex": "一覧へ戻る",
+    "prev": "前へ",
+    "next": "次へ",
+    "fallbackBanner": "このステップはまだ翻訳されていません。英語版を表示しています。",
+    "featuredTitle": "おすすめチュートリアル",
+    "featuredSubtitle": "午後の時間で完走できる実践ガイド。",
+    "seeAll": "すべてのチュートリアルを見る",
+    "series": {
+      "saasLanding": {
+        "title": "SaaS のランディングページを作る",
+        "description": "ぼんやりとしたアイデアから 5 ステップで公開できる LP まで。"
+      }
+    }
   }
 }

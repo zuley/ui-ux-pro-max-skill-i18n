@@ -1,0 +1,131 @@
+---
+title: "Avoiding AI slop: 7 prompt techniques to stop your interfaces from looking generic"
+summary: "Purple gradients, Inter font, three cards on a white background — the visual signature of AI-generated UI. Here is how we tell our Skill to make something more deliberate."
+date: 2026-05-22
+tags: [prompt, design-system, claude-skills]
+author: admin
+---
+
+If you have generated more than a handful of interfaces with an AI assistant,
+you have already seen them: the same three feature cards over a white
+background, the same purple-to-indigo gradient hero, the same `Inter` heading
+sitting above a tagline that promises to "transform your workflow." We have
+started calling this **AI slop** — the visual signature of an interface that
+nobody actually decided.
+
+It is not the model's fault. When you ask for "a modern landing page," you
+are asking it to interpolate from the average of everything it has seen,
+and the average of the modern web is exactly what comes out: safe, soft,
+shiny, and forgettable.
+
+This post lists the seven prompt techniques we keep coming back to when we
+want output that looks like a designer made a choice, not like a model
+averaged a thousand of them.
+
+## 1. Anchor in a specific reference, not "modern"
+
+The single biggest lever is replacing "modern" with a name. A specific
+brand, a specific magazine spread, a specific era. The model has crisp
+representations of *Linear's product marketing*, of *2003 Wired editorial
+design*, of *Swiss International Style posters*. It only has a fuzzy blob
+labeled "modern web."
+
+<Callout tone="info" title="Try this">
+  Instead of "make it modern and clean," try "treat it like a Linear product
+  page from late 2024 — strong sans-serif headings, generous negative space,
+  thin separators, almost no color until the CTA."
+</Callout>
+
+## 2. Forbid the tells out loud
+
+The model will not stop using `Inter` and purple gradients on its own. You
+have to write down the things you do not want. A short prohibition list at
+the top of the prompt does more than three paragraphs of positive direction.
+
+<CodeBlock
+  title="Forbidden list"
+  language="text"
+  code={`Forbidden:
+- Inter, Roboto, Open Sans
+- Purple-to-indigo gradients
+- Three-up feature card rows on white
+- The phrase "transform your workflow"
+- Soft drop shadows (use hard 1px borders instead)`}
+/>
+
+## 3. Pick from a curated set instead of asking the AI to choose
+
+The Skill ships 50 styles, 21 palettes, and 50 font pairings precisely so
+you do not have to leave colour and type up to a vibes-based interpolation.
+When you ask the assistant to *choose*, you get the median. When you ask it
+to *apply a specific item from a curated set*, you get something that has
+already been judged tasteful by a human.
+
+This is the whole reason `+style`, `+palette`, and `+font` exist as
+explicit knobs. Use them.
+
+## 4. Demand one strong visual decision per screen
+
+Average designs are average because nothing dares to be the loudest thing
+in the room. Ask explicitly for the one thing that should be the boldest
+on the page, and tell the model that everything else has to recede.
+
+> The hero headline is set in 92px display serif. Everything else on the
+> page — body, buttons, separators — is set at 14–16px in a neutral
+> sans-serif. The headline is the only thing competing for attention.
+
+This single instruction does more for visual hierarchy than any amount of
+"make sure the headline stands out."
+
+## 5. Specify the spatial system, not just the colour system
+
+People obsess over palette and forget that 80% of how an interface *feels*
+is spacing, rhythm, and where the alignment lines are. A simple way to
+push the model out of slop is to mandate the grid.
+
+<CodeBlock
+  title="Spatial directives"
+  language="text"
+  code={`Layout:
+- 12-column grid, 80px gutters at desktop
+- Hero content sits in columns 2-8 (asymmetric, not centred)
+- Body rhythm: 8px base, all vertical spacing is a multiple of 24px
+- Section dividers are 1px solid rgba(0,0,0,0.08), never a shadow`}
+/>
+
+## 6. Give the interface a voice, not a feature list
+
+A lot of AI-generated copy reads like a feature spec, which is then visually
+reinforced by a grid of feature cards. Decide on a tone first — *terse and
+confident*, *playful and self-deprecating*, *clinical and data-led* — and
+ask the model to write headlines in that voice **before** it lays anything
+out. The layout then follows the voice instead of dictating it.
+
+## 7. Iterate by deleting
+
+The fastest way to fix a slopped-out screen is not to add more direction —
+it is to delete elements. After the first generation, look at the output
+and identify the three things that scream "AI did this." Then prompt:
+
+> Remove the gradient hero background, remove the three-up feature row,
+> remove the testimonial card. Replace each with empty space. Keep
+> iterating until the page can survive having things removed.
+
+What is left after that pruning is usually the bones of something good.
+Anything you can delete without missing it was slop in the first place.
+
+---
+
+## The meta-rule
+
+Every one of these techniques is the same idea in a different costume:
+**replace generality with a decision**. The model will happily generate
+the average of the web for you. Your job in the prompt is to refuse the
+average — by name, by negation, by curated reference, by explicit
+constraint.
+
+If you want output that looks like a designer made it, you have to do the
+designer's job *in the prompt*: pick the style, pick the type, pick the
+palette, pick the one loud thing. The Skill exists to make picking from
+a curated set the path of least resistance, so you do not have to write
+those decisions from scratch every time.

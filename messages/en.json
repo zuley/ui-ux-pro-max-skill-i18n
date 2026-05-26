@@ -17,6 +17,8 @@
     "home": "Home",
     "docs": "Docs",
     "tutorial": "Tutorial",
+    "tutorials": "Tutorials",
+    "blog": "Blog",
     "examples": "Examples",
     "gallerySubtitle": "View all 39+ design system demos",
     "features": "Features",
@@ -1236,5 +1238,46 @@
     "terms": "Terms",
     "contact": "Contact",
     "builtWith": "Built with React + Tailwind CSS (by UI UX Pro Max)"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Notes, experiments, and field reports from designing with the UI UX Pro Max Skill.",
+    "allTags": "All",
+    "empty": "No posts here yet — check back soon.",
+    "minRead": "{n} min read",
+    "backToIndex": "All posts",
+    "fallbackBanner": "This article hasn't been translated yet — showing the English version.",
+    "tocTitle": "In this article",
+    "ctaEyebrow": "Liked this post?",
+    "ctaTitle": "Try the Skill Claude knows about",
+    "ctaDescription": "UI UX Pro Max ships 50 styles, 21 palettes, 50 font pairings and 99 UX guidelines — a curated set so Claude doesn't have to interpolate the average of the web.",
+    "ctaTry": "Install the Skill",
+    "ctaRss": "Subscribe via RSS",
+    "ctaMore": "More posts",
+    "latestTitle": "Latest from the blog",
+    "latestSubtitle": "Field notes and prompt techniques from our team and community.",
+    "seeAll": "See all posts"
+  },
+  "tutorials": {
+    "title": "Tutorials",
+    "subtitle": "Step-by-step walkthroughs for shipping real interfaces with the UI UX Pro Max Skill.",
+    "empty": "No tutorials yet — check back soon.",
+    "minRead": "{n} min read",
+    "stepLabel": "Step {n} of {total}",
+    "totalSteps": "{n} steps",
+    "backToSeries": "Back to series",
+    "backToIndex": "All tutorials",
+    "prev": "Previous",
+    "next": "Next",
+    "fallbackBanner": "This step hasn't been translated yet — showing the English version.",
+    "featuredTitle": "Featured tutorials",
+    "featuredSubtitle": "Step-by-step builds you can finish in an afternoon.",
+    "seeAll": "See all tutorials",
+    "series": {
+      "saasLanding": {
+        "title": "Build a SaaS landing page",
+        "description": "From a vague idea to a shipped landing page in five focused steps."
+      }
+    }
   }
 }

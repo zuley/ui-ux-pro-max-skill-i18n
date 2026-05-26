@@ -5,6 +5,7 @@ import { Search, X } from 'lucide-react';
 import { docsNav } from '@/content/docs/nav';
 import { useLocale, useTranslations } from 'next-intl';
 import { docPath, localePath } from '@/lib/locale-path';
+import { useSearchIndex } from '@/components/search/search-index-context';
 
 type SearchItem = {
   title: string;
@@ -53,7 +54,16 @@ export function SearchModal({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [onClose, open]);
 
-  const items = useMemo(() => buildDefaultItems(t, locale), [locale, t]);
+  const contentItems = useSearchIndex();
+  const items = useMemo(() => {
+    const defaults = buildDefaultItems(t, locale);
+    const fromContent: SearchItem[] = contentItems.map((c) => ({
+      title: c.title,
+      href: c.href,
+      keywords: c.keywords,
+    }));
+    return [...defaults, ...fromContent];
+  }, [contentItems, locale, t]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
