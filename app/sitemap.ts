@@ -72,13 +72,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Blog posts.
+  // Blog posts. Load default-locale posts once and index by slug so the
+  // per-slug loop is O(1) lookup instead of re-parsing every MDX file on
+  // every iteration (was O(N²) on disk reads at content-set scale).
   const slugs = await listAllSlugs();
+  const defaultLocalePosts = await getAllPosts(routing.defaultLocale as Locale);
+  const postBySlug = new Map(defaultLocalePosts.map((p) => [p.slug, p]));
   for (const slug of slugs) {
     const path = `/blog/${slug}`;
-    // Pull frontmatter once (from default locale) just for lastModified.
-    const posts = await getAllPosts(routing.defaultLocale as Locale);
-    const meta = posts.find((p) => p.slug === slug);
+    const meta = postBySlug.get(slug);
     const lastModified = meta ? new Date(meta.frontmatter.date) : today;
     for (const locale of routing.locales) {
       entries.push({
