@@ -1,0 +1,158 @@
+---
+title: "02 · Write the first prompt — turn the five-line note into a real hero"
+summary: "Take the style + palette decisions from step 01 and convert them into a single, executable prompt that produces a hero you can keep without re-rolling five times."
+date: 2026-05-27
+tags: [tutorial, prompt, hero]
+author: admin
+step: 2
+---
+
+You finished step 01 with a five-line scratch note: audience, feeling,
+style, palette, three forbidden things. Now we turn that note into the
+**first real prompt** — the one that produces the hero section of the
+landing page.
+
+We are deliberately starting with the hero and only the hero. Asking
+the model to "design a landing page" in one shot is the fastest way
+back into slop. Asking it for **one section, with the decisions you
+already made baked in**, is the fastest way out.
+
+## What we are going to produce in this step
+
+One screenshot-worthy hero section. Specifically:
+
+- A headline that sounds like *your* product, not "Transform your workflow"
+- A subheadline of one sentence — not three lines of features
+- A single primary CTA (no secondary "Learn more")
+- A visual treatment consistent with the style + palette from step 01
+
+That's it. No feature grid, no logos strip, no testimonial. Those come
+in later steps.
+
+## The structure of a prompt that works
+
+Every prompt that produces a hero you actually want to keep has the
+same five sections in roughly the same order. Memorise this shape —
+you will reuse it for every section in the next steps:
+
+<Checklist
+  storageKey="saas-landing-step-02"
+  title="The five sections of a hero prompt"
+  items={[
+    { id: 'role', label: 'Role line — who you are asking the model to be (1 sentence)' },
+    { id: 'decisions', label: 'Decisions in — paste the five-line note from step 01 verbatim' },
+    { id: 'task', label: 'The task — one hero section. Not the page.' },
+    { id: 'constraints', label: 'Constraints — the forbidden list, restated' },
+    { id: 'output', label: 'Output format — exactly what file(s), what stack' }
+  ]}
+/>
+
+The single most common mistake is putting the **task** in the wrong
+place. People lead with "build me a hero" and then list constraints
+afterwards. The model treats the first thing it reads as the centre of
+gravity — so the first thing it should read is **who you are asking it
+to be** and **what decisions are already locked in**, not the task.
+
+## The actual template
+
+Copy this. Replace the five lines that came from step 01:
+
+<CodeBlock
+  title="Hero section prompt"
+  language="text"
+  code={`You are a senior product designer building a SaaS landing page. The
+visual decisions for this project are already made — your job is to
+execute them, not to re-decide them.
+
+# Decisions (locked in)
+Audience: <one sentence from step 01>
+Feeling in first 2 seconds: <one adjective from step 01>
+Style: <name from the 50 styles, e.g. "Editorial Brutalist">
+Palette: <name from the 21 palettes, e.g. "Slate Ink">
+Forbidden: <three things from step 01>
+
+# Task
+Build the hero section of the landing page. Only the hero — no feature
+grid, no logo strip, no testimonial, no footer. One section that fits
+in the viewport on a 1440-wide screen.
+
+The hero must contain:
+- One headline (1-2 lines, max ~10 words). The headline must read
+  like it was written for THIS audience, not as a generic SaaS line.
+  No "Transform your workflow." No "Built for modern teams." Be
+  specific to the audience above.
+- One subheadline (1 sentence, max 18 words). It explains who this
+  is for and what it does, in plain language.
+- One primary CTA (single button). No secondary "Learn more" link.
+- A visual treatment consistent with the style + palette above.
+
+# Constraints
+- Apply the forbidden list ruthlessly. If a default lands on one of
+  the forbidden items, pick the next best alternative.
+- The headline should be the loudest thing on the page. Everything
+  else recedes.
+- No gradient backgrounds. No three-up card rows (those come in a
+  later section, not the hero).
+- Use system spacing: 8px base, all vertical rhythm in multiples of
+  24px.
+
+# Output
+Output one file: app/(marketing)/page.tsx
+Stack: Next.js 15 App Router, React Server Components, Tailwind v4.
+No client components in this file. No external dependencies beyond
+Tailwind. Inline all SVG.`}
+/>
+
+That looks like a lot of prompt for one section. It is. The reason is
+that **everything in that prompt is a decision you would otherwise be
+re-rolling for**. Front-loading the decisions is what gives you a
+hero you keep on the first try, instead of one you regenerate four
+times.
+
+## What good output looks like
+
+When you run this prompt, the output should answer **yes** to all of
+these:
+
+<Checklist
+  storageKey="saas-landing-step-02-output"
+  title="Acceptance check for the first hero"
+  items={[
+    { id: 'specific', label: 'The headline mentions something specific to the audience — not "teams" or "workflows"' },
+    { id: 'one-cta', label: 'There is exactly ONE button, not two' },
+    { id: 'palette', label: 'The accent colour visibly matches the palette you named' },
+    { id: 'style', label: 'The visual treatment matches the style you named (serif vs sans, asymmetric vs centred, etc.)' },
+    { id: 'no-slop', label: 'None of your three forbidden items appear in the output' }
+  ]}
+/>
+
+If you can answer yes to 4 of 5, ship this draft to step 03. If
+**no** to 2 or more, do not re-roll — go back and look at which
+section of the prompt was vague. Almost always, the answer is that
+the **decisions** block was too generic. Tighten one line and re-run.
+
+<Callout tone="warn" title="Do not regenerate without changing anything">
+  Re-running the same prompt and hoping for a better result is the
+  most expensive failure mode of working with AI. If you do not like
+  the output, change the prompt. If the output is close but wrong on
+  one dimension, **edit the prompt to address that dimension**, then
+  re-run. Never re-roll blind.
+</Callout>
+
+## Why this shape generalises
+
+The five-section structure — *role, decisions, task, constraints,
+output* — is the same shape we will use for every section in steps
+03–05. Once you internalise it, writing the prompt for the pricing
+section or the FAQ section is a 3-minute job: keep the decisions
+block, swap the task and constraints, re-run.
+
+The skill being built here is **not** "write good prompts." It is
+**front-load decisions so the prompt has less work to do**.
+
+## Next
+
+In step 03 we take the hero output and learn how to iterate on it —
+how to look at what the model gave you and write the **smallest
+follow-up prompt** that fixes the one thing that is wrong, without
+breaking the four things that are right.

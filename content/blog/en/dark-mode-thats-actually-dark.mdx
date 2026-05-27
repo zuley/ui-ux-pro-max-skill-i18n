@@ -1,0 +1,132 @@
+---
+title: "Dark mode that's actually dark — and why your AI keeps generating mush"
+summary: "Most AI-generated dark mode is just light mode with the saturation pulled down. Here is how to prompt for a dark mode that has its own opinions, not one that apologises for being dark."
+date: 2026-05-27
+tags: [dark-mode, design-system, prompt]
+author: admin
+---
+
+You ask Claude for "the same page in dark mode" and it gives you something
+that is technically dark — `bg-gray-900`, `text-gray-300`, every icon now
+a slightly desaturated version of itself — but the page has lost its
+spine. The contrast feels flat. The accent colour is mud. The whole
+thing reads as **light mode in a costume**, not as a design that was
+built for the dark.
+
+This is one of the most common shapes of AI slop, and it has a
+specific cause: the model is treating dark mode as a transform of the
+light theme. Same hierarchy, same accent, same shadow recipe — just
+inverted. That is not what good dark mode is, and that is why it keeps
+coming out wrong.
+
+## What "dark mode is its own design" actually means
+
+A real dark theme is not "light theme but `--bg: #1a1a1a`." It is a
+parallel set of decisions about contrast, depth, and accent. The
+canonical version of this argument is the Material 3 "elevation by
+surface" model — surfaces get **lighter** as they come forward, because
+you cannot cast a shadow on a black background.
+
+If your AI-generated dark mode uses `box-shadow` to lift cards off
+the background, that is the giveaway. Shadows do not exist in the
+dark. **Light does.**
+
+<Callout tone="info" title="The mental model that fixes this">
+  In light mode, depth comes from shadow. In dark mode, depth comes
+  from lightness. A "raised" card on a dark background is **lighter**
+  than the surface beneath it, not darker with a glow.
+</Callout>
+
+## The four tells that you have AI dark mode, not dark mode
+
+When you scan the screenshot the model handed back, look for these
+four things. Every one of them is a fingerprint:
+
+1. **Pure black background** (`#000` or `#0a0a0a`). Real dark themes
+   sit around `#1a1a1a`–`#1f2937` because OLED-pure-black sucks the
+   life out of every other colour next to it. If the rest of your UI
+   has any blue or warm tint, the background should match.
+
+2. **Light-mode accent dragged into dark unchanged.** The indigo that
+   pops on a white background often turns to **navy mud** on a dark one.
+   Dark-mode accents almost always need to be **lighter and less
+   saturated** than their light-mode counterparts.
+
+3. **Body text at `#fff` or `gray-100`.** Pure white on dark backgrounds
+   buzzes. Real product dark modes use something like `gray-200` or
+   `rgba(255,255,255,0.87)` so the text sits *on* the page rather than
+   floating in front of it.
+
+4. **Borders set with opacity instead of a tinted gray.** `border-white/10`
+   is the AI's tell. It works, but it looks the same on every page on
+   the internet. A border set as `rgb(38 43 56)` reads as deliberate.
+
+## The prompt patterns that actually fix it
+
+The fix is to **stop asking for "the dark mode version."** Ask for a
+dark theme as if you were briefing a new designer who has never seen
+the light version:
+
+<CodeBlock
+  title="Prompt scaffold for a real dark theme"
+  language="text"
+  code={`Design a dark theme for this page. Do not start from the light theme.
+
+Background: #14161a (a neutral-warm dark, not pure black)
+Surface (cards, panels): #1c1f24 (lighter than bg — that is how
+  elevation works in the dark)
+Body text: rgba(255, 255, 255, 0.86)
+Muted text: rgba(255, 255, 255, 0.56)
+Accent: shift the light-mode #4f46e5 indigo up the lightness axis
+  to #818cf8. Same hue, more luminance. Brighter, not bluer.
+Borders: rgb(38 43 56). Not white-with-opacity.
+No box-shadows on raised elements. Use the lighter surface colour
+  instead.
+
+The whole theme should look like it was designed for the dark, not
+ported from the light. If something feels like an inverted version
+of its light counterpart, change it.`}
+/>
+
+The last paragraph is the one that does the most work. Explicit
+permission to **diverge from the light theme** is what stops the model
+from doing a mechanical inversion.
+
+## A reading test for any dark mode
+
+Once the model returns something, do this 15-second test before
+shipping:
+
+<Checklist
+  storageKey="blog-dark-mode-test"
+  title="The 15-second dark mode check"
+  items={[
+    { id: 'bg', label: 'Is the background NOT pure black? (#1a-ish, not #000)' },
+    { id: 'accent', label: 'Does the accent colour look brighter than its light-mode version?' },
+    { id: 'depth', label: 'Are raised surfaces LIGHTER than the page, not lifted with a shadow?' },
+    { id: 'body', label: 'Is the body text slightly off-white, not pure #fff?' },
+    { id: 'border', label: 'Are dividers tinted gray, not white-with-opacity?' }
+  ]}
+/>
+
+If you cannot answer yes to four of the five, you have AI dark mode,
+not dark mode.
+
+## The deeper rule
+
+The same principle that fixed the first article's AI slop applies here:
+**dark mode is a decision, not a transform.** The moment you treat it
+as "the same thing with the colours flipped," you have already lost the
+distinct character that makes a good dark theme worth shipping.
+
+The model will happily do the inversion if you ask for the inversion.
+Ask instead for the **design**, and tell it that the dark theme has
+its own opinions.
+
+---
+
+If you want the curated version of this — palettes that already have
+dark-mode siblings designed in parallel, not derived — that is what
+`+palette show <name> --variant dark` ships. The 21 palettes each have
+a hand-tuned dark variant, so you do not have to write the prompt
+above from scratch every time.
