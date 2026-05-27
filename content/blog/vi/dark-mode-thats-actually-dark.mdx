@@ -1,0 +1,128 @@
+---
+title: "Dark mode thực sự tối — và tại sao AI cứ sinh ra màu bùn"
+summary: "Hầu hết dark mode do AI sinh ra chỉ là light mode với saturation giảm xuống. Đây là cách prompt để có dark mode có quan điểm riêng của nó, không phải cái ngại ngùng vì tối."
+date: 2026-05-27
+tags: [dark-mode, design-system, prompt]
+author: admin
+---
+
+Bạn yêu cầu Claude "trang này nhưng dark mode" và nó trả về thứ gì đó
+về mặt kỹ thuật là tối — `bg-gray-900`, `text-gray-300`, mọi icon giờ
+là phiên bản desaturated nhẹ hơn — nhưng trang đó **mất cột sống**.
+Contrast trở nên phẳng. Màu accent biến thành bùn. Tổng thể đọc như
+**light mode mặc trang phục**, không phải thiết kế được xây dựng cho bóng tối.
+
+Đây là một trong những hình dạng phổ biến nhất của AI slop, và nó có
+nguyên nhân cụ thể: model đang xử lý dark mode như một phép biến đổi
+của theme sáng. Cùng hierarchy, cùng accent, cùng công thức shadow —
+chỉ là đảo ngược. Đó không phải dark mode tốt, và đó là lý do nó cứ
+ra sai.
+
+## "Dark mode là thiết kế riêng" thực sự có nghĩa gì
+
+Một dark theme thực sự không phải "light theme nhưng `--bg: #1a1a1a`."
+Đó là một tập quyết định song song về contrast, độ sâu và accent.
+Phiên bản kinh điển của lập luận này là mô hình "elevation by surface"
+của Material 3 — surface trở nên **sáng hơn** khi nó nổi lên phía trước,
+vì bạn không thể đổ bóng trên nền đen.
+
+Nếu dark mode do AI sinh ra của bạn dùng `box-shadow` để nhấc card
+khỏi nền, đó là bằng chứng. Shadow không tồn tại trong bóng tối.
+**Ánh sáng mới tồn tại.**
+
+<Callout tone="info" title="Mental model để sửa điều này">
+  Trong light mode, độ sâu đến từ shadow. Trong dark mode, độ sâu
+  đến từ **độ sáng**. Một card "nổi lên" trên nền tối phải **sáng hơn**
+  bề mặt bên dưới nó, không phải tối hơn với một vầng sáng.
+</Callout>
+
+## Bốn dấu hiệu cho thấy bạn có AI dark mode, không phải dark mode
+
+Khi bạn nhìn vào screenshot model trả về, tìm bốn điều này.
+Mỗi cái là một dấu vân tay:
+
+1. **Nền đen thuần** (`#000` hoặc `#0a0a0a`). Dark theme thực sự
+   nằm quanh `#1a1a1a`–`#1f2937` vì đen thuần OLED hút hết sức sống
+   của mọi màu bên cạnh nó. Nếu phần còn lại của UI có tông xanh hay
+   ấm, nền nên khớp theo.
+
+2. **Accent của light mode bị kéo sang dark nguyên xi.** Indigo nổi bật
+   trên nền trắng thường biến thành **bùn navy** trên nền tối. Accent
+   dark mode hầu như luôn cần **sáng hơn và ít saturated hơn** so với
+   phiên bản light mode.
+
+3. **Body text ở `#fff` hoặc `gray-100`.** Trắng thuần trên nền tối gây
+   rung mắt. Các dark mode sản phẩm thực sự dùng thứ như `gray-200` hay
+   `rgba(255,255,255,0.87)` để text ngồi *trên* trang thay vì nổi lên
+   trước nó.
+
+4. **Border đặt bằng opacity thay vì gray có tông màu.** `border-white/10`
+   là dấu vân tay của AI. Nó hoạt động, nhưng trông giống hệt mọi
+   trang khác trên internet. Border đặt là `rgb(38 43 56)` đọc như
+   cố ý.
+
+## Các pattern prompt thực sự sửa được
+
+Cách sửa là **thôi hỏi "phiên bản dark mode."** Hỏi về dark theme như
+thể bạn đang brief một designer mới chưa bao giờ thấy phiên bản sáng:
+
+<CodeBlock
+  title="Prompt scaffold cho dark theme thực sự"
+  language="text"
+  code={`Thiết kế dark theme cho trang này. Không bắt đầu từ light theme.
+
+Background: #14161a (tối ấm trung tính, không phải đen thuần)
+Surface (card, panel): #1c1f24 (sáng hơn bg — đó là cách
+  elevation hoạt động trong tối)
+Body text: rgba(255, 255, 255, 0.86)
+Muted text: rgba(255, 255, 255, 0.56)
+Accent: dịch chuyển #4f46e5 indigo của light mode lên trục lightness
+  thành #818cf8. Cùng hue, luminance cao hơn. Sáng hơn, không xanh hơn.
+Border: rgb(38 43 56). Không phải white-with-opacity.
+Không dùng box-shadow cho các element nổi. Dùng màu surface sáng hơn thay thế.
+
+Toàn bộ theme nên trông như được thiết kế cho bóng tối, không phải
+chuyển cảng từ sáng. Nếu thứ gì đó cảm thấy như phiên bản đảo ngược
+của đối tác light mode, hãy thay đổi nó.`}
+/>
+
+Đoạn cuối là thứ làm được nhiều nhất. Quyền **lệch khỏi light theme**
+tường minh là thứ ngăn model làm một phép đảo ngược máy móc.
+
+## Bài kiểm tra đọc cho bất kỳ dark mode nào
+
+Khi model trả về gì đó, làm bài kiểm tra 15 giây này trước khi ship:
+
+<Checklist
+  storageKey="blog-dark-mode-test"
+  title="Kiểm tra dark mode 15 giây"
+  items={[
+    { id: 'bg', label: 'Nền có KHÔNG phải đen thuần không? (#1a-ish, không phải #000)' },
+    { id: 'accent', label: 'Màu accent có trông sáng hơn phiên bản light mode không?' },
+    { id: 'depth', label: 'Surface nổi lên có SÁNG HƠN trang, không phải được nhấc bởi shadow không?' },
+    { id: 'body', label: 'Body text có hơi off-white, không phải #fff thuần không?' },
+    { id: 'border', label: 'Đường ngăn có là gray có tông màu, không phải white-with-opacity không?' }
+  ]}
+/>
+
+Nếu bạn không thể trả lời có cho bốn trong năm, bạn có AI dark mode,
+không phải dark mode.
+
+## Quy tắc sâu hơn
+
+Nguyên tắc tương tự đã sửa AI slop trong bài trước áp dụng ở đây:
+**dark mode là một quyết định, không phải một phép biến đổi.** Khoảnh khắc
+bạn xử lý nó như "thứ giống nhau với màu đảo ngược," bạn đã mất đi
+tính cách riêng khiến một dark theme tốt đáng ship.
+
+Model sẽ vui lòng làm phép đảo ngược nếu bạn hỏi về phép đảo ngược.
+Thay vào đó hãy hỏi về **thiết kế**, và nói với nó rằng dark theme
+có quan điểm riêng của nó.
+
+---
+
+Nếu bạn muốn phiên bản đã tuyển của điều này — palette đã có dark
+mode sibling được thiết kế song song, không phải dẫn xuất — đó là
+thứ `+palette show <name> --variant dark` cung cấp. 21 palette đều có
+dark variant được tinh chỉnh thủ công, để bạn không phải viết lại
+prompt trên từ đầu mỗi lần.
