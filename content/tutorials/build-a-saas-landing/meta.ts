@@ -14,8 +14,8 @@ const meta: TutorialSeriesMeta = {
   descriptionKey: 'tutorials.series.saasLanding.description',
   steps: [
     '01-style-and-palette',
+    '02-first-prompt',
     // Reserved for follow-up PRs:
-    // '02-first-prompt',
     // '03-iterating',
     // '04-charts-and-data',
     // '05-ship-checklist',
