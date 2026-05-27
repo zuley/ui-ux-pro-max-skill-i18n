@@ -1,0 +1,130 @@
+---
+title: "Tránh AI slop: 7 kỹ thuật prompt để giao diện của bạn không còn giống như do AI làm"
+summary: "Gradient tím, font Inter, ba thẻ trên nền trắng — đó là chữ ký thị giác của giao diện do AI tạo. Bài này nói cách chúng tôi bảo Skill thoát khỏi khuôn mẫu đó và làm ra cái gì đó thực sự có người quyết định."
+date: 2026-05-22
+tags: [prompt, design-system, claude-skills]
+author: admin
+---
+
+Nếu bạn đã từng dùng trợ lý AI để tạo vài giao diện, hẳn bạn quá quen
+với cảnh này: ba thẻ tính năng trên nền trắng, Hero gradient từ tím sang
+chàm, tiêu đề `Inter` đặt trên một câu phụ hứa hẹn "thay đổi cách bạn
+làm việc". Trong nội bộ chúng tôi gọi cái này là **AI slop** — chữ ký
+thị giác của một giao diện mà **chẳng ai thực sự đưa ra quyết định nào**.
+
+Không phải lỗi của model. Khi bạn yêu cầu "một landing page hiện đại",
+bạn đang yêu cầu nó nội suy từ trung bình của mọi thứ nó từng thấy. Và
+trung bình của web hiện đại chính xác là cái này: an toàn, mềm mại, bóng
+bẩy, và quên ngay sau khi rời mắt.
+
+Bài này liệt kê 7 kỹ thuật prompt chúng tôi liên tục dùng khi muốn output
+trông như **có một designer thực sự ra quyết định**, chứ không phải như
+một model lấy trung bình của một nghìn cái.
+
+## 1. Neo vào một tham chiếu cụ thể, không phải "hiện đại"
+
+Đòn bẩy lớn nhất là thay "hiện đại" bằng **một cái tên**. Một thương hiệu
+cụ thể, một bố cục tạp chí cụ thể, một thời kỳ cụ thể. Model có biểu
+diễn rõ ràng về *trang marketing của Linear cuối 2024*, về *editorial
+design của Wired năm 2003*, về *Swiss International Style posters*. Nó
+chỉ có một đám mờ tên là "modern web".
+
+<Callout tone="info" title="Thử viết như sau">
+  Thay vì "làm cho hiện đại và sạch sẽ", thử "xử lý như một trang
+  product của Linear cuối 2024 — tiêu đề sans-serif đậm, nhiều khoảng
+  trắng, vạch ngăn mảnh, gần như không có màu cho đến chỗ CTA."
+</Callout>
+
+## 2. Cấm thẳng những "dấu vết AI"
+
+Model sẽ không tự ngừng dùng `Inter` và gradient tím. Bạn phải **viết ra**
+những thứ bạn không muốn. Một danh sách cấm ngắn ở đầu prompt còn có
+tác dụng hơn ba đoạn chỉ dẫn tích cực.
+
+<CodeBlock
+  title="Danh sách cấm"
+  language="text"
+  code={`Cấm:
+- Inter, Roboto, Open Sans
+- Gradient từ tím sang chàm
+- Ba thẻ tính năng đặt ngang trên nền trắng
+- Cụm "thay đổi cách bạn làm việc"
+- Soft drop shadow (dùng vạch 1px thay thế)`}
+/>
+
+## 3. Chọn từ một bộ đã được tuyển, đừng để AI tự chọn
+
+Skill mang sẵn **50 style**, **21 palette** và **50 cặp font** chính vì
+lý do này: bạn không nên giao việc chọn màu và chữ cho một lần nội suy
+cảm tính. Khi bạn yêu cầu model **chọn**, bạn nhận được trung bình. Khi
+bạn yêu cầu nó **áp dụng một mục cụ thể từ một bộ đã tuyển**, bạn nhận
+được thứ đã có người thẩm định là có gu.
+
+Đây chính là lý do `+style`, `+palette`, `+font` tồn tại như những núm
+vặn rõ ràng. Dùng chúng đi.
+
+## 4. Yêu cầu mỗi màn một quyết định thị giác mạnh
+
+Thiết kế trung bình sở dĩ trung bình vì không có yếu tố nào dám là cái
+to nhất trong phòng. Hãy chỉ rõ **thứ gì sẽ là đậm nhất trên trang** và
+nói với model rằng mọi thứ khác phải lùi xuống.
+
+> Tiêu đề Hero đặt font serif 92px. Mọi thứ khác trên trang — body,
+> button, vạch ngăn — đặt 14–16px sans-serif trung tính. Chỉ có tiêu
+> đề tranh giành sự chú ý.
+
+Một câu này có tác dụng cho hệ phân cấp thị giác hơn nhiều so với việc
+nói "hãy làm tiêu đề nổi bật hơn" trăm lần.
+
+## 5. Quy định hệ thống không gian, không chỉ hệ thống màu
+
+Mọi người mê palette mà quên rằng 80% cảm giác của một giao diện đến
+từ **khoảng cách, nhịp điệu, đường căn**. Cách đơn giản để đẩy model
+ra khỏi slop là quy định grid.
+
+<CodeBlock
+  title="Ràng buộc không gian"
+  language="text"
+  code={`Layout:
+- Grid 12 cột, gutter 80px ở desktop
+- Hero nằm ở cột 2-8 (bất đối xứng, không căn giữa)
+- Nhịp body: ba 8px, mọi khoảng dọc là bội của 24px
+- Vạch ngăn section là 1px solid rgba(0,0,0,0.08), không bao giờ là shadow`}
+/>
+
+## 6. Cho giao diện một **giọng nói**, không phải một danh sách tính năng
+
+Nhiều copy do AI sinh ra đọc như một bản đặc tả sản phẩm, và sau đó
+được tăng cường thị giác bằng một lưới feature card. Hãy **chốt tông
+giọng trước** — "ngắn gọn tự tin", "nghịch ngợm tự trào", "lạnh lùng
+data-driven" — và bắt model viết tiêu đề bằng giọng đó **trước khi**
+nó dàn trang. Layout đi theo giọng nói, không phải ngược lại.
+
+## 7. Lặp bằng cách **xóa**, không phải bằng cách thêm
+
+Cách nhanh nhất để sửa một màn đã slop **không phải thêm chỉ dẫn** —
+mà là **xóa yếu tố**. Nhìn output đầu tiên và xác định 3 thứ hét lên
+"AI làm cái này". Sau đó prompt:
+
+> Bỏ background gradient Hero, bỏ feature row ba cột, bỏ testimonial
+> card. Để trống chỗ đó. Tiếp tục xóa cho đến khi trang vẫn đứng được
+> sau khi mất một thứ.
+
+Sau khi tỉa xong, cái còn lại thường là xương của một thứ tốt. **Mọi
+thứ bạn xóa mà không nhớ đến — vốn dĩ là slop ngay từ đầu.**
+
+---
+
+## Quy tắc gốc
+
+Cả 7 kỹ thuật trên là cùng một ý tưởng trong bảy bộ trang phục khác
+nhau: **thay sự chung chung bằng một quyết định**. Model rất vui lòng
+sinh ra trung bình của web cho bạn. Công việc của bạn trong prompt là
+**từ chối trung bình** — bằng tên, bằng phủ định, bằng tham chiếu được
+tuyển, bằng ràng buộc rõ ràng.
+
+Nếu bạn muốn output trông như do designer làm, bạn phải làm **công
+việc của designer ngay trong prompt**: chọn style, chọn chữ, chọn
+palette, chọn cái yếu tố to nhất. Skill tồn tại để biến "chọn từ một
+bộ đã tuyển" thành con đường ít kháng cự nhất, để bạn không phải viết
+lại những quyết định này từ đầu mỗi lần.
