@@ -1,0 +1,110 @@
+---
+title: "01 · Chọn style và palette trước — đừng để AI chọn"
+summary: "Quyết định quan trọng nhất của một landing page SaaS là nó trông như thế nào. Bước này là để bạn tự đưa ra quyết định đó, không phải giao cho model."
+date: 2026-05-22
+tags: [tutorial, design-system, prompt]
+author: admin
+step: 1
+---
+
+Một landing page là một màn hình với một nhiệm vụ. Phần khó nhất không
+phải là viết prompt — mà là **quyết định trang đó phải có cảm giác như
+thế nào trước khi bắt đầu prompt**. Nếu bạn bỏ qua bước này, model sẽ
+lấp khoảng trống bằng phong cách mặc định của nó, và bạn lại có thêm
+một Hero gradient tím nữa.
+
+Bước này **không sinh ra gì cả**. Đây là 10 phút nhàm chán nhưng quyết
+định xem bốn bước tiếp theo có đi tới đâu được không.
+
+## Tại sao AI tự nó làm không tốt
+
+Khi bạn yêu cầu Claude (hay bất kỳ model nào) "chọn style cho landing
+page SaaS của tôi", nó làm cái mà một designer junior không có gu sẽ
+làm: mặc định về những pattern phổ biến nhất hai năm gần đây. Cách này
+hợp lý khi bạn không có gì để dựa vào, nhưng nó là sai khi **chính bạn**
+là người có thương hiệu.
+
+Skill mang sẵn **50 style** và **21 palette** chính vì lý do này:
+việc chọn nên là một thao tác chọn từ bộ đã tuyển, không phải nội
+suy cảm tính.
+
+## Quyết định 3 điều trước khi prompt
+
+<Checklist
+  storageKey="saas-landing-step-01"
+  title="Trước khi sinh ra bất cứ thứ gì"
+  items={[
+    { id: 'audience', label: 'Trang này dành cho ai? (một câu, không phải tài liệu persona)' },
+    { id: 'feeling', label: 'Khách phải cảm thấy gì trong 2 giây đầu? (một tính từ)' },
+    { id: 'style', label: 'Trong 50 style, bạn chọn cái nào? Viết tên ra.' },
+    { id: 'palette', label: 'Trong 21 palette, cái nào? Viết tên ra.' },
+    { id: 'forbidden', label: 'Ba thứ rõ ràng bạn không muốn có trên trang này.' }
+  ]}
+/>
+
+Checklist nghe có vẻ đơn giản cho đến khi bạn thực sự điền vào nó. Dòng
+"không muốn" là dòng đau nhất — đó là chỗ bạn **cam kết trang này
+không phải là cái gì**.
+
+## Cách chọn style
+
+Chạy tìm kiếm trong database và đọc các style card thực, đừng đoán:
+
+<CodeBlock
+  title="Xem các style"
+  language="bash"
+  code={`# Trong Claude Code
++style list
+
+# Hoặc lọc theo tag
++style list --tag editorial --tag asymmetric`}
+/>
+
+Chọn **một**, không phải ba. Mục đích của bộ đã tuyển là phần khó —
+đánh giá gu — đã được làm rồi — việc của bạn là **cam kết một lựa
+chọn duy nhất**, không phải lấy trung bình của chúng.
+
+<Callout tone="info" title="Một mặc định tốt nếu bạn bí">
+  Cho landing page B2B SaaS, "Editorial Brutalist" + palette "Slate
+  Ink" là một combo mạnh ra khỏi hộp: tiêu đề display serif, nhiều
+  khoảng trắng, một accent color duy nhất, không gradient trang trí.
+  Trông như có người ra quyết định ngay cả trước khi bạn thêm nội dung.
+</Callout>
+
+## Cách chọn palette
+
+Quyết định palette là **hạ nguồn của quyết định style**. Một số style
+có palette được khuyên dùng — dùng cái đó. Nếu style của bạn không có,
+hãy chọn palette mà accent color của nó khớp với **một cảm xúc** bạn
+viết trong checklist ở trên.
+
+<CodeBlock
+  title="Xem palette"
+  language="bash"
+  code={`+palette list --style editorial-brutalist
++palette show slate-ink`}
+/>
+
+## Bước này kết thúc thì bạn có gì
+
+Mở một file scratch (hoặc một ghi chú) và viết ra:
+
+```
+Audience: ____
+Feeling: ____
+Style: ____
+Palette: ____
+Forbidden: ____, ____, ____
+```
+
+5 dòng đó là input cho bước 02, nơi chúng ta biến nó thành prompt thật
+đầu tiên. Chúng ta chưa sinh UI nào cả — cố ý. **Một trang sống sót
+qua tiếp xúc với người dùng là trang mà quyết định style được làm
+trước quyết định layout**, và đa số team làm ngược lại.
+
+## Tiếp theo
+
+Ở bước 02 chúng ta lấy 5 dòng này và biến thành một prompt duy nhất
+sinh ra một Hero section bạn thực sự muốn giữ. Chúng ta sẽ không bảo
+model "design một landing page". Chúng ta sẽ bảo nó **thực thi các
+quyết định bạn đã làm**.
