@@ -1,0 +1,150 @@
+---
+title: "02 · Viết prompt đầu tiên — biến ghi chú năm dòng thành hero thật"
+summary: "Lấy các quyết định style + palette từ bước 01 và chuyển thành một prompt duy nhất, có thể thực thi, sinh ra hero bạn có thể giữ ngay mà không cần re-roll năm lần."
+date: 2026-05-27
+tags: [tutorial, prompt, hero]
+author: admin
+step: 2
+---
+
+Bạn kết thúc bước 01 với một ghi chú scratch năm dòng: audience, feeling,
+style, palette, ba thứ bị cấm. Bây giờ chúng ta biến ghi chú đó thành
+**prompt thật đầu tiên** — cái sinh ra hero section của landing page.
+
+Chúng ta cố ý bắt đầu chỉ với hero và chỉ hero. Yêu cầu model "design
+một landing page" trong một lần là con đường nhanh nhất quay lại slop.
+Yêu cầu nó về **một section, với các quyết định bạn đã làm được nhúng vào**,
+là con đường nhanh nhất thoát ra.
+
+## Chúng ta sẽ tạo ra gì trong bước này
+
+Một hero section xứng đáng chụp screenshot. Cụ thể:
+
+- Một headline nghe như sản phẩm *của bạn*, không phải "Thay đổi cách bạn làm việc"
+- Một subheadline một câu — không phải ba dòng tính năng
+- Một CTA chính duy nhất (không có "Tìm hiểu thêm" phụ)
+- Visual treatment nhất quán với style + palette từ bước 01
+
+Chỉ vậy thôi. Không feature grid, không logo strip, không testimonial.
+Những thứ đó đến ở các bước sau.
+
+## Cấu trúc của một prompt hiệu quả
+
+Mọi prompt sinh ra hero bạn thực sự muốn giữ đều có cùng năm section
+theo cùng thứ tự. Ghi nhớ hình dạng này — bạn sẽ tái sử dụng nó cho
+mọi section trong các bước tiếp theo:
+
+<Checklist
+  storageKey="saas-landing-step-02"
+  title="Năm section của một hero prompt"
+  items={[
+    { id: 'role', label: 'Dòng role — bạn đang yêu cầu model trở thành ai (1 câu)' },
+    { id: 'decisions', label: 'Decisions in — dán nguyên văn ghi chú năm dòng từ bước 01' },
+    { id: 'task', label: 'Task — một hero section. Không phải cả trang.' },
+    { id: 'constraints', label: 'Constraints — danh sách cấm, viết lại' },
+    { id: 'output', label: 'Output format — chính xác file nào, stack nào' }
+  ]}
+/>
+
+Lỗi phổ biến nhất là đặt **task** sai chỗ. Người ta thường viết "build
+cho tôi một hero" rồi liệt kê constraint sau. Model xử lý thứ đầu tiên
+nó đọc là trọng tâm — vì vậy thứ đầu tiên nó nên đọc là **bạn đang yêu
+cầu nó trở thành ai** và **quyết định nào đã được khóa**, không phải task.
+
+## Template thực tế
+
+Copy cái này. Thay năm dòng đến từ bước 01:
+
+<CodeBlock
+  title="Hero section prompt"
+  language="text"
+  code={`Bạn là một senior product designer đang xây dựng một landing page SaaS.
+Các quyết định visual cho dự án này đã được thực hiện — công việc của
+bạn là thực thi chúng, không phải quyết định lại.
+
+# Decisions (đã khóa)
+Audience: <một câu từ bước 01>
+Cảm giác trong 2 giây đầu: <một tính từ từ bước 01>
+Style: <tên từ 50 style, ví dụ "Editorial Brutalist">
+Palette: <tên từ 21 palette, ví dụ "Slate Ink">
+Forbidden: <ba thứ từ bước 01>
+
+# Task
+Xây dựng hero section của landing page. Chỉ hero — không feature grid,
+không logo strip, không testimonial, không footer. Một section vừa trong
+viewport trên màn hình rộng 1440px.
+
+Hero phải chứa:
+- Một headline (1-2 dòng, tối đa ~10 từ). Headline phải đọc như được
+  viết cho audience NÀY, không phải là dòng SaaS generic. Không "Thay
+  đổi cách bạn làm việc." Không "Xây dựng cho team hiện đại." Cụ thể
+  với audience ở trên.
+- Một subheadline (1 câu, tối đa 18 từ). Giải thích đây là cho ai và
+  làm gì, bằng ngôn ngữ đơn giản.
+- Một CTA chính (nút đơn). Không có link "Tìm hiểu thêm" phụ.
+- Visual treatment nhất quán với style + palette ở trên.
+
+# Constraints
+- Áp dụng danh sách cấm không khoan nhượng. Nếu mặc định rơi vào một
+  trong các mục cấm, chọn phương án tốt nhất tiếp theo.
+- Headline phải là thứ to nhất trên trang. Mọi thứ khác lùi lại.
+- Không gradient background. Không three-up card row (những thứ đó
+  đến ở section sau, không phải hero).
+- Dùng spacing hệ thống: 8px base, mọi nhịp dọc là bội của 24px.
+
+# Output
+Output một file: app/(marketing)/page.tsx
+Stack: Next.js 15 App Router, React Server Components, Tailwind v4.
+Không client component trong file này. Không dependency bên ngoài ngoài
+Tailwind. Inline tất cả SVG.`}
+/>
+
+Trông như rất nhiều prompt cho một section. Đúng vậy. Lý do là
+**mọi thứ trong prompt đó là một quyết định bạn sẽ phải re-roll nếu không có**.
+Front-load các quyết định là thứ giúp bạn có hero giữ ngay lần đầu,
+thay vì tạo lại bốn lần.
+
+## Output tốt trông như thế nào
+
+Khi bạn chạy prompt này, output nên trả lời **có** cho tất cả những điều này:
+
+<Checklist
+  storageKey="saas-landing-step-02-output"
+  title="Acceptance check cho hero đầu tiên"
+  items={[
+    { id: 'specific', label: 'Headline đề cập thứ gì đó cụ thể với audience — không phải "team" hay "workflow"' },
+    { id: 'one-cta', label: 'Có đúng MỘT nút, không phải hai' },
+    { id: 'palette', label: 'Màu accent rõ ràng khớp với palette bạn đặt tên' },
+    { id: 'style', label: 'Visual treatment khớp với style bạn đặt tên (serif vs sans, asymmetric vs centered, v.v.)' },
+    { id: 'no-slop', label: 'Không có trong ba mục cấm của bạn xuất hiện trong output' }
+  ]}
+/>
+
+Nếu bạn có thể trả lời có cho 4 trong 5, ship draft này sang bước 03.
+Nếu **không** cho 2 hoặc nhiều hơn, đừng re-roll — quay lại và xem
+section nào của prompt mơ hồ. Hầu như luôn, câu trả lời là khối
+**decisions** quá chung chung. Siết chặt một dòng và chạy lại.
+
+<Callout tone="warn" title="Đừng tạo lại mà không thay đổi gì">
+  Chạy lại cùng prompt và hi vọng kết quả tốt hơn là failure mode
+  đắt nhất khi làm việc với AI. Nếu bạn không thích output, thay đổi
+  prompt. Nếu output gần đúng nhưng sai một chiều, **chỉnh prompt để
+  xử lý chiều đó**, rồi chạy lại. Đừng bao giờ re-roll mù.
+</Callout>
+
+## Tại sao shape này khái quát được
+
+Cấu trúc năm section — *role, decisions, task, constraints, output* —
+là cùng shape chúng ta sẽ dùng cho mọi section trong các bước 03–05.
+Một khi bạn nội tâm hóa nó, viết prompt cho section pricing hay FAQ
+là việc 3 phút: giữ nguyên decisions block, đổi task và constraints,
+chạy lại.
+
+Skill đang được xây dựng ở đây **không phải** "viết prompt tốt." Mà là
+**front-load quyết định để prompt có ít việc phải làm hơn**.
+
+## Tiếp theo
+
+Ở bước 03 chúng ta lấy hero output và học cách iterate lên nó — cách
+nhìn vào những gì model cho bạn và viết **prompt follow-up nhỏ nhất**
+sửa thứ sai duy nhất, mà không phá bốn thứ đúng.
