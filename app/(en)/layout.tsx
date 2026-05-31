@@ -30,11 +30,11 @@ export default function EnglishRootLayout({
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y3KXMDMBC1"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html:
               "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y3KXMDMBC1');"

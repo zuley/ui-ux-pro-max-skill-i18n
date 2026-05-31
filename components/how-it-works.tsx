@@ -25,7 +25,7 @@ export function HowItWorks() {
               <h3 className="font-heading text-base font-bold text-gray-900 dark:text-white">{t('steps.1.title')}</h3>
             </div>
             <div className="bg-gray-900 rounded-lg px-4 py-3 font-mono text-sm">
-              <span className="text-gray-500">$</span>{' '}
+              <span className="text-gray-400">$</span>{' '}
               <span className="text-emerald-400">{t('steps.1.prompt')}</span>
             </div>
           </div>
@@ -81,7 +81,7 @@ export function HowItWorks() {
               <h3 className="font-heading text-base font-bold text-gray-900 dark:text-white">{t('steps.4.title')}</h3>
             </div>
             <div className="bg-gray-900 rounded-lg p-3 font-mono text-[11px] overflow-x-auto">
-              <div className="text-gray-500">{t('steps.4.comment')}</div>
+              <div className="text-gray-400">{t('steps.4.comment')}</div>
               <div>
                 <span className="text-pink-400">&lt;section</span>{' '}
                 <span className="text-yellow-300">class</span>=
@@ -181,7 +181,7 @@ function ArrowDivider() {
 function DataBox({ label, value }: { label: string; value: string }) {
   return (
     <div className="bg-white/70 dark:bg-black/20 rounded-lg p-3 border border-gray-200/70 dark:border-white/10">
-      <div className="text-[10px] text-blue-600 font-medium mb-1">{label}</div>
+      <div className="text-[10px] text-blue-600 dark:text-blue-400 font-medium mb-1">{label}</div>
       <div className="text-xs font-medium text-gray-900 dark:text-white">{value}</div>
     </div>
   );
@@ -190,7 +190,7 @@ function DataBox({ label, value }: { label: string; value: string }) {
 function ColorBox({ label, colors }: { label: string; colors: { name: string; hex: string }[] }) {
   return (
     <div className="bg-white/70 dark:bg-black/20 rounded-lg p-3 border border-gray-200/70 dark:border-white/10">
-      <div className="text-[10px] text-blue-600 font-medium mb-1">{label}</div>
+      <div className="text-[10px] text-blue-600 dark:text-blue-400 font-medium mb-1">{label}</div>
       <div className="flex gap-1">
         {colors.map((c) => (
           <div key={c.name} className="group relative">

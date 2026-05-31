@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('resources')}</h4>
+            <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('resources')}</h3>
             <ul className="space-y-3">
               <li><Link href={docPath(locale, 'getting-started')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('docs')}</Link></li>
               <li><Link href={tutorialsIndexPath(locale)} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('tutorials')}</Link></li>
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('database')}</h4>
+            <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('database')}</h3>
             <ul className="space-y-3">
               <li className="text-gray-600 dark:text-gray-400">67 UI Styles</li>
               <li className="text-gray-600 dark:text-gray-400">161 Color Palettes</li>
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {t('builtWith').split('\n').map((line, idx) => (
               <span key={idx} className="block">{line}</span>
             ))}

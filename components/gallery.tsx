@@ -125,7 +125,7 @@ export function Gallery() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 justify-center">
-          <span className="text-sm font-medium text-gray-500 mr-2">{t('filters.category')}</span>
+          <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.category')}</span>
           {categories.map((cat) => (
             <button
               key={cat}
@@ -145,7 +145,7 @@ export function Gallery() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 justify-center">
-          <span className="text-sm font-medium text-gray-500 mr-2">{t('filters.mode')}</span>
+          <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.mode')}</span>
           {modes.map((mode) => (
             <button
               key={mode}
@@ -191,7 +191,7 @@ export function Gallery() {
 
             <div className="p-5">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-medium text-blue-500 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">
+                <span className="text-xs font-medium text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">
                   {demo.category}
                 </span>
               </div>
@@ -244,7 +244,7 @@ export function Gallery() {
         <div className="text-sm text-gray-600 dark:text-gray-400">
           {t('showing', { shown: Math.min(visibleCount, filtered.length), total: filtered.length })}
         </div>
-        <div className="text-sm text-gray-500 dark:text-gray-500">
+        <div className="text-sm text-gray-500 dark:text-gray-400">
           {t('stats', { total: stats.total, categories: stats.categoriesCount, light: stats.lightCount, dark: stats.darkCount })}
         </div>
       </div>
@@ -268,7 +268,7 @@ export function Gallery() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-8 text-sm text-gray-500">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-8 text-sm text-gray-500 dark:text-gray-400">
           {(t.raw('features') as string[]).map((feature, i) => (
             <span key={i} className="flex items-center gap-1">
               <span className="text-green-500">✓</span> {feature}

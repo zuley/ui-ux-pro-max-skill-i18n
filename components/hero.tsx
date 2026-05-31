@@ -44,7 +44,7 @@ export function Hero() {
         <div className="flex justify-center mb-4 min-[400px]:mb-6 sm:mb-10">
           <div className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left">
             <div className="text-gray-400">
-              <span className="text-gray-500">$</span>{' '}
+              <span className="text-gray-400">$</span>{' '}
               <span className="text-emerald-400">{t('terminalCmd')}</span>{' '}
               <span className="animate-pulse text-white">▋</span>
             </div>
