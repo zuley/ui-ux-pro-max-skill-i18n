@@ -88,7 +88,7 @@ export function Features() {
 
               {example ? (
                 <div className="mb-6 rounded-lg bg-gray-900 text-gray-100 px-3 py-2 font-mono text-xs overflow-x-auto">
-                  <span className="text-gray-500">$</span>{' '}
+                  <span className="text-gray-400">$</span>{' '}
                   <span className="text-emerald-400">{example}</span>
                 </div>
               ) : null}
