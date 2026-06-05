@@ -15,8 +15,8 @@ const meta: TutorialSeriesMeta = {
   steps: [
     '01-style-and-palette',
     '02-first-prompt',
+    '03-iterating',
     // Reserved for follow-up PRs:
-    // '03-iterating',
     // '04-charts-and-data',
     // '05-ship-checklist',
   ],
