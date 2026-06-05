@@ -15,7 +15,7 @@
 1. 在 `i18n/routing.ts` 的 `locales` 数组中添加语言代码
 2. 创建 `messages/<locale>.json`（从 `en.json` 复制）
 3. 更新 `language-switcher.tsx` 中的选项
-4. 运行 `npm run test:content` 验证同步
+4. 检查新增语言页面可以通过 `npm run build:cf` 静态导出
 
 ## 部署
 
@@ -27,7 +27,6 @@
 
 ## 测试与验证
 
-- `npm run test:content` — 验证各语言内容同步（运行 `scripts/verify-content-sync.mjs`）
 - `npm run lint` — ESLint，使用 next/core-web-vitals + typescript 规则
 - 未配置单元测试框架；验证基于脚本
 
