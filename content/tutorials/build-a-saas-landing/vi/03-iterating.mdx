@@ -1,0 +1,182 @@
+---
+title: "03 · Iterate, đừng re-roll — prompt follow-up nhỏ nhất sửa đúng một thứ"
+summary: "Bạn có một hero đúng 80%. Bước này về việc sửa 20% còn lại bằng một prompt follow-up kiểu phẫu thuật, thay đúng một thứ sai mà không phá bốn thứ đúng."
+date: 2026-06-03
+tags: [tutorial, prompt, iteration]
+author: admin
+step: 3
+---
+
+Bạn chạy prompt bước 02 và nhận lại một hero. Nó **gần đúng** — headline
+ổn, palette đúng, có đúng một CTA — nhưng một thứ bị lệch. Có thể
+subheadline đọc như đồ độn marketing. Có thể màu CTA đánh nhau với
+accent. Có thể tổng thể cảm giác chật chội.
+
+Bản năng lúc này là re-roll: chạy lại prompt và hi vọng. **Đừng.** Skill
+của bước này là *follow-up kiểu phẫu thuật* — **prompt nhỏ nhất** sửa
+thứ sai duy nhất và để nguyên bốn thứ đúng.
+
+## Gọi tên "một thứ" đó trước
+
+Trước khi viết một ký tự nào của prompt follow-up, hãy viết một câu:
+
+> Thứ duy nhất sai là ______.
+
+Nếu bạn không thể kết thúc câu đó trong một mệnh đề, bạn chưa sẵn sàng
+iterate. Nghĩa là bạn có **nhiều** vấn đề, không phải một — và gộp chúng
+vào một follow-up là cách bạn mất những phần đã hoạt động. **Sửa từng
+cái một, cái lớn nhất trước.**
+
+## Chẩn đoán trước khi prompt
+
+Gần như mọi hero "sai" đều sai ở **đúng một** trong năm chiều này. Tìm
+ra cái nào trước khi viết bất cứ gì:
+
+<Checklist
+  storageKey="saas-landing-step-03-diagnose"
+  title="Chiều đơn lẻ nào bị lệch?"
+  items={[
+    { id: 'content', label: 'Content — chữ generic hoặc nói sai điều' },
+    { id: 'layout', label: 'Layout — từng phần ổn nhưng bố cục bị lệch' },
+    { id: 'colour', label: 'Màu — thứ gì đó đánh nhau với palette hoặc contrast sai' },
+    { id: 'type', label: 'Typography — sai weight, size, hoặc pairing cho style bạn chọn' },
+    { id: 'spacing', label: 'Spacing — quá chật, quá lỏng, hoặc nhịp không nhất quán' }
+  ]}
+/>
+
+Kỷ luật là gọi tên chiều đó **thành lời**. "Trông lệch lệch" không hành
+động được. "Subheadline generic" thì được. **Chẩn đoán càng hẹp,
+follow-up càng nhỏ — và càng đáng tin.**
+
+## Hình dạng của một prompt follow-up
+
+<Callout tone="info" title="Khi sửa tay nhanh hơn viết prompt">
+  Nếu fix là một thay đổi copy một dòng mà bạn đã hình dung được, **sửa
+  file bằng tay nhanh hơn viết một prompt có cấu trúc**. Chỉ với tới
+  prompt follow-up khi thay đổi mang tính visual, đụng nhiều phần tử
+  cùng lúc, hoặc bạn chưa hình dung được cách fix — những trường hợp bạn
+  vốn sẽ re-roll. Hình dạng dưới đây là cho những trường hợp đó.
+</Callout>
+
+Một follow-up tốt có hai khối mà prompt đầu tiên không có: một danh sách
+**Keep (giữ)** rõ ràng và một **Change (đổi)** chỉ một mục. Khối Keep
+chính là toàn bộ mẹo — nó cho model biết **không** tái tạo cái gì.
+
+<CodeBlock
+  title="Prompt follow-up kiểu phẫu thuật"
+  language="text"
+  code={`Hero gần đúng rồi. Giữ nguyên mọi thứ TRỪ một thay đổi.
+
+# Keep (đừng động)
+- Chữ headline, đúng y như đã viết
+- CTA duy nhất, nhãn và vị trí của nó
+- Palette và màu accent
+- Layout tổng thể và spacing dọc
+
+# Change (chỉ cái này)
+Subheadline đang generic. Viết lại để nó gọi tên kết quả cụ thể mà
+audience này nhận được, bằng ngôn ngữ đơn giản, tối đa 18 từ. Không
+được lặp lại headline. Không đổi gì khác.
+
+# Output
+Trả lại cùng file, app/(marketing)/page.tsx, chỉ với diff cần cho thay
+đổi ở trên. Đừng refactor code không liên quan, đừng đổi tên gì, đừng
+"cải thiện" những phần tôi không hỏi.`}
+/>
+
+Khối `# Keep` trông thừa — model thấy được file mà, sao phải nhắc lại
+cái gì tốt? Bởi vì một model được giao "sửa subheadline" mà không có
+neo sẽ vui vẻ viết lại cả headline, đổi style nút, và giãn lại spacing
+cả section "tiện thể luôn". Danh sách Keep là một hàng rào. **Nó ràng
+buộc bán kính vụ nổ.**
+
+## Viết "đổi cái gì" cho cụ thể
+
+Dòng Change ở trên ra lệnh về copy — chiều dễ diễn đạt bằng lời nhất.
+Đây là before/after nó tạo ra:
+
+> **Trước:** Nền tảng all-in-one giúp tối ưu workflow và scale team của bạn.
+>
+> **Sau:** Rút ngắn việc chốt sổ cuối tháng từ năm ngày xuống một ngày.
+
+Bản sau gọi tên một kết quả cụ thể và một con số; bản trước dán vào bất
+kỳ SaaS nào cũng hợp. Đó là "cụ thể với audience" trông như thế nào khi
+nó là text thật, không phải lời khuyên.
+
+Các chiều visual khó hơn, vì bạn đang mô tả một **kết quả đã render**
+thay vì chữ. Cách xử lý là neo thay đổi vào một **mục tiêu đo được**,
+không phải một tính từ:
+
+<CodeBlock
+  title="Dòng Change cho các chiều visual"
+  language="text"
+  code={`# Spacing — quá chật
+Hero cảm giác chật. Tăng khoảng cách dọc giữa headline, subheadline và
+CTA lên lần lượt 24px và 32px. Không đổi gì khác.
+
+# Màu — CTA đánh nhau với accent
+CTA đang tranh sự chú ý với headline. Cho CTA màu accent ở độ bão hòa
+đầy đủ và dịu headline về màu ink của palette. Không đổi gì khác.`}
+/>
+
+"Quá chật" không phải một dòng Change. "Tăng khoảng cách lên 32px" thì
+có. **Mục tiêu càng đo được, diff model phải đoán càng nhỏ.**
+
+## Một thay đổi mỗi vòng
+
+Cám dỗ, một khi bạn có hình dạng follow-up, là gộp: sửa subheadline
+**và** màu CTA **và** spacing trong một prompt. Kháng lại.
+
+<Callout tone="warn" title="Gộp các fix là mất debugger của bạn">
+  Khi bạn yêu cầu ba thay đổi cùng lúc và kết quả tệ hơn, bạn không thể
+  biết cái nào trong ba chỉ thị gây ra regression. Một thay đổi mỗi vòng
+  giữ mọi iteration **truy nguyên được** — bạn luôn biết chính xác cái
+  gì đã dịch chuyển. Cảm giác chậm hơn. Thực ra nhanh hơn nhiều, vì bạn
+  không bao giờ phải gỡ một mớ nhiều thay đổi rối vào nhau.
+</Callout>
+
+## Acceptance check sau một follow-up
+
+Model không đưa bạn một diff — nó **viết lại và trả về cả file**, ngay cả
+khi bạn yêu cầu đổi một dòng. Vậy nên bạn **không** kiểm tra sự bằng nhau
+từng byte: điều đó gần như không bao giờ đúng và đuổi theo nó đẩy bạn
+thẳng về vòng re-roll. Bạn kiểm tra xem các neo có **đọc và trông giống
+nhau** không. Soi bằng mắt:
+
+<Checklist
+  storageKey="saas-landing-step-03-output"
+  title="Follow-up có thực sự hiệu quả không?"
+  items={[
+    { id: 'fixed', label: 'Thứ duy nhất bạn gọi tên giờ đã được sửa' },
+    { id: 'headline', label: 'Headline đọc y hệt — cùng chữ, cùng nghĩa' },
+    { id: 'cta', label: 'Nhãn, style, vị trí CTA không đổi' },
+    { id: 'palette', label: 'Palette và màu accent không đổi' },
+    { id: 'layout', label: 'Layout và spacing trông giống nhau' }
+  ]}
+/>
+
+Bỏ qua xáo trộn bề mặt — một dòng xuống hàng lại, import đổi thứ tự,
+kiểu dấu ngoặc khác. Cái quan trọng là một neo có đổi theo cách bạn
+**thấy hoặc đọc được** không: headline bị viết lại, nút dịch chỗ, accent
+lệch đi. Nếu có một cái, follow-up đã **thất bại** — dù trông như tiến
+bộ. Chạy lại với khối Keep cứng hơn, hoặc revert và siết dòng Change.
+**Đừng chấp nhận một fix lặng lẽ phá một cái neo**; nợ đó dồn lại qua mọi
+section sau.
+
+## Tại sao hình dạng này khái quát được
+
+Cấu trúc **Keep / Change** là phiên bản iterate tương ứng với *role /
+decisions / task / constraints / output* của bước 02. Mỗi lần bạn động
+vào một section đã gần đúng — pricing, FAQ, feature grid ở bước 04 — bạn
+với tới cùng hai khối: neo cái hoạt động, gọi tên một thay đổi, ràng
+buộc diff.
+
+Skill đang được xây ở đây **không phải** "iterate trên output AI." Mà là
+**ràng buộc bán kính vụ nổ để iteration chỉ luôn dịch một thứ**.
+
+## Tiếp theo
+
+Bước 04 (sắp ra mắt) thêm section dưới hero — feature grid, lần này với
+dữ liệu thật và một chart nhỏ. Bạn sẽ thấy cùng những hình dạng prompt
+từ bước 02 và 03 làm hết việc: front-load các quyết định, rồi iterate
+từng chiều một.

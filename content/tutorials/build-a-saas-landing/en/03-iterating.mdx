@@ -1,0 +1,188 @@
+---
+title: "03 · Iterate, don't re-roll — the smallest follow-up prompt that fixes one thing"
+summary: "You have a hero that is 80% right. This step is about fixing the 20% with a surgical follow-up prompt that changes the one wrong thing without breaking the four right ones."
+date: 2026-06-03
+tags: [tutorial, prompt, iteration]
+author: admin
+step: 3
+---
+
+You ran the step 02 prompt and got a hero back. It is **close** — the
+headline lands, the palette is right, there is exactly one CTA — but
+one thing is off. Maybe the subheadline reads like marketing filler.
+Maybe the CTA colour fights the accent. Maybe the whole thing feels
+cramped.
+
+The instinct at this moment is to re-roll: run the prompt again and
+hope. **Do not.** The skill of this step is the *surgical follow-up* —
+the smallest prompt that fixes the one wrong thing and leaves the four
+right things untouched.
+
+## Name the one thing first
+
+Before you write a single character of follow-up prompt, write one
+sentence:
+
+> The only thing wrong is ______.
+
+If you cannot finish that sentence in one clause, you are not ready to
+iterate. It means you have **several** problems, not one — and batching
+them into a single follow-up is how you lose the parts that already
+work. Fix them one at a time, biggest first.
+
+## Diagnose before you prompt
+
+Almost every "wrong" hero is wrong on exactly **one** of these five
+dimensions. Find which one before you write anything:
+
+<Checklist
+  storageKey="saas-landing-step-03-diagnose"
+  title="Which single dimension is off?"
+  items={[
+    { id: 'content', label: 'Content — the words are generic or say the wrong thing' },
+    { id: 'layout', label: 'Layout — the arrangement is fine in parts but the composition is off' },
+    { id: 'colour', label: 'Colour — something fights the palette or the contrast is wrong' },
+    { id: 'type', label: 'Type — the wrong weight, size, or pairing for the style you chose' },
+    { id: 'spacing', label: 'Spacing — too tight, too loose, or the rhythm is inconsistent' }
+  ]}
+/>
+
+The discipline is naming the dimension out loud. "It looks off" is not
+actionable. "The subheadline is generic" is. The narrower the
+diagnosis, the smaller — and more reliable — the follow-up.
+
+## The shape of a follow-up prompt
+
+<Callout tone="info" title="When a hand-edit beats a prompt">
+  If the fix is a one-line copy change you can already picture, editing
+  the file by hand is faster than writing a structured prompt. Reach for
+  a follow-up prompt when the change is visual, touches several elements
+  at once, or you cannot yet picture the fix — the cases where you would
+  otherwise re-roll. The shape below is for those.
+</Callout>
+
+A good follow-up has two blocks that the first prompt did not: an
+explicit **Keep** list and a single-item **Change**. The Keep block is
+the whole trick — it tells the model what *not* to regenerate.
+
+<CodeBlock
+  title="Surgical follow-up prompt"
+  language="text"
+  code={`The hero is close. Keep everything as-is EXCEPT one change.
+
+# Keep (do not touch)
+- The headline copy, exactly as written
+- The single CTA, its label and its position
+- The palette and accent colour
+- The overall layout and vertical spacing
+
+# Change (only this)
+The subheadline is generic. Rewrite it so it names the specific
+outcome this audience gets, in plain language, max 18 words. It must
+not restate the headline. Change nothing else.
+
+# Output
+Return the same file, app/(marketing)/page.tsx, with only the diff
+needed for the change above. Do not refactor unrelated code, do not
+rename anything, do not "improve" parts I did not ask about.`}
+/>
+
+The `# Keep` block looks redundant — the model can see the file, why
+restate what's good? Because a model handed "fix the subheadline" with
+no anchor will happily rewrite the headline too, swap the button style,
+and re-space the whole section "while it's in there." The Keep list is
+a fence. **It constrains the blast radius.**
+
+## Naming the change in practice
+
+The Change line above dictates copy — the easiest dimension to put into
+words. Here is the before/after it produced:
+
+> **Before:** The all-in-one platform to streamline your workflow and
+> scale your team.
+>
+> **After:** Cut your month-end close from five days to one.
+
+The after names a concrete outcome and a number; the before could be
+glued onto any SaaS. That is what "specific to the audience" looks like
+once it is real text and not advice.
+
+Visual dimensions are harder, because you are describing a rendered
+result instead of words. The fix is to anchor the change to a
+**measurable target**, not an adjective:
+
+<CodeBlock
+  title="Change lines for visual dimensions"
+  language="text"
+  code={`# Spacing — too tight
+The hero feels cramped. Increase the vertical gap between headline,
+subheadline, and CTA to 24px and 32px respectively. Change nothing else.
+
+# Colour — CTA fights the accent
+The CTA competes with the headline for attention. Give the CTA the
+accent colour at full saturation and mute the headline to the palette's
+ink colour. Change nothing else.`}
+/>
+
+"Too tight" is not a Change line. "Increase the gap to 32px" is. The
+more measurable the target, the smaller the diff the model has to guess.
+
+## One change per round
+
+The temptation, once you have the follow-up shape, is to batch: fix the
+subheadline *and* the CTA colour *and* the spacing in one prompt. Resist
+it.
+
+<Callout tone="warn" title="Batch fixes and you lose your debugger">
+  When you ask for three changes at once and the result is worse, you
+  cannot tell which of the three instructions caused the regression. One
+  change per round keeps every iteration **attributable** — you always
+  know exactly what moved. It feels slower. It is much faster, because
+  you never have to untangle a multi-change mess.
+</Callout>
+
+## Acceptance check after a follow-up
+
+The model does not hand you a diff — it rewrites and returns the whole
+file, even when you asked it to touch one line. So you are **not**
+checking for byte-for-byte equality; that will almost never hold and
+chasing it sends you straight back into the re-roll loop. You are
+checking that the anchors **read and look the same**. Eyeball them:
+
+<Checklist
+  storageKey="saas-landing-step-03-output"
+  title="Did the follow-up actually work?"
+  items={[
+    { id: 'fixed', label: 'The one thing you named is now fixed' },
+    { id: 'headline', label: 'The headline reads identically — same words, same meaning' },
+    { id: 'cta', label: 'The CTA label, style, and position are unchanged' },
+    { id: 'palette', label: 'The palette and accent colour are unchanged' },
+    { id: 'layout', label: 'The layout and spacing look the same' }
+  ]}
+/>
+
+Ignore cosmetic churn — a reflowed line, a reordered import, a different
+quote style. What matters is whether an anchor changed in a way you can
+**see or read**: the headline got reworded, the button moved, the accent
+shifted. If one did, the follow-up **failed** even though it looks like
+progress. Re-run with a firmer Keep block, or revert and tighten the one
+Change line. Do not accept a fix that quietly broke an anchor; that debt
+compounds across every later section.
+
+## Why this shape generalises
+
+The *Keep / Change* structure is the iteration counterpart to step 02's
+*role / decisions / task / constraints / output*. Every time you touch a
+section that is already mostly right — pricing, FAQ, the feature grid in
+step 04 — you reach for the same two blocks: anchor what works, name the
+one change, constrain the diff.
+
+The skill being built here is **not** "iterate on AI output." It is
+**constrain the blast radius so iteration only ever moves one thing**.
+
+## Next
+
+Step 04 (coming next) adds the section under the hero — the feature
+grid, this time with real data and a small chart. You will see the same
+prompt shapes from steps 02 and 03 do all the work: front-load the
+decisions, then iterate one dimension at a time.
