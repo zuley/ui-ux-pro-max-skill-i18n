@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site-config';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
@@ -28,11 +29,10 @@ export async function generateMetadata({
   if (!meta) return {};
   const t = await getTranslations({ locale });
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const currentUrl =
     locale === 'en'
-      ? `${baseUrl}/tutorials/${series}`
-      : `${baseUrl}/${locale}/tutorials/${series}`;
+      ? `${SITE_URL}/tutorials/${series}`
+      : `${SITE_URL}/${locale}/tutorials/${series}`;
 
   return {
     title: `${t(meta.titleKey)} | UI UX Pro Max Skill`,
@@ -40,10 +40,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/tutorials/${series}`,
-        zh: `${baseUrl}/zh/tutorials/${series}`,
-        vi: `${baseUrl}/vi/tutorials/${series}`,
-        ja: `${baseUrl}/ja/tutorials/${series}`,
+        en: `${SITE_URL}/tutorials/${series}`,
+        zh: `${SITE_URL}/zh/tutorials/${series}`,
+        vi: `${SITE_URL}/vi/tutorials/${series}`,
+        ja: `${SITE_URL}/ja/tutorials/${series}`,
       },
     },
   };

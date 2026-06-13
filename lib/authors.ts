@@ -6,6 +6,8 @@
  * pages continue to work without changes.
  */
 
+import { SITE_URL } from '@/lib/site-config';
+
 export type Author = {
   id: string;
   name: string;
@@ -20,8 +22,9 @@ export type Author = {
 export const AUTHORS: Record<string, Author> = {
   admin: {
     id: 'admin',
-    name: 'UI UX Pro Max Team',
-    bio: 'Builders of the UI UX Pro Max design intelligence skill.',
+    name: 'Zley',
+    bio: 'Independent developer. Builds and maintains the UI UX Pro Max Skill docs site, and writes about getting professional UI out of AI coding tools.',
+    url: `${SITE_URL}/about/`,
   },
 };
 

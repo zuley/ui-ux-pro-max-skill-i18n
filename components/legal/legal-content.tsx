@@ -1,4 +1,4 @@
-type LegalPage = 'privacy' | 'terms' | 'contact';
+type LegalPage = 'privacy' | 'terms' | 'contact' | 'about';
 type LegalLocale = 'en' | 'zh' | 'vi' | 'ja';
 
 type Section = {
@@ -104,6 +104,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           body: [`For privacy, advertising, or policy questions, email ${supportEmail}.`]
         }
       ]
+    },
+    about: {
+      title: 'About This Site',
+      description: 'Who runs UI UX Pro Max Skill docs, what we publish, and how the content is produced.',
+      updated: 'Last updated: June 12, 2026',
+      sections: [
+        {
+          title: 'What this site is',
+          body: [
+            'This site is the documentation and learning companion for UI UX Pro Max, an open-source AI skill that gives coding assistants like Claude practical design intelligence: curated UI styles, color palettes, font pairings, and UX rules they can apply when generating interfaces.',
+            'Beyond the reference docs, we publish original articles and step-by-step tutorials about a specific craft: getting professional, accessible, maintainable UI out of AI coding tools. Everything is available in English, Chinese, Japanese, and Vietnamese.'
+          ]
+        },
+        {
+          title: 'Who runs it',
+          body: [
+            'The site is built and maintained by Zley, an independent developer. Zley writes and edits the blog and tutorial content, maintains the four language versions, and runs the infrastructure.',
+            'The underlying skill is an open-source project; this site documents it and teaches the workflows around it.'
+          ]
+        },
+        {
+          title: 'How the content is made',
+          body: [
+            'Articles come from real usage: the prompt patterns, failure modes, and checklists we publish are ones we use and test against actual AI-generated output before writing about them.',
+            'Specific claims are verified before publishing — contrast ratios are computed, prompt templates are run, and code examples are compiled. When we get something wrong, we correct the article rather than quietly deleting it.',
+            'AI tools are part of how this site is produced — fitting, given the subject — but every article starts from our own outline and experience, and every fact in it is checked by a human before it ships.'
+          ]
+        },
+        {
+          title: 'Advertising and independence',
+          body: [
+            'The site may show ads (for example through Google AdSense) to cover hosting and development time. Advertisers have no influence on what we write; we do not publish sponsored posts or paid reviews.'
+          ]
+        },
+        {
+          title: 'Contact',
+          body: [`Found an error, or want to suggest a topic? Email ${supportEmail}, or open an issue on the GitHub repository linked in the site announcement bar.`]
+        }
+      ]
     }
   },
   zh: {
@@ -190,6 +229,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
         {
           title: '隐私与政策问题',
           body: [`如有隐私、广告或政策问题，请发送邮件到 ${supportEmail}。`]
+        }
+      ]
+    },
+    about: {
+      title: '关于本站',
+      description: '谁在运营 UI UX Pro Max Skill 文档站、我们发布什么内容、内容是如何生产的。',
+      updated: '最后更新：2026 年 6 月 12 日',
+      sections: [
+        {
+          title: '这个网站是什么',
+          body: [
+            '本站是 UI UX Pro Max 的文档与学习站。UI UX Pro Max 是一个开源 AI 技能，为 Claude 等编程助手提供可落地的设计知识：精选的 UI 风格、配色方案、字体配对和 UX 规则，让 AI 在生成界面时有据可依。',
+            '在参考文档之外，我们围绕一门具体的手艺持续发布原创文章和分步教程：如何让 AI 编程工具产出专业、可访问、可维护的界面。全部内容提供英文、中文、日文和越南文四个版本。'
+          ]
+        },
+        {
+          title: '谁在运营',
+          body: [
+            '本站由独立开发者 Zley 构建和维护。博客与教程内容由 Zley 撰写和编辑，四个语言版本和站点基础设施也由其负责。',
+            '底层技能是一个开源项目；本站为它提供文档，并教授围绕它的工作流。'
+          ]
+        },
+        {
+          title: '内容如何生产',
+          body: [
+            '文章来自真实使用：我们发布的 Prompt 模式、失败案例和检查清单，都先在实际的 AI 生成产出上使用和验证过，然后才写成文章。',
+            '具体的断言在发布前会被核实——对比度比率经过计算、Prompt 模板实际跑过、代码示例通过编译。如果我们写错了，会修正文章并注明，而不是悄悄删掉。',
+            'AI 工具参与了本站的生产过程——考虑到主题，这再合适不过——但每篇文章都始于我们自己的提纲和经验，文中每个事实在发布前都经过人工核查。'
+          ]
+        },
+        {
+          title: '广告与独立性',
+          body: [
+            '本站可能展示广告（例如通过 Google AdSense）以覆盖托管和开发成本。广告主不影响我们写什么；我们不发布软文或付费测评。'
+          ]
+        },
+        {
+          title: '联系',
+          body: [`发现错误，或想建议选题？发邮件到 ${supportEmail}，或在网站公告栏链接的 GitHub 仓库提 issue。`]
         }
       ]
     }
@@ -282,6 +360,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           body: [`Nếu có câu hỏi về quyền riêng tư, quảng cáo hoặc chính sách, vui lòng gửi email tới ${supportEmail}.`]
         }
       ]
+    },
+    about: {
+      title: 'Về trang này',
+      description: 'Ai vận hành trang tài liệu UI UX Pro Max Skill, chúng tôi xuất bản gì, và nội dung được tạo ra như thế nào.',
+      updated: 'Cập nhật lần cuối: 12 tháng 6, 2026',
+      sections: [
+        {
+          title: 'Trang web này là gì',
+          body: [
+            'Đây là trang tài liệu và học tập của UI UX Pro Max — một AI skill mã nguồn mở cung cấp tri thức thiết kế thực dụng cho các trợ lý lập trình như Claude: các style UI tuyển chọn, bảng màu, cặp font và quy tắc UX để AI áp dụng khi sinh giao diện.',
+            'Ngoài tài liệu tham khảo, chúng tôi xuất bản bài viết gốc và tutorial từng bước về một nghề cụ thể: làm sao để công cụ lập trình AI tạo ra giao diện chuyên nghiệp, dễ tiếp cận, dễ bảo trì. Toàn bộ nội dung có bốn ngôn ngữ: Anh, Trung, Nhật và Việt.'
+          ]
+        },
+        {
+          title: 'Ai vận hành',
+          body: [
+            'Trang được xây dựng và duy trì bởi Zley, một lập trình viên độc lập. Zley viết và biên tập nội dung blog cùng tutorial, duy trì bốn phiên bản ngôn ngữ và vận hành hạ tầng.',
+            'Skill nền tảng là một dự án mã nguồn mở; trang này viết tài liệu cho nó và dạy các workflow xung quanh nó.'
+          ]
+        },
+        {
+          title: 'Nội dung được tạo ra thế nào',
+          body: [
+            'Bài viết đến từ sử dụng thật: các khuôn mẫu prompt, kiểu thất bại và checklist chúng tôi đăng đều được dùng và kiểm chứng trên output AI thật trước khi viết thành bài.',
+            'Các tuyên bố cụ thể được xác minh trước khi đăng — tỷ lệ contrast được tính toán, template prompt được chạy thử, ví dụ code được biên dịch. Khi viết sai, chúng tôi sửa bài và ghi chú thay vì lặng lẽ xóa.',
+            'Công cụ AI là một phần trong cách trang này được sản xuất — hợp lý, xét theo chủ đề — nhưng mỗi bài đều bắt đầu từ dàn ý và kinh nghiệm của chính chúng tôi, và mọi dữ kiện đều được con người kiểm tra trước khi xuất bản.'
+          ]
+        },
+        {
+          title: 'Quảng cáo và tính độc lập',
+          body: [
+            'Trang có thể hiển thị quảng cáo (ví dụ qua Google AdSense) để trang trải chi phí hosting và thời gian phát triển. Nhà quảng cáo không ảnh hưởng đến nội dung; chúng tôi không đăng bài tài trợ hay review trả phí.'
+          ]
+        },
+        {
+          title: 'Liên hệ',
+          body: [`Phát hiện lỗi, hoặc muốn gợi ý chủ đề? Gửi email tới ${supportEmail}, hoặc mở issue trên repository GitHub được liên kết ở thanh thông báo của trang.`]
+        }
+      ]
     }
   },
   ja: {
@@ -370,6 +487,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
         {
           title: 'プライバシーおよびポリシーに関する質問',
           body: [`プライバシー、広告、ポリシーに関する質問は ${supportEmail} までメールでお問い合わせください。`]
+        }
+      ]
+    },
+    about: {
+      title: 'このサイトについて',
+      description: 'UI UX Pro Max Skill ドキュメントサイトの運営者、公開している内容、コンテンツの作り方について。',
+      updated: '最終更新日: 2026 年 6 月 12 日',
+      sections: [
+        {
+          title: 'このサイトは何か',
+          body: [
+            '本サイトは UI UX Pro Max のドキュメント兼学習サイトです。UI UX Pro Max は、Claude などのコーディングアシスタントに実践的なデザイン知識——厳選された UI スタイル、カラーパレット、フォントペアリング、UX ルール——を与えるオープンソースの AI スキルです。',
+            'リファレンスドキュメントに加えて、「AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出す」という具体的な技術について、オリジナル記事とステップバイステップのチュートリアルを公開しています。すべてのコンテンツは英語・中国語・日本語・ベトナム語で提供しています。'
+          ]
+        },
+        {
+          title: '運営者',
+          body: [
+            '本サイトは独立開発者の Zley が構築・運営しています。ブログとチュートリアルの執筆・編集、4 言語版の維持、インフラの運用を担当しています。',
+            'ベースとなるスキルはオープンソースプロジェクトであり、本サイトはそのドキュメントと周辺ワークフローの解説を提供します。'
+          ]
+        },
+        {
+          title: 'コンテンツの作り方',
+          body: [
+            '記事は実際の使用から生まれます。公開しているプロンプトパターン、失敗モード、チェックリストは、実際の AI 生成出力に対して使用・検証したうえで記事化しています。',
+            '具体的な主張は公開前に検証します——コントラスト比は計算し、プロンプトテンプレートは実行し、コード例はコンパイルを通します。誤りがあった場合は、黙って消すのではなく記事を訂正して経緯を残します。',
+            'AI ツールも本サイトの制作工程の一部です——テーマを考えればふさわしいことです——ただし、すべての記事は私たち自身のアウトラインと経験から始まり、掲載される事実はすべて公開前に人間が確認しています。'
+          ]
+        },
+        {
+          title: '広告と独立性',
+          body: [
+            '本サイトはホスティングと開発時間を賄うため、広告（例：Google AdSense）を表示する場合があります。広告主が記事内容に影響を与えることはなく、スポンサー記事や有償レビューは掲載しません。'
+          ]
+        },
+        {
+          title: 'お問い合わせ',
+          body: [`誤りを見つけた、または取り上げてほしいトピックがある場合は、${supportEmail} までメールいただくか、サイト告知バーからリンクされている GitHub リポジトリで issue を作成してください。`]
         }
       ]
     }

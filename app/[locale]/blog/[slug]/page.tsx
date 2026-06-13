@@ -14,6 +14,7 @@ import { ReadingProgress } from '@/components/content/reading-progress';
 import { ArticleToc } from '@/components/content/article-toc';
 import { EndOfArticleCta } from '@/components/content/end-of-article-cta';
 import type { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
 
@@ -31,11 +32,10 @@ export async function generateMetadata({
   const post = await getPost(locale as Locale, slug);
   if (!post) return {};
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const currentUrl =
     locale === 'en'
-      ? `${baseUrl}/blog/${slug}`
-      : `${baseUrl}/${locale}/blog/${slug}`;
+      ? `${SITE_URL}/blog/${slug}`
+      : `${SITE_URL}/${locale}/blog/${slug}`;
   const { title, summary, cover, date, tags } = post.frontmatter;
 
   return {
@@ -45,10 +45,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/blog/${slug}`,
-        zh: `${baseUrl}/zh/blog/${slug}`,
-        vi: `${baseUrl}/vi/blog/${slug}`,
-        ja: `${baseUrl}/ja/blog/${slug}`,
+        en: `${SITE_URL}/blog/${slug}`,
+        zh: `${SITE_URL}/zh/blog/${slug}`,
+        vi: `${SITE_URL}/vi/blog/${slug}`,
+        ja: `${SITE_URL}/ja/blog/${slug}`,
       },
     },
     openGraph: {
@@ -85,11 +85,10 @@ export default async function BlogPostPage({
   const t = await getTranslations({ locale });
   const author = getAuthor(post.frontmatter.author);
   const showFallback = isFallback(typedLocale, post.sourceLocale);
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const canonicalUrl =
     locale === 'en'
-      ? `${baseUrl}/blog/${slug}`
-      : `${baseUrl}/${locale}/blog/${slug}`;
+      ? `${SITE_URL}/blog/${slug}`
+      : `${SITE_URL}/${locale}/blog/${slug}`;
 
   // Re-typed alias avoids TS narrowing churn when destructuring the
   // optional Body component below.

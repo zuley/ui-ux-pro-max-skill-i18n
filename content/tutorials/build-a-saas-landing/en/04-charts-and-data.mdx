@@ -1,0 +1,156 @@
+---
+title: "04 · The feature grid and a chart — with real data, not invented numbers"
+summary: "The section under the hero is where AI output quietly turns into fiction: invented stats, decorative charts, twelve identical cards. This step adds a feature grid and one chart that earn their place."
+date: 2026-06-10
+tags: [tutorial, data, charts]
+author: admin
+step: 4
+---
+
+The hero from steps 02–03 is locked. Now comes the section under it —
+the feature grid, and for the first time, **data**. This is where a new
+failure mode appears, one that is worse than purple gradients because
+visitors can call you on it: the model **invents numbers**.
+
+Ask an AI for a SaaS landing page and somewhere below the fold you will
+find "10,000+ happy customers", "99.9% uptime", and a line chart that
+goes up and to the right with no axis labels. None of it is true. It is
+not lying, exactly — it is pattern-completing what landing pages look
+like. But if you ship it, *you* are lying.
+
+The rule of this step: **every number on the page comes from you, or it
+does not appear.**
+
+## Gather the real material first
+
+Like step 01, the work starts away from the prompt box. You need three
+things written down before you generate anything:
+
+<Checklist
+  storageKey="saas-landing-step-04-material"
+  title="Before you prompt for the grid"
+  items={[
+    { id: 'features', label: 'Three to six features, each described in one plain sentence (what it does for the user, not what it is)' },
+    { id: 'metric', label: 'One real metric you can defend if a customer asks where it came from' },
+    { id: 'shape', label: 'The shape of that metric: a single number, a trend over time, or a comparison?' },
+    { id: 'none', label: 'Honest check: if you have no real metric yet, decide to ship without a chart' }
+  ]}
+/>
+
+That last item is not a consolation prize. A landing page with six clear
+feature sentences and **no chart** reads as more credible than one with
+a fabricated graph. Early products usually do not have impressive
+numbers; pretending otherwise is the data equivalent of AI slop.
+
+## Does the chart earn its place?
+
+A chart is justified only when the metric has a **shape** that words
+cannot carry:
+
+- **A single number** ("median import takes 40 seconds") wants to be a
+  big stat — large type, one line of context. Not a chart.
+- **A trend** ("processing time dropped every release for six releases")
+  wants a small line chart.
+- **A comparison** ("our parser vs. the two incumbents on the same file")
+  wants three horizontal bars.
+
+<Callout tone="warn" title="Chart slop has its own signature">
+  Pie charts with five near-equal slices, 3D bars, gradient-filled area
+  charts with no axes, and any chart whose only message is "up and to
+  the right" — these are the purple gradients of data. If a chart cannot
+  survive the question "what would change in my decision if this chart
+  were removed?", remove it.
+</Callout>
+
+## Extend the prompt — same shape, one new block
+
+The prompt is the step 02 template with one addition: a `# Data` block
+that the model must treat as verbatim source material. The Keep fence
+from step 03 protects the hero while the model works below it.
+
+<CodeBlock
+  title="Feature grid + chart prompt"
+  language="text"
+  code={`Extend app/(marketing)/page.tsx. The hero is final — keep it
+byte-for-byte untouched. Add ONE section directly under it.
+
+# Decisions (locked in, from step 01)
+Style: <your style name>
+Palette: <your palette name> — the chart uses ONLY these colours.
+
+# Data (verbatim — do not invent, round, or extrapolate)
+Features:
+1. Import a 50k-row CSV and get typed columns without writing a schema.
+2. Every transform is previewed on real rows before it runs.
+3. Broken rows are quarantined, not silently dropped.
+4. One-click export to Postgres, BigQuery, or a plain file.
+Metric (comparison): median time to first clean table, same 50k-row file:
+- Us: 4 min
+- Hand-written scripts: 35 min
+- Legacy ETL suite: 90 min setup before first run
+
+# Task
+A feature grid (2x2 on desktop, single column on mobile) using the four
+sentences above, plus one chart for the metric: three horizontal bars,
+labelled with the real values.
+
+# Constraints
+- Inline SVG for the chart. No chart library, no animations.
+- Axis/bar labels must show the actual numbers from # Data.
+- No other numbers anywhere in the section. No testimonials, no logos.
+- Icons from Lucide, one per feature card. No emojis.
+
+# Output
+The same file with the new section added under the hero. Do not modify
+the hero, the imports it uses, or anything above it.`}
+/>
+
+Two details carry most of the weight. The parenthetical **"do not
+invent, round, or extrapolate"** closes the loophole where 4 minutes
+becomes "5x faster than anything else". And **"no other numbers anywhere
+in the section"** stops the model from garnishing your real data with
+invented neighbours — the classic failure is your one true metric
+surrounded by three fabricated ones.
+
+## Acceptance check
+
+<Checklist
+  storageKey="saas-landing-step-04-output"
+  title="Before you keep the section"
+  items={[
+    { id: 'verbatim', label: 'Every number in the section appears in your # Data block, character for character' },
+    { id: 'labels', label: 'The chart is readable without colour: bars are labelled with values, not just a legend' },
+    { id: 'palette', label: 'The chart uses palette colours only — no default library blue' },
+    { id: 'hero', label: 'The hero is untouched (eyeball the anchors from step 03)' },
+    { id: 'grid', label: 'The grid collapses to one column on mobile without re-ordering the features' }
+  ]}
+/>
+
+## When the chart comes back wrong
+
+It usually does, once. The model loves legends, gridlines, and a fourth
+bar for "industry average" you never provided. Do not re-roll the whole
+section — this is exactly the step 03 situation. One Keep/Change round:
+
+<CodeBlock
+  title="Surgical follow-up for the chart"
+  language="text"
+  code={`The section is right except the chart. Keep the feature grid
+exactly as-is.
+
+# Change (only this)
+Remove the legend and the "industry average" bar — it is not in my
+data. Put each value label at the end of its bar. Change nothing else.`}
+/>
+
+The instinct to defend here is the same one this whole series trains:
+**the model proposes, your data disposes.** A grid built from your
+sentences and one chart built from your numbers is dramatically more
+convincing than anything the model can hallucinate — because it can
+survive a customer asking "says who?"
+
+## Next
+
+Step 05 is the ship checklist: the pass you make *after* the page is
+visually done — contrast, focus states, cursor affordances, meta tags,
+and the three-breakpoint walk — before you let anyone see the URL.

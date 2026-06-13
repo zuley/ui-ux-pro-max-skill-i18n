@@ -7,6 +7,7 @@ import { HowItWorks } from '@/components/how-it-works';
 import { TechStacks } from '@/components/tech-stacks';
 import { Gallery } from '@/components/gallery';
 import { Footer } from '@/components/footer';
+import { getGalleryDemos } from '@/lib/gallery';
 
 /**
  * Top-level homepage layout. Accepts an optional `latestContent` slot
@@ -34,7 +35,7 @@ export function PageContent({
         <HowItWorks />
         <TechStacks />
         {latestContent}
-        <Gallery />
+        <Gallery demos={getGalleryDemos()} />
       </main>
 
       <Footer />

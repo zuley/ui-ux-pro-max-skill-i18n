@@ -1,0 +1,102 @@
+---
+title: "Beyond Inter: a working method for picking font pairings you can defend"
+summary: "Most AI-generated UIs default to Inter for everything because it never fails — and never says anything. Here is the three-question method we encoded into the Skill's 50 font pairings, usable with or without it."
+date: 2026-05-27
+tags: [typography, design-system, prompt]
+author: admin
+---
+
+Ask a model for a landing page and you will get `Inter` for the
+headings and `Inter` for the body. Not because Inter is wrong — it is a
+superb screen face — but because it is the *statistically safest*
+answer. Safe is exactly the problem: a typeface is the fastest signal a
+page sends about what kind of thing it is, and Inter's signal is "this
+could be anything."
+
+The Skill ships 50 curated font pairings precisely because the way out
+is not "know more fonts." It is having a **method** for choosing — one
+you can also run by hand. Here it is, as three questions.
+
+## Question 1: What is the voice of this product?
+
+Not the audience — the *voice*. Write one sentence as if the product
+could talk: "I am precise and slightly stern." "I am warm and hand-made."
+"I am expensive and quiet." That sentence maps to typography more
+directly than any demographic does:
+
+- **Precise / technical** → a grotesque or geometric sans for headings
+  (Space Grotesk, IBM Plex Sans), often with a mono accent.
+- **Warm / human** → a humanist sans (Source Sans 3, Nunito Sans) or a
+  low-contrast serif for body (Source Serif 4).
+- **Expensive / editorial** → a high-contrast display serif for
+  headings (Fraunces, Playfair Display) over a restrained sans body.
+- **Playful / consumer** → rounded terminals (Quicksand, Baloo 2) —
+  and discipline everywhere else, or it tips into a toy.
+
+If you cannot write the voice sentence, stop. That is not a typography
+problem yet; it is a positioning problem, and no pairing will fix it.
+
+## Question 2: Where is the contrast between heading and body?
+
+A pairing works when the two faces differ on **exactly one obvious
+axis** and agree on everything else. Serif display over sans body:
+contrast of *construction*. Bold grotesque over quiet humanist:
+contrast of *temperature*. Mono headings over sans body: contrast of
+*context* — machine voice above, human voice below.
+
+Pairs fail in two symmetrical ways. **Too close** (Inter + Roboto):
+the reader registers a vague inconsistency, like two whites that almost
+match. **Too far** (brush script + geometric sans): the axes multiply
+and the page reads as two products stapled together.
+
+<Callout tone="info" title="The squint test">
+  Set a heading over two paragraphs, step back, squint. You should
+  instantly tell heading from body (contrast exists), and they should
+  still look like they were bought as a set (one axis, not three).
+</Callout>
+
+## Question 3: Does the body face survive 16px on a mediocre screen?
+
+Display faces are auditioned at 64px, body faces live at 14–16px. The
+checklist for body duty is short: a generous x-height, open apertures
+(the `e` and `a` do not close up), real italics if you will ever
+emphasise, and tabular figures if numbers matter to your product.
+Fraunces is a gorgeous heading face and an unreadable body face — most
+"failed pairings" are actually a display face pressed into body duty.
+
+## Encoding the choice into a prompt
+
+A name alone will not survive contact with the model — it will load
+Playfair and still set your buttons in Inter, because you never said
+otherwise. Decisions, then constraints:
+
+<CodeBlock
+  title="Typography block for a UI prompt"
+  language="text"
+  code={`# Typography (locked)
+Headings: Fraunces, weight 600, tight leading (1.1), only at h1/h2.
+Body + UI controls: Source Sans 3, 16px base, leading 1.6.
+Numbers in the pricing table: tabular figures.
+Forbidden: Inter, Roboto, Open Sans, system-ui as a "fallback choice",
+any third typeface anywhere.`}
+/>
+
+The forbidden list matters more than the positive list. "Use Fraunces"
+plus silence still leaves the model its habits; "no third typeface
+anywhere" is the line that actually changes the output.
+
+## Three pairings we keep reaching for
+
+From the Skill's library, with their voice sentences:
+
+- **Space Grotesk / Source Sans 3** — "I am a sharp tool, not a
+  platform." Dev tools, analytics, anything with a terminal in its DNA.
+- **Fraunces / Source Sans 3** — "I am considered and a little
+  literary." Editorial products, premium services, brands that say
+  *taste*.
+- **IBM Plex Sans / IBM Plex Mono (accent)** — "I am infrastructure you
+  can trust." Fintech, security, B2B that wants gravitas without a suit.
+
+None of these is exotic. That is the point: the win over Inter-everywhere
+was never obscurity — it is that someone made a decision, and the page
+shows it.

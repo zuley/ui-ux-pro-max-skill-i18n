@@ -30,6 +30,9 @@ export function Footer() {
               {t('description')}
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <Link href={localePath(locale, '/about')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {t('about')}
+              </Link>
               <Link href={localePath(locale, '/privacy')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 {t('privacy')}
               </Link>

@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import { prefixedLocales } from '@/i18n/routing';
 import { listSeries } from '@/lib/content/tutorials';
 import { SeriesCard } from '@/components/tutorials/series-card';
+import { SITE_URL } from '@/lib/site-config';
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  // English is served at the root by app/(en) — never emit /en/* here.
+  return prefixedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -18,11 +20,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const currentUrl =
     locale === 'en'
-      ? `${baseUrl}/tutorials`
-      : `${baseUrl}/${locale}/tutorials`;
+      ? `${SITE_URL}/tutorials`
+      : `${SITE_URL}/${locale}/tutorials`;
 
   return {
     title: `${t('tutorials.title')} | UI UX Pro Max Skill`,
@@ -30,10 +31,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/tutorials`,
-        zh: `${baseUrl}/zh/tutorials`,
-        vi: `${baseUrl}/vi/tutorials`,
-        ja: `${baseUrl}/ja/tutorials`,
+        en: `${SITE_URL}/tutorials`,
+        zh: `${SITE_URL}/zh/tutorials`,
+        vi: `${SITE_URL}/vi/tutorials`,
+        ja: `${SITE_URL}/ja/tutorials`,
       },
     },
     openGraph: {

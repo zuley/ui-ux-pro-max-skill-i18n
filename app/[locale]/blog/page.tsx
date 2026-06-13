@@ -1,18 +1,20 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Rss } from 'lucide-react';
-import { routing } from '@/i18n/routing';
+import { prefixedLocales } from '@/i18n/routing';
 import { getAllPosts, getAllTags } from '@/lib/content/blog';
 import { localePath } from '@/lib/locale-path';
 import type { Locale } from '@/lib/content/types';
 import { TagFilter } from '@/components/blog/tag-filter';
+import { SITE_URL } from '@/lib/site-config';
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  // English is served at the root by app/(en) — never emit /en/* here.
+  return prefixedLocales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -21,8 +23,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = locale === 'en' ? `${baseUrl}/blog` : `${baseUrl}/${locale}/blog`;
+  const currentUrl = locale === 'en' ? `${SITE_URL}/blog` : `${SITE_URL}/${locale}/blog`;
 
   return {
     title: `${t('blog.title')} | UI UX Pro Max Skill`,
@@ -30,10 +31,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/blog`,
-        zh: `${baseUrl}/zh/blog`,
-        vi: `${baseUrl}/vi/blog`,
-        ja: `${baseUrl}/ja/blog`,
+        en: `${SITE_URL}/blog`,
+        zh: `${SITE_URL}/zh/blog`,
+        vi: `${SITE_URL}/vi/blog`,
+        ja: `${SITE_URL}/ja/blog`,
       },
     },
     openGraph: {

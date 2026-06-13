@@ -1,21 +1,22 @@
-import { routing } from '@/i18n/routing';
+import { routing, prefixedLocales } from '@/i18n/routing';
 import { getAllPosts } from '@/lib/content/blog';
 import { getAuthor } from '@/lib/authors';
 import type { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/site-config';
 
 // Required for output: 'export' — without it the route is treated as
 // dynamic and the build fails.
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://ui-ux-pro-max-skill.com';
 
 export async function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  // English RSS is emitted at /blog/rss.xml by app/(en) — skip /en/*.
+  return prefixedLocales.map((locale) => ({ locale }));
 }
 
 function abs(locale: string, path: string): string {
-  if (locale === routing.defaultLocale) return `${BASE_URL}${path}`;
-  return `${BASE_URL}/${locale}${path}`;
+  if (locale === routing.defaultLocale) return `${SITE_URL}${path}`;
+  return `${SITE_URL}/${locale}${path}`;
 }
 
 function escapeXml(s: string): string {

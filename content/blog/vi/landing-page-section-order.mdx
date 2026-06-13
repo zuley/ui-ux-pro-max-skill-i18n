@@ -1,0 +1,113 @@
+---
+title: "Thứ tự section là một lập luận về lòng tin: cách sắp xếp trang landing"
+summary: "Hero, tính năng, testimonial, giá — theo thứ tự nào? Trình tự không phải lựa chọn layout, nó là cấu trúc lập luận, và nên được quyết định bởi một biến duy nhất: khách truy cập đã tin bạn đến đâu."
+date: 2026-06-08
+tags: [landing-page, design-system, conversion]
+author: admin
+---
+
+Nhờ model viết trang landing và lần nào bạn cũng nhận về cùng một bộ
+xương: hero, ba tính năng, testimonial, giá, CTA ở footer. Thứ tự đó
+không sai — nó là thứ tự *trung vị*, trung bình cộng của mọi trang
+landing trong dữ liệu huấn luyện. Nghĩa là nó tối ưu cho một sản phẩm
+không tồn tại: sản phẩm trung vị, bán cho khách trung vị.
+
+Trang landing là một lập luận. Section là các đoạn văn của nó, và thứ
+tự là cấu trúc của lập luận. Như mọi lập luận, cấu trúc đúng phụ thuộc
+trên hết vào một biến: **người đọc đã tin lời tuyên bố đến mức nào?**
+
+## Câu hỏi duy nhất quyết định thứ tự
+
+Trước khi xếp section, trả lời điều này về nhóm khách quan trọng nhất:
+*lúc họ đáp xuống, họ nghi ngờ cái gì?*
+
+Chỉ có ba câu trả lời phổ biến, và mỗi câu sinh ra một trang khác nhau:
+
+- **"Vấn đề này có lời giải thật à?"** — họ nghi ngờ *phạm trù*. Mở
+  đầu bằng vấn đề được vẽ sống động, rồi đến demo. Đây là trang
+  **show-first (trình diễn trước)**.
+- **"Ừ, nhưng có hợp với tôi không?"** — họ nghi ngờ *độ khớp*. Mở đầu
+  bằng bằng chứng xã hội từ những người giống họ, rồi đến chi tiết.
+  Đây là trang **proof-first (chứng minh trước)**.
+- **"Phạm trù này tôi rành, sao phải chọn anh?"** — họ nghi ngờ *sự
+  khác biệt*. Mở đầu bằng một tuyên bố sắc mà đối thủ không nói được,
+  rồi đến chứng cứ. Đây là trang **wedge-first (nêm trước)**.
+
+Trang trung vị do model sinh ra không thuộc loại nào. Nó rào đón cả ba
+loại nghi ngờ, vì thế đọc lên như giấy dán tường.
+
+## Ba bộ xương
+
+<CodeBlock
+  title="Thứ tự section theo mối nghi chủ đạo"
+  language="text"
+  code={`SHOW-FIRST (phạm trù mới, lòng tin vào ý tưởng còn thấp)
+Hero (vấn đề, không phải sản phẩm) → demo trực tiếp / video
+→ cách hoạt động, 3 bước → phản đối xử lý bằng FAQ → một CTA duy nhất
+Testimonial: bỏ hoặc thu rất nhỏ. Không ai tin người lạ khen một thứ
+họ còn chưa tin là tồn tại.
+
+PROOF-FIRST (phạm trù quen, thiếu lòng tin vào *bạn*)
+Hero (kết quả + dành cho ai) → hàng logo + một con số → 2-3
+testimonial cụ thể → tính năng ánh xạ theo testimonial → giá → CTA
+Testimonial gánh cả trang; tính năng chỉ *giải thích* lời khen.
+
+WEDGE-FIRST (phạm trù đông đúc, khách hay so sánh)
+Hero (tuyên bố nêm) → bảng so sánh trung thực → đào sâu một tính năng
+làm cho cái nêm thành thật → giá đặt cạnh hệ quả của bảng
+→ section chuyển đổi/di trú → CTA
+Giấu phần so sánh là lỗi kinh điển: đằng nào họ cũng so,
+chỉ là không theo khung của bạn.`}
+/>
+
+Để ý cái gì di chuyển: giá. Trang show-first hoãn nó lại (nói giá
+trước khi có niềm tin đọc lên như trịch thượng); trang wedge-first đẩy
+nó lên sớm (khách so sánh không thấy giá là bỏ đi). Trang trung vị
+luôn đặt giá ở ô thứ tư — vị trí đúng cho không một ai.
+
+## Số lượng section cũng là một phần lập luận
+
+Mỗi section nên cho về hưu đúng một mối nghi cụ thể. Điều đó cho bạn
+một bài test có răng: gọi tên mối nghi mà từng section trả lời, và nếu
+hai section trả lời cùng một mối nghi, **gộp chúng lại**. Trang sinh
+tự động trượt bài test này liên tục — "tính năng", "lợi ích" và "cách
+hoạt động" thường là cùng một đoạn văn mặc ba bộ đồ.
+
+Năm đến sáu section giải quyết được phần lớn lập luận. Quá số đó thì
+bạn không còn lập luận nữa, bạn đang câu giờ.
+
+<Callout tone="info" title="Bài test đọc lướt">
+  Cuộn trang và chỉ đọc các headline. Tự chúng phải tạo thành một lập
+  luận hoàn chỉnh — tuyên bố, chứng cứ, kết — vì đa số khách thật sự
+  đọc theo cách đó. Nếu chuỗi headline là "Tính năng mạnh mẽ / Vì sao
+  chọn chúng tôi / Bắt đầu ngay", thì không có lập luận, chỉ có đồ
+  nội thất.
+</Callout>
+
+## Nói nó trong prompt
+
+Thứ tự section là quyết định, nên nó vào block quyết định — section
+được gọi tên, theo thứ tự, mỗi cái kèm mối nghi nó giải quyết:
+
+<CodeBlock
+  title="Block cấu trúc cho prompt trang landing"
+  language="text"
+  code={`# Cấu trúc trang (đã khóa — không thêm, bớt, đảo thứ tự)
+1. Hero — nghi ngờ: "có hợp ca của tôi không?" Một tuyên bố, một CTA.
+2. Bảng so sánh — nghi ngờ: "khác gì X và Y?"
+   Các hàng trung thực; gồm một hàng chúng tôi thua.
+3. Đào sâu — nghi ngờ: "tuyên bố nêm có thật không?" Tính năng duy
+   nhất làm hàng 1 của bảng thành sự thật.
+4. Giá — nghi ngờ: "khác biệt đó giá bao nhiêu?"
+5. Di trú — nghi ngờ: "chuyển sang có đau không?" Ba bước, một CTA.
+Không có section testimonial: chúng tôi chưa có khách hàng nêu tên
+được, và lời khen giữ chỗ đọc lên là giả vì nó giả thật.`}
+/>
+
+Dòng cuối quan trọng nhất. Không dặn thì model sẽ chèn testimonial với
+tên người bịa — và một "Sarah K., CTO" ngụy tạo gây hại cho lập luận
+lòng tin nhiều hơn bất kỳ section nào bị thiếu.
+
+Thứ tự section không phải nơi sự sáng tạo cư ngụ trên trang landing;
+nó là nơi *lý lẽ* cư ngụ. Chốt mối nghi, xếp lập luận, rồi để model
+viết các đoạn văn — chứ không phải viết logic.

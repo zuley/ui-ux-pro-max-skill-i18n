@@ -7,6 +7,7 @@ import { DocsShell } from '@/components/docs/docs-shell';
 import { docsNav, type DocSlug } from '@/content/docs/nav';
 import { getDocDefinition, type Translator } from '@/content/docs/page-definitions';
 import { docPath } from '@/lib/locale-path';
+import { SITE_URL } from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
 
@@ -29,8 +30,7 @@ export async function generateMetadata({
   if (!isDocSlug(slug)) return {};
   const nav = docsNav.find((n) => n.slug === slug)!;
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = locale === 'en' ? `${baseUrl}/docs/${slug}` : `${baseUrl}/${locale}/docs/${slug}`;
+  const currentUrl = locale === 'en' ? `${SITE_URL}/docs/${slug}` : `${SITE_URL}/${locale}/docs/${slug}`;
   const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
   const pageDescription = `${t(nav.descriptionKey)} - ${t('common.description')}.`;
 
@@ -41,10 +41,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': `${baseUrl}/docs/${slug}`,
-        'zh': `${baseUrl}/zh/docs/${slug}`,
-        'vi': `${baseUrl}/vi/docs/${slug}`,
-        'ja': `${baseUrl}/ja/docs/${slug}`,
+        'en': `${SITE_URL}/docs/${slug}`,
+        'zh': `${SITE_URL}/zh/docs/${slug}`,
+        'vi': `${SITE_URL}/vi/docs/${slug}`,
+        'ja': `${SITE_URL}/ja/docs/${slug}`,
       },
     },
     openGraph: {

@@ -1,0 +1,138 @@
+---
+title: "05 · The ship checklist — the pass you make before anyone sees the URL"
+summary: "The page looks done. This last step is the difference between looks done and is done: contrast, focus states, cursor affordances, the three-breakpoint walk, and the meta tags nobody remembers until the link unfurls badly."
+date: 2026-06-11
+tags: [tutorial, checklist, accessibility]
+author: admin
+step: 5
+---
+
+The hero is locked, the grid is honest, the chart survives the
+"says who?" question. The page **looks** done. This step is the
+difference between *looks done* and *is done* — a final pass over
+everything AI-generated pages reliably get wrong, in the order you
+should check them.
+
+None of this is glamorous. All of it is visible to the first person you
+send the link to — usually within ten seconds, usually on a phone.
+
+## Why AI output needs this pass in particular
+
+Hand-built pages fail randomly. AI-built pages fail **predictably**:
+the model optimises for the screenshot. Contrast that only works in the
+light theme it previewed, hover states that exist but focus states that
+do not, `cursor: default` on things that look like buttons, a flawless
+1440px layout that collapses at 390px. The screenshot is the demo; the
+checklist is for everything the screenshot cannot show.
+
+## Pass 1 — Can everyone read it?
+
+Contrast first, because it invalidates other fixes if it changes your
+colours. Check the **real** worst cases, not the headline:
+
+<Checklist
+  storageKey="saas-landing-step-05-contrast"
+  title="Contrast minimums (WCAG AA)"
+  items={[
+    { id: 'body', label: 'Body text vs background: 4.5:1 or better' },
+    { id: 'muted', label: 'The muted text — captions, the subheadline, chart labels: still 4.5:1. This is where AI output fails' },
+    { id: 'cta', label: 'CTA label vs CTA background: 4.5:1 (white on your accent colour is often only ~3:1)' },
+    { id: 'dark', label: 'If you ship dark mode: re-check all three over there — token swaps silently break ratios' }
+  ]}
+/>
+
+The single most common failure: the model picks a tasteful light grey
+(`#9CA3AF` on white is 2.5:1) for every secondary line on the page. It
+looks refined in the screenshot and is unreadable on a phone in
+daylight. Fix it with one Keep/Change round from step 03 — name the
+exact tokens, give the exact replacement.
+
+## Pass 2 — Does it feel interactive?
+
+<Checklist
+  storageKey="saas-landing-step-05-interactive"
+  title="Affordance check — use only the keyboard, then only the mouse"
+  items={[
+    { id: 'cursor', label: 'Everything clickable shows cursor-pointer; nothing unclickable does' },
+    { id: 'hover', label: 'Every link and button has a visible hover state, 150–300ms transition' },
+    { id: 'focus', label: 'Tab through the page: every interactive element shows a visible focus ring, in order' },
+    { id: 'targets', label: 'On the phone: every tap target is at least 44px tall, including footer links' }
+  ]}
+/>
+
+The keyboard tab-through takes thirty seconds and catches what no
+screenshot can: models add `hover:` classes generously and focus styles
+almost never, because the training screenshots had mice. If the focus
+ring is missing, do not let the model "improve accessibility" in
+general — ask for exactly one thing: a visible `focus-visible` ring on
+links, buttons, and inputs, using your accent colour.
+
+## Pass 3 — The three-breakpoint walk
+
+Open the page at 390px, 768px, and 1440px. Walk top to bottom at each.
+You are looking for the four classic AI responsive failures:
+
+- Headline wraps into a one-word orphan line at 390px.
+- The 2x2 grid becomes 1-column but keeps desktop-sized gaps, so the
+  page is 60% air.
+- The chart overflows horizontally or shrinks its labels below 12px.
+- Section vertical padding identical on phone and desktop (it should
+  drop roughly a third).
+
+<Callout tone="info" title="Fix breakpoints one at a time">
+  Resist "make it responsive" as a prompt. It re-rolls everything. Name
+  the breakpoint and the failure: "At 390px the headline wraps with an
+  orphan; reduce it one size step at that width. Change nothing at 768
+  and above." One Keep/Change per failure, same as step 03.
+</Callout>
+
+## Pass 4 — The parts that only show up later
+
+<CodeBlock
+  title="Metadata prompt — the boring block, verbatim"
+  language="text"
+  code={`Add metadata to app/(marketing)/page.tsx. Do not touch the page body.
+
+- <title>: "<product> — <the headline's promise, max 60 chars>"
+- meta description: the subheadline, max 155 chars, no superlatives
+- OG: og:title, og:description, og:image (/og.png, 1200x630), og:type
+- twitter:card = summary_large_image
+- favicon links assuming /favicon.svg with /favicon.ico fallback
+- <html lang> set to the page language`}
+/>
+
+Then check the things the model cannot do for you:
+
+<Checklist
+  storageKey="saas-landing-step-05-meta"
+  title="Before the URL leaves your machine"
+  items={[
+    { id: 'og', label: 'The OG image exists and is a real 1200x630 render — paste the URL into a Slack DM to yourself and watch the unfurl' },
+    { id: 'links', label: 'Every link on the page goes somewhere real — no href="#" left from generated scaffolding' },
+    { id: 'fonts', label: 'Fonts load with font-display: swap and the page is readable before they arrive' },
+    { id: 'lighthouse', label: 'Run Lighthouse once: performance and accessibility both ≥ 90, and read every flag it raises' }
+  ]}
+/>
+
+The `href="#"` check deserves its own sentence: generated pages ship
+placeholder links constantly, and a dead "Pricing" link in the navbar
+reads as *abandoned*, which is worse than absent.
+
+## The shape of the whole series
+
+Five steps, one discipline, applied at decreasing altitude:
+
+1. **Decide before you prompt** (style, palette, forbidden list).
+2. **Front-load the decisions** into one structured prompt.
+3. **Iterate with a fence** — Keep/Change, one dimension per round.
+4. **Your data, verbatim** — the model proposes, your numbers dispose.
+5. **Check what the screenshot cannot show** — then ship.
+
+None of these are about writing cleverer prompts. They are about
+keeping the decisions — visual, factual, and quality — on your side of
+the keyboard, and using the model for the part it is actually good at:
+producing the artefact once the decisions exist.
+
+Ship it. Send the URL to one person whose taste you trust, with one
+question: "where did you stop reading?" Their answer is the start of
+your next iteration loop — and you already know its shape.

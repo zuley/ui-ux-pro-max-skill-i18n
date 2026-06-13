@@ -1,0 +1,154 @@
+---
+title: "04 · Feature grid và chart — với dữ liệu thật, không phải số bịa"
+summary: "Section dưới hero là nơi output của AI lặng lẽ biến thành tiểu thuyết: số liệu bịa, chart trang trí, mười hai card giống hệt nhau. Bước này thêm một feature grid và đúng một chart xứng đáng với chỗ của nó."
+date: 2026-06-10
+tags: [tutorial, data, charts]
+author: admin
+step: 4
+---
+
+Hero từ bước 02–03 đã khóa. Giờ đến section bên dưới nó — feature grid,
+và lần đầu tiên trong series: **dữ liệu**. Một kiểu thất bại mới xuất
+hiện ở đây, tệ hơn cả gradient tím, vì khách truy cập có thể vạch mặt
+bạn ngay tại chỗ: model **bịa số**.
+
+Nhờ AI viết một trang landing SaaS, đâu đó dưới fold bạn sẽ thấy
+"10,000+ khách hàng hài lòng", "99.9% uptime", và một đường line chart
+đi lên bên phải không có nhãn trục. Không cái nào là thật. Model không
+hẳn đang nói dối — nó chỉ pattern-complete "trang landing trông như thế
+nào". Nhưng nếu bạn ship nó, người nói dối là *bạn*.
+
+Luật của bước này: **mọi con số trên trang phải đến từ bạn, nếu không
+thì nó không được xuất hiện.**
+
+## Gom nguyên liệu thật trước
+
+Giống bước 01, việc bắt đầu từ bên ngoài ô prompt. Trước khi generate
+bất cứ thứ gì, viết ra ba thứ:
+
+<Checklist
+  storageKey="saas-landing-step-04-material"
+  title="Trước khi prompt cho grid"
+  items={[
+    { id: 'features', label: 'Ba đến sáu tính năng, mỗi cái một câu thường (nó làm gì cho người dùng, không phải nó là gì)' },
+    { id: 'metric', label: 'Một metric thật mà bạn bảo vệ được nếu khách hàng hỏi nó từ đâu ra' },
+    { id: 'shape', label: 'Hình dạng của metric đó: một con số đơn, một xu hướng theo thời gian, hay một phép so sánh?' },
+    { id: 'none', label: 'Kiểm tra trung thực: nếu chưa có metric thật, quyết định ship không có chart' }
+  ]}
+/>
+
+Mục cuối không phải giải an ủi. Một trang landing với sáu câu tính năng
+rõ ràng và **không có chart** đọc lên đáng tin hơn một trang có biểu đồ
+bịa. Sản phẩm giai đoạn đầu thường chưa có số ấn tượng; giả vờ có chính
+là AI slop phiên bản dữ liệu.
+
+## Chart có xứng đáng với chỗ của nó không?
+
+Chart chỉ hợp lý khi metric có một **hình dạng** mà chữ không chở nổi:
+
+- **Một con số đơn** ("import trung vị mất 40 giây") nên là một stat
+  cỡ lớn — chữ to, một dòng ngữ cảnh. Không phải chart.
+- **Một xu hướng** ("thời gian xử lý giảm sáu release liên tiếp") nên
+  là một line chart nhỏ.
+- **Một phép so sánh** ("parser của chúng tôi vs hai đối thủ lâu đời
+  trên cùng một file") nên là ba thanh bar ngang.
+
+<Callout tone="warn" title="Chart slop cũng có chữ ký riêng">
+  Pie chart năm miếng gần bằng nhau, bar 3D, area chart tô gradient
+  không có trục, và bất kỳ chart nào thông điệp duy nhất là "đi lên bên
+  phải" — đây là gradient tím của giới dữ liệu. Nếu một chart không
+  sống sót qua câu hỏi "bỏ nó đi thì quyết định của người đọc thay đổi
+  gì?", hãy bỏ nó.
+</Callout>
+
+## Mở rộng prompt — cùng bộ khung, thêm một block
+
+Prompt vẫn là template bước 02, thêm đúng một block `# Data` mà model
+phải coi là nguyên liệu trích dẫn nguyên văn. Hàng rào Keep từ bước 03
+bảo vệ hero trong lúc model làm việc bên dưới.
+
+<CodeBlock
+  title="Prompt cho feature grid + chart"
+  language="text"
+  code={`Mở rộng app/(marketing)/page.tsx. Hero đã chốt — giữ nguyên từng
+byte. Thêm MỘT section ngay dưới nó.
+
+# Decisions (đã khóa, từ bước 01)
+Style: <tên style của bạn>
+Palette: <tên palette của bạn> — chart CHỈ dùng các màu này.
+
+# Data (nguyên văn — không bịa, không làm tròn, không ngoại suy)
+Tính năng:
+1. Import CSV 50k dòng và nhận các cột có kiểu mà không cần viết schema.
+2. Mọi transform được preview trên dòng dữ liệu thật trước khi chạy.
+3. Dòng hỏng bị cách ly, không bị lặng lẽ vứt đi.
+4. Export một click sang Postgres, BigQuery, hoặc file thường.
+Metric (so sánh): thời gian trung vị đến bảng sạch đầu tiên, cùng file 50k dòng:
+- Chúng tôi: 4 phút
+- Script viết tay: 35 phút
+- Bộ ETL cũ: 90 phút setup trước lần chạy đầu
+
+# Task
+Một feature grid (2x2 trên desktop, một cột trên mobile) dùng bốn câu
+trên, cộng một chart cho metric: ba thanh bar ngang, dán nhãn giá trị
+thật.
+
+# Constraints
+- Chart bằng SVG inline. Không thư viện chart, không animation.
+- Nhãn trục/thanh phải hiển thị số thật từ # Data.
+- Không có bất kỳ con số nào khác trong section. Không testimonial,
+  không tường logo.
+- Icon từ Lucide, mỗi card một cái. Không emoji.
+
+# Output
+Cùng file đó với section mới thêm dưới hero. Không sửa hero, các import
+nó dùng, hay bất cứ thứ gì phía trên nó.`}
+/>
+
+Hai chi tiết gánh phần lớn trọng lượng. Cụm trong ngoặc **"không bịa,
+không làm tròn, không ngoại suy"** chặn cái lỗ hổng nơi 4 phút biến
+thành "nhanh gấp 5 lần mọi đối thủ". Còn **"không có bất kỳ con số nào
+khác trong section"** ngăn model trang trí dữ liệu thật của bạn bằng
+những hàng xóm bịa — kịch bản đổ vỡ kinh điển là metric thật duy nhất
+của bạn bị ba metric bịa vây quanh.
+
+## Checklist nghiệm thu
+
+<Checklist
+  storageKey="saas-landing-step-04-output"
+  title="Trước khi giữ section này"
+  items={[
+    { id: 'verbatim', label: 'Mọi con số trong section đều xuất hiện trong block # Data, đúng từng ký tự' },
+    { id: 'labels', label: 'Chart đọc được mà không cần màu: thanh được dán nhãn giá trị, không chỉ dựa vào legend' },
+    { id: 'palette', label: 'Chart chỉ dùng màu trong palette — không có màu xanh mặc định của thư viện' },
+    { id: 'hero', label: 'Hero không bị đụng vào (rà mắt các anchor từ bước 03)' },
+    { id: 'grid', label: 'Grid gập về một cột trên mobile mà không đảo thứ tự tính năng' }
+  ]}
+/>
+
+## Khi chart trả về sai
+
+Thường thì sai một lần. Model mê legend, gridline, và một thanh thứ tư
+"trung bình ngành" mà bạn chưa từng cung cấp. Đừng re-roll cả section —
+đây chính xác là tình huống bước 03. Một vòng Keep/Change:
+
+<CodeBlock
+  title="Follow-up phẫu thuật cho chart"
+  language="text"
+  code={`Section đúng hết trừ chart. Giữ feature grid nguyên trạng.
+
+# Change (chỉ cái này)
+Xóa legend và thanh "trung bình ngành" — nó không có trong dữ liệu của
+tôi. Đặt mỗi nhãn giá trị ở cuối thanh tương ứng. Không đổi gì khác.`}
+/>
+
+Trực giác cần bảo vệ ở đây cũng là thứ cả series này rèn luyện: **model
+đề xuất, dữ liệu của bạn định đoạt.** Một grid dựng từ câu của bạn và
+một chart vẽ từ số của bạn thuyết phục hơn hẳn bất cứ thứ gì model ảo
+giác ra — vì nó chịu được câu hỏi "ai nói thế?" từ khách hàng.
+
+## Tiếp theo
+
+Bước 05 là checklist trước khi ship: lượt rà *sau khi* trang đã xong về
+mặt thị giác — contrast, focus state, cursor affordance, meta tag, và
+cuộc đi bộ qua ba breakpoint — trước khi bạn cho bất kỳ ai thấy URL.

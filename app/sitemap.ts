@@ -4,16 +4,16 @@ import { docsNav } from '@/content/docs/nav';
 import { listAllSlugs, getAllPosts } from '@/lib/content/blog';
 import { listSeries, getSeriesSteps } from '@/lib/content/tutorials';
 import type { Locale } from '@/lib/content/types';
+import { SITE_URL } from '@/lib/site-config';
 
 // Required when next.config.ts uses output: 'export'. Without it the
 // sitemap route is treated as dynamic and the build fails.
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://ui-ux-pro-max-skill.com';
 
 function abs(locale: string, path: string): string {
-  if (locale === routing.defaultLocale) return `${BASE_URL}${path}`;
-  return `${BASE_URL}/${locale}${path}`;
+  if (locale === routing.defaultLocale) return `${SITE_URL}${path}`;
+  return `${SITE_URL}/${locale}${path}`;
 }
 
 function alternatesFor(path: string): {
@@ -39,6 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Marketing + legal routes — same for every locale.
   const staticPaths: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
     { path: '/', priority: 1.0, freq: 'weekly' },
+    { path: '/about', priority: 0.5, freq: 'monthly' },
     { path: '/contact', priority: 0.4, freq: 'yearly' },
     { path: '/privacy', priority: 0.3, freq: 'yearly' },
     { path: '/terms', priority: 0.3, freq: 'yearly' },

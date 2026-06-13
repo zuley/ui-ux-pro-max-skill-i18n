@@ -1,0 +1,112 @@
+---
+title: "Dịch xám-trên-trắng: vì sao giao diện AI trượt contrast ở light mode"
+summary: "Ai cũng kiểm toán dark mode; light mode mới là nơi output của AI thật sự trượt. Một cẩm nang thực địa về bốn chỗ UI sinh tự động ship chữ xám không đọc nổi — và các block prompt ngăn từng chỗ một."
+date: 2026-06-01
+tags: [accessibility, color, design-system]
+author: admin
+---
+
+Trước đây chúng tôi đã viết về [dark mode thật sự tối](/vi/blog/dark-mode-thats-actually-dark).
+Đây là bài chị em của nó, và là bài có thương vong cao hơn: **light mode
+mới là nơi UI sinh tự động thật sự trượt contrast**, vì kiểu thất bại
+này lên ảnh rất đẹp.
+
+Khuôn mẫu luôn giống nhau. Model muốn có thứ bậc thị giác, và thứ bậc
+rẻ nhất là độ mờ: headline gần đen, mọi thứ "thứ cấp" mang một màu xám
+đầy thẩm mỹ. Hạ một bậc thì ổn. Nhưng trang sinh tự động áp dụng nó đệ
+quy — thứ cấp của thứ cấp — và đến tầng thứ ba, dòng lưu ý giá của bạn
+thành `#9CA3AF` trên nền trắng. Tỷ lệ 2.5:1. Sàn WCAG AA cho chữ body
+là **4.5:1**.
+
+Trong ảnh chụp nó trông tinh tế. Trên điện thoại, ngoài trời, độ sáng
+60%, nó không còn là chữ nữa. Nó là hoa văn.
+
+## Bốn hiện trường vụ án
+
+Kiểm toán một trang landing sinh tự động, lỗi tụ lại đúng bốn chỗ, lần
+nào cũng vậy:
+
+- **Subheadline.** Câu được đọc nhiều thứ nhì trang sau headline, và
+  model style nó `text-gray-400` vì nó là "chữ phụ trợ". Những từ quan
+  trọng nhất nhận lượng mực nhạt nhất.
+- **Nhãn và trục của chart.** Dữ liệu là khu vực gánh độ tin cậy, vậy
+  mà con số của nó thường bị xếp 11px màu xám nhạt — xuống cấp kép.
+- **Placeholder và helper text trong form.** Thường được style *y hệt*
+  trạng thái disabled, người dùng không phân biệt nổi ô trống với ô chết.
+- **Footer.** Những link người ta thật sự cần — giá, docs, liên hệ —
+  ở mức 3:1, vì footer bị coi là trang trí.
+
+Sợi chỉ chung: model đánh đồng *độ quan trọng* với *lượng mực*, và nó
+xếp hạng độ quan trọng theo loại section, không theo nhu cầu người đọc.
+Dòng lưu ý giá là tường chịu lực về pháp lý; nó vẫn lĩnh màu xám nhạt
+nhất trang.
+
+## Phép tính không ai chịu làm
+
+Tỷ lệ contrast phản trực giác, nên "tôi nhìn vẫn ổn" không dùng được.
+Trên nền trắng, các màu xám phổ biến rơi vào đây:
+
+<CodeBlock
+  title="Các mức xám Tailwind trên nền trắng"
+  language="text"
+  code={`gray-300  #D1D5DB   1.5:1  — chỉ để trang trí, không bao giờ làm chữ
+gray-400  #9CA3AF   2.5:1  — trượt mọi chuẩn, nhưng ship liên tục
+gray-500  #6B7280   4.8:1  — đậu trên trắng tinh; còn 4.4:1 và trượt trên card gray-100
+gray-600  #4B5563   7.6:1  — đậu ở mọi nơi, có dư. Đây mới là sàn an toàn.
+gray-700  #374151  10.3:1  — mực body dễ chịu`}
+/>
+
+Cả trận dịch nằm trong khe hở giữa `gray-400` và `gray-600`. Hai nấc
+trên thang Tailwind, khác biệt giữa hoa văn và chữ.
+
+Lưu ý cái bẫy trong `gray-500`: nó vượt 4.5:1 trên nền trắng tinh —
+và mất sạch phần dư ngay khi nền nhuốm màu. Trên card `gray-100` nó đã
+trượt, mà card nhuốm màu lại chính là nơi layout sinh tự động thích đặt
+chữ thứ cấp. Coi nó là màu dành riêng cho chữ lớn (18px+ đậm, 24px+
+thường) thì bạn khỏi phải kiểm toán từng cái nền nó đáp xuống.
+
+## Sửa ở prompt, không phải ở khâu review
+
+Bắt lỗi này lúc review nghĩa là re-roll từng component đã style. Rẻ hơn
+là làm cho nó bất khả thi ngay từ đầu. Hai block là đủ:
+
+<CodeBlock
+  title="Block chính sách mực cho prompt UI"
+  language="text"
+  code={`# Màu chữ (light mode — danh sách đầy đủ, ngoài ra không có gì)
+Mực chính:  #1F2937 — headline, body, mọi thứ nhiều dòng
+Mực phụ:    #4B5563 — caption, label, helper text, link footer
+Mực nhấn:   <màu accent của bạn, chỉ khi đo được 4.5:1 trên trắng>
+
+Luật:
+- Không node chữ nào được dùng màu khác, kể cả qua utility độ mờ.
+- Không gì dưới 4.5:1 so với nền thật của nó. Phân vân thì chọn đậm hơn.
+- Placeholder dùng mực phụ, không được nhạt thêm.
+- Trạng thái disabled được phá luật — nhưng phải được đánh dấu disabled
+  về ngữ nghĩa, không chỉ về thị giác.`}
+/>
+
+Hai mức mực, không phải ba. Mỗi mức thêm vào là một lời mời đệ quy
+xuống lại `gray-400`. Chúng tôi chưa từng gặp trang marketing nào cần
+mức xám thứ ba thay vì copy tốt hơn.
+
+<Callout tone="warn" title="Coi chừng rửa màu bằng độ mờ">
+  Model còn tạo xám nhạt bằng trắng 60% opacity, hoặc
+  `text-gray-900/50`. Tỷ lệ tệ y nhau, nhưng grep theo token màu thì
+  vô hình — vì thế luật ở trên ghi rõ "kể cả qua utility độ mờ".
+  Kiểm toán computed style, đừng kiểm toán tên class.
+</Callout>
+
+## Bài kiểm toán hai phút
+
+Với trang đã tồn tại: mở devtools, đo bốn điểm này so với nền thật của
+chúng — subheadline, nhãn chart nhỏ nhất, helper text của form, link
+footer. Trình kiểm tra contrast nào cũng được. Bốn điểm đó qua 4.5:1
+thì phần còn lại của trang gần như chắc chắn cũng qua; chúng là chim
+hoàng yến vì "thứ cấp của thứ cấp" cuối cùng đều lắng xuống bốn chỗ này.
+
+Thứ bậc là nhu cầu thật, và xám là công cụ chính đáng của nó. Cách sửa
+không phải "bôi đen tất cả" — mà là chặn đệ quy ở hai mức mực có tên,
+cả hai đều đứng trên sàn. Quyết định mực một lần, viết vào prompt, và
+light mode sẽ thôi là chế độ khiến những độc giả chăm chú nhất của bạn
+phải nheo mắt.

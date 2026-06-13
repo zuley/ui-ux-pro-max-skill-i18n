@@ -16,9 +16,8 @@ const meta: TutorialSeriesMeta = {
     '01-style-and-palette',
     '02-first-prompt',
     '03-iterating',
-    // Reserved for follow-up PRs:
-    // '04-charts-and-data',
-    // '05-ship-checklist',
+    '04-charts-and-data',
+    '05-ship-checklist',
   ],
 };
 

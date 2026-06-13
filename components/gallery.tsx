@@ -1,30 +1,15 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Moon, Rocket, Sun } from 'lucide-react';
 import { PromptModal } from '@/components/prompt-modal';
 import Link from 'next/link';
 import { docPath } from '@/lib/locale-path';
+import { DEMO_BASE_URL } from '@/lib/site-config';
+import type { Demo } from '@/lib/gallery';
 
-type Demo = {
-  id: number;
-  order: number;
-  name: string;
-  category: string;
-  imageUrl: string;
-  url: string;
-  style: string;
-  mode: 'light' | 'dark';
-  primary_color: string;
-  secondary_color: string;
-  cta_color: string;
-  background_color: string;
-  implemented: boolean;
-  prompt: string;
-};
-
-export function Gallery() {
+export function Gallery({ demos }: { demos: Demo[] }) {
   const t = useTranslations('gallery');
   const locale = useLocale();
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -32,21 +17,6 @@ export function Gallery() {
   const [query, setQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(6);
   const [selectedPrompt, setSelectedPrompt] = useState<{ title: string; content: string } | null>(null);
-  const [demos, setDemos] = useState<Demo[]>([]);
-
-  useEffect(() => {
-    let cancelled = false;
-    async function load() {
-      const res = await fetch('/gallery.csv', { cache: 'no-store' });
-      const text = await res.text();
-      const parsed = parseGalleryCsv(text);
-      if (!cancelled) setDemos(parsed);
-    }
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   const categories = useMemo(() => {
     const list: string[] = ['All'];
@@ -172,6 +142,8 @@ export function Gallery() {
               <img
                 src={toAbsoluteUrl(demo.imageUrl)}
                 alt={demo.name}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-md text-white text-xs px-2 py-1 rounded flex items-center gap-1.5">
@@ -282,62 +254,7 @@ export function Gallery() {
 
 function toAbsoluteUrl(url: string) {
   if (url.startsWith('http://') || url.startsWith('https://')) return url;
-  return `https://ui-ux-pro-max-skill.nextlevelbuilder.io${url.startsWith('/') ? '' : '/'}${url}`;
-}
-
-function parseGalleryCsv(csv: string): Demo[] {
-  const lines = csv.trim().split('\n');
-  const header = parseCsvRow(lines[0] || '');
-  const rows: Demo[] = [];
-  for (let i = 1; i < lines.length; i++) {
-    const row = parseCsvRow(lines[i] || '');
-    const record: Record<string, string> = {};
-    for (let j = 0; j < header.length; j++) record[header[j]] = row[j] ?? '';
-    rows.push({
-      id: Number(record.id),
-      order: Number(record.order),
-      name: record.name,
-      category: record.category,
-      imageUrl: record.imageUrl,
-      url: record.url,
-      style: record.style,
-      mode: (record.mode || 'light') as 'light' | 'dark',
-      primary_color: record.primary_color,
-      secondary_color: record.secondary_color,
-      cta_color: record.cta_color,
-      background_color: record.background_color,
-      implemented: record.implemented === 'true',
-      prompt: record.prompt
-    });
-  }
-  return rows.sort((a, b) => a.order - b.order || a.id - b.id);
-}
-
-function parseCsvRow(line: string) {
-  const result: string[] = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      const next = line[i + 1];
-      if (inQuotes && next === '"') {
-        current += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-      continue;
-    }
-    if (ch === ',' && !inQuotes) {
-      result.push(current);
-      current = '';
-      continue;
-    }
-    current += ch;
-  }
-  result.push(current);
-  return result;
+  return `${DEMO_BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
 }
 
 function ColorDot({ name, hex }: { name: string; hex: string }) {
