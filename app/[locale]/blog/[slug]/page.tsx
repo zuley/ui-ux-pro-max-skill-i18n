@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Clock, ArrowLeft } from 'lucide-react';
-import { routing } from '@/i18n/routing';
 import { getPost, listAllSlugs } from '@/lib/content/blog';
 import { isFallback } from '@/lib/content/fallback';
 import { getAuthor } from '@/lib/authors';
