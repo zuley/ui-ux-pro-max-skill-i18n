@@ -1,7 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import type { ComponentType } from 'react';
-import { routing } from '@/i18n/routing';
 import {
   estimateReadingMinutes,
   parseTutorialStepFrontmatter,
