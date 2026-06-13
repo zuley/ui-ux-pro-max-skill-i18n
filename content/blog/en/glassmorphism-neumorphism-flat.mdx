@@ -1,0 +1,103 @@
+---
+title: "Glassmorphism, neumorphism, flat: a decision guide, not a mood board"
+summary: "Style names get treated as aesthetics to shop between. They are actually engineering decisions with different costs in contrast, performance, and maintenance. Here is the decision table we encoded into the Skill."
+date: 2026-06-04
+tags: [styles, design-system, accessibility]
+author: admin
+---
+
+Of the 50 styles the Skill ships, three get requested by name more
+than all the others combined: glassmorphism, neumorphism, and flat.
+They get requested as *moods* — "make it glassy" — but they are not
+moods. Each one is a bundle of engineering trade-offs in contrast,
+performance, and maintenance cost. Choosing between them by vibe is
+how a page ends up paying glassmorphism prices for a flat-design job.
+
+Here is each one as a decision, not a look.
+
+## Glassmorphism: rented depth, paid for in blur
+
+Frosted translucency, a thin light border, background bleeding through
+a `backdrop-filter: blur()`. It signals *layered, modern, premium* —
+and it has two real costs everyone discovers late:
+
+- **Contrast becomes a moving target.** Text on glass sits on whatever
+  happens to scroll underneath. Your 4.5:1 against the resting state
+  can drop to 2:1 the moment a photo slides behind the panel.
+- **`backdrop-filter` is one of the most expensive properties in CSS.**
+  A glass navbar over a scrolling page repaints the blur every frame —
+  on mid-range phones this is the difference between 60fps and 35.
+
+The discipline that keeps it working: glass on **at most two element
+types** (typically the navbar and one floating panel), never on
+anything containing body text, and always with a solid-color fallback
+via `@supports`. Glassmorphism is a garnish. Plated as a main course,
+it is unreadable and slow.
+
+## Neumorphism: the style that ate its own affordances
+
+Soft extruded shapes, same-color backgrounds, identity expressed
+entirely through paired light/dark shadows. It photographs beautifully,
+which is why it keeps coming back — and it has a structural problem no
+palette can fix: **its whole identity lives below 3:1 contrast.** The
+moment every edge passes WCAG, it stops being neumorphism.
+
+That is not a reason to ban it. It is a reason to scope it: decorative
+surfaces only — cards, players, dashboard tiles — while every
+*interactive* element (buttons, toggles, inputs) gets a real border or
+fill on top of the soft shadows. Pure neumorphic buttons present
+pressed and unpressed as nearly identical states; users with low vision
+simply cannot operate them. If the product is utilitarian and
+information-dense, this style is fighting you on every screen.
+
+## Flat: the default that needs a reason to be left
+
+No simulated depth; hierarchy from type scale, spacing, and color
+blocks alone. Cheapest to render, easiest to keep consistent, trivially
+themeable. The honest framing: **flat is the default, and the other
+two are deviations you should be able to justify in one sentence.**
+"Because it looked plain" is not that sentence — plainness in flat
+design is almost always a typography problem wearing a style costume.
+Before reaching for blur or shadows, try one size up on the type
+contrast and one accent color used with actual discipline.
+
+## The decision table
+
+<CodeBlock
+  title="Choosing between the three"
+  language="text"
+  code={`Question                            glass   neumorph   flat
+Body text sits on it?                no      ok         ok
+Information-dense dashboard?         no      no         yes
+Marketing page, premium feel?        yes     careful    yes
+Must hit WCAG AA everywhere?         hard    very hard  easy
+Low-end mobile traffic matters?      no      ok         yes
+Team without a design reviewer?      no      no         yes`}
+/>
+
+Two patterns fall out of the table. Flat is never the wrong answer —
+sometimes just an under-seasoned one. And the two depth styles are
+*page-level* choices, not system-level ones: a glass navbar over an
+otherwise flat system is coherent; a whole product built on glass is a
+performance bug with a mood.
+
+## Saying it in a prompt
+
+Style names alone under-constrain — "glassmorphism" to a model means
+*put blur on everything*. Name the style, then fence it:
+
+<CodeBlock
+  title="Style block with a fence"
+  language="text"
+  code={`# Style: Glassmorphism, scoped
+- Glass treatment: navbar and the floating stats panel ONLY.
+- Everything else: flat surfaces, solid backgrounds, 1px borders.
+- No body text on glass. Labels on glass: 600 weight minimum, and
+  verify 4.5:1 against the LIGHTEST region of the page background.
+- Provide an @supports fallback: solid bg at 95% opacity, no blur.`}
+/>
+
+The fence is the part the model will not supply on its own, and it is
+also the part a design reviewer would have insisted on. Styles are not
+costumes a page wears; they are budgets a page spends. Pick the one
+whose costs land where your product can afford them.

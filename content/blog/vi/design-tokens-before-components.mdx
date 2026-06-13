@@ -1,0 +1,112 @@
+---
+title: "Token trước component: cách duy nhất để Tailwind do AI sinh ra còn bảo trì được"
+summary: "UI sinh tự động chào đời với các giá trị hex rải khắp bốn mươi chuỗi class — hôm nay đẹp, đến thứ Sáu là hết bảo trì nổi. Cách sửa nằm ở thứ tự: bắt model định nghĩa token trước, rồi cấm nó viết giá trị thô mãi mãi."
+date: 2026-06-11
+tags: [tailwind, design-tokens, design-system]
+author: admin
+---
+
+Tailwind sinh tự động có một kiểu thất bại đặc trưng chẳng liên quan
+gì đến chuyện trang trông thế nào. Xin một trang landing, nhận về một
+trang đẹp — và `#6D28D9` xuất hiện trong mười bốn chuỗi class,
+`#6C28D9` (chú ý lỗi gõ model tạo ra ở dòng 212) trong hai chuỗi nữa,
+cùng một nhịp khoảng cách được viết thành `mt-7`, `mt-8` và `mt-[30px]`
+ở ba section anh em.
+
+Trang thì ổn. *Hệ thống* thì chết non. Lần đầu bạn nói "làm màu accent
+ấm hơn", bạn đang find-and-replace qua đám biến thể hex mà bạn phải
+khai quật từng cái một.
+
+Đây không phải vấn đề chất lượng model; nó là vấn đề **thứ tự**. Model
+viết component trước và tô màu dọc đường, như một dev junior vẽ thẳng
+lên canvas. Cách sửa cũng giống như với junior: token trước, component
+sau, và không bao giờ có giá trị thô nữa.
+
+## Hai prompt, không phải một
+
+Sai lầm là xin trang và hệ thống trong cùng một hơi. Tách ra. Prompt
+đầu tiên chỉ sinh ra *đúng* tầng token — và nó ngắn:
+
+<CodeBlock
+  title="Prompt 1 — chỉ token"
+  language="text"
+  code={`Định nghĩa design token cho dự án này dưới dạng CSS custom property
+trong globals.css, cộng phần ánh xạ theme Tailwind. Không gì khác —
+không component, không trang.
+
+# Decisions (đã khóa)
+Palette: <5 màu của bạn kèm mã hex và vai trò>
+Chữ: <font heading / font body, thang: 14, 16, 20, 28, 40, 56>
+Nhịp khoảng cách: gốc 4px; padding section 96px desktop / 64px mobile
+Bo góc: control 8px, card 16px. Bóng: đúng hai cao độ.
+
+# Rules
+- Đặt tên token theo VAI TRÒ (--color-accent, --color-ink-secondary),
+  không bao giờ theo giá trị (--purple-600, --gray-light).
+- Mỗi token kèm một dòng chú thích: nó được phép dùng ở đâu.
+- Nếu hai token sẽ giữ cùng một giá trị, gộp lại và ghi cả hai vai trò.`}
+/>
+
+Đặt tên theo vai trò là dòng sẽ trả tiền thuê nhà về sau. `--purple-600`
+thành lời nói dối vào ngày accent chuyển sang xanh ngọc — và model,
+nếu được cho tên-theo-giá-trị, sẽ thản nhiên định nghĩa
+`--purple-600: #14b8a6` thay vì đổi tên bất cứ thứ gì.
+
+## Rồi đến hàng rào, trong mọi prompt component
+
+Prompt thứ hai — và mọi prompt sau đó, mãi mãi — mang theo một block:
+
+<CodeBlock
+  title="Hàng rào cấm giá trị thô"
+  language="text"
+  code={`# Kỷ luật token (không thương lượng)
+- Không giá trị thô trong markup: không hex, không rgb(), không
+  giá trị tùy ý kiểu mt-[30px] hay text-[#333].
+- Màu, khoảng cách, bo góc, bóng: chỉ qua token trong globals.css.
+- Nếu thiết kế cần một giá trị không token nào cung cấp, DỪNG LẠI
+  và nói ra — đề xuất token mới, chờ duyệt. Không ứng tác.
+- Diff sinh ra chỉ vì luật này phải là rỗng.`}
+/>
+
+Gạch đầu dòng thứ ba mới là cái làm việc thật. Không có lối thoát,
+model coi luật là mềm và ứng tác `bg-[#f8f7ff]` ngay khi thiếu token;
+có đường "dừng-và-đề-xuất", token thiếu sẽ nổi lên thành *câu hỏi*
+thay vì thành nợ câm. Mỗi trang bạn sẽ nhận hai ba câu hỏi như thế.
+Mỗi câu là một quyết định thiết kế mà bạn suýt làm xong trong vô thức.
+
+## Bài test thứ Sáu
+
+Làm sao biết nó hiệu quả — cuối tuần thử ba sửa đổi này, mỗi cái phải
+là thay đổi một dòng:
+
+- Làm màu accent ấm hơn → sửa `--color-accent`, xong.
+- Siết padding mọi card → sửa một token khoảng cách, xong.
+- Đổi font heading → sửa token font và stack dự phòng của nó, xong.
+
+Nếu bất kỳ mục nào lôi bạn vào file component, hàng rào đã rò. Grep
+chỉ chỗ rò: tìm `#`, `rgb(` và `-[` trong toàn bộ component. Mỗi kết
+quả hoặc là token còn thiếu (thăng cấp nó) hoặc là màn ứng tác của
+model (thay thế nó). Trên một codebase đã rào, lệnh grep đó không trả
+về gì — và nó là bài kiểm tra CI rẻ nhất bạn từng thêm.
+
+<Callout tone="warn" title="Giá trị tùy ý là cửa hậu">
+  Cú pháp ngoặc vuông của Tailwind là tuyến buôn lậu ưa thích của
+  model — `w-[417px]` để khớp một ảnh chụp nó tưởng tượng ra,
+  `text-[#4b5563]` vì gõ mã hex nhanh hơn tra tên token. Dự án đã rào
+  coi ngoặc vuông là mùi code ở mọi nơi, trừ hình học thật sự dùng
+  một lần — và "thật sự một lần" nghĩa là bạn nói được lý do trong
+  một dòng comment.
+</Callout>
+
+## Vì sao với AI điều này càng quan trọng hơn, không phải kém đi
+
+Người code tay trôi dạt vào bất nhất qua nhiều tháng; model có thể sản
+xuất toàn bộ mớ hỗn độn trong một buổi chiều, với sự tự tin hoàn hảo,
+nhanh gấp đôi tốc độ bạn review. Tầng token là điểm đòn bẩy *duy nhất*
+nơi một quyết định ràng buộc hàng nghìn dòng code sinh ra — và đó
+chính xác là thương vụ bạn muốn với một cỗ máy sinh code: bạn sở hữu
+mười quyết định, nó sở hữu mười nghìn lần gõ phím.
+
+Token trước. Hàng rào mãi mãi. Trang làm ra trông giống hệt phiên bản
+một-prompt — đúng một tuần, cho đến khi yêu cầu thay đổi đầu tiên gõ
+cửa. Từ đó trở đi, chúng là hai sản phẩm khác nhau.

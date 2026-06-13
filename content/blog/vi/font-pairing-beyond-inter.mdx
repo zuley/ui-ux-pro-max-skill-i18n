@@ -1,0 +1,102 @@
+---
+title: "Vượt khỏi Inter: phương pháp chọn cặp font mà bạn bảo vệ được"
+summary: "UI do AI sinh ra mặc định dùng Inter cho mọi thứ vì nó không bao giờ sai — và không bao giờ nói gì. Đây là phương pháp ba câu hỏi chúng tôi mã hóa vào 50 cặp font của Skill, dùng được kể cả khi không có Skill."
+date: 2026-05-27
+tags: [typography, design-system, prompt]
+author: admin
+---
+
+Nhờ model viết một trang landing và bạn sẽ nhận về `Inter` cho heading,
+`Inter` cho body. Không phải vì Inter sai — nó là một typeface màn hình
+xuất sắc — mà vì nó là câu trả lời *an toàn nhất về mặt thống kê*. Và
+an toàn chính là vấn đề: typeface là tín hiệu nhanh nhất một trang phát
+ra về việc nó là thứ gì, còn tín hiệu của Inter là "đây có thể là bất
+cứ thứ gì."
+
+Skill đóng gói 50 cặp font tuyển chọn chính vì lối ra không phải là
+"biết nhiều font hơn", mà là có một **phương pháp** để chọn — phương
+pháp bạn cũng chạy tay được. Nó gồm ba câu hỏi.
+
+## Câu hỏi 1: Giọng nói của sản phẩm này là gì?
+
+Không phải đối tượng — là *giọng nói*. Viết một câu như thể sản phẩm
+biết nói: "Tôi chính xác và hơi nghiêm khắc." "Tôi ấm áp và thủ công."
+"Tôi đắt tiền và yên tĩnh." Câu đó ánh xạ sang typography trực tiếp hơn
+bất kỳ chân dung khách hàng nào:
+
+- **Chính xác / kỹ thuật** → grotesque hoặc sans hình học cho heading
+  (Space Grotesk, IBM Plex Sans), thường kèm một mono làm điểm nhấn.
+- **Ấm / con người** → sans nhân văn (Source Sans 3, Nunito Sans) hoặc
+  serif tương phản thấp cho body (Source Serif 4).
+- **Đắt / chất tạp chí** → display serif tương phản cao cho heading
+  (Fraunces, Playfair Display) trên một body sans kiềm chế.
+- **Vui / tiêu dùng** → đầu nét bo tròn (Quicksand, Baloo 2) — và kỷ
+  luật ở mọi chỗ khác, không thì cả trang trượt thành đồ chơi.
+
+Nếu bạn không viết nổi câu giọng nói, dừng lại. Đó chưa phải vấn đề
+typography; đó là vấn đề định vị, và không cặp font nào cứu được.
+
+## Câu hỏi 2: Tương phản giữa heading và body nằm trên trục nào?
+
+Một cặp font đứng được khi hai typeface khác nhau trên **đúng một trục
+rõ ràng** và đồng thuận về mọi thứ còn lại. Display serif trên body
+sans: tương phản về *cấu trúc*. Grotesque đậm trên humanist trầm:
+tương phản về *nhiệt độ*. Heading mono trên body sans: tương phản về
+*ngữ cảnh* — giọng máy ở trên, giọng người ở dưới.
+
+Cặp font hỏng theo hai cách đối xứng. **Quá gần** (Inter + Roboto):
+người đọc cảm thấy một sự lệch lạc mơ hồ, như hai màu trắng gần khớp.
+**Quá xa** (chữ viết tay cọ + sans hình học): các trục nhân lên và
+trang đọc như hai sản phẩm bị dập ghim vào nhau.
+
+<Callout tone="info" title="Bài test nheo mắt">
+  Đặt một heading trên hai đoạn văn, lùi lại, nheo mắt. Bạn phải phân
+  biệt được ngay heading với body (tương phản tồn tại), và chúng vẫn
+  phải trông như được mua theo bộ (một trục, không phải ba).
+</Callout>
+
+## Câu hỏi 3: Font body có sống nổi ở 16px trên màn hình xoàng không?
+
+Display face được thử giọng ở 64px, body face sống ở 14–16px. Checklist
+cho nhiệm vụ body rất ngắn: x-height rộng rãi, khe chữ mở (chữ `e` và
+`a` không bít lại), italic thật nếu bạn sẽ nhấn mạnh, và chữ số dạng
+bảng nếu con số quan trọng với sản phẩm. Fraunces là heading face lộng
+lẫy và là body face không đọc nổi — đa số "cặp font thất bại" thực ra
+là một display face bị ép làm việc của body.
+
+## Mã hóa lựa chọn vào prompt
+
+Chỉ đưa tên thì không sống sót qua lần chạm trán đầu với model — nó sẽ
+load Playfair rồi vẫn xếp nút bấm của bạn bằng Inter, vì bạn chưa hề
+cấm. Quyết định trước, ràng buộc sau:
+
+<CodeBlock
+  title="Block typography cho prompt UI"
+  language="text"
+  code={`# Typography (đã khóa)
+Heading: Fraunces, weight 600, leading chặt (1.1), chỉ ở h1/h2.
+Body + control UI: Source Sans 3, gốc 16px, leading 1.6.
+Số trong bảng giá: tabular figures.
+Cấm: Inter, Roboto, Open Sans, system-ui như một "lựa chọn fallback",
+bất kỳ typeface thứ ba nào ở bất cứ đâu.`}
+/>
+
+Danh sách cấm quan trọng hơn danh sách dương. "Dùng Fraunces" cộng im
+lặng vẫn để lại cho model thói quen của nó; "không typeface thứ ba ở
+bất cứ đâu" mới là dòng thật sự thay đổi output.
+
+## Ba cặp chúng tôi cứ quay lại dùng
+
+Từ thư viện của Skill, kèm câu giọng nói của chúng:
+
+- **Space Grotesk / Source Sans 3** — "Tôi là công cụ sắc bén, không
+  phải nền tảng." Dev tool, analytics, mọi thứ có terminal trong DNA.
+- **Fraunces / Source Sans 3** — "Tôi chỉn chu và hơi văn chương." Sản
+  phẩm editorial, dịch vụ cao cấp, thương hiệu muốn nói *gu*.
+- **IBM Plex Sans / IBM Plex Mono (điểm nhấn)** — "Tôi là hạ tầng bạn
+  tin được." Fintech, bảo mật, B2B muốn có trọng lượng mà không phải
+  mặc vest.
+
+Không cặp nào lạ lẫm. Đó chính là điểm mấu chốt: thắng "Inter mọi nơi"
+chưa bao giờ nằm ở sự hiếm — mà ở chỗ có người đã ra quyết định, và
+trang web cho thấy điều đó.

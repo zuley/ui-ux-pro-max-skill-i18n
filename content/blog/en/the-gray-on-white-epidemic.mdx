@@ -1,0 +1,113 @@
+---
+title: "The gray-on-white epidemic: why AI interfaces fail contrast in light mode"
+summary: "Everyone audits dark mode; light mode is where AI output actually fails. A field guide to the four places generated UIs ship unreadable gray text — and the prompt blocks that prevent each one."
+date: 2026-06-01
+tags: [accessibility, color, design-system]
+author: admin
+---
+
+We wrote earlier about [dark mode that is actually dark](/blog/dark-mode-thats-actually-dark).
+This is the companion piece, and it is the one with the higher body
+count: **light mode is where generated UIs actually fail contrast**,
+because the failure photographs well.
+
+The pattern is always the same. The model wants visual hierarchy, and
+the cheapest hierarchy is opacity: headline in near-black, everything
+"secondary" in a tasteful gray. One step of secondary is fine. But
+generated pages apply it recursively — secondary of the secondary —
+and by the third level your pricing caveats are `#9CA3AF` on white.
+That is a 2.5:1 ratio. The WCAG AA floor for body text is **4.5:1**.
+
+It looks refined in the screenshot. On a phone, outdoors, at 60%
+brightness, it is not text anymore. It is texture.
+
+## The four crime scenes
+
+Audit a generated landing page and the failures cluster in the same
+four places, every time:
+
+- **The subheadline.** The single most-read sentence on the page after
+  the headline, and the model styles it `text-gray-400` because it is
+  "supporting copy". The most important words are the lightest ink.
+- **Chart labels and axes.** Data is the credibility section, and its
+  numbers are routinely set at 11px in light gray — doubly degraded.
+- **Placeholder and helper text in forms.** Often styled *identically*
+  to disabled states, so users cannot tell an empty field from a dead one.
+- **The footer.** Links people actually need — pricing, docs, contact —
+  at 3:1 because the footer is treated as decoration.
+
+The common thread: the model equates *importance* with *ink*, and it
+ranks importance by section type, not by what the reader needs. A
+pricing caveat is legally load-bearing; it gets the lightest gray on
+the page anyway.
+
+## The arithmetic nobody runs
+
+Contrast ratios are not intuitive, which is why "it looks fine to me"
+fails. On white, the popular grays land here:
+
+<CodeBlock
+  title="Tailwind grays on a white background"
+  language="text"
+  code={`gray-300  #D1D5DB   1.5:1  — decorative only, never text
+gray-400  #9CA3AF   2.5:1  — fails everything, ships constantly
+gray-500  #6B7280   4.8:1  — passes on pure white; 4.4:1 and failing on a gray-100 card
+gray-600  #4B5563   7.6:1  — passes everywhere, with margin. The safe floor.
+gray-700  #374151  10.3:1  — comfortable body ink`}
+/>
+
+The whole epidemic is the gap between `gray-400` and `gray-600`. Two
+steps on a Tailwind scale, the difference between texture and text.
+
+Note the trap in `gray-500`: it clears 4.5:1 on pure white — and loses
+that margin the moment the background tints. On a `gray-100` card it is
+already failing, and tinted cards are exactly where generated layouts
+love to put secondary text. Treat it as a large-text color (18px+ bold,
+24px+ regular) and you stop having to audit every background it lands on.
+
+## Fixing it at the prompt, not in review
+
+Catching this in review means re-rolling styled components one at a
+time. Cheaper to make it impossible upfront. Two blocks do it:
+
+<CodeBlock
+  title="Ink policy block for UI prompts"
+  language="text"
+  code={`# Text colors (light mode — exhaustive list, nothing else)
+Primary ink:   #1F2937 — headlines, body, anything multi-line
+Secondary ink: #4B5563 — captions, labels, helper text, footer links
+Accent ink:    <your accent, only if it measures 4.5:1 on white>
+
+Rules:
+- No text node may use any other color, including via opacity utilities.
+- Nothing below 4.5:1 against its actual background. If unsure, darker.
+- Placeholder text uses secondary ink, not a lighter shade.
+- Disabled states may break these rules — and must also be marked
+  disabled semantically, not just visually.`}
+/>
+
+Two ink levels, not three. Every level you add is an invitation to
+recurse back down to `gray-400`. We have yet to find a marketing page
+that needed a third level of gray rather than better copy.
+
+<Callout tone="warn" title="Watch for opacity laundering">
+  Models also produce light gray as white at 60% opacity, or
+  `text-gray-900/50`. Same ratio, invisible to a color-token grep —
+  which is why the rule above says "including via opacity utilities."
+  Audit computed styles, not class names.
+</Callout>
+
+## The two-minute audit
+
+For pages that already exist: open devtools, sample these four spots
+against their real backgrounds — subheadline, smallest chart label,
+form helper text, footer link. Any contrast checker works. If those
+four pass at 4.5:1, the rest of the page almost always does; they are
+the canaries because they are where "secondary of the secondary"
+bottoms out.
+
+Hierarchy is real, and gray is a legitimate tool for it. The fix is not
+"make everything black" — it is capping the recursion at two named ink
+levels, both of which clear the floor. Decide the inks once, write them
+into the prompt, and light mode stops being the mode where your most
+careful readers squint.

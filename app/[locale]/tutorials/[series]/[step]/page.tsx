@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site-config';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
@@ -38,11 +39,10 @@ export async function generateMetadata({
   const resolved = await getStep(locale as Locale, series, step);
   if (!resolved) return {};
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const currentUrl =
     locale === 'en'
-      ? `${baseUrl}/tutorials/${series}/${step}`
-      : `${baseUrl}/${locale}/tutorials/${series}/${step}`;
+      ? `${SITE_URL}/tutorials/${series}/${step}`
+      : `${SITE_URL}/${locale}/tutorials/${series}/${step}`;
   const { title, summary, cover, date, tags } = resolved.frontmatter;
 
   return {
@@ -52,10 +52,10 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/tutorials/${series}/${step}`,
-        zh: `${baseUrl}/zh/tutorials/${series}/${step}`,
-        vi: `${baseUrl}/vi/tutorials/${series}/${step}`,
-        ja: `${baseUrl}/ja/tutorials/${series}/${step}`,
+        en: `${SITE_URL}/tutorials/${series}/${step}`,
+        zh: `${SITE_URL}/zh/tutorials/${series}/${step}`,
+        vi: `${SITE_URL}/vi/tutorials/${series}/${step}`,
+        ja: `${SITE_URL}/ja/tutorials/${series}/${step}`,
       },
     },
     openGraph: {
@@ -90,11 +90,10 @@ export default async function TutorialStepPage({
   const showFallback = isFallback(typedLocale, resolved.sourceLocale);
   const seriesMeta = (await listSeries()).find((s) => s.slug === series)!;
   const siblings = await getSeriesSteps(typedLocale, series);
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
   const canonicalUrl =
     locale === 'en'
-      ? `${baseUrl}/tutorials/${series}/${step}`
-      : `${baseUrl}/${locale}/tutorials/${series}/${step}`;
+      ? `${SITE_URL}/tutorials/${series}/${step}`
+      : `${SITE_URL}/${locale}/tutorials/${series}/${step}`;
 
   // Use a local alias so TS treats Body as definitely-defined inside JSX.
   const Body = resolved.Body;

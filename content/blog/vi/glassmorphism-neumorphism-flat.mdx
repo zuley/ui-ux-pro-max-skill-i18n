@@ -1,0 +1,102 @@
+---
+title: "Glassmorphism, neumorphism, flat: một bản hướng dẫn ra quyết định, không phải mood board"
+summary: "Tên style hay bị coi là thẩm mỹ để dạo chọn. Thực ra chúng là quyết định kỹ thuật với chi phí khác nhau về contrast, hiệu năng và bảo trì. Đây là bảng quyết định chúng tôi mã hóa vào Skill."
+date: 2026-06-04
+tags: [styles, design-system, accessibility]
+author: admin
+---
+
+Trong 50 style mà Skill đóng gói, có ba cái được gọi đích danh nhiều
+hơn tất cả phần còn lại cộng lại: glassmorphism, neumorphism và flat.
+Chúng được yêu cầu như những *tâm trạng* — "làm cho nó trong như kính"
+— nhưng chúng không phải tâm trạng. Mỗi cái là một bó đánh đổi kỹ
+thuật về contrast, hiệu năng và chi phí bảo trì. Chọn giữa chúng bằng
+cảm giác là cách một trang flat phải trả hóa đơn giá glassmorphism.
+
+Dưới đây là từng style dưới dạng quyết định, không phải dáng vẻ.
+
+## Glassmorphism: chiều sâu đi thuê, trả tiền bằng blur
+
+Mờ đục kiểu kính sương, viền sáng mảnh, nền thấm qua
+`backdrop-filter: blur()`. Nó phát tín hiệu *phân lớp, hiện đại, cao
+cấp* — và có hai chi phí thật mà ai cũng phát hiện quá muộn:
+
+- **Contrast thành bia di động.** Chữ trên kính ngồi trên bất cứ thứ
+  gì tình cờ cuộn qua bên dưới. Mức 4.5:1 bạn đo ở trạng thái tĩnh có
+  thể tụt xuống 2:1 ngay khi một tấm ảnh trượt vào sau panel.
+- **`backdrop-filter` là một trong những thuộc tính đắt nhất của CSS.**
+  Một navbar kính đè lên trang đang cuộn phải vẽ lại blur mỗi frame —
+  trên điện thoại tầm trung, đó là khác biệt giữa 60fps và 35fps.
+
+Kỷ luật giữ cho nó chạy được: kính cho **tối đa hai loại phần tử**
+(thường là navbar và một panel nổi), không bao giờ cho thứ chứa chữ
+body, và luôn kèm fallback màu đặc qua `@supports`. Glassmorphism là
+gia vị. Dọn lên như món chính thì vừa không đọc nổi vừa chậm.
+
+## Neumorphism: style tự ăn mất affordance của mình
+
+Khối nổi mềm mại, nền cùng tông, toàn bộ bản sắc nằm ở cặp bóng
+sáng/tối. Nó lên ảnh tuyệt đẹp, vì thế cứ vài năm lại quay về — và nó
+mang một vấn đề cấu trúc không palette nào sửa nổi: **toàn bộ bản sắc
+của nó sống dưới mức contrast 3:1.** Khoảnh khắc mọi cạnh đều đậu
+WCAG, nó thôi là neumorphism.
+
+Đó không phải lý do cấm, mà là lý do khoanh vùng: chỉ cho bề mặt trang
+trí — card, player, ô dashboard — còn mọi phần tử *tương tác* (nút,
+toggle, ô nhập) phải có viền hoặc nền thật đè lên trên lớp bóng mềm.
+Nút neumorphic thuần túy trình bày trạng thái nhấn và chưa nhấn gần
+như giống hệt nhau; người dùng thị lực kém đơn giản là không vận hành
+nổi. Nếu sản phẩm thuộc loại công cụ, dày thông tin, style này sẽ chống
+lại bạn trên từng màn hình.
+
+## Flat: mặc định cần lý do mới được rời đi
+
+Không có chiều sâu mô phỏng; thứ bậc đến từ thang chữ, khoảng cách và
+mảng màu. Render rẻ nhất, giữ nhất quán dễ nhất, đổi theme nhẹ nhàng.
+Cách đóng khung trung thực: **flat là mặc định, hai cái còn lại là độ
+lệch mà bạn phải biện minh được trong một câu.** "Vì trông nó trơn
+quá" không phải câu đó — sự trơn trong thiết kế flat hầu như luôn là
+một vấn đề typography mặc trang phục style. Trước khi với tay lấy blur
+hay bóng đổ, thử tăng tương phản cỡ chữ một nấc và dùng một màu accent
+với kỷ luật thật sự.
+
+## Bảng quyết định
+
+<CodeBlock
+  title="Chọn giữa ba style"
+  language="text"
+  code={`Câu hỏi                              kính    neumorph   flat
+Chữ body ngồi trên nó?                không   được       được
+Dashboard dày thông tin?              không   không      có
+Trang marketing, cảm giác cao cấp?    có      cẩn thận   có
+Phải đạt WCAG AA mọi nơi?             khó     rất khó    dễ
+Lưu lượng mobile cấu hình thấp?       không   được       có
+Team không có người review design?    không   không      có`}
+/>
+
+Hai khuôn mẫu rơi ra từ bảng. Flat không bao giờ là câu trả lời sai —
+đôi khi chỉ là món nêm chưa tới. Và hai style chiều sâu là lựa chọn
+*cấp trang*, không phải *cấp hệ thống*: một navbar kính trên một hệ
+flat tổng thể là mạch lạc; cả sản phẩm xây trên kính là một bug hiệu
+năng có tâm trạng.
+
+## Nói nó trong prompt
+
+Chỉ tên style là thiếu ràng buộc — với model, "glassmorphism" nghĩa là
+*phủ blur lên mọi thứ*. Gọi tên style, rồi rào nó lại:
+
+<CodeBlock
+  title="Block style có hàng rào"
+  language="text"
+  code={`# Style: Glassmorphism, có khoanh vùng
+- Xử lý kính: CHỈ navbar và panel thống kê nổi.
+- Mọi thứ khác: bề mặt flat, nền đặc, viền 1px.
+- Không chữ body trên kính. Nhãn trên kính: weight tối thiểu 600, và
+  kiểm chứng 4.5:1 so với vùng SÁNG NHẤT của nền trang.
+- Cung cấp fallback @supports: nền đặc 95% opacity, không blur.`}
+/>
+
+Hàng rào là phần model không bao giờ tự cấp, và cũng chính là phần một
+người review design chắc chắn sẽ đòi. Style không phải trang phục trang
+web mặc; nó là ngân sách trang web tiêu. Hãy chọn cái có chi phí rơi
+đúng chỗ sản phẩm của bạn trả nổi.

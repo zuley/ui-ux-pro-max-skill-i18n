@@ -1,37 +1,24 @@
-import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { AnnouncementBar } from '@/components/announcement-bar';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
-import { ThemeProvider } from '@/lib/theme-context';
-import { SearchIndexProvider } from '@/components/search/search-index-context';
-import { buildSearchIndex } from '@/lib/search-index';
-import messages from '@/messages/en.json';
 
 /**
  * EN-default route-group shell mirroring app/[locale]/tutorials/layout.tsx
- * so /tutorials/* (no /en/ prefix) is reachable.
+ * so /tutorials/* (no /en/ prefix) is reachable. Providers and the
+ * announcement bar live in app/(en)/layout.tsx.
  */
-export default async function EnglishTutorialsLayout({
+export default function EnglishTutorialsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   setRequestLocale('en');
-  const searchIndex = await buildSearchIndex('en');
 
   return (
-    <NextIntlClientProvider locale="en" messages={messages}>
-      <ThemeProvider>
-        <SearchIndexProvider value={searchIndex}>
-          <AnnouncementBar />
-          <div className="min-h-screen bg-gray-50 dark:bg-[#0F172A] transition-colors duration-300">
-            <Navbar />
-            <div className="pt-28 pb-16">{children}</div>
-            <Footer />
-          </div>
-        </SearchIndexProvider>
-      </ThemeProvider>
-    </NextIntlClientProvider>
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0F172A] transition-colors duration-300">
+      <Navbar />
+      <div className="pt-28 pb-16">{children}</div>
+      <Footer />
+    </div>
   );
 }

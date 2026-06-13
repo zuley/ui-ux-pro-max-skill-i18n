@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
-import { routing } from '@/i18n/routing';
+import { routing, prefixedLocales } from '@/i18n/routing';
 import { ThemeProvider } from '@/lib/theme-context';
 import { adsenseMetadata } from '@/lib/adsense';
 import { AnnouncementBar } from '@/components/announcement-bar';
@@ -13,6 +13,7 @@ import { buildSearchIndex } from '@/lib/search-index';
 import type { Locale } from '@/lib/content/types';
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
+import { SITE_URL } from '@/lib/site-config';
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-heading" });
@@ -27,20 +28,20 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const baseUrl = 'https://ui-ux-pro-max-skill.com';
-  const currentUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+  const currentUrl = locale === 'en' ? SITE_URL : `${SITE_URL}/${locale}`;
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: `${t('common.title')} - ${t('common.description')}`,
     description: t('hero.subtitle'),
     keywords: t('common.keywords'),
     alternates: {
       canonical: currentUrl,
       languages: {
-        'en': baseUrl,
-        'zh': `${baseUrl}/zh`,
-        'vi': `${baseUrl}/vi`,
-        'ja': `${baseUrl}/ja`,
+        'en': SITE_URL,
+        'zh': `${SITE_URL}/zh`,
+        'vi': `${SITE_URL}/vi`,
+        'ja': `${SITE_URL}/ja`,
       },
     },
     openGraph: {
@@ -72,7 +73,8 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  // English is served at the root by app/(en) — never emit /en/* here.
+  return prefixedLocales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({

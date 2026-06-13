@@ -42,11 +42,14 @@ export function ArticleJsonLd({
   if (keywords && keywords.length > 0) data.keywords = keywords.join(', ');
   if (image) data.image = image;
 
+  // Escape `<` so frontmatter content can never close the <script> tag
+  // (e.g. a title containing "</script>") and inject markup.
+  const json = JSON.stringify(data).replace(/</g, '\\u003c');
+
   return (
     <script
       type="application/ld+json"
-      // JSON.stringify produces safe content; no user-supplied HTML.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: json }}
     />
   );
 }

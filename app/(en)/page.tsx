@@ -1,33 +1,28 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { AnnouncementBar } from '@/components/announcement-bar';
 import { PageContent } from '@/components/page-content';
 import { LatestContent } from '@/components/home/latest-content';
-import { ThemeProvider } from '@/lib/theme-context';
-import { SearchIndexProvider } from '@/components/search/search-index-context';
-import { buildSearchIndex } from '@/lib/search-index';
 import messages from '@/messages/en.json';
+import { SITE_URL } from '@/lib/site-config';
 
-const baseUrl = 'https://ui-ux-pro-max-skill.com';
 
 export const metadata: Metadata = {
   title: `${messages.common.title} - ${messages.common.description}`,
   description: messages.hero.subtitle,
   keywords: messages.common.keywords,
   alternates: {
-    canonical: baseUrl,
+    canonical: SITE_URL,
     languages: {
-      en: baseUrl,
-      zh: `${baseUrl}/zh`,
-      vi: `${baseUrl}/vi`,
-      ja: `${baseUrl}/ja`
+      en: SITE_URL,
+      zh: `${SITE_URL}/zh`,
+      vi: `${SITE_URL}/vi`,
+      ja: `${SITE_URL}/ja`
     }
   },
   openGraph: {
     title: `${messages.common.title} - ${messages.common.description}`,
     description: messages.hero.subtitle,
-    url: baseUrl,
+    url: SITE_URL,
     siteName: 'UI UX Pro Max Skill',
     locale: 'en',
     type: 'website'
@@ -50,18 +45,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootPage() {
+export default function RootPage() {
   setRequestLocale('en');
-  const searchIndex = await buildSearchIndex('en');
 
-  return (
-    <NextIntlClientProvider locale="en" messages={messages}>
-      <ThemeProvider>
-        <SearchIndexProvider value={searchIndex}>
-          <AnnouncementBar />
-          <PageContent latestContent={<LatestContent locale="en" />} />
-        </SearchIndexProvider>
-      </ThemeProvider>
-    </NextIntlClientProvider>
-  );
+  return <PageContent latestContent={<LatestContent locale="en" />} />;
 }

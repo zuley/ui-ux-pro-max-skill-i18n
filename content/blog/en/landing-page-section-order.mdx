@@ -1,0 +1,115 @@
+---
+title: "Section order is a trust argument: how to sequence a landing page"
+summary: "Hero, features, testimonials, pricing — in what order? The sequence is not a layout choice, it is an argument structure, and it should be decided by one variable: how much your visitor already trusts you."
+date: 2026-06-08
+tags: [landing-page, design-system, conversion]
+author: admin
+---
+
+Ask a model for a landing page and you get the same spine every time:
+hero, three features, testimonials, pricing, footer CTA. That order is
+not wrong — it is the *median* order, the average of every landing
+page in the training data. Which means it is optimal for a product
+that does not exist: the median product, sold to the median visitor.
+
+A landing page is an argument. Sections are its paragraphs, and the
+order is the structure of the argument. And like any argument, the
+right structure depends on one variable above all: **how much does the
+reader already trust the claim?**
+
+## The one question that decides the order
+
+Before sorting sections, answer this about the visitor who matters
+most: *when they land, what do they doubt?*
+
+There are only three common answers, and each one produces a different
+page:
+
+- **"Does this problem even have a solution?"** — they doubt the
+  *category*. Lead with the problem made vivid, then the demo. This is
+  the **show-first** page.
+- **"Sure, but will it work for me?"** — they doubt the *fit*. Lead
+  with social proof from people shaped like them, then specifics. This
+  is the **proof-first** page.
+- **"I know this category, why you?"** — they doubt the *difference*.
+  Lead with the one sharp claim competitors cannot make, then evidence.
+  This is the **wedge-first** page.
+
+The generated median page is none of these. It hedges across all
+three, which is why it reads as wallpaper.
+
+## Three spines
+
+<CodeBlock
+  title="Section order by dominant doubt"
+  language="text"
+  code={`SHOW-FIRST (new category, low trust in the idea)
+hero (problem, not product) → live demo / video → how it works,
+3 steps → objections as FAQ → single CTA
+Testimonials: omit or tiny. Nobody trusts strangers about a thing
+they don't yet believe exists.
+
+PROOF-FIRST (known category, low trust in *you*)
+hero (outcome + who it's for) → logo row + one number → 2-3 specific
+testimonials → features mapped to the testimonials → pricing → CTA
+The testimonials carry the page; features only *explain* the praise.
+
+WEDGE-FIRST (crowded category, comparison shoppers)
+hero (the wedge claim) → comparison table, honest → the one feature
+that makes the wedge true, in depth → pricing next to the table's
+implications → migration/switching section → CTA
+Burying the comparison is the classic error: they will compare
+anyway, just without your framing.`}
+/>
+
+Note what moves: pricing. Show-first pages defer it (price before
+belief reads as presumptuous); wedge-first pages surface it early
+(comparison shoppers leave if they cannot find it). The median page
+always puts it in slot four, which is exactly right for nobody.
+
+## Section count is part of the argument
+
+Each section should retire one specific doubt. That gives you a test
+with teeth: name the doubt each section answers, and if two sections
+answer the same doubt, **merge them**. The generated page fails this
+test constantly — "features" and "benefits" and "how it works" are
+usually the same paragraph wearing three outfits.
+
+Five to six sections retire most arguments. Past that you are not
+arguing, you are filibustering.
+
+<Callout tone="info" title="The skim test">
+  Scroll the page reading only headlines. They should form a complete
+  argument on their own — claim, evidence, resolution — because that
+  is how most visitors will actually read it. If the headlines read
+  "Powerful features / Why choose us / Get started", there is no
+  argument, only furniture.
+</Callout>
+
+## Saying it in a prompt
+
+Section order is a decision, so it goes in the decisions block — named
+sections, in order, each with the doubt it retires:
+
+<CodeBlock
+  title="Structure block for a landing page prompt"
+  language="text"
+  code={`# Page structure (locked — do not add, remove, or reorder sections)
+1. Hero — doubt: "is this for my use case?" One claim, one CTA.
+2. Comparison table — doubt: "how is this different from X and Y?"
+   Honest rows; include one row where we lose.
+3. Deep-dive — doubt: "is the wedge claim real?" The one feature
+   that makes row 1 of the table true.
+4. Pricing — doubt: "what does the difference cost?"
+5. Migration — doubt: "is switching painful?" Three steps, one CTA.
+No testimonials section: we have no named customers yet, and
+placeholder praise reads as fake because it is.`}
+/>
+
+The last line matters most. The model will insert testimonials with
+invented names unless told otherwise — and a fabricated "Sarah K.,
+CTO" does more damage to a trust argument than any missing section.
+
+The order of sections is not where creativity lives on a landing page;
+it is where the *reasoning* lives. Decide the doubt, sequence the
+argument, and let the model write paragraphs — not the logic.

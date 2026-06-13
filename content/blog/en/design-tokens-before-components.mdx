@@ -1,0 +1,114 @@
+---
+title: "Tokens before components: the only way AI-generated Tailwind stays maintainable"
+summary: "Generated UIs are born with hex values scattered across forty class strings — beautiful today, unmaintainable by Friday. The fix is ordering: make the model define tokens first, then forbid it from ever writing a raw value again."
+date: 2026-06-11
+tags: [tailwind, design-tokens, design-system]
+author: admin
+---
+
+Generated Tailwind has a signature failure mode that has nothing to do
+with how the page looks. Ask for a landing page, get a beautiful one —
+and `#6D28D9` appears in fourteen class strings, `#6C28D9` (note the
+typo the model made on line 212) in two more, the same spacing rhythm
+written as `mt-7`, `mt-8`, and `mt-[30px]` in three sibling sections.
+
+The page is fine. The *system* is stillborn. The first time you say
+"make the accent warmer," you are doing a find-and-replace across
+hex variants you have to discover one by one.
+
+This is not a model quality problem; it is an **ordering** problem.
+The model writes components first and colors as it goes, the way a
+junior developer paints directly on the canvas. The fix is the same as
+with the junior: tokens first, then components, and no raw values ever
+again.
+
+## Two prompts, not one
+
+The mistake is asking for the page and the system in one breath. Split
+it. The first prompt produces *only* the token layer — and it is short:
+
+<CodeBlock
+  title="Prompt 1 — tokens only"
+  language="text"
+  code={`Define the design tokens for this project as CSS custom properties
+in globals.css, plus the Tailwind theme mapping. Nothing else —
+no components, no pages.
+
+# Decisions (locked)
+Palette: <your 5 colors with hex values and roles>
+Type: <heading face / body face, the scale: 14, 16, 20, 28, 40, 56>
+Spacing rhythm: 4px base; section padding 96px desktop / 64px mobile
+Radii: 8px controls, 16px cards. Shadows: exactly two elevations.
+
+# Rules
+- Name tokens by ROLE (--color-accent, --color-ink-secondary),
+  never by value (--purple-600, --gray-light).
+- Every token gets a one-line comment: where it is allowed to be used.
+- If two tokens would hold the same value, merge them and note both roles.`}
+/>
+
+Role-based naming is the line that pays rent later. `--purple-600`
+becomes a lie the day the accent turns teal — and the model, given
+value-names, will happily define `--purple-600: #14b8a6` rather than
+rename anything.
+
+## Then the fence, in every component prompt
+
+The second prompt — and every prompt after it, forever — carries one
+block:
+
+<CodeBlock
+  title="The no-raw-values fence"
+  language="text"
+  code={`# Token discipline (non-negotiable)
+- Zero raw values in markup: no hex, no rgb(), no arbitrary
+  values like mt-[30px] or text-[#333].
+- Color, spacing, radius, shadow: only via the tokens in globals.css.
+- If the design needs a value no token provides, STOP and say so —
+  propose the new token, wait for approval. Do not improvise one.
+- The diff for this rule's sake alone should be empty.`}
+/>
+
+The third bullet is the one that does the real work. Without an escape
+hatch the model treats the rule as soft and improvises `bg-[#f8f7ff]`
+the moment a token is missing; with the stop-and-propose path, missing
+tokens surface as *questions* instead of as silent debt. You will get
+two or three of these questions per page. Each one is a design
+decision you almost made by accident.
+
+## The Friday test
+
+How to know if it worked — try these three edits at the end of the
+week, each of which should be a one-line change:
+
+- Make the accent color warmer → edit `--color-accent`, done.
+- Tighten every card's padding → edit one spacing token, done.
+- Switch heading face → edit the font token and its fallback stack, done.
+
+If any of these sends you into component files, the fence leaked. Grep
+tells you where: search for `#`, `rgb(`, and `-[` across components.
+Every hit is either a missing token (promote it) or a model
+improvisation (replace it). On a fenced codebase that grep returns
+nothing, and it is the cheapest CI check you will ever add.
+
+<Callout tone="warn" title="Arbitrary values are the back door">
+  Tailwind's bracket syntax is the model's favorite smuggling route —
+  `w-[417px]` to match a screenshot it imagined, `text-[#4b5563]`
+  because writing the hex felt faster than checking the token name.
+  A fenced project treats brackets as a code smell everywhere except
+  truly one-off geometry, and "truly one-off" means you can say why
+  in a comment.
+</Callout>
+
+## Why this matters more with AI, not less
+
+Hand-coders drift into inconsistency over months; a model can produce
+the entire mess in one afternoon, with perfect confidence, twice as
+fast as you can review it. The token layer is the *only* leverage
+point where one decision constrains thousands of generated lines —
+which is exactly the trade you want with a generator: you own ten
+decisions, it owns ten thousand keystrokes.
+
+Tokens first. Fence forever. The page that comes out looks identical
+to the one-prompt version — for exactly one week, until the first
+change request arrives. Then they are different products.
