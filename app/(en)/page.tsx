@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
     languages: {
+      'x-default': SITE_URL,
       en: SITE_URL,
       zh: `${SITE_URL}/zh`,
       vi: `${SITE_URL}/vi`,

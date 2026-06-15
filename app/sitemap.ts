@@ -19,7 +19,10 @@ function abs(locale: string, path: string): string {
 function alternatesFor(path: string): {
   languages: Record<string, string>;
 } {
-  const languages: Record<string, string> = {};
+  const languages: Record<string, string> = {
+    // Fallback for users whose language isn't en/zh/vi/ja — the en root.
+    'x-default': abs(routing.defaultLocale, path),
+  };
   for (const l of routing.locales) {
     languages[l] = abs(l, path);
   }
