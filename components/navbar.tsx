@@ -61,10 +61,14 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-[28px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto transition-all duration-300">
+      <nav className="fixed top-[28px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto">
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
-            <Link href={localePath(locale, '/')} className="flex items-center gap-1.5 min-[400px]:gap-2 group">
+            <Link
+              href={localePath(locale, '/')}
+              scroll
+              className="flex items-center gap-1.5 min-[400px]:gap-2 group"
+            >
               <svg viewBox="0 0 48 48" fill="none" className="w-6 h-6 min-[400px]:w-7 min-[400px]:h-7 sm:w-8 sm:h-8" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -94,6 +98,7 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  scroll
                   className={[
                     'transition-colors duration-200 cursor-pointer',
                     isActive(l.href)
@@ -107,6 +112,7 @@ export function Navbar() {
 
               <Link
                 href={localePath(locale, '/#styles')}
+                scroll
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 {t('examples')}
@@ -158,6 +164,7 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  scroll
                   className={[
                     'rounded-lg px-3 py-2 text-sm font-medium transition-colors cursor-pointer',
                     isActive(l.href)
@@ -176,6 +183,7 @@ export function Navbar() {
                 <Link
                   key={n.slug}
                   href={docPath(locale, n.slug)}
+                  scroll
                   className="rounded-lg px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   {tDocs(n.titleKey)}
@@ -184,6 +192,7 @@ export function Navbar() {
 
               <Link
                 href={localePath(locale, '/#styles')}
+                scroll
                 className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 {t('examples')}

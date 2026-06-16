@@ -29,8 +29,8 @@ export function DocsShell({
   return (
     <div className="relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-[260px_1fr_220px] lg:gap-10">
-          <aside className="hidden lg:block lg:fixed lg:left-[max(1rem,calc((100vw-80rem)/2+1rem))] lg:top-28 lg:w-[260px] lg:h-[calc(100vh-7rem)] lg:overflow-y-auto">
+        <div className="lg:grid lg:grid-cols-[260px_1fr_220px] lg:gap-10 lg:items-start">
+          <aside className="hidden lg:block lg:sticky lg:top-28 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
             <DocsSidebar
               items={docsNav}
               activeSlug={activeSlug}
@@ -40,7 +40,7 @@ export function DocsShell({
 
           <main className="min-w-0 lg:col-start-2">{children}</main>
 
-          <aside className="hidden lg:block lg:fixed lg:top-28 lg:w-[220px] lg:h-[calc(100vh-7rem)] lg:overflow-y-auto lg:right-[max(1rem,calc((100vw-80rem)/2+1rem))]">
+          <aside className="hidden lg:block lg:sticky lg:top-28 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
             <DocsToc items={toc} title={t('docs.toc')} />
           </aside>
         </div>
@@ -48,4 +48,3 @@ export function DocsShell({
     </div>
   );
 }
-
