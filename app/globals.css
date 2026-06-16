@@ -33,6 +33,13 @@
 }
 
 @layer base {
+  html {
+    /* Never let an accidental wide child (a grid item, an SVG diagram,
+       a long code line) create horizontal scroll / a blank strip on the
+       right. `clip` rather than `hidden` so it does NOT become a scroll
+       container — keeps the sticky docs sidebars working. */
+    overflow-x: clip;
+  }
   body {
     color: var(--foreground);
     background: var(--background);
