@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import Script from 'next/script';
 import { routing, prefixedLocales } from '@/i18n/routing';
-import { ThemeProvider } from '@/lib/theme-context';
 import { adsenseMetadata } from '@/lib/adsense';
-import { AnnouncementBar } from '@/components/announcement-bar';
-import { SearchIndexProvider } from '@/components/search/search-index-context';
-import { buildSearchIndex } from '@/lib/search-index';
+import { RootShell } from '@/components/root-shell';
 import type { Locale } from '@/lib/content/types';
-import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../globals.css";
 import { SITE_URL } from '@/lib/site-config';
-
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-heading" });
 
 type AppLocale = (typeof routing.locales)[number];
 
@@ -38,6 +28,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
+        'x-default': SITE_URL,
         'en': SITE_URL,
         'zh': `${SITE_URL}/zh`,
         'vi': `${SITE_URL}/vi`,
@@ -92,40 +83,10 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
-  const searchIndex = await buildSearchIndex(locale as Locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning className="dark">
-      <body className={`${dmSans.className} ${dmSans.variable} ${spaceGrotesk.variable}`}>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html:
-              "(()=>{try{const t=localStorage.getItem('theme');const d=document.documentElement;if(t==='light'){d.classList.remove('dark');d.style.colorScheme='light';}else{d.classList.add('dark');d.style.colorScheme='dark';}}catch{}})();"
-          }}
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-Y3KXMDMBC1"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html:
-              "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y3KXMDMBC1');"
-          }}
-        />
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <SearchIndexProvider value={searchIndex}>
-              <AnnouncementBar />
-              {children}
-            </SearchIndexProvider>
-          </ThemeProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <RootShell locale={locale as Locale} messages={messages}>
+      {children}
+    </RootShell>
   );
 }
