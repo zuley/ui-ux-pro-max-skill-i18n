@@ -1,10 +1,15 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { Rocket } from 'lucide-react';
 import { docPath } from '@/lib/locale-path';
+
+const TERMINAL_PREFIX = 'uipro init --ai ';
+const AI_TOOLS = ['claude', 'cursor', 'windsurf', 'antigravity', 'copilot', 'kiro', 'codex', 'qoder'];
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -41,15 +46,7 @@ export function Hero() {
           {t('subtitle')}
         </p>
 
-        <div className="flex justify-center mb-4 min-[400px]:mb-6 sm:mb-10">
-          <div className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left">
-            <div className="text-gray-400">
-              <span className="text-gray-400">$</span>{' '}
-              <span className="text-emerald-400">{t('terminalCmd')}</span>{' '}
-              <span className="animate-pulse text-white">▋</span>
-            </div>
-          </div>
-        </div>
+        <TerminalCommand />
 
         <div className="flex flex-row items-center justify-center gap-2 min-[400px]:gap-3 sm:gap-4 mb-6 min-[400px]:mb-8 sm:mb-16">
           <Link href={docPath(locale, 'getting-started')} className="btn-primary flex items-center gap-2 text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
@@ -59,6 +56,56 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function TerminalCommand() {
+  const [text, setText] = useState('');
+  const [toolIndex, setToolIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [cursorOn, setCursorOn] = useState(true);
+
+  // Blink the caret on a fixed interval, like a real terminal.
+  useEffect(() => {
+    const blink = setInterval(() => setCursorOn((on) => !on), 530);
+    return () => clearInterval(blink);
+  }, []);
+
+  // Type the current command, hold, delete back to the "uipro init --ai "
+  // prefix, then cycle to the next AI tool.
+  useEffect(() => {
+    const full = TERMINAL_PREFIX + AI_TOOLS[toolIndex];
+    const atFull = text === full;
+    const delay = atFull && !isDeleting ? 1500 : isDeleting ? 50 : 80;
+
+    const timer = setTimeout(() => {
+      if (isDeleting) {
+        if (text.length > TERMINAL_PREFIX.length) {
+          setText(text.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setToolIndex((i) => (i + 1) % AI_TOOLS.length);
+        }
+      } else if (!atFull) {
+        setText(full.slice(0, text.length + 1));
+      } else {
+        setIsDeleting(true);
+      }
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, toolIndex]);
+
+  return (
+    <div className="flex justify-center mb-4 min-[400px]:mb-6 sm:mb-10">
+      <div className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left">
+        <div className="text-gray-400">
+          <span className="text-gray-400">$</span>{' '}
+          <span className="text-emerald-400">{text}</span>
+          <span className={`${cursorOn ? 'opacity-100' : 'opacity-0'} text-white`}>▋</span>
+        </div>
+      </div>
+    </div>
   );
 }
 
