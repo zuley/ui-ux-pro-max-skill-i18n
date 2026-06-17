@@ -31,7 +31,6 @@
     "title1": "UI UX Pro Max",
     "title2": "Trí tuệ thiết kế",
     "subtitle": "UI UX Pro Max Skill cho Claude Code, Cursor, Windsurf và nhiều AI assistants khác. Bao gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks và 161 reasoning rules để AI tạo giao diện đẹp hơn.",
-    "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Bắt đầu",
     "btnDemos": "Bắt đầu nhanh"
   },
@@ -208,7 +207,7 @@
         "subtitle": "Nếu bạn tò mò về bên trong, đây là bản dài.",
         "stages": [
           { "label": "Giai đoạn 1 — Parse request", "body": "Generator rút từ prompt 4 tín hiệu: product type (SaaS, e-commerce, healthcare, fintech, portfolio...), intent (build, redesign, fix, optimize), style hint (glassmorphism, dark mode), và surface (landing, dashboard, mobile screen, single component). Tín hiệu thiếu rơi về default thiên về 'an toàn và accessible' hơn là 'mới lạ'." },
-          { "label": "Giai đoạn 2 — Tìm song song", "body": "Năm search chạy song song trên JSON index nội bộ — products, styles, colors, landings, typography. Mỗi search trả top-N candidate theo string similarity cộng metadata. Giai đoạn này thường xong dưới 1 giây trên laptop dev." },
+          { "label": "Giai đoạn 2 — Tìm song song", "body": "Năm search chạy song song trên CSV dataset nội bộ — products, styles, colors, landings, typography. Mỗi search trả top-N candidate theo string similarity cộng metadata. Giai đoạn này thường xong dưới 1 giây trên laptop dev." },
           { "label": "Giai đoạn 3 — Reasoning và gỡ xung đột", "body": "161 reasoning rule vừa là filter vừa là tie-breaker. Ví dụ: 'healthcare + dashboard → ưu tiên palette mát, ưu tiên Inter hoặc IBM Plex Sans, đè neumorphism, đè brutalism, ưu tiên mật độ trung bình'. Khi điểm gần nhau, rule ngành chọn người thắng. Anti-pattern đã biết cũng bị loại tại đây." },
           { "label": "Giai đoạn 4 — Lắp output", "body": "Candidate thắng cuộc được gộp thành một design system bundle, serialize ra JSON (cho lập trình) hoặc Markdown (cho AI tiêu thụ trực tiếp). Với --persist, bundle cũng được ghi vào design-system/MASTER.md để các phiên sau dùng mà không cần chạy lại generator." }
         ]
@@ -402,12 +401,12 @@
           {
             "name": "Kiro",
             "description": "Gõ / trong chat để xem lệnh có sẵn, sau đó chọn ui-ux-pro-max:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "GitHub Copilot",
             "description": "Trong VS Code, gõ / để xem prompts có sẵn, chọn ui-ux-pro-max:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "Gemini / Qoder / Roo Code",
@@ -524,7 +523,7 @@
         {
           "title": "Output và tùy chỉnh",
           "items": [
-            { "q": "Output thiếu style tôi thích, thêm được không?", "a": "Chưa có API public. Cài local rồi sửa scripts/data/styles.json nếu muốn mở rộng cho bản thân. Đóng góp upstream qua repo cũng được hoan nghênh." },
+            { "q": "Output thiếu style tôi thích, thêm được không?", "a": "Chưa có API public. Cài local rồi sửa data/styles.csv nếu muốn mở rộng cho bản thân. Đóng góp upstream qua repo cũng được hoan nghênh." },
             { "q": "Sửa danh sách anti-pattern cho một ngành?", "a": "Sửa design-system/MASTER.md sau khi sinh; xóa dòng không đồng ý. Model sẽ tôn trọng file đã chỉnh. Sửa catalog gốc thì áp dụng project-wide nhưng phải apply lại sau mỗi update." },
             { "q": "Mặc định dùng shadcn/ui?", "a": "Hoặc thêm --stack shadcn khi sinh, hoặc thêm 'Use shadcn/ui primitives' vào mục Conventions trong MASTER.md của project. Model tôn trọng convention dạng văn xuôi trong MASTER.md." }
           ]

@@ -31,7 +31,6 @@
     "title1": "UI UX Pro Max Skill",
     "title2": "Design Intelligence",
     "subtitle": "UI UX Pro Max Skill - Agent Skills for Claude Code, Cursor, Windsurf & more AI assistants. Includes 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks, and 161 reasoning rules to help AI build beautiful interfaces.",
-    "terminalCmd": "uipro init --ai cursor",
     "btnHow": "Get Started",
     "btnDemos": "Quick Start"
   },
@@ -113,7 +112,7 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max Skill is an open, searchable design intelligence layer that plugs into AI coding assistants such as Claude Code, Cursor, Windsurf, GitHub Copilot, and 15 more. Instead of asking the model to invent a design from scratch every time, the skill gives the model a curated knowledge base of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 industry-specific reasoning rules. The result is interfaces that look intentional, follow accessibility rules, and avoid the generic 'AI-generated' aesthetic.",
+      "overview": "UI UX Pro Max Skill is an open, searchable design intelligence layer that plugs into AI coding assistants such as Claude Code, Cursor, Windsurf, GitHub Copilot, and 14 more. Instead of asking the model to invent a design from scratch every time, the skill gives the model a curated knowledge base of 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, and 161 industry-specific reasoning rules. The result is interfaces that look intentional, follow accessibility rules, and avoid the generic 'AI-generated' aesthetic.",
       "problem": {
         "title": "Why design intelligence matters for AI coding",
         "lead": "Modern AI assistants are great at writing component code, but UI design taste is uneven. Without grounding, models tend to produce the same handful of layouts and color schemes across very different products. A medical dashboard ends up looking like a crypto app; a children's app uses fintech-grey. UI UX Pro Max Skill exists to fix that gap by pinning the model's choices to evidence-based, industry-aware design knowledge.",
@@ -328,7 +327,7 @@
           },
           {
             "label": "Stage 2 — Parallel search",
-            "body": "Five searches fire in parallel against the bundled JSON indexes — products, styles, colors, landings, typography. Each search returns top-N candidates ranked by string similarity plus structured metadata. This stage typically completes in well under a second on a developer laptop."
+            "body": "Five searches fire in parallel against the bundled CSV datasets — products, styles, colors, landings, typography. Each search returns top-N candidates ranked by string similarity plus structured metadata. This stage typically completes in well under a second on a developer laptop."
           },
           {
             "label": "Stage 3 — Reasoning and conflict resolution",
@@ -598,12 +597,12 @@
           {
             "name": "Kiro",
             "description": "Type / in chat to see available commands, then select ui-ux-pro-max:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "GitHub Copilot",
             "description": "In VS Code, type / to see available prompts, select ui-ux-pro-max:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "Gemini / Qoder / Roo Code",
@@ -866,7 +865,7 @@
           "items": [
             {
               "q": "The output is missing my favorite style. Can I add one?",
-              "a": "Not yet through a public API. You can edit the JSON catalog under scripts/data/styles.json after a local install if you want to extend it for your own use. Upstream contributions are welcome via the project repo."
+              "a": "Not yet through a public API. You can edit the CSV catalog under data/styles.csv after a local install if you want to extend it for your own use. Upstream contributions are welcome via the project repo."
             },
             {
               "q": "Can I change the anti-pattern list for a given industry?",

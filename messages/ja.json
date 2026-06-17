@@ -31,7 +31,6 @@
     "title1": "UI UX Pro Max Skill",
     "title2": "Design Intelligence",
     "subtitle": "UI UX Pro Max Skill - Claude Code、Cursor、Windsurf などの AI アシスタント向け Agent Skills。67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、16 種類の技術スタック、161 個の推論ルールで、AI が美しいインターフェースを構築できるよう支援します。",
-    "terminalCmd": "uipro init --ai cursor",
     "btnHow": "はじめる",
     "btnDemos": "クイックスタート"
   },
@@ -292,7 +291,7 @@
         "subtitle": "内部に興味があれば、詳細版は以下のとおりです。",
         "stages": [
           { "label": "Stage 1 — リクエストの解析", "body": "プロンプトから 4 つの信号を抽出: プロダクトタイプ (SaaS、EC、医療、金融、ポートフォリオ等)、意図 (新規・刷新・修正・最適化)、明示的なスタイル指定 (Glassmorphism、Dark Mode)、対象面 (ランディング、ダッシュボード、モバイル画面、単一コンポーネント)。欠ける信号は「安全かつアクセシブル」を優先するデフォルトに帰着します。" },
-          { "label": "Stage 2 — 並列検索", "body": "products、styles、colors、landings、typography の 5 検索が同梱 JSON インデックスに並列実行。文字列類似度 + 構造化メタデータで Top-N 候補を返します。開発機では通常 1 秒未満。" },
+          { "label": "Stage 2 — 並列検索", "body": "products、styles、colors、landings、typography の 5 検索が同梱 CSV データセットに並列実行。文字列類似度 + 構造化メタデータで Top-N 候補を返します。開発機では通常 1 秒未満。" },
           { "label": "Stage 3 — 推論と矛盾解消", "body": "161 個の推論ルールがフィルタと同点決着の両方を担います。例: 「医療 + ダッシュボード → 寒色を優先、Inter または IBM Plex Sans を優先、Neumorphism を抑制、Brutalism を抑制、中密度を優先」。既知アンチパターンに該当する組み合わせは破棄。" },
           { "label": "Stage 4 — 出力の組み立て", "body": "勝者候補を 1 つのデザインシステムに統合し、JSON (プログラム用) または Markdown (AI 直接消費用) に直列化。--persist を付ければ同じ束を design-system/MASTER.md へ書き出し、以降のセッションは再生成不要で読めます。" }
         ]
@@ -486,12 +485,12 @@
           {
             "name": "Kiro",
             "description": "チャットで / を入力して利用可能なコマンドを表示し、ui-ux-pro-max を選択します:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "GitHub Copilot",
             "description": "VS Code で / を入力して利用可能なプロンプトを表示し、ui-ux-pro-max を選択します:",
-            "example": "/\nui-ux-pro-max"
+            "example": "/ui-ux-pro-max Build a landing page for my SaaS product"
           },
           {
             "name": "Gemini / Qoder / Roo Code",
@@ -608,7 +607,7 @@
         {
           "title": "出力とカスタマイズ",
           "items": [
-            { "q": "好きなスタイルが含まれない、追加できる?", "a": "公開 API は未提供。ローカルでは scripts/data/styles.json を編集して自分用に拡張可能。上流 PR も歓迎。" },
+            { "q": "好きなスタイルが含まれない、追加できる?", "a": "公開 API は未提供。ローカルでは data/styles.csv を編集して自分用に拡張可能。上流 PR も歓迎。" },
             { "q": "業界別アンチパターンを変更できる?", "a": "生成後に MASTER.md を編集、不要な行を削除。モデルは次回以降それを尊重。データ目録自体の編集はプロジェクト全体に効きますが、更新後の再適用が必要。" },
             { "q": "デフォルトで shadcn/ui を使わせるには?", "a": "生成時に --stack shadcn、もしくは MASTER.md に「Conventions」節で「shadcn/ui のプリミティブを使用」と書く。MASTER.md の散文規約は尊重されます。" }
           ]

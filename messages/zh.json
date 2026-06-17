@@ -31,7 +31,6 @@
     "title1": "UI UX Pro Max Skill",
     "title2": "设计智能",
     "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南、25 种图表类型、16 种技术栈和 161 条推理规则，让 AI 生成精美界面。",
-    "terminalCmd": "uipro init --ai cursor",
     "btnHow": "开始上手",
     "btnDemos": "快速上手"
   },
@@ -328,7 +327,7 @@
           },
           {
             "label": "阶段 2 — 并行搜索",
-            "body": "五个搜索并行作用在内置 JSON 索引上：产品、风格、配色、落地、字体。每个搜索返回基于字符串相似度排序的 Top-N 候选 + 结构化元数据。这一步在普通笔记本上通常远低于 1 秒完成。"
+            "body": "五个搜索并行作用在内置 CSV 数据集上：产品、风格、配色、落地、字体。每个搜索返回基于字符串相似度排序的 Top-N 候选 + 结构化元数据。这一步在普通笔记本上通常远低于 1 秒完成。"
           },
           {
             "label": "阶段 3 — 推理与冲突解决",
@@ -598,12 +597,12 @@
           {
             "name": "Kiro",
             "description": "在聊天中输入 / 查看可用命令,然后选择 ui-ux-pro-max:",
-            "example": "/ui-ux-pro-max"
+            "example": "/ui-ux-pro-max 为我的 SaaS 产品构建一个着陆页"
           },
           {
             "name": "GitHub Copilot",
             "description": "在 VS Code 中,输入 / 查看可用提示词,选择 ui-ux-pro-max:",
-            "example": "/ui-ux-pro-max"
+            "example": "/ui-ux-pro-max 为我的 SaaS 产品构建一个着陆页"
           },
           {
             "name": "Gemini / Qoder / Roo Code",
@@ -866,7 +865,7 @@
           "items": [
             {
               "q": "输出里缺了我喜欢的风格，能加吗？",
-              "a": "目前没有公共 API。本地安装后可以编辑 scripts/data/styles.json 自行扩展使用。也欢迎到项目仓库提 PR。"
+              "a": "目前没有公共 API。本地安装后可以编辑 data/styles.csv 自行扩展使用。也欢迎到项目仓库提 PR。"
             },
             {
               "q": "能修改某个行业的反模式列表吗？",
