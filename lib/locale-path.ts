@@ -21,6 +21,10 @@ export function tutorialsIndexPath(locale: string) {
   return localePath(locale, '/tutorials');
 }
 
+export function examplesPath(locale: string) {
+  return localePath(locale, '/examples');
+}
+
 export function tutorialSeriesPath(locale: string, seriesSlug: string) {
   return localePath(locale, ['', 'tutorials', seriesSlug].join('/'));
 }

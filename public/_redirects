@@ -1,0 +1,9 @@
+# Replace Next's client-side redirect pages with real HTTP redirects.
+/docs /docs/getting-started/ 308
+/docs/ /docs/getting-started/ 308
+/zh/docs /zh/docs/getting-started/ 308
+/zh/docs/ /zh/docs/getting-started/ 308
+/vi/docs /vi/docs/getting-started/ 308
+/vi/docs/ /vi/docs/getting-started/ 308
+/ja/docs /ja/docs/getting-started/ 308
+/ja/docs/ /ja/docs/getting-started/ 308

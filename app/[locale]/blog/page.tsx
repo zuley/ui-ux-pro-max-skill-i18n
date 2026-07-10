@@ -6,7 +6,11 @@ import { getAllPosts, getAllTags } from '@/lib/content/blog';
 import { localePath } from '@/lib/locale-path';
 import type { Locale } from '@/lib/content/types';
 import { TagFilter } from '@/components/blog/tag-filter';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -45,6 +49,13 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale,
       type: 'website',
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('blog.title')} | UI UX Pro Max Skill`,
+      description: t('blog.subtitle'),
+      images: [DEFAULT_TWITTER_IMAGE_URL],
     },
   };
 }

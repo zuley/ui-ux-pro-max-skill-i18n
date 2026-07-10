@@ -6,6 +6,7 @@ import Link from 'next/link';
 import {
   blogIndexPath,
   docPath,
+  examplesPath,
   localePath,
   tutorialsIndexPath,
 } from '@/lib/locale-path';
@@ -53,7 +54,7 @@ export function Footer() {
               <li><Link href={blogIndexPath(locale)} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('blog')}</Link></li>
               <li><Link href={localePath(locale, '/#features')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('features')}</Link></li>
               <li><Link href={localePath(locale, '/#stacks')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('stacks')}</Link></li>
-              <li><Link href={localePath(locale, '/#styles')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('styles')}</Link></li>
+              <li><Link href={examplesPath(locale)} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{tNav('styles')}</Link></li>
             </ul>
           </div>
 

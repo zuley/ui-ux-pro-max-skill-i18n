@@ -2,20 +2,35 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import { useMemo, useState } from 'react';
-import { Moon, Rocket, Sun } from 'lucide-react';
-import { PromptModal } from '@/components/prompt-modal';
+import { ChevronDown, Moon, Rocket, SlidersHorizontal, Sun } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { docPath } from '@/lib/locale-path';
 import { DEMO_BASE_URL } from '@/lib/site-config';
 import type { Demo } from '@/lib/gallery';
+import Image from 'next/image';
+import { examplesPath } from '@/lib/locale-path';
 
-export function Gallery({ demos }: { demos: Demo[] }) {
+const PromptModal = dynamic(() =>
+  import('@/components/prompt-modal').then((module) => module.PromptModal)
+);
+
+export function Gallery({
+  demos,
+  preview = false,
+  pageHeading = false
+}: {
+  demos: Demo[];
+  preview?: boolean;
+  pageHeading?: boolean;
+}) {
   const t = useTranslations('gallery');
   const locale = useLocale();
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activeMode, setActiveMode] = useState<'All Modes' | 'Light' | 'Dark'>('All Modes');
   const [query, setQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(6);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedPrompt, setSelectedPrompt] = useState<{ title: string; content: string } | null>(null);
 
   const categories = useMemo(() => {
@@ -46,7 +61,7 @@ export function Gallery({ demos }: { demos: Demo[] }) {
     });
   }, [activeCategory, activeMode, demos, query]);
 
-  const shown = filtered.slice(0, visibleCount);
+  const shown = preview ? demos.slice(0, 6) : filtered.slice(0, visibleCount);
 
   const stats = useMemo(() => {
     const total = demos.length;
@@ -58,14 +73,20 @@ export function Gallery({ demos }: { demos: Demo[] }) {
 
   return (
     <section id="styles" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          {t('title')}
-        </h2>
+      <div className="text-center mb-10 sm:mb-16">
+        {pageHeading ? (
+          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('title')}
+          </h1>
+        ) : (
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('title')}
+          </h2>
+        )}
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{t('subtitle')}</p>
       </div>
 
-      <div className="flex flex-col gap-6 mb-12">
+      {!preview ? <div className="flex flex-col gap-4 sm:gap-6 mb-8 sm:mb-12">
         <div className="flex items-center justify-center">
           <div className="w-full max-w-xl glass-card px-3 py-2 flex items-center gap-2">
             <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -78,12 +99,13 @@ export function Gallery({ demos }: { demos: Demo[] }) {
                 setVisibleCount(6);
               }}
               placeholder={t('searchPlaceholder')}
-              className="flex-1 bg-transparent outline-none text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+              aria-label={t('searchPlaceholder')}
+              className="flex-1 rounded-sm bg-transparent outline-none text-base sm:text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-blue-500"
             />
             {query ? (
               <button
                 onClick={() => setQuery('')}
-                className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                className="min-h-11 min-w-11 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 aria-label={t('clearSearch')}
               >
                 <svg className="w-4 h-4 text-gray-600 dark:text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -94,56 +116,76 @@ export function Gallery({ demos }: { demos: Demo[] }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 justify-center">
-          <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.category')}</span>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setActiveCategory(cat);
-                setVisibleCount(6);
-              }}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                activeCategory === cat
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        <button
+          type="button"
+          aria-expanded={filtersOpen}
+          aria-controls="gallery-filters"
+          onClick={() => setFiltersOpen((open) => !open)}
+          className="sm:hidden min-h-11 w-full rounded-xl border border-gray-200 bg-white/80 px-4 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:bg-white dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-100 dark:hover:bg-gray-800 flex items-center justify-between cursor-pointer"
+        >
+          <span className="inline-flex items-center gap-2">
+            <SlidersHorizontal className="h-4 w-4" />
+            {filtersOpen ? t('filters.hide') : t('filters.show')}
+          </span>
+          <ChevronDown className={`h-4 w-4 transition-transform ${filtersOpen ? 'rotate-180' : ''}`} />
+        </button>
 
-        <div className="flex flex-wrap items-center gap-2 justify-center">
-          <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.mode')}</span>
-          {modes.map((mode) => (
-            <button
-              key={mode}
-              onClick={() => {
-                setActiveMode(mode);
-                setVisibleCount(6);
-              }}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                activeMode === mode
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
-              }`}
-            >
-              {mode}
-            </button>
-          ))}
+        <div id="gallery-filters" className={`${filtersOpen ? 'flex' : 'hidden'} sm:flex flex-col gap-6`}>
+          <div className="flex flex-wrap items-center gap-2 justify-center">
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.category')}</span>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                aria-pressed={activeCategory === cat}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setVisibleCount(6);
+                }}
+                className={`min-h-11 sm:min-h-0 px-3 py-2.5 sm:py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
+                  activeCategory === cat
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 justify-center">
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mr-2">{t('filters.mode')}</span>
+            {modes.map((mode) => (
+              <button
+                key={mode}
+                type="button"
+                aria-pressed={activeMode === mode}
+                onClick={() => {
+                  setActiveMode(mode);
+                  setVisibleCount(6);
+                }}
+                className={`min-h-11 sm:min-h-0 px-3 py-2.5 sm:py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
+                  activeMode === mode
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                {mode}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      </div> : null}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         {shown.map((demo) => (
           <div key={demo.id} className="glass-card overflow-hidden group hover:shadow-2xl transition-all duration-300">
             <div className="relative aspect-video bg-gray-200 dark:bg-gray-800 overflow-hidden">
-              <img
-                src={toAbsoluteUrl(demo.imageUrl)}
+              <Image
+                src={optimizedThumbnailUrl(demo.imageUrl)}
                 alt={demo.name}
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(min-width: 1024px) 30vw, (min-width: 768px) 46vw, 92vw"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute top-2 right-2 bg-black/50 backdrop-blur-md text-white text-xs px-2 py-1 rounded flex items-center gap-1.5">
@@ -181,7 +223,7 @@ export function Gallery({ demos }: { demos: Demo[] }) {
 
               <div className="flex gap-2">
                 <a
-                  className="flex-1 btn-primary text-xs py-2 text-center"
+                  className="flex-1 btn-primary min-h-11 text-xs py-2 text-center inline-flex items-center justify-center"
                   href={toAbsoluteUrl(demo.url)}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
@@ -190,7 +232,7 @@ export function Gallery({ demos }: { demos: Demo[] }) {
                 </a>
                 <button
                   onClick={() => setSelectedPrompt({ title: demo.name, content: demo.prompt })}
-                  className="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-xs font-medium transition-colors"
+                  className="min-h-11 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-xs font-medium transition-colors cursor-pointer"
                 >
                   {t('showPrompt')}
                 </button>
@@ -207,7 +249,13 @@ export function Gallery({ demos }: { demos: Demo[] }) {
         content={selectedPrompt?.content || ''}
       />
 
-      <div className="flex flex-col items-center gap-3 mb-16">
+      {preview ? (
+        <div className="mb-16 flex justify-center">
+          <Link href={examplesPath(locale)} className="btn-secondary">
+            {t('browseAll')}
+          </Link>
+        </div>
+      ) : <div className="flex flex-col items-center gap-3 mb-16">
         {visibleCount < filtered.length && (
           <button onClick={() => setVisibleCount((c) => Math.min(c + 6, filtered.length))} className="btn-secondary">
             {t('loadMore')}
@@ -219,9 +267,9 @@ export function Gallery({ demos }: { demos: Demo[] }) {
         <div className="text-sm text-gray-500 dark:text-gray-400">
           {t('stats', { total: stats.total, categories: stats.categoriesCount, light: stats.lightCount, dark: stats.darkCount })}
         </div>
-      </div>
+      </div>}
 
-      <div className="mt-20 text-center glass-card p-8 sm:p-12 max-w-4xl mx-auto relative overflow-hidden">
+      {!preview ? <div className="mt-20 text-center glass-card p-8 sm:p-12 max-w-4xl mx-auto relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500"></div>
         <div className="flex justify-center mb-4">
           <div className="w-12 h-12 rounded-2xl bg-blue-600/10 flex items-center justify-center">
@@ -247,7 +295,7 @@ export function Gallery({ demos }: { demos: Demo[] }) {
             </span>
           ))}
         </div>
-      </div>
+      </div> : null}
     </section>
   );
 }
@@ -255,6 +303,13 @@ export function Gallery({ demos }: { demos: Demo[] }) {
 function toAbsoluteUrl(url: string) {
   if (url.startsWith('http://') || url.startsWith('https://')) return url;
   return `${DEMO_BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+}
+
+function optimizedThumbnailUrl(url: string) {
+  if (url.startsWith('/thumbnails/') && url.endsWith('.png')) {
+    return url.replace(/\.png$/, '.avif');
+  }
+  return toAbsoluteUrl(url);
 }
 
 function ColorDot({ name, hex }: { name: string; hex: string }) {

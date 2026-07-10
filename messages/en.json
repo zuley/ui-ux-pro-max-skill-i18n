@@ -3,11 +3,13 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Design Intelligence for Claude Code",
+    "metaDescription": "Design intelligence for Claude Code, Cursor, Windsurf, and other AI assistants, with 67 UI styles, 161 palettes, typography, UX rules, and stack guidance.",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI design, UI styles, color palettes, font pairings, UX guidelines, design system generator",
     "switchTheme": "Switch Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
-    "switchLanguage": "Switch Language"
+    "switchLanguage": "Switch Language",
+    "skipToContent": "Skip to main content"
   },
   "announcement": {
     "text": "This is an unofficial multilingual translation site for ui-ux-pro-max-skill.",
@@ -1191,7 +1193,9 @@
     "clearSearch": "Clear search",
     "filters": {
       "category": "Category",
-      "mode": "Mode"
+      "mode": "Mode",
+      "show": "Show filters",
+      "hide": "Hide filters"
     },
     "viewDemo": "View Demo",
     "showPrompt": "Show Prompt",
@@ -1204,6 +1208,7 @@
     },
     "colors": "Colors:",
     "loadMore": "Load More",
+    "browseAll": "Browse all examples",
     "showing": "Showing {shown} of {total} demos",
     "stats": "{total} demos available • {categories} categories • {light} light • {dark} dark",
     "readyTitle": "Ready to Build Beautiful Interfaces?",

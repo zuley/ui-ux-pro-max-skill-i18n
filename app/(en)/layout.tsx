@@ -4,10 +4,21 @@ import { adsenseMetadata } from '@/lib/adsense';
 import { RootShell } from '@/components/root-shell';
 import messages from '@/messages/en.json';
 import '../globals.css';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  openGraph: {
+    images: [DEFAULT_OG_IMAGE]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [DEFAULT_TWITTER_IMAGE_URL]
+  },
   other: adsenseMetadata()
 };
 

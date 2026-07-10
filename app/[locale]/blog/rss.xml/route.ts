@@ -1,8 +1,8 @@
-import { routing, prefixedLocales } from '@/i18n/routing';
+import { prefixedLocales } from '@/i18n/routing';
 import { getAllPosts } from '@/lib/content/blog';
 import { getAuthor } from '@/lib/authors';
 import type { Locale } from '@/lib/content/types';
-import { SITE_URL } from '@/lib/site-config';
+import { absoluteSiteUrl } from '@/lib/site-config';
 
 // Required for output: 'export' — without it the route is treated as
 // dynamic and the build fails.
@@ -12,11 +12,6 @@ export const dynamic = 'force-static';
 export async function generateStaticParams() {
   // English RSS is emitted at /blog/rss.xml by app/(en) — skip /en/*.
   return prefixedLocales.map((locale) => ({ locale }));
-}
-
-function abs(locale: string, path: string): string {
-  if (locale === routing.defaultLocale) return `${SITE_URL}${path}`;
-  return `${SITE_URL}/${locale}${path}`;
 }
 
 function escapeXml(s: string): string {
@@ -34,12 +29,16 @@ export async function GET(
 ) {
   const { locale } = await params;
   const posts = await getAllPosts(locale as Locale);
-  const channelLink = abs(locale, '/blog');
-  const pubDate = new Date().toUTCString();
+  const channelLink = absoluteSiteUrl('/blog', locale);
+  const pubDate = posts.length > 0
+    ? new Date(
+        Math.max(...posts.map((post) => Date.parse(post.frontmatter.updated ?? post.frontmatter.date)))
+      ).toUTCString()
+    : new Date(0).toUTCString();
 
   const itemsXml = posts
     .map((post) => {
-      const url = abs(locale, `/blog/${post.slug}`);
+      const url = absoluteSiteUrl(`/blog/${post.slug}`, locale);
       const author = getAuthor(post.frontmatter.author);
       const postDate = new Date(post.frontmatter.date).toUTCString();
       return `    <item>
@@ -63,7 +62,7 @@ export async function GET(
     <description>Notes, experiments, and field reports from designing with the UI UX Pro Max Skill.</description>
     <language>${locale}</language>
     <lastBuildDate>${pubDate}</lastBuildDate>
-    <atom:link href="${abs(locale, '/blog/rss.xml')}" rel="self" type="application/rss+xml" />
+    <atom:link href="${absoluteSiteUrl('/blog/rss.xml', locale)}" rel="self" type="application/rss+xml" />
 ${itemsXml}
   </channel>
 </rss>

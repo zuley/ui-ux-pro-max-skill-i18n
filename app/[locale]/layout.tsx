@@ -6,7 +6,11 @@ import { adsenseMetadata } from '@/lib/adsense';
 import { RootShell } from '@/components/root-shell';
 import type { Locale } from '@/lib/content/types';
 import "../globals.css";
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 type AppLocale = (typeof routing.locales)[number];
 
@@ -22,8 +26,8 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${t('common.title')} - ${t('common.description')}`,
-    description: t('hero.subtitle'),
+    title: `${t('common.navTitle')} — ${t('common.description')}`,
+    description: t('common.metaDescription'),
     keywords: t('common.keywords'),
     alternates: {
       canonical: currentUrl,
@@ -36,17 +40,19 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${t('common.title')} - ${t('common.description')}`,
-      description: t('hero.subtitle'),
+      title: `${t('common.navTitle')} — ${t('common.description')}`,
+      description: t('common.metaDescription'),
       url: currentUrl,
       siteName: 'UI UX Pro Max Skill',
       locale: locale,
       type: 'website',
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${t('common.title')} - ${t('common.description')}`,
-      description: t('hero.subtitle'),
+      title: `${t('common.navTitle')} — ${t('common.description')}`,
+      description: t('common.metaDescription'),
+      images: [DEFAULT_TWITTER_IMAGE_URL],
     },
     robots: {
       index: true,

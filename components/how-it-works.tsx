@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export function HowItWorks() {
   const t = useTranslations('howItWorks');
@@ -144,12 +145,14 @@ export function HowItWorks() {
               href={t('steps.6.href')}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="block relative rounded-lg overflow-hidden group cursor-pointer"
+              className="block relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
             >
-              <img
+              <Image
                 src={t('steps.6.image')}
                 alt={t('steps.6.imageAlt')}
-                className="w-full aspect-video object-cover object-top"
+                fill
+                sizes="(min-width: 768px) 768px, 92vw"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -21,6 +21,7 @@ const baseSchema = z.object({
   title: z.string().min(1),
   summary: z.string().min(1).max(280),
   date: isoDate,
+  updated: isoDate.optional(),
   tags: z.array(z.string().min(1)).default([]),
   author: authorEnum.default(DEFAULT_AUTHOR_ID),
   cover: z.string().optional(),

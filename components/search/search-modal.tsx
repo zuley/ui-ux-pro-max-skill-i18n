@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
+import Link from 'next/link';
 import { docsNav } from '@/content/docs/nav';
 import { useLocale, useTranslations } from 'next-intl';
-import { docPath, localePath } from '@/lib/locale-path';
+import { docPath, examplesPath } from '@/lib/locale-path';
 import { useSearchIndex } from '@/components/search/search-index-context';
+import { useModalFocus } from '@/lib/use-modal-focus';
 
 type SearchItem = {
   title: string;
@@ -15,7 +17,7 @@ type SearchItem = {
 
 function buildDefaultItems(t: (key: string) => string, locale: string): SearchItem[] {
   const homeItems: SearchItem[] = [
-    { title: t('navbar.examples'), href: localePath(locale, '/#styles'), keywords: ['gallery', 'styles', 'demos'] }
+    { title: t('navbar.examples'), href: examplesPath(locale), keywords: ['gallery', 'styles', 'demos'] }
   ];
 
   const docItems: SearchItem[] = docsNav.map((n) => ({
@@ -37,22 +39,10 @@ export function SearchModal({
   const t = useTranslations();
   const locale = useLocale();
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
-    if (!open) return;
-    const id = window.setTimeout(() => inputRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [onClose, open]);
+  useModalFocus({ open, onClose, containerRef: dialogRef, initialFocusRef: inputRef });
 
   const contentItems = useSearchIndex();
   const items = useMemo(() => {
@@ -85,15 +75,19 @@ export function SearchModal({
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
-      aria-label={t('search.title')}
+      aria-labelledby="search-dialog-title"
+      tabIndex={-1}
       className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-6"
     >
+      <h2 id="search-dialog-title" className="sr-only">{t('search.title')}</h2>
       <button
         onClick={onClose}
         className="absolute inset-0 bg-black/40 backdrop-blur-sm cursor-pointer"
-        aria-label={t('search.close')}
+        aria-hidden="true"
+        tabIndex={-1}
       />
 
       <div className="relative w-full max-w-2xl glass-card p-0 overflow-hidden">
@@ -104,11 +98,12 @@ export function SearchModal({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('search.placeholder')}
-            className="flex-1 bg-transparent outline-none text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            aria-label={t('search.placeholder')}
+            className="flex-1 rounded-sm bg-transparent text-base sm:text-sm text-gray-900 outline-none placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-white dark:placeholder:text-gray-400"
           />
           <button
             onClick={onClose}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+            className="min-h-11 min-w-11 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
             aria-label={t('search.close')}
           >
             <X className="w-4 h-4 text-gray-700 dark:text-gray-200" />
@@ -123,13 +118,10 @@ export function SearchModal({
           ) : (
             <div className="flex flex-col gap-1">
               {results.map((r) => (
-                <button
+                <Link
                   key={r.href}
-                  type="button"
-                  onClick={() => {
-                    window.location.assign(r.href);
-                    onClose();
-                  }}
+                  href={r.href}
+                  onClick={onClose}
                   className="text-left rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   <div className="text-sm font-medium text-gray-900 dark:text-white">
@@ -138,7 +130,7 @@ export function SearchModal({
                   <div className="text-xs text-gray-500 dark:text-gray-400">
                     {r.href}
                   </div>
-                </button>
+                </Link>
               ))}
             </div>
           )}

@@ -91,6 +91,11 @@ function animateThemeTransition(x: number, y: number, isDark: boolean, callback:
     return;
   }
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    callback();
+    return;
+  }
+
   // 检查是否支持 View Transitions API
   if ('startViewTransition' in document) {
     // 设置 CSS 变量来控制圆形扩展的中心点

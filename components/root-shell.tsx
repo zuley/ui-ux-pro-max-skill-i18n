@@ -1,13 +1,25 @@
+/*
+ * This component is the document shell returned by both App Router root
+ * layouts. Next hoists these beforeInteractive scripts into <head>, but the
+ * legacy ESLint rule only recognizes a literal app/layout.tsx file.
+ */
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
+
 import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { fontBodyClassName } from '@/lib/fonts';
-import { GA_ID, THEME_INIT_SCRIPT } from '@/lib/site-config';
+import {
+  GA_ID,
+  GOOGLE_ANALYTICS_INIT_SCRIPT,
+  THEME_INIT_SCRIPT,
+} from '@/lib/site-config';
 import { ThemeProvider } from '@/lib/theme-context';
 import { SearchIndexProvider } from '@/components/search/search-index-context';
 import { buildSearchIndex } from '@/lib/search-index';
 import { AnnouncementBar } from '@/components/announcement-bar';
 import type { Locale } from '@/lib/content/types';
-import { adsensePublisherId } from '@/lib/adsense';
+import { SkipLink } from '@/components/skip-link';
+import { pickClientMessages } from '@/lib/client-messages';
 
 type Messages = React.ComponentProps<typeof NextIntlClientProvider>['messages'];
 
@@ -28,14 +40,10 @@ export async function RootShell({
   children: React.ReactNode;
 }) {
   const searchIndex = await buildSearchIndex(locale);
+  const clientMessages = pickClientMessages(messages);
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
-      <script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsensePublisherId}`}
-        crossOrigin="anonymous"
-      />
       <body className={fontBodyClassName}>
         <Script
           id="theme-init"
@@ -50,12 +58,13 @@ export async function RootShell({
           id="google-analytics"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`,
+            __html: GOOGLE_ANALYTICS_INIT_SCRIPT,
           }}
         />
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={clientMessages}>
           <ThemeProvider>
             <SearchIndexProvider value={searchIndex}>
+              <SkipLink />
               <AnnouncementBar />
               {children}
             </SearchIndexProvider>

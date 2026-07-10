@@ -3,7 +3,11 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { prefixedLocales } from '@/i18n/routing';
 import { listSeries } from '@/lib/content/tutorials';
 import { SeriesCard } from '@/components/tutorials/series-card';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -31,6 +35,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
+        'x-default': `${SITE_URL}/tutorials`,
         en: `${SITE_URL}/tutorials`,
         zh: `${SITE_URL}/zh/tutorials`,
         vi: `${SITE_URL}/vi/tutorials`,
@@ -44,6 +49,13 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale,
       type: 'website',
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('tutorials.title')} | UI UX Pro Max Skill`,
+      description: t('tutorials.subtitle'),
+      images: [DEFAULT_TWITTER_IMAGE_URL],
     },
   };
 }

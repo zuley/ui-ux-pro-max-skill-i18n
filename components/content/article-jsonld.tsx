@@ -9,7 +9,9 @@ export function ArticleJsonLd({
   title,
   description,
   datePublished,
+  dateModified = datePublished,
   authorName,
+  authorUrl,
   inLanguage,
   keywords,
   image,
@@ -19,7 +21,9 @@ export function ArticleJsonLd({
   title: string;
   description: string;
   datePublished: string;
+  dateModified?: string;
   authorName: string;
+  authorUrl?: string;
   inLanguage: string;
   keywords?: string[];
   image?: string;
@@ -31,12 +35,20 @@ export function ArticleJsonLd({
     headline: title,
     description,
     datePublished,
-    dateModified: datePublished,
+    dateModified,
     inLanguage,
-    author: { '@type': 'Person', name: authorName },
+    author: {
+      '@type': 'Person',
+      name: authorName,
+      ...(authorUrl ? { url: authorUrl } : {}),
+    },
     publisher: {
       '@type': 'Organization',
       name: 'UI UX Pro Max Skill',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://ui-ux-pro-max-skill.com/favicon.ico',
+      },
     },
   };
   if (keywords && keywords.length > 0) data.keywords = keywords.join(', ');

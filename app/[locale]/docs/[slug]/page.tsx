@@ -7,7 +7,11 @@ import { DocsShell } from '@/components/docs/docs-shell';
 import { docsNav, type DocSlug } from '@/content/docs/nav';
 import { getDocDefinition, type Translator } from '@/content/docs/page-definitions';
 import { docPath } from '@/lib/locale-path';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
 
@@ -41,6 +45,7 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
+        'x-default': `${SITE_URL}/docs/${slug}`,
         'en': `${SITE_URL}/docs/${slug}`,
         'zh': `${SITE_URL}/zh/docs/${slug}`,
         'vi': `${SITE_URL}/vi/docs/${slug}`,
@@ -54,11 +59,13 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale: locale,
       type: 'article',
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: pageTitle,
       description: pageDescription,
+      images: [DEFAULT_TWITTER_IMAGE_URL],
     },
     robots: {
       index: true,

@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { CodeBlock } from '@/components/tutorial/code-block';
 import { useTranslations } from 'next-intl';
+import { useModalFocus } from '@/lib/use-modal-focus';
 
 export function PromptModal({
   open,
@@ -17,48 +19,35 @@ export function PromptModal({
   content: string;
 }) {
   const t = useTranslations('gallery');
-  
-  useEffect(() => {
-    if (!open) return;
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [onClose, open]);
-
-  // Prevent scrolling when modal is open
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  useModalFocus({ open, onClose, containerRef: dialogRef, initialFocusRef: closeButtonRef });
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
+      aria-labelledby="prompt-dialog-title"
+      tabIndex={-1}
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
     >
       <button
         onClick={onClose}
         className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity"
-        aria-label={t('closeModal')}
+        aria-hidden="true"
+        tabIndex={-1}
       />
 
       <div className="relative w-full max-w-3xl max-h-[85vh] flex flex-col glass-card p-0 overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200/70 dark:border-white/10">
-          <h3 className="font-heading font-bold text-lg text-gray-900 dark:text-white truncate pr-4">
+          <h2 id="prompt-dialog-title" className="font-heading font-bold text-lg text-gray-900 dark:text-white truncate pr-4">
             {title}
-          </h3>
+          </h2>
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
             aria-label={t('closeModal')}
@@ -84,6 +73,7 @@ export function PromptModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

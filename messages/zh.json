@@ -3,11 +3,13 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Claude Code 的设计智能助手",
+    "metaDescription": "为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能，包含 67 种 UI 风格、161 套配色、字体搭配、UX 指南与技术栈建议。",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI设计, UI风格, 配色方案, 字体搭配, 设计系统生成器",
     "switchTheme": "切换主题",
     "switchToLight": "切换到浅色模式",
     "switchToDark": "切换到深色模式",
-    "switchLanguage": "切换语言"
+    "switchLanguage": "切换语言",
+    "skipToContent": "跳到主要内容"
   },
   "announcement": {
     "text": "本站为 ui-ux-pro-max-skill 的非官方多语言翻译站。",
@@ -1191,7 +1193,9 @@
     "clearSearch": "清除搜索",
     "filters": {
       "category": "分类",
-      "mode": "模式"
+      "mode": "模式",
+      "show": "展开筛选",
+      "hide": "收起筛选"
     },
     "viewDemo": "查看演示",
     "showPrompt": "显示提示词",
@@ -1204,6 +1208,7 @@
     },
     "colors": "颜色:",
     "loadMore": "加载更多",
+    "browseAll": "浏览全部示例",
     "showing": "显示 {shown} / {total} 个演示",
     "stats": "共 {total} 个演示 • {categories} 个分类 • {light} 个浅色 • {dark} 个深色",
     "readyTitle": "准备好构建精美界面了吗？",

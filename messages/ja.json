@@ -3,11 +3,13 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Claude Code のためのデザインインテリジェンス",
+    "metaDescription": "Claude Code、Cursor、Windsurf などの AI アシスタント向けデザイン知識。67 種の UI スタイル、161 の配色、タイポグラフィ、UX ルール、技術スタック指針を収録。",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AIデザイン, UIスタイル, カラーパレット, フォントペアリング, UXガイドライン, デザインシステムジェネレーター",
     "switchTheme": "テーマを切り替え",
     "switchToLight": "ライトモードに切り替え",
     "switchToDark": "ダークモードに切り替え",
-    "switchLanguage": "言語を切り替え"
+    "switchLanguage": "言語を切り替え",
+    "skipToContent": "メインコンテンツへ移動"
   },
   "announcement": {
     "text": "このサイトは ui-ux-pro-max-skill の非公式多言語翻訳サイトです。",
@@ -893,7 +895,9 @@
     "clearSearch": "検索をクリア",
     "filters": {
       "category": "カテゴリ",
-      "mode": "モード"
+      "mode": "モード",
+      "show": "フィルターを表示",
+      "hide": "フィルターを隠す"
     },
     "viewDemo": "デモを見る",
     "showPrompt": "プロンプトを表示",
@@ -906,6 +910,7 @@
     },
     "colors": "カラー:",
     "loadMore": "さらに読み込む",
+    "browseAll": "すべての例を見る",
     "showing": "{total} 件中 {shown} 件を表示",
     "stats": "{total} 件のデモ • {categories} カテゴリ • ライト {light} 件 • ダーク {dark} 件",
     "readyTitle": "美しいインターフェースを作り始めますか?",

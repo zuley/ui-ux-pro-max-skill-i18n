@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 import { Rocket } from 'lucide-react';
 import { docPath } from '@/lib/locale-path';
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 
 const TERMINAL_PREFIX = 'uipro init --ai ';
 const AI_TOOLS = ['claude', 'cursor', 'windsurf', 'antigravity', 'copilot', 'kiro', 'codex', 'qoder'];
@@ -17,7 +18,7 @@ export function Hero() {
   const locale = useLocale();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0F172A] pt-20">
+    <section className="relative flex min-h-[680px] items-start justify-center overflow-hidden bg-white pt-20 dark:bg-[#0F172A] sm:min-h-screen sm:items-center">
       <div className="absolute inset-0 aurora-bg opacity-60 dark:opacity-100"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }}></div>
@@ -42,14 +43,14 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="text-xs min-[400px]:text-sm sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4 min-[400px]:mb-5 sm:mb-8 text-balance leading-relaxed px-2 min-[400px]:px-0">
+        <p className="text-base sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-5 sm:mb-8 text-balance leading-relaxed px-1 min-[400px]:px-0">
           {t('subtitle')}
         </p>
 
         <TerminalCommand />
 
         <div className="flex flex-row items-center justify-center gap-2 min-[400px]:gap-3 sm:gap-4 mb-6 min-[400px]:mb-8 sm:mb-16">
-          <Link href={docPath(locale, 'getting-started')} className="btn-primary flex items-center gap-2 text-xs min-[400px]:text-sm sm:text-lg px-4 min-[400px]:px-6 sm:px-8 py-2 min-[400px]:py-3 sm:py-4">
+          <Link href={docPath(locale, 'getting-started')} className="btn-primary min-h-11 flex items-center gap-2 text-sm sm:text-lg px-6 sm:px-8 py-2.5 sm:py-4">
             <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
             {tCommon('quickStart')}
           </Link>
@@ -60,6 +61,7 @@ export function Hero() {
 }
 
 function TerminalCommand() {
+  const reduceMotion = useReducedMotion();
   const [text, setText] = useState('');
   const [toolIndex, setToolIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -67,13 +69,15 @@ function TerminalCommand() {
 
   // Blink the caret on a fixed interval, like a real terminal.
   useEffect(() => {
+    if (reduceMotion) return;
     const blink = setInterval(() => setCursorOn((on) => !on), 530);
     return () => clearInterval(blink);
-  }, []);
+  }, [reduceMotion]);
 
   // Type the current command, hold, delete back to the "uipro init --ai "
   // prefix, then cycle to the next AI tool.
   useEffect(() => {
+    if (reduceMotion) return;
     const full = TERMINAL_PREFIX + AI_TOOLS[toolIndex];
     const atFull = text === full;
     const delay = atFull && !isDeleting ? 1500 : isDeleting ? 50 : 80;
@@ -94,15 +98,20 @@ function TerminalCommand() {
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, toolIndex]);
+  }, [text, isDeleting, toolIndex, reduceMotion]);
+
+  const displayedText = reduceMotion ? `${TERMINAL_PREFIX}codex` : text;
 
   return (
     <div className="flex justify-center mb-4 min-[400px]:mb-6 sm:mb-10">
-      <div className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left">
-        <div className="text-gray-400">
+      <div
+        className="w-full max-w-[280px] min-[400px]:max-w-xs sm:max-w-sm bg-gray-900 rounded-lg px-2.5 min-[400px]:px-3 sm:px-4 py-2 min-[400px]:py-2.5 sm:py-3 font-mono text-[11px] min-[400px]:text-xs sm:text-sm shadow-xl text-left"
+        aria-label={`$ ${TERMINAL_PREFIX}codex`}
+      >
+        <div aria-hidden="true" className="text-gray-400">
           <span className="text-gray-400">$</span>{' '}
-          <span className="text-emerald-400">{text}</span>
-          <span className={`${cursorOn ? 'opacity-100' : 'opacity-0'} text-white`}>▋</span>
+          <span className="text-emerald-400">{displayedText}</span>
+          <span className={`${!reduceMotion && cursorOn ? 'opacity-100' : 'opacity-0'} text-white`}>▋</span>
         </div>
       </div>
     </div>

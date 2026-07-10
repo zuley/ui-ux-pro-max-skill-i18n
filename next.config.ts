@@ -32,8 +32,17 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   output: 'export',
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ui-ux-pro-max-skill.nextlevelbuilder.io',
+      },
+    ],
   },
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],

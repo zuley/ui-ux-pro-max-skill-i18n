@@ -27,7 +27,7 @@ export function PageContent({
     <div className="min-h-screen bg-gray-50 dark:bg-[#0F172A] transition-colors duration-300">
       <Navbar />
 
-      <main>
+      <main id="main-content" tabIndex={-1} className="outline-none">
         <Hero />
         <Stats />
         <QuickStart />
@@ -35,7 +35,7 @@ export function PageContent({
         <HowItWorks />
         <TechStacks />
         {latestContent}
-        <Gallery demos={getGalleryDemos()} />
+        <Gallery demos={getGalleryDemos().slice(0, 6)} preview />
       </main>
 
       <Footer />

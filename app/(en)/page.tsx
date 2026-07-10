@@ -3,12 +3,16 @@ import { setRequestLocale } from 'next-intl/server';
 import { PageContent } from '@/components/page-content';
 import { LatestContent } from '@/components/home/latest-content';
 import messages from '@/messages/en.json';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 
 export const metadata: Metadata = {
-  title: `${messages.common.title} - ${messages.common.description}`,
-  description: messages.hero.subtitle,
+  title: `${messages.common.navTitle} — ${messages.common.description}`,
+  description: messages.common.metaDescription,
   keywords: messages.common.keywords,
   alternates: {
     canonical: SITE_URL,
@@ -21,17 +25,19 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: `${messages.common.title} - ${messages.common.description}`,
-    description: messages.hero.subtitle,
+    title: `${messages.common.navTitle} — ${messages.common.description}`,
+    description: messages.common.metaDescription,
     url: SITE_URL,
     siteName: 'UI UX Pro Max Skill',
     locale: 'en',
-    type: 'website'
+    type: 'website',
+    images: [DEFAULT_OG_IMAGE]
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${messages.common.title} - ${messages.common.description}`,
-    description: messages.hero.subtitle
+    title: `${messages.common.navTitle} — ${messages.common.description}`,
+    description: messages.common.metaDescription,
+    images: [DEFAULT_TWITTER_IMAGE_URL]
   },
   robots: {
     index: true,

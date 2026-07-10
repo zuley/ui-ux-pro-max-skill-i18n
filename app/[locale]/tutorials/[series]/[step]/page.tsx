@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/site-config';
+import {
+  absoluteSiteUrl,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_URL,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
@@ -19,6 +25,7 @@ import { ReadingProgress } from '@/components/content/reading-progress';
 import { SeriesSidebar } from '@/components/tutorials/series-sidebar';
 import { StepNav } from '@/components/tutorials/step-nav';
 import type { Locale } from '@/lib/content/types';
+import { toMetaDescription } from '@/lib/seo';
 
 type PageParams = { locale: string; series: string; step: string };
 
@@ -39,19 +46,18 @@ export async function generateMetadata({
   const resolved = await getStep(locale as Locale, series, step);
   if (!resolved) return {};
 
-  const currentUrl =
-    locale === 'en'
-      ? `${SITE_URL}/tutorials/${series}/${step}`
-      : `${SITE_URL}/${locale}/tutorials/${series}/${step}`;
-  const { title, summary, cover, date, tags } = resolved.frontmatter;
+  const currentUrl = absoluteSiteUrl(`/tutorials/${series}/${step}`, locale);
+  const { title, summary, cover, date, updated, tags } = resolved.frontmatter;
+  const metaDescription = toMetaDescription(summary);
 
   return {
-    title: `${title} | UI UX Pro Max Skill`,
-    description: summary,
+    title,
+    description: metaDescription,
     keywords: tags.join(', '),
     alternates: {
       canonical: currentUrl,
       languages: {
+        'x-default': `${SITE_URL}/tutorials/${series}/${step}`,
         en: `${SITE_URL}/tutorials/${series}/${step}`,
         zh: `${SITE_URL}/zh/tutorials/${series}/${step}`,
         vi: `${SITE_URL}/vi/tutorials/${series}/${step}`,
@@ -60,13 +66,20 @@ export async function generateMetadata({
     },
     openGraph: {
       title,
-      description: summary,
+      description: metaDescription,
       url: currentUrl,
       siteName: 'UI UX Pro Max Skill',
       locale,
       type: 'article',
       publishedTime: date,
-      images: cover ? [{ url: cover }] : undefined,
+      modifiedTime: updated ?? date,
+      images: cover ? [{ url: cover }] : [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: metaDescription,
+      images: cover ? [cover] : [DEFAULT_TWITTER_IMAGE_URL],
     },
   };
 }
@@ -90,10 +103,7 @@ export default async function TutorialStepPage({
   const showFallback = isFallback(typedLocale, resolved.sourceLocale);
   const seriesMeta = (await listSeries()).find((s) => s.slug === series)!;
   const siblings = await getSeriesSteps(typedLocale, series);
-  const canonicalUrl =
-    locale === 'en'
-      ? `${SITE_URL}/tutorials/${series}/${step}`
-      : `${SITE_URL}/${locale}/tutorials/${series}/${step}`;
+  const canonicalUrl = absoluteSiteUrl(`/tutorials/${series}/${step}`, locale);
 
   // Use a local alias so TS treats Body as definitely-defined inside JSX.
   const Body = resolved.Body;
@@ -122,10 +132,12 @@ export default async function TutorialStepPage({
         title={resolved.frontmatter.title}
         description={resolved.frontmatter.summary}
         datePublished={resolved.frontmatter.date}
+        dateModified={resolved.frontmatter.updated}
         authorName={author.name}
+        authorUrl={`${SITE_URL}/about`}
         inLanguage={locale}
         keywords={resolved.frontmatter.tags}
-        image={resolved.frontmatter.cover}
+        image={resolved.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}
       />
 
       <Link

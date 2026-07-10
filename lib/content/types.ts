@@ -9,6 +9,7 @@ export type BaseFrontmatter = {
   title: string;
   summary: string;
   date: string; // ISO yyyy-mm-dd
+  updated?: string; // ISO yyyy-mm-dd; omitted when never revised
   tags: string[];
   author: string; // author id, defaults to "admin"
   cover?: string;

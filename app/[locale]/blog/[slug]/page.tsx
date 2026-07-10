@@ -13,7 +13,14 @@ import { ReadingProgress } from '@/components/content/reading-progress';
 import { ArticleToc } from '@/components/content/article-toc';
 import { EndOfArticleCta } from '@/components/content/end-of-article-cta';
 import type { Locale } from '@/lib/content/types';
-import { SITE_URL } from '@/lib/site-config';
+import { toMetaDescription } from '@/lib/seo';
+import {
+  absoluteSiteUrl,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_URL,
+  DEFAULT_TWITTER_IMAGE_URL,
+  SITE_URL
+} from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
 
@@ -31,15 +38,13 @@ export async function generateMetadata({
   const post = await getPost(locale as Locale, slug);
   if (!post) return {};
 
-  const currentUrl =
-    locale === 'en'
-      ? `${SITE_URL}/blog/${slug}`
-      : `${SITE_URL}/${locale}/blog/${slug}`;
-  const { title, summary, cover, date, tags } = post.frontmatter;
+  const currentUrl = absoluteSiteUrl(`/blog/${slug}`, locale);
+  const { title, summary, cover, date, updated, tags } = post.frontmatter;
+  const metaDescription = toMetaDescription(summary);
 
   return {
-    title: `${title} | UI UX Pro Max Skill`,
-    description: summary,
+    title,
+    description: metaDescription,
     keywords: tags.join(', '),
     alternates: {
       canonical: currentUrl,
@@ -53,19 +58,20 @@ export async function generateMetadata({
     },
     openGraph: {
       title,
-      description: summary,
+      description: metaDescription,
       url: currentUrl,
       siteName: 'UI UX Pro Max Skill',
       locale,
       type: 'article',
       publishedTime: date,
-      images: cover ? [{ url: cover }] : undefined,
+      modifiedTime: updated ?? date,
+      images: cover ? [{ url: cover }] : [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description: summary,
-      images: cover ? [cover] : undefined,
+      description: metaDescription,
+      images: cover ? [cover] : [DEFAULT_TWITTER_IMAGE_URL],
     },
   };
 }
@@ -85,10 +91,7 @@ export default async function BlogPostPage({
   const t = await getTranslations({ locale });
   const author = getAuthor(post.frontmatter.author);
   const showFallback = isFallback(typedLocale, post.sourceLocale);
-  const canonicalUrl =
-    locale === 'en'
-      ? `${SITE_URL}/blog/${slug}`
-      : `${SITE_URL}/${locale}/blog/${slug}`;
+  const canonicalUrl = absoluteSiteUrl(`/blog/${slug}`, locale);
 
   // Re-typed alias avoids TS narrowing churn when destructuring the
   // optional Body component below.
@@ -119,10 +122,12 @@ export default async function BlogPostPage({
         title={post.frontmatter.title}
         description={post.frontmatter.summary}
         datePublished={post.frontmatter.date}
+        dateModified={post.frontmatter.updated}
         authorName={author.name}
+        authorUrl={`${SITE_URL}/about`}
         inLanguage={locale}
         keywords={post.frontmatter.tags}
-        image={post.frontmatter.cover}
+        image={post.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}
       />
 
       <Link

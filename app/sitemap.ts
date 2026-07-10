@@ -4,27 +4,22 @@ import { docsNav } from '@/content/docs/nav';
 import { listAllSlugs, getAllPosts } from '@/lib/content/blog';
 import { listSeries, getSeriesSteps } from '@/lib/content/tutorials';
 import type { Locale } from '@/lib/content/types';
-import { SITE_URL } from '@/lib/site-config';
+import { absoluteSiteUrl } from '@/lib/site-config';
 
 // Required when next.config.ts uses output: 'export'. Without it the
 // sitemap route is treated as dynamic and the build fails.
 export const dynamic = 'force-static';
 
 
-function abs(locale: string, path: string): string {
-  if (locale === routing.defaultLocale) return `${SITE_URL}${path}`;
-  return `${SITE_URL}/${locale}${path}`;
-}
-
 function alternatesFor(path: string): {
   languages: Record<string, string>;
 } {
   const languages: Record<string, string> = {
     // Fallback for users whose language isn't en/zh/vi/ja — the en root.
-    'x-default': abs(routing.defaultLocale, path),
+    'x-default': absoluteSiteUrl(path, routing.defaultLocale),
   };
   for (const l of routing.locales) {
-    languages[l] = abs(l, path);
+    languages[l] = absoluteSiteUrl(path, l);
   }
   return { languages };
 }
@@ -37,7 +32,6 @@ function alternatesFor(path: string): {
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
-  const today = new Date();
 
   // Marketing + legal routes — same for every locale.
   const staticPaths: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
@@ -48,12 +42,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/terms', priority: 0.3, freq: 'yearly' },
     { path: '/blog', priority: 0.8, freq: 'weekly' },
     { path: '/tutorials', priority: 0.8, freq: 'weekly' },
+    { path: '/examples', priority: 0.8, freq: 'weekly' },
   ];
   for (const { path, priority, freq } of staticPaths) {
     for (const locale of routing.locales) {
       entries.push({
-        url: abs(locale, path),
-        lastModified: today,
+        url: absoluteSiteUrl(path, locale),
         changeFrequency: freq,
         priority,
         alternates: alternatesFor(path),
@@ -67,8 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const path = `/docs/${doc.slug}`;
     for (const locale of routing.locales) {
       entries.push({
-        url: abs(locale, path),
-        lastModified: today,
+        url: absoluteSiteUrl(path, locale),
         changeFrequency: 'monthly',
         priority: 0.7,
         alternates: alternatesFor(path),
@@ -85,10 +78,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const slug of slugs) {
     const path = `/blog/${slug}`;
     const meta = postBySlug.get(slug);
-    const lastModified = meta ? new Date(meta.frontmatter.date) : today;
+    const lastModified = meta ? new Date(meta.frontmatter.date) : undefined;
     for (const locale of routing.locales) {
       entries.push({
-        url: abs(locale, path),
+        url: absoluteSiteUrl(path, locale),
         lastModified,
         changeFrequency: 'monthly',
         priority: 0.6,
@@ -103,8 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const seriesPath = `/tutorials/${s.slug}`;
     for (const locale of routing.locales) {
       entries.push({
-        url: abs(locale, seriesPath),
-        lastModified: today,
+        url: absoluteSiteUrl(seriesPath, locale),
         changeFrequency: 'monthly',
         priority: 0.7,
         alternates: alternatesFor(seriesPath),
@@ -117,7 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const lastModified = new Date(step.frontmatter.date);
       for (const locale of routing.locales) {
         entries.push({
-          url: abs(locale, stepPath),
+          url: absoluteSiteUrl(stepPath, locale),
           lastModified,
           changeFrequency: 'monthly',
           priority: 0.6,

@@ -3,11 +3,13 @@
     "title": "UI UX Pro Max Skill - Agent Skills",
     "navTitle": "UI UX Pro Max Skill",
     "description": "Trí tuệ thiết kế cho Claude Code",
+    "metaDescription": "Trí tuệ thiết kế cho Claude Code, Cursor, Windsurf và các trợ lý AI khác, gồm 67 phong cách UI, 161 bảng màu, typography, quy tắc UX và hướng dẫn stack.",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, thiết kế AI, phong cách UI, bảng màu, cặp font, hướng dẫn UX, trình tạo design system",
     "switchTheme": "Đổi giao diện",
     "switchToLight": "Chuyển sang chế độ sáng",
     "switchToDark": "Chuyển sang chế độ tối",
-    "switchLanguage": "Đổi ngôn ngữ"
+    "switchLanguage": "Đổi ngôn ngữ",
+    "skipToContent": "Chuyển đến nội dung chính"
   },
   "announcement": {
     "text": "Trang này là bản dịch đa ngôn ngữ không chính thức của ui-ux-pro-max-skill.",
@@ -809,7 +811,9 @@
     "clearSearch": "Xóa tìm kiếm",
     "filters": {
       "category": "Danh mục",
-      "mode": "Chế độ"
+      "mode": "Chế độ",
+      "show": "Hiện bộ lọc",
+      "hide": "Ẩn bộ lọc"
     },
     "viewDemo": "Xem demo",
     "showPrompt": "Xem prompt",
@@ -822,6 +826,7 @@
     },
     "colors": "Màu sắc:",
     "loadMore": "Tải thêm",
+    "browseAll": "Xem tất cả ví dụ",
     "showing": "Đang hiển thị {shown}/{total} demo",
     "stats": "{total} demos available • {categories} categories • {light} light • {dark} dark",
     "readyTitle": "Sẵn sàng tạo giao diện đẹp?",

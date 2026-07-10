@@ -6,16 +6,21 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { usePathname } from '@/i18n/routing';
 import Link from 'next/link';
 import { Menu, Search, X } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { SearchModal } from '@/components/search/search-modal';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { docsNav } from '@/content/docs/nav';
 import { useLocale } from 'next-intl';
 import {
   blogIndexPath,
   docPath,
+  examplesPath,
   localePath,
   tutorialsIndexPath,
 } from '@/lib/locale-path';
+
+const SearchModal = dynamic(() =>
+  import('@/components/search/search-modal').then((module) => module.SearchModal)
+);
 
 export function Navbar() {
   const t = useTranslations('navbar');
@@ -28,13 +33,26 @@ export function Navbar() {
     path: ''
   }));
   const [searchOpen, setSearchOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileOpen = mobileState.open && mobileState.path === pathname;
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    if (href.startsWith('/docs')) return pathname.startsWith('/docs');
-    if (href.startsWith('/tutorials')) return pathname.startsWith('/tutorials');
-    if (href.startsWith('/blog')) return pathname.startsWith('/blog');
-    return pathname === href;
+    const prefix = locale === 'en' ? '' : `/${locale}`;
+    const withoutLocale = (value: string) => {
+      const localized =
+        prefix && (value === prefix || value.startsWith(`${prefix}/`))
+          ? value.slice(prefix.length) || '/'
+          : value;
+      return localized.length > 1 ? localized.replace(/\/+$/, '') : localized;
+    };
+    const current = withoutLocale(pathname);
+    const target = withoutLocale(href.split('#')[0]);
+
+    if (target === '/') return current === '/';
+    if (target.startsWith('/docs')) return current.startsWith('/docs');
+    if (target.startsWith('/tutorials')) return current.startsWith('/tutorials');
+    if (target.startsWith('/blog')) return current.startsWith('/blog');
+    return current === target;
   };
 
   useEffect(() => {
@@ -49,6 +67,28 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    function closeMenu(event: KeyboardEvent | PointerEvent) {
+      if (event instanceof KeyboardEvent) {
+        if (event.key !== 'Escape') return;
+        setMobileState({ open: false, path: pathname });
+        menuButtonRef.current?.focus();
+        return;
+      }
+      if (navRef.current?.contains(event.target as Node)) return;
+      setMobileState({ open: false, path: pathname });
+    }
+
+    document.addEventListener('keydown', closeMenu);
+    document.addEventListener('pointerdown', closeMenu);
+    return () => {
+      document.removeEventListener('keydown', closeMenu);
+      document.removeEventListener('pointerdown', closeMenu);
+    };
+  }, [mobileOpen, pathname]);
+
   const primaryLinks = useMemo(
     () => [
       { href: localePath(locale, '/'), label: t('home') },
@@ -61,7 +101,11 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-[28px] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto">
+      <nav
+        ref={navRef}
+        inert={searchOpen}
+        className="fixed top-[var(--announcement-height)] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-h-[calc(100dvh-var(--announcement-height)-0.5rem)] max-w-7xl mx-auto overflow-y-auto overscroll-contain"
+      >
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
             <Link
@@ -88,8 +132,9 @@ export function Navbar() {
                 <circle cx="36" cy="12" r="2" fill="#F97316"></circle>
                 <circle cx="12" cy="36" r="1.5" fill="#3B82F6"></circle>
               </svg>
-              <span className="font-bold text-xs min-[400px]:text-sm sm:text-lg text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
-                {tCommon('navTitle')}
+              <span className="whitespace-nowrap font-bold text-xs min-[400px]:text-sm sm:text-lg text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                <span className="min-[400px]:hidden">UI UX Pro Max</span>
+                <span className="hidden min-[400px]:inline">{tCommon('navTitle')}</span>
               </span>
             </Link>
 
@@ -99,6 +144,7 @@ export function Navbar() {
                   key={l.href}
                   href={l.href}
                   scroll
+                  aria-current={isActive(l.href) ? 'page' : undefined}
                   className={[
                     'transition-colors duration-200 cursor-pointer',
                     isActive(l.href)
@@ -111,8 +157,9 @@ export function Navbar() {
               ))}
 
               <Link
-                href={localePath(locale, '/#styles')}
+                href={examplesPath(locale)}
                 scroll
+                aria-current={isActive(examplesPath(locale)) ? 'page' : undefined}
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 {t('examples')}
@@ -134,7 +181,7 @@ export function Navbar() {
 
               <button
                 onClick={() => setSearchOpen(true)}
-                className="sm:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                className="sm:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 aria-label={tDocs('search.open')}
               >
                 <Search className="w-5 h-5" />
@@ -143,14 +190,17 @@ export function Navbar() {
               <ThemeToggle />
               <LanguageSwitcher />
               <button
+                ref={menuButtonRef}
                 onClick={() =>
                   setMobileState((prev) => ({
                     open: !(prev.open && prev.path === pathname),
                     path: pathname
                   }))
                 }
-                className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                className="lg:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 aria-label={mobileOpen ? t('closeMenu') : t('openMenu')}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-navigation"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -158,13 +208,15 @@ export function Navbar() {
           </div>
         </div>
         {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-200/70 dark:border-white/10 px-3 min-[400px]:px-4 sm:px-6 lg:px-8 pb-4">
+          <div id="mobile-navigation" className="lg:hidden border-t border-gray-200/70 dark:border-white/10 px-3 min-[400px]:px-4 sm:px-6 lg:px-8 pb-4">
             <div className="pt-3 flex flex-col gap-2">
               {primaryLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
                   scroll
+                  onClick={() => setMobileState({ open: false, path: pathname })}
+                  aria-current={isActive(l.href) ? 'page' : undefined}
                   className={[
                     'rounded-lg px-3 py-2 text-sm font-medium transition-colors cursor-pointer',
                     isActive(l.href)
@@ -184,6 +236,7 @@ export function Navbar() {
                   key={n.slug}
                   href={docPath(locale, n.slug)}
                   scroll
+                  onClick={() => setMobileState({ open: false, path: pathname })}
                   className="rounded-lg px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   {tDocs(n.titleKey)}
@@ -191,8 +244,10 @@ export function Navbar() {
               ))}
 
               <Link
-                href={localePath(locale, '/#styles')}
+                href={examplesPath(locale)}
                 scroll
+                onClick={() => setMobileState({ open: false, path: pathname })}
+                aria-current={isActive(examplesPath(locale)) ? 'page' : undefined}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 {t('examples')}
