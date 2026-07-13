@@ -1,0 +1,57 @@
+# UI UX Pro Max Skill
+
+> Design intelligence for AI coding assistants. A skill that gives Claude Code, Cursor, Windsurf, and other AI tools instant access to 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks, and 161 reasoning rules.
+
+## What is this?
+
+UI UX Pro Max Skill is an installable skill file for AI coding assistants. When loaded, it lets AI tools make better design decisions — choosing appropriate color palettes, font pairings, layout patterns, and UX best practices instead of generating generic interfaces.
+
+The skill is installed via a single command and works with Claude Code, Cursor, Windsurf, and other AI-powered development tools.
+
+## Key features
+
+- 67 curated UI design styles (from minimal to brutalist to neumorphic)
+- 161 color palettes with accessibility-aware contrast ratios
+- 57 font pairings tested for readability and aesthetic harmony
+- 99 UX guidelines covering forms, navigation, feedback, and accessibility
+- 25 chart and data visualization types with usage guidance
+- 16 tech stack recommendations mapping design choices to frameworks
+- 161 reasoning rules for systematic design decision-making
+
+## Documentation
+
+- [What is UI UX Pro Max Skill?](https://ui-ux-pro-max-skill.com/docs/getting-started/) — Core features and concepts
+- [How It Works](https://ui-ux-pro-max-skill.com/docs/design-system-generator/) — From prompt to complete design system
+- [Installation Guide](https://ui-ux-pro-max-skill.com/docs/cli-reference/) — Setup for Claude, Cursor, Windsurf, and more
+- [How to Use](https://ui-ux-pro-max-skill.com/docs/examples/) — Invocation patterns and example prompts
+- [FAQ](https://ui-ux-pro-max-skill.com/docs/faq/) — Common questions and quick answers
+
+## Tutorials
+
+- [Build a SaaS Landing Page](https://ui-ux-pro-max-skill.com/tutorials/build-a-saas-landing/) — Step-by-step walkthrough of building a complete landing page with the skill
+
+## Blog
+
+- [Blog](https://ui-ux-pro-max-skill.com/blog/) — Notes, experiments, and field reports from designing with the skill
+
+## Examples
+
+- [Live Examples](https://ui-ux-pro-max-skill.com/examples/) — 39+ interactive design system demos generated with the skill
+
+## Languages
+
+This site is available in four languages:
+
+- English: https://ui-ux-pro-max-skill.com/
+- Chinese: https://ui-ux-pro-max-skill.com/zh/
+- Vietnamese: https://ui-ux-pro-max-skill.com/vi/
+- Japanese: https://ui-ux-pro-max-skill.com/ja/
+
+## Technical details
+
+- Built with Next.js (static export)
+- Deployed on Cloudflare Workers Static Assets
+- Uses MDX for content with remark-frontmatter and rehype-slug
+- Structured data: WebSite, Organization, SoftwareApplication, Article, BreadcrumbList JSON-LD
+- Full hreflang implementation across all four locales
+- Open source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill

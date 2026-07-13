@@ -21,6 +21,7 @@ import { getAuthor } from '@/lib/authors';
 import { tutorialSeriesPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
+import { BreadcrumbJsonLd } from '@/components/content/breadcrumb-jsonld';
 import { ReadingProgress } from '@/components/content/reading-progress';
 import { SeriesSidebar } from '@/components/tutorials/series-sidebar';
 import { StepNav } from '@/components/tutorials/step-nav';
@@ -73,7 +74,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: date,
       modifiedTime: updated ?? date,
-      images: cover ? [{ url: cover }] : [DEFAULT_OG_IMAGE],
+      images: cover ? [{ url: cover }] : [{ ...DEFAULT_OG_IMAGE, alt: metaDescription }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -138,6 +139,14 @@ export default async function TutorialStepPage({
         inLanguage={locale}
         keywords={resolved.frontmatter.tags}
         image={resolved.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: t('navbar.home'), url: absoluteSiteUrl('/', locale) },
+          { name: t('navbar.tutorials'), url: absoluteSiteUrl('/tutorials', locale) },
+          { name: t(seriesMeta.titleKey), url: absoluteSiteUrl(`/tutorials/${series}`, locale) },
+          { name: resolved.frontmatter.title, url: canonicalUrl },
+        ]}
       />
 
       <Link

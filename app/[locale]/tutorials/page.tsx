@@ -49,7 +49,7 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale,
       type: 'website',
-      images: [DEFAULT_OG_IMAGE],
+      images: [{ ...DEFAULT_OG_IMAGE, alt: t('tutorials.subtitle') }],
     },
     twitter: {
       card: 'summary_large_image',

@@ -9,6 +9,7 @@ import { getAuthor } from '@/lib/authors';
 import { blogIndexPath } from '@/lib/locale-path';
 import { LocaleFallbackBanner } from '@/components/content/locale-fallback-banner';
 import { ArticleJsonLd } from '@/components/content/article-jsonld';
+import { BreadcrumbJsonLd } from '@/components/content/breadcrumb-jsonld';
 import { ReadingProgress } from '@/components/content/reading-progress';
 import { ArticleToc } from '@/components/content/article-toc';
 import { EndOfArticleCta } from '@/components/content/end-of-article-cta';
@@ -65,7 +66,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: date,
       modifiedTime: updated ?? date,
-      images: cover ? [{ url: cover }] : [DEFAULT_OG_IMAGE],
+      images: cover ? [{ url: cover }] : [{ ...DEFAULT_OG_IMAGE, alt: metaDescription }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -128,6 +129,13 @@ export default async function BlogPostPage({
         inLanguage={locale}
         keywords={post.frontmatter.tags}
         image={post.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: t('navbar.home'), url: absoluteSiteUrl('/', locale) },
+          { name: t('navbar.blog'), url: absoluteSiteUrl('/blog', locale) },
+          { name: post.frontmatter.title, url: canonicalUrl },
+        ]}
       />
 
       <Link

@@ -102,6 +102,18 @@ for (const imagePath of ['/opengraph-image', '/twitter-image']) {
 if (!headers.includes('/thumbnails/*\n  Content-Type: image/avif')) {
   fail('Missing AVIF response headers for optimized thumbnails.');
 }
+const fundingChoicesOrigin = 'https://fundingchoicesmessages.google.com';
+if (headers.split(fundingChoicesOrigin).length - 1 < 3) {
+  fail('CSP must allow Funding Choices in script-src, connect-src, and frame-src.');
+}
+for (const sodarOrigin of [
+  'https://ep1.adtrafficquality.google',
+  'https://ep2.adtrafficquality.google',
+]) {
+  if (headers.split(sodarOrigin).length - 1 < 3) {
+    fail(`CSP must allow SODAR in script-src, connect-src, and frame-src: ${sodarOrigin}`);
+  }
+}
 
 const thumbnailDir = path.join(outDir, 'thumbnails');
 const optimizedThumbnails = fs.existsSync(thumbnailDir)
@@ -116,21 +128,40 @@ if (!/<img[^>]+src="\/thumbnails\/[^"]+\.avif"/.test(examplesHtml)) {
   fail('Examples page is not rendering optimized AVIF thumbnails.');
 }
 
+const nonContentPages = new Set([
+  '404.html',
+  '404/index.html',
+  '_not-found/index.html',
+]);
+const invalidAdSensePages = [];
 let monetizedPageCount = 0;
+
 for (const htmlFile of htmlFiles) {
   const relativePath = path.relative(outDir, htmlFile);
   const html = fs.readFileSync(htmlFile, 'utf8');
-  if (!html.includes('pagead2.googlesyndication.com/pagead/js/adsbygoogle')) continue;
+  const head = html.slice(html.indexOf('<head>'), html.indexOf('</head>') + '</head>'.length);
+  const adSensePreloads = (head.match(/<link\b[^>]*>/g) ?? []).filter(
+    (tag) =>
+      tag.includes('rel="preload"') &&
+      tag.includes('as="script"') &&
+      /href="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-\d+"/.test(tag)
+  );
+  const hasValidAdSense = adSensePreloads.length === 1;
 
-  const isContentRoute = /^(?:(?:zh|vi|ja)\/)?(?:blog|tutorials)\//.test(relativePath);
-  if (!isContentRoute) {
-    fail(`AdSense script leaked into non-monetized route: ${relativePath}`);
+  if (nonContentPages.has(relativePath) || html.includes('NEXT_REDIRECT;')) continue;
+  if (!hasValidAdSense) {
+    invalidAdSensePages.push(relativePath);
+    continue;
   }
   monetizedPageCount++;
 }
 
-if (monetizedPageCount === 0) {
-  fail('AdSense script is missing from all eligible content routes.');
+if (invalidAdSensePages.length > 0) {
+  fail(
+    `AdSense must appear exactly once as a Next-managed script preload:\n${invalidAdSensePages.slice(0, 20).join('\n')}`
+  );
 }
 
-console.log(`✅ Static export validated: ${htmlFiles.length} HTML files, ${internalLinkCount} internal links, no /en duplicate`);
+console.log(
+  `✅ Static export validated: ${htmlFiles.length} HTML files, ${monetizedPageCount} monetized pages, ${internalLinkCount} internal links, no /en duplicate`
+);

@@ -12,6 +12,7 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  manifest: '/site.webmanifest',
   openGraph: {
     images: [DEFAULT_OG_IMAGE]
   },

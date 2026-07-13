@@ -7,7 +7,9 @@ import { DocsShell } from '@/components/docs/docs-shell';
 import { docsNav, type DocSlug } from '@/content/docs/nav';
 import { getDocDefinition, type Translator } from '@/content/docs/page-definitions';
 import { docPath } from '@/lib/locale-path';
+import { BreadcrumbJsonLd } from '@/components/content/breadcrumb-jsonld';
 import {
+  absoluteSiteUrl,
   DEFAULT_OG_IMAGE,
   DEFAULT_TWITTER_IMAGE_URL,
   SITE_URL
@@ -59,7 +61,7 @@ export async function generateMetadata({
       siteName: 'UI UX Pro Max Skill',
       locale: locale,
       type: 'article',
-      images: [DEFAULT_OG_IMAGE],
+      images: [{ ...DEFAULT_OG_IMAGE, alt: pageDescription }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -98,9 +100,17 @@ export default async function DocPage({
   const current = docsNav[currentIndex]!;
 
   const { toc, content } = getDocDefinition(slug, t);
+  const breadcrumbItems = [
+    { name: t('navbar.home'), url: absoluteSiteUrl('/', locale) },
+    ...(slug === 'getting-started'
+      ? []
+      : [{ name: t('navbar.docs'), url: absoluteSiteUrl('/docs/getting-started', locale) }]),
+    { name: t(current.titleKey), url: absoluteSiteUrl(`/docs/${slug}`, locale) },
+  ];
 
   return (
     <DocsShell slug={slug} toc={toc}>
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <article className="glass-card p-6 sm:p-10">
         <h1 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
           {t(current.titleKey)}

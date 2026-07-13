@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { PageContent } from '@/components/page-content';
 import { LatestContent } from '@/components/home/latest-content';
+import { SiteJsonLd } from '@/components/site-jsonld';
 import messages from '@/messages/en.json';
 import {
   DEFAULT_OG_IMAGE,
@@ -55,5 +56,10 @@ export const metadata: Metadata = {
 export default function RootPage() {
   setRequestLocale('en');
 
-  return <PageContent latestContent={<LatestContent locale="en" />} />;
+  return (
+    <>
+      <SiteJsonLd locale="en" />
+      <PageContent latestContent={<LatestContent locale="en" />} />
+    </>
+  );
 }

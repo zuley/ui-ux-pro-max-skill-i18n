@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { PageContent } from '@/components/page-content';
 import { LatestContent } from '@/components/home/latest-content';
+import { SiteJsonLd } from '@/components/site-jsonld';
 import type { Locale } from '@/lib/content/types';
 
 export default async function HomePage({
@@ -12,6 +13,9 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   return (
-    <PageContent latestContent={<LatestContent locale={locale as Locale} />} />
+    <>
+      <SiteJsonLd locale={locale} />
+      <PageContent latestContent={<LatestContent locale={locale as Locale} />} />
+    </>
   );
 }

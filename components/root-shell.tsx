@@ -20,6 +20,7 @@ import { AnnouncementBar } from '@/components/announcement-bar';
 import type { Locale } from '@/lib/content/types';
 import { SkipLink } from '@/components/skip-link';
 import { pickClientMessages } from '@/lib/client-messages';
+import { AdSenseScript } from '@/components/ads/adsense-script';
 
 type Messages = React.ComponentProps<typeof NextIntlClientProvider>['messages'];
 
@@ -45,6 +46,7 @@ export async function RootShell({
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
       <body className={fontBodyClassName}>
+        <AdSenseScript />
         <Script
           id="theme-init"
           strategy="beforeInteractive"

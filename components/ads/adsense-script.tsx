@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import { adsensePublisherId } from '@/lib/adsense';
 
-/** Load Auto Ads only on substantive editorial routes. */
+/** Load Auto Ads globally after React hydration to avoid DOM races. */
 export function AdSenseScript() {
   return (
     <Script

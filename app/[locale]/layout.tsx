@@ -26,6 +26,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
+    manifest: '/site.webmanifest',
     title: `${t('common.navTitle')} — ${t('common.description')}`,
     description: t('common.metaDescription'),
     keywords: t('common.keywords'),
