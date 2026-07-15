@@ -1,0 +1,125 @@
+---
+title: "02 · पहला prompt लिखें—पाँच-line note को असली hero में बदलें"
+summary: "चरण 01 के style + palette decisions को एक executable prompt में बदलें, जो पाँच बार regenerate किए बिना रखने योग्य hero बनाए।"
+date: 2026-05-27
+tags: [tutorial, prompt, hero]
+author: admin
+step: 2
+---
+
+चरण 01 के अंत में आपके पास पाँच-line scratch note था: audience, feeling, style, palette और तीन forbidden चीज़ें। अब उस note को **पहले असली prompt** में बदलेंगे—जो landing page का hero section बनाएगा।
+
+हम जानबूझकर केवल hero से शुरू कर रहे हैं। मॉडल से एक बार में “landing page design करो” कहना slop तक लौटने का सबसे तेज़ रास्ता है। **एक section माँगना, जिसमें आपके पहले से किए निर्णय शामिल हों**, उससे बाहर निकलने का सबसे तेज़ रास्ता है।
+
+## इस चरण में हम क्या बनाएँगे
+
+Screenshot योग्य एक hero section। विशेष रूप से:
+
+- Headline जो *आपके* product जैसी लगे, “Transform your workflow” जैसी नहीं
+- एक sentence की subheadline—features की तीन lines नहीं
+- एक primary CTA (कोई secondary “Learn more” नहीं)
+- चरण 01 की style + palette के अनुरूप visual treatment
+
+बस इतना। Feature grid, logos strip या testimonial नहीं। वे अगले चरणों में आएँगे।
+
+## काम करने वाले prompt की संरचना
+
+जिस prompt से रखने योग्य hero बनता है, उसमें लगभग इसी क्रम में पाँच sections होते हैं। यह आकार याद रखें—अगले चरणों में हर section के लिए दोबारा काम आएगा:
+
+<Checklist
+  storageKey="saas-landing-step-02-hi"
+  title="Hero prompt के पाँच sections"
+  items={[
+    { id: 'role', label: 'Role line—मॉडल को किस भूमिका में काम करना है (1 sentence)' },
+    { id: 'decisions', label: 'Decisions in—चरण 01 का पाँच-line note ज्यों का त्यों paste करें' },
+    { id: 'task', label: 'Task—केवल एक hero section, पूरा page नहीं' },
+    { id: 'constraints', label: 'Constraints—forbidden list फिर बताएँ' },
+    { id: 'output', label: 'Output format—कौन-सी file(s), कौन-सा stack' }
+  ]}
+/>
+
+सबसे आम गलती **task** को गलत जगह रखना है। लोग “मेरे लिए hero बनाओ” से शुरू करते हैं और constraints बाद में लिखते हैं। मॉडल पहली पढ़ी बात को केंद्र मानता है—इसलिए पहले यह पढ़े कि **उसे कौन होना है** और **कौन-से निर्णय locked हैं**, task नहीं।
+
+## असली template
+
+इसे copy करें। चरण 01 से मिली पाँच lines बदलें:
+
+<CodeBlock
+  title="Hero section prompt"
+  language="text"
+  code={`You are a senior product designer building a SaaS landing page. The
+visual decisions for this project are already made — your job is to
+execute them, not to re-decide them.
+
+# Decisions (locked in)
+Audience: <one sentence from step 01>
+Feeling in first 2 seconds: <one adjective from step 01>
+Style: <name from the 50 styles, e.g. "Editorial Brutalist">
+Palette: <name from the 21 palettes, e.g. "Slate Ink">
+Forbidden: <three things from step 01>
+
+# Task
+Build the hero section of the landing page. Only the hero — no feature
+grid, no logo strip, no testimonial, no footer. One section that fits
+in the viewport on a 1440-wide screen.
+
+The hero must contain:
+- One headline (1-2 lines, max ~10 words). The headline must read
+  like it was written for THIS audience, not as a generic SaaS line.
+  No "Transform your workflow." No "Built for modern teams." Be
+  specific to the audience above.
+- One subheadline (1 sentence, max 18 words). It explains who this
+  is for and what it does, in plain language.
+- One primary CTA (single button). No secondary "Learn more" link.
+- A visual treatment consistent with the style + palette above.
+
+# Constraints
+- Apply the forbidden list ruthlessly. If a default lands on one of
+  the forbidden items, pick the next best alternative.
+- The headline should be the loudest thing on the page. Everything
+  else recedes.
+- No gradient backgrounds. No three-up card rows (those come in a
+  later section, not the hero).
+- Use system spacing: 8px base, all vertical rhythm in multiples of
+  24px.
+
+# Output
+Output one file: app/(marketing)/page.tsx
+Stack: Next.js 15 App Router, React Server Components, Tailwind v4.
+No client components in this file. No external dependencies beyond
+Tailwind. Inline all SVG.`}
+/>
+
+एक section के लिए यह काफ़ी लंबा prompt लगता है—और है। कारण: **इस prompt की हर चीज़ ऐसा निर्णय है जिसे वरना बार-बार regenerate करना पड़ता**। Decisions को पहले रखने से पहली कोशिश में रखने योग्य hero मिलता है, चार बार regenerate किया hero नहीं।
+
+## अच्छा output कैसा दिखता है
+
+Prompt चलाने के बाद इन सबका उत्तर **हाँ** होना चाहिए:
+
+<Checklist
+  storageKey="saas-landing-step-02-output-hi"
+  title="पहले hero की acceptance check"
+  items={[
+    { id: 'specific', label: 'Headline audience की कोई specific बात कहती है—केवल “teams” या “workflows” नहीं' },
+    { id: 'one-cta', label: 'ठीक एक button है, दो नहीं' },
+    { id: 'palette', label: 'Accent color बताए गए palette से साफ़ मेल खाता है' },
+    { id: 'style', label: 'Visual treatment बताई style से मेल खाता है (serif/sans, asymmetric/centred आदि)' },
+    { id: 'no-slop', label: 'आपकी तीन forbidden चीज़ों में से कोई output में नहीं' }
+  ]}
+/>
+
+पाँच में से चार का उत्तर हाँ हो तो draft को चरण 03 में ले जाएँ। दो या अधिक में **नहीं** हो तो re-roll न करें—देखें prompt का कौन-सा section vague था। लगभग हमेशा **decisions** block बहुत generic होता है। एक line सटीक करें और फिर चलाएँ।
+
+<Callout tone="warn" title="कुछ बदले बिना regenerate न करें">
+  वही prompt फिर चलाकर बेहतर परिणाम की उम्मीद करना AI के साथ काम करने की सबसे महँगी failure mode है। Output पसंद न हो तो prompt बदलें। Output करीब हो, लेकिन एक dimension गलत हो, तो **उसी dimension को address करने के लिए prompt edit करें**, फिर चलाएँ। आँख बंद करके re-roll कभी नहीं।
+</Callout>
+
+## यह संरचना हर जगह क्यों काम करती है
+
+पाँच-section structure—*role, decisions, task, constraints, output*—वही है जो चरण 03–05 के हर section में इस्तेमाल होगा। इसे समझने के बाद pricing या FAQ section का prompt तीन minutes का काम है: decisions block रखें, task और constraints बदलें, फिर चलाएँ।
+
+यहाँ बन रही skill “अच्छे prompts लिखना” नहीं है। यह है **decisions पहले रखना, ताकि prompt को कम काम करना पड़े**।
+
+## अगला
+
+चरण 03 में hero output पर iteration सीखेंगे—मॉडल के परिणाम को देखकर वह **सबसे छोटा follow-up prompt** कैसे लिखें जो सही चार चीज़ें तोड़े बिना केवल एक गलत चीज़ ठीक करे।

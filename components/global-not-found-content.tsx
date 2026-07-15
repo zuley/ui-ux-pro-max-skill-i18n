@@ -2,6 +2,7 @@
 
 import { BookOpen, Home, Images, SearchX } from 'lucide-react';
 import { useEffect, useSyncExternalStore } from 'react';
+import { notoSansDevanagari } from '@/lib/fonts';
 
 const copy = {
   en: {
@@ -35,6 +36,14 @@ const copy = {
     home: 'ホームへ戻る',
     docs: 'ドキュメントを見る',
     examples: '事例を見る'
+  },
+  hi: {
+    eyebrow: 'पृष्ठ नहीं मिला',
+    title: 'यह रास्ता डिज़ाइन सिस्टम से भटक गया है।',
+    description: 'यह पृष्ठ शायद स्थानांतरित हो गया है या पता अधूरा है। नीचे कोई भरोसेमंद रास्ता चुनें।',
+    home: 'होम पर जाएँ',
+    docs: 'दस्तावेज़ खोलें',
+    examples: 'उदाहरण देखें'
   }
 } as const;
 
@@ -42,7 +51,7 @@ type NotFoundLocale = keyof typeof copy;
 
 function localeFromPathname(pathname: string): NotFoundLocale {
   const segment = pathname.split('/').filter(Boolean)[0];
-  return segment === 'zh' || segment === 'vi' || segment === 'ja' ? segment : 'en';
+  return segment === 'zh' || segment === 'vi' || segment === 'ja' || segment === 'hi' ? segment : 'en';
 }
 
 function subscribeToPathname() {
@@ -68,7 +77,7 @@ export function GlobalNotFoundContent() {
     <main
       id="main-content"
       lang={locale}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0F172A] px-4 py-16 text-white"
+      className={`relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0F172A] px-4 py-16 text-white ${locale === 'hi' ? notoSansDevanagari.className : ''}`}
     >
       <div className="absolute inset-0 aurora-bg opacity-100" />
       <div className="relative z-10 w-full max-w-2xl rounded-2xl border border-white/10 bg-gray-800/80 p-6 text-center shadow-2xl backdrop-blur-xl sm:p-10">

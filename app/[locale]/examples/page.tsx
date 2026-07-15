@@ -29,6 +29,7 @@ export async function generateMetadata({
         zh: `${SITE_URL}/zh/examples`,
         vi: `${SITE_URL}/vi/examples`,
         ja: `${SITE_URL}/ja/examples`,
+        hi: `${SITE_URL}/hi/examples`,
       },
     },
     openGraph: {

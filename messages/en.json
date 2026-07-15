@@ -1270,6 +1270,7 @@
     "minRead": "{n} min read",
     "stepLabel": "Step {n} of {total}",
     "totalSteps": "{n} steps",
+    "start": "Start",
     "backToSeries": "Back to series",
     "backToIndex": "All tutorials",
     "prev": "Previous",

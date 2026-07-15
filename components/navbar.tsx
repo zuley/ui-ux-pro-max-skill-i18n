@@ -104,7 +104,7 @@ export function Navbar() {
       <nav
         ref={navRef}
         inert={searchOpen}
-        className="fixed top-[var(--announcement-height)] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-h-[calc(100dvh-var(--announcement-height)-0.5rem)] max-w-7xl mx-auto overflow-y-auto overscroll-contain"
+        className="fixed top-[var(--announcement-height)] left-2 min-[400px]:left-4 right-2 min-[400px]:right-4 z-50 glass-card max-w-7xl mx-auto"
       >
         <div className="px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 min-[400px]:h-16">
@@ -208,7 +208,7 @@ export function Navbar() {
           </div>
         </div>
         {mobileOpen && (
-          <div id="mobile-navigation" className="lg:hidden border-t border-gray-200/70 dark:border-white/10 px-3 min-[400px]:px-4 sm:px-6 lg:px-8 pb-4">
+          <div id="mobile-navigation" className="lg:hidden max-h-[calc(100dvh-var(--announcement-height)-4.5rem)] overflow-y-auto overscroll-contain border-t border-gray-200/70 dark:border-white/10 px-3 min-[400px]:px-4 sm:px-6 lg:px-8 pb-4">
             <div className="pt-3 flex flex-col gap-2">
               {primaryLinks.map((l) => (
                 <Link

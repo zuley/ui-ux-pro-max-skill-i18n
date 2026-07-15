@@ -1,0 +1,105 @@
+---
+title: "05 · Ship checklist—URL किसी को दिखाने से पहले वाली जाँच"
+summary: "Page पूरा दिखता है। यह अंतिम चरण ‘पूरा दिखता है’ और ‘पूरा है’ के बीच का अंतर है: contrast, focus states, cursor affordances, तीन breakpoints की जाँच और वे meta tags जो link खराब unfurl होने तक याद नहीं आते।"
+date: 2026-06-11
+tags: [tutorial, checklist, accessibility]
+author: admin
+step: 5
+---
+
+Hero locked है, grid ईमानदार, chart “किसके अनुसार?” सवाल झेलता है। Page पूरा **दिखता** है। यह चरण *पूरा दिखता है* और *पूरा है* के बीच का अंतर है—AI-generated pages जिन बातों में लगातार गलत होते हैं, उन्हें सही क्रम में अंतिम बार जाँचना।
+
+इसमें कुछ glamorous नहीं। फिर भी link पाने वाला पहला व्यक्ति—आमतौर पर दस seconds में, phone पर—सब देख लेगा।
+
+## AI output को यह pass खास तौर पर क्यों चाहिए
+
+हाथ से बने pages अलग-अलग जगह fail होते हैं। AI-built pages **पूर्वानुमानित** ढंग से fail होते हैं: मॉडल screenshot के लिए optimize करता है। Contrast केवल preview की light theme में चलता है; hover states हैं, focus states नहीं; button जैसी चीज़ पर `cursor: default`; 1440px पर flawless layout, 390px पर ढह जाता है। Screenshot demo है; checklist उस हर चीज़ के लिए है जिसे screenshot नहीं दिखा सकता।
+
+## Pass 1—क्या हर कोई पढ़ सकता है?
+
+Contrast पहले, क्योंकि colors बदलने पर बाकी fixes अमान्य हो सकते हैं। Headline नहीं, **वास्तविक** worst cases जाँचें:
+
+<Checklist
+  storageKey="saas-landing-step-05-contrast-hi"
+  title="Contrast minimums (WCAG AA)"
+  items={[
+    { id: 'body', label: 'Body text बनाम background: 4.5:1 या बेहतर' },
+    { id: 'muted', label: 'Muted text—captions, subheadline, chart labels—अब भी 4.5:1। AI output यहीं fail होता है' },
+    { id: 'cta', label: 'CTA label बनाम CTA background: 4.5:1 (accent color पर white अक्सर केवल ~3:1 होता है)' },
+    { id: 'dark', label: 'Dark mode ship करते हैं तो वहाँ तीनों फिर जाँचें—token swaps चुपचाप ratios तोड़ते हैं' }
+  ]}
+/>
+
+सबसे आम failure: मॉडल page की हर secondary line के लिए tasteful light gray चुनता है (`#9CA3AF` on white = 2.5:1)। Screenshot में refined, daylight में phone पर unreadable। चरण 03 के Keep/Change round से ठीक करें—सटीक tokens और exact replacement बताएँ।
+
+## Pass 2—क्या यह interactive महसूस होता है?
+
+<Checklist
+  storageKey="saas-landing-step-05-interactive-hi"
+  title="Affordance check—पहले केवल keyboard, फिर केवल mouse"
+  items={[
+    { id: 'cursor', label: 'हर clickable चीज़ cursor-pointer दिखाती है; unclickable चीज़ नहीं' },
+    { id: 'hover', label: 'हर link और button पर visible hover state और 150–300ms transition है' },
+    { id: 'focus', label: 'Page पर Tab चलाएँ: हर interactive element क्रम में visible focus ring दिखाता है' },
+    { id: 'targets', label: 'Phone पर हर tap target कम-से-कम 44px ऊँचा है, footer links भी' }
+  ]}
+/>
+
+Keyboard tab-through तीस seconds लेता है और वह पकड़ता है जो screenshot नहीं पकड़ सकता: मॉडल `hover:` classes उदारता से जोड़ते हैं, focus styles लगभग कभी नहीं—क्योंकि training screenshots में mice थे। Focus ring गायब हो तो मॉडल से सामान्य तौर पर “accessibility improve” न कहें—केवल exact चीज़ माँगें: links, buttons और inputs पर accent color वाला visible `focus-visible` ring।
+
+## Pass 3—तीन breakpoints की जाँच
+
+Page 390px, 768px और 1440px पर खोलें। हर size पर ऊपर से नीचे जाएँ। AI की ये चार classic responsive failures खोजें:
+
+- 390px पर headline की आख़िरी line में अकेला एक word।
+- 2x2 grid single column बनता है, लेकिन desktop-sized gaps रखता है—page 60% खाली हवा।
+- Chart horizontally overflow करता है या labels 12px से छोटे हो जाते हैं।
+- Phone और desktop पर section vertical padding समान (phone पर लगभग एक-तिहाई कम होनी चाहिए)।
+
+<Callout tone="info" title="एक समय में एक breakpoint ठीक करें">
+  “इसे responsive बनाओ” prompt से बचें; वह हर चीज़ re-roll करता है। Breakpoint और failure का नाम लें: “390px पर headline में orphan word है; उस width पर एक size step कम करें। 768px और ऊपर कुछ न बदलें।” हर failure के लिए एक Keep/Change, चरण 03 जैसा।
+</Callout>
+
+## Pass 4—वे हिस्से जो बाद में दिखाई देते हैं
+
+<CodeBlock
+  title="Metadata prompt—उबाऊ block, ज्यों का त्यों"
+  language="text"
+  code={`Add metadata to app/(marketing)/page.tsx. Do not touch the page body.
+
+- <title>: "<product> — <the headline's promise, max 60 chars>"
+- meta description: the subheadline, max 155 chars, no superlatives
+- OG: og:title, og:description, og:image (/og.png, 1200x630), og:type
+- twitter:card = summary_large_image
+- favicon links assuming /favicon.svg with /favicon.ico fallback
+- <html lang> set to the page language`}
+/>
+
+फिर वे चीज़ें जाँचें जो मॉडल आपके लिए नहीं कर सकता:
+
+<Checklist
+  storageKey="saas-landing-step-05-meta-hi"
+  title="URL machine से बाहर जाने से पहले"
+  items={[
+    { id: 'og', label: 'OG image मौजूद है और असली 1200x630 render है—URL खुद को Slack DM में paste करके unfurl देखें' },
+    { id: 'links', label: 'Page का हर link वास्तविक जगह जाता है—generated scaffolding का href="#" नहीं बचा' },
+    { id: 'fonts', label: 'Fonts font-display: swap से load होते हैं और आने से पहले भी page readable है' },
+    { id: 'lighthouse', label: 'Lighthouse एक बार चलाएँ: performance और accessibility दोनों ≥ 90 हों; हर flag पढ़ें' }
+  ]}
+/>
+
+`href="#"` check का अपना sentence बनता है: generated pages placeholder links लगातार ship करते हैं, और navbar का dead “Pricing” link *छोड़ा हुआ product* लगता है—न होने से भी खराब।
+
+## पूरी series की संरचना
+
+पाँच चरण, एक discipline, हर बार कम ऊँचाई पर लागू:
+
+1. **Prompt से पहले निर्णय लें** (style, palette, forbidden list)।
+2. **Decisions पहले रखें** और एक structured prompt बनाएँ।
+3. **घेरे के साथ iterate करें**—Keep/Change, हर round में एक dimension।
+4. **आपका data, verbatim**—मॉडल प्रस्ताव देता है, numbers आपके निर्णय करते हैं।
+5. **वह जाँचें जो screenshot नहीं दिखा सकता**—फिर ship करें।
+
+इनमें कोई clever prompts लिखने के बारे में नहीं। बात है visual, factual और quality decisions को keyboard के अपनी ओर रखना, और मॉडल से वह काम लेना जिसमें वह सच में अच्छा है: निर्णय मौजूद हों तो artefact बनाना।
+
+Ship करें। URL उस एक व्यक्ति को भेजें जिसकी taste पर भरोसा है, एक सवाल के साथ: “आपने पढ़ना कहाँ छोड़ा?” उसका उत्तर अगले iteration loop की शुरुआत है—और उसकी structure आप पहले ही जानते हैं।

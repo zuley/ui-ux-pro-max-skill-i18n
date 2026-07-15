@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
-      <body className={fontBodyClassName}>
+      <body className={fontBodyClassName('en')}>
         <GlobalNotFoundContent />
       </body>
     </html>

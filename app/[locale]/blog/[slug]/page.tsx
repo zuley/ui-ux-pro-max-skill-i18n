@@ -55,6 +55,7 @@ export async function generateMetadata({
         zh: `${SITE_URL}/zh/blog/${slug}`,
         vi: `${SITE_URL}/vi/blog/${slug}`,
         ja: `${SITE_URL}/ja/blog/${slug}`,
+        hi: `${SITE_URL}/hi/blog/${slug}`,
       },
     },
     openGraph: {

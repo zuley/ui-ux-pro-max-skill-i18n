@@ -40,12 +40,13 @@ The skill is installed via a single command and works with Claude Code, Cursor, 
 
 ## Languages
 
-This site is available in four languages:
+This site is available in five languages:
 
 - English: https://ui-ux-pro-max-skill.com/
 - Chinese: https://ui-ux-pro-max-skill.com/zh/
 - Vietnamese: https://ui-ux-pro-max-skill.com/vi/
 - Japanese: https://ui-ux-pro-max-skill.com/ja/
+- Hindi: https://ui-ux-pro-max-skill.com/hi/
 
 ## Technical details
 
@@ -53,5 +54,5 @@ This site is available in four languages:
 - Deployed on Cloudflare Workers Static Assets
 - Uses MDX for content with remark-frontmatter and rehype-slug
 - Structured data: WebSite, Organization, SoftwareApplication, Article, BreadcrumbList JSON-LD
-- Full hreflang implementation across all four locales
+- Full hreflang implementation across all five locales
 - Open source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill

@@ -1,0 +1,121 @@
+---
+title: "04 · Feature grid और chart—गढ़े हुए नहीं, वास्तविक data के साथ"
+summary: "Hero के नीचे वाला section वह जगह है जहाँ AI output चुपचाप fiction बनता है: invented stats, decorative charts और बारह एक-जैसे cards। इस चरण में ऐसा feature grid और chart जोड़ेंगे जो अपनी जगह के योग्य हों।"
+date: 2026-06-10
+tags: [tutorial, data, charts]
+author: admin
+step: 4
+---
+
+चरण 02–03 का hero अब locked है। उसके नीचे का section आता है—feature grid और पहली बार **data**। यहाँ एक नई failure mode आती है, जो purple gradients से अधिक खराब है क्योंकि visitors आपको पकड़ सकते हैं: मॉडल **numbers गढ़ता है**।
+
+AI से SaaS landing page माँगें तो fold के नीचे कहीं “10,000+ happy customers”, “99.9% uptime” और बिना axis labels का ऊपर-दाएँ जाता line chart मिलेगा। कुछ भी सच नहीं। मॉडल ठीक-ठीक झूठ नहीं बोल रहा—वह landing pages का pattern पूरा कर रहा है। लेकिन इसे ship करेंगे तो झूठ *आपका* होगा।
+
+इस चरण का नियम: **page का हर number आपसे आएगा, वरना दिखाई नहीं देगा।**
+
+## पहले वास्तविक सामग्री इकट्ठी करें
+
+चरण 01 की तरह काम prompt box से बाहर शुरू होता है। कुछ generate करने से पहले तीन चीज़ें लिखी होनी चाहिए:
+
+<Checklist
+  storageKey="saas-landing-step-04-material-hi"
+  title="Grid के prompt से पहले"
+  items={[
+    { id: 'features', label: 'तीन से छह features; हर एक एक सरल sentence में (user के लिए क्या करता है, यह बताएँ; वह क्या है, यह नहीं)' },
+    { id: 'metric', label: 'एक वास्तविक metric जिसका source customer के पूछने पर बता सकें' },
+    { id: 'shape', label: 'उस metric का shape: single number, समय के साथ trend या comparison?' },
+    { id: 'none', label: 'ईमानदार जाँच: real metric न हो तो chart के बिना ship करने का निर्णय लें' }
+  ]}
+/>
+
+अंतिम item consolation prize नहीं। छह स्पष्ट feature sentences और **बिना chart** वाला landing page fabricated graph वाले page से अधिक विश्वसनीय है। Early products के पास आमतौर पर impressive numbers नहीं होते; उलटा दिखावा data वाला AI slop है।
+
+## क्या chart अपनी जगह के योग्य है?
+
+Chart तभी उचित है जब metric का ऐसा **shape** हो जिसे words नहीं दिखा सकते:
+
+- **Single number** (“median import 40 seconds लेता है”) को बड़ा stat चाहिए—large type और context की एक line। Chart नहीं।
+- **Trend** (“छह releases में हर बार processing time घटा”) को छोटा line chart चाहिए।
+- **Comparison** (“एक ही file पर हमारा parser बनाम दो पुराने competitors”) को तीन horizontal bars चाहिए।
+
+<Callout tone="warn" title="Chart slop की भी अपनी पहचान है">
+  पाँच लगभग बराबर slices वाला pie chart, 3D bars, axes के बिना gradient-filled area charts और हर chart जिसका केवल संदेश “ऊपर और दाएँ” है—ये data के purple gradients हैं। यदि “यह chart हटाने पर मेरा decision कैसे बदलेगा?” का उत्तर chart नहीं झेलता, उसे हटा दें।
+</Callout>
+
+## Prompt बढ़ाएँ—वही संरचना, एक नया block
+
+Prompt चरण 02 वाला template है, बस एक `# Data` block जुड़ता है जिसे मॉडल verbatim source material माने। चरण 03 का Keep fence नीचे काम करते समय hero बचाता है।
+
+<CodeBlock
+  title="Feature grid + chart prompt"
+  language="text"
+  code={`Extend app/(marketing)/page.tsx. The hero is final — keep it
+byte-for-byte untouched. Add ONE section directly under it.
+
+# Decisions (locked in, from step 01)
+Style: <your style name>
+Palette: <your palette name> — the chart uses ONLY these colours.
+
+# Data (verbatim — do not invent, round, or extrapolate)
+Features:
+1. Import a 50k-row CSV and get typed columns without writing a schema.
+2. Every transform is previewed on real rows before it runs.
+3. Broken rows are quarantined, not silently dropped.
+4. One-click export to Postgres, BigQuery, or a plain file.
+Metric (comparison): median time to first clean table, same 50k-row file:
+- Us: 4 min
+- Hand-written scripts: 35 min
+- Legacy ETL suite: 90 min setup before first run
+
+# Task
+A feature grid (2x2 on desktop, single column on mobile) using the four
+sentences above, plus one chart for the metric: three horizontal bars,
+labelled with the real values.
+
+# Constraints
+- Inline SVG for the chart. No chart library, no animations.
+- Axis/bar labels must show the actual numbers from # Data.
+- No other numbers anywhere in the section. No testimonials, no logos.
+- Icons from Lucide, one per feature card. No emojis.
+
+# Output
+The same file with the new section added under the hero. Do not modify
+the hero, the imports it uses, or anything above it.`}
+/>
+
+दो details अधिकतर काम करती हैं। Parenthetical **“do not invent, round, or extrapolate”** वह loophole बंद करता है जिसमें 4 minutes “बाकी सब से 5x faster” बन जाता है। और **“no other numbers anywhere in the section”** मॉडल को real data के पास invented numbers सजाने से रोकता है—classic failure है एक सच्चे metric के चारों ओर तीन झूठे metrics।
+
+## Acceptance check
+
+<Checklist
+  storageKey="saas-landing-step-04-output-hi"
+  title="Section रखने से पहले"
+  items={[
+    { id: 'verbatim', label: 'Section का हर number आपके # Data block में character-for-character मौजूद है' },
+    { id: 'labels', label: 'Chart रंग के बिना भी readable है: bars पर values लिखी हैं, केवल legend नहीं' },
+    { id: 'palette', label: 'Chart केवल palette colors इस्तेमाल करता है—default library blue नहीं' },
+    { id: 'hero', label: 'Hero untouched है (चरण 03 के anchors आँख से जाँचें)' },
+    { id: 'grid', label: 'Mobile पर grid feature order बदले बिना single column में गिरता है' }
+  ]}
+/>
+
+## Chart गलत लौटे तो
+
+आमतौर पर एक बार गलत लौटता है। मॉडल legends, gridlines और आपके data में न दिया “industry average” वाला चौथा bar पसंद करता है। पूरा section re-roll न करें—यही चरण 03 वाली स्थिति है। एक Keep/Change round:
+
+<CodeBlock
+  title="Chart के लिए surgical follow-up"
+  language="text"
+  code={`The section is right except the chart. Keep the feature grid
+exactly as-is.
+
+# Change (only this)
+Remove the legend and the "industry average" bar — it is not in my
+data. Put each value label at the end of its bar. Change nothing else.`}
+/>
+
+यहाँ बचाने वाला instinct वही है जिसे पूरी series सिखाती है: **मॉडल प्रस्ताव देता है, आपका data निर्णय करता है।** आपके sentences का grid और numbers का एक chart, मॉडल की hallucination से कहीं अधिक convincing हैं—क्योंकि customer के “किसके अनुसार?” सवाल को झेल सकते हैं।
+
+## अगला
+
+चरण 05 ship checklist है: page visually पूरा होने *के बाद* वाला pass—contrast, focus states, cursor affordances, meta tags और तीन breakpoints पर जाँच—URL किसी को दिखाने से पहले।

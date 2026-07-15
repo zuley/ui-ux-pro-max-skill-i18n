@@ -1270,6 +1270,7 @@
     "minRead": "约 {n} 分钟",
     "stepLabel": "第 {n} / {total} 步",
     "totalSteps": "共 {n} 步",
+    "start": "开始",
     "backToSeries": "返回系列",
     "backToIndex": "查看全部",
     "prev": "上一篇",

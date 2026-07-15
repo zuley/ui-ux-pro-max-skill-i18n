@@ -1,0 +1,88 @@
+---
+title: "सचमुच dark दिखने वाला dark mode—और आपका AI बार-बार फीका डिज़ाइन क्यों बनाता है"
+summary: "अधिकतर AI-generated dark mode, saturation घटाए हुए light mode से अधिक कुछ नहीं। जानें कि अपनी अलग सोच वाला dark mode कैसे माँगें—ऐसा नहीं जो dark होने के लिए माफ़ी माँगता लगे।"
+date: 2026-05-27
+tags: [dark-mode, design-system, prompt]
+author: admin
+---
+
+आप Claude से “यही page dark mode में” माँगते हैं और वह तकनीकी रूप से dark चीज़ देता है—`bg-gray-900`, `text-gray-300`, हर icon अपने ही थोड़ा फीके version में—लेकिन page की रीढ़ गायब हो जाती है। Contrast सपाट लगता है, accent color कीचड़ जैसा और पूरा design **भेष बदला light mode** लगता है, dark के लिए बनाया design नहीं।
+
+यह AI slop के सबसे आम रूपों में से एक है और इसका कारण स्पष्ट है: मॉडल dark mode को light theme का transform मान रहा है। वही hierarchy, वही accent, shadow का वही तरीका—बस उलट दिया। अच्छा dark mode ऐसा नहीं होता; इसलिए परिणाम बार-बार गलत आता है।
+
+## “Dark mode अपना अलग design है” का असली अर्थ
+
+सच्ची dark theme केवल “light theme लेकिन `--bg: #1a1a1a`” नहीं है। वह contrast, depth और accent से जुड़े समानांतर निर्णयों का अलग set है। इस तर्क का जाना-पहचाना रूप Material 3 का “elevation by surface” model है—surface आगे आने पर **हल्की** होती है, क्योंकि काले background पर shadow डालना संभव नहीं।
+
+यदि AI-generated dark mode cards को background से ऊपर उठाने के लिए `box-shadow` इस्तेमाल कर रहा है, तो पहचान सामने है। अँधेरे में shadow नहीं दिखती—**light दिखती है।**
+
+<Callout tone="info" title="वह mental model जो इसे ठीक करता है">
+  Light mode में depth shadow से आती है। Dark mode में depth lightness से आती है। Dark background पर “ऊँचा” card, नीचे वाली surface से **हल्का** होता है—glow वाली गहरी surface नहीं।
+</Callout>
+
+## चार संकेत कि यह AI वाला dark mode है, असली dark mode नहीं
+
+मॉडल के screenshot को देखते समय ये चार बातें खोजें। हर एक साफ़ fingerprint है:
+
+1. **बिल्कुल काला background** (`#000` या `#0a0a0a`)। अच्छी dark themes लगभग `#1a1a1a`–`#1f2937` पर रहती हैं, क्योंकि OLED वाला शुद्ध काला अपने पास के हर रंग की जान खींच लेता है। बाकी UI में नीला या warm tint हो तो background को भी उसी दिशा में होना चाहिए।
+
+2. **Light-mode accent को बिना बदले dark में खींच लाना।** सफ़ेद background पर चमकने वाला indigo, dark पर अक्सर **navy कीचड़** बन जाता है। Dark-mode accents को लगभग हमेशा light-mode version से **हल्का और कम saturated** करना पड़ता है।
+
+3. **Body text `#fff` या `gray-100` में।** Dark background पर शुद्ध सफ़ेद आँखों में चुभता है। अच्छे product dark modes `gray-200` या `rgba(255,255,255,0.87)` जैसा रंग इस्तेमाल करते हैं, ताकि text page *पर* बैठा लगे, उसके आगे तैरता हुआ नहीं।
+
+4. **Tinted gray की जगह opacity वाले borders।** `border-white/10` AI की पहचान है। काम तो करता है, लेकिन internet के हर page जैसा लगता है। `rgb(38 43 56)` वाला border सोच-समझकर चुना हुआ दिखता है।
+
+## Prompt patterns जो सच में इसे ठीक करते हैं
+
+समाधान है **“dark mode version” माँगना बंद करें।** Dark theme की brief ऐसे दें जैसे किसी नए designer ने light version कभी देखा ही नहीं:
+
+<CodeBlock
+  title="असली dark theme के लिए prompt scaffold"
+  language="text"
+  code={`Design a dark theme for this page. Do not start from the light theme.
+
+Background: #14161a (a neutral-warm dark, not pure black)
+Surface (cards, panels): #1c1f24 (lighter than bg — that is how
+  elevation works in the dark)
+Body text: rgba(255, 255, 255, 0.86)
+Muted text: rgba(255, 255, 255, 0.56)
+Accent: shift the light-mode #4f46e5 indigo up the lightness axis
+  to #818cf8. Same hue, more luminance. Brighter, not bluer.
+Borders: rgb(38 43 56). Not white-with-opacity.
+No box-shadows on raised elements. Use the lighter surface colour
+  instead.
+
+The whole theme should look like it was designed for the dark, not
+ported from the light. If something feels like an inverted version
+of its light counterpart, change it.`}
+/>
+
+अंतिम paragraph सबसे अधिक काम करता है। **Light theme से अलग निर्णय लेने की साफ़ अनुमति** मॉडल को mechanical inversion करने से रोकती है।
+
+## किसी भी dark mode के लिए reading test
+
+मॉडल से परिणाम मिलने पर ship करने से पहले यह 15-second test करें:
+
+<Checklist
+  storageKey="blog-dark-mode-test-hi"
+  title="15-second dark mode जाँच"
+  items={[
+    { id: 'bg', label: 'क्या background शुद्ध काला नहीं है? (#000 नहीं, लगभग #1a)' },
+    { id: 'accent', label: 'क्या accent color अपने light-mode version से अधिक चमकीला दिखता है?' },
+    { id: 'depth', label: 'क्या ऊँची surfaces page से हल्की हैं, shadow से उठाई हुई नहीं?' },
+    { id: 'body', label: 'क्या body text पूरी तरह #fff नहीं, थोड़ा off-white है?' },
+    { id: 'border', label: 'क्या dividers tinted gray हैं, white-with-opacity नहीं?' }
+  ]}
+/>
+
+पाँच में से चार प्रश्नों का उत्तर “हाँ” नहीं है, तो आपके पास dark mode नहीं—AI dark mode है।
+
+## गहरा नियम
+
+पहले लेख के AI slop को ठीक करने वाला वही सिद्धांत यहाँ भी लागू होता है: **dark mode एक निर्णय है, transform नहीं।** जिस क्षण आप इसे “रंग उलटकर वही चीज़” मानते हैं, अच्छे dark theme का अलग चरित्र खो देते हैं।
+
+यदि आप inversion माँगेंगे तो मॉडल खुशी से inversion कर देगा। इसके बजाय **design** माँगें और साफ़ कहें कि dark theme की अपनी सोच होनी चाहिए।
+
+---
+
+यदि इसका curated version चाहिए—ऐसे palettes जिनके dark-mode siblings साथ-साथ design हुए हैं, derived नहीं—तो `+palette show <name> --variant dark` यही देता है। सभी 21 palettes के hand-tuned dark variants हैं, ताकि हर बार ऊपर वाला prompt शून्य से न लिखना पड़े।

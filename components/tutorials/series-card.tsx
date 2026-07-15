@@ -6,7 +6,7 @@ import type { TutorialSeriesMeta } from '@/lib/content/types';
 /**
  * Series card on the Tutorials index. Step count comes from meta.steps
  * length; localised title/description come from i18n keys so the card
- * renders correctly across all four locales without per-series JSON.
+ * renders correctly across all locales without per-series JSON.
  */
 export function SeriesCard({
   series,
@@ -14,12 +14,14 @@ export function SeriesCard({
   title,
   description,
   stepsLabel,
+  startLabel,
 }: {
   series: TutorialSeriesMeta;
   locale: string;
   title: string;
   description: string;
   stepsLabel: string;
+  startLabel: string;
 }) {
   return (
     <Link
@@ -39,7 +41,7 @@ export function SeriesCard({
       </p>
 
       <div className="mt-auto pt-2 inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-300">
-        Start <ArrowRight className="w-4 h-4" />
+        {startLabel} <ArrowRight className="w-4 h-4" />
       </div>
     </Link>
   );

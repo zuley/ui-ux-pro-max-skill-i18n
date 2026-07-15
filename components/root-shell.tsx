@@ -45,7 +45,7 @@ export async function RootShell({
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
-      <body className={fontBodyClassName}>
+      <body className={fontBodyClassName(locale)}>
         <AdSenseScript />
         <Script
           id="theme-init"

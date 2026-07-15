@@ -97,6 +97,7 @@ export async function LatestContent({ locale }: { locale: Locale }) {
                   stepsLabel={t('tutorials.totalSteps', {
                     n: s.steps.length,
                   })}
+                  startLabel={t('tutorials.start')}
                 />
               ))}
             </div>

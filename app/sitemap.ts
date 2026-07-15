@@ -15,7 +15,7 @@ function alternatesFor(path: string): {
   languages: Record<string, string>;
 } {
   const languages: Record<string, string> = {
-    // Fallback for users whose language isn't en/zh/vi/ja — the en root.
+    // Fallback for users whose language isn't supported — the en root.
     'x-default': absoluteSiteUrl(path, routing.defaultLocale),
   };
   for (const l of routing.locales) {

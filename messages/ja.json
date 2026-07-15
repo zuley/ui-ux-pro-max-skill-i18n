@@ -972,6 +972,7 @@
     "minRead": "約 {n} 分",
     "stepLabel": "ステップ {n} / {total}",
     "totalSteps": "{n} ステップ",
+    "start": "始める",
     "backToSeries": "シリーズへ戻る",
     "backToIndex": "一覧へ戻る",
     "prev": "前へ",

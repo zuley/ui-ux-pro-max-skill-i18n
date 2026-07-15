@@ -40,6 +40,7 @@ export async function generateMetadata({
         zh: `${SITE_URL}/zh/tutorials`,
         vi: `${SITE_URL}/vi/tutorials`,
         ja: `${SITE_URL}/ja/tutorials`,
+        hi: `${SITE_URL}/hi/tutorials`,
       },
     },
     openGraph: {
@@ -92,6 +93,7 @@ export default async function TutorialsIndexPage({ params }: Props) {
               title={t(s.titleKey)}
               description={t(s.descriptionKey)}
               stepsLabel={t('tutorials.totalSteps', { n: s.steps.length })}
+              startLabel={t('tutorials.start')}
             />
           ))}
         </div>

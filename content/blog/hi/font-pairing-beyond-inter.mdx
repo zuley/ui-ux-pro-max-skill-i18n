@@ -1,0 +1,63 @@
+---
+title: "Inter से आगे: ऐसे font pairings चुनने का व्यावहारिक तरीका जिनका आप तर्क दे सकें"
+summary: "AI-generated UIs अक्सर हर जगह Inter चुनते हैं, क्योंकि वह कभी असफल नहीं होता—और कभी कुछ कहता भी नहीं। यही तीन-सवाल वाला तरीका Skill के 50 font pairings में है; आप इसे Skill के साथ या बिना इस्तेमाल कर सकते हैं।"
+date: 2026-05-27
+tags: [typography, design-system, prompt]
+author: admin
+---
+
+मॉडल से landing page माँगें और headings में `Inter`, body में भी `Inter` मिलेगा। Inter गलत नहीं है—वह शानदार screen typeface है—लेकिन वह *statistically safest* उत्तर है। समस्या यही सुरक्षा है: page किस तरह की चीज़ है, इसका सबसे तेज़ संकेत typeface देता है; Inter का संकेत है, “यह कुछ भी हो सकता है।”
+
+Skill में 50 curated font pairings इसलिए हैं क्योंकि समाधान “और fonts जानना” नहीं, चुनाव का एक **तरीका** होना है—जिसे हाथ से भी चलाया जा सके। यहाँ वह तरीका तीन सवालों में है।
+
+## सवाल 1: इस product की आवाज़ कैसी है?
+
+Audience नहीं—*आवाज़*। एक sentence लिखें, मानो product बोल सकता हो: “मैं precise और थोड़ा strict हूँ।” “मैं warm और हाथ से बना हूँ।” “मैं महँगा और शांत हूँ।” यह sentence typography से किसी demographic के मुकाबले अधिक सीधे जुड़ता है:
+
+- **Precise / technical** → headings के लिए grotesque या geometric sans (Space Grotesk, IBM Plex Sans), अक्सर mono accent के साथ।
+- **Warm / human** → humanist sans (Source Sans 3, Nunito Sans) या body के लिए low-contrast serif (Source Serif 4)।
+- **Expensive / editorial** → संयमित sans body के ऊपर headings के लिए high-contrast display serif (Fraunces, Playfair Display)।
+- **Playful / consumer** → rounded terminals (Quicksand, Baloo 2)—और बाकी हर जगह discipline, वरना वह खिलौना लगने लगेगा।
+
+यदि आवाज़ वाला sentence नहीं लिख सकते, तो रुकें। अभी यह typography की समस्या नहीं, positioning की समस्या है; कोई pairing इसे ठीक नहीं करेगी।
+
+## सवाल 2: Heading और body में contrast कहाँ है?
+
+Pairing तब काम करती है जब दोनों typefaces **ठीक एक स्पष्ट axis** पर अलग हों और बाकी हर चीज़ पर सहमत। Sans body के ऊपर serif display: *construction* का contrast। शांत humanist के ऊपर bold grotesque: *temperature* का contrast। Sans body के ऊपर mono headings: *context* का contrast—ऊपर machine voice, नीचे human voice।
+
+Pairs दो बराबर तरीकों से असफल होते हैं। **बहुत पास** (Inter + Roboto): reader को एक हल्की inconsistency महसूस होती है, जैसे दो सफ़ेद रंग लगभग मिलते हों। **बहुत दूर** (brush script + geometric sans): axes कई हो जाते हैं और page ऐसे लगता है जैसे दो products को staple कर दिया हो।
+
+<Callout tone="info" title="आँखें सिकोड़कर जाँचें">
+  दो paragraphs के ऊपर heading रखें, पीछे हटें और आँखें सिकोड़ें। Heading और body तुरंत अलग दिखने चाहिए (contrast मौजूद है), लेकिन फिर भी ऐसे लगें जैसे एक set में खरीदे गए हों (एक axis, तीन नहीं)।
+</Callout>
+
+## सवाल 3: क्या body face औसत screen पर 16px में टिकता है?
+
+Display faces का audition 64px पर होता है; body faces 14–16px पर जीते हैं। Body duty की checklist छोटी है: भरपूर x-height, खुले apertures (`e` और `a` बंद न हों), emphasis की ज़रूरत हो तो असली italics, और product में numbers महत्वपूर्ण हों तो tabular figures। Fraunces सुंदर heading face है और खराब body face—अधिकतर “failed pairings” वास्तव में display face को body duty में धकेलने का परिणाम हैं।
+
+## चुनाव को prompt में दर्ज करना
+
+अकेला नाम मॉडल से सामना नहीं झेल पाएगा—वह Playfair load करके भी buttons को Inter में रख देगा, क्योंकि आपने कुछ और कहा ही नहीं। पहले decisions, फिर constraints:
+
+<CodeBlock
+  title="UI prompt के लिए typography block"
+  language="text"
+  code={`# Typography (locked)
+Headings: Fraunces, weight 600, tight leading (1.1), only at h1/h2.
+Body + UI controls: Source Sans 3, 16px base, leading 1.6.
+Numbers in the pricing table: tabular figures.
+Forbidden: Inter, Roboto, Open Sans, system-ui as a "fallback choice",
+any third typeface anywhere.`}
+/>
+
+Forbidden list positive list से अधिक महत्वपूर्ण है। “Fraunces इस्तेमाल करें” और उसके बाद चुप्पी मॉडल की आदतें नहीं रोकती; “कहीं भी तीसरा typeface नहीं” वह line है जो सच में output बदलती है।
+
+## तीन pairings जिन्हें हम बार-बार चुनते हैं
+
+Skill की library से, उनकी voice sentences के साथ:
+
+- **Space Grotesk / Source Sans 3**—“मैं एक तेज़ tool हूँ, platform नहीं।” Dev tools, analytics और हर चीज़ जिसकी DNA में terminal हो।
+- **Fraunces / Source Sans 3**—“मैं सोच-समझकर बना और थोड़ा literary हूँ।” Editorial products, premium services और वे brands जो *taste* का संकेत देना चाहते हैं।
+- **IBM Plex Sans / IBM Plex Mono (accent)**—“मैं ऐसा infrastructure हूँ जिस पर भरोसा किया जा सकता है।” Fintech, security और ऐसा B2B जिसे suit पहने बिना गंभीरता चाहिए।
+
+इनमें कोई exotic नहीं है। यही बात है: हर जगह Inter के मुकाबले जीत दुर्लभता से कभी नहीं थी—जीत यह थी कि किसी ने निर्णय लिया और page उसे दिखाता है।

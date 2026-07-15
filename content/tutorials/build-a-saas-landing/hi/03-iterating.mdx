@@ -1,0 +1,133 @@
+---
+title: "03 · Re-roll नहीं, iterate करें—एक चीज़ ठीक करने वाला सबसे छोटा follow-up prompt"
+summary: "आपका hero 80% सही है। इस चरण में surgical follow-up prompt से वह 20% ठीक करेंगे, जो चार सही चीज़ें तोड़े बिना केवल एक गलत चीज़ बदले।"
+date: 2026-06-03
+tags: [tutorial, prompt, iteration]
+author: admin
+step: 3
+---
+
+आपने चरण 02 का prompt चलाया और hero मिला। वह **करीब** है—headline सही बैठती है, palette ठीक है, ठीक एक CTA है—लेकिन एक चीज़ ग़लत। शायद subheadline marketing filler जैसी है। शायद CTA color accent से लड़ रहा है। शायद पूरा section भरा-भरा लगता है।
+
+इस समय स्वाभाविक इच्छा re-roll करने की है: prompt फिर चलाएँ और उम्मीद करें। **ऐसा न करें।** इस चरण की skill है *surgical follow-up*—सबसे छोटा prompt जो एक गलत चीज़ ठीक करे और चार सही चीज़ें न छुए।
+
+## पहले केवल एक समस्या का नाम लें
+
+Follow-up prompt का एक character लिखने से पहले एक sentence लिखें:
+
+> केवल यह चीज़ गलत है: ______।
+
+यदि इसे एक clause में पूरा नहीं कर सकते तो iteration के लिए तैयार नहीं हैं। इसका अर्थ है कि **कई** समस्याएँ हैं, एक नहीं—एक follow-up में उन्हें जोड़ना पहले से सही हिस्से खोने का रास्ता है। एक-एक करके, सबसे बड़ी पहले ठीक करें।
+
+## Prompt से पहले diagnosis
+
+लगभग हर “गलत” hero इन पाँच dimensions में से **ठीक एक** पर गलत होता है। कुछ लिखने से पहले वह dimension खोजें:
+
+<Checklist
+  storageKey="saas-landing-step-03-diagnose-hi"
+  title="कौन-सा एक dimension गलत है?"
+  items={[
+    { id: 'content', label: 'Content—शब्द generic हैं या गलत बात कहते हैं' },
+    { id: 'layout', label: 'Layout—अलग हिस्से ठीक हैं, पूरी composition गलत है' },
+    { id: 'colour', label: 'Colour—कुछ palette से लड़ता है या contrast गलत है' },
+    { id: 'type', label: 'Type—चुनी style के लिए weight, size या pairing गलत है' },
+    { id: 'spacing', label: 'Spacing—बहुत कम, बहुत अधिक या rhythm असंगत है' }
+  ]}
+/>
+
+Dimension का नाम ज़ोर से लेना ही discipline है। “कुछ ग़लत लग रहा है” actionable नहीं। “Subheadline generic है” actionable है। Diagnosis जितना संकीर्ण, follow-up उतना छोटा और विश्वसनीय।
+
+## Follow-up prompt की संरचना
+
+<Callout tone="info" title="कब hand-edit prompt से बेहतर है">
+  Fix केवल एक-line copy change है और आप उसे साफ़ देख सकते हैं तो file हाथ से edit करना structured prompt लिखने से तेज़ है। Follow-up prompt तब लें जब बदलाव visual हो, कई elements एक साथ छूता हो या fix अभी साफ़ न दिख रहा हो—वे cases जहाँ आप वरना re-roll करते। नीचे की संरचना उन्हीं के लिए है।
+</Callout>
+
+अच्छे follow-up में दो blocks होते हैं जो पहले prompt में नहीं थे: स्पष्ट **Keep** list और एक-item **Change**। Keep block पूरी चाल है—वह मॉडल को बताता है कि *क्या regenerate नहीं करना*।
+
+<CodeBlock
+  title="Surgical follow-up prompt"
+  language="text"
+  code={`The hero is close. Keep everything as-is EXCEPT one change.
+
+# Keep (do not touch)
+- The headline copy, exactly as written
+- The single CTA, its label and its position
+- The palette and accent colour
+- The overall layout and vertical spacing
+
+# Change (only this)
+The subheadline is generic. Rewrite it so it names the specific
+outcome this audience gets, in plain language, max 18 words. It must
+not restate the headline. Change nothing else.
+
+# Output
+Return the same file, app/(marketing)/page.tsx, with only the diff
+needed for the change above. Do not refactor unrelated code, do not
+rename anything, do not "improve" parts I did not ask about.`}
+/>
+
+`# Keep` block redundant लगता है—मॉडल file देख सकता है तो अच्छी बातें फिर क्यों लिखें? क्योंकि बिना anchor “subheadline ठीक करो” मिलने पर मॉडल headline भी rewrite, button style swap और पूरा section re-space खुशी से कर सकता है। Keep list घेरा है। **वह blast radius सीमित करती है।**
+
+## व्यवहार में change का नाम देना
+
+ऊपर Change line copy तय करती है—शब्दों में बताने का सबसे आसान dimension। इससे यह before/after बना:
+
+> **पहले:** The all-in-one platform to streamline your workflow and scale your team.
+>
+> **बाद में:** Cut your month-end close from five days to one.
+
+After में concrete outcome और number है; before किसी SaaS पर चिपक सकता है। “Audience के लिए specific” असली text में ऐसा दिखता है।
+
+Visual dimensions कठिन हैं, क्योंकि आप words नहीं rendered result बता रहे हैं। समाधान change को adjective नहीं, **मापने योग्य target** से anchor करना है:
+
+<CodeBlock
+  title="Visual dimensions के लिए Change lines"
+  language="text"
+  code={`# Spacing — too tight
+The hero feels cramped. Increase the vertical gap between headline,
+subheadline, and CTA to 24px and 32px respectively. Change nothing else.
+
+# Colour — CTA fights the accent
+The CTA competes with the headline for attention. Give the CTA the
+accent colour at full saturation and mute the headline to the palette's
+ink colour. Change nothing else.`}
+/>
+
+“बहुत tight” Change line नहीं। “Gap 32px करें” है। Target जितना measurable, मॉडल को उतना कम diff guess करना पड़ता है।
+
+## हर round में एक बदलाव
+
+Follow-up structure मिलते ही temptation है batch करने का: एक prompt में subheadline, CTA color और spacing सब ठीक करें। रोकें।
+
+<Callout tone="warn" title="Fixes batch किए तो debugger खो देंगे">
+  तीन बदलाव साथ माँगकर result बिगड़ जाए तो पता नहीं चलेगा regression किस instruction से आया। हर round में एक change से हर iteration **attributable** रहती है—हमेशा पता है क्या बदला। धीमा लगता है, असल में तेज़ है; multi-change mess कभी सुलझाना नहीं पड़ता।
+</Callout>
+
+## Follow-up के बाद acceptance check
+
+मॉडल diff नहीं देता—एक line छूने को कहने पर भी पूरी file rewrite करके लौटाता है। इसलिए **byte-for-byte equality** नहीं जाँच रहे; वह लगभग कभी नहीं होगी और उसके पीछे भागना re-roll loop में वापस ले जाएगा। जाँचें कि anchors **पढ़ने और दिखने में समान** हैं:
+
+<Checklist
+  storageKey="saas-landing-step-03-output-hi"
+  title="क्या follow-up सच में काम किया?"
+  items={[
+    { id: 'fixed', label: 'जिस एक समस्या का नाम लिया था, वह ठीक है' },
+    { id: 'headline', label: 'Headline बिल्कुल वही पढ़ती है—वही शब्द, वही अर्थ' },
+    { id: 'cta', label: 'CTA label, style और position नहीं बदले' },
+    { id: 'palette', label: 'Palette और accent color नहीं बदले' },
+    { id: 'layout', label: 'Layout और spacing वही दिखते हैं' }
+  ]}
+/>
+
+Cosmetic churn अनदेखा करें—line reflow, reordered import, अलग quote style। महत्त्व यह है कि anchor ऐसा बदला या नहीं जिसे **देख या पढ़** सकें: headline फिर लिखी गई, button हिला, accent बदला। इनमें कुछ हुआ तो follow-up **fail** हुआ, भले progress जैसा लगे। अधिक सख़्त Keep block के साथ फिर चलाएँ, या revert करके एक Change line सटीक करें। Anchor चुपचाप तोड़ने वाला fix स्वीकार न करें; आगे हर section में debt बढ़ेगा।
+
+## यह संरचना हर जगह क्यों काम करती है
+
+*Keep / Change* structure, चरण 02 के *role / decisions / task / constraints / output* का iteration counterpart है। जब भी mostly-correct section—pricing, FAQ या चरण 04 का feature grid—छुएँ, यही blocks लें: जो सही है उसे anchor करें, एक change का नाम लें, diff सीमित करें।
+
+यहाँ बन रही skill “AI output पर iterate करना” नहीं। यह है **blast radius सीमित करना, ताकि iteration हर बार केवल एक चीज़ बदले**।
+
+## अगला
+
+चरण 04 hero के नीचे feature grid जोड़ेगा—इस बार वास्तविक data और छोटे chart के साथ। चरण 02 और 03 की वही prompt structures काम करेंगी: decisions पहले रखें, फिर एक समय में एक dimension बदलें।

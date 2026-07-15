@@ -22,7 +22,8 @@ export const metadata: Metadata = {
       en: SITE_URL,
       zh: `${SITE_URL}/zh`,
       vi: `${SITE_URL}/vi`,
-      ja: `${SITE_URL}/ja`
+      ja: `${SITE_URL}/ja`,
+      hi: `${SITE_URL}/hi`
     }
   },
   openGraph: {

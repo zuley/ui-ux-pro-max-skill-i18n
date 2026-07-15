@@ -1,0 +1,63 @@
+---
+title: "Glassmorphism, neumorphism या flat: mood board नहीं, निर्णय लेने की guide"
+summary: "Style names को खरीदारी के लिए रखी aesthetics जैसा माना जाता है। वास्तव में वे contrast, performance और maintenance की अलग लागत वाले engineering decisions हैं। यही decision table Skill में encode की गई है।"
+date: 2026-06-04
+tags: [styles, design-system, accessibility]
+author: admin
+---
+
+Skill की 50 styles में तीन को नाम लेकर बाकी सभी से अधिक माँगा जाता है: glassmorphism, neumorphism और flat। इन्हें *mood* की तरह माँगा जाता है—“इसे glassy बनाओ”—लेकिन ये mood नहीं हैं। हर style contrast, performance और maintenance cost के engineering trade-offs का bundle है। केवल vibe देखकर चुनाव करने पर page flat-design वाले काम के लिए glassmorphism की कीमत चुकाता है।
+
+हर style को रूप नहीं, निर्णय की तरह देखें।
+
+## Glassmorphism: blur की कीमत पर उधार ली गई depth
+
+धुँधली transparency, पतला light border और `backdrop-filter: blur()` से पार दिखता background। यह *layered, modern, premium* होने का संकेत देता है—और इसकी दो वास्तविक लागतें हैं, जिन्हें हर कोई देर से पहचानता है:
+
+- **Contrast लगातार बदलता लक्ष्य बन जाता है।** Glass पर text उस चीज़ के ऊपर बैठता है जो scroll होकर नीचे आती है। Resting state पर 4.5:1 contrast, panel के पीछे photo आते ही 2:1 हो सकता है।
+- **`backdrop-filter` CSS की सबसे महँगी properties में है।** Scrolling page के ऊपर glass navbar हर frame पर blur repaint करता है—मध्यम-range phone पर यही 60fps और 35fps का अंतर बन सकता है।
+
+इसे उपयोगी रखने का अनुशासन: glass को **अधिकतम दो element types** पर रखें (आमतौर पर navbar और एक floating panel), body text वाली किसी चीज़ पर कभी नहीं, और `@supports` से solid-color fallback हमेशा दें। Glassmorphism garnish है। Main course बनाते ही पढ़ना कठिन और performance धीमी हो जाती है।
+
+## Neumorphism: अपनी affordances खा जाने वाली style
+
+मुलायम उभरी shapes, एक ही रंग के backgrounds और light/dark shadows की जोड़ी से पूरी identity। Screenshot में बहुत सुंदर लगती है, इसलिए बार-बार लौटती है—लेकिन इसकी structural समस्या कोई palette ठीक नहीं कर सकता: **पूरी पहचान 3:1 से कम contrast पर टिकी है।** हर edge WCAG पास करते ही वह neumorphism नहीं रहती।
+
+यह ban करने का कारण नहीं, scope सीमित करने का कारण है। इसे केवल decorative surfaces—cards, players, dashboard tiles—पर रखें; हर *interactive* element (buttons, toggles, inputs) को soft shadows के ऊपर असली border या fill दें। Pure neumorphic buttons में pressed और unpressed states लगभग एक-जैसी होती हैं; low vision वाले users उन्हें चला ही नहीं पाते। Product utilitarian और information-dense हो तो यह style हर screen पर आपके विरुद्ध काम कर रही है।
+
+## Flat: वह default जिसे छोड़ने का कारण होना चाहिए
+
+कोई simulated depth नहीं; hierarchy केवल type scale, spacing और color blocks से। Render करना सबसे सस्ता, consistent रखना सबसे आसान और theme करना सरल। ईमानदार framing: **flat default है; बाकी दोनों deviations हैं जिन्हें एक sentence में justify कर सकना चाहिए।** “क्योंकि यह plain लग रहा था” वह sentence नहीं—flat design में plainness लगभग हमेशा style का भेष पहनी typography समस्या है। Blur या shadows लेने से पहले type contrast एक size बढ़ाएँ और एक accent color सचमुच discipline से इस्तेमाल करें।
+
+## निर्णय तालिका
+
+<CodeBlock
+  title="तीनों के बीच चुनाव"
+  language="text"
+  code={`Question                            glass   neumorph   flat
+Body text sits on it?                no      ok         ok
+Information-dense dashboard?         no      no         yes
+Marketing page, premium feel?        yes     careful    yes
+Must hit WCAG AA everywhere?         hard    very hard  easy
+Low-end mobile traffic matters?      no      ok         yes
+Team without a design reviewer?      no      no         yes`}
+/>
+
+तालिका से दो patterns साफ़ निकलते हैं। Flat कभी गलत उत्तर नहीं—कभी बस उसमें seasoning कम होती है। और depth वाली दोनों styles *page-level* चुनाव हैं, system-level नहीं: बाकी flat system के ऊपर glass navbar coherent है; पूरा product glass पर बनाना mood वाली performance bug है।
+
+## Prompt में कैसे कहें
+
+केवल style name पर्याप्त constraints नहीं देता—मॉडल के लिए “glassmorphism” का अर्थ है *हर चीज़ पर blur लगाओ*। Style का नाम दें, फिर घेरा बनाएँ:
+
+<CodeBlock
+  title="सीमा के साथ style block"
+  language="text"
+  code={`# Style: Glassmorphism, scoped
+- Glass treatment: navbar and the floating stats panel ONLY.
+- Everything else: flat surfaces, solid backgrounds, 1px borders.
+- No body text on glass. Labels on glass: 600 weight minimum, and
+  verify 4.5:1 against the LIGHTEST region of the page background.
+- Provide an @supports fallback: solid bg at 95% opacity, no blur.`}
+/>
+
+यह सीमा मॉडल अपने-आप नहीं देगा, जबकि design reviewer इसी पर ज़ोर देता। Styles वे costumes नहीं जिन्हें page पहनता है; वे budgets हैं जिन्हें page खर्च करता है। वही style चुनें जिसकी लागत आपका product वहन कर सके।

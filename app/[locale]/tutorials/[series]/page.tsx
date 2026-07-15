@@ -44,6 +44,7 @@ export async function generateMetadata({
         zh: `${SITE_URL}/zh/tutorials/${series}`,
         vi: `${SITE_URL}/vi/tutorials/${series}`,
         ja: `${SITE_URL}/ja/tutorials/${series}`,
+        hi: `${SITE_URL}/hi/tutorials/${series}`,
       },
     },
   };

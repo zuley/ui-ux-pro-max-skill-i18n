@@ -1,0 +1,82 @@
+---
+title: "Section order भरोसे का तर्क है: landing page का क्रम कैसे तय करें"
+summary: "Hero, features, testimonials, pricing—किस क्रम में? यह sequence layout का चुनाव नहीं, तर्क की संरचना है। इसे एक बात तय करे: visitor पहले से आप पर कितना भरोसा करता है।"
+date: 2026-06-08
+tags: [landing-page, design-system, conversion]
+author: admin
+---
+
+मॉडल से landing page माँगें तो हर बार वही ढाँचा मिलता है: hero, तीन features, testimonials, pricing, footer CTA। यह क्रम गलत नहीं—यह *median* क्रम है, training data के हर landing page का औसत। यानी एक ऐसे product के लिए optimal जो अस्तित्व में नहीं: औसत visitor को बेचा जाने वाला औसत product।
+
+Landing page एक तर्क है। Sections उसके paragraphs हैं और उनका क्रम तर्क की संरचना। किसी भी तर्क की तरह सही संरचना सबसे अधिक एक variable पर निर्भर है: **reader पहले से दावे पर कितना भरोसा करता है?**
+
+## वह एक सवाल जो क्रम तय करता है
+
+Sections को क्रम देने से पहले सबसे महत्वपूर्ण visitor के बारे में उत्तर दें: *page पर आते समय उसे किस बात पर संदेह है?*
+
+तीन आम उत्तर हैं और हर एक अलग page बनाता है:
+
+- **“क्या इस समस्या का कोई समाधान सच में है?”**—उसे *category* पर संदेह है। पहले समस्या को स्पष्ट और जीवंत बनाएँ, फिर demo दिखाएँ। यह **show-first** page है।
+- **“ठीक है, लेकिन क्या यह मेरे लिए काम करेगा?”**—उसे *fit* पर संदेह है। पहले अपने जैसे लोगों का social proof, फिर specifics। यह **proof-first** page है।
+- **“मुझे category पता है, लेकिन आप ही क्यों?”**—उसे *difference* पर संदेह है। पहले वह एक sharp claim जिसे competitors नहीं कर सकते, फिर evidence। यह **wedge-first** page है।
+
+Generated median page इनमें से कोई नहीं। वह तीनों पर थोड़ा-थोड़ा बचाव करता है; इसलिए wallpaper जैसा पढ़ता है।
+
+## तीन ढाँचे
+
+<CodeBlock
+  title="मुख्य संदेह के अनुसार section order"
+  language="text"
+  code={`SHOW-FIRST (new category, low trust in the idea)
+hero (problem, not product) → live demo / video → how it works,
+3 steps → objections as FAQ → single CTA
+Testimonials: omit or tiny. Nobody trusts strangers about a thing
+they don't yet believe exists.
+
+PROOF-FIRST (known category, low trust in *you*)
+hero (outcome + who it's for) → logo row + one number → 2-3 specific
+testimonials → features mapped to the testimonials → pricing → CTA
+The testimonials carry the page; features only *explain* the praise.
+
+WEDGE-FIRST (crowded category, comparison shoppers)
+hero (the wedge claim) → comparison table, honest → the one feature
+that makes the wedge true, in depth → pricing next to the table's
+implications → migration/switching section → CTA
+Burying the comparison is the classic error: they will compare
+anyway, just without your framing.`}
+/>
+
+ध्यान दें कि pricing कहाँ जाती है। Show-first pages उसे बाद में रखते हैं (विश्वास से पहले price दिखाना presumptuous लगता है); wedge-first pages उसे जल्दी दिखाते हैं (comparison shoppers price न मिले तो चले जाते हैं)। Median page हमेशा उसे चौथे स्थान पर रखता है—जो ठीक किसी के लिए सही नहीं।
+
+## Section count भी तर्क का हिस्सा है
+
+हर section को एक खास संदेह समाप्त करना चाहिए। इससे सख़्त test मिलता है: हर section जिस doubt का उत्तर देता है, उसका नाम लिखें; दो sections एक ही doubt का उत्तर दें तो **उन्हें मिला दें**। Generated page लगातार यह test fail करता है—“features”, “benefits” और “how it works” अक्सर एक ही paragraph हैं, बस तीन outfits में।
+
+पाँच से छह sections अधिकतर तर्क पूरे कर देते हैं। उसके बाद आप तर्क नहीं दे रहे, भाषण खींच रहे हैं।
+
+<Callout tone="info" title="Skim test">
+  Page को scroll करके केवल headlines पढ़ें। वे अपने-आप पूरा तर्क—claim, evidence, resolution—बनाएँ, क्योंकि अधिकतर visitors वास्तव में ऐसे ही पढ़ेंगे। Headlines “Powerful features / Why choose us / Get started” हों तो कोई तर्क नहीं, केवल furniture है।
+</Callout>
+
+## Prompt में कैसे कहें
+
+Section order एक decision है, इसलिए वह decisions block में जाता है—क्रम में named sections, और हर section के साथ वह doubt जिसे वह खत्म करता है:
+
+<CodeBlock
+  title="Landing page prompt के लिए structure block"
+  language="text"
+  code={`# Page structure (locked — do not add, remove, or reorder sections)
+1. Hero — doubt: "is this for my use case?" One claim, one CTA.
+2. Comparison table — doubt: "how is this different from X and Y?"
+   Honest rows; include one row where we lose.
+3. Deep-dive — doubt: "is the wedge claim real?" The one feature
+   that makes row 1 of the table true.
+4. Pricing — doubt: "what does the difference cost?"
+5. Migration — doubt: "is switching painful?" Three steps, one CTA.
+No testimonials section: we have no named customers yet, and
+placeholder praise reads as fake because it is.`}
+/>
+
+अंतिम line सबसे महत्वपूर्ण है। मना न करने पर मॉडल invented names वाले testimonials जोड़ देगा—और fabricated “Sarah K., CTO” भरोसे के तर्क को किसी missing section से अधिक नुकसान देता है।
+
+Landing page पर creativity section order में नहीं; *reasoning* वहीं रहती है। संदेह तय करें, तर्क को क्रम दें और मॉडल से paragraphs लिखवाएँ—logic नहीं।

@@ -1,0 +1,83 @@
+---
+title: "01 · पहले style और palette चुनें—और AI को चुनाव न करने दें"
+summary: "SaaS landing page का सबसे महत्वपूर्ण निर्णय उसका रूप है। इस चरण में यह निर्णय आप स्वयं लेंगे, मॉडल को नहीं सौंपेंगे।"
+date: 2026-05-22
+tags: [tutorial, design-system, prompt]
+author: admin
+step: 1
+---
+
+Landing page एक screen है, जिसका एक काम है। सबसे कठिन भाग prompt लिखना नहीं—**prompting शुरू करने से पहले तय करना है कि page कैसा महसूस हो**। यह चरण छोड़ेंगे तो मॉडल खाली जगह अपनी house style से भर देगा और एक और purple-gradient hero बन जाएगा।
+
+इस चरण में अभी कुछ generate नहीं होगा। ये वही उबाऊ 10 minutes हैं जो तय करते हैं कि अगले चार चरण कहीं पहुँचेंगे या नहीं।
+
+## AI अपने-आप यह काम अच्छी तरह क्यों नहीं करता
+
+Claude (या किसी मॉडल) से “मेरे SaaS landing page की style चुनो” कहने पर वह लगभग वही करता है जो taste से रहित junior designer करेगा: पिछले दो वर्षों के सबसे अधिक देखे गए patterns चुनना। कोई और आधार न हो तो यह उचित है; लेकिन brand **आपका** हो तो यह गलत है।
+
+Skill में **50 styles** और **21 palettes** इसलिए हैं कि चुनाव curated pick हो, vibes पर आधारित interpolation नहीं।
+
+## Prompt से पहले तीन बातें तय करें
+
+<Checklist
+  storageKey="saas-landing-step-01-hi"
+  title="कुछ भी generate करने से पहले"
+  items={[
+    { id: 'audience', label: 'यह page किसके लिए है? (एक sentence, persona document नहीं)' },
+    { id: 'feeling', label: 'पहले 2 seconds में visitor को क्या महसूस हो? (एक adjective)' },
+    { id: 'style', label: '50 styles में से कौन-सी चाहिए? नाम लिखें।' },
+    { id: 'palette', label: '21 palettes में से कौन-सी? नाम लिखें।' },
+    { id: 'forbidden', label: 'तीन चीज़ें जो इस page पर साफ़ तौर पर नहीं चाहिए।' }
+  ]}
+/>
+
+Checklist तब तक मामूली लगती है जब तक आप उसे भरते नहीं। “Forbidden” row सबसे कठिन है—यहीं आप तय करते हैं कि page **क्या नहीं** है।
+
+## Style कैसे चुनें
+
+अनुमान लगाने के बजाय database search चलाकर असली style cards पढ़ें:
+
+<CodeBlock
+  title="Styles देखें"
+  language="bash"
+  code={`# Inside Claude Code
++style list
+
+# Or filter by attribute
++style list --tag editorial --tag asymmetric`}
+/>
+
+तीन नहीं, **एक** चुनें। Curated set का अर्थ है taste पर कठिन निर्णय पहले ही हो चुका है—आपका काम एक विकल्प के प्रति commit करना है, उनका औसत बनाना नहीं।
+
+<Callout tone="info" title="अटकने पर उपयोगी default">
+  B2B SaaS landing page के लिए “Editorial Brutalist” + “Slate Ink” palette मज़बूत ready-made combination है: serif display headings, भरपूर whitespace, केवल एक accent color और decorative gradients नहीं। Content जोड़ने से पहले भी यह सोच-समझकर बना लगता है।
+</Callout>
+
+## Palette कैसे चुनें
+
+Palette का निर्णय style के बाद आता है। कुछ styles के साथ recommended palette होती है—उसे अपनाएँ। न हो तो ऐसा palette चुनें जिसका accent color ऊपर checklist में लिखी **एक भावना** से मेल खाता हो।
+
+<CodeBlock
+  title="Palettes देखें"
+  language="bash"
+  code={`+palette list --style editorial-brutalist
++palette show slate-ink`}
+/>
+
+## इस चरण के अंत में हमारे पास क्या है
+
+Scratch file (या note) खोलकर लिखें:
+
+```
+Audience: ____
+Feeling: ____
+Style: ____
+Palette: ____
+Forbidden: ____, ____, ____
+```
+
+यह पाँच-line note चरण 2 का input है, जहाँ हम इसे पहले असली prompt में बदलेंगे। अभी कोई UI generate नहीं कर रहे—जानबूझकर। **Users के सामने टिकने वाले page में style decision, layout decision से पहले आता है**; अधिकतर teams इसे उलटा करती हैं।
+
+## अगला
+
+चरण 02 में इस पाँच-line note को एक prompt में बदलेंगे, जो ऐसा hero section बनाए जिसे रखा जा सके। मॉडल से “landing page डिज़ाइन करो” नहीं कहेंगे। उससे **पहले किए निर्णय लागू करने** को कहेंगे।

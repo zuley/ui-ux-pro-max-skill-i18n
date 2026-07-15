@@ -1,5 +1,5 @@
 type LegalPage = 'privacy' | 'terms' | 'contact' | 'about';
-type LegalLocale = 'en' | 'zh' | 'vi' | 'ja';
+type LegalLocale = 'en' | 'zh' | 'vi' | 'ja' | 'hi';
 
 type Section = {
   title: string;
@@ -114,13 +114,13 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           title: 'What this site is',
           body: [
             'This site is the documentation and learning companion for UI UX Pro Max, an open-source AI skill that gives coding assistants like Claude practical design intelligence: curated UI styles, color palettes, font pairings, and UX rules they can apply when generating interfaces.',
-            'Beyond the reference docs, we publish original articles and step-by-step tutorials about a specific craft: getting professional, accessible, maintainable UI out of AI coding tools. Everything is available in English, Chinese, Japanese, and Vietnamese.'
+            'Beyond the reference docs, we publish original articles and step-by-step tutorials about a specific craft: getting professional, accessible, maintainable UI out of AI coding tools. Everything is available in English, Chinese, Japanese, Vietnamese, and Hindi.'
           ]
         },
         {
           title: 'Who runs it',
           body: [
-            'The site is built and maintained by Zley, an independent developer. Zley writes and edits the blog and tutorial content, maintains the four language versions, and runs the infrastructure.',
+            'The site is built and maintained by Zley, an independent developer. Zley writes and edits the blog and tutorial content, maintains the five language versions, and runs the infrastructure.',
             'The underlying skill is an open-source project; this site documents it and teaches the workflows around it.'
           ]
         },
@@ -141,6 +141,135 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
         {
           title: 'Contact',
           body: [`Found an error, or want to suggest a topic? Email ${supportEmail}, or open an issue on the GitHub repository linked in the site announcement bar.`]
+        }
+      ]
+    }
+  },
+  hi: {
+    privacy: {
+      title: 'गोपनीयता नीति',
+      description: 'UI UX Pro Max Skill analytics, विज्ञापन, cookies और संपर्क जानकारी को कैसे संभालती है।',
+      updated: 'अंतिम अपडेट: 4 मई 2026',
+      sections: [
+        {
+          title: 'हम कौन-सी जानकारी एकत्र करते हैं',
+          body: [
+            'यह एक सार्वजनिक documentation और product website है। इसे देखने के लिए account, login या payment details की आवश्यकता नहीं है।',
+            'यदि आप हमसे संपर्क करते हैं, तो हमें वह जानकारी मिल सकती है जो आप स्वयं देते हैं—जैसे आपका नाम, email address, संदेश और उससे जुड़ा technical context।'
+          ]
+        },
+        {
+          title: 'Analytics और विज्ञापन तकनीकें',
+          body: [
+            'Website के समग्र उपयोग को समझने के लिए हम Google Analytics इस्तेमाल करते हैं। Google AdSense सक्षम होने पर Google और अन्य third-party vendors विज्ञापन दिखाने, मापने और वैयक्तिक बनाने के लिए cookies, web beacons, IP addresses, device identifiers और मिलती-जुलती तकनीकों का उपयोग कर सकते हैं।',
+            'इस website पर विज्ञापन दिखाए जाने के कारण third parties आपके browser में cookies रख या पढ़ सकती हैं, अथवा web beacons और IP addresses इस्तेमाल कर सकती हैं।'
+          ]
+        },
+        {
+          title: 'जानकारी का उपयोग कैसे होता है',
+          body: [
+            'Documentation, navigation, सामग्री की गुणवत्ता और website performance सुधारने के लिए हम aggregate analytics इस्तेमाल करते हैं।',
+            'जहाँ अनुमति हो, advertising partners विज्ञापन पहुँचाने, धोखाधड़ी रोकने, measurement, reporting और personalized या non-personalized advertising के लिए data इस्तेमाल कर सकते हैं।'
+          ]
+        },
+        {
+          title: 'आपके विकल्प',
+          body: [
+            'आप अपने browser settings में cookies नियंत्रित कर सकते हैं। Partner sites पर Google data कैसे इस्तेमाल करता है, यह https://policies.google.com/technologies/partner-sites पर पढ़ें।',
+            'जहाँ उपलब्ध हो, https://adssettings.google.com/ पर Google Ads Settings के जरिए personalized advertising से opt out कर सकते हैं।'
+          ]
+        },
+        {
+          title: 'संपर्क',
+          body: [`गोपनीयता से जुड़े प्रश्नों के लिए ${supportEmail} पर email करें।`]
+        }
+      ]
+    },
+    terms: {
+      title: 'उपयोग की शर्तें',
+      description: 'UI UX Pro Max Skill website और documentation के उपयोग की शर्तें।',
+      updated: 'अंतिम अपडेट: 4 मई 2026',
+      sections: [
+        {
+          title: 'इस site का उपयोग',
+          body: [
+            'यह site UI UX Pro Max Skill के documentation, examples और references देती है। Project repository में दी गई license terms के अधीन आप सार्वजनिक सामग्री का मूल्यांकन, सीखने और implementation support के लिए उपयोग कर सकते हैं।',
+            'Site का दुरुपयोग न करें, उसकी उपलब्धता में बाधा न डालें और जानबूझकर सार्वजनिक न किए गए systems या data तक पहुँचने की कोशिश न करें।'
+          ]
+        },
+        {
+          title: 'सामग्री की शुद्धता',
+          body: [
+            'हम documentation को सही और उपयोगी रखने का प्रयास करते हैं, लेकिन सामग्री “जैसी है” के आधार पर दी जाती है और समय के साथ बदल सकती है।',
+            'यह जाँचना आपकी ज़िम्मेदारी है कि कोई भी recommendation, prompt या implementation example आपके project और compliance requirements के अनुकूल है।'
+          ]
+        },
+        {
+          title: 'Third-party सेवाएँ',
+          body: [
+            'Site पर GitHub, Google, analytics providers या advertising partners जैसी third-party सेवाओं के links हो सकते हैं। उन सेवाओं का उपयोग करते समय उनकी अपनी terms और policies लागू होती हैं।'
+          ]
+        },
+        {
+          title: 'संपर्क',
+          body: [`इन शर्तों से जुड़े प्रश्नों के लिए ${supportEmail} पर email करें।`]
+        }
+      ]
+    },
+    contact: {
+      title: 'संपर्क',
+      description: 'UI UX Pro Max Skill project से संपर्क करने के तरीके।',
+      updated: 'अंतिम अपडेट: 4 मई 2026',
+      sections: [
+        {
+          title: 'Project support',
+          body: [
+            'Bug report, documentation issue, feature request या licensing question के लिए site के announcement bar में linked GitHub repository इस्तेमाल करें।',
+            'Issue बताते समय page URL, अपेक्षित व्यवहार, वास्तविक व्यवहार और उपयोगी screenshot या command output अवश्य जोड़ें।'
+          ]
+        },
+        {
+          title: 'गोपनीयता और policy संबंधी प्रश्न',
+          body: [`गोपनीयता, विज्ञापन या policy से जुड़े प्रश्नों के लिए ${supportEmail} पर email करें।`]
+        }
+      ]
+    },
+    about: {
+      title: 'इस site के बारे में',
+      description: 'UI UX Pro Max Skill docs कौन चलाता है, हम क्या प्रकाशित करते हैं और सामग्री कैसे तैयार होती है।',
+      updated: 'अंतिम अपडेट: 12 जून 2026',
+      sections: [
+        {
+          title: 'यह site क्या है',
+          body: [
+            'यह UI UX Pro Max की documentation और learning companion site है। UI UX Pro Max एक open-source AI skill है, जो Claude जैसे coding assistants को व्यावहारिक design intelligence देती है—चुनी हुई UI styles, color palettes, font pairings और UX rules जिन्हें वे interfaces बनाते समय लागू कर सकते हैं।',
+            'Reference docs के अलावा हम एक खास कौशल पर मूल लेख और चरण-दर-चरण tutorials प्रकाशित करते हैं: AI coding tools से professional, accessible और maintainable UI कैसे बनाएँ। पूरी सामग्री English, Chinese, Japanese, Vietnamese और Hindi में उपलब्ध है।'
+          ]
+        },
+        {
+          title: 'इसे कौन चलाता है',
+          body: [
+            'यह site independent developer Zley द्वारा बनाई और maintain की जाती है। Zley blog और tutorial content लिखते व edit करते हैं, पाँचों भाषा versions को सँभालते हैं और infrastructure चलाते हैं।',
+            'मूल skill एक open-source project है; यह site उसका documentation देती है और उससे जुड़े workflows सिखाती है।'
+          ]
+        },
+        {
+          title: 'सामग्री कैसे बनती है',
+          body: [
+            'लेख वास्तविक उपयोग से आते हैं: जिन prompt patterns, failure modes और checklists को हम प्रकाशित करते हैं, उन्हें लिखने से पहले असली AI-generated output पर इस्तेमाल और जाँचा जाता है।',
+            'विशिष्ट दावों को प्रकाशन से पहले verify किया जाता है—contrast ratios की गणना होती है, prompt templates चलाए जाते हैं और code examples compile किए जाते हैं। कोई गलती होने पर हम लेख चुपचाप हटाने के बजाय उसे सुधारते हैं।',
+            'AI tools इस site की production process का हिस्सा हैं—विषय को देखते हुए यह स्वाभाविक है—लेकिन हर लेख हमारी अपनी outline और अनुभव से शुरू होता है, और प्रकाशित होने से पहले उसमें मौजूद हर तथ्य की इंसान द्वारा जाँच होती है।'
+          ]
+        },
+        {
+          title: 'विज्ञापन और स्वतंत्रता',
+          body: [
+            'Hosting और development time का खर्च पूरा करने के लिए site पर विज्ञापन (जैसे Google AdSense) दिख सकते हैं। हम क्या लिखते हैं, इस पर advertisers का कोई प्रभाव नहीं होता; हम sponsored posts या paid reviews प्रकाशित नहीं करते।'
+          ]
+        },
+        {
+          title: 'संपर्क',
+          body: [`कोई गलती मिली या किसी विषय का सुझाव देना है? ${supportEmail} पर email करें, या site announcement bar में linked GitHub repository पर issue खोलें।`]
         }
       ]
     }
@@ -241,13 +370,13 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           title: '这个网站是什么',
           body: [
             '本站是 UI UX Pro Max 的文档与学习站。UI UX Pro Max 是一个开源 AI 技能，为 Claude 等编程助手提供可落地的设计知识：精选的 UI 风格、配色方案、字体配对和 UX 规则，让 AI 在生成界面时有据可依。',
-            '在参考文档之外，我们围绕一门具体的手艺持续发布原创文章和分步教程：如何让 AI 编程工具产出专业、可访问、可维护的界面。全部内容提供英文、中文、日文和越南文四个版本。'
+            '在参考文档之外，我们围绕一门具体的手艺持续发布原创文章和分步教程：如何让 AI 编程工具产出专业、可访问、可维护的界面。全部内容提供英文、中文、日文、越南文和印地文五个版本。'
           ]
         },
         {
           title: '谁在运营',
           body: [
-            '本站由独立开发者 Zley 构建和维护。博客与教程内容由 Zley 撰写和编辑，四个语言版本和站点基础设施也由其负责。',
+            '本站由独立开发者 Zley 构建和维护。博客与教程内容由 Zley 撰写和编辑，五个语言版本和站点基础设施也由其负责。',
             '底层技能是一个开源项目；本站为它提供文档，并教授围绕它的工作流。'
           ]
         },
@@ -370,13 +499,13 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           title: 'Trang web này là gì',
           body: [
             'Đây là trang tài liệu và học tập của UI UX Pro Max — một AI skill mã nguồn mở cung cấp tri thức thiết kế thực dụng cho các trợ lý lập trình như Claude: các style UI tuyển chọn, bảng màu, cặp font và quy tắc UX để AI áp dụng khi sinh giao diện.',
-            'Ngoài tài liệu tham khảo, chúng tôi xuất bản bài viết gốc và tutorial từng bước về một nghề cụ thể: làm sao để công cụ lập trình AI tạo ra giao diện chuyên nghiệp, dễ tiếp cận, dễ bảo trì. Toàn bộ nội dung có bốn ngôn ngữ: Anh, Trung, Nhật và Việt.'
+            'Ngoài tài liệu tham khảo, chúng tôi xuất bản bài viết gốc và tutorial từng bước về một nghề cụ thể: làm sao để công cụ lập trình AI tạo ra giao diện chuyên nghiệp, dễ tiếp cận, dễ bảo trì. Toàn bộ nội dung có năm ngôn ngữ: Anh, Trung, Nhật, Việt và Hindi.'
           ]
         },
         {
           title: 'Ai vận hành',
           body: [
-            'Trang được xây dựng và duy trì bởi Zley, một lập trình viên độc lập. Zley viết và biên tập nội dung blog cùng tutorial, duy trì bốn phiên bản ngôn ngữ và vận hành hạ tầng.',
+            'Trang được xây dựng và duy trì bởi Zley, một lập trình viên độc lập. Zley viết và biên tập nội dung blog cùng tutorial, duy trì năm phiên bản ngôn ngữ và vận hành hạ tầng.',
             'Skill nền tảng là một dự án mã nguồn mở; trang này viết tài liệu cho nó và dạy các workflow xung quanh nó.'
           ]
         },
@@ -499,13 +628,13 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
           title: 'このサイトは何か',
           body: [
             '本サイトは UI UX Pro Max のドキュメント兼学習サイトです。UI UX Pro Max は、Claude などのコーディングアシスタントに実践的なデザイン知識——厳選された UI スタイル、カラーパレット、フォントペアリング、UX ルール——を与えるオープンソースの AI スキルです。',
-            'リファレンスドキュメントに加えて、「AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出す」という具体的な技術について、オリジナル記事とステップバイステップのチュートリアルを公開しています。すべてのコンテンツは英語・中国語・日本語・ベトナム語で提供しています。'
+            'リファレンスドキュメントに加えて、「AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出す」という具体的な技術について、オリジナル記事とステップバイステップのチュートリアルを公開しています。すべてのコンテンツは英語・中国語・日本語・ベトナム語・ヒンディー語で提供しています。'
           ]
         },
         {
           title: '運営者',
           body: [
-            '本サイトは独立開発者の Zley が構築・運営しています。ブログとチュートリアルの執筆・編集、4 言語版の維持、インフラの運用を担当しています。',
+            '本サイトは独立開発者の Zley が構築・運営しています。ブログとチュートリアルの執筆・編集、5 言語版の維持、インフラの運用を担当しています。',
             'ベースとなるスキルはオープンソースプロジェクトであり、本サイトはそのドキュメントと周辺ワークフローの解説を提供します。'
           ]
         },
@@ -534,7 +663,7 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
 
 export function getLegalPageCopy(page: LegalPage, locale: string): PageCopy {
   const legalLocale: LegalLocale =
-    locale === 'zh' || locale === 'vi' || locale === 'ja' ? locale : 'en';
+    locale === 'zh' || locale === 'vi' || locale === 'ja' || locale === 'hi' ? locale : 'en';
   return copy[legalLocale][page];
 }
 

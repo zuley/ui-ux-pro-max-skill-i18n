@@ -1,0 +1,74 @@
+---
+title: "सफ़ेद पर धूसर text की महामारी: light mode में AI interfaces contrast क्यों खोते हैं"
+summary: "हर कोई dark mode audit करता है; AI output वास्तव में light mode में fail होता है। Generated UI की उन चार जगहों की field guide जहाँ न पढ़ा जाने वाला gray text ship होता है—और हर समस्या रोकने वाले prompt blocks।"
+date: 2026-06-01
+tags: [accessibility, color, design-system]
+author: admin
+---
+
+हमने पहले [सचमुच dark दिखने वाले dark mode](/hi/blog/dark-mode-thats-actually-dark) के बारे में लिखा था। यह उसका companion लेख है—और अधिक नुकसान वाले विषय पर: **generated UIs वास्तव में light mode में contrast fail करते हैं**, क्योंकि failure screenshot में अच्छा दिखता है।
+
+Pattern हमेशा वही है। मॉडल visual hierarchy चाहता है और सबसे सस्ती hierarchy opacity है: headline लगभग काली, बाकी हर “secondary” चीज़ सुरुचिपूर्ण gray में। Secondary का एक level ठीक है। लेकिन generated pages इसे बार-बार लागू करते हैं—secondary की भी secondary—और तीसरे level तक pricing caveats सफ़ेद पर `#9CA3AF` हो जाते हैं। Ratio 2.5:1। Body text के लिए WCAG AA की न्यूनतम सीमा **4.5:1** है।
+
+Screenshot में refined लगता है। बाहर, phone पर, 60% brightness में यह text नहीं रहता—texture बन जाता है।
+
+## चार crime scenes
+
+Generated landing page audit करें तो failures हर बार इन्हीं चार जगहों पर मिलते हैं:
+
+- **Subheadline।** Headline के बाद page का सबसे अधिक पढ़ा sentence, जिसे मॉडल “supporting copy” मानकर `text-gray-400` कर देता है। सबसे महत्वपूर्ण शब्दों पर सबसे हल्की ink।
+- **Chart labels और axes।** Data credibility section है, फिर भी उसके numbers अक्सर 11px light gray में—दोहरी गिरावट।
+- **Forms में placeholder और helper text।** अक्सर disabled states के *ठीक समान* style में, इसलिए user खाली field और बंद field में फर्क नहीं कर पाता।
+- **Footer।** Pricing, docs और contact जैसे सचमुच ज़रूरी links 3:1 पर, क्योंकि footer को decoration मान लिया जाता है।
+
+साझा कारण: मॉडल *महत्त्व* को *ink* के बराबर मानता है और महत्त्व reader की ज़रूरत से नहीं, section type से तय करता है। Pricing caveat कानूनी रूप से महत्वपूर्ण है, फिर भी page का सबसे हल्का gray उसे मिलता है।
+
+## वह गणना जो कोई नहीं करता
+
+Contrast ratios सहज नहीं लगते; इसलिए “मुझे तो ठीक दिखता है” असफल होता है। White पर लोकप्रिय grays यहाँ बैठते हैं:
+
+<CodeBlock
+  title="सफ़ेद background पर Tailwind grays"
+  language="text"
+  code={`gray-300  #D1D5DB   1.5:1  — decorative only, never text
+gray-400  #9CA3AF   2.5:1  — fails everything, ships constantly
+gray-500  #6B7280   4.8:1  — passes on pure white; 4.4:1 and failing on a gray-100 card
+gray-600  #4B5563   7.6:1  — passes everywhere, with margin. The safe floor.
+gray-700  #374151  10.3:1  — comfortable body ink`}
+/>
+
+पूरी महामारी `gray-400` और `gray-600` के बीच का अंतर है। Tailwind scale पर दो steps—texture और text के बीच का फर्क।
+
+`gray-500` का trap देखें: शुद्ध white पर 4.5:1 पार करता है, background tint होते ही margin खो देता है। `gray-100` card पर पहले ही fail है; और generated layouts secondary text को tinted cards पर रखना पसंद करते हैं। इसे large-text color (18px+ bold, 24px+ regular) मानें और हर background पर अलग audit करने की ज़रूरत घट जाती है।
+
+## Review में नहीं, prompt में ठीक करें
+
+Review में पकड़ने का मतलब styled components को एक-एक करके फिर बनाना है। शुरुआत में इसे असंभव करना सस्ता है। दो blocks काफ़ी हैं:
+
+<CodeBlock
+  title="UI prompts के लिए ink policy block"
+  language="text"
+  code={`# Text colors (light mode — exhaustive list, nothing else)
+Primary ink:   #1F2937 — headlines, body, anything multi-line
+Secondary ink: #4B5563 — captions, labels, helper text, footer links
+Accent ink:    <your accent, only if it measures 4.5:1 on white>
+
+Rules:
+- No text node may use any other color, including via opacity utilities.
+- Nothing below 4.5:1 against its actual background. If unsure, darker.
+- Placeholder text uses secondary ink, not a lighter shade.
+- Disabled states may break these rules — and must also be marked
+  disabled semantically, not just visually.`}
+/>
+
+Ink के दो levels, तीन नहीं। हर नया level फिर `gray-400` तक recursion का निमंत्रण है। हमें आज तक कोई marketing page नहीं मिला जिसे बेहतर copy के बजाय तीसरे gray level की ज़रूरत थी।
+
+<Callout tone="warn" title="Opacity से की गई सफ़ाई पहचानें">
+  मॉडल light gray को 60% opacity वाले white या `text-gray-900/50` के रूप में भी बनाते हैं। Ratio वही, color-token grep में अदृश्य—इसलिए ऊपर नियम में “including via opacity utilities” लिखा है। Class names नहीं, computed styles audit करें।
+</Callout>
+
+## दो मिनट का audit
+
+मौजूदा pages के लिए devtools खोलें और इन चार जगहों को उनके असली backgrounds के विरुद्ध sample करें—subheadline, सबसे छोटा chart label, form helper text और footer link। कोई भी contrast checker चलेगा। ये चार 4.5:1 पास करते हों तो बाकी page लगभग हमेशा करता है; ये canaries हैं क्योंकि “secondary की secondary” यहीं सबसे नीचे पहुँचती है।
+
+Hierarchy वास्तविक है और gray उसका वैध tool। समाधान “हर चीज़ काली करो” नहीं; recursion को दो named ink levels पर रोकना है, और दोनों न्यूनतम सीमा पार करें। Inks एक बार तय कर prompt में लिखें; तब light mode वह mode नहीं रहेगा जिसमें आपके सबसे ध्यान देने वाले readers को आँखें सिकोड़नी पड़ें।

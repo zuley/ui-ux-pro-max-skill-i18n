@@ -888,6 +888,7 @@
     "minRead": "Đọc {n} phút",
     "stepLabel": "Bước {n} / {total}",
     "totalSteps": "{n} bước",
+    "start": "Bắt đầu",
     "backToSeries": "Quay lại series",
     "backToIndex": "Tất cả hướng dẫn",
     "prev": "Trước",

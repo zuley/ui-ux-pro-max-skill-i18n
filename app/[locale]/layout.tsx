@@ -38,6 +38,7 @@ export async function generateMetadata({
         'zh': `${SITE_URL}/zh`,
         'vi': `${SITE_URL}/vi`,
         'ja': `${SITE_URL}/ja`,
+        'hi': `${SITE_URL}/hi`,
       },
     },
     openGraph: {

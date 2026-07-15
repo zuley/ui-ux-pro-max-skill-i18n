@@ -1,0 +1,77 @@
+---
+title: "Components से पहले tokens: AI-generated Tailwind को maintainable रखने का एकमात्र तरीका"
+summary: "Generated UI में चालीस class strings के बीच hex values बिखरी रहती हैं—आज सुंदर, शुक्रवार तक maintain करना मुश्किल। समाधान क्रम में है: मॉडल से पहले tokens परिभाषित कराएँ, फिर raw value लिखना हमेशा के लिए मना कर दें।"
+date: 2026-06-11
+tags: [tailwind, design-tokens, design-system]
+author: admin
+---
+
+Generated Tailwind की एक खास failure mode है, जिसका page के दिखने से कोई संबंध नहीं। Landing page माँगिए और सुंदर page मिल जाता है—लेकिन `#6D28D9` चौदह class strings में है, `#6C28D9` (line 212 पर मॉडल की typo देखें) दो और जगह, और वही spacing rhythm तीन sibling sections में `mt-7`, `mt-8` तथा `mt-[30px]` बनकर लिखी है।
+
+Page ठीक है। *System* जन्म से ही निष्प्राण है। पहली बार “accent थोड़ा warm करें” कहते ही आपको एक-एक करके खोजे गए hex variants पर find-and-replace करना पड़ता है।
+
+यह model quality की समस्या नहीं; यह **क्रम** की समस्या है। मॉडल पहले components लिखता है और चलते-चलते colors जोड़ता है—जैसे junior developer सीधे canvas पर paint करे। समाधान junior के साथ जैसा ही है: पहले tokens, फिर components, और उसके बाद कभी raw values नहीं।
+
+## एक नहीं, दो प्रॉम्प्ट
+
+गलती है page और system को एक ही साँस में माँगना। दोनों अलग करें। पहला prompt *केवल* token layer बनाता है—और छोटा है:
+
+<CodeBlock
+  title="Prompt 1—केवल tokens"
+  language="text"
+  code={`Define the design tokens for this project as CSS custom properties
+in globals.css, plus the Tailwind theme mapping. Nothing else —
+no components, no pages.
+
+# Decisions (locked)
+Palette: <your 5 colors with hex values and roles>
+Type: <heading face / body face, the scale: 14, 16, 20, 28, 40, 56>
+Spacing rhythm: 4px base; section padding 96px desktop / 64px mobile
+Radii: 8px controls, 16px cards. Shadows: exactly two elevations.
+
+# Rules
+- Name tokens by ROLE (--color-accent, --color-ink-secondary),
+  never by value (--purple-600, --gray-light).
+- Every token gets a one-line comment: where it is allowed to be used.
+- If two tokens would hold the same value, merge them and note both roles.`}
+/>
+
+Role-based naming वह line है जो आगे असली लाभ देती है। Accent teal होते ही `--purple-600` झूठ बन जाता है—और value-based names मिलने पर मॉडल rename करने के बजाय खुशी से `--purple-600: #14b8a6` लिख देगा।
+
+## फिर हर component prompt में सुरक्षा-घेरा
+
+दूसरा prompt—और उसके बाद हमेशा हर prompt—यह block रखता है:
+
+<CodeBlock
+  title="Raw values पर रोक"
+  language="text"
+  code={`# Token discipline (non-negotiable)
+- Zero raw values in markup: no hex, no rgb(), no arbitrary
+  values like mt-[30px] or text-[#333].
+- Color, spacing, radius, shadow: only via the tokens in globals.css.
+- If the design needs a value no token provides, STOP and say so —
+  propose the new token, wait for approval. Do not improvise one.
+- The diff for this rule's sake alone should be empty.`}
+/>
+
+तीसरा bullet असली काम करता है। सुरक्षित रास्ता न हो तो मॉडल नियम को नरम मानता है और token गायब मिलते ही `bg-[#f8f7ff]` गढ़ लेता है। “रुकें और प्रस्ताव दें” वाला रास्ता होने पर missing tokens छिपे हुए debt की जगह *सवाल* बनकर सामने आते हैं। हर page पर ऐसे दो-तीन सवाल मिलेंगे। हर सवाल ऐसा design decision है जो लगभग दुर्घटनावश होने वाला था।
+
+## शुक्रवार वाला test
+
+काम हुआ या नहीं, यह जानने के लिए सप्ताह के अंत में ये तीन edits करें। हर edit केवल एक line का होना चाहिए:
+
+- Accent color warm करें → `--color-accent` बदलें, बस।
+- हर card की padding कम करें → एक spacing token बदलें, बस।
+- Heading face बदलें → font token और उसका fallback stack बदलें, बस।
+
+इनमें से कोई भी आपको component files तक ले जाए तो घेरा टूटा है। Grep बताएगा कहाँ: components में `#`, `rgb(` और `-[` खोजें। हर hit या तो missing token है (उसे token बनाएँ) या मॉडल का improvisation (उसे बदलें)। सही घेरे वाले codebase में यह grep कुछ नहीं लौटाता—यह आपके सबसे सस्ते CI checks में से होगा।
+
+<Callout tone="warn" title="Arbitrary values पीछे का दरवाज़ा हैं">
+  Tailwind का bracket syntax मॉडल का पसंदीदा तस्करी-रास्ता है—कल्पना किए screenshot से मिलाने के लिए `w-[417px]`, या token name देखने से hex लिखना तेज़ लगा तो `text-[#4b5563]`। सही घेरे वाला project brackets को हर जगह code smell मानता है, सिवाय सचमुच one-off geometry के; और “सचमुच one-off” का अर्थ है कि comment में कारण बता सकें।
+</Callout>
+
+## AI के साथ यह कम नहीं, अधिक महत्वपूर्ण क्यों है
+
+हाथ से code लिखने वाले महीनों में inconsistency की ओर बढ़ते हैं; मॉडल पूरा mess एक दोपहर में, पूरे आत्मविश्वास के साथ और आपकी review speed से दोगुनी गति पर बना सकता है। Token layer वह *एकमात्र* leverage point है जहाँ एक निर्णय हज़ारों generated lines को नियंत्रित करता है—generator के साथ ठीक यही सौदा चाहिए: दस निर्णय आपके, दस हज़ार keystrokes उसके।
+
+पहले tokens। घेरा हमेशा। बनने वाला page one-prompt version जैसा ही दिखेगा—ठीक एक सप्ताह तक, जब पहला change request आएगा। तब दोनों अलग products साबित होंगे।

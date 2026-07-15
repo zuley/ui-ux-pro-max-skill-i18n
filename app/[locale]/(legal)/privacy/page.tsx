@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { LegalContent, getLegalPageCopy } from '@/components/legal/legal-content';
-import { legalCanonicalUrl } from '@/lib/legal-path';
+import { legalCanonicalUrl, legalLanguageAlternates } from '@/lib/legal-path';
 
 type PageParams = { locale: string };
 
@@ -16,7 +16,8 @@ export async function generateMetadata({
     title: `${pageCopy.title} | UI UX Pro Max Skill`,
     description: pageCopy.description,
     alternates: {
-      canonical: legalCanonicalUrl(locale, 'privacy')
+      canonical: legalCanonicalUrl(locale, 'privacy'),
+      languages: legalLanguageAlternates('privacy')
     }
   };
 }
