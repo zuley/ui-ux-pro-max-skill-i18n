@@ -126,7 +126,8 @@ export default async function BlogPostPage({
         datePublished={post.frontmatter.date}
         dateModified={post.frontmatter.updated}
         authorName={author.name}
-        authorUrl={`${SITE_URL}/about`}
+        authorType={author.type}
+        authorUrl={author.url}
         inLanguage={locale}
         keywords={post.frontmatter.tags}
         image={post.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}

@@ -4,6 +4,10 @@
  * import from here instead of hardcoding the domain.
  */
 export const SITE_URL = 'https://ui-ux-pro-max-skill.com';
+export const SITE_NAME = 'UI UX Pro Max Skill — Unofficial Translation';
+export const SITE_PUBLISHER_NAME = 'Team';
+export const OFFICIAL_PROJECT_URL =
+  'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill';
 
 /** Stable, generated social-preview assets shared by every route tree. */
 export const DEFAULT_OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;

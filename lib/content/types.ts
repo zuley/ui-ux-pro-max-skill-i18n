@@ -11,7 +11,7 @@ export type BaseFrontmatter = {
   date: string; // ISO yyyy-mm-dd
   updated?: string; // ISO yyyy-mm-dd; omitted when never revised
   tags: string[];
-  author: string; // author id, defaults to "admin"
+  author: string; // author id, defaults to "team"
   cover?: string;
   draft?: boolean;
 };

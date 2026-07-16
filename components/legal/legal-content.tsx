@@ -107,35 +107,35 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
     },
     about: {
       title: 'About This Site',
-      description: 'Who runs UI UX Pro Max Skill docs, what we publish, and how the content is produced.',
-      updated: 'Last updated: June 12, 2026',
+      description: 'What this unofficial translation site provides and how translated content is maintained.',
+      updated: 'Last updated: July 16, 2026',
       sections: [
         {
           title: 'What this site is',
           body: [
-            'This site is the documentation and learning companion for UI UX Pro Max, an open-source AI skill that gives coding assistants like Claude practical design intelligence: curated UI styles, color palettes, font pairings, and UX rules they can apply when generating interfaces.',
-            'Beyond the reference docs, we publish original articles and step-by-step tutorials about a specific craft: getting professional, accessible, maintainable UI out of AI coding tools. Everything is available in English, Chinese, Japanese, Vietnamese, and Hindi.'
+            'This is an unofficial multilingual translation and learning companion for UI UX Pro Max, an open-source AI skill that gives coding assistants like Claude practical design intelligence: curated UI styles, color palettes, font pairings, and UX rules they can apply when generating interfaces.',
+            'The site translates and organizes reference docs, articles, and step-by-step tutorials about getting professional, accessible, maintainable UI out of AI coding tools. Content is available in English, Chinese, Japanese, Vietnamese, and Hindi.'
           ]
         },
         {
           title: 'Who runs it',
           body: [
-            'The site is built and maintained by Zley, an independent developer. Zley writes and edits the blog and tutorial content, maintains the five language versions, and runs the infrastructure.',
-            'The underlying skill is an open-source project; this site documents it and teaches the workflows around it.'
+            'This site is maintained by an independent translation team. It is not affiliated with or endorsed by the original UI UX Pro Max Skill project.',
+            'The original project and skill are maintained by their original authors; this site only translates and organizes related content.'
           ]
         },
         {
-          title: 'How the content is made',
+          title: 'How translations are made',
           body: [
-            'Articles come from real usage: the prompt patterns, failure modes, and checklists we publish are ones we use and test against actual AI-generated output before writing about them.',
-            'Specific claims are verified before publishing — contrast ratios are computed, prompt templates are run, and code examples are compiled. When we get something wrong, we correct the article rather than quietly deleting it.',
-            'AI tools are part of how this site is produced — fitting, given the subject — but every article starts from our own outline and experience, and every fact in it is checked by a human before it ships.'
+            'Content is translated from source material while preserving technical meaning, code, commands, and product terminology.',
+            'Translations are checked for missing sections, broken links, malformed code blocks, and terminology drift before publishing. Errors are corrected rather than quietly removed.',
+            'AI tools may assist with translation and consistency checks, but the translation team reviews content before publication.'
           ]
         },
         {
           title: 'Advertising and independence',
           body: [
-            'The site may show ads (for example through Google AdSense) to cover hosting and development time. Advertisers have no influence on what we write; we do not publish sponsored posts or paid reviews.'
+            'The site may show ads (for example through Google AdSense) to cover hosting and maintenance costs. Advertisers have no influence on translation choices; we do not publish sponsored posts or paid reviews.'
           ]
         },
         {
@@ -236,35 +236,35 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
     },
     about: {
       title: 'इस site के बारे में',
-      description: 'UI UX Pro Max Skill docs कौन चलाता है, हम क्या प्रकाशित करते हैं और सामग्री कैसे तैयार होती है।',
-      updated: 'अंतिम अपडेट: 12 जून 2026',
+      description: 'यह अनौपचारिक translation site क्या उपलब्ध कराती है और translated content कैसे maintain होता है।',
+      updated: 'अंतिम अपडेट: 16 जुलाई 2026',
       sections: [
         {
           title: 'यह site क्या है',
           body: [
-            'यह UI UX Pro Max की documentation और learning companion site है। UI UX Pro Max एक open-source AI skill है, जो Claude जैसे coding assistants को व्यावहारिक design intelligence देती है—चुनी हुई UI styles, color palettes, font pairings और UX rules जिन्हें वे interfaces बनाते समय लागू कर सकते हैं।',
-            'Reference docs के अलावा हम एक खास कौशल पर मूल लेख और चरण-दर-चरण tutorials प्रकाशित करते हैं: AI coding tools से professional, accessible और maintainable UI कैसे बनाएँ। पूरी सामग्री English, Chinese, Japanese, Vietnamese और Hindi में उपलब्ध है।'
+            'यह UI UX Pro Max की एक अनौपचारिक बहुभाषी translation और learning companion site है। UI UX Pro Max एक open-source AI skill है, जो Claude जैसे coding assistants को व्यावहारिक design intelligence देती है—चुनी हुई UI styles, color palettes, font pairings और UX rules जिन्हें वे interfaces बनाते समय लागू कर सकते हैं।',
+            'यह site reference docs, articles और चरण-दर-चरण tutorials का अनुवाद और organization करती है, ताकि AI coding tools से professional, accessible और maintainable UI बनाने की जानकारी उपलब्ध हो। Content English, Chinese, Japanese, Vietnamese और Hindi में उपलब्ध है।'
           ]
         },
         {
           title: 'इसे कौन चलाता है',
           body: [
-            'यह site independent developer Zley द्वारा बनाई और maintain की जाती है। Zley blog और tutorial content लिखते व edit करते हैं, पाँचों भाषा versions को सँभालते हैं और infrastructure चलाते हैं।',
-            'मूल skill एक open-source project है; यह site उसका documentation देती है और उससे जुड़े workflows सिखाती है।'
+            'यह site एक independent translation team द्वारा maintain की जाती है। इसका मूल UI UX Pro Max Skill project से कोई affiliation नहीं है और मूल project ने इसे endorse नहीं किया है।',
+            'मूल project और skill का रखरखाव उनके original authors करते हैं; यह site केवल संबंधित content का अनुवाद और organization करती है।'
           ]
         },
         {
-          title: 'सामग्री कैसे बनती है',
+          title: 'अनुवाद कैसे तैयार किए जाते हैं',
           body: [
-            'लेख वास्तविक उपयोग से आते हैं: जिन prompt patterns, failure modes और checklists को हम प्रकाशित करते हैं, उन्हें लिखने से पहले असली AI-generated output पर इस्तेमाल और जाँचा जाता है।',
-            'विशिष्ट दावों को प्रकाशन से पहले verify किया जाता है—contrast ratios की गणना होती है, prompt templates चलाए जाते हैं और code examples compile किए जाते हैं। कोई गलती होने पर हम लेख चुपचाप हटाने के बजाय उसे सुधारते हैं।',
-            'AI tools इस site की production process का हिस्सा हैं—विषय को देखते हुए यह स्वाभाविक है—लेकिन हर लेख हमारी अपनी outline और अनुभव से शुरू होता है, और प्रकाशित होने से पहले उसमें मौजूद हर तथ्य की इंसान द्वारा जाँच होती है।'
+            'Content का अनुवाद source material से किया जाता है, और technical meaning, code, commands तथा product terminology को यथासंभव जस का तस रखा जाता है।',
+            'प्रकाशन से पहले missing sections, broken links, malformed code blocks और terminology drift की जाँच की जाती है। गलती मिलने पर translation को चुपचाप हटाने के बजाय सुधारा जाता है।',
+            'AI tools translation और consistency checks में सहायता कर सकते हैं, लेकिन प्रकाशन से पहले translation team content को review करती है।'
           ]
         },
         {
           title: 'विज्ञापन और स्वतंत्रता',
           body: [
-            'Hosting और development time का खर्च पूरा करने के लिए site पर विज्ञापन (जैसे Google AdSense) दिख सकते हैं। हम क्या लिखते हैं, इस पर advertisers का कोई प्रभाव नहीं होता; हम sponsored posts या paid reviews प्रकाशित नहीं करते।'
+            'Hosting और maintenance costs पूरा करने के लिए site पर विज्ञापन (जैसे Google AdSense) दिख सकते हैं। Translation choices पर advertisers का कोई प्रभाव नहीं होता; हम sponsored posts या paid reviews प्रकाशित नहीं करते।'
           ]
         },
         {
@@ -363,35 +363,35 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
     },
     about: {
       title: '关于本站',
-      description: '谁在运营 UI UX Pro Max Skill 文档站、我们发布什么内容、内容是如何生产的。',
-      updated: '最后更新：2026 年 6 月 12 日',
+      description: '介绍这个非官方翻译站提供的内容，以及译文如何维护。',
+      updated: '最后更新：2026 年 7 月 16 日',
       sections: [
         {
           title: '这个网站是什么',
           body: [
-            '本站是 UI UX Pro Max 的文档与学习站。UI UX Pro Max 是一个开源 AI 技能，为 Claude 等编程助手提供可落地的设计知识：精选的 UI 风格、配色方案、字体配对和 UX 规则，让 AI 在生成界面时有据可依。',
-            '在参考文档之外，我们围绕一门具体的手艺持续发布原创文章和分步教程：如何让 AI 编程工具产出专业、可访问、可维护的界面。全部内容提供英文、中文、日文、越南文和印地文五个版本。'
+            '本站是 UI UX Pro Max 的非官方多语言翻译与学习站。UI UX Pro Max 是一个开源 AI 技能，为 Claude 等编程助手提供可落地的设计知识：精选的 UI 风格、配色方案、字体配对和 UX 规则，让 AI 在生成界面时有据可依。',
+            '本站翻译并整理参考文档、文章和分步教程，主题是如何让 AI 编程工具产出专业、可访问、可维护的界面。内容提供英文、中文、日文、越南文和印地文五个版本。'
           ]
         },
         {
           title: '谁在运营',
           body: [
-            '本站由独立开发者 Zley 构建和维护。博客与教程内容由 Zley 撰写和编辑，五个语言版本和站点基础设施也由其负责。',
-            '底层技能是一个开源项目；本站为它提供文档，并教授围绕它的工作流。'
+            '本站由独立翻译团队维护，与 UI UX Pro Max Skill 原项目不存在隶属关系，也未获得原项目的官方背书。',
+            '原项目及其技能由原作者维护；本站仅负责相关内容的翻译与整理。'
           ]
         },
         {
-          title: '内容如何生产',
+          title: '译文如何产生',
           body: [
-            '文章来自真实使用：我们发布的 Prompt 模式、失败案例和检查清单，都先在实际的 AI 生成产出上使用和验证过，然后才写成文章。',
-            '具体的断言在发布前会被核实——对比度比率经过计算、Prompt 模板实际跑过、代码示例通过编译。如果我们写错了，会修正文章并注明，而不是悄悄删掉。',
-            'AI 工具参与了本站的生产过程——考虑到主题，这再合适不过——但每篇文章都始于我们自己的提纲和经验，文中每个事实在发布前都经过人工核查。'
+            '内容以原始材料为依据进行翻译，并尽量保持技术含义、代码、命令和产品术语不变。',
+            '译文发布前会检查章节缺失、链接失效、代码块格式错误和术语漂移。发现错误时会直接修正，而不是悄悄删除。',
+            'AI 工具可能参与翻译和一致性检查，但内容在发布前会由翻译团队复核。'
           ]
         },
         {
           title: '广告与独立性',
           body: [
-            '本站可能展示广告（例如通过 Google AdSense）以覆盖托管和开发成本。广告主不影响我们写什么；我们不发布软文或付费测评。'
+            '本站可能展示广告（例如通过 Google AdSense）以覆盖托管和维护成本。广告主不影响翻译取舍；本站不发布软文或付费测评。'
           ]
         },
         {
@@ -492,35 +492,35 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
     },
     about: {
       title: 'Về trang này',
-      description: 'Ai vận hành trang tài liệu UI UX Pro Max Skill, chúng tôi xuất bản gì, và nội dung được tạo ra như thế nào.',
-      updated: 'Cập nhật lần cuối: 12 tháng 6, 2026',
+      description: 'Trang dịch không chính thức này cung cấp gì và nội dung dịch được duy trì như thế nào.',
+      updated: 'Cập nhật lần cuối: 16 tháng 7, 2026',
       sections: [
         {
           title: 'Trang web này là gì',
           body: [
-            'Đây là trang tài liệu và học tập của UI UX Pro Max — một AI skill mã nguồn mở cung cấp tri thức thiết kế thực dụng cho các trợ lý lập trình như Claude: các style UI tuyển chọn, bảng màu, cặp font và quy tắc UX để AI áp dụng khi sinh giao diện.',
-            'Ngoài tài liệu tham khảo, chúng tôi xuất bản bài viết gốc và tutorial từng bước về một nghề cụ thể: làm sao để công cụ lập trình AI tạo ra giao diện chuyên nghiệp, dễ tiếp cận, dễ bảo trì. Toàn bộ nội dung có năm ngôn ngữ: Anh, Trung, Nhật, Việt và Hindi.'
+            'Đây là trang dịch đa ngôn ngữ và học tập không chính thức cho UI UX Pro Max — một AI skill mã nguồn mở cung cấp tri thức thiết kế thực dụng cho các trợ lý lập trình như Claude: các style UI tuyển chọn, bảng màu, cặp font và quy tắc UX để AI áp dụng khi sinh giao diện.',
+            'Trang dịch và sắp xếp tài liệu tham khảo, bài viết cùng tutorial từng bước về cách tạo giao diện chuyên nghiệp, dễ tiếp cận và dễ bảo trì bằng công cụ lập trình AI. Nội dung có năm ngôn ngữ: Anh, Trung, Nhật, Việt và Hindi.'
           ]
         },
         {
           title: 'Ai vận hành',
           body: [
-            'Trang được xây dựng và duy trì bởi Zley, một lập trình viên độc lập. Zley viết và biên tập nội dung blog cùng tutorial, duy trì năm phiên bản ngôn ngữ và vận hành hạ tầng.',
-            'Skill nền tảng là một dự án mã nguồn mở; trang này viết tài liệu cho nó và dạy các workflow xung quanh nó.'
+            'Trang được duy trì bởi một nhóm dịch thuật độc lập. Trang không liên kết và không được dự án UI UX Pro Max Skill gốc chứng thực.',
+            'Dự án và skill gốc do các tác giả ban đầu duy trì; trang này chỉ dịch và sắp xếp nội dung liên quan.'
           ]
         },
         {
-          title: 'Nội dung được tạo ra thế nào',
+          title: 'Bản dịch được tạo ra thế nào',
           body: [
-            'Bài viết đến từ sử dụng thật: các khuôn mẫu prompt, kiểu thất bại và checklist chúng tôi đăng đều được dùng và kiểm chứng trên output AI thật trước khi viết thành bài.',
-            'Các tuyên bố cụ thể được xác minh trước khi đăng — tỷ lệ contrast được tính toán, template prompt được chạy thử, ví dụ code được biên dịch. Khi viết sai, chúng tôi sửa bài và ghi chú thay vì lặng lẽ xóa.',
-            'Công cụ AI là một phần trong cách trang này được sản xuất — hợp lý, xét theo chủ đề — nhưng mỗi bài đều bắt đầu từ dàn ý và kinh nghiệm của chính chúng tôi, và mọi dữ kiện đều được con người kiểm tra trước khi xuất bản.'
+            'Nội dung được dịch từ tài liệu nguồn đồng thời giữ nguyên ý nghĩa kỹ thuật, code, câu lệnh và thuật ngữ sản phẩm.',
+            'Trước khi đăng, bản dịch được kiểm tra phần còn thiếu, liên kết hỏng, code block sai định dạng và thuật ngữ bị lệch. Lỗi sẽ được sửa thay vì âm thầm xóa.',
+            'Công cụ AI có thể hỗ trợ dịch và kiểm tra tính nhất quán, nhưng nhóm dịch thuật sẽ rà soát nội dung trước khi xuất bản.'
           ]
         },
         {
           title: 'Quảng cáo và tính độc lập',
           body: [
-            'Trang có thể hiển thị quảng cáo (ví dụ qua Google AdSense) để trang trải chi phí hosting và thời gian phát triển. Nhà quảng cáo không ảnh hưởng đến nội dung; chúng tôi không đăng bài tài trợ hay review trả phí.'
+            'Trang có thể hiển thị quảng cáo (ví dụ qua Google AdSense) để trang trải chi phí hosting và bảo trì. Nhà quảng cáo không ảnh hưởng đến lựa chọn dịch thuật; chúng tôi không đăng bài tài trợ hay review trả phí.'
           ]
         },
         {
@@ -621,35 +621,35 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
     },
     about: {
       title: 'このサイトについて',
-      description: 'UI UX Pro Max Skill ドキュメントサイトの運営者、公開している内容、コンテンツの作り方について。',
-      updated: '最終更新日: 2026 年 6 月 12 日',
+      description: 'この非公式翻訳サイトが提供する内容と、翻訳コンテンツの管理方法について。',
+      updated: '最終更新日: 2026 年 7 月 16 日',
       sections: [
         {
           title: 'このサイトは何か',
           body: [
-            '本サイトは UI UX Pro Max のドキュメント兼学習サイトです。UI UX Pro Max は、Claude などのコーディングアシスタントに実践的なデザイン知識——厳選された UI スタイル、カラーパレット、フォントペアリング、UX ルール——を与えるオープンソースの AI スキルです。',
-            'リファレンスドキュメントに加えて、「AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出す」という具体的な技術について、オリジナル記事とステップバイステップのチュートリアルを公開しています。すべてのコンテンツは英語・中国語・日本語・ベトナム語・ヒンディー語で提供しています。'
+            '本サイトは UI UX Pro Max の非公式な多言語翻訳・学習サイトです。UI UX Pro Max は、Claude などのコーディングアシスタントに実践的なデザイン知識——厳選された UI スタイル、カラーパレット、フォントペアリング、UX ルール——を与えるオープンソースの AI スキルです。',
+            'AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出すためのリファレンスドキュメント、記事、ステップバイステップのチュートリアルを翻訳・整理しています。コンテンツは英語・中国語・日本語・ベトナム語・ヒンディー語で提供しています。'
           ]
         },
         {
           title: '運営者',
           body: [
-            '本サイトは独立開発者の Zley が構築・運営しています。ブログとチュートリアルの執筆・編集、5 言語版の維持、インフラの運用を担当しています。',
-            'ベースとなるスキルはオープンソースプロジェクトであり、本サイトはそのドキュメントと周辺ワークフローの解説を提供します。'
+            '本サイトは独立した翻訳チームが運営しています。UI UX Pro Max Skill の原プロジェクトとは提携関係になく、公式な承認も受けていません。',
+            '原プロジェクトとスキルは原作者が管理しており、本サイトは関連コンテンツの翻訳と整理のみを行います。'
           ]
         },
         {
-          title: 'コンテンツの作り方',
+          title: '翻訳の作り方',
           body: [
-            '記事は実際の使用から生まれます。公開しているプロンプトパターン、失敗モード、チェックリストは、実際の AI 生成出力に対して使用・検証したうえで記事化しています。',
-            '具体的な主張は公開前に検証します——コントラスト比は計算し、プロンプトテンプレートは実行し、コード例はコンパイルを通します。誤りがあった場合は、黙って消すのではなく記事を訂正して経緯を残します。',
-            'AI ツールも本サイトの制作工程の一部です——テーマを考えればふさわしいことです——ただし、すべての記事は私たち自身のアウトラインと経験から始まり、掲載される事実はすべて公開前に人間が確認しています。'
+            '原資料の技術的な意味、コード、コマンド、製品用語を保ちながら翻訳します。',
+            '公開前に、セクションの欠落、リンク切れ、コードブロックの書式不備、用語のずれを確認します。誤りが見つかった場合は、黙って削除せず修正します。',
+            'AI ツールが翻訳や一貫性の確認を補助する場合がありますが、公開前に翻訳チームが内容を確認します。'
           ]
         },
         {
           title: '広告と独立性',
           body: [
-            '本サイトはホスティングと開発時間を賄うため、広告（例：Google AdSense）を表示する場合があります。広告主が記事内容に影響を与えることはなく、スポンサー記事や有償レビューは掲載しません。'
+            '本サイトはホスティングと保守費用を賄うため、広告（例：Google AdSense）を表示する場合があります。広告主が翻訳方針に影響を与えることはなく、スポンサー記事や有償レビューは掲載しません。'
           ]
         },
         {

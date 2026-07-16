@@ -1,3 +1,5 @@
+import { SITE_PUBLISHER_NAME, SITE_URL } from '@/lib/site-config';
+
 /**
  * Renders an Article (or TechArticle) JSON-LD blob inside the page body
  * so crawlers can pick up authored metadata. Kept as plain markup —
@@ -11,6 +13,7 @@ export function ArticleJsonLd({
   datePublished,
   dateModified = datePublished,
   authorName,
+  authorType = 'Person',
   authorUrl,
   inLanguage,
   keywords,
@@ -23,6 +26,7 @@ export function ArticleJsonLd({
   datePublished: string;
   dateModified?: string;
   authorName: string;
+  authorType?: 'Person' | 'Organization';
   authorUrl?: string;
   inLanguage: string;
   keywords?: string[];
@@ -38,16 +42,18 @@ export function ArticleJsonLd({
     dateModified,
     inLanguage,
     author: {
-      '@type': 'Person',
+      '@type': authorType,
       name: authorName,
       ...(authorUrl ? { url: authorUrl } : {}),
     },
     publisher: {
       '@type': 'Organization',
-      name: 'UI UX Pro Max Skill',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_PUBLISHER_NAME,
+      url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://ui-ux-pro-max-skill.com/favicon.ico',
+        url: `${SITE_URL}/favicon.ico`,
       },
     },
   };

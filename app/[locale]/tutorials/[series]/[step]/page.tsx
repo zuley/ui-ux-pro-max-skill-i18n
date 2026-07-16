@@ -136,7 +136,8 @@ export default async function TutorialStepPage({
         datePublished={resolved.frontmatter.date}
         dateModified={resolved.frontmatter.updated}
         authorName={author.name}
-        authorUrl={`${SITE_URL}/about`}
+        authorType={author.type}
+        authorUrl={author.url}
         inLanguage={locale}
         keywords={resolved.frontmatter.tags}
         image={resolved.frontmatter.cover ?? DEFAULT_OG_IMAGE_URL}

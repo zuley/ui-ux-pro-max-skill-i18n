@@ -3,7 +3,7 @@ title: "Components से पहले tokens: AI-generated Tailwind को main
 summary: "Generated UI में चालीस class strings के बीच hex values बिखरी रहती हैं—आज सुंदर, शुक्रवार तक maintain करना मुश्किल। समाधान क्रम में है: मॉडल से पहले tokens परिभाषित कराएँ, फिर raw value लिखना हमेशा के लिए मना कर दें।"
 date: 2026-06-11
 tags: [tailwind, design-tokens, design-system]
-author: admin
+author: team
 ---
 
 Generated Tailwind की एक खास failure mode है, जिसका page के दिखने से कोई संबंध नहीं। Landing page माँगिए और सुंदर page मिल जाता है—लेकिन `#6D28D9` चौदह class strings में है, `#6C28D9` (line 212 पर मॉडल की typo देखें) दो और जगह, और वही spacing rhythm तीन sibling sections में `mt-7`, `mt-8` तथा `mt-[30px]` बनकर लिखी है।

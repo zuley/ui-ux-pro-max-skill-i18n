@@ -3,7 +3,13 @@
  * homepage. Gives crawlers enough structured data to understand the site
  * as a software product entity.
  */
-import { absoluteSiteUrl, SITE_URL } from '@/lib/site-config';
+import {
+  absoluteSiteUrl,
+  OFFICIAL_PROJECT_URL,
+  SITE_NAME,
+  SITE_PUBLISHER_NAME,
+  SITE_URL,
+} from '@/lib/site-config';
 
 export function SiteJsonLd({ locale = 'en' }: { locale?: string }) {
   const homepageUrl = absoluteSiteUrl('/', locale);
@@ -15,28 +21,29 @@ export function SiteJsonLd({ locale = 'en' }: { locale?: string }) {
         '@type': 'WebSite',
         '@id': `${homepageUrl}#website`,
         url: homepageUrl,
-        name: 'UI UX Pro Max Skill',
+        name: SITE_NAME,
         description:
-          'Design intelligence for Claude Code, Cursor, Windsurf, and other AI assistants.',
+          'Unofficial multilingual translation of UI UX Pro Max Skill documentation and learning resources.',
         inLanguage: locale,
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        about: { '@id': `${OFFICIAL_PROJECT_URL}#software` },
       },
       {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
-        name: 'UI UX Pro Max Skill',
+        name: SITE_PUBLISHER_NAME,
         url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_URL}/favicon.ico`,
         },
-        sameAs: [
-          'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
-        ],
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': `${SITE_URL}/#software`,
+        '@id': `${OFFICIAL_PROJECT_URL}#software`,
         name: 'UI UX Pro Max Skill',
+        url: OFFICIAL_PROJECT_URL,
+        sameAs: [OFFICIAL_PROJECT_URL],
         applicationCategory: 'DeveloperApplication',
         operatingSystem: 'Any',
         offers: {
