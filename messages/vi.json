@@ -13,7 +13,10 @@
   },
   "announcement": {
     "text": "Trang này là bản dịch đa ngôn ngữ không chính thức của ui-ux-pro-max-skill.",
-    "link": "Kho GitHub chính thức"
+    "link": "Kho GitHub chính thức",
+    "adLabel": "Ưu đãi",
+    "adText": "Qoder: Nhận miễn phí 800 lượt gọi, thêm 2.000 lượt khi mua.",
+    "adCta": "Nhận ngay"
   },
   "navbar": {
     "home": "Trang chủ",

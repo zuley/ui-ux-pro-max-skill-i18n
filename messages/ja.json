@@ -13,7 +13,10 @@
   },
   "announcement": {
     "text": "このサイトは ui-ux-pro-max-skill の非公式多言語翻訳サイトです。",
-    "link": "公式 GitHub リポジトリ"
+    "link": "公式 GitHub リポジトリ",
+    "adLabel": "特典",
+    "adText": "Qoder：800回分を無料で受け取り、購入するとさらに2,000回分。",
+    "adCta": "今すぐ受け取る"
   },
   "navbar": {
     "home": "ホーム",
