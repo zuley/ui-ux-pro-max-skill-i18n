@@ -13,10 +13,7 @@
   },
   "announcement": {
     "text": "This is an unofficial multilingual translation site for ui-ux-pro-max-skill.",
-    "link": "Official GitHub repo",
-    "adLabel": "Perk",
-    "adText": "Qoder: Claim 800 free calls, plus 2,000 more with purchase.",
-    "adCta": "Claim now"
+    "link": "Official GitHub repo"
   },
   "navbar": {
     "home": "Home",

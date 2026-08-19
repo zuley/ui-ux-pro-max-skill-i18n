@@ -6,7 +6,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 import { Rocket } from 'lucide-react';
-import { HomepageSponsorBanner } from '@/components/ads/homepage-sponsor-banner';
 import { docPath } from '@/lib/locale-path';
 import { useReducedMotion } from '@/lib/use-reduced-motion';
 
@@ -23,9 +22,8 @@ export function Hero() {
       <div className="absolute inset-0 aurora-bg opacity-60 dark:opacity-100"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }}></div>
-      <HomepageSponsorBanner />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-44 min-[400px]:pt-40 pb-6 sm:pb-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-[72px] min-[400px]:pt-[88px] sm:pt-28 pb-6 sm:pb-16">
         <div className="flex items-center justify-center gap-1.5 min-[400px]:gap-2 sm:gap-2 mb-3 min-[400px]:mb-4 sm:mb-8 flex-wrap">
           <ToolBadge name="Claude Code" icon={<ClaudeIcon />} />
           <ToolBadge name="Cursor" icon={<CursorIcon />} />
