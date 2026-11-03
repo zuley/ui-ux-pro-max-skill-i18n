@@ -1,3 +1,5 @@
+import siteCopy from '@/lib/site-copy.json';
+import { OFFICIAL_PROJECT_URL, SITE_ISSUES_URL } from '@/lib/site-config';
 type LegalPage = 'privacy' | 'terms' | 'contact' | 'about';
 type LegalLocale = 'en' | 'zh' | 'vi' | 'ja' | 'hi';
 
@@ -88,62 +90,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
       ]
     },
     contact: {
-      title: 'Contact',
-      description: 'Ways to reach the UI UX Pro Max Skill project.',
-      updated: 'Last updated: May 4, 2026',
-      sections: [
+      "title": "Contact",
+      "description": "For translation or website errors, use the site feedback link below. For skill or CLI defects, use the upstream project link. This site does not provide official product support.",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'Project support',
-          body: [
-            'For bug reports, documentation issues, feature requests, or licensing questions, use the GitHub repository linked from the site announcement bar.',
-            'Please include the page URL, expected behavior, actual behavior, and any relevant screenshots or command output when reporting an issue.'
+          "title": "Unofficial multilingual translation",
+          "body": [
+            "An unofficial multilingual translation site for UI UX Pro Max Skill. We translate and organize documentation; the original authors maintain the skill, CLI and datasets. We are not affiliated with or endorsed by the original project.",
+            "For translation or website errors, use the site feedback link below. For skill or CLI defects, use the upstream project link. This site does not provide official product support."
           ]
-        },
-        {
-          title: 'Privacy and policy questions',
-          body: [`For privacy, advertising, or policy questions, email ${supportEmail}.`]
         }
       ]
     },
     about: {
-      title: 'About This Site',
-      description: 'What this unofficial translation site provides and how translated content is maintained.',
-      updated: 'Last updated: July 16, 2026',
-      sections: [
+      "title": "About This Site",
+      "description": "An unofficial multilingual translation site for UI UX Pro Max Skill. We translate and organize documentation; the original authors maintain the skill, CLI and datasets. We are not affiliated with or endorsed by the original project.",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'What this site is',
-          body: [
-            'This is an unofficial multilingual translation and learning companion for UI UX Pro Max, an open-source AI skill that gives coding assistants like Claude practical design intelligence: curated UI styles, color palettes, font pairings, and UX rules they can apply when generating interfaces.',
-            'The site translates and organizes reference docs, articles, and step-by-step tutorials about getting professional, accessible, maintainable UI out of AI coding tools. Content is available in English, Chinese, Japanese, Vietnamese, and Hindi.'
+          "title": "Independent translation maintainers",
+          "body": [
+            "An unofficial multilingual translation site for UI UX Pro Max Skill. We translate and organize documentation; the original authors maintain the skill, CLI and datasets. We are not affiliated with or endorsed by the original project."
           ]
         },
         {
-          title: 'Who runs it',
-          body: [
-            'This site is maintained by an independent translation team. It is not affiliated with or endorsed by the original UI UX Pro Max Skill project.',
-            'The original project and skill are maintained by their original authors; this site only translates and organizes related content.'
+          "title": "Unofficial multilingual translation",
+          "body": [
+            "We distinguish upstream references from site learning material. Where the original publication source cannot be verified, the page says so. AI tools may assist translation and consistency checks; this is not a claim of review or endorsement by the original authors."
           ]
         },
         {
-          title: 'How translations are made',
-          body: [
-            'Content is translated from source material while preserving technical meaning, code, commands, and product terminology.',
-            'Translations are checked for missing sections, broken links, malformed code blocks, and terminology drift before publishing. Errors are corrected rather than quietly removed.',
-            'AI tools may assist with translation and consistency checks, but the translation team reviews content before publication.'
+          "title": "About This Site",
+          "body": [
+            "For translation or website errors, use the site feedback link below. For skill or CLI defects, use the upstream project link. This site does not provide official product support."
           ]
-        },
-        {
-          title: 'Advertising and independence',
-          body: [
-            'The site may show ads (for example through Google AdSense) to cover hosting and maintenance costs. Advertisers have no influence on translation choices; we do not publish sponsored posts or paid reviews.'
-          ]
-        },
-        {
-          title: 'Contact',
-          body: [`Found an error, or want to suggest a topic? Email ${supportEmail}, or open an issue on the GitHub repository linked in the site announcement bar.`]
         }
       ]
     }
+
   },
   hi: {
     privacy: {
@@ -217,62 +202,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
       ]
     },
     contact: {
-      title: 'संपर्क',
-      description: 'UI UX Pro Max Skill project से संपर्क करने के तरीके।',
-      updated: 'अंतिम अपडेट: 4 मई 2026',
-      sections: [
+      "title": "संपर्क",
+      "description": "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'Project support',
-          body: [
-            'Bug report, documentation issue, feature request या licensing question के लिए site के announcement bar में linked GitHub repository इस्तेमाल करें।',
-            'Issue बताते समय page URL, अपेक्षित व्यवहार, वास्तविक व्यवहार और उपयोगी screenshot या command output अवश्य जोड़ें।'
+          "title": "अनौपचारिक बहुभाषी अनुवाद",
+          "body": [
+            "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
+            "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।"
           ]
-        },
-        {
-          title: 'गोपनीयता और policy संबंधी प्रश्न',
-          body: [`गोपनीयता, विज्ञापन या policy से जुड़े प्रश्नों के लिए ${supportEmail} पर email करें।`]
         }
       ]
     },
     about: {
-      title: 'इस site के बारे में',
-      description: 'यह अनौपचारिक translation site क्या उपलब्ध कराती है और translated content कैसे maintain होता है।',
-      updated: 'अंतिम अपडेट: 16 जुलाई 2026',
-      sections: [
+      "title": "इस site के बारे में",
+      "description": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'यह site क्या है',
-          body: [
-            'यह UI UX Pro Max की एक अनौपचारिक बहुभाषी translation और learning companion site है। UI UX Pro Max एक open-source AI skill है, जो Claude जैसे coding assistants को व्यावहारिक design intelligence देती है—चुनी हुई UI styles, color palettes, font pairings और UX rules जिन्हें वे interfaces बनाते समय लागू कर सकते हैं।',
-            'यह site reference docs, articles और चरण-दर-चरण tutorials का अनुवाद और organization करती है, ताकि AI coding tools से professional, accessible और maintainable UI बनाने की जानकारी उपलब्ध हो। Content English, Chinese, Japanese, Vietnamese और Hindi में उपलब्ध है।'
+          "title": "स्वतंत्र अनुवाद अनुरक्षक",
+          "body": [
+            "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।"
           ]
         },
         {
-          title: 'इसे कौन चलाता है',
-          body: [
-            'यह site एक independent translation team द्वारा maintain की जाती है। इसका मूल UI UX Pro Max Skill project से कोई affiliation नहीं है और मूल project ने इसे endorse नहीं किया है।',
-            'मूल project और skill का रखरखाव उनके original authors करते हैं; यह site केवल संबंधित content का अनुवाद और organization करती है।'
+          "title": "अनौपचारिक बहुभाषी अनुवाद",
+          "body": [
+            "हम मूल संदर्भ और साइट की अध्ययन सामग्री अलग रखते हैं। मूल प्रकाशन स्रोत सत्यापित न हो तो पेज पर बताया जाता है। AI अनुवाद और संगति जाँच में सहायता कर सकता है; यह मूल लेखक की समीक्षा या स्वीकृति का दावा नहीं है।"
           ]
         },
         {
-          title: 'अनुवाद कैसे तैयार किए जाते हैं',
-          body: [
-            'Content का अनुवाद source material से किया जाता है, और technical meaning, code, commands तथा product terminology को यथासंभव जस का तस रखा जाता है।',
-            'प्रकाशन से पहले missing sections, broken links, malformed code blocks और terminology drift की जाँच की जाती है। गलती मिलने पर translation को चुपचाप हटाने के बजाय सुधारा जाता है।',
-            'AI tools translation और consistency checks में सहायता कर सकते हैं, लेकिन प्रकाशन से पहले translation team content को review करती है।'
+          "title": "इस site के बारे में",
+          "body": [
+            "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।"
           ]
-        },
-        {
-          title: 'विज्ञापन और स्वतंत्रता',
-          body: [
-            'Hosting और maintenance costs पूरा करने के लिए site पर विज्ञापन (जैसे Google AdSense) दिख सकते हैं। Translation choices पर advertisers का कोई प्रभाव नहीं होता; हम sponsored posts या paid reviews प्रकाशित नहीं करते।'
-          ]
-        },
-        {
-          title: 'संपर्क',
-          body: [`कोई गलती मिली या किसी विषय का सुझाव देना है? ${supportEmail} पर email करें, या site announcement bar में linked GitHub repository पर issue खोलें।`]
         }
       ]
     }
+
   },
   zh: {
     privacy: {
@@ -344,62 +312,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
       ]
     },
     contact: {
-      title: '联系',
-      description: '联系 UI UX Pro Max Skill 项目的方式。',
-      updated: '最后更新：2026 年 5 月 4 日',
-      sections: [
+      "title": "联系",
+      "description": "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: '项目支持',
-          body: [
-            '如需报告 bug、文档问题、功能请求或许可证问题，请使用网站公告栏链接的 GitHub 仓库。',
-            '提交问题时请包含页面 URL、预期行为、实际行为，以及相关截图或命令输出。'
+          "title": "非官方多语言翻译",
+          "body": [
+            "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
+            "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。"
           ]
-        },
-        {
-          title: '隐私与政策问题',
-          body: [`如有隐私、广告或政策问题，请发送邮件到 ${supportEmail}。`]
         }
       ]
     },
     about: {
-      title: '关于本站',
-      description: '介绍这个非官方翻译站提供的内容，以及译文如何维护。',
-      updated: '最后更新：2026 年 7 月 16 日',
-      sections: [
+      "title": "关于本站",
+      "description": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: '这个网站是什么',
-          body: [
-            '本站是 UI UX Pro Max 的非官方多语言翻译与学习站。UI UX Pro Max 是一个开源 AI 技能，为 Claude 等编程助手提供可落地的设计知识：精选的 UI 风格、配色方案、字体配对和 UX 规则，让 AI 在生成界面时有据可依。',
-            '本站翻译并整理参考文档、文章和分步教程，主题是如何让 AI 编程工具产出专业、可访问、可维护的界面。内容提供英文、中文、日文、越南文和印地文五个版本。'
+          "title": "独立翻译维护者",
+          "body": [
+            "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。"
           ]
         },
         {
-          title: '谁在运营',
-          body: [
-            '本站由独立翻译团队维护，与 UI UX Pro Max Skill 原项目不存在隶属关系，也未获得原项目的官方背书。',
-            '原项目及其技能由原作者维护；本站仅负责相关内容的翻译与整理。'
+          "title": "非官方多语言翻译",
+          "body": [
+            "本站区分上游参考资料与本站学习材料；原始发表来源无法核实时，会在页面说明。AI 工具可辅助翻译与一致性检查，这不代表原作者审核或背书。"
           ]
         },
         {
-          title: '译文如何产生',
-          body: [
-            '内容以原始材料为依据进行翻译，并尽量保持技术含义、代码、命令和产品术语不变。',
-            '译文发布前会检查章节缺失、链接失效、代码块格式错误和术语漂移。发现错误时会直接修正，而不是悄悄删除。',
-            'AI 工具可能参与翻译和一致性检查，但内容在发布前会由翻译团队复核。'
+          "title": "关于本站",
+          "body": [
+            "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。"
           ]
-        },
-        {
-          title: '广告与独立性',
-          body: [
-            '本站可能展示广告（例如通过 Google AdSense）以覆盖托管和维护成本。广告主不影响翻译取舍；本站不发布软文或付费测评。'
-          ]
-        },
-        {
-          title: '联系',
-          body: [`发现错误，或想建议选题？发邮件到 ${supportEmail}，或在网站公告栏链接的 GitHub 仓库提 issue。`]
         }
       ]
     }
+
   },
   vi: {
     privacy: {
@@ -473,62 +424,45 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
       ]
     },
     contact: {
-      title: 'Liên hệ',
-      description: 'Các cách liên hệ với dự án UI UX Pro Max Skill.',
-      updated: 'Cập nhật lần cuối: 4 tháng 5, 2026',
-      sections: [
+      "title": "Liên hệ",
+      "description": "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức.",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'Hỗ trợ dự án',
-          body: [
-            'Đối với báo cáo lỗi, vấn đề tài liệu, yêu cầu tính năng hoặc câu hỏi về giấy phép, hãy dùng repository GitHub được liên kết trên thanh thông báo của website.',
-            'Khi báo cáo vấn đề, vui lòng bao gồm URL trang, hành vi mong đợi, hành vi thực tế và ảnh chụp màn hình hoặc đầu ra lệnh liên quan nếu có.'
+          "title": "Bản dịch đa ngôn ngữ không chính thức",
+          "body": [
+            "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
+            "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức."
           ]
-        },
-        {
-          title: 'Câu hỏi về quyền riêng tư và chính sách',
-          body: [`Nếu có câu hỏi về quyền riêng tư, quảng cáo hoặc chính sách, vui lòng gửi email tới ${supportEmail}.`]
         }
       ]
     },
     about: {
-      title: 'Về trang này',
-      description: 'Trang dịch không chính thức này cung cấp gì và nội dung dịch được duy trì như thế nào.',
-      updated: 'Cập nhật lần cuối: 16 tháng 7, 2026',
-      sections: [
+      "title": "Về trang này",
+      "description": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'Trang web này là gì',
-          body: [
-            'Đây là trang dịch đa ngôn ngữ và học tập không chính thức cho UI UX Pro Max — một AI skill mã nguồn mở cung cấp tri thức thiết kế thực dụng cho các trợ lý lập trình như Claude: các style UI tuyển chọn, bảng màu, cặp font và quy tắc UX để AI áp dụng khi sinh giao diện.',
-            'Trang dịch và sắp xếp tài liệu tham khảo, bài viết cùng tutorial từng bước về cách tạo giao diện chuyên nghiệp, dễ tiếp cận và dễ bảo trì bằng công cụ lập trình AI. Nội dung có năm ngôn ngữ: Anh, Trung, Nhật, Việt và Hindi.'
+          "title": "Nhóm duy trì bản dịch độc lập",
+          "body": [
+            "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ."
           ]
         },
         {
-          title: 'Ai vận hành',
-          body: [
-            'Trang được duy trì bởi một nhóm dịch thuật độc lập. Trang không liên kết và không được dự án UI UX Pro Max Skill gốc chứng thực.',
-            'Dự án và skill gốc do các tác giả ban đầu duy trì; trang này chỉ dịch và sắp xếp nội dung liên quan.'
+          "title": "Bản dịch đa ngôn ngữ không chính thức",
+          "body": [
+            "Trang phân biệt tài liệu gốc và nội dung học tập. Nếu chưa xác minh được nguồn xuất bản ban đầu, trang sẽ ghi rõ. AI có thể hỗ trợ dịch và kiểm tra nhất quán; điều đó không có nghĩa tác giả gốc đã duyệt hay bảo trợ."
           ]
         },
         {
-          title: 'Bản dịch được tạo ra thế nào',
-          body: [
-            'Nội dung được dịch từ tài liệu nguồn đồng thời giữ nguyên ý nghĩa kỹ thuật, code, câu lệnh và thuật ngữ sản phẩm.',
-            'Trước khi đăng, bản dịch được kiểm tra phần còn thiếu, liên kết hỏng, code block sai định dạng và thuật ngữ bị lệch. Lỗi sẽ được sửa thay vì âm thầm xóa.',
-            'Công cụ AI có thể hỗ trợ dịch và kiểm tra tính nhất quán, nhưng nhóm dịch thuật sẽ rà soát nội dung trước khi xuất bản.'
+          "title": "Về trang này",
+          "body": [
+            "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức."
           ]
-        },
-        {
-          title: 'Quảng cáo và tính độc lập',
-          body: [
-            'Trang có thể hiển thị quảng cáo (ví dụ qua Google AdSense) để trang trải chi phí hosting và bảo trì. Nhà quảng cáo không ảnh hưởng đến lựa chọn dịch thuật; chúng tôi không đăng bài tài trợ hay review trả phí.'
-          ]
-        },
-        {
-          title: 'Liên hệ',
-          body: [`Phát hiện lỗi, hoặc muốn gợi ý chủ đề? Gửi email tới ${supportEmail}, hoặc mở issue trên repository GitHub được liên kết ở thanh thông báo của trang.`]
         }
       ]
     }
+
   },
   ja: {
     privacy: {
@@ -602,69 +536,58 @@ const copy: Record<LegalLocale, Record<LegalPage, PageCopy>> = {
       ]
     },
     contact: {
-      title: 'お問い合わせ',
-      description: 'UI UX Pro Max Skill プロジェクトへの連絡方法。',
-      updated: '最終更新日: 2026 年 5 月 4 日',
-      sections: [
+      "title": "お問い合わせ",
+      "description": "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'プロジェクトサポート',
-          body: [
-            'バグ報告、ドキュメントの問題、機能リクエスト、ライセンスに関する質問は、サイトの告知バーからリンクされている GitHub リポジトリをご利用ください。',
-            '問題を報告する際は、ページ URL、期待される動作、実際の動作、関連するスクリーンショットやコマンド出力を含めてください。'
+          "title": "非公式多言語翻訳",
+          "body": [
+            "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
+            "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。"
           ]
-        },
-        {
-          title: 'プライバシーおよびポリシーに関する質問',
-          body: [`プライバシー、広告、ポリシーに関する質問は ${supportEmail} までメールでお問い合わせください。`]
         }
       ]
     },
     about: {
-      title: 'このサイトについて',
-      description: 'この非公式翻訳サイトが提供する内容と、翻訳コンテンツの管理方法について。',
-      updated: '最終更新日: 2026 年 7 月 16 日',
-      sections: [
+      "title": "このサイトについて",
+      "description": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
+      "updated": "2026-11-03",
+      "sections": [
         {
-          title: 'このサイトは何か',
-          body: [
-            '本サイトは UI UX Pro Max の非公式な多言語翻訳・学習サイトです。UI UX Pro Max は、Claude などのコーディングアシスタントに実践的なデザイン知識——厳選された UI スタイル、カラーパレット、フォントペアリング、UX ルール——を与えるオープンソースの AI スキルです。',
-            'AI コーディングツールからプロフェッショナルでアクセシブル、保守可能な UI を引き出すためのリファレンスドキュメント、記事、ステップバイステップのチュートリアルを翻訳・整理しています。コンテンツは英語・中国語・日本語・ベトナム語・ヒンディー語で提供しています。'
+          "title": "独立した翻訳管理者",
+          "body": [
+            "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。"
           ]
         },
         {
-          title: '運営者',
-          body: [
-            '本サイトは独立した翻訳チームが運営しています。UI UX Pro Max Skill の原プロジェクトとは提携関係になく、公式な承認も受けていません。',
-            '原プロジェクトとスキルは原作者が管理しており、本サイトは関連コンテンツの翻訳と整理のみを行います。'
+          "title": "非公式多言語翻訳",
+          "body": [
+            "上流の参考資料と当サイトの学習資料を区別します。初出が確認できない場合はページに明記します。AI が翻訳や整合性確認を補助することがありますが、原作者のレビューや承認を意味しません。"
           ]
         },
         {
-          title: '翻訳の作り方',
-          body: [
-            '原資料の技術的な意味、コード、コマンド、製品用語を保ちながら翻訳します。',
-            '公開前に、セクションの欠落、リンク切れ、コードブロックの書式不備、用語のずれを確認します。誤りが見つかった場合は、黙って削除せず修正します。',
-            'AI ツールが翻訳や一貫性の確認を補助する場合がありますが、公開前に翻訳チームが内容を確認します。'
+          "title": "このサイトについて",
+          "body": [
+            "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。"
           ]
-        },
-        {
-          title: '広告と独立性',
-          body: [
-            '本サイトはホスティングと保守費用を賄うため、広告（例：Google AdSense）を表示する場合があります。広告主が翻訳方針に影響を与えることはなく、スポンサー記事や有償レビューは掲載しません。'
-          ]
-        },
-        {
-          title: 'お問い合わせ',
-          body: [`誤りを見つけた、または取り上げてほしいトピックがある場合は、${supportEmail} までメールいただくか、サイト告知バーからリンクされている GitHub リポジトリで issue を作成してください。`]
         }
       ]
     }
+
   }
 };
 
 export function getLegalPageCopy(page: LegalPage, locale: string): PageCopy {
   const legalLocale: LegalLocale =
     locale === 'zh' || locale === 'vi' || locale === 'ja' || locale === 'hi' ? locale : 'en';
-  return copy[legalLocale][page];
+  const pageCopy = copy[legalLocale][page];
+  return {
+    ...pageCopy,
+    description: page === 'privacy' || page === 'terms'
+      ? `${siteCopy[legalLocale].shortIdentity} — ${pageCopy.title}`
+      : page === 'about' ? siteCopy[legalLocale].shortIdentity : pageCopy.description,
+  };
 }
 
 function renderParagraph(paragraph: string) {
@@ -687,6 +610,7 @@ function renderParagraph(paragraph: string) {
 
 export function LegalContent({ page, locale }: { page: LegalPage; locale: string }) {
   const pageCopy = getLegalPageCopy(page, locale);
+  const identity = siteCopy[(locale in siteCopy ? locale : 'en') as keyof typeof siteCopy];
 
   return (
     <main className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -696,6 +620,7 @@ export function LegalContent({ page, locale }: { page: LegalPage; locale: string
           {pageCopy.title}
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">{pageCopy.description}</p>
+        {page === 'privacy' || page === 'terms' ? <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">{identity.identity}</p> : null}
         <div className="mt-8 space-y-8">
           {pageCopy.sections.map((section) => (
             <section key={section.title}>
@@ -709,6 +634,11 @@ export function LegalContent({ page, locale }: { page: LegalPage; locale: string
               </div>
             </section>
           ))}
+        </div>
+        <div className="mt-6 flex flex-wrap gap-4 text-sm underline underline-offset-4">
+          <a href={SITE_ISSUES_URL}>GitHub · {identity.maintainer}</a>
+          <a href={`${OFFICIAL_PROJECT_URL}/issues`}>GitHub · Next Level Builder</a>
+          <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
         </div>
       </article>
     </main>

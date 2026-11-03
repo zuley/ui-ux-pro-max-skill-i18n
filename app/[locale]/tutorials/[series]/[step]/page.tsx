@@ -1,10 +1,12 @@
+import { localizedAlternates } from '@/lib/metadata';
+import { ContentProvenance } from '@/components/content/content-provenance';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import {
   absoluteSiteUrl,
   DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_URL,
-  DEFAULT_TWITTER_IMAGE_URL,
-  SITE_URL
+  DEFAULT_TWITTER_IMAGE_URL
 } from '@/lib/site-config';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -55,22 +57,12 @@ export async function generateMetadata({
     title,
     description: metaDescription,
     keywords: tags.join(', '),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/tutorials/${series}/${step}`,
-        en: `${SITE_URL}/tutorials/${series}/${step}`,
-        zh: `${SITE_URL}/zh/tutorials/${series}/${step}`,
-        vi: `${SITE_URL}/vi/tutorials/${series}/${step}`,
-        ja: `${SITE_URL}/ja/tutorials/${series}/${step}`,
-        hi: `${SITE_URL}/hi/tutorials/${series}/${step}`,
-      },
-    },
+    alternates: localizedAlternates(`/tutorials/${series}/${step}`, locale),
     openGraph: {
       title,
       description: metaDescription,
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale,
       type: 'article',
       publishedTime: date,
@@ -101,7 +93,7 @@ export default async function TutorialStepPage({
   if (!resolved || !resolved.Body) notFound();
 
   const t = await getTranslations({ locale });
-  const author = getAuthor(resolved.frontmatter.author);
+  const author = getAuthor(resolved.frontmatter.author, locale);
   const showFallback = isFallback(typedLocale, resolved.sourceLocale);
   const seriesMeta = (await listSeries()).find((s) => s.slug === series)!;
   const siblings = await getSeriesSteps(typedLocale, series);
@@ -135,6 +127,9 @@ export default async function TutorialStepPage({
         description={resolved.frontmatter.summary}
         datePublished={resolved.frontmatter.date}
         dateModified={resolved.frontmatter.updated}
+        contentKind={resolved.frontmatter.contentKind}
+        sourceUrl={resolved.frontmatter.sourceUrl}
+        sourceAuthor={resolved.frontmatter.sourceAuthor}
         authorName={author.name}
         authorType={author.type}
         authorUrl={author.url}
@@ -204,6 +199,7 @@ export default async function TutorialStepPage({
                 </span>
               </div>
             </header>
+        <ContentProvenance locale={locale} content={resolved.frontmatter} />
 
             <div className="mt-6">
               <Body />

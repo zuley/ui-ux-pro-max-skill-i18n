@@ -5,6 +5,7 @@
  */
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 
+import { resolveCatalogMessages } from '@/lib/upstream-content';
 import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
 import { fontBodyClassName } from '@/lib/fonts';
@@ -41,7 +42,7 @@ export async function RootShell({
   children: React.ReactNode;
 }) {
   const searchIndex = await buildSearchIndex(locale);
-  const clientMessages = pickClientMessages(messages);
+  const clientMessages = pickClientMessages(resolveCatalogMessages(messages));
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">

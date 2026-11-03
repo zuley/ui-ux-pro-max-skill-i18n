@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const SOCIAL_IMAGE_ALT =
-  'UI UX Pro Max Skill — Design Intelligence for AI Assistants';
+  'UI UX Pro Max Skill — Unofficial Multilingual Translation';
 export const SOCIAL_IMAGE_SIZE = { width: 1200, height: 630 };
 
 export function createSocialImage() {
@@ -40,11 +40,11 @@ export function createSocialImage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ display: 'flex', flexDirection: 'column', fontSize: 76, lineHeight: 1.05, fontWeight: 800, letterSpacing: '-3px' }}>
-            <span>Design intelligence</span>
-            <span>for AI assistants</span>
+            <span>Unofficial docs</span>
+            <span>in five languages</span>
           </div>
           <div style={{ display: 'flex', gap: 18, fontSize: 25, color: '#cbd5e1' }}>
-            67 UI styles · 161 palettes · 99 UX guidelines · 16 tech stacks
+            Independent translations · Original project linked
           </div>
         </div>
       </div>

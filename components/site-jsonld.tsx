@@ -1,7 +1,8 @@
+import { UPSTREAM } from '@/lib/upstream-content';
 /**
  * Emits WebSite + Organization + SoftwareApplication JSON-LD on the
- * homepage. Gives crawlers enough structured data to understand the site
- * as a software product entity.
+ * homepage. Keeps this translation website separate from the upstream
+ * software it describes.
  */
 import {
   absoluteSiteUrl,
@@ -52,15 +53,15 @@ export function SiteJsonLd({ locale = 'en' }: { locale?: string }) {
           priceCurrency: 'USD',
         },
         description:
-          'Design intelligence skill for AI coding assistants. Provides 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks, and 161 reasoning rules.',
+          `Upstream design guidance: ${UPSTREAM.counts.styles} searchable styles (${UPSTREAM.counts.activeStyles} active), ${UPSTREAM.counts.palettes} palettes, ${UPSTREAM.counts.fonts} font pairings and ${UPSTREAM.counts.stacks} stacks.`,
         featureList: [
-          '67 UI Styles',
-          '161 Color Palettes',
-          '57 Font Pairings',
-          '99 UX Guidelines',
-          '25 Chart Types',
-          '16 Tech Stacks',
-          '161 Reasoning Rules',
+          `${UPSTREAM.counts.styles} searchable styles (${UPSTREAM.counts.activeStyles} active)`,
+          `${UPSTREAM.counts.palettes} color palettes`,
+          `${UPSTREAM.counts.fonts} font pairings`,
+          `${UPSTREAM.counts.ux} UX guidelines`,
+          `${UPSTREAM.counts.stacks} technology stacks`,
+          `${UPSTREAM.counts.charts} chart types`,
+          `${UPSTREAM.counts.reasoning} industry reasoning profiles`,
         ],
       },
     ],

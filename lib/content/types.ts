@@ -12,6 +12,11 @@ export type BaseFrontmatter = {
   updated?: string; // ISO yyyy-mm-dd; omitted when never revised
   tags: string[];
   author: string; // author id, defaults to "team"
+  contentKind: 'unverified' | 'translation' | 'editorial';
+  reviewedAt: string;
+  sourceUrl?: string;
+  sourceAuthor?: string;
+  sourceRef?: string;
   cover?: string;
   draft?: boolean;
 };

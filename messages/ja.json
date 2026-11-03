@@ -1,9 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max Skill - Agent Skills",
+    "title": "UI UX Pro Max Skill — 非公式多言語翻訳",
     "navTitle": "UI UX Pro Max Skill",
-    "description": "Claude Code のためのデザインインテリジェンス",
-    "metaDescription": "Claude Code、Cursor、Windsurf などの AI アシスタント向けデザイン知識。67 種の UI スタイル、161 の配色、タイポグラフィ、UX ルール、技術スタック指針を収録。",
+    "description": "非公式多言語翻訳",
+    "metaDescription": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AIデザイン, UIスタイル, カラーパレット, フォントペアリング, UXガイドライン, デザインシステムジェネレーター",
     "switchTheme": "テーマを切り替え",
     "switchToLight": "ライトモードに切り替え",
@@ -31,14 +31,14 @@
   },
   "hero": {
     "title1": "UI UX Pro Max Skill",
-    "title2": "デザインインテリジェンス",
-    "subtitle": "UI UX Pro Max Skill - Claude Code、Cursor、Windsurf などの AI アシスタント向け Agent Skills。67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、16 種類の技術スタック、161 個の推論ルールで、AI が美しいインターフェースを構築できるよう支援します。",
+    "title2": "非公式多言語翻訳",
+    "subtitle": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
     "btnHow": "はじめる",
     "btnDemos": "クイックスタート"
   },
   "quickStart": {
     "title": "UI UX Pro Max Skill クイックスタート",
-    "subtitle": "次の手順に沿って、プロンプトから数分で完全なデザインシステムを作成できます。",
+    "subtitle": "上流スキルを導入し、レビュー用のデザインシステムを生成します。",
     "step1": {
       "title": "1) Skill をインストール",
       "body": "Claude Code 内で UI UX Pro Max Skill を直接インストールします。",
@@ -114,26 +114,26 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max Skill は、Claude Code、Cursor、Windsurf、GitHub Copilot など 18 種類以上の主要 AI コーディングアシスタントに接続できる、オープンで検索可能なデザインインテリジェンス層です。モデルに毎回ゼロからデザインを発想させるのではなく、67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、161 個の業界別推論ルールという、厳選されたナレッジベースをモデルに提供します。結果として、「いかにも AI が作った」雰囲気を脱し、意図が感じられ、アクセシビリティを満たすインターフェースが得られます。",
+      "overview": "上流のリリースには検索可能な [[styles]] スタイル（有効 [[activeStyles]]、補足 [[supplementalStyles]]）、[[palettes]] 配色、[[fonts]] フォントペア、[[ux]] UX 指針、[[stacks]] 技術スタックがあります。これらは当サイトの制作物ではなく、上流のデータです。",
       "problem": {
         "title": "AI コーディングにデザインインテリジェンスが必要な理由",
         "lead": "現代の AI アシスタントはコンポーネントコードの生成は得意ですが、UI デザインの「センス」は安定しません。文脈がないと、まったく違うプロダクトに対しても似たレイアウトと配色を量産しがちです。医療ダッシュボードが暗号資産アプリのように見えたり、子ども向けアプリにフィンテック調のグレーが使われたり。UI UX Pro Max Skill は、モデルの選択を「根拠があり、業界を理解した」デザイン知識に固定して、このギャップを埋めます。",
         "points": [
           {
             "title": "汎用テンプレート",
-            "body": "文脈不足だと、中央寄せヒーロー + 3 つの特徴カード + CTA に落ち着きがちです。24 種類のランディングパターンと 67 種類のスタイルがあれば、モデルは案件ごとに本当に選択肢を比較できます。"
+            "body": "文脈不足だと、中央寄せヒーロー + 3 つの特徴カード + CTA に落ち着きがちです。[[landing]] 種類のランディングパターンと [[styles]] 種類のスタイルがあれば、モデルは案件ごとに本当に選択肢を比較できます。"
           },
           {
             "title": "業界の文脈の欠如",
-            "body": "フィンテックダッシュボードとウェルネスアプリでは、配色・密度・モーションの要件が大きく異なります。161 個の業界別推論ルールにより、領域に馴染むパレットとパターンが選ばれます。"
+            "body": "フィンテックダッシュボードとウェルネスアプリでは、配色・密度・モーションの要件が大きく異なります。[[palettes]] 個の業界別推論ルールにより、領域に馴染むパレットとパターンが選ばれます。"
           },
           {
             "title": "見えにくいアンチパターン",
-            "body": "AI アシスタントはコントラスト不足、読みづらいフォントサイズ、モバイルで破綻する操作を平然と生成します。99 個の UX ガイドラインと明示的なアンチパターン一覧で、回避すべきものを明確化します。"
+            "body": "AI アシスタントはコントラスト不足、読みづらいフォントサイズ、モバイルで破綻する操作を平然と生成します。[[ux]] 個の UX ガイドラインと明示的なアンチパターン一覧で、回避すべきものを明確化します。"
           },
           {
             "title": "セッション間のブレ",
-            "body": "永続化された設計システムがないと、対話ごとに方針が漂います。--persist でリポジトリに MASTER.md を書き出せば、以降のすべてのセッションがそれを参照し、トークン・タイポグラフィ・スペーシングを固定できます。"
+            "body": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
           }
         ]
       },
@@ -143,15 +143,15 @@
         "items": [
           {
             "role": "個人開発者・インディーハッカー",
-            "body": "速度を求め、専任デザイナーはおらず、すべてが Tailwind スターターのように見えるのは避けたい。Skill は 1 コマンドで識別性のあるビジュアル基盤を提供します。"
+            "body": "提案を出発点として実際の UI を確認してください。フレームワークの版、内容、アクセシビリティ要件で結果は変わります。"
           },
           {
             "role": "デザインエンジニアリングチーム",
-            "body": "トークン、密度、モーションに既存の方針があります。--persist の上書きが尊重されるため、その方針を AI セッション全体に行き渡らせられます。"
+            "body": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
           },
           {
             "role": "受託・コンサルティング会社",
-            "body": "業界をまたいで UI を納品する場合、161 個の業界別推論ルールとページ単位の上書きで、領域ごとの出発点を再構築せずに素早く立ち上げられます。"
+            "body": "業界をまたいで UI を納品する場合、[[palettes]] 個の業界別推論ルールとページ単位の上書きで、領域ごとの出発点を再構築せずに素早く立ち上げられます。"
           },
           {
             "role": "OSS メンテナ",
@@ -161,7 +161,7 @@
       },
       "architecture": {
         "title": "仕組みのあらまし",
-        "body": "UI リクエストを送ると、AI アシスタントが Skill をロードし、Skill がリクエストをプロダクトタイプと意図に解析し、5 つのデザイン領域のナレッジベースを並列検索し、業界別推論ルールで順位付けとアンチパターン除外を行い、構造化されたデザインシステムをアシスタントに渡してコードに反映します。すべてローカルで完結し、外部サービスにデータは送られません。",
+        "body": "上流の Python 生成器は内蔵の製品、スタイル、配色、ランディング、フォントのデータを検索し、業種ルールで提案をまとめます。AI 助手がその出力を使って UI を実装します。処理時間はクエリと環境に依存します。 内蔵 Python 検索はローカルで動作します。AI 助手は設定に応じてプロンプト、ファイル、検索結果を提供元へ送信する場合があります。CLI の導入や更新確認には通信が発生することがあります。",
         "labels": {
           "you": "あなた",
           "assistant": "AI アシスタント",
@@ -185,31 +185,31 @@
         "intro": "以下の各項目は独立して整備されたデータセットで、推論エンジンが検索・組み合わせを行います。すべてが揃うことで、テンプレ感ではなく手作り感のあるデザインシステムをモデルが生成できる素材が揃います。",
         "items": [
           {
-            "title": "67 種類の UI スタイル",
-            "desc": "Glassmorphism から Claymorphism、Minimalism から Brutalism、AI-Native UI、Bento Grid、Dark Mode、Aurora、Skeuomorphism、Neumorphism、Flat 2.0 など。各スタイルに説明、適用場面、視覚効果、スタック互換性を含みます。"
+            "title": "[[styles]] 種類の UI スタイル",
+            "desc": "通常の推奨は [[activeStyles]] の有効スタイルを使用します。[[supplementalStyles]] の補足スタイルは明示的な派生形の要求に対応し、[[deprecatedStyles]] の廃止項目は通常の順位付けから除外されます。ランディング構造は別のデータです。"
           },
           {
-            "title": "161 種類のカラーパレット",
-            "desc": "SaaS、E コマース、医療、金融、ビューティー、ゲーム、教育など 161 のプロダクトタイプに対応した業界別パレット。アクセシビリティを満たす対比、ダークモード変種、意図する雰囲気を含みます。"
+            "title": "[[palettes]] 種類のカラーパレット",
+            "desc": "上流の配色は製品別の提案です。実装時にコントラストと明暗テーマのトークンを確認し、全項目に両テーマが揃っているとは想定しないでください。"
           },
           {
-            "title": "57 種類のフォントペアリング",
-            "desc": "import 文・推奨ウェイト・行送り比率・display から caption までの階層を含む、厳選された Google Fonts の組み合わせ。"
+            "title": "[[fonts]] 種類のフォントペアリング",
+            "desc": "上流カタログは見出しと本文の組合せ、用途、フォントリンクを提供します。対象言語の文字対応、ライセンス、実表示を確認してください。"
           },
           {
             "title": "25 種類のチャート",
             "desc": "ダッシュボードと分析向けの可視化推奨。Recharts、Visx、Chart.js、ECharts などのライブラリ提案と、スクリーンリーダー・色覚多様性に配慮した注意点付き。"
           },
           {
-            "title": "16 種類の技術スタック",
-            "desc": "React、Next.js、Astro、Vue、Nuxt.js、Nuxt UI、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind、shadcn/ui、Jetpack Compose、Angular、Laravel、Three.js 向けのフレームワーク別ガイド。慣用パターンと推奨ライブラリを含みます。"
+            "title": "[[stacks]] 種類の技術スタック",
+            "desc": "React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML + Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, Three.js, JavaFX, WPF, WinUI 3, UWP, Avalonia, Uno Platform."
           },
           {
-            "title": "99 個の UX ガイドライン",
+            "title": "[[ux]] 個の UX ガイドライン",
             "desc": "フォーム、ナビゲーション、空状態、エラー処理、ローディング、モバイルジェスチャ、モーション設定、WCAG 準拠などのベストプラクティス、アンチパターン修正、アクセシビリティルール。"
           },
           {
-            "title": "161 個の推論ルール",
+            "title": "[[palettes]] 個の推論ルール",
             "desc": "プロダクトタイプをパターン、スタイル優先度、カラーのムード、タイポグラフィ、効果、アンチパターンに対応付ける業界別ルール。「これは医療アプリだから彩度を下げ密度は中程度に」と推論できるのは、このルール群のおかげです。"
           }
         ]
@@ -231,7 +231,7 @@
           {
             "approach": "Figma UI キット",
             "strengths": "ビジュアル再現性が高く、人間デザイナーとの連携に最適。",
-            "limits": "コードリポジトリの外。AI アシスタントは直接 Figma を読めない。コードへの翻訳が必要。"
+            "limits": "設計からコードへの連携が必要で、対応は助手やツールに依存します。"
           },
           {
             "approach": "デザイントークン",
@@ -252,85 +252,173 @@
       },
       "shouldYouUse": {
         "title": "あなたに合うか",
-        "subtitle": "当てはまる項目にチェック。3 つ以上なら、導入の費用対効果は明確です。",
+        "subtitle": "上流スキルを試すか検討するための質問です。",
         "items": [
-          { "id": "ai-coding", "label": "AI コーディングアシスタント (Claude Code、Cursor、Windsurf、Copilot 等) を週に数回以上使う。" },
-          { "id": "ship-ui", "label": "ランディング、ダッシュボード、モバイル、管理画面など、ユーザー向け UI を継続的に出荷している。" },
-          { "id": "no-designer", "label": "すべての案件に専任デザイナーがついていない、または自分がデザインエンジニアである。" },
-          { "id": "generic-output", "label": "AI が作る UI が、異なるプロダクトでも似通って見えると感じる。" },
-          { "id": "want-consistency", "label": "セッションごとに方針をやり直すのではなく、一貫した設計判断を維持したい。" },
-          { "id": "industry-fit", "label": "扱うプロダクトが複数業界 (SaaS、医療、金融、EC) にまたがり、それぞれに自然に馴染ませたい。" },
-          { "id": "tokens-already", "label": "デザイントークンや shadcn/ui を既に使っていて、その上に推論レイヤーを加えたい。" }
+          {
+            "id": "ai-coding",
+            "label": "AI コーディングアシスタント (Claude Code、Cursor、Windsurf、Copilot 等) を週に数回以上使う。"
+          },
+          {
+            "id": "ship-ui",
+            "label": "ランディング、ダッシュボード、モバイル、管理画面など、ユーザー向け UI を継続的に出荷している。"
+          },
+          {
+            "id": "no-designer",
+            "label": "すべての案件に専任デザイナーがついていない、または自分がデザインエンジニアである。"
+          },
+          {
+            "id": "generic-output",
+            "label": "AI が作る UI が、異なるプロダクトでも似通って見えると感じる。"
+          },
+          {
+            "id": "want-consistency",
+            "label": "セッションごとに方針をやり直すのではなく、一貫した設計判断を維持したい。"
+          },
+          {
+            "id": "industry-fit",
+            "label": "扱うプロダクトが複数業界 (SaaS、医療、金融、EC) にまたがり、それぞれに自然に馴染ませたい。"
+          },
+          {
+            "id": "tokens-already",
+            "label": "デザイントークンや shadcn/ui を既に使っていて、その上に推論レイヤーを加えたい。"
+          }
         ]
       },
       "next": "次へ: How It Works で Design System Generator がリクエスト時に何をしているか確認するか、すぐにインストールガイドへ進んでください。"
     },
     "dsg": {
-      "overview": "Design System Generator は UI UX Pro Max Skill の中核です。AI アシスタントが UI リクエストを検出すると、Generator は意図を解析し、5 つのデザイン領域を並列検索し、業界別推論ルールを適用して、構造化されたデザインシステムをアシスタントへ渡します。すべてローカルで動作し、数秒で完了します。",
+      "overview": "上流の Python 生成器は内蔵の製品、スタイル、配色、ランディング、フォントのデータを検索し、業種ルールで提案をまとめます。AI 助手がその出力を使って UI を実装します。処理時間はクエリと環境に依存します。",
       "primer": {
         "title": "ここでいう「デザインシステム」とは",
         "lead": "ここでいうデザインシステムは 500 ページの Figma ライブラリではなく、機械可読でコンパクトな「意思決定の束」です。どのレイアウト、どの配色、どのフォント、どのモーション、どのインタラクションを推し、どのアンチパターンを避けるか。Generator はリクエストごとにこの束を 1 つ、プロダクトタイプと意図に合わせて生成します。",
         "items": [
-          { "title": "Pattern", "body": "構造的な選択。例: 「Bento Grid + 粘着ナビ」「データ密集の管理画面」「モバイルファーストのカード列」。24 種類のパターンから選定。" },
-          { "title": "Style", "body": "視覚処理。Glassmorphism、Brutalism、Minimalism、Neumorphism、Claymorphism、Aurora、AI-Native など 67 種から選定。各スタイル固有の効果語彙を持ちます。" },
-          { "title": "色とタイポグラフィ", "body": "161 の配色と 57 のフォントペアリングから、業界に適した組み合わせを選択。対比配対、推奨ウェイト、行高などのアクセシビリティ情報を含みます。" },
-          { "title": "効果・モーション・マイクロインタラクション", "body": "シャドウスケール、ぼかし、グラデーション方向、ホバー遷移、ページ遷移、prefers-reduced-motion 時の代替。" },
-          { "title": "アンチパターン", "body": "そのプロダクトタイプで避けるべき事項。例: 医療で高彩度の赤、金融で奇抜なフォント、管理ツールで重いモーダル積層。" }
+          {
+            "title": "Pattern",
+            "body": "構造的な選択。例: 「Bento Grid + 粘着ナビ」「データ密集の管理画面」「モバイルファーストのカード列」。[[landing]] 種類のパターンから選定。"
+          },
+          {
+            "title": "Style",
+            "body": "通常の推奨は [[activeStyles]] の有効スタイルを使用します。[[supplementalStyles]] の補足スタイルは明示的な派生形の要求に対応し、[[deprecatedStyles]] の廃止項目は通常の順位付けから除外されます。ランディング構造は別のデータです。"
+          },
+          {
+            "title": "色とタイポグラフィ",
+            "body": "上流の配色は製品別の提案です。実装時にコントラストと明暗テーマのトークンを確認し、全項目に両テーマが揃っているとは想定しないでください。 上流カタログは見出しと本文の組合せ、用途、フォントリンクを提供します。対象言語の文字対応、ライセンス、実表示を確認してください。"
+          },
+          {
+            "title": "効果・モーション・マイクロインタラクション",
+            "body": "シャドウスケール、ぼかし、グラデーション方向、ホバー遷移、ページ遷移、prefers-reduced-motion 時の代替。"
+          },
+          {
+            "title": "アンチパターン",
+            "body": "そのプロダクトタイプで避けるべき事項。例: 医療で高彩度の赤、金融で奇抜なフォント、管理ツールで重いモーダル積層。"
+          }
         ]
       },
       "workflow": {
         "title": "デザインシステム生成ワークフロー",
         "subtitle": "プロンプトから、推論・アンチパターン・実装ガイド付きの専用デザインシステムへ。",
         "steps": [
-          { "num": "1", "title": "ユーザーリクエスト", "desc": "UI/UX タスクを依頼します。プロダクトタイプ、業界、スタイル、対象ページを含めるほど結果は鋭くなります。" },
-          { "num": "2", "title": "多領域検索", "desc": "プロダクト・スタイル・色・ランディング・タイポ・UX を並列検索。各領域がメタデータ付き候補を返します。" },
-          { "num": "3", "title": "推論エンジン", "desc": "161 個の業界別ルールで候補を順位付けし、領域間の矛盾を解消し、推定業界のアンチパターンを除外します。" },
-          { "num": "4", "title": "デザインシステム出力", "desc": "Pattern・Style・色・タイポ・効果・アンチパターン・納品前チェックを返却。AI アシスタントはそれを正としてコードを書きます。" }
+          {
+            "num": "1",
+            "title": "ユーザーリクエスト",
+            "desc": "UI/UX タスクを依頼します。プロダクトタイプ、業界、スタイル、対象ページを含めるほど結果は鋭くなります。"
+          },
+          {
+            "num": "2",
+            "title": "多領域検索",
+            "desc": "上流の Python 生成器は内蔵の製品、スタイル、配色、ランディング、フォントのデータを検索し、業種ルールで提案をまとめます。AI 助手がその出力を使って UI を実装します。処理時間はクエリと環境に依存します。"
+          },
+          {
+            "num": "3",
+            "title": "推論エンジン",
+            "desc": "業種ルールは構造、スタイルの優先度、関連提案の選択に使われます。アンチパターンは確認用の指針で、コードの正しさやアクセシビリティを証明しません。"
+          },
+          {
+            "num": "4",
+            "title": "デザインシステム出力",
+            "desc": "Pattern・Style・色・タイポ・効果・アンチパターン・納品前チェックを返却。AI アシスタントはそれを正としてコードを書きます。"
+          }
         ]
       },
       "deepDive": {
         "title": "各ステージの実態",
         "subtitle": "内部に興味があれば、詳細版は以下のとおりです。",
         "stages": [
-          { "label": "Stage 1 — リクエストの解析", "body": "プロンプトから 4 つの信号を抽出: プロダクトタイプ (SaaS、EC、医療、金融、ポートフォリオ等)、意図 (新規・刷新・修正・最適化)、明示的なスタイル指定 (Glassmorphism、Dark Mode)、対象面 (ランディング、ダッシュボード、モバイル画面、単一コンポーネント)。欠ける信号は「安全かつアクセシブル」を優先するデフォルトに帰着します。" },
-          { "label": "Stage 2 — 並列検索", "body": "products、styles、colors、landings、typography の 5 検索が同梱 CSV データセットに並列実行。文字列類似度 + 構造化メタデータで Top-N 候補を返します。開発機では通常 1 秒未満。" },
-          { "label": "Stage 3 — 推論と矛盾解消", "body": "161 個の推論ルールがフィルタと同点決着の両方を担います。例: 「医療 + ダッシュボード → 寒色を優先、Inter または IBM Plex Sans を優先、Neumorphism を抑制、Brutalism を抑制、中密度を優先」。既知アンチパターンに該当する組み合わせは破棄。" },
-          { "label": "Stage 4 — 出力の組み立て", "body": "勝者候補を 1 つのデザインシステムに統合し、JSON (プログラム用) または Markdown (AI 直接消費用) に直列化。--persist を付ければ同じ束を design-system/MASTER.md へ書き出し、以降のセッションは再生成不要で読めます。" }
+          {
+            "label": "Stage 1 — リクエストの解析",
+            "body": "クエリから製品候補と業種ルールを検索します。曖昧な形容詞だけでなく製品、画面、制約を記述します。"
+          },
+          {
+            "label": "段階 2 — カタログ検索",
+            "body": "Python は BM25 に基づいて内蔵 CSV を検索します。ローカル検索であり、ウェブ検索や並列実行の保証ではありません。"
+          },
+          {
+            "label": "Stage 3 — 推論と矛盾解消",
+            "body": "業種ルールは構造、スタイルの優先度、関連提案の選択に使われます。アンチパターンは確認用の指針で、コードの正しさやアクセシビリティを証明しません。"
+          },
+          {
+            "label": "Stage 4 — 出力の組み立て",
+            "body": "デザインシステムの既定出力は ASCII です。Markdown は -f markdown、JSON は --json を使います。出力はレビュー用の提案であり、生成 UI のアクセシビリティを保証しません。"
+          }
         ]
       },
       "anatomy": {
         "title": "出力の構造",
-        "body": "design-system/MASTER.md の凝縮イメージ。実ファイルはこれより冗長ですが、形は同じです。",
-        "exampleTitle": "design-system/MASTER.md (抜粋)",
+        "body": "以下は学習用の例示で、生成器の実行記録や検証済みの本番成果ではありません。実際のプロジェクトでコントラスト、配置、操作を確認してください。",
+        "exampleTitle": "説明用の抜粋",
         "exampleCode": "# Design System\n\nプロダクト: SaaS 分析ダッシュボード\n業界:      B2B フィンテック\n生成日:    2026-01-15\n\n## Pattern\nデータ密集レイアウト — 粘着サイドバー、12 列グリッド、表頭固定。\n参照: landing/data-dashboard-sticky-sidebar\n\n## Style\nミニマリズム主体、ホバーカードに控えめなガラス質感。\n理由: フィンテックのアンチパターンは高彩度ヒーローグラデを禁止。\n      ミニマリズム + 控えめガラスで信頼感を保つ。\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald、KPI 差分のみ控えめに)\nWCAG AA 検査済み。\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / 行高 1.55\n数値:    IBM Plex Mono (表組数値)\n\n## Effects\nシャドウ階調: 0/1/2/4 のみ。深いシャドウは避ける。\nモーション:  150-200ms ease-out。prefers-reduced-motion を尊重。\n\n## 避けるアンチパターン\n- 赤をブランド色にしない (損失を連想)\n- ダッシュボードの自動回転カルーセル禁止\n- 一括操作を hover のみで隠さない\n\n## 納品前チェック\n- [ ] チャート配色は色覚多様性に配慮\n- [ ] 表組数値は等幅\n- [ ] 空状態にはイラストと CTA\n- [ ] ローディングはスケルトン中心\n"
       },
       "persist": {
         "title": "デザインシステムを永続化",
-        "body": "既定では生成内容は現在の AI セッション内にのみ存在します。--persist を付けると束はプロジェクト直下の design-system/MASTER.md に書き出され、以降このプロジェクトのすべてのセッションが先に MASTER.md を読み、その判断に従います。ボタン 1 つを作り直す場面でもプロジェクトのスペーシング階調や色トークンが維持されます。",
+        "body": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。",
         "scopes": {
           "title": "プロジェクトレベル vs ページレベル",
-          "body": "MASTER.md はプロジェクト全体に効く判断を記録します。ある 1 ページだけ規則を破りたいとき (キャンペーンページや印刷用請求書ビューなど) は、--page [name] で design-system/pages/[name].md に上書きを書き出します。当該ページを対象とする AI セッションは 2 ファイルを合成し、衝突時はページファイルが勝ちます。",
+          "body": "--persist -p \"Acme\" --page pricing では design-system/acme/pages/pricing.md が作成され、既存の主ファイルは保持されます。対象ページではページ別ルールを優先するよう助手に伝え、使用前に内容を確認してください。",
           "commandTitle": "永続化コマンド",
-          "commands": "# プロジェクト: design-system/MASTER.md に書き込み\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"SaaS 分析ダッシュボード\" --design-system --persist -p \"Acme\"\n\n# ページ上書き: design-system/pages/pricing.md に書き込み\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"遊び心のある料金ページ、CTA は強調\" --design-system \\\n  --persist -p \"Acme\" --page \"pricing\""
+          "commands": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"SaaS dashboard\" --design-system --persist -p \"Acme\" --output-dir .\n\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \"pricing page\" --design-system --persist -p \"Acme\" --page pricing --output-dir ."
         }
       },
       "tuning": {
         "title": "出力を調整する",
-        "subtitle": "最初の生成が惜しければ、書き直しの前に 3 つの調整を試してください。",
+        "subtitle": "推奨の調整には --design-system と --variance、--motion、--density（1–10）を使います。既存アプリのテーマ変更は、フレームワークの版と既存トークンを確認し、部品を少しずつ変更して各テーマを検証します。",
         "items": [
-          { "title": "明示的なスタイルキーワードを追加", "body": "「glassmorphism」「brutalist」「bento grid」「aurora」などを追記すると、他領域のルールを上書きせずにスタイル検索が偏寄せされます。" },
-          { "title": "業界を明示する", "body": "「医療」「金融」「EC」「ウェルネス」「ゲーム」のような語が推論ルールを固定します。具体的であるほどアンチパターン除外が確信を持って動きます。" },
-          { "title": "対象面を指定する", "body": "「ランディング」「ダッシュボード」「モバイル画面」「料金ページ」「設定ページ」のような語がパターンサブセットと密度を決めます。" },
-          { "title": "1 ページだけは --page で対処", "body": "MASTER.md の 9 割が合っているなら、ページレベルの上書きを使い、全体を再生成しないでください。" }
+          {
+            "title": "明示的なスタイルキーワードを追加",
+            "body": "「glassmorphism」「brutalist」「bento grid」「aurora」などを追記すると、他領域のルールを上書きせずにスタイル検索が偏寄せされます。"
+          },
+          {
+            "title": "業界を明示する",
+            "body": "「医療」「金融」「EC」「ウェルネス」「ゲーム」のような語が推論ルールを固定します。具体的であるほどアンチパターン除外が確信を持って動きます。"
+          },
+          {
+            "title": "対象面を指定する",
+            "body": "「ランディング」「ダッシュボード」「モバイル画面」「料金ページ」「設定ページ」のような語がパターンサブセットと密度を決めます。"
+          },
+          {
+            "title": "1 ページだけは --page で対処",
+            "body": "--persist -p \"Acme\" --page pricing では design-system/acme/pages/pricing.md が作成され、既存の主ファイルは保持されます。対象ページではページ別ルールを優先するよう助手に伝え、使用前に内容を確認してください。"
+          }
         ]
       },
       "troubleshooting": {
         "title": "よくある出力上の問題",
         "items": [
-          { "q": "出力が「汎用的」に感じる。", "a": "プロンプトに業界または面の信号が欠けています。「ダッシュボードを作って」ではなく「密な表のあるフィンテック分析ダッシュボード」のように。" },
-          { "q": "配色がブランドと合わない。", "a": "初回 --persist 後に design-system/MASTER.md の Colors を手動でブランド色に置き換えてください。以降は固定トークンとして扱われます。" },
-          { "q": "異なるプロダクトで同じスタイルばかり出る。", "a": "原因は通常 2 つ: 業界を明示していない、もしくは過去のプロジェクトの MASTER.md が残っている。新プロジェクト前に削除・改名してください。" },
-          { "q": "気にしないアンチパターンが常に指摘される。", "a": "アンチパターンは助言扱いです。無視するか、MASTER.md を編集して該当行を削除すれば、再度 --persist しない限り戻りません。" }
+          {
+            "q": "出力が「汎用的」に感じる。",
+            "a": "プロンプトに業界または面の信号が欠けています。「ダッシュボードを作って」ではなく「密な表のあるフィンテック分析ダッシュボード」のように。"
+          },
+          {
+            "q": "配色がブランドと合わない。",
+            "a": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
+          },
+          {
+            "q": "異なるプロダクトで同じスタイルばかり出る。",
+            "a": "生成器はクエリと同梱データから提案を選び、既存の MASTER.md は読みません。業種、対象ユーザー、画面の要件を具体的に指定してください。AI アシスタントが古いデザインを適用する場合は、読み込んでいるプロジェクトファイルを確認し、使うマスターとページ規則を明示してください。生成器の提案を変えるために設計ファイルを削除しないでください。"
+          },
+          {
+            "q": "気にしないアンチパターンが常に指摘される。",
+            "a": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
+          }
         ]
       },
       "next": "次へ: インストールガイドで AI アシスタントを選び、Skill をローカルで動かしましょう。"
@@ -339,13 +427,13 @@
       "overview": "ワークフローに合うインストール方法を選び、AI アシスタントにデザインインテリジェンスを組み込みます。",
       "tabs": {
         "cliInstall": "CLI インストール (推奨)",
-        "manualInstall": "手動インストール",
+        "manualInstall": "生成済みスキルのコピー（Claude Code の例）",
         "prerequisites": "前提条件"
       },
       "cliInstall": {
         "step1": {
           "title": "CLI ツールをグローバルにインストール",
-          "code": "npm install -g uipro-cli"
+          "code": "npm install -g ui-ux-pro-max-cli@2.15.0"
         },
         "step2": {
           "title": "プロジェクトディレクトリへ移動",
@@ -354,34 +442,36 @@
         "step3": {
           "title": "AI アシスタント向けに Skill をインストール",
           "commands": [
-            "uipro init --ai claude        # Claude Code",
-            "uipro init --ai cursor        # Cursor",
-            "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity",
-            "uipro init --ai copilot       # GitHub Copilot",
-            "uipro init --ai kiro          # Kiro",
-            "uipro init --ai codex         # Codex CLI",
-            "uipro init --ai qoder         # Qoder",
-            "uipro init --ai roocode       # Roo Code",
-            "uipro init --ai gemini        # Gemini CLI",
-            "uipro init --ai trae          # Trae",
-            "uipro init --ai opencode      # OpenCode",
-            "uipro init --ai continue      # Continue",
-            "uipro init --ai codebuddy     # CodeBuddy",
-            "uipro init --ai droid         # Droid (Factory)",
-            "uipro init --ai kilocode      # KiloCode",
-            "uipro init --ai warp          # Warp",
-            "uipro init --ai augment       # Augment",
-            "uipro init --ai all           # すべての AI アシスタント"
+            "uipro init --ai claude",
+            "uipro init --ai cursor",
+            "uipro init --ai windsurf",
+            "uipro init --ai antigravity",
+            "uipro init --ai copilot",
+            "uipro init --ai kiro",
+            "uipro init --ai codex",
+            "uipro init --ai qoder",
+            "uipro init --ai roocode",
+            "uipro init --ai gemini",
+            "uipro init --ai trae",
+            "uipro init --ai opencode",
+            "uipro init --ai continue",
+            "uipro init --ai codebuddy",
+            "uipro init --ai droid",
+            "uipro init --ai kilocode",
+            "uipro init --ai warp",
+            "uipro init --ai augment",
+            "uipro init --ai codewhale",
+            "uipro init --ai universal",
+            "uipro init --ai all"
           ]
         }
       },
       "manualInstall": {
-        "description": "手動インストールを好む場合は、対応するフォルダをプロジェクトにコピーするだけです:",
+        "description": "準備用のコンピューターには Node.js、npm とパッケージへのアクセスが必要です。コピー先には Python 3 と対象の AI アシスタントが必要ですが、npm は不要です。下表はパスの参考情報であり、ダウンロード可能なインストールファイルではありません。",
         "table": {
           "header": {
             "assistant": "AI アシスタント",
-            "folders": "コピーするフォルダ"
+            "folders": "生成されるスキルの場所"
           },
           "rows": [
             {
@@ -390,18 +480,33 @@
             },
             {
               "assistant": "Cursor",
-              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".cursor/skills/ui-ux-pro-max/"
             },
             {
               "assistant": "Windsurf",
-              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".windsurf/skills/ui-ux-pro-max/"
             },
             {
-              "assistant": "Antigravity",
-              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "assistant": "Antigravity / Codex",
+              "folders": ".agents/skills/ui-ux-pro-max/"
             }
           ]
-        }
+        },
+        "steps": [
+          {
+            "text": "準備用コンピューターで空の一時フォルダーを作成し、そこへ移動します。下のバージョン固定コマンドでプロジェクト用の Claude Code スキルを生成します。",
+            "code": "npm exec --yes --package=ui-ux-pro-max-cli@2.15.0 -- uipro init --ai claude"
+          },
+          {
+            "text": "生成された .claude/skills/ui-ux-pro-max/ 全体を、SKILL.md、data/、scripts/ を含めてコピー先プロジェクトの同じ相対パスへ配置します。隠しフォルダーも転送し、既存のインストールを置き換える前にバックアップしてください。",
+            "code": ""
+          },
+          {
+            "text": "コピー先プロジェクトのルートで下の Python コマンドを実行します（Windows では環境に応じて python3 を python に変更）。Claude Code でプロジェクトを開き、UI UX Pro Max の使用を明示します。検索成功はデータとスクリプトの確認であり、アシスタントによるスキル読み込みの証明ではありません。",
+            "code": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"accessible\" --stack html-tailwind"
+          }
+        ],
+        "otherAssistants": "別のアシスタントでは、CLI 一覧の --ai 値を使って別の空フォルダーに生成し、すべての生成ファイルを元の相対パスのまま転送します。コマンドやワークフローのファイルも生成するプラットフォームがあります。各アシスタントの読み込み手順を確認してください。下表は記載されたプラットフォームのみ対象です。"
       },
       "prerequisites": {
         "warning": "⚠️ 前提条件",
@@ -414,57 +519,103 @@
       "otherCommands": {
         "title": "その他の CLI コマンド",
         "commands": [
-          "uipro versions              # 利用可能なバージョンを一覧表示",
-          "uipro update                # 最新バージョンへ更新",
-          "uipro init --offline        # GitHub ダウンロードをスキップし、同梱アセットを使用",
-          "uipro uninstall             # Skill を削除 (プラットフォームを自動検出)",
-          "uipro uninstall --ai claude # 指定プラットフォームを削除",
-          "uipro uninstall --global    # グローバルインストールを削除"
+          "uipro init --ai claude --global",
+          "uipro update --ai claude",
+          "uipro init --ai claude --force",
+          "uipro versions",
+          "uipro uninstall --ai claude",
+          "uipro uninstall --ai claude --global",
+          "npm uninstall -g ui-ux-pro-max-cli"
         ]
       },
       "decision": {
         "title": "インストール方法の選び方",
         "subtitle": "3 つの選択肢、それぞれに明確な適用場面があります。",
         "options": [
-          { "title": "CLI インストール (推奨)", "when": "npm が使え、更新を自動化したい。", "why": "uipro-cli はダウンロード、バージョン管理、更新を 1 コマンドで包みます。プロジェクトで設定済みの全アシスタントの Skill を同期します。" },
-          { "title": "手動インストール", "when": "npm が使えない環境 (制限された企業ネット、サンドボックス CI)、または再現性のためにリポジトリへベンダリングしたい。", "why": "フォルダコピーは完全な制御を与えます。代償として更新は手動で再コピーが必要です。" },
-          { "title": "オフラインインストール", "when": "厳しいファイアウォール下、または GitHub に届かないネット環境。", "why": "uipro init --offline は CLI パッケージに同梱されたアセットを使い、npm install 後はネット通信を行いません。" }
+          {
+            "title": "CLI インストール (推奨)",
+            "when": "npm が使え、更新を自動化したい。",
+            "why": "CLI 2.15.0 の uipro update は GitHub Release を確認します。版が異なる場合は CLI 更新を試み、uipro init --ai <assistant> --force の再実行を案内します。同じ版なら内蔵スキルを再配置します。上書き前にローカル変更を確認し、全体への導入には --global を指定します。"
+          },
+          {
+            "title": "生成済みスキルのコピー（Claude Code の例）",
+            "when": "コピー先に npm がなくても、別のコンピューターで準備できる場合、または生成済みファイルをリポジトリに含めたい場合。",
+            "why": "準備用コンピューターでバージョン固定 CLI を実行してから全ファイルを転送します。更新時は同じ手順を繰り返し、ローカル変更を確認します。"
+          },
+          {
+            "title": "オフラインインストール",
+            "when": "厳しいファイアウォール下、または GitHub に届かないネット環境。",
+            "why": "CLI 2.15.0 は既定で同梱テンプレートを使います。--offline は互換フラグで、版の固定ではありません。再現には npm パッケージの版を固定してください。パッケージ取得とリリース確認は別途キャッシュがなければ通信を必要とします。"
+          }
         ]
       },
       "platforms": {
         "title": "OS 別の注意点",
         "items": [
-          { "os": "macOS", "body": "新しい macOS には Python 3.x が同梱されていますが、古いことが多いです。Homebrew 推奨: brew install python3。uipro-cli は npm 経由。Node が無ければ brew install node か fnm / nvm を利用。Apple Silicon と Intel の両方で動作。" },
-          { "os": "Windows", "body": "python.org から Python 3 をインストールし、セットアップで「Add Python to PATH」をチェック。PowerShell または Windows Terminal で npm と python3 を実行。python3 が認識されない場合は py -3 --version を試行。Unix シェルを使うなら WSL2 が下記の Linux 手順と同等です。" },
-          { "os": "Linux", "body": "多くのディストリビューションには Python 3 が同梱。Node はパッケージマネージャ (Debian/Ubuntu: apt install nodejs npm、Fedora: dnf install nodejs) で導入。最新版を使うなら fnm か nvm 推奨 (ディストリ標準は古いことが多い)。" }
+          {
+            "os": "macOS",
+            "body": "Python 3 と Node.js の有無を確認し、必要なら公式配布元やパッケージ管理ツールで導入してください。macOS への Python 3 同梱は前提にしません。"
+          },
+          {
+            "os": "Windows",
+            "body": "python.org から Python 3 をインストールし、セットアップで「Add Python to PATH」をチェック。PowerShell または Windows Terminal で npm と python3 を実行。python3 が認識されない場合は py -3 --version を試行。Unix シェルを使うなら WSL2 が下記の Linux 手順と同等です。"
+          },
+          {
+            "os": "Linux",
+            "body": "多くのディストリビューションには Python 3 が同梱。Node はパッケージマネージャ (Debian/Ubuntu: apt install nodejs npm、Fedora: dnf install nodejs) で導入。最新版を使うなら fnm か nvm 推奨 (ディストリ標準は古いことが多い)。"
+          }
         ]
       },
       "updates": {
         "title": "更新とバージョン固定",
-        "body": "いつでも uipro update で最新の Skill アセットを取得できます。uipro versions で全リリースを確認できます。GitHub に接続できない環境やチーム内で統一したインストールが必要な場合は uipro init --offline を使用してください。CLI パッケージ内蔵のアセットからインストールするため、ネットワーク不要です。",
+        "body": "CLI 2.15.0 の uipro update は GitHub Release を確認します。版が異なる場合は CLI 更新を試み、uipro init --ai <assistant> --force の再実行を案内します。同じ版なら内蔵スキルを再配置します。上書き前にローカル変更を確認し、全体への導入には --global を指定します。",
         "commandsTitle": "更新まわりのコマンド",
-        "commands": "uipro versions        # 利用可能なバージョン一覧\nuipro update          # 最新リリースに更新\nuipro init --offline  # 内蔵アセットからインストール（ネット不要）"
+        "commands": "npm view ui-ux-pro-max-cli versions --json\nuipro update --ai claude\nuipro init --ai claude --force"
       },
       "uninstall": {
         "title": "アンインストールとクリーンアップ",
-        "body": "アンインストールはインストールと対称的です。アシスタント別なら該当のみ削除、他アシスタントとグローバル CLI は残ります。完全削除ならすべて消えます。",
+        "body": "最初のコマンドはプロジェクト／全体のスキルを削除し、npm uninstall は CLI を削除します。設計方針が入る design-system は保持してください。",
         "commandsTitle": "アンインストールコマンド",
-        "commands": "uipro uninstall                # このプロジェクトで自動検出したアシスタントから削除\nuipro uninstall --ai claude    # Claude Code のインストールのみ削除\nuipro uninstall --global       # グローバル uipro-cli を削除\nrm -rf design-system           # 必要なら永続化された設計システムも削除"
+        "commands": "uipro uninstall --ai claude\nuipro uninstall --ai claude --global\nnpm uninstall -g ui-ux-pro-max-cli"
       },
       "errors": {
         "title": "よくあるインストールエラー",
-        "headers": { "error": "エラー", "cause": "考えられる原因", "fix": "対処" },
+        "headers": {
+          "error": "エラー",
+          "cause": "考えられる原因",
+          "fix": "対処"
+        },
         "rows": [
-          { "error": "command not found: uipro", "cause": "npm のグローバル bin が PATH 上に無い、または -g 付け忘れ。", "fix": "npm config get prefix でグローバル bin を確認し PATH へ追加、もしくは npm install -g uipro-cli を再実行。" },
-          { "error": "EACCES: permission denied", "cause": "グローバル npm install がシステム所有のディレクトリへの書き込みを試みた。", "fix": "Node バージョンマネージャ (fnm、nvm) を使い、Node をユーザー領域に置く。sudo npm install -g は問題を増やすだけ。" },
-          { "error": "python3: command not found", "cause": "Python 3 が未導入または PATH 上に無い (Windows 標準で起こりがち)。", "fix": "macOS: brew install python3。Windows: python.org から「Add to PATH」付きで導入。Linux: ディストリのパッケージマネージャ。" },
-          { "error": "Failed to fetch from GitHub", "cause": "ネット制限または GitHub raw のレート制限。", "fix": "uipro init --offline で同梱アセットから導入、もしくは HTTPS_PROXY を export してプロキシ経由で再試行。" },
-          { "error": "AI アシスタントが Skill を認識しない", "cause": "対象フォルダ違い、もしくは Skill 導入前にアシスタントを起動した。", "fix": "プロジェクトルートで uipro init --ai [assistant] を再実行し、アシスタントを完全再起動。各アシスタントが見るフォルダは「手動インストール」表参照。" }
+          {
+            "error": "command not found: uipro",
+            "cause": "npm のグローバル bin が PATH 上に無い、または -g 付け忘れ。",
+            "fix": "npm config get prefix でグローバル bin を確認し PATH へ追加、もしくは npm install -g ui-ux-pro-max-cli を再実行。"
+          },
+          {
+            "error": "EACCES: permission denied",
+            "cause": "グローバル npm install がシステム所有のディレクトリへの書き込みを試みた。",
+            "fix": "Node バージョンマネージャ (fnm、nvm) を使い、Node をユーザー領域に置く。sudo npm install -g は問題を増やすだけ。"
+          },
+          {
+            "error": "python3: command not found",
+            "cause": "Python 3 が未導入または PATH 上に無い (Windows 標準で起こりがち)。",
+            "fix": "macOS: brew install python3。Windows: python.org から「Add to PATH」付きで導入。Linux: ディストリのパッケージマネージャ。"
+          },
+          {
+            "error": "Failed to fetch from GitHub",
+            "cause": "CLI 2.15.0 の uipro update は GitHub Release を確認します。版が異なる場合は CLI 更新を試み、uipro init --ai <assistant> --force の再実行を案内します。同じ版なら内蔵スキルを再配置します。上書き前にローカル変更を確認し、全体への導入には --global を指定します。",
+            "fix": "CLI 2.15.0 は既定で同梱テンプレートを使います。--offline は互換フラグで、版の固定ではありません。再現には npm パッケージの版を固定してください。パッケージ取得とリリース確認は別途キャッシュがなければ通信を必要とします。"
+          },
+          {
+            "error": "AI アシスタントが Skill を認識しない",
+            "cause": "対象フォルダ違い、もしくは Skill 導入前にアシスタントを起動した。",
+            "fix": "プロジェクトルートで uipro init --ai [assistant] を再実行し、アシスタントを完全再起動。各アシスタントが見るフォルダは「手動インストール」表参照。"
+          }
         ]
       },
       "offline": {
         "title": "オフラインモードの詳細",
-        "body": "uipro-cli パッケージには Skill アセット一式が同梱されています。--offline 指定で CLI は GitHub 取得をスキップし、同梱アセットを読みます。GitHub に届かない環境や、固定した CLI バージョンに紐づく特定アセットを全員に配布したい場合に最適です。"
+        "body": "CLI 2.15.0 は既定で同梱テンプレートを使います。--offline は互換フラグで、版の固定ではありません。再現には npm パッケージの版を固定してください。パッケージ取得とリリース確認は別途キャッシュがなければ通信を必要とします。"
       },
       "next": "次へ: 使い方とプロンプトで、呼び出しパターンとサンプル依頼を確認しましょう。"
     },
@@ -531,121 +682,307 @@
         "title": "良いプロンプトの構造",
         "lead": "弱いプロンプトは汎用の結果を、構造化されたプロンプトはあつらえの結果を生みます。4 つの信号が大半の仕事を担い、3 つ以上含まれば出力品質が大きく上がります。",
         "parts": [
-          { "label": "1. プロダクトタイプ", "body": "何のプロダクトか。SaaS、EC、医療、金融、ポートフォリオ、ブログ、モバイルマーケット等。業界ルールと配色ムードを左右します。" },
-          { "label": "2. 対象面", "body": "どのページ・画面か。ランディング、ダッシュボード、設定、モバイル決済、料金、ブログテンプレ等。面はパターンサブセットと密度を決めます。" },
-          { "label": "3. スタイルの指定 (任意)", "body": "Glassmorphism、Brutalist、Bento Grid、Minimalist、Aurora、Dark Mode 等。指定なしならエンジンが妥当な既定を選びます。" },
-          { "label": "4. 制約 (任意)", "body": "アクセシビリティ水準 (WCAG AA / AAA)、技術スタック (Next.js + shadcn/ui)、ブランド色、モバイルファースト、JS 不要動作 等。" }
+          {
+            "label": "1. プロダクトタイプ",
+            "body": "何のプロダクトか。SaaS、EC、医療、金融、ポートフォリオ、ブログ、モバイルマーケット等。業界ルールと配色ムードを左右します。"
+          },
+          {
+            "label": "2. 対象面",
+            "body": "どのページ・画面か。ランディング、ダッシュボード、設定、モバイル決済、料金、ブログテンプレ等。面はパターンサブセットと密度を決めます。"
+          },
+          {
+            "label": "3. スタイルの指定 (任意)",
+            "body": "Glassmorphism、Brutalist、Bento Grid、Minimalist、Aurora、Dark Mode 等。指定なしならエンジンが妥当な既定を選びます。"
+          },
+          {
+            "label": "4. 制約 (任意)",
+            "body": "アクセシビリティ水準 (WCAG AA / AAA)、技術スタック (Next.js + shadcn/ui)、ブランド色、モバイルファースト、JS 不要動作 等。"
+          }
         ]
       },
       "worked": {
         "title": "エンドツーエンドの実例",
-        "subtitle": "各例はプロンプト、生成された設計システム、AI アシスタントがそれを基に書くコードの概形を示します。",
+        "subtitle": "以下は学習用の例示で、生成器の実行記録や検証済みの本番成果ではありません。実際のプロジェクトでコントラスト、配置、操作を確認してください。",
         "items": [
-          { "title": "SaaS 分析ダッシュボード", "prompt": "B2B フィンテック向け SaaS 分析ダッシュボード。密な表、デフォルト dark mode、WCAG AA 必達、Next.js + shadcn/ui。", "outputTitle": "生成された設計システム", "output": "Pattern: 密集レイアウト、粘着サイドバー、12 列\nStyle:   ミニマリズム + ホバーカードに控えめガラス\nPalette: 寒色ブルー + エメラルド (#2563EB / #10B981)\nType:    Inter 400/600/700 + IBM Plex Mono (数値)\nEffects: 階調 0/1/2/4、150-200ms ease-out\n避ける:  赤をブランド色、自動回転、hover のみの一括操作\nチェック: 色覚配慮、等幅数値、スケルトン読み込み" },
-          { "title": "医療患者ポータル", "prompt": "病院システム向け患者ポータル。安心感ある口調、大きなタップ領域、多言語前提、医療事故アンチパターンを避ける。", "outputTitle": "生成された設計システム", "output": "Pattern: カード式情報階層 + 常駐クイック操作\nStyle:   ミニマリズム、低彩度、奇抜な効果なし\nPalette: 穏やかなティール + 暖色中性 (#0E7C7B / #F5F1E8)\nType:    Source Sans Pro 400/600、行高ゆとり (1.7)\nEffects: シャドウ最小、視差なし、prefers-reduced-motion 強制\n避ける:  既定エラー色に赤、赤緑対、ランディングに密表\nチェック: 可能なら WCAG AAA、44px+ タップ、RTL 対応" },
-          { "title": "Dark mode の個人ポートフォリオ", "prompt": "クリエイティブ開発者の個人ポートフォリオ。強い視覚識別、Glassmorphism 調、dark mode + light フォールバック。", "outputTitle": "生成された設計システム", "output": "Pattern: スクロール駆動ケース + 粘着プロジェクトナビ\nStyle:   Glassmorphism + Aurora グラデ\nPalette: 深インディゴ + バイオレット Aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:    Sora 600/800 + Inter 400\nEffects: backdrop-blur 12px、ホバー柔光、400ms cubic\n避ける:  ノイズ多用、重なる流れ字、動き専用ナビ\nチェック: prefers-reduced-motion 尊重、light 同等性、画像 alt" },
-          { "title": "EC モバイル決済", "prompt": "アパレル EC のモバイル決済。最大 3 ステップ、Apple Pay 最優先、低速 4G 対応必須。", "outputTitle": "生成された設計システム", "output": "Pattern: 全画面ステップ + 常駐合計バー、モーダル積層禁止\nStyle:   Flat 2.0 + 強いタイポ、装飾最小\nPalette: 暖オフホワイト + ブランド + 成功緑\nType:    システムフォント優先、本文 16px 以上\nEffects: 瞬時遷移、スケルトン、カルーセル不可\n避ける:  決済への外部スクリプト、CTA を隠す促進、強制登録\nチェック: Payment Request 検証、住所自動入力、エラー回復" },
-          { "title": "OSS ドキュメントサイト", "prompt": "OSS ライブラリのドキュメント。サイドバー + 検索 + 本文 + on-this-page TOC。クリーン、軽快、dark mode 切替。", "outputTitle": "生成された設計システム", "output": "Pattern: 三栏ドキュメント、粘着ヘッダ\nStyle:   ミニマリズム、ゆとり、等幅コード\nPalette: 中性グレー + 単一ブランド色\nType:    Inter 400/600 + JetBrains Mono\nEffects: 軽いホバーのみ、スクロール演出なし\n避ける:  固定高コード (overflow を)、モーダル検索、ドキュメントに営業\nチェック: cmd-K 検索、コードコピー、モバイルドロワー" },
-          { "title": "AI チャット製品のランディング", "prompt": "AI チャット製品のランディング。実演、信頼構築、料金を明確に。Bento Grid スタイル。", "outputTitle": "生成された設計システム", "output": "Pattern: 実演ヒーロー + Bento 特徴 + 社会証明 + 料金\nStyle:   AI ネイティブ + Bento + 柔らかいグラデ\nPalette: 寒色ブルー + 暖色コーラル、dark 基本\nType:    Cal Sans + Inter、特大見出し\nEffects: Bento カードホバー浮き、グラデ枠、動的ドット背景\n避ける:  空 Bento、モバイルで壊れる視差、Contact us で料金隠し\nチェック: 実演 2 秒以下、デスクトップで料金 above fold" }
+          {
+            "title": "SaaS 分析ダッシュボード",
+            "prompt": "B2B フィンテック向け SaaS 分析ダッシュボード。密な表、デフォルト dark mode、WCAG AA 必達、Next.js + shadcn/ui。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: 密集レイアウト、粘着サイドバー、12 列\nStyle:   ミニマリズム + ホバーカードに控えめガラス\nPalette: 寒色ブルー + エメラルド (#2563EB / #10B981)\nType:    Inter 400/600/700 + IBM Plex Mono (数値)\nEffects: 階調 0/1/2/4、150-200ms ease-out\n避ける:  赤をブランド色、自動回転、hover のみの一括操作\nチェック: 色覚配慮、等幅数値、スケルトン読み込み"
+          },
+          {
+            "title": "医療患者ポータル",
+            "prompt": "病院システム向け患者ポータル。安心感ある口調、大きなタップ領域、多言語前提、医療事故アンチパターンを避ける。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: カード式情報階層 + 常駐クイック操作\nStyle:   ミニマリズム、低彩度、奇抜な効果なし\nPalette: 穏やかなティール + 暖色中性 (#0E7C7B / #F5F1E8)\nType:    Source Sans Pro 400/600、行高ゆとり (1.7)\nEffects: シャドウ最小、視差なし、prefers-reduced-motion 強制\n避ける:  既定エラー色に赤、赤緑対、ランディングに密表\nチェック: 可能なら WCAG AAA、44px+ タップ、RTL 対応"
+          },
+          {
+            "title": "Dark mode の個人ポートフォリオ",
+            "prompt": "クリエイティブ開発者の個人ポートフォリオ。強い視覚識別、Glassmorphism 調、dark mode + light フォールバック。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: スクロール駆動ケース + 粘着プロジェクトナビ\nStyle:   Glassmorphism + Aurora グラデ\nPalette: 深インディゴ + バイオレット Aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:    Sora 600/800 + Inter 400\nEffects: backdrop-blur 12px、ホバー柔光、400ms cubic\n避ける:  ノイズ多用、重なる流れ字、動き専用ナビ\nチェック: prefers-reduced-motion 尊重、light 同等性、画像 alt"
+          },
+          {
+            "title": "EC モバイル決済",
+            "prompt": "アパレル EC のモバイル決済。最大 3 ステップ、Apple Pay 最優先、低速 4G 対応必須。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: 全画面ステップ + 常駐合計バー、モーダル積層禁止\nStyle:   Flat 2.0 + 強いタイポ、装飾最小\nPalette: 暖オフホワイト + ブランド + 成功緑\nType:    システムフォント優先、本文 16px 以上\nEffects: 瞬時遷移、スケルトン、カルーセル不可\n避ける:  決済への外部スクリプト、CTA を隠す促進、強制登録\nチェック: Payment Request 検証、住所自動入力、エラー回復"
+          },
+          {
+            "title": "OSS ドキュメントサイト",
+            "prompt": "OSS ライブラリのドキュメント。サイドバー + 検索 + 本文 + on-this-page TOC。クリーン、軽快、dark mode 切替。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: 三栏ドキュメント、粘着ヘッダ\nStyle:   ミニマリズム、ゆとり、等幅コード\nPalette: 中性グレー + 単一ブランド色\nType:    Inter 400/600 + JetBrains Mono\nEffects: 軽いホバーのみ、スクロール演出なし\n避ける:  固定高コード (overflow を)、モーダル検索、ドキュメントに営業\nチェック: cmd-K 検索、コードコピー、モバイルドロワー"
+          },
+          {
+            "title": "AI チャット製品のランディング",
+            "prompt": "AI チャット製品のランディング。実演、信頼構築、料金を明確に。Bento Grid スタイル。",
+            "outputTitle": "説明用の抜粋",
+            "output": "Pattern: 実演ヒーロー + Bento 特徴 + 社会証明 + 料金\nStyle:   AI ネイティブ + Bento + 柔らかいグラデ\nPalette: 寒色ブルー + 暖色コーラル、dark 基本\nType:    Cal Sans + Inter、特大見出し\nEffects: Bento カードホバー浮き、グラデ枠、動的ドット背景\n避ける:  空 Bento、モバイルで壊れる視差、Contact us で料金隠し\nチェック: 実演 2 秒以下、デスクトップで料金 above fold"
+          }
         ]
       },
       "iterating": {
         "title": "結果を反復する",
-        "lead": "初回生成が完璧であることは稀です。3 つのリファインで大半をカバーできます。",
+        "lead": "推奨の調整には --design-system と --variance、--motion、--density（1–10）を使います。既存アプリのテーマ変更は、フレームワークの版と既存トークンを確認し、部品を少しずつ変更して各テーマを検証します。",
         "patterns": [
-          { "title": "1 つの軸だけ調整", "body": "レイアウトは好きだが色を変えたい時: 「Pattern とタイポはそのまま、色をもう少し暖色に」。AI は色だけ再検索して結果をマージします。" },
-          { "title": "制約を追加", "body": "アクセシビリティを固定したい時: 「同じ設計システム、ただし WCAG AAA と本文 16px 必須」。既存候補へのフィルタで済み、やり直しになりません。" },
-          { "title": "ページ単位の上書き", "body": "MASTER.md の 9 割が合うなら、--page でページ上書きを書き、全体再生成は避けます。" }
+          {
+            "title": "1 つの軸だけ調整",
+            "body": "推奨の調整には --design-system と --variance、--motion、--density（1–10）を使います。既存アプリのテーマ変更は、フレームワークの版と既存トークンを確認し、部品を少しずつ変更して各テーマを検証します。"
+          },
+          {
+            "title": "制約を追加",
+            "body": "推奨の調整には --design-system と --variance、--motion、--density（1–10）を使います。既存アプリのテーマ変更は、フレームワークの版と既存トークンを確認し、部品を少しずつ変更して各テーマを検証します。"
+          },
+          {
+            "title": "ページ単位の上書き",
+            "body": "--persist -p \"Acme\" --page pricing では design-system/acme/pages/pricing.md が作成され、既存の主ファイルは保持されます。対象ページではページ別ルールを優先するよう助手に伝え、使用前に内容を確認してください。"
+          }
         ]
       },
       "library": {
         "title": "ドメイン別プロンプト集",
         "subtitle": "出発点としてコピー、具体内容を調整してください。",
         "domains": [
-          { "name": "SaaS & B2B", "prompts": [ "プロジェクト管理 SaaS のランディング、社会証明と料金を first view に", "B2B SaaS の設定ページ、サイドバーとセクション分け", "開発者向け SaaS のオンボーディング、3 ステップ以内", "KPI タイル、トレンド、活動フィードのダッシュボード" ] },
-          { "name": "フィンテック", "prompts": [ "家計ダッシュボード、予算・口座・目標", "スパークラインと注文のモバイル株式画面", "信頼バッジ、セキュリティ、料金の金融ランディング", "取引監視の管理画面、フィルタと一括操作" ] },
-          { "name": "医療・ウェルネス", "prompts": [ "予約・記録・メッセージの患者ポータル", "セッションライブラリと連続記録の瞑想アプリ", "医師一覧と予約のテレヘルスランディング", "患者リスト・アラート・メモの臨床医ダッシュボード" ] },
-          { "name": "EC", "prompts": [ "アパレル商品詳細、バリアント選択とレビュー", "Apple Pay / Google Pay 最適化のモバイル決済", "フィルタ、ソート、無限スクロールのカテゴリページ", "共有・カート移動・値下げ通知のウィッシュリスト" ] },
-          { "name": "ポートフォリオ・ブログ", "prompts": [ "ケーススタディと執筆索引の開発者ポートフォリオ", "TOC・脚注・読了進捗の長文ブログテンプレ", "画像中心ケースと連絡 CTA のデザイナーポートフォリオ", "カテゴリ・編集者おすすめのマルチオーサーホーム" ] },
-          { "name": "ツール・ユーティリティ", "prompts": [ "サイドバー・検索・TOC の OSS ドキュメント", "インストール・デモ gif・FAQ の CLI 紹介", "リージョン稼働、事故履歴、購読のステータスページ", "言語別フィルタとシンタックスハイライトのスニペット共有" ] }
+          {
+            "name": "SaaS & B2B",
+            "prompts": [
+              "プロジェクト管理 SaaS のランディング、社会証明と料金を first view に",
+              "B2B SaaS の設定ページ、サイドバーとセクション分け",
+              "開発者向け SaaS のオンボーディング、3 ステップ以内",
+              "KPI タイル、トレンド、活動フィードのダッシュボード"
+            ]
+          },
+          {
+            "name": "フィンテック",
+            "prompts": [
+              "家計ダッシュボード、予算・口座・目標",
+              "スパークラインと注文のモバイル株式画面",
+              "信頼バッジ、セキュリティ、料金の金融ランディング",
+              "取引監視の管理画面、フィルタと一括操作"
+            ]
+          },
+          {
+            "name": "医療・ウェルネス",
+            "prompts": [
+              "予約・記録・メッセージの患者ポータル",
+              "セッションライブラリと連続記録の瞑想アプリ",
+              "医師一覧と予約のテレヘルスランディング",
+              "患者リスト・アラート・メモの臨床医ダッシュボード"
+            ]
+          },
+          {
+            "name": "EC",
+            "prompts": [
+              "アパレル商品詳細、バリアント選択とレビュー",
+              "Apple Pay / Google Pay 最適化のモバイル決済",
+              "フィルタ、ソート、無限スクロールのカテゴリページ",
+              "共有・カート移動・値下げ通知のウィッシュリスト"
+            ]
+          },
+          {
+            "name": "ポートフォリオ・ブログ",
+            "prompts": [
+              "ケーススタディと執筆索引の開発者ポートフォリオ",
+              "TOC・脚注・読了進捗の長文ブログテンプレ",
+              "画像中心ケースと連絡 CTA のデザイナーポートフォリオ",
+              "カテゴリ・編集者おすすめのマルチオーサーホーム"
+            ]
+          },
+          {
+            "name": "ツール・ユーティリティ",
+            "prompts": [
+              "サイドバー・検索・TOC の OSS ドキュメント",
+              "インストール・デモ gif・FAQ の CLI 紹介",
+              "リージョン稼働、事故履歴、購読のステータスページ",
+              "言語別フィルタとシンタックスハイライトのスニペット共有"
+            ]
+          }
         ]
       },
       "antiPrompts": {
         "title": "出力を弱める書き方",
         "lead": "以下のパターンは生成器が必要とする信号を体系的に欠いています。",
         "items": [
-          { "bad": "サイトを作って。", "why": "プロダクト、面、制約のいずれもなし。手がかりがなく汎用テンプレに落ちます。" },
-          { "bad": "もっとカッコよく。", "why": "「カッコよく」の基準がありません。何との比較で、どの方向か。スタイルか具体軸を指定してください。" },
-          { "bad": "綺麗で、モダンで、クリーンで、プロらしいダッシュボードを。", "why": "形容詞の積み重ねは検索を絞りません。業界 + 面 + 具体的なスタイル語に置き換えてください。" },
-          { "bad": "最新トレンドで。", "why": "「最新」は曖昧で陳腐化が速い。Bento Grid や Glassmorphism のように具体名で。" }
+          {
+            "bad": "サイトを作って。",
+            "why": "プロダクト、面、制約のいずれもなし。手がかりがなく汎用テンプレに落ちます。"
+          },
+          {
+            "bad": "もっとカッコよく。",
+            "why": "「カッコよく」の基準がありません。何との比較で、どの方向か。スタイルか具体軸を指定してください。"
+          },
+          {
+            "bad": "綺麗で、モダンで、クリーンで、プロらしいダッシュボードを。",
+            "why": "形容詞の積み重ねは検索を絞りません。業界 + 面 + 具体的なスタイル語に置き換えてください。"
+          },
+          {
+            "bad": "最新トレンドで。",
+            "why": "「最新」は曖昧で陳腐化が速い。Bento Grid や Glassmorphism のように具体名で。"
+          }
         ]
       },
       "next": "次へ: セットアップやコマンドで困ったら FAQ を確認してください。"
     },
     "faq": {
-      "overview": "UI UX Pro Max Skill の導入、設定、活用に関するよくある質問の実用リファレンスです。トピック別にまとまっているので必要な領域を素早く参照できます。回答が見つからない場合は、各ドキュメントページ下部のフィードバックからお寄せください。",
+      "overview": "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。",
       "groups": [
         {
           "title": "インストールとセットアップ",
           "items": [
-            { "q": "対応する AI アシスタントは?", "a": "標準対応: Claude Code、Cursor、Windsurf、Antigravity、GitHub Copilot、Kiro、Codex CLI、Qoder、Roo Code、Gemini CLI、Trae、OpenCode、Continue、CodeBuddy、Droid (Factory)、KiloCode、Warp、Augment。uipro init --ai all でプロジェクト内の全アシスタントへ一括インストール。" },
-            { "q": "Skill 本体に Node.js は必要?", "a": "不要です。Skill は実行時 Python で動きます。Node.js は uipro-cli (npm) 経由インストールのときだけ必要。手動インストールは Python 3 以外不要。" },
-            { "q": "なぜ Python 3? Python 2 では?", "a": "Python 3 のみ対応。f-string、型ヒント、辞書順保持などモダン機能を使用。Python 2 は 2020 年に EOL、セキュリティ更新もありません。" },
-            { "q": "search.py はどこ?", "a": "Claude Code は .claude/skills/ui-ux-pro-max/scripts/search.py、.shared を共有するアシスタント (Cursor、Windsurf、Antigravity) は .shared/ui-ux-pro-max/scripts/search.py。" },
-            { "q": "GitHub にアクセスできなくても?", "a": "uipro init --offline で npm パッケージ同梱アセットから導入可能。サンドボックス CI やエアギャップ網にも対応。" },
-            { "q": "グローバルにインストールできる?", "a": "一部可能。uipro-cli ツール自体は npm install -g uipro-cli でグローバル導入。Skill アセットは意図的にプロジェクト単位で、リポジトリごとに版と設計システムを固定できます。" }
+            {
+              "q": "対応する AI アシスタントは?",
+              "a": "CLI 2.15.0: claude, cursor, windsurf, antigravity, copilot, kiro, codex, qoder, roocode, gemini, trae, opencode, continue, codebuddy, droid, kilocode, warp, augment, codewhale, universal. --ai all は検出された助手だけでなく全対応プラットフォーム向けに生成します。"
+            },
+            {
+              "q": "Skill 本体に Node.js は必要?",
+              "a": "不要です。Skill は実行時 Python で動きます。Node.js は ui-ux-pro-max-cli (npm) 経由インストールのときだけ必要。手動インストールは Python 3 以外不要。"
+            },
+            {
+              "q": "なぜ Python 3? Python 2 では?",
+              "a": "Python 3 のみ対応。f-string、型ヒント、辞書順保持などモダン機能を使用。Python 2 は 2020 年に EOL、セキュリティ更新もありません。"
+            },
+            {
+              "q": "search.py はどこ?",
+              "a": "プラットフォーム別の生成ファイルを使います。Claude は .claude/skills/ui-ux-pro-max/、Cursor は .cursor/skills/ui-ux-pro-max/、Windsurf は .windsurf/skills/ui-ux-pro-max/、Antigravity と Codex は .agents/skills/ui-ux-pro-max/ です。search.py は各 scripts/ にあります。CLI 2.15.0 のパスです。"
+            },
+            {
+              "q": "GitHub にアクセスできなくても?",
+              "a": "CLI 2.15.0 は既定で同梱テンプレートを使います。--offline は互換フラグで、版の固定ではありません。再現には npm パッケージの版を固定してください。パッケージ取得とリリース確認は別途キャッシュがなければ通信を必要とします。"
+            },
+            {
+              "q": "グローバルにインストールできる?",
+              "a": "スキルはプロジェクト単位でも全体でも導入できます。uipro init --ai claude --global は ~/.claude/skills/ に保存します。npm -g による CLI 導入と --global によるスキル導入は別の操作です。"
+            }
           ]
         },
         {
           "title": "設計システムの生成",
           "items": [
-            { "q": "スタック指定は必須?", "a": "不要。省略時は HTML + Tailwind。スタック (Next.js、Nuxt、SvelteKit、SwiftUI、React Native、Flutter、Astro、Angular 等) を指定すると慣用的な出力に。" },
-            { "q": "JSON ではなく Markdown 出力は?", "a": "--design-system と -f markdown を併用。ドキュメントやチャット直入は Markdown、プログラム消費は JSON が便利。" },
-            { "q": "業界はどう判定?", "a": "プロンプトの語と永続化済 MASTER.md の文脈から。明示しないと保守的なデフォルトに帰着。明示した方が常に鋭くなります。" },
-            { "q": "ブランド色を固定して上書きさせない?", "a": "初回 --persist 後、design-system/MASTER.md の Colors をブランドトークンに置換。以降は MASTER.md を正として扱います。" },
-            { "q": "1 ページだけ生成して他は触らない?", "a": "可能。--page [name] と --persist を併用。上書きは design-system/pages/[name].md に置かれ、当該ページ対象のセッションでのみ有効。" }
+            {
+              "q": "スタック指定は必須?",
+              "a": "CLI 2.15.0 ではスタック検索を別に実行します：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system が --stack より優先されるため、併用しても生成のスタック絞り込みにはなりません。両方の結果を助手へ渡してください。"
+            },
+            {
+              "q": "出力形式は何がありますか？",
+              "a": "デザインシステムの既定出力は ASCII です。Markdown は -f markdown、JSON は --json を使います。出力はレビュー用の提案であり、生成 UI のアクセシビリティを保証しません。"
+            },
+            {
+              "q": "業界はどう判定?",
+              "a": "上流の Python 生成器は内蔵の製品、スタイル、配色、ランディング、フォントのデータを検索し、業種ルールで提案をまとめます。AI 助手がその出力を使って UI を実装します。処理時間はクエリと環境に依存します。"
+            },
+            {
+              "q": "ブランド方針をどう保持しますか？",
+              "a": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
+            },
+            {
+              "q": "1 ページだけ生成して他は触らない?",
+              "a": "--persist -p \"Acme\" --page pricing では design-system/acme/pages/pricing.md が作成され、既存の主ファイルは保持されます。対象ページではページ別ルールを優先するよう助手に伝え、使用前に内容を確認してください。"
+            }
           ]
         },
         {
           "title": "出力とカスタマイズ",
           "items": [
-            { "q": "好きなスタイルが含まれない、追加できる?", "a": "公開 API は未提供。ローカルでは data/styles.csv を編集して自分用に拡張可能。上流 PR も歓迎。" },
-            { "q": "業界別アンチパターンを変更できる?", "a": "生成後に MASTER.md を編集、不要な行を削除。モデルは次回以降それを尊重。データ目録自体の編集はプロジェクト全体に効きますが、更新後の再適用が必要。" },
-            { "q": "デフォルトで shadcn/ui を使わせるには?", "a": "生成時に --stack shadcn、もしくは MASTER.md に「Conventions」節で「shadcn/ui のプリミティブを使用」と書く。MASTER.md の散文規約は尊重されます。" }
+            {
+              "q": "好きなスタイルが含まれない、追加できる?",
+              "a": "公開 API は未提供。ローカルでは data/styles.csv を編集して自分用に拡張可能。上流 PR も歓迎。"
+            },
+            {
+              "q": "業界別アンチパターンを変更できる?",
+              "a": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
+            },
+            {
+              "q": "デフォルトで shadcn/ui を使わせるには?",
+              "a": "CLI 2.15.0 ではスタック検索を別に実行します：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system が --stack より優先されるため、併用しても生成のスタック絞り込みにはなりません。両方の結果を助手へ渡してください。"
+            }
           ]
         },
         {
           "title": "プライバシー、コスト、データ",
           "items": [
-            { "q": "外部サーバへ何か送る?", "a": "送りません。検索・順位付け・推論は AI クライアント内で完結。唯一の通信は初回ダウンロード (--offline で省略可)。" },
-            { "q": "Skill は無料?", "a": "Skill 自体は無料の OSS。利用する AI アシスタント (Claude Code、Cursor 等) は各自の通常料金。" },
-            { "q": "トークン消費は増える?", "a": "わずかに増えます。設計システムをプロンプトに注入するため。ただし生成コード量に対しては小さく、やり取りの往復が減ることで相殺されます。" }
+            {
+              "q": "外部サーバへ何か送る?",
+              "a": "内蔵 Python 検索はローカルで動作します。AI 助手は設定に応じてプロンプト、ファイル、検索結果を提供元へ送信する場合があります。CLI の導入や更新確認には通信が発生することがあります。"
+            },
+            {
+              "q": "Skill は無料?",
+              "a": "Skill 自体は無料の OSS。利用する AI アシスタント (Claude Code、Cursor 等) は各自の通常料金。"
+            },
+            {
+              "q": "トークン消費は増える?",
+              "a": "検索結果はコンテキストのトークンを増やします。使用量や費用は助手・モデル・タスク次第で、修正回数の削減は保証されません。"
+            }
           ]
         },
         {
           "title": "更新とバージョン",
           "items": [
-            { "q": "更新頻度は?", "a": "目録は数週間ごと、CLI は必要時。いつでも uipro update を実行。再現性が必要な場合は uipro init --offline を使用。" },
-            { "q": "更新で MASTER.md は上書きされる?", "a": "されません。更新は .claude/skills/ や .shared/ の Skill アセットのみ。design-system/ 配下はユーザーコンテンツ扱いで一切上書きされません。" },
-            { "q": "新版で出力が悪化、どう戻す?", "a": "uipro versions でリリース一覧を確認。ロールバックは npm install -g uipro-cli@[version] で旧 CLI を導入し、uipro init --offline で内蔵アセットを展開。再現が示せれば repo に issue を。" }
+            {
+              "q": "更新頻度は?",
+              "a": "公開時期は原作者が決めます。リンク先のリリース情報をご確認ください。当サイトは更新周期を約束しません。"
+            },
+            {
+              "q": "更新で MASTER.md は上書きされる?",
+              "a": "--persist は --output-dir（既定は現在のディレクトリ）配下の design-system/<project-slug>/MASTER.md に保存します。既存の MASTER.md は --force を使わない限り保持されます。助手に主ファイルとページ別ルールの読み込みを明示してください。保存だけで自動読み込みは保証されません。"
+            },
+            {
+              "q": "新版で出力が悪化、どう戻す?",
+              "a": "npm の版を確認して指定版の ui-ux-pro-max-cli を導入し、対象スキルを更新してください。変更を退避し、その版のヘルプを確認します。GitHub タグと npm の版は同一とは限りません。"
+            }
           ]
         },
         {
           "title": "トラブルシューティング",
           "items": [
-            { "q": "アシスタントが Skill を使っていない様子。", "a": "原因 3 つ: (1) Skill 導入前に起動した → 再起動、(2) 対象が違う → 「手動インストール」表でそのアシスタントが見るフォルダを確認、(3) アシスタントのプロジェクトルートが uipro init を実行した場所と異なる → 一致させる。" },
-            { "q": "uipro: command not found。", "a": "npm グローバル bin が PATH 上にない。npm config get prefix で bin を確認し PATH へ追加、または npm install -g uipro-cli を再実行。sudo を使ったなら次項参照。" },
-            { "q": "グローバル導入で EACCES。", "a": "sudo npm install -g は避ける。fnm や nvm で Node をユーザー領域に置けば権限問題を回避でき、将来の更新も安全。" },
-            { "q": "search.py が JSON デコードエラー。", "a": "ダウンロード中断で資産が壊れていることが多い。uipro update か uipro init --offline でクリーンに展開し直す。" },
-            { "q": "スタックに無いライブラリが出力される。", "a": "生成時に --stack <スタック> を指定、もしくは MASTER.md に Stack 行を追加。信号がないとデフォルト (HTML + Tailwind) に。" }
+            {
+              "q": "アシスタントが Skill を使っていない様子。",
+              "a": "原因 3 つ: (1) Skill 導入前に起動した → 再起動、(2) 対象が違う → 「手動インストール」表でそのアシスタントが見るフォルダを確認、(3) アシスタントのプロジェクトルートが uipro init を実行した場所と異なる → 一致させる。"
+            },
+            {
+              "q": "uipro: command not found。",
+              "a": "npm グローバル bin が PATH 上にない。npm config get prefix で bin を確認し PATH へ追加、または npm install -g ui-ux-pro-max-cli を再実行。sudo を使ったなら次項参照。"
+            },
+            {
+              "q": "グローバル導入で EACCES。",
+              "a": "sudo npm install -g は避ける。fnm や nvm で Node をユーザー領域に置けば権限問題を回避でき、将来の更新も安全。"
+            },
+            {
+              "q": "search.py が JSON デコードエラー。",
+              "a": "コマンドとエラー全体を記録し、版とローカル変更を確認してください。JSON エラーだけでダウンロード破損とは断定できません。"
+            },
+            {
+              "q": "スタックに無いライブラリが出力される。",
+              "a": "CLI 2.15.0 ではスタック検索を別に実行します：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system が --stack より優先されるため、併用しても生成のスタック絞り込みにはなりません。両方の結果を助手へ渡してください。"
+            }
           ]
         }
       ],
-      "next": "回答が無い場合はリポジトリに issue を、または各ドキュメントページ下部のフィードバックから送ってください。"
+      "next": "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。"
     }
   },
   "stats": {
-    "styles": "UI スタイル",
+    "styles": "検索可能なスタイル",
     "palettes": "カラーパレット",
     "fonts": "フォントペアリング",
     "stacks": "技術スタック",
@@ -659,7 +996,7 @@
     "sections": {
       "styles": {
         "title": "デザインスタイル",
-        "description": "Glassmorphism、Neumorphism、Minimalism、Brutalism、Aurora UI、AI-Native UI など、60 種類以上のスタイルをカラー、効果、フレームワーク互換性付きで提供します。",
+        "description": "通常の推奨は [[activeStyles]] の有効スタイルを使用します。[[supplementalStyles]] の補足スタイルは明示的な派生形の要求に対応し、[[deprecatedStyles]] の廃止項目は通常の順位付けから除外されます。ランディング構造は別のデータです。",
         "tags": [
           "Glassmorphism",
           "Dark Mode",
@@ -668,7 +1005,7 @@
       },
       "colors": {
         "title": "カラーパレット",
-        "description": "SaaS、E-commerce、Healthcare、Fintech などに向けた 161 個のプロダクト別カラーシステム。Primary、Secondary、CTA、Background、Text、Border を含みます。",
+        "description": "SaaS、E-commerce、Healthcare、Fintech などに向けた [[palettes]] 個のプロダクト別カラーシステム。Primary、Secondary、CTA、Background、Text、Border を含みます。",
         "tags": [
           "SaaS",
           "Healthcare",
@@ -677,7 +1014,7 @@
       },
       "typography": {
         "title": "タイポグラフィ",
-        "description": "Google Fonts 連携、Tailwind 設定、ムード別推奨を含む 57 種類のフォントペアリング。",
+        "description": "Google Fonts 連携、Tailwind 設定、ムード別推奨を含む [[fonts]] 種類のフォントペアリング。",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -717,7 +1054,7 @@
   "howItWorks": {
     "titlePrefix": "UI UX Pro Max Skill - ",
     "titleAccent": "仕組み",
-    "subtitle": "UI UX Pro Max Skill: プロンプトから本番品質の UI まで、6 つの知的ステップで進めます",
+    "subtitle": "プロンプトから提案、実装・確認へ進む説明用の流れです。リンク先は外部の参考デモで、この手順の実行記録ではありません。",
     "steps": {
       "1": {
         "title": "あなたのプロンプト",
@@ -765,7 +1102,7 @@
         },
         "ux": {
           "label": "UX RULE",
-          "value": "Use animations for loading only"
+          "value": "動きの軽減設定を尊重する"
         },
         "colorsLabel": "COLORS",
         "colors": [
@@ -810,16 +1147,14 @@
         ]
       },
       "6": {
-        "title": "最終結果",
-        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
-        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "title": "外部デモの参考",
         "imageAlt": "Pet Grooming & Spa Demo",
         "cta": "ライブデモを見る"
       }
     }
   },
   "techStacks": {
-    "title": "UI UX Pro Max Skill は 16 種類の技術スタックをサポート",
+    "title": "UI UX Pro Max Skill は [[stacks]] 種類の技術スタックをサポート",
     "subtitle": "現在の upstream データに含まれる各スタックに対応した、フレームワーク別のベストプラクティス、パターン、コード例。",
     "stacks": {
       "react": {
@@ -885,12 +1220,36 @@
       "threejs": {
         "title": "Three.js",
         "desc": "3D scenes、WebGL、interactions"
+      },
+      "javafx": {
+        "title": "JavaFX",
+        "desc": "デスクトップ UI"
+      },
+      "wpf": {
+        "title": "WPF",
+        "desc": "Windows アプリ"
+      },
+      "winui": {
+        "title": "WinUI 3",
+        "desc": "Windows アプリ"
+      },
+      "uwp": {
+        "title": "UWP",
+        "desc": "Windows アプリ"
+      },
+      "avalonia": {
+        "title": "Avalonia",
+        "desc": "クロスプラットフォーム UI"
+      },
+      "uno": {
+        "title": "Uno Platform",
+        "desc": "クロスプラットフォーム UI"
       }
     }
   },
   "gallery": {
-    "title": "39 件のウェブサイトデモギャラリー",
-    "subtitle": "UI UX Pro Max Skill で構築された実用的なウェブサイトデモを閲覧できます。クリックしてライブデモを表示してください。",
+    "title": "ウェブサイトのデモ参考",
+    "subtitle": "外部デモの参考資料です。当サイトの制作物や生成過程の検証済み成果ではありません。",
     "searchPlaceholder": "デモを検索 (名前、スタイル、カテゴリ、プロンプト)…",
     "clearSearch": "検索をクリア",
     "filters": {
@@ -921,7 +1280,7 @@
     "features": [
       "オープンソース",
       "Claude Code 対応",
-      "本番対応"
+      "非公式多言語翻訳"
     ]
   },
   "feedback": {
@@ -937,18 +1296,19 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "UI UX Pro Max Skill - Claude Code 向けデザインインテリジェンス Skill。67 種類の UI スタイル、161 種類のカラーパレット、57 種類のフォントペアリング、99 個の UX ガイドライン、25 種類のチャート、161 個の推論ルールを備えた検索可能なデータベース。",
+    "description": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
     "resources": "リソース",
     "database": "データベース",
     "about": "このサイトについて",
     "privacy": "プライバシー",
     "terms": "利用規約",
     "contact": "お問い合わせ",
-    "builtWith": "React + Tailwind CSS で構築 (by UI UX Pro Max)"
+    "builtWith": "独立した翻訳管理者 · 非公式多言語翻訳",
+    "upstreamCredit": "原プロジェクト: Next Level Builder"
   },
   "blog": {
     "title": "ブログ",
-    "subtitle": "UI UX Pro Max Skill を使ったデザインの実験ノートと現場のメモ。",
+    "subtitle": "当サイトが整理した学習ノートとプロンプト例です。公式発表ではありません。",
     "allTags": "すべて",
     "empty": "まだ記事はありません。後ほどご確認ください。",
     "minRead": "約 {n} 分",
@@ -956,13 +1316,13 @@
     "fallbackBanner": "この記事はまだ翻訳されていません。英語版を表示しています。",
     "tocTitle": "目次",
     "ctaEyebrow": "気に入ったら",
-    "ctaTitle": "Claude が使っているこの Skill を試す",
-    "ctaDescription": "UI UX Pro Max には 50 種類のスタイル、21 種類のカラーパレット、50 種類のフォントペアリング、99 個の UX ガイドラインが入っています。Claude が Web の平均値で補間しなくて済むキュレーション済みセットです。",
-    "ctaTry": "Skill をインストール",
+    "ctaTitle": "上流スキルを知る",
+    "ctaDescription": "上流のリリースには検索可能な [[styles]] スタイル（有効 [[activeStyles]]、補足 [[supplementalStyles]]）、[[palettes]] 配色、[[fonts]] フォントペア、[[ux]] UX 指針、[[stacks]] 技術スタックがあります。これらは当サイトの制作物ではなく、上流のデータです。",
+    "ctaTry": "上流プロジェクトを見る",
     "ctaRss": "RSS を購読",
     "ctaMore": "他の記事",
     "latestTitle": "ブログの最新記事",
-    "latestSubtitle": "チームとコミュニティからの現場メモと Prompt 技法。",
+    "latestSubtitle": "当サイトが整理した学習ノートとプロンプト例です。公式発表ではありません。",
     "seeAll": "すべての記事を見る"
   },
   "tutorials": {
@@ -987,5 +1347,17 @@
         "description": "ぼんやりとしたアイデアから 5 ステップで公開できる LP まで。"
       }
     }
+  },
+  "provenance": {
+    "identity": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
+    "maintainer": "独立した翻訳管理者",
+    "reference": "上流の参考資料",
+    "checked": "内容確認日",
+    "siteFeedback": "翻訳・サイトへの報告",
+    "upstreamFeedback": "スキル・CLI の問題",
+    "pending": "当サイトの学習資料です。初出の出典は未確認で、公式文書の翻訳とは表示していません。",
+    "translation": "翻訳元",
+    "editorial": "当サイトが整理した学習ノートとプロンプト例です。公式発表ではありません。",
+    "docsNote": "公開済み CLI パッケージを基準に確認した非公式の翻訳・整理資料です。"
   }
 }

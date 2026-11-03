@@ -1,0 +1,37 @@
+{
+  "en": {
+    "identity": "An unofficial multilingual translation site for UI UX Pro Max Skill. We translate and organize documentation; the original authors maintain the skill, CLI and datasets. We are not affiliated with or endorsed by the original project.",
+    "shortIdentity": "Unofficial multilingual translation",
+    "maintainer": "Independent translation maintainers",
+    "notes": "Independent learning notes and prompt examples; not official project announcements.",
+    "feedback": "For translation or website errors, use the site feedback link below. For skill or CLI defects, use the upstream project link. This site does not provide official product support."
+  },
+  "zh": {
+    "identity": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
+    "shortIdentity": "非官方多语言翻译",
+    "maintainer": "独立翻译维护者",
+    "notes": "本站整理的学习笔记与提示词示例，不代表官方发布。",
+    "feedback": "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。"
+  },
+  "vi": {
+    "identity": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
+    "shortIdentity": "Bản dịch đa ngôn ngữ không chính thức",
+    "maintainer": "Nhóm duy trì bản dịch độc lập",
+    "notes": "Ghi chú học tập và prompt được trang tổng hợp độc lập, không phải thông báo chính thức.",
+    "feedback": "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức."
+  },
+  "ja": {
+    "identity": "当サイトは UI UX Pro Max Skill の非公式多言語翻訳サイトです。文書の翻訳・整理を行い、スキル、CLI、データセットは原作者が管理します。原プロジェクトとは無関係で、公式の承認を受けていません。",
+    "shortIdentity": "非公式多言語翻訳",
+    "maintainer": "独立した翻訳管理者",
+    "notes": "当サイトが整理した学習ノートとプロンプト例です。公式発表ではありません。",
+    "feedback": "翻訳・サイトの誤りは下の当サイト窓口へ、スキル・CLI の不具合は上流プロジェクトへご報告ください。当サイトは公式サポートを提供しません。"
+  },
+  "hi": {
+    "identity": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
+    "shortIdentity": "अनौपचारिक बहुभाषी अनुवाद",
+    "maintainer": "स्वतंत्र अनुवाद अनुरक्षक",
+    "notes": "स्वतंत्र अध्ययन नोट्स और prompt उदाहरण; ये आधिकारिक घोषणाएँ नहीं हैं।",
+    "feedback": "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।"
+  }
+}

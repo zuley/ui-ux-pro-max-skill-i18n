@@ -1,3 +1,6 @@
+import { absoluteSiteUrl } from '@/lib/site-config';
+import { localizedAlternates } from '@/lib/metadata';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Rss } from 'lucide-react';
@@ -8,8 +11,7 @@ import type { Locale } from '@/lib/content/types';
 import { TagFilter } from '@/components/blog/tag-filter';
 import {
   DEFAULT_OG_IMAGE,
-  DEFAULT_TWITTER_IMAGE_URL,
-  SITE_URL
+  DEFAULT_TWITTER_IMAGE_URL
 } from '@/lib/site-config';
 
 type Props = {
@@ -27,27 +29,17 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const currentUrl = locale === 'en' ? `${SITE_URL}/blog` : `${SITE_URL}/${locale}/blog`;
+  const currentUrl = absoluteSiteUrl('/blog', locale);
 
   return {
     title: `${t('blog.title')} | UI UX Pro Max Skill`,
     description: t('blog.subtitle'),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/blog`,
-        en: `${SITE_URL}/blog`,
-        zh: `${SITE_URL}/zh/blog`,
-        vi: `${SITE_URL}/vi/blog`,
-        ja: `${SITE_URL}/ja/blog`,
-        hi: `${SITE_URL}/hi/blog`,
-      },
-    },
+    alternates: localizedAlternates('/blog', locale),
     openGraph: {
       title: `${t('blog.title')} | UI UX Pro Max Skill`,
       description: t('blog.subtitle'),
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale,
       type: 'website',
       images: [{ ...DEFAULT_OG_IMAGE, alt: t('blog.subtitle') }],

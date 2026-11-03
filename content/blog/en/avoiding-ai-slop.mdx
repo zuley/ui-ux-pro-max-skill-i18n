@@ -1,26 +1,15 @@
 ---
 title: "Avoiding AI slop: 7 prompt techniques to stop your interfaces from looking generic"
-summary: "Purple gradients, Inter font, three cards on a white background — the visual signature of AI-generated UI. Here is how we tell our Skill to make something more deliberate."
+summary: "Specific references, explicit constraints and deliberate choices can make AI-generated interfaces less generic. This article organizes seven prompt techniques to try; their effectiveness should be checked in your own project."
 date: 2026-05-22
 tags: [prompt, design-system, claude-skills]
 author: team
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
 
-If you have generated more than a handful of interfaces with an AI assistant,
-you have already seen them: the same three feature cards over a white
-background, the same purple-to-indigo gradient hero, the same `Inter` heading
-sitting above a tagline that promises to "transform your workflow." We have
-started calling this **AI slop** — the visual signature of an interface that
-nobody actually decided.
-
-It is not the model's fault. When you ask for "a modern landing page," you
-are asking it to interpolate from the average of everything it has seen,
-and the average of the modern web is exactly what comes out: safe, soft,
-shiny, and forgettable.
-
-This post lists the seven prompt techniques we keep coming back to when we
-want output that looks like a designer made a choice, not like a model
-averaged a thousand of them.
+Specific references, explicit constraints and deliberate choices can make AI-generated interfaces less generic. This article organizes seven prompt techniques to try; their effectiveness should be checked in your own project.
 
 ## 1. Anchor in a specific reference, not "modern"
 
@@ -55,14 +44,9 @@ the top of the prompt does more than three paragraphs of positive direction.
 
 ## 3. Pick from a curated set instead of asking the AI to choose
 
-The Skill ships 50 styles, 21 palettes, and 50 font pairings precisely so
-you do not have to leave colour and type up to a vibes-based interpolation.
-When you ask the assistant to *choose*, you get the median. When you ask it
-to *apply a specific item from a curated set*, you get something that has
-already been judged tasteful by a human.
+Use the upstream search script with --domain style, --domain color or --domain typography. Treat returned names as recommendations and verify their fit; this site does not provide its own design catalog.
 
-This is the whole reason `+style`, `+palette`, and `+font` exist as
-explicit knobs. Use them.
+Use the upstream search script with --domain style, --domain color or --domain typography. Treat returned names as recommendations and verify their fit; this site does not provide its own design catalog.
 
 ## 4. Demand one strong visual decision per screen
 

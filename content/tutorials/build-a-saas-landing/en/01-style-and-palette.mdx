@@ -5,7 +5,13 @@ date: 2026-05-22
 tags: [tutorial, design-system, prompt]
 author: team
 step: 1
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
+
+Use the upstream search script with --domain style, --domain color or --domain typography. Treat returned names as recommendations and verify their fit; this site does not provide its own design catalog.
+
 
 A landing page is one screen with one job. The hardest part is not writing
 the prompt — it is **deciding what the page should feel like before you
@@ -23,7 +29,7 @@ default to the most-seen patterns of the last two years. That is a
 reasonable thing to do when you have nothing else to go on, but it is
 the wrong thing to do when **you** are the one with the brand.
 
-The Skill ships **50 styles** and **21 palettes** precisely because the
+The Skill provides **style and palette catalogs** precisely because the
 choice should be a curated pick, not a vibes-based interpolation.
 
 ## Decide three things before you prompt
@@ -34,8 +40,8 @@ choice should be a curated pick, not a vibes-based interpolation.
   items={[
     { id: 'audience', label: 'Who is this page for? (one sentence, not a persona doc)' },
     { id: 'feeling', label: 'What should the visitor feel in the first 2 seconds? (one adjective)' },
-    { id: 'style', label: 'Which of the 50 styles do you want? Write down the name.' },
-    { id: 'palette', label: 'Which of the 21 palettes? Write down the name.' },
+    { id: 'style', label: 'Which of the catalog styles do you want? Write down the name.' },
+    { id: 'palette', label: 'Which of the catalog palettes? Write down the name.' },
     { id: 'forbidden', label: 'Three things you explicitly do not want on this page.' }
   ]}
 />
@@ -49,14 +55,13 @@ to what your page is **not**.
 Run the database search and read the actual style cards instead of
 guessing:
 
+Run these commands in a terminal at the project root after installing the Claude skill. Other assistants use different script paths. The queries search by keywords; they are not tag filters. Review the returned style and palette before choosing.
+
 <CodeBlock
   title="Browse styles"
   language="bash"
-  code={`# Inside Claude Code
-+style list
-
-# Or filter by attribute
-+style list --tag editorial --tag asymmetric`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "editorial asymmetric" --domain style`}
 />
 
 Pick **one**, not three. The point of the curated set is that the
@@ -64,10 +69,7 @@ hard work of judging taste has already been done — your job is to commit
 to a single choice, not to average them.
 
 <Callout tone="info" title="A useful default if you're stuck">
-  For a B2B SaaS landing page, "Editorial Brutalist" + the "Slate Ink"
-  palette is a strong out-of-the-box combination: serif display headings,
-  ample whitespace, a single accent colour, and no decorative gradients.
-  It looks intentional even before you add any content.
+  Try a minimal visual direction for a B2B SaaS page, then compare the actual search results. A style name and a product query are search inputs, not a tested preset pair. Choose fonts and colors after checking your content and brand.
 </Callout>
 
 ## How to pick the palette
@@ -80,8 +82,8 @@ checklist above.
 <CodeBlock
   title="Browse palettes"
   language="bash"
-  code={`+palette list --style editorial-brutalist
-+palette show slate-ink`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --domain color
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --design-system`}
 />
 
 ## What we have at the end of this step

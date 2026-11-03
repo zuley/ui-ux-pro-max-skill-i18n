@@ -5,7 +5,13 @@ date: 2026-05-22
 tags: [tutorial, design-system, prompt]
 author: team
 step: 1
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
+
+使用上游搜索脚本的 --domain style、--domain color 或 --domain typography 检索。返回名称是待评估的建议；本站不提供自建的设计目录。
+
 
 落地页就是一屏完成一件事的页面。最难的部分不是写 Prompt，是**在开始写
 Prompt 之前，先想清楚这一页应该是什么感觉**。这一步你要是跳过，模型
@@ -21,7 +27,7 @@ Prompt 之前，先想清楚这一页应该是什么感觉**。这一步你要�
 当你**手上什么都没有**的时候，这样做也行。但**你才是知道自己品牌的那
 个人**，这件事不该让模型做。
 
-Skill 之所以预置了 **50 种风格** 和 **21 套配色**，就是因为这个选择
+Skill 之所以提供了**风格目录**和**配色目录**，就是因为这个选择
 应该是**从精选集合里挑一个**，不是「vibes 插值」出来的。
 
 ## 写 Prompt 之前先决定 3 件事
@@ -32,8 +38,8 @@ Skill 之所以预置了 **50 种风格** 和 **21 套配色**，就是因为这
   items={[
     { id: 'audience', label: '这一页是给谁看的？（一句话，不是用户画像文档）' },
     { id: 'feeling', label: '访客进来 2 秒内应该有什么感觉？（一个形容词）' },
-    { id: 'style', label: '从 50 种风格里挑哪个？写下名字。' },
-    { id: 'palette', label: '从 21 套配色里挑哪个？写下名字。' },
+    { id: 'style', label: '从目录风格里挑哪个？写下名字。' },
+    { id: 'palette', label: '从目录配色里挑哪个？写下名字。' },
     { id: 'forbidden', label: '明确不想要的三样东西。' }
   ]}
 />
@@ -45,23 +51,20 @@ Skill 之所以预置了 **50 种风格** 和 **21 套配色**，就是因为这
 
 直接用 database 搜，不要猜：
 
+安装 Claude 技能后，在项目根目录的终端执行以下命令；其他助手需使用对应脚本路径。这些查询按关键词检索，并非标签过滤。请查看返回的风格与配色再做选择。
+
 <CodeBlock
   title="浏览风格"
   language="bash"
-  code={`# 在 Claude Code 里
-+style list
-
-# 也可以按 tag 过滤
-+style list --tag editorial --tag asymmetric`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "editorial asymmetric" --domain style`}
 />
 
 挑**一个**，不是三个。精选集合存在的意义就是「判断品味」这件难事别
 人替你做过了——你的工作是**承诺一个选择**，不是把它们求平均。
 
 <Callout tone="info" title="如果实在选不出来，这是个不错的默认值">
-  B2B SaaS 落地页，「Editorial Brutalist」+「Slate Ink」是一对很
-  耐用的开箱即用组合：衬线显示字体的标题、大量留白、一个克制的主色、
-  没有任何装饰性渐变。哪怕里面还没填内容，看着也已经像是有人做过决定。
+  B2B SaaS 页面可以先尝试极简方向，再比较实际检索结果。风格名称和产品关键词是查询输入，不是经过验证的预设组合。字体与配色应结合内容和品牌另行确认。
 </Callout>
 
 ## 怎么挑配色
@@ -72,8 +75,8 @@ Skill 之所以预置了 **50 种风格** 和 **21 套配色**，就是因为这
 <CodeBlock
   title="浏览配色"
   language="bash"
-  code={`+palette list --style editorial-brutalist
-+palette show slate-ink`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --domain color
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --design-system`}
 />
 
 ## 这一步结束的时候你应该有什么

@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "pnpm run build:cf && pnpm exec wrangler deploy",
-    "preview": "pnpm run build:cf && pnpm exec wrangler dev"
+    "preview": "pnpm run build:cf && pnpm exec wrangler dev",
+    "check:content": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -48,5 +49,6 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.90.0"
-  }
+  },
+  "packageManager": "pnpm@10.27.0"
 }

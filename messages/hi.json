@@ -1,9 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max Skill - Agent Skills",
+    "title": "UI UX Pro Max Skill — अनौपचारिक बहुभाषी अनुवाद",
     "navTitle": "UI UX Pro Max Skill",
-    "description": "Claude Code के लिए डिज़ाइन इंटेलिजेंस",
-    "metaDescription": "Claude Code, Cursor, Windsurf और अन्य AI सहायकों के लिए डिज़ाइन इंटेलिजेंस—67 UI शैलियाँ, 161 पैलेट, टाइपोग्राफ़ी, UX नियम और टेक-स्टैक मार्गदर्शन।",
+    "description": "अनौपचारिक बहुभाषी अनुवाद",
+    "metaDescription": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI डिज़ाइन, UI शैलियाँ, रंग पैलेट, फ़ॉन्ट संयोजन, UX दिशानिर्देश, डिज़ाइन सिस्टम जेनरेटर",
     "switchTheme": "थीम बदलें",
     "switchToLight": "लाइट मोड पर जाएँ",
@@ -31,14 +31,14 @@
   },
   "hero": {
     "title1": "UI UX Pro Max Skill",
-    "title2": "डिज़ाइन इंटेलिजेंस",
-    "subtitle": "UI UX Pro Max Skill—Claude Code, Cursor, Windsurf और दूसरे AI सहायकों के लिए Agent Skill। इसमें 67 UI शैलियाँ, 161 रंग पैलेट, 57 फ़ॉन्ट संयोजन, 99 UX दिशानिर्देश, 25 चार्ट प्रकार, 16 टेक स्टैक और 161 रीजनिंग नियम हैं, ताकि AI सुंदर और उपयोगी इंटरफ़ेस बना सके।",
+    "title2": "अनौपचारिक बहुभाषी अनुवाद",
+    "subtitle": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
     "btnHow": "शुरू करें",
     "btnDemos": "क्विक स्टार्ट"
   },
   "quickStart": {
     "title": "UI UX Pro Max Skill के साथ क्विक स्टार्ट",
-    "subtitle": "इन चरणों का पालन करके प्रॉम्प्ट से कुछ ही मिनटों में पूरा डिज़ाइन सिस्टम तैयार करें।",
+    "subtitle": "मूल skill इंस्टॉल करके समीक्षा योग्य डिज़ाइन सुझाव बनाएँ।",
     "step1": {
       "title": "1) स्किल इंस्टॉल करें",
       "body": "UI UX Pro Max Skill को सीधे Claude Code में इंस्टॉल करें।",
@@ -114,26 +114,26 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max Skill एक खुली और खोजने योग्य डिज़ाइन इंटेलिजेंस परत है, जो Claude Code, Cursor, Windsurf, GitHub Copilot और 14 से अधिक AI कोडिंग सहायकों से जुड़ती है। हर बार मॉडल से शून्य से डिज़ाइन गढ़ने को कहने के बजाय, यह स्किल उसे 67 UI शैलियों, 161 रंग पैलेट, 57 फ़ॉन्ट संयोजनों, 99 UX दिशानिर्देशों, 25 चार्ट प्रकारों और 161 उद्योग-विशिष्ट रीजनिंग नियमों का चुना हुआ ज्ञान-भंडार देती है। नतीजे में इंटरफ़ेस सोच-समझकर बना हुआ दिखता है, accessibility नियमों का पालन करता है और आम ‘AI-generated’ रूप से बचता है।",
+      "overview": "मूल रिलीज़ में [[styles]] खोजने योग्य शैलियाँ ([[activeStyles]] सक्रिय, [[supplementalStyles]] पूरक), [[palettes]] रंग योजनाएँ, [[fonts]] फ़ॉन्ट जोड़े, [[ux]] UX दिशानिर्देश और [[stacks]] तकनीकी स्टैक हैं। ये मूल परियोजना के आँकड़े हैं, इस साइट की रचना नहीं।",
       "problem": {
         "title": "AI कोडिंग के लिए डिज़ाइन इंटेलिजेंस क्यों ज़रूरी है",
         "lead": "आधुनिक AI सहायक component code लिखने में बहुत सक्षम हैं, लेकिन UI डिज़ाइन की समझ एक-जैसी नहीं होती। ठोस संदर्भ के बिना मॉडल अलग-अलग उत्पादों के लिए बार-बार वही कुछ लेआउट और रंग योजनाएँ बना देते हैं—medical dashboard crypto app जैसा दिखने लगता है और बच्चों के app में fintech वाला धूसर रंग आ जाता है। UI UX Pro Max Skill मॉडल के चुनावों को प्रमाण-आधारित, उद्योग-सचेत डिज़ाइन ज्ञान से जोड़कर इसी कमी को पूरा करती है।",
         "points": [
           {
             "title": "एक-जैसे सामान्य पैटर्न",
-            "body": "संदर्भ न मिलने पर मॉडल बीच में रखा hero section, तीन feature cards और एक CTA बना देते हैं। यह स्किल 24 landing patterns और 67 visual styles उपलब्ध कराती है, ताकि हर प्रोजेक्ट के लिए मॉडल के पास सचमुच विचार करने लायक विकल्प हों।"
+            "body": "संदर्भ न मिलने पर मॉडल बीच में रखा hero section, तीन feature cards और एक CTA बना देते हैं। यह स्किल [[landing]] landing patterns और [[styles]] visual styles उपलब्ध कराती है, ताकि हर प्रोजेक्ट के लिए मॉडल के पास सचमुच विचार करने लायक विकल्प हों।"
           },
           {
             "title": "उद्योग का संदर्भ नहीं",
-            "body": "Fintech dashboard और wellness app की रंग, सूचना-घनत्व और motion संबंधी ज़रूरतें बिल्कुल अलग होती हैं। 161 उद्योग-विशिष्ट रीजनिंग नियम मॉडल को ऐसे पैलेट और पैटर्न चुनने देते हैं जो उस क्षेत्र के स्वाभाविक लगें।"
+            "body": "Fintech dashboard और wellness app की रंग, सूचना-घनत्व और motion संबंधी ज़रूरतें बिल्कुल अलग होती हैं। [[palettes]] उद्योग-विशिष्ट रीजनिंग नियम मॉडल को ऐसे पैलेट और पैटर्न चुनने देते हैं जो उस क्षेत्र के स्वाभाविक लगें।"
           },
           {
             "title": "छिपे हुए anti-patterns",
-            "body": "AI सहायक कम contrast, पढ़ने में कठिन font size या mobile पर असफल interaction pattern वाला code आसानी से बना देते हैं। स्किल में 99 UX दिशानिर्देश और साफ़ anti-pattern सूचियाँ हैं, इसलिए मॉडल जानता है कि किससे बचना है।"
+            "body": "AI सहायक कम contrast, पढ़ने में कठिन font size या mobile पर असफल interaction pattern वाला code आसानी से बना देते हैं। स्किल में [[ux]] UX दिशानिर्देश और साफ़ anti-pattern सूचियाँ हैं, इसलिए मॉडल जानता है कि किससे बचना है।"
           },
           {
             "title": "अलग sessions में असंगत आउटपुट",
-            "body": "स्थायी डिज़ाइन सिस्टम के बिना हर बातचीत में डिज़ाइन दिशा बदलती रहती है। --persist आपके repo में MASTER.md लिखता है, जिसे आगे के सभी sessions पढ़ते हैं; इससे tokens, typography और spacing के निर्णय स्थिर रहते हैं।"
+            "body": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
           }
         ]
       },
@@ -143,15 +143,15 @@
         "items": [
           {
             "role": "अकेले काम करने वाले developers और indie hackers",
-            "body": "आप तेज़ी से काम करते हैं, आपके पास अलग designer नहीं है और आप नहीं चाहते कि हर project Tailwind starter template जैसा लगे। यह स्किल एक command में आपके product को तर्कसंगत visual identity देती है।"
+            "body": "सुझाव को शुरुआती बिंदु मानें और वास्तविक UI देखें। Framework version, सामग्री और accessibility ज़रूरतें परिणाम बदलती हैं।"
           },
           {
             "role": "Design-engineering teams",
-            "body": "Tokens, density और motion पर आपकी पहले से स्पष्ट राय है। स्किल --persist overrides का सम्मान करती है, इसलिए आप उन निर्णयों को codebase में दर्ज कर सकते हैं और हर AI session से उनका पालन करा सकते हैं।"
+            "body": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
           },
           {
             "role": "Agencies और consultancies",
-            "body": "आप कई उद्योगों के लिए interfaces बनाते हैं। 161 industry reasoning rules और per-page overrides हर बार पूरा system दोबारा बनाए बिना domain के अनुकूल शुरुआत तैयार करने देते हैं।"
+            "body": "आप कई उद्योगों के लिए interfaces बनाते हैं। [[reasoning]] industry reasoning rules और per-page overrides हर बार पूरा system दोबारा बनाए बिना domain के अनुकूल शुरुआत तैयार करने देते हैं।"
           },
           {
             "role": "Open-source maintainers",
@@ -161,7 +161,7 @@
       },
       "architecture": {
         "title": "एक नज़र में: यह कैसे काम करता है",
-        "body": "आप UI का अनुरोध करते हैं तो AI सहायक स्किल लोड करता है। स्किल अनुरोध से product type और intent signals निकालती है, साथ दिए गए knowledge base में कई domains पर खोज चलाती है, उद्योग-विशिष्ट रीजनिंग नियमों से candidates को क्रम देती और anti-patterns हटाती है, फिर एक structured design system लौटाती है जिसे सहायक code लिखने में इस्तेमाल करता है। कुछ भी बाहरी service को नहीं भेजा जाता—पूरी प्रक्रिया आपके AI client में locally चलती है।",
+        "body": "मूल Python जनरेटर अंतर्निहित उत्पाद, शैली, रंग, लैंडिंग और फ़ॉन्ट डेटा खोजकर उद्योग नियमों से सुझाव जोड़ता है। AI सहायक उस आउटपुट से अलग चरण में UI बनाता है। समय क्वेरी और वातावरण पर निर्भर है। अंतर्निहित Python खोज स्थानीय है। AI सहायक अपनी सेटिंग के अनुसार prompts, फ़ाइलें और परिणाम प्रदाता को भेज सकता है। CLI इंस्टॉलेशन और अपडेट जाँच में नेटवर्क लग सकता है।",
         "labels": {
           "you": "आप",
           "assistant": "AI सहायक",
@@ -185,31 +185,31 @@
         "intro": "नीचे दी गई हर संख्या अलग से तैयार किया गया dataset है, जिसे रीजनिंग इंजन खोज और मिला सकता है। साथ मिलकर ये datasets मॉडल को template-जैसे नहीं, बल्कि हाथ से सँवारे हुए design systems बनाने के लिए पर्याप्त सामग्री देते हैं।",
         "items": [
           {
-            "title": "67 UI शैलियाँ",
-            "desc": "Glassmorphism से Claymorphism और Minimalism से Brutalism तक—AI-Native UI, Bento Grid, Dark Mode, Aurora, Skeuomorphism, Neumorphism, Flat 2.0 और भी बहुत कुछ। हर style entry में विवरण, सही उपयोग-स्थिति, visual effects और stack compatibility दी गई है।"
+            "title": "[[styles]] UI शैलियाँ",
+            "desc": "सामान्य सुझाव [[activeStyles]] सक्रिय शैलियाँ इस्तेमाल करते हैं। [[supplementalStyles]] पूरक शैलियाँ स्पष्ट वैरिएंट अनुरोधों के लिए हैं; [[deprecatedStyles]] अप्रचलित प्रविष्टियाँ सामान्य रैंकिंग से बाहर हैं। लैंडिंग पैटर्न अलग डेटा है।"
           },
           {
-            "title": "161 रंग पैलेट",
-            "desc": "SaaS, E-commerce, Healthcare, Fintech, Beauty & Wellness, Gaming, EdTech और अन्य 161 product types के अनुरूप industry-specific palettes। हर palette में accessible contrast pairings, dark-mode variants और लक्षित mood शामिल है।"
+            "title": "[[palettes]] रंग पैलेट",
+            "desc": "मूल palettes उत्पाद के अनुसार रंग सुझाते हैं। Contrast और light/dark tokens जाँचें; हर प्रविष्टि में दोनों पूर्ण themes नहीं हैं।"
           },
           {
-            "title": "57 फ़ॉन्ट संयोजन",
-            "desc": "Google Fonts के चुने हुए typography combinations, जिनमें import statements, सुझाए गए weights, line-height ratios और display से caption तक की typographic hierarchy शामिल है।"
+            "title": "[[fonts]] फ़ॉन्ट संयोजन",
+            "desc": "मूल कैटलॉग heading/body फ़ॉन्ट जोड़े, उपयोग नोट और लिंक देता है। अपनी भाषाओं के लिए glyph coverage, license और rendering जाँचें।"
           },
           {
             "title": "25 चार्ट प्रकार",
             "desc": "Dashboard और analytics के लिए visualization recommendations—Recharts, Visx, Chart.js और ECharts जैसी libraries के सुझावों के साथ; screen-reader labeling और colorblind-safe palettes के accessibility notes भी।"
           },
           {
-            "title": "16 टेक स्टैक",
-            "desc": "React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel और Three.js के framework-specific guides। हर stack page में प्रचलित patterns और सुझाई गई libraries शामिल हैं।"
+            "title": "[[stacks]] टेक स्टैक",
+            "desc": "React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML + Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, Three.js, JavaFX, WPF, WinUI 3, UWP, Avalonia, Uno Platform."
           },
           {
-            "title": "99 UX दिशानिर्देश",
+            "title": "[[ux]] UX दिशानिर्देश",
             "desc": "Forms, navigation, empty states, error handling, loading patterns, mobile gestures, motion preferences और WCAG compliance के लिए best practices, anti-pattern सुधार और accessibility नियम।"
           },
           {
-            "title": "161 रीजनिंग नियम",
+            "title": "[[palettes]] रीजनिंग नियम",
             "desc": "Industry-specific rules जो product type को patterns, style priorities, color mood, typography, effects और anti-patterns से मिलाते हैं। इन्हीं से मॉडल अनुमान लगाने के बजाय कह पाता है: ‘यह healthcare app है, इसलिए saturation कम और density मध्यम होनी चाहिए।’"
           }
         ]
@@ -231,7 +231,7 @@
           {
             "approach": "Figma UI kits",
             "strengths": "उच्च visual fidelity। इंसानों को handoff देने के लिए अच्छा।",
-            "limits": "Repo से बाहर रहता है। AI assistants सीधे Figma files पढ़ या बढ़ा नहीं सकते। Code में बदलने का अलग चरण चाहिए।"
+            "limits": "डिज़ाइन से कोड का कार्यप्रवाह चाहिए; उपलब्ध integration सहायक और tools पर निर्भर है।"
           },
           {
             "approach": "Design token libraries",
@@ -252,7 +252,7 @@
       },
       "shouldYouUse": {
         "title": "क्या आपको इसे इस्तेमाल करना चाहिए?",
-        "subtitle": "जो बातें आप पर लागू हों, उन्हें चुनें। तीन या अधिक होने पर स्किल इंस्टॉल करने से अच्छा लाभ मिलेगा।",
+        "subtitle": "इन प्रश्नों से तय करें कि मूल skill आज़मानी है या नहीं।",
         "items": [
           {
             "id": "ai-coding",
@@ -287,22 +287,22 @@
       "next": "अगला: अनुरोध करते समय Design System Generator ठीक क्या करता है, यह जानने के लिए ‘यह कैसे काम करता है’ पढ़ें; या सीधे इंस्टॉलेशन गाइड पर जाएँ।"
     },
     "dsg": {
-      "overview": "Design System Generator, UI UX Pro Max Skill का मुख्य भाग है। AI सहायक UI का अनुरोध पहचानते ही जेनरेटर समझता है कि आप वास्तव में क्या चाहते हैं, पाँच डिज़ाइन domains में समानांतर खोज चलाता है, उद्योग-विशिष्ट रीजनिंग नियम लागू करता है और सहायक को एक structured design system देता है, जिसे code में बदला जाता है। पूरी प्रक्रिया locally चलती है और कुछ ही seconds में पूरी हो जाती है।",
+      "overview": "मूल Python जनरेटर अंतर्निहित उत्पाद, शैली, रंग, लैंडिंग और फ़ॉन्ट डेटा खोजकर उद्योग नियमों से सुझाव जोड़ता है। AI सहायक उस आउटपुट से अलग चरण में UI बनाता है। समय क्वेरी और वातावरण पर निर्भर है।",
       "primer": {
         "title": "यहाँ ‘डिज़ाइन सिस्टम’ का क्या अर्थ है?",
         "lead": "यहाँ design system का अर्थ 500 पन्नों की Figma library नहीं है। यह machine-readable निर्णयों का छोटा, स्पष्ट bundle है: कौन-सा layout pattern, color palette और font pairing इस्तेमाल हो; motion की भाषा कैसी हो; किन interactions को प्राथमिकता मिले; और किन anti-patterns से बचा जाए। जेनरेटर हर अनुरोध के लिए आपके product type और intent के अनुरूप ऐसा bundle बनाता है।",
         "items": [
           {
             "title": "पैटर्न",
-            "body": "ढाँचे का चुनाव—जैसे ‘sticky navigation वाला bento grid’, ‘data-dense admin layout’ या ‘mobile-first card stack’। 24 landing और product patterns में से चुना जाता है।"
+            "body": "ढाँचे का चुनाव—जैसे ‘sticky navigation वाला bento grid’, ‘data-dense admin layout’ या ‘mobile-first card stack’। [[landing]] landing और product patterns में से चुना जाता है।"
           },
           {
             "title": "शैली",
-            "body": "दृश्य रूप—glassmorphism, brutalism, minimalism, neumorphism, claymorphism, aurora, AI-native या catalog की 67 शैलियों में से कोई एक। हर शैली की अपनी effects language होती है।"
+            "body": "सामान्य सुझाव [[activeStyles]] सक्रिय शैलियाँ इस्तेमाल करते हैं। [[supplementalStyles]] पूरक शैलियाँ स्पष्ट वैरिएंट अनुरोधों के लिए हैं; [[deprecatedStyles]] अप्रचलित प्रविष्टियाँ सामान्य रैंकिंग से बाहर हैं। लैंडिंग पैटर्न अलग डेटा है।"
           },
           {
             "title": "रंग और टाइपोग्राफ़ी",
-            "body": "161 विकल्पों में से उद्योग के अनुकूल palette और 57 में से font pairing। दोनों में accessibility metadata होता है: contrast pairings, सुझाए गए weights और line heights।"
+            "body": "मूल palettes उत्पाद के अनुसार रंग सुझाते हैं। Contrast और light/dark tokens जाँचें; हर प्रविष्टि में दोनों पूर्ण themes नहीं हैं। मूल कैटलॉग heading/body फ़ॉन्ट जोड़े, उपयोग नोट और लिंक देता है। अपनी भाषाओं के लिए glyph coverage, license और rendering जाँचें।"
           },
           {
             "title": "Effects, motion और micro-interactions",
@@ -326,12 +326,12 @@
           {
             "num": "2",
             "title": "Multi-domain खोज",
-            "desc": "Product categories, UI styles, color palettes, landing patterns, typography और UX guidelines में समानांतर खोज। हर domain metadata के साथ सर्वोत्तम candidates लौटाता है।"
+            "desc": "मूल Python जनरेटर अंतर्निहित उत्पाद, शैली, रंग, लैंडिंग और फ़ॉन्ट डेटा खोजकर उद्योग नियमों से सुझाव जोड़ता है। AI सहायक उस आउटपुट से अलग चरण में UI बनाता है। समय क्वेरी और वातावरण पर निर्भर है।"
           },
           {
             "num": "3",
             "title": "रीजनिंग इंजन",
-            "desc": "161 industry-specific rules candidates को क्रम देते हैं, अलग domains के conflicts सुलझाते हैं—जैसे palette से टकराती style—और अनुमानित industry के anti-patterns हटाते हैं।"
+            "desc": "उद्योग नियम layout, style प्राथमिकता और सुझाव चुनने में मदद करते हैं। Anti-pattern मार्गदर्शन है; यह कोड की शुद्धता या accessibility का प्रमाण नहीं।"
           },
           {
             "num": "4",
@@ -346,41 +346,41 @@
         "stages": [
           {
             "label": "चरण 1—अनुरोध को समझना",
-            "body": "जेनरेटर आपके prompt से चार संकेत निकालता है: product type (SaaS, e-commerce, healthcare, fintech, portfolio आदि), intent (build, redesign, fix, optimize), साफ़ style hints (glassmorphism, dark mode) और target surface (landing, dashboard, mobile screen, single component)। जो संकेत नहीं मिलते, उनके लिए defaults चुने जाते हैं जो ‘नया और अनोखा’ होने से अधिक ‘सुरक्षित और accessible’ होने को प्राथमिकता देते हैं।"
+            "body": "क्वेरी से उत्पाद और उद्योग नियम खोजे जाते हैं। अस्पष्ट विशेषणों की जगह उत्पाद, पेज और बाधाएँ बताएँ।"
           },
           {
-            "label": "चरण 2—समानांतर खोज",
-            "body": "साथ दिए गए CSV datasets—products, styles, colors, landings और typography—पर पाँच खोजें समानांतर चलती हैं। हर खोज string similarity और structured metadata के आधार पर क्रम दिए गए top-N candidates लौटाती है। Developer laptop पर यह चरण सामान्यतः एक second से भी कम लेता है।"
+            "label": "चरण 2 — कैटलॉग खोज",
+            "body": "Python, BM25 आधारित रैंकिंग से bundled CSV खोजता है। यह स्थानीय retrieval है, वेब खोज या समानांतर निष्पादन का वादा नहीं।"
           },
           {
             "label": "चरण 3—रीजनिंग और conflicts का समाधान",
-            "body": "161 reasoning rules filters और tie-breakers का काम करते हैं। उदाहरण: ‘healthcare + dashboard → cool palettes चुनें, Inter या IBM Plex Sans को प्राथमिकता दें, neumorphism और brutalism हटाएँ, medium density चुनें।’ दो candidates के score करीब हों तो industry rules विजेता चुनते हैं। ज्ञात anti-pattern से टकराने वाला कोई भी combination भी हटा दिया जाता है।"
+            "body": "उद्योग नियम layout, style प्राथमिकता और सुझाव चुनने में मदद करते हैं। Anti-pattern मार्गदर्शन है; यह कोड की शुद्धता या accessibility का प्रमाण नहीं।"
           },
           {
             "label": "चरण 4—आउटपुट तैयार करना",
-            "body": "चुने गए candidates को एक design system bundle में मिलाकर programmatic उपयोग के लिए JSON या सीधे AI के उपयोग के लिए Markdown में serialize किया जाता है। --persist लगाने पर यही bundle design-system/MASTER.md में लिखा जाता है, ताकि आगे के sessions जेनरेटर फिर चलाए बिना उसे पढ़ सकें।"
+            "body": "डिज़ाइन सिस्टम का डिफ़ॉल्ट आउटपुट ASCII है। Markdown के लिए -f markdown और JSON के लिए --json दें। ये समीक्षा योग्य सुझाव हैं, बने UI की accessibility का प्रमाण नहीं।"
           }
         ]
       },
       "anatomy": {
         "title": "आउटपुट की बनावट",
-        "body": "नीचे design-system/MASTER.md में लिखी जाने वाली सामग्री का संक्षिप्त रूप है। असली file अधिक विस्तृत होती है—यह उसकी संरचना दिखाता है, पूरा आकार नहीं।",
-        "exampleTitle": "design-system/MASTER.md (अंश)",
-        "exampleCode": "# Design System\n\nProduct type: SaaS analytics dashboard\nIndustry: B2B fintech\nGenerated: 2026-01-15\n\n## Pattern\nDense data layout — sticky sidebar, 12-column grid, sticky table headers.\nReference: landing/data-dashboard-sticky-sidebar\n\n## Style\nMinimalism with subtle glass accents on hover cards.\nWhy: fintech anti-pattern bans high-saturation hero gradients;\nminimalism + restrained glass keeps it credible.\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald, use sparingly for KPI deltas)\nWCAG AA pairings checked.\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / 1.55 line-height\nNumeric: IBM Plex Mono for tabular figures\n\n## Effects\nShadow scale: 0/1/2/4 only. Avoid deep shadows.\nMotion:      150-200ms ease-out. Honor prefers-reduced-motion.\n\n## Anti-patterns to avoid\n- Don't use red as a brand color (signals loss)\n- Don't auto-rotate carousels on the dashboard\n- Don't hide bulk actions behind hover-only UI\n\n## Pre-delivery checklist\n- [ ] All chart colors are colorblind-safe\n- [ ] Tabular numbers use mono font\n- [ ] Empty states have illustrations and CTA\n- [ ] Loading states show skeletons, not spinners-only\n"
+        "body": "ये सीखने के उदाहरण हैं, रिकॉर्ड किया गया जनरेटर आउटपुट या प्रमाणित production परिणाम नहीं। अपने प्रोजेक्ट में contrast, layout और interactions जाँचें।",
+        "exampleTitle": "उदाहरण अंश",
+        "exampleCode": "# Design System\n\nProduct type: SaaS analytics dashboard\nIndustry: B2B fintech\nIllustrative example (not a captured run)\n\n## Pattern\nDense data layout — sticky sidebar, 12-column grid, sticky table headers.\nReference: landing/data-dashboard-sticky-sidebar\n\n## Style\nMinimalism with subtle glass accents on hover cards.\nWhy: fintech anti-pattern bans high-saturation hero gradients;\nminimalism + restrained glass keeps it credible.\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald, use sparingly for KPI deltas)\nCheck contrast in the implemented interface.\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / 1.55 line-height\nNumeric: IBM Plex Mono for tabular figures\n\n## Effects\nShadow scale: 0/1/2/4 only. Avoid deep shadows.\nMotion:      150-200ms ease-out. Honor prefers-reduced-motion.\n\n## Anti-patterns to avoid\n- Don't use red as a brand color (signals loss)\n- Don't auto-rotate carousels on the dashboard\n- Don't hide bulk actions behind hover-only UI\n\n## Pre-delivery checklist\n- [ ] All chart colors are colorblind-safe\n- [ ] Tabular numbers use mono font\n- [ ] Empty states have illustrations and CTA\n- [ ] Loading states show skeletons, not spinners-only\n"
       },
       "persist": {
         "title": "डिज़ाइन सिस्टम को स्थायी रखें",
-        "body": "डिफ़ॉल्ट रूप से बना हुआ design system केवल मौजूदा AI conversation में रहता है। Project root पर design-system/MASTER.md लिखने के लिए --persist जोड़ें। इसके बाद इस project का हर नया session पहले MASTER.md पढ़कर उसके निर्णयों का पालन करेगा; इसलिए बाद में redesign किया गया button भी project की spacing scale और color tokens इस्तेमाल करेगा।",
+        "body": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।",
         "scopes": {
           "title": "Project-level और page-level scope",
-          "body": "MASTER.md पूरे project पर लागू निर्णय रखता है। कभी एक page को नियमों से अलग होना पड़ता है—जैसे अधिक playful palette वाला marketing campaign page या print-friendly invoice view। MASTER के ऊपर override के रूप में design-system/pages/[name].md लिखने के लिए --page [name] जोड़ें। उस page पर काम करने वाले AI sessions दोनों files मिलाते हैं और conflict में page file को प्राथमिकता देते हैं।",
+          "body": "--persist -p \"Acme\" --page pricing से design-system/acme/pages/pricing.md बनता है और मौजूदा master बचा रहता है। सहायक को उस पेज के नियम प्राथमिकता से लागू करने को कहें और उपयोग से पहले उनकी समीक्षा करें।",
           "commandTitle": "Persist commands",
-          "commands": "# Project-level: writes design-system/MASTER.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"SaaS analytics dashboard\" --design-system --persist -p \"Acme\"\n\n# Page-level override: writes design-system/pages/pricing.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"playful pricing page with strong CTA\" --design-system \\\n  --persist -p \"Acme\" --page \"pricing\""
+          "commands": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"SaaS dashboard\" --design-system --persist -p \"Acme\" --output-dir .\n\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \"pricing page\" --design-system --persist -p \"Acme\" --page pricing --output-dir ."
         }
       },
       "tuning": {
         "title": "आउटपुट को बेहतर बनाएँ",
-        "subtitle": "पहला generation ठीक न लगे तो पूरा rewrite माँगने से पहले आपके पास तीन नियंत्रण हैं।",
+        "subtitle": "सुझाव बदलने के लिए --design-system के साथ --variance, --motion, --density (1–10) दें। पुराने ऐप का थीम बदलते समय framework versions और semantic tokens देखें, छोटे component समूह बदलें और हर theme जाँचें।",
         "items": [
           {
             "title": "स्पष्ट style keywords जोड़ें",
@@ -396,7 +396,7 @@
           },
           {
             "title": "एकबारगी बदलाव के लिए --page से फिर चलाएँ",
-            "body": "यदि MASTER.md का 90% आपको सही लगता है और केवल एक page अलग चाहिए, तो पूरा project दोबारा generate करने के बजाय page-level override बनाएँ।"
+            "body": "--persist -p \"Acme\" --page pricing से design-system/acme/pages/pricing.md बनता है और मौजूदा master बचा रहता है। सहायक को उस पेज के नियम प्राथमिकता से लागू करने को कहें और उपयोग से पहले उनकी समीक्षा करें।"
           }
         ]
       },
@@ -409,15 +409,15 @@
           },
           {
             "q": "Palette मेरे brand से मेल नहीं खाता।",
-            "a": "पहली --persist run के बाद अपने brand colors को design-system/MASTER.md में लिखें। आगे के sessions में मॉडल उन्हें locked tokens मानेगा।"
+            "a": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
           },
           {
             "q": "बहुत अलग products पर भी मुझे बार-बार वही style मिल रही है।",
-            "a": "इसके दो आम कारण हैं। पहला, शायद आप industry नहीं बता रहे। दूसरा, पिछले project का पुराना MASTER.md मौजूद हो सकता है—नया generate करने से पहले उसे delete या rename करें।"
+            "a": "जनरेटर क्वेरी और साथ आए डेटा से सुझाव चुनता है; वह मौजूदा MASTER.md नहीं पढ़ता। उद्योग, उपयोगकर्ता और इंटरफ़ेस की ज़रूरतें स्पष्ट करें। यदि AI सहायक पुराना डिज़ाइन लागू कर रहा है, तो जाँचें कि वह किन प्रोजेक्ट फ़ाइलों को पढ़ रहा है और सही master तथा पेज नियम स्पष्ट रूप से दें। जनरेटर के सुझाव बदलने के लिए डिज़ाइन फ़ाइलें न हटाएँ।"
           },
           {
             "q": "ऐसे anti-patterns बार-बार दिखते हैं जिनकी मुझे परवाह नहीं।",
-            "a": "Output में anti-patterns सलाह के रूप में होते हैं। आप उन्हें अनदेखा कर सकते हैं या असहमत lines को MASTER.md से हटा सकते हैं—दोबारा --persist चलाए बिना वे फिर generate नहीं होंगे।"
+            "a": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
           }
         ]
       },
@@ -427,13 +427,13 @@
       "overview": "अपने workflow के अनुकूल installation method चुनें और अपने AI सहायक में डिज़ाइन इंटेलिजेंस जोड़ें।",
       "tabs": {
         "cliInstall": "CLI इंस्टॉल (सुझाया गया)",
-        "manualInstall": "Manual इंस्टॉल",
+        "manualInstall": "बनी हुई skill कॉपी करें (Claude Code उदाहरण)",
         "prerequisites": "पूर्वापेक्षाएँ"
       },
       "cliInstall": {
         "step1": {
           "title": "CLI tool को globally इंस्टॉल करें",
-          "code": "npm install -g uipro-cli"
+          "code": "npm install -g ui-ux-pro-max-cli@2.15.0"
         },
         "step2": {
           "title": "अपने project directory पर जाएँ",
@@ -442,42 +442,71 @@
         "step3": {
           "title": "अपने AI सहायक के लिए स्किल इंस्टॉल करें",
           "commands": [
-            "uipro init --ai claude        # Claude Code",
-            "uipro init --ai cursor        # Cursor",
-            "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity",
-            "uipro init --ai copilot       # GitHub Copilot",
-            "uipro init --ai kiro          # Kiro",
-            "uipro init --ai codex         # Codex CLI",
-            "uipro init --ai qoder         # Qoder",
-            "uipro init --ai roocode       # Roo Code",
-            "uipro init --ai gemini        # Gemini CLI",
-            "uipro init --ai trae          # Trae",
-            "uipro init --ai opencode      # OpenCode",
-            "uipro init --ai continue      # Continue",
-            "uipro init --ai codebuddy     # CodeBuddy",
-            "uipro init --ai droid         # Droid (Factory)",
-            "uipro init --ai kilocode      # KiloCode",
-            "uipro init --ai warp          # Warp",
-            "uipro init --ai augment       # Augment",
-            "uipro init --ai all           # सभी AI सहायक"
+            "uipro init --ai claude",
+            "uipro init --ai cursor",
+            "uipro init --ai windsurf",
+            "uipro init --ai antigravity",
+            "uipro init --ai copilot",
+            "uipro init --ai kiro",
+            "uipro init --ai codex",
+            "uipro init --ai qoder",
+            "uipro init --ai roocode",
+            "uipro init --ai gemini",
+            "uipro init --ai trae",
+            "uipro init --ai opencode",
+            "uipro init --ai continue",
+            "uipro init --ai codebuddy",
+            "uipro init --ai droid",
+            "uipro init --ai kilocode",
+            "uipro init --ai warp",
+            "uipro init --ai augment",
+            "uipro init --ai codewhale",
+            "uipro init --ai universal",
+            "uipro init --ai all"
           ]
         }
       },
       "manualInstall": {
-        "description": "यदि आप manual installation पसंद करते हैं, तो संबंधित folders को अपने project में copy करें:",
+        "description": "तैयारी के लिए दूसरी मशीन पर Node.js, npm और पैकेज डाउनलोड की सुविधा चाहिए। लक्ष्य मशीन पर Python 3 और चुना हुआ AI सहायक चाहिए, npm नहीं। नीचे की तालिका केवल पथों का संदर्भ है, डाउनलोड करने योग्य इंस्टॉलर नहीं।",
         "table": {
           "header": {
             "assistant": "AI सहायक",
-            "folders": "Copy किए जाने वाले folders"
+            "folders": "जनरेट की गई skill का पथ"
           },
           "rows": [
-            {"assistant": "Claude Code", "folders": ".claude/skills/ui-ux-pro-max/"},
-            {"assistant": "Cursor", "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"},
-            {"assistant": "Windsurf", "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"},
-            {"assistant": "Antigravity", "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"}
+            {
+              "assistant": "Claude Code",
+              "folders": ".claude/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Cursor",
+              "folders": ".cursor/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Windsurf",
+              "folders": ".windsurf/skills/ui-ux-pro-max/"
+            },
+            {
+              "assistant": "Antigravity / Codex",
+              "folders": ".agents/skills/ui-ux-pro-max/"
+            }
           ]
-        }
+        },
+        "steps": [
+          {
+            "text": "तैयारी वाली मशीन पर नया खाली अस्थायी फ़ोल्डर बनाएँ और उसमें जाएँ। नीचे दिया निश्चित संस्करण वाला कमांड चलाकर प्रोजेक्ट के लिए Claude Code skill बनाएँ।",
+            "code": "npm exec --yes --package=ui-ux-pro-max-cli@2.15.0 -- uipro init --ai claude"
+          },
+          {
+            "text": "पूरा .claude/skills/ui-ux-pro-max/ फ़ोल्डर, जिसमें SKILL.md, data/ और scripts/ हों, लक्ष्य प्रोजेक्ट में उसी सापेक्ष पथ पर कॉपी करें। छिपे फ़ोल्डर भी स्थानांतरित करें। मौजूदा इंस्टॉलेशन बदलने से पहले बैकअप लें।",
+            "code": ""
+          },
+          {
+            "text": "लक्ष्य प्रोजेक्ट के मूल फ़ोल्डर में नीचे का Python कमांड चलाएँ (Windows पर ज़रूरत हो तो python3 की जगह python)। फिर Claude Code में प्रोजेक्ट खोलें और UI UX Pro Max इस्तेमाल करने को स्पष्ट रूप से कहें। सफल खोज डेटा और स्क्रिप्ट की जाँच करती है; इससे सहायक द्वारा skill लोड होना सिद्ध नहीं होता।",
+            "code": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"accessible\" --stack html-tailwind"
+          }
+        ],
+        "otherAssistants": "दूसरे सहायक के लिए अलग खाली फ़ोल्डर में CLI सूची का संबंधित --ai मान इस्तेमाल करें और सभी बनी फ़ाइलें उनके मूल सापेक्ष पथ पर स्थानांतरित करें। कुछ प्लेटफ़ॉर्म कमांड या वर्कफ़्लो फ़ाइलें भी बनाते हैं। सहायक के skill लोड करने के निर्देश देखें; तालिका केवल सूचीबद्ध प्लेटफ़ॉर्म के लिए है।"
       },
       "prerequisites": {
         "warning": "⚠️ पूर्वापेक्षाएँ",
@@ -490,12 +519,13 @@
       "otherCommands": {
         "title": "अन्य CLI commands",
         "commands": [
-          "uipro versions              # उपलब्ध versions की सूची",
-          "uipro update                # नवीनतम version पर update",
-          "uipro init --offline        # GitHub download छोड़कर bundled assets इस्तेमाल करें",
-          "uipro uninstall             # स्किल हटाएँ (platform अपने-आप पहचानें)",
-          "uipro uninstall --ai claude # किसी खास platform से हटाएँ",
-          "uipro uninstall --global    # Global install हटाएँ"
+          "uipro init --ai claude --global",
+          "uipro update --ai claude",
+          "uipro init --ai claude --force",
+          "uipro versions",
+          "uipro uninstall --ai claude",
+          "uipro uninstall --ai claude --global",
+          "npm uninstall -g ui-ux-pro-max-cli"
         ]
       },
       "decision": {
@@ -505,17 +535,17 @@
           {
             "title": "CLI इंस्टॉल (सुझाया गया)",
             "when": "आपके पास npm है और चाहते हैं कि updates अपने-आप सँभलें।",
-            "why": "uipro-cli download, versioning और updates को एक command में संभालती है। यह इस project में configure किए गए सभी AI सहायकों में स्किल को एक ही version पर भी रखती है।"
+            "why": "CLI 2.15.0 में uipro update GitHub Release जाँचता है। संस्करण अलग हो तो CLI अपडेट करने की कोशिश करके uipro init --ai <assistant> --force चलाने को कहता है; समान हो तो bundled skill फ़ाइलें ताज़ा करता है। ओवरराइट से पहले स्थानीय बदलाव देखें; --global वैश्विक इंस्टॉलेशन चुनता है।"
           },
           {
-            "title": "Manual इंस्टॉल",
-            "when": "आप npm के बिना environment (locked-down corporate या sandboxed CI) में काम करते हैं, या reproducibility के लिए स्किल को repo में vendor करना चाहते हैं।",
-            "why": "Folders copy करने पर पूरा नियंत्रण आपके पास रहता है। कमी यह है कि नया version आने पर दोबारा copy करके update आपको स्वयं करना होगा।"
+            "title": "बनी हुई skill कॉपी करें (Claude Code उदाहरण)",
+            "when": "लक्ष्य मशीन पर npm नहीं है, पर दूसरी मशीन skill तैयार कर सकती है; या आप बनी इंस्टॉलेशन फ़ाइलें रिपॉज़िटरी में रखना चाहते हैं।",
+            "why": "तैयारी वाली मशीन पर निश्चित संस्करण के CLI से फ़ाइलें बनाएँ, फिर पूरा इंस्टॉलेशन स्थानांतरित करें। अपडेट के लिए यही चरण दोहराएँ और स्थानीय बदलाव जाँचें।"
           },
           {
             "title": "Offline इंस्टॉल",
             "when": "आप सख़्त firewall के पीछे हैं या GitHub access के बिना काम कर रहे हैं।",
-            "why": "uipro init --offline, CLI package के भीतर bundled assets इस्तेमाल करता है; इसलिए npm install के बाद कोई network call नहीं होती।"
+            "why": "CLI 2.15.0 डिफ़ॉल्ट रूप से bundled templates से इंस्टॉल करता है। --offline अनुकूलता फ़्लैग है, version pin नहीं। दोहराने योग्य इंस्टॉलेशन के लिए npm संस्करण तय करें। पैकेज डाउनलोड और रिलीज़ जाँच को कैश न होने पर नेटवर्क चाहिए।"
           }
         ]
       },
@@ -524,7 +554,7 @@
         "items": [
           {
             "os": "macOS",
-            "body": "हाल के macOS versions में Python 3.x मिलता है, पर अक्सर पुराना होता है। हम Homebrew सुझाते हैं: brew install python3। uipro-cli npm से install होती है; Node न हो तो brew install node चलाएँ या fnm/nvm जैसा version manager इस्तेमाल करें। Apple Silicon और Intel दोनों supported हैं।"
+            "body": "Python 3 और Node.js जाँचें; न हों तो आधिकारिक स्रोत या पैकेज मैनेजर से इंस्टॉल करें। macOS में Python 3 होने का अनुमान न लगाएँ।"
           },
           {
             "os": "Windows",
@@ -538,15 +568,15 @@
       },
       "updates": {
         "title": "Update और version pinning",
-        "body": "नवीनतम skill assets पाने के लिए कभी भी uipro update चलाएँ। सभी available releases देखने के लिए uipro versions चलाएँ। Team में reproducible installs के लिए—या GitHub उपलब्ध न हो—uipro init --offline इस्तेमाल करें; यह pinned CLI release में bundled assets install करता है।",
+        "body": "CLI 2.15.0 में uipro update GitHub Release जाँचता है। संस्करण अलग हो तो CLI अपडेट करने की कोशिश करके uipro init --ai <assistant> --force चलाने को कहता है; समान हो तो bundled skill फ़ाइलें ताज़ा करता है। ओवरराइट से पहले स्थानीय बदलाव देखें; --global वैश्विक इंस्टॉलेशन चुनता है।",
         "commandsTitle": "आम update commands",
-        "commands": "uipro versions        # सभी उपलब्ध releases देखें\nuipro update          # नवीनतम release पर update करें\nuipro init --offline  # Bundled assets से install करें (network नहीं)"
+        "commands": "npm view ui-ux-pro-max-cli versions --json\nuipro update --ai claude\nuipro init --ai claude --force"
       },
       "uninstall": {
         "title": "Uninstall और cleanup",
-        "body": "स्किल हटाने की प्रक्रिया installation के उलट है। किसी एक assistant से uninstall करने पर दूसरे assistants और global CLI बने रहते हैं; full uninstall सब हटा देता है।",
+        "body": "पहले commands प्रोजेक्ट/वैश्विक skill हटाते हैं; npm uninstall CLI पैकेज हटाता है। अपने निर्णयों वाला design-system फ़ोल्डर बचाएँ।",
         "commandsTitle": "Uninstall commands",
-        "commands": "uipro uninstall                # इस project में auto-detected assistants से हटाएँ\nuipro uninstall --ai claude    # केवल Claude Code install हटाएँ\nuipro uninstall --global       # Global uipro-cli tool हटाएँ\nrm -rf design-system           # चाहें तो persisted design systems भी हटाएँ"
+        "commands": "uipro uninstall --ai claude\nuipro uninstall --ai claude --global\nnpm uninstall -g ui-ux-pro-max-cli"
       },
       "errors": {
         "title": "आम installation errors",
@@ -559,7 +589,7 @@
           {
             "error": "command not found: uipro",
             "cause": "npm global bin PATH में नहीं है, या आपने -g के बिना install किया है।",
-            "fix": "Global bin path जानने के लिए npm config get prefix चलाकर उसे PATH में जोड़ें, या npm install -g uipro-cli से फिर install करें।"
+            "fix": "Global bin path जानने के लिए npm config get prefix चलाकर उसे PATH में जोड़ें, या npm install -g ui-ux-pro-max-cli से फिर install करें।"
           },
           {
             "error": "EACCES: permission denied",
@@ -573,8 +603,8 @@
           },
           {
             "error": "Failed to fetch from GitHub",
-            "cause": "Network restrictions या GitHub raw downloads पर rate limiting।",
-            "fix": "Bundled assets से install करने के लिए uipro init --offline चलाएँ, या HTTPS_PROXY export करके proxy के पीछे दोबारा कोशिश करें।"
+            "cause": "CLI 2.15.0 में uipro update GitHub Release जाँचता है। संस्करण अलग हो तो CLI अपडेट करने की कोशिश करके uipro init --ai <assistant> --force चलाने को कहता है; समान हो तो bundled skill फ़ाइलें ताज़ा करता है। ओवरराइट से पहले स्थानीय बदलाव देखें; --global वैश्विक इंस्टॉलेशन चुनता है।",
+            "fix": "CLI 2.15.0 डिफ़ॉल्ट रूप से bundled templates से इंस्टॉल करता है। --offline अनुकूलता फ़्लैग है, version pin नहीं। दोहराने योग्य इंस्टॉलेशन के लिए npm संस्करण तय करें। पैकेज डाउनलोड और रिलीज़ जाँच को कैश न होने पर नेटवर्क चाहिए।"
           },
           {
             "error": "Skill not detected by AI assistant",
@@ -585,7 +615,7 @@
       },
       "offline": {
         "title": "Offline mode विस्तार से",
-        "body": "uipro-cli package अपने node_modules entry में skill assets की पूरी copy के साथ आता है। --offline देने पर CLI GitHub fetch छोड़कर इन bundled assets को पढ़ती है। GitHub तक पहुँच न होने पर, या जब हर developer को pinned CLI release वाला ठीक वही version install कराना हो, यह सही विकल्प है।"
+        "body": "CLI 2.15.0 डिफ़ॉल्ट रूप से bundled templates से इंस्टॉल करता है। --offline अनुकूलता फ़्लैग है, version pin नहीं। दोहराने योग्य इंस्टॉलेशन के लिए npm संस्करण तय करें। पैकेज डाउनलोड और रिलीज़ जाँच को कैश न होने पर नेटवर्क चाहिए।"
       },
       "next": "अगला: invocation patterns और sample requests के लिए ‘इस्तेमाल कैसे करें’ देखें।"
     },
@@ -672,61 +702,61 @@
       },
       "worked": {
         "title": "शुरुआत से अंत तक के उदाहरण",
-        "subtitle": "हर उदाहरण prompt, जेनरेटर से मिले design system और उससे AI सहायक द्वारा लिखे जाने वाले code का रूप दिखाता है।",
+        "subtitle": "ये सीखने के उदाहरण हैं, रिकॉर्ड किया गया जनरेटर आउटपुट या प्रमाणित production परिणाम नहीं। अपने प्रोजेक्ट में contrast, layout और interactions जाँचें।",
         "items": [
           {
             "title": "SaaS analytics dashboard",
             "prompt": "B2B fintech product के लिए SaaS analytics dashboard बनाएँ। Tables dense हों, default dark mode हो, WCAG AA अनिवार्य हो और stack Next.js + shadcn/ui हो।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: dense data layout, sticky sidebar, 12-col grid\nStyle: minimalism with subtle glass on hover cards\nPalette: cool blue + emerald accent (#2563EB / #10B981)\nType:   Inter 400/600/700 + IBM Plex Mono for numerics\nEffects: shadow scale 0/1/2/4, 150-200ms ease-out\nAvoid:  red as brand color, auto-rotating carousels, hover-only bulk actions\nChecklist: colorblind-safe charts, mono tabular figures, skeleton loading"
           },
           {
             "title": "Healthcare patient portal",
             "prompt": "Hospital system के लिए patient portal डिज़ाइन करें। Tone भरोसा देने वाली हो, touch targets बड़े हों, multilingual-ready हो और medical-error anti-patterns से बचे।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: card-based information hierarchy with persistent quick-actions\nStyle: minimalism, low saturation, no novelty effects\nPalette: muted teal + warm neutrals (#0E7C7B / #F5F1E8)\nType:   Source Sans Pro 400/600, generous line-height (1.7)\nEffects: minimal shadows, no parallax, prefers-reduced-motion enforced\nAvoid:  red as default error color (suggests harm), red+green pairing,\n        dense data tables on landing surfaces\nChecklist: WCAG AAA where possible, 44px+ touch targets, RTL-ready"
           },
           {
             "title": "Dark mode वाला indie portfolio",
             "prompt": "Creative developer के लिए personal portfolio site बनाएँ। मज़बूत visual identity, glassmorphism feel और default dark mode के साथ light fallback हो।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: scroll-driven case studies with sticky project nav\nStyle: glassmorphism + aurora gradient backgrounds\nPalette: deep indigo + violet aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:   Sora 600/800 display + Inter 400 body\nEffects: backdrop-blur 12px, soft glow on hover, 400ms cubic ease-in-out\nAvoid:  heavy noise textures, overlapping marquee text, motion-only nav\nChecklist: respects prefers-reduced-motion, light-mode parity, image alt text"
           },
           {
             "title": "E-commerce mobile checkout",
             "prompt": "Apparel store के लिए mobile checkout flow बनाएँ। अधिकतम तीन चरण, Apple Pay पहले और slow 4G पर भी काम करना अनिवार्य हो।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: full-screen step pages, persistent total bar, no modal stacks\nStyle: flat 2.0 with strong typography, minimal decoration\nPalette: warm off-white + brand accent + green for success states\nType:   System fonts for speed (San Francisco / Roboto), 16px+ body\nEffects: instant transitions, skeleton placeholders, no carousel\nAvoid:  third-party scripts on checkout, sticky promos that obscure CTA,\n        forced account creation before payment\nChecklist: payment-request API tested, address autofill, error recovery"
           },
           {
             "title": "Open-source docs site",
             "prompt": "Open-source library के लिए documentation site बनाएँ। Sidebar + search + content + on-this-page TOC हो। साफ़, तेज़ और dark mode toggle के साथ।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: three-column docs (sidebar + content + TOC), sticky header\nStyle: minimalism, generous whitespace, monospace code blocks\nPalette: neutral grays + single brand accent (no rainbow)\nType:   Inter 400/600 + JetBrains Mono for code\nEffects: subtle hover states only, no animation on scroll\nAvoid:  fixed-height code blocks (use overflow), modal search,\n        marketing sections inside docs nav\nChecklist: cmd-K search, copyable code blocks, mobile sidebar drawer"
           },
           {
             "title": "AI chat product landing",
             "prompt": "AI chat product का landing page बनाएँ। Product को काम करते दिखाएँ, भरोसा बनाएँ और pricing साफ़ रखें। Bento-grid style इस्तेमाल करें।",
-            "outputTitle": "बना हुआ डिज़ाइन सिस्टम",
+            "outputTitle": "उदाहरण अंश",
             "output": "Pattern: hero with live demo, bento-grid features, social proof, pricing\nStyle: AI-native UI with bento grid and soft gradients\nPalette: cool blue + warm coral accent, dark mode primary\nType:   Cal Sans display + Inter body, oversized headings\nEffects: bento card hover lift, gradient borders, animated dot grid bg\nAvoid:  empty bento cards, parallax that breaks on mobile,\n        pricing hidden behind 'Contact us' unless enterprise\nChecklist: live demo loads under 2s, pricing visible above fold on desktop"
           }
         ]
       },
       "iterating": {
         "title": "परिणाम को निखारना",
-        "lead": "पहला generation शायद ही बिल्कुल वैसा हो जैसा आप चाहते हैं। ये तीन refinement patterns लगभग हर स्थिति संभालते हैं।",
+        "lead": "सुझाव बदलने के लिए --design-system के साथ --variance, --motion, --density (1–10) दें। पुराने ऐप का थीम बदलते समय framework versions और semantic tokens देखें, छोटे component समूह बदलें और हर theme जाँचें।",
         "patterns": [
           {
             "title": "केवल एक पहलू बदलें",
-            "body": "Layout पसंद है लेकिन रंग बदलने हैं? कहें: ‘Pattern और typography वही रखें, palette को थोड़ा अधिक warm बनाएँ।’ AI केवल color search दोबारा चलाकर परिणाम मिला देगा।"
+            "body": "सुझाव बदलने के लिए --design-system के साथ --variance, --motion, --density (1–10) दें। पुराने ऐप का थीम बदलते समय framework versions और semantic tokens देखें, छोटे component समूह बदलें और हर theme जाँचें।"
           },
           {
             "title": "एक constraint जोड़ें",
-            "body": "Accessibility को अनिवार्य करना है? ‘यही design system रखें, लेकिन WCAG AAA और कम-से-कम 16px body text लागू करें।’ इससे शून्य से शुरू करने के बजाय मौजूदा candidates filter होते हैं।"
+            "body": "सुझाव बदलने के लिए --design-system के साथ --variance, --motion, --density (1–10) दें। पुराने ऐप का थीम बदलते समय framework versions और semantic tokens देखें, छोटे component समूह बदलें और हर theme जाँचें।"
           },
           {
             "title": "Page level पर override करें",
-            "body": "यदि MASTER.md project के 90% हिस्से के लिए सही है, तो पूरा project फिर generate करने के बजाय --page से per-page override लिखें।"
+            "body": "--persist -p \"Acme\" --page pricing से design-system/acme/pages/pricing.md बनता है और मौजूदा master बचा रहता है। सहायक को उस पेज के नियम प्राथमिकता से लागू करने को कहें और उपयोग से पहले उनकी समीक्षा करें।"
           }
         ]
       },
@@ -815,18 +845,18 @@
       "next": "अगला: setup या command में समस्या हो तो अक्सर पूछे जाने वाले प्रश्न देखें।"
     },
     "faq": {
-      "overview": "UI UX Pro Max Skill को install, configure और बेहतर ढंग से इस्तेमाल करने से जुड़े आम सवालों का व्यावहारिक संदर्भ। प्रश्न विषय के अनुसार रखे गए हैं, ताकि आप अपनी ज़रूरत का हिस्सा जल्दी देख सकें। उत्तर न मिले तो किसी भी docs page के अंत से feedback भेजें; हम उसे इस सूची में जोड़ेंगे।",
+      "overview": "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।",
       "groups": [
         {
           "title": "Installation और setup",
           "items": [
             {
               "q": "कौन-कौन से AI सहायक supported हैं?",
-              "a": "बिना अतिरिक्त setup के: Claude Code, Cursor, Windsurf, Antigravity, GitHub Copilot, Kiro, Codex CLI, Qoder, Roo Code, Gemini CLI, Trae, OpenCode, Continue, CodeBuddy, Droid (Factory), KiloCode, Warp और Augment। पहचाने गए सभी assistants के लिए एक साथ install करने हेतु uipro init --ai all चलाएँ।"
+              "a": "CLI 2.15.0: claude, cursor, windsurf, antigravity, copilot, kiro, codex, qoder, roocode, gemini, trae, opencode, continue, codebuddy, droid, kilocode, warp, augment, codewhale, universal. --ai all सभी समर्थित प्लेटफ़ॉर्म के लिए इंस्टॉल करता है, केवल पहचाने गए सहायकों के लिए नहीं।"
             },
             {
               "q": "क्या स्किल इस्तेमाल करने के लिए Node.js चाहिए?",
-              "a": "नहीं। अनुरोध के समय स्किल Python से चलती है। Node.js केवल uipro-cli (npm) से install करने पर चाहिए। Manual-install path के लिए Python 3 के अलावा कुछ नहीं चाहिए।"
+              "a": "नहीं। अनुरोध के समय स्किल Python से चलती है। Node.js केवल ui-ux-pro-max-cli (npm) से install करने पर चाहिए। Manual-install path के लिए Python 3 के अलावा कुछ नहीं चाहिए।"
             },
             {
               "q": "Python 3 ही क्यों? क्या Python 2 पर चल सकती है?",
@@ -834,15 +864,15 @@
             },
             {
               "q": "search.py कहाँ होती है?",
-              "a": "Claude Code के लिए यह project में .claude/skills/ui-ux-pro-max/scripts/search.py पर रहती है। .shared directory इस्तेमाल करने वाले assistants (Cursor, Windsurf, Antigravity) के लिए path .shared/ui-ux-pro-max/scripts/search.py है।"
+              "a": "प्लेटफ़ॉर्म के लिए बनी फ़ाइलें इस्तेमाल करें: Claude: .claude/skills/ui-ux-pro-max/; Cursor: .cursor/skills/ui-ux-pro-max/; Windsurf: .windsurf/skills/ui-ux-pro-max/; Antigravity और Codex: .agents/skills/ui-ux-pro-max/। search.py हर skill के scripts/ में है। ये CLI 2.15.0 के पथ हैं।"
             },
             {
               "q": "क्या GitHub access के बिना install कर सकता/सकती हूँ?",
-              "a": "हाँ। GitHub download छोड़कर npm package में bundled assets इस्तेमाल करने के लिए uipro init --offline चलाएँ। Sandboxed CI environments और air-gapped networks के लिए यही सही तरीका है।"
+              "a": "CLI 2.15.0 डिफ़ॉल्ट रूप से bundled templates से इंस्टॉल करता है। --offline अनुकूलता फ़्लैग है, version pin नहीं। दोहराने योग्य इंस्टॉलेशन के लिए npm संस्करण तय करें। पैकेज डाउनलोड और रिलीज़ जाँच को कैश न होने पर नेटवर्क चाहिए।"
             },
             {
               "q": "क्या हर project के बजाय स्किल globally install कर सकता/सकती हूँ?",
-              "a": "कुछ हद तक। uipro-cli tool npm install -g uipro-cli से globally install होती है। लेकिन skill assets जानबूझकर project के भीतर रखे जाते हैं, ताकि हर repo अपना version और design system pin कर सके।"
+              "a": "प्रोजेक्ट और वैश्विक दोनों skill इंस्टॉलेशन संभव हैं। uipro init --ai claude --global, ~/.claude/skills/ में लिखता है। npm -g से CLI इंस्टॉल करना और --global से skill इंस्टॉल करना अलग काम हैं।"
             }
           ]
         },
@@ -851,23 +881,23 @@
           "items": [
             {
               "q": "क्या stack बताना ज़रूरी है?",
-              "a": "नहीं। न बताने पर default HTML + Tailwind होता है। अपने stack (Next.js, Nuxt, SvelteKit, SwiftUI, React Native, Flutter, Astro, Angular आदि) के अनुरूप output के लिए उसका नाम बताएँ।"
+              "a": "CLI 2.15.0 में स्टैक खोज अलग करें: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn। --design-system शाखा --stack से पहले चलती है; दोनों देने से जनरेशन पर स्टैक फ़िल्टर नहीं लगता। दोनों परिणाम सहायक को दें।"
             },
             {
-              "q": "JSON के बजाय Markdown output कैसे पाएँ?",
-              "a": "--design-system के साथ -f markdown दें। Output सीधे doc या chat में जाना हो तो Markdown अच्छा है; programmatic उपयोग के लिए JSON बेहतर है।"
+              "q": "कौन से आउटपुट फ़ॉर्मैट हैं?",
+              "a": "डिज़ाइन सिस्टम का डिफ़ॉल्ट आउटपुट ASCII है। Markdown के लिए -f markdown और JSON के लिए --json दें। ये समीक्षा योग्य सुझाव हैं, बने UI की accessibility का प्रमाण नहीं।"
             },
             {
               "q": "मॉडल कैसे तय करता है कि मेरा product किस industry में है?",
-              "a": "आपके prompt के keywords और persisted MASTER.md context से। Industry न बताने पर जेनरेटर जानबूझकर conservative defaults चुनता है। साफ़ नाम लेने से हमेशा अधिक सटीक output मिलता है।"
+              "a": "मूल Python जनरेटर अंतर्निहित उत्पाद, शैली, रंग, लैंडिंग और फ़ॉन्ट डेटा खोजकर उद्योग नियमों से सुझाव जोड़ता है। AI सहायक उस आउटपुट से अलग चरण में UI बनाता है। समय क्वेरी और वातावरण पर निर्भर है।"
             },
             {
-              "q": "क्या brand colors lock कर सकता/सकती हूँ ताकि मॉडल उन्हें कभी न बदले?",
-              "a": "हाँ। पहली --persist run के बाद design-system/MASTER.md खोलें और Colors block को अपने brand tokens से बदलें। आगे के sessions में मॉडल MASTER.md को source of truth मानेगा।"
+              "q": "ब्रांड निर्णय कैसे बचाएँ?",
+              "a": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
             },
             {
               "q": "क्या बाकी project को प्रभावित किए बिना सिर्फ एक page का design बना सकता/सकती हूँ?",
-              "a": "हाँ। --persist के साथ --page [name] इस्तेमाल करें। Override file design-system/pages/[name].md में रहती है और तभी लागू होती है जब वह page session का target हो।"
+              "a": "--persist -p \"Acme\" --page pricing से design-system/acme/pages/pricing.md बनता है और मौजूदा master बचा रहता है। सहायक को उस पेज के नियम प्राथमिकता से लागू करने को कहें और उपयोग से पहले उनकी समीक्षा करें।"
             }
           ]
         },
@@ -880,11 +910,11 @@
             },
             {
               "q": "क्या किसी industry की anti-pattern list बदल सकता/सकती हूँ?",
-              "a": "Generation के बाद design-system/MASTER.md edit करके असहमत lines हटा दें। आगे मॉडल बदली हुई file का सम्मान करेगा। पूरे project के लिए catalog edit करना भी संभव है, लेकिन updates के बाद बदलाव फिर लागू करना होगा।"
+              "a": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
             },
             {
               "q": "मॉडल से default रूप में shadcn/ui कैसे इस्तेमाल कराऊँ?",
-              "a": "Generate करते समय --stack shadcn दें, या project के MASTER.md में ‘Conventions’ section के नीचे ‘Use shadcn/ui primitives’ जोड़ें। मॉडल MASTER.md में लिखे prose conventions का पालन करता है।"
+              "a": "CLI 2.15.0 में स्टैक खोज अलग करें: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn। --design-system शाखा --stack से पहले चलती है; दोनों देने से जनरेशन पर स्टैक फ़िल्टर नहीं लगता। दोनों परिणाम सहायक को दें।"
             }
           ]
         },
@@ -893,7 +923,7 @@
           "items": [
             {
               "q": "क्या स्किल कुछ भी बाहरी server को भेजती है?",
-              "a": "नहीं। Search, ranking और reasoning सब आपके AI client में locally चलते हैं। एकमात्र network call शुरुआती installation download है, जिसे --offline से छोड़ा जा सकता है।"
+              "a": "अंतर्निहित Python खोज स्थानीय है। AI सहायक अपनी सेटिंग के अनुसार prompts, फ़ाइलें और परिणाम प्रदाता को भेज सकता है। CLI इंस्टॉलेशन और अपडेट जाँच में नेटवर्क लग सकता है।"
             },
             {
               "q": "क्या स्किल मुफ़्त है?",
@@ -901,7 +931,7 @@
             },
             {
               "q": "क्या स्किल से AI token usage बढ़ता है?",
-              "a": "थोड़ा। स्किल prompt में design-system context जोड़ती है। व्यवहार में code के आकार के मुकाबले यह वृद्धि छोटी है और correction के लिए कम back-and-forth turns होने से इसकी भरपाई हो जाती है।"
+              "a": "खोज परिणाम context tokens बढ़ाते हैं। उपयोग और शुल्क सहायक, मॉडल और काम पर निर्भर हैं; सुधार के कम दौर की गारंटी नहीं।"
             }
           ]
         },
@@ -910,15 +940,15 @@
           "items": [
             {
               "q": "स्किल कितनी बार update होती है?",
-              "a": "Catalog updates हर कुछ सप्ताह में और CLI updates ज़रूरत के अनुसार आते हैं। कभी भी uipro update चलाएँ। Reproducible offline installs के लिए uipro init --offline इस्तेमाल करें।"
+              "a": "रिलीज़ का समय मूल लेखक तय करते हैं। लिंक में रिलीज़ नोट देखें; अनुवाद साइट अपडेट अवधि का वादा नहीं करती।"
             },
             {
               "q": "क्या update मेरी MASTER.md overwrite कर देगी?",
-              "a": "नहीं। Updates केवल .claude/skills/ या .shared/ के skill assets बदलती हैं। design-system/ के भीतर सब कुछ user content माना जाता है और कभी overwrite नहीं होता।"
+              "a": "--persist, --output-dir (डिफ़ॉल्ट: वर्तमान डायरेक्टरी) में design-system/<project-slug>/MASTER.md लिखता है। मौजूदा MASTER.md केवल --force से बदलेगा। सहायक को यह फ़ाइल और पेज के नियम पढ़ने को कहें; फ़ाइल सेव होने से हर सहायक का स्वतः पढ़ना सुनिश्चित नहीं होता।"
             },
             {
               "q": "नए version से output बिगड़ जाए तो downgrade कैसे करूँ?",
-              "a": "Available releases देखने के लिए uipro versions चलाएँ। Roll back करने के लिए npm install -g uipro-cli@[version] से पुराना CLI version install करें, फिर उसके bundled assets निकालने के लिए uipro init --offline चलाएँ। Reproduction साझा कर सकें तो project repo पर issue खोलें।"
+              "a": "पहले npm संस्करण देखें, चुना ui-ux-pro-max-cli संस्करण इंस्टॉल करें और लक्षित skill ताज़ा करें। स्थानीय बदलाव बचाएँ और उसी संस्करण की मदद पढ़ें; GitHub tags और npm versions को एक न मानें।"
             }
           ]
         },
@@ -931,7 +961,7 @@
             },
             {
               "q": "uipro: command not found.",
-              "a": "npm global bin PATH में नहीं है। Bin path जानने के लिए npm config get prefix चलाकर उसे PATH में जोड़ें, या npm install -g uipro-cli से फिर install करें। यदि sudo इस्तेमाल किया था तो अगला प्रश्न देखें।"
+              "a": "npm global bin PATH में नहीं है। Bin path जानने के लिए npm config get prefix चलाकर उसे PATH में जोड़ें, या npm install -g ui-ux-pro-max-cli से फिर install करें। यदि sudo इस्तेमाल किया था तो अगला प्रश्न देखें।"
             },
             {
               "q": "Globally install करते समय EACCES permission errors मिलते हैं।",
@@ -939,20 +969,20 @@
             },
             {
               "q": "search.py JSON decode error से crash होती है।",
-              "a": "आमतौर पर interrupted download से asset corrupt हो गया है। साफ़ copy फिर निकालने के लिए uipro update या uipro init --offline चलाएँ।"
+              "a": "कमांड और पूरा error लिखें। रीइंस्टॉल से पहले संस्करण और स्थानीय बदलाव जाँचें; JSON error अकेले खराब डाउनलोड का प्रमाण नहीं।"
             },
             {
               "q": "आउटपुट उन libraries का नाम लेता है जो मेरे stack में नहीं हैं।",
-              "a": "Generation के समय --stack [your-stack] दें, या MASTER.md में ‘Stack’ line जोड़ें। यह signal न मिलने पर मॉडल default HTML + Tailwind चुनता है।"
+              "a": "CLI 2.15.0 में स्टैक खोज अलग करें: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn। --design-system शाखा --stack से पहले चलती है; दोनों देने से जनरेशन पर स्टैक फ़िल्टर नहीं लगता। दोनों परिणाम सहायक को दें।"
             }
           ]
         }
       ],
-      "next": "आपका प्रश्न यहाँ नहीं है तो project repo पर issue खोलें या किसी भी docs page के अंत से feedback भेजें।"
+      "next": "अनुवाद या वेबसाइट की त्रुटि के लिए नीचे साइट फ़ीडबैक लिंक इस्तेमाल करें। Skill या CLI की समस्या मूल परियोजना को भेजें। यह साइट आधिकारिक उत्पाद समर्थन नहीं देती।"
     }
   },
   "stats": {
-    "styles": "UI शैलियाँ",
+    "styles": "खोजने योग्य शैलियाँ",
     "palettes": "रंग पैलेट",
     "fonts": "फ़ॉन्ट संयोजन",
     "stacks": "टेक स्टैक",
@@ -966,40 +996,65 @@
     "sections": {
       "styles": {
         "title": "डिज़ाइन शैलियाँ",
-        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, AI-Native UI और 60+ अन्य शैलियाँ—रंगों, effects और framework compatibility के साथ।",
-        "tags": ["Glassmorphism", "Dark Mode", "Motion-Driven"]
+        "description": "सामान्य सुझाव [[activeStyles]] सक्रिय शैलियाँ इस्तेमाल करते हैं। [[supplementalStyles]] पूरक शैलियाँ स्पष्ट वैरिएंट अनुरोधों के लिए हैं; [[deprecatedStyles]] अप्रचलित प्रविष्टियाँ सामान्य रैंकिंग से बाहर हैं। लैंडिंग पैटर्न अलग डेटा है।",
+        "tags": [
+          "Glassmorphism",
+          "Dark Mode",
+          "Motion-Driven"
+        ]
       },
       "colors": {
         "title": "रंग पैलेट",
-        "description": "SaaS, E-commerce, Healthcare, Fintech आदि के लिए 161 product-specific color systems। इनमें Primary, Secondary, CTA, Background, Text और Border शामिल हैं।",
-        "tags": ["SaaS", "Healthcare", "E-commerce"]
+        "description": "SaaS, E-commerce, Healthcare, Fintech आदि के लिए [[products]] product-specific color systems। इनमें Primary, Secondary, CTA, Background, Text और Border शामिल हैं।",
+        "tags": [
+          "SaaS",
+          "Healthcare",
+          "E-commerce"
+        ]
       },
       "typography": {
         "title": "टाइपोग्राफ़ी",
-        "description": "Google Fonts integration, Tailwind configs और mood के अनुसार सुझावों के साथ 57 font pairings।",
-        "tags": ["Space Grotesk", "Inter", "Playfair"]
+        "description": "Google Fonts integration, Tailwind configs और mood के अनुसार सुझावों के साथ [[fonts]] font pairings।",
+        "tags": [
+          "Space Grotesk",
+          "Inter",
+          "Playfair"
+        ]
       },
       "charts": {
         "title": "चार्ट प्रकार",
         "description": "Library सुझावों (Chart.js, Recharts, D3.js) और accessibility notes के साथ 25 data visualization recommendations।",
-        "tags": ["Line", "Bar", "Pie", "Heatmap"]
+        "tags": [
+          "Line",
+          "Bar",
+          "Pie",
+          "Heatmap"
+        ]
       },
       "landing": {
         "title": "Landing patterns",
         "description": "CTA placement strategies और रंग सुझावों के साथ conversion के लिए बेहतर की गई 34 page structures।",
-        "tags": ["Hero + Features", "Video-First", "Pricing"]
+        "tags": [
+          "Hero + Features",
+          "Video-First",
+          "Pricing"
+        ]
       },
       "ux": {
         "title": "UX दिशानिर्देश",
         "description": "Animation, accessibility, z-index, loading states आदि के लिए best practices और anti-patterns।",
-        "tags": ["Animation", "A11y", "Performance"]
+        "tags": [
+          "Animation",
+          "A11y",
+          "Performance"
+        ]
       }
     }
   },
   "howItWorks": {
     "titlePrefix": "UI UX Pro Max Skill—यह कैसे ",
     "titleAccent": "काम करती है",
-    "subtitle": "UI UX Pro Max Skill: प्रॉम्प्ट से production-ready UI तक, 6 समझदार चरणों में",
+    "subtitle": "यह उदाहरण प्रक्रिया है: prompt से सुझाव और समीक्षा योग्य UI तक। लिंक किया demo बाहरी संदर्भ है, इन चरणों का रिकॉर्ड किया परिणाम नहीं।",
     "steps": {
       "1": {
         "title": "आपका प्रॉम्प्ट",
@@ -1008,27 +1063,69 @@
       "2": {
         "title": "AI रीजनिंग",
         "tags": {
-          "product": {"label": "Product", "value": "pet-service"},
-          "style": {"label": "Style", "value": "playful, friendly"},
-          "page": {"label": "Page", "value": "landing"},
-          "cta": {"label": "CTA", "value": "booking"}
+          "product": {
+            "label": "Product",
+            "value": "pet-service"
+          },
+          "style": {
+            "label": "Style",
+            "value": "playful, friendly"
+          },
+          "page": {
+            "label": "Page",
+            "value": "landing"
+          },
+          "cta": {
+            "label": "CTA",
+            "value": "booking"
+          }
         },
         "searching": "→ खोज जारी: product, style, typography, color, landing और ux domains…"
       },
       "3": {
         "title": "डिज़ाइन डेटाबेस में खोज",
-        "product": {"label": "PRODUCT", "value": "Pet Tech App"},
-        "style": {"label": "STYLE", "value": "Micro-interactions"},
-        "typography": {"label": "TYPOGRAPHY", "value": "Fredoka + Nunito"},
-        "landing": {"label": "LANDING", "value": "Hero + Features + CTA"},
-        "ux": {"label": "UX RULE", "value": "Animation केवल loading के लिए इस्तेमाल करें"},
+        "product": {
+          "label": "PRODUCT",
+          "value": "Pet Tech App"
+        },
+        "style": {
+          "label": "STYLE",
+          "value": "Micro-interactions"
+        },
+        "typography": {
+          "label": "TYPOGRAPHY",
+          "value": "Fredoka + Nunito"
+        },
+        "landing": {
+          "label": "LANDING",
+          "value": "Hero + Features + CTA"
+        },
+        "ux": {
+          "label": "UX RULE",
+          "value": "कम गति की प्राथमिकता का सम्मान करें"
+        },
         "colorsLabel": "COLORS",
         "colors": [
-          {"name": "Primary", "hex": "#3B82F6"},
-          {"name": "Secondary", "hex": "#60A5FA"},
-          {"name": "CTA", "hex": "#F97316"},
-          {"name": "Background", "hex": "#F8FAFC"},
-          {"name": "Text", "hex": "#1E293B"}
+          {
+            "name": "Primary",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Secondary",
+            "hex": "#60A5FA"
+          },
+          {
+            "name": "CTA",
+            "hex": "#F97316"
+          },
+          {
+            "name": "Background",
+            "hex": "#F8FAFC"
+          },
+          {
+            "name": "Text",
+            "hex": "#1E293B"
+          }
         ]
       },
       "4": {
@@ -1042,51 +1139,134 @@
       },
       "5": {
         "title": "गुणवत्ता जाँच सूची",
-        "items": ["SVG icons (emoji नहीं)", "Hover feedback", "Dark mode contrast", "Responsive layout"]
+        "items": [
+          "SVG icons (emoji नहीं)",
+          "Hover feedback",
+          "Dark mode contrast",
+          "Responsive layout"
+        ]
       },
       "6": {
-        "title": "अंतिम परिणाम",
-        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
-        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "title": "बाहरी demo संदर्भ",
         "imageAlt": "Pet Grooming & Spa डेमो",
         "cta": "Live demo देखें"
       }
     }
   },
   "techStacks": {
-    "title": "UI UX Pro Max Skill 16 टेक स्टैक को सपोर्ट करती है",
+    "title": "UI UX Pro Max Skill [[stacks]] टेक स्टैक को सपोर्ट करती है",
     "subtitle": "मौजूदा upstream data में शामिल stacks के लिए framework-specific best practices, patterns और code examples।",
     "stacks": {
-      "react": {"title": "React", "desc": "State, hooks और performance patterns"},
-      "nextjs": {"title": "Next.js", "desc": "SSR, routing और API routes"},
-      "astro": {"title": "Astro", "desc": "Content sites, islands और performance"},
-      "vue": {"title": "Vue", "desc": "Composition API, Pinia और Vue Router"},
-      "nuxtjs": {"title": "Nuxt.js", "desc": "SSR, modules और server routes"},
-      "nuxtui": {"title": "Nuxt UI", "desc": "Design tokens, components और theming"},
-      "svelte": {"title": "Svelte", "desc": "Runes, stores और SvelteKit"},
-      "swiftui": {"title": "SwiftUI", "desc": "Views, State और Navigation"},
-      "reactnative": {"title": "React Native", "desc": "Components, Navigation और Lists"},
-      "flutter": {"title": "Flutter", "desc": "Widgets, State और Theming"},
-      "tailwind": {"title": "HTML + Tailwind", "desc": "Utilities, responsive design और accessibility"},
-      "shadcn": {"title": "shadcn/ui", "desc": "Composable components और theming"},
-      "jetpack": {"title": "Jetpack Compose", "desc": "Android UI, state और Material"},
-      "angular": {"title": "Angular", "desc": "Standalone components, RxJS और forms"},
-      "laravel": {"title": "Laravel", "desc": "Blade, Livewire और app UI patterns"},
-      "threejs": {"title": "Three.js", "desc": "3D scenes, WebGL और interactions"}
+      "react": {
+        "title": "React",
+        "desc": "State, hooks और performance patterns"
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "desc": "SSR, routing और API routes"
+      },
+      "astro": {
+        "title": "Astro",
+        "desc": "Content sites, islands और performance"
+      },
+      "vue": {
+        "title": "Vue",
+        "desc": "Composition API, Pinia और Vue Router"
+      },
+      "nuxtjs": {
+        "title": "Nuxt.js",
+        "desc": "SSR, modules और server routes"
+      },
+      "nuxtui": {
+        "title": "Nuxt UI",
+        "desc": "Design tokens, components और theming"
+      },
+      "svelte": {
+        "title": "Svelte",
+        "desc": "Runes, stores और SvelteKit"
+      },
+      "swiftui": {
+        "title": "SwiftUI",
+        "desc": "Views, State और Navigation"
+      },
+      "reactnative": {
+        "title": "React Native",
+        "desc": "Components, Navigation और Lists"
+      },
+      "flutter": {
+        "title": "Flutter",
+        "desc": "Widgets, State और Theming"
+      },
+      "tailwind": {
+        "title": "HTML + Tailwind",
+        "desc": "Utilities, responsive design और accessibility"
+      },
+      "shadcn": {
+        "title": "shadcn/ui",
+        "desc": "Composable components और theming"
+      },
+      "jetpack": {
+        "title": "Jetpack Compose",
+        "desc": "Android UI, state और Material"
+      },
+      "angular": {
+        "title": "Angular",
+        "desc": "Standalone components, RxJS और forms"
+      },
+      "laravel": {
+        "title": "Laravel",
+        "desc": "Blade, Livewire और app UI patterns"
+      },
+      "threejs": {
+        "title": "Three.js",
+        "desc": "3D scenes, WebGL और interactions"
+      },
+      "javafx": {
+        "title": "JavaFX",
+        "desc": "डेस्कटॉप इंटरफ़ेस"
+      },
+      "wpf": {
+        "title": "WPF",
+        "desc": "Windows ऐप"
+      },
+      "winui": {
+        "title": "WinUI 3",
+        "desc": "Windows ऐप"
+      },
+      "uwp": {
+        "title": "UWP",
+        "desc": "Windows ऐप"
+      },
+      "avalonia": {
+        "title": "Avalonia",
+        "desc": "क्रॉस-प्लेटफ़ॉर्म डेस्कटॉप UI"
+      },
+      "uno": {
+        "title": "Uno Platform",
+        "desc": "क्रॉस-प्लेटफ़ॉर्म डेस्कटॉप UI"
+      }
     }
   },
   "gallery": {
-    "title": "39 वेबसाइट डेमो की गैलरी",
-    "subtitle": "UI UX Pro Max Skill से बने वास्तविक वेबसाइट डेमो देखें। Live demo खोलने के लिए क्लिक करें।",
+    "title": "वेबसाइट demo संदर्भ",
+    "subtitle": "बाहरी demo संदर्भ। अनुवाद साइट इनके लेखक होने या निर्माण प्रक्रिया सत्यापित होने का दावा नहीं करती।",
     "searchPlaceholder": "डेमो खोजें (नाम, शैली, श्रेणी, प्रॉम्प्ट)…",
     "clearSearch": "खोज साफ़ करें",
-    "filters": {"category": "श्रेणी", "mode": "मोड", "show": "फ़िल्टर दिखाएँ", "hide": "फ़िल्टर छिपाएँ"},
+    "filters": {
+      "category": "श्रेणी",
+      "mode": "मोड",
+      "show": "फ़िल्टर दिखाएँ",
+      "hide": "फ़िल्टर छिपाएँ"
+    },
     "viewDemo": "डेमो देखें",
     "showPrompt": "प्रॉम्प्ट देखें",
     "promptTitle": "प्रॉम्प्ट",
     "closeModal": "मॉडल बंद करें",
     "close": "बंद करें",
-    "mode": {"light": "लाइट", "dark": "डार्क"},
+    "mode": {
+      "light": "लाइट",
+      "dark": "डार्क"
+    },
     "colors": "रंग:",
     "loadMore": "और दिखाएँ",
     "browseAll": "सभी उदाहरण देखें",
@@ -1097,7 +1277,11 @@
     "getOnGithub": "GitHub से पाएँ",
     "quickStart": "क्विक स्टार्ट",
     "learnMore": "और जानें",
-    "features": ["Open Source", "Claude Code के अनुकूल", "Production Ready"]
+    "features": [
+      "Open Source",
+      "Claude Code के अनुकूल",
+      "अनौपचारिक बहुभाषी अनुवाद"
+    ]
   },
   "feedback": {
     "title": "क्या यह पृष्ठ उपयोगी था?",
@@ -1112,18 +1296,19 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "UI UX Pro Max Skill—Claude Code के लिए डिज़ाइन इंटेलिजेंस स्किल। 67 UI शैलियों, 161 रंग पैलेट, 57 फ़ॉन्ट संयोजनों, 99 UX दिशानिर्देशों, 25 चार्ट प्रकारों और 161 रीजनिंग नियमों का खोजने योग्य डेटाबेस।",
+    "description": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
     "resources": "संसाधन",
     "database": "डेटाबेस",
     "about": "हमारे बारे में",
     "privacy": "गोपनीयता",
     "terms": "शर्तें",
     "contact": "संपर्क",
-    "builtWith": "React + Tailwind CSS से निर्मित (UI UX Pro Max द्वारा)"
+    "builtWith": "स्वतंत्र अनुवाद अनुरक्षक · अनौपचारिक बहुभाषी अनुवाद",
+    "upstreamCredit": "मूल परियोजना: Next Level Builder"
   },
   "blog": {
     "title": "ब्लॉग",
-    "subtitle": "UI UX Pro Max Skill के साथ डिज़ाइन करने से जुड़े नोट्स, प्रयोग और वास्तविक अनुभव।",
+    "subtitle": "स्वतंत्र अध्ययन नोट्स और prompt उदाहरण; ये आधिकारिक घोषणाएँ नहीं हैं।",
     "allTags": "सभी",
     "empty": "अभी कोई पोस्ट नहीं है—जल्द फिर देखें।",
     "minRead": "{n} मिनट का लेख",
@@ -1131,13 +1316,13 @@
     "fallbackBanner": "इस लेख का अभी अनुवाद नहीं हुआ है—अंग्रेज़ी संस्करण दिखाया जा रहा है।",
     "tocTitle": "इस लेख में",
     "ctaEyebrow": "यह पोस्ट पसंद आई?",
-    "ctaTitle": "वह Skill आज़माएँ जिसे Claude समझता है",
-    "ctaDescription": "UI UX Pro Max में 50 शैलियाँ, 21 पैलेट, 50 फ़ॉन्ट संयोजन और 99 UX दिशानिर्देश हैं—चुना हुआ संग्रह, ताकि Claude को पूरे web का औसत अनुमान न लगाना पड़े।",
-    "ctaTry": "Skill इंस्टॉल करें",
+    "ctaTitle": "मूल skill जानें",
+    "ctaDescription": "मूल रिलीज़ में [[styles]] खोजने योग्य शैलियाँ ([[activeStyles]] सक्रिय, [[supplementalStyles]] पूरक), [[palettes]] रंग योजनाएँ, [[fonts]] फ़ॉन्ट जोड़े, [[ux]] UX दिशानिर्देश और [[stacks]] तकनीकी स्टैक हैं। ये मूल परियोजना के आँकड़े हैं, इस साइट की रचना नहीं।",
+    "ctaTry": "मूल परियोजना देखें",
     "ctaRss": "RSS से सदस्यता लें",
     "ctaMore": "और पोस्ट",
     "latestTitle": "ब्लॉग से नवीनतम",
-    "latestSubtitle": "हमारी टीम और community से field notes और prompt techniques।",
+    "latestSubtitle": "स्वतंत्र अध्ययन नोट्स और prompt उदाहरण; ये आधिकारिक घोषणाएँ नहीं हैं।",
     "seeAll": "सभी पोस्ट देखें"
   },
   "tutorials": {
@@ -1162,5 +1347,17 @@
         "description": "एक अस्पष्ट विचार से ship किए गए landing page तक—पाँच केंद्रित चरणों में।"
       }
     }
+  },
+  "provenance": {
+    "identity": "यह UI UX Pro Max Skill की अनौपचारिक बहुभाषी अनुवाद साइट है। हम दस्तावेज़ों का अनुवाद और संकलन करते हैं; skill, CLI और datasets मूल लेखक संभालते हैं। साइट मूल परियोजना से संबद्ध या आधिकारिक रूप से समर्थित नहीं है।",
+    "maintainer": "स्वतंत्र अनुवाद अनुरक्षक",
+    "reference": "मूल संदर्भ",
+    "checked": "सामग्री जाँची गई",
+    "siteFeedback": "अनुवाद / वेबसाइट फ़ीडबैक",
+    "upstreamFeedback": "Skill / CLI समस्याएँ",
+    "pending": "साइट की अध्ययन सामग्री। मूल प्रकाशन स्रोत अभी सत्यापित नहीं है; इसे आधिकारिक अनुवाद नहीं कहा गया है।",
+    "translation": "अनुवाद स्रोत",
+    "editorial": "स्वतंत्र अध्ययन नोट्स और prompt उदाहरण; ये आधिकारिक घोषणाएँ नहीं हैं।",
+    "docsNote": "प्रकाशित CLI पैकेज के आधार पर जाँची गई अनौपचारिक अनूदित और संकलित सामग्री।"
   }
 }

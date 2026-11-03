@@ -1,10 +1,12 @@
+import { absoluteSiteUrl } from '@/lib/site-config';
+import { localizedAlternates } from '@/lib/metadata';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ExamplesPageContent } from '@/components/examples-page-content';
 import {
   DEFAULT_OG_IMAGE,
-  DEFAULT_TWITTER_IMAGE_URL,
-  SITE_URL
+  DEFAULT_TWITTER_IMAGE_URL
 } from '@/lib/site-config';
 
 type PageParams = { locale: string };
@@ -16,27 +18,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const currentUrl = locale === 'en' ? `${SITE_URL}/examples` : `${SITE_URL}/${locale}/examples`;
+  const currentUrl = absoluteSiteUrl('/examples', locale);
 
   return {
     title: `${t('gallery.title')} | UI UX Pro Max Skill`,
     description: t('gallery.subtitle'),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/examples`,
-        en: `${SITE_URL}/examples`,
-        zh: `${SITE_URL}/zh/examples`,
-        vi: `${SITE_URL}/vi/examples`,
-        ja: `${SITE_URL}/ja/examples`,
-        hi: `${SITE_URL}/hi/examples`,
-      },
-    },
+    alternates: localizedAlternates('/examples', locale),
     openGraph: {
       title: `${t('gallery.title')} | UI UX Pro Max Skill`,
       description: t('gallery.subtitle'),
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale,
       type: 'website',
       images: [{ ...DEFAULT_OG_IMAGE, alt: t('gallery.subtitle') }],

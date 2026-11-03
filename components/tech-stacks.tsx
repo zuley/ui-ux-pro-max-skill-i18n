@@ -9,7 +9,8 @@ export function TechStacks() {
     'react', 'nextjs', 'astro', 'vue',
     'nuxtjs', 'nuxtui', 'svelte', 'swiftui',
     'reactnative', 'flutter', 'tailwind', 'shadcn',
-    'jetpack', 'angular', 'laravel', 'threejs'
+    'jetpack', 'angular', 'laravel', 'threejs',
+    'javafx', 'wpf', 'winui', 'uwp', 'avalonia', 'uno'
   ];
 
   return (

@@ -1,5 +1,7 @@
 'use client';
 
+import { OFFICIAL_PROJECT_URL } from '@/lib/site-config';
+
 import { useTranslations } from 'next-intl';
 import { useLayoutEffect, useRef } from 'react';
 
@@ -28,7 +30,7 @@ export function AnnouncementBar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-1 flex items-center justify-center gap-x-2 gap-y-0.5 text-center leading-tight sm:leading-normal">
         <span className="min-w-0">{t('text')}</span>
         <a
-          href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+          href={OFFICIAL_PROJECT_URL}
           target="_blank"
           rel="noopener noreferrer nofollow"
           className="underline underline-offset-2 hover:text-white/90 transition-colors"

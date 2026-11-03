@@ -1,5 +1,6 @@
 'use client';
 
+import siteCopy from '@/lib/site-copy.json';
 import { BookOpen, Home, Images, SearchX } from 'lucide-react';
 import { useEffect, useSyncExternalStore } from 'react';
 import { notoSansDevanagari } from '@/lib/fonts';
@@ -67,7 +68,7 @@ export function GlobalNotFoundContent() {
 
   useEffect(() => {
     document.documentElement.lang = locale;
-    document.title = `404 | UI UX Pro Max Skill`;
+    document.title = `404 | UI UX Pro Max Skill — ${siteCopy[locale].shortIdentity}`;
   }, [locale]);
 
   const t = copy[locale];
@@ -110,7 +111,7 @@ export function GlobalNotFoundContent() {
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-5 text-sm text-gray-400">
-          UI UX Pro Max Skill
+          UI UX Pro Max Skill · {siteCopy[locale].shortIdentity}
         </div>
       </div>
     </main>

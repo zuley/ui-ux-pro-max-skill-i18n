@@ -5,7 +5,13 @@ date: 2026-05-22
 tags: [tutorial, design-system, prompt]
 author: team
 step: 1
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
+
+上流の検索スクリプトで --domain style、--domain color、--domain typography を使います。結果の適合性を確認してください。当サイト独自の設計カタログはありません。
+
 
 ランディングページは、1 つの仕事を 1 画面でこなすページだ。一番難しい
 のはプロンプトを書くことではない——<strong>プロンプトを書き始める前に、
@@ -24,7 +30,7 @@ step: 1
 他に頼れるものがない時にはそれでも合理的だが、ブランドを持っている
 <strong>あなたが</strong>いる以上、それは間違ったやり方だ。
 
-Skill が <strong>50 のスタイル</strong>と <strong>21 のパレット</strong>を内蔵しているのは、
+Skill が <strong>カタログのスタイル</strong>と <strong>カタログのパレット</strong>を内蔵しているのは、
 この選択が「キュレートされた選び」であるべきで、「バイブによる
 補間」であってはならないからだ。
 
@@ -36,8 +42,8 @@ Skill が <strong>50 のスタイル</strong>と <strong>21 のパレット</str
   items={[
     { id: 'audience', label: 'このページは誰のためのもの？（1 文、ペルソナ文書ではなく）' },
     { id: 'feeling', label: '訪問者が最初の 2 秒で感じるべき感情は？（1 つの形容詞）' },
-    { id: 'style', label: '50 のスタイルのうち、どれを使う？名前を書き留める。' },
-    { id: 'palette', label: '21 のパレットのうち、どれを使う？名前を書き留める。' },
+    { id: 'style', label: 'カタログのスタイルのうち、どれを使う？名前を書き留める。' },
+    { id: 'palette', label: 'カタログのパレットのうち、どれを使う？名前を書き留める。' },
     { id: 'forbidden', label: '明確に「やってほしくない」3 つのこと。' }
   ]}
 />
@@ -50,14 +56,13 @@ Skill が <strong>50 のスタイル</strong>と <strong>21 のパレット</str
 
 データベースで検索して、実際のスタイルカードを読む。推測しない：
 
+Claude 用スキルを導入後、プロジェクトのルートにある端末で実行します。他の助手ではパスを変更してください。検索はキーワード式でタグフィルターではありません。結果を確認して選びます。
+
 <CodeBlock
   title="スタイルを眺める"
   language="bash"
-  code={`# Claude Code 内で
-+style list
-
-# 属性で絞り込む
-+style list --tag editorial --tag asymmetric`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "editorial asymmetric" --domain style`}
 />
 
 <strong>1 つ</strong>選ぶ、3 つではない。キュレートされた集合の存在意義は、
@@ -66,11 +71,7 @@ Skill が <strong>50 のスタイル</strong>と <strong>21 のパレット</str
 平均することではない。
 
 <Callout tone="info" title="決められないとき、これが堅い既定値">
-  B2B SaaS のランディングページなら「Editorial Brutalist」+
-  「Slate Ink」パレットは、箱出しで強力な組み合わせ：セリフ
-  ディスプレイ見出し、たっぷりの余白、抑制された 1 つのアクセント色、
-  装飾的なグラデーション無し。コンテンツを入れる前から「誰かが
-  決定した感」がある。
+  B2B SaaS ではまずミニマルな方向を試し、検索結果を比較できます。スタイル名と製品語は検索入力で、検証済みのプリセットの組ではありません。内容とブランドに合わせて書体・色を選んでください。
 </Callout>
 
 ## パレットの選び方
@@ -82,8 +83,8 @@ Skill が <strong>50 のスタイル</strong>と <strong>21 のパレット</str
 <CodeBlock
   title="パレットを眺める"
   language="bash"
-  code={`+palette list --style editorial-brutalist
-+palette show slate-ink`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --domain color
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --design-system`}
 />
 
 ## このステップ終了時の成果物

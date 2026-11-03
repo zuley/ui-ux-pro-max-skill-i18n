@@ -1,3 +1,4 @@
+import { OFFICIAL_PROJECT_URL } from '@/lib/site-config';
 import Link from 'next/link';
 import { ArrowRight, Rss } from 'lucide-react';
 import { blogIndexPath, localePath } from '@/lib/locale-path';
@@ -21,7 +22,7 @@ export function EndOfArticleCta({
   tryLabel,
   rssLabel,
   moreLabel,
-  primaryHref = 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
+  primaryHref = OFFICIAL_PROJECT_URL,
 }: {
   locale: string;
   eyebrow: string;

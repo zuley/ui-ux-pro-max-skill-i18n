@@ -1,9 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max Skill - Agent Skills",
+    "title": "UI UX Pro Max Skill — 非官方多语言翻译",
     "navTitle": "UI UX Pro Max Skill",
-    "description": "Claude Code 的设计智能助手",
-    "metaDescription": "为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能，包含 67 种 UI 风格、161 套配色、字体搭配、UX 指南与技术栈建议。",
+    "description": "非官方多语言翻译",
+    "metaDescription": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, AI设计, UI风格, 配色方案, 字体搭配, 设计系统生成器",
     "switchTheme": "切换主题",
     "switchToLight": "切换到浅色模式",
@@ -31,14 +31,14 @@
   },
   "hero": {
     "title1": "UI UX Pro Max Skill",
-    "title2": "设计智能",
-    "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南、25 种图表类型、16 种技术栈和 161 条推理规则，让 AI 生成精美界面。",
+    "title2": "非官方多语言翻译",
+    "subtitle": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
     "btnHow": "开始上手",
     "btnDemos": "快速上手"
   },
   "quickStart": {
     "title": "快速上手 UI UX Pro Max Skill",
-    "subtitle": "按步骤操作，使用 UI UX Pro Max Skill 几分钟内从提示词生成完整设计系统。",
+    "subtitle": "安装上游技能，生成待审阅的设计系统建议。",
     "step1": {
       "title": "1）安装技能",
       "body": "在 Claude Code 内直接安装 UI UX Pro Max Skill。",
@@ -114,26 +114,26 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max Skill 是一个开放、可搜索的设计智能层，可以无缝接入 Claude Code、Cursor、Windsurf、GitHub Copilot 等 18 款主流 AI 编码助手。它不让模型每次都凭空想象设计，而是为模型提供一套精心策划的知识库——67 种 UI 风格、161 套配色方案、57 组字体配对、99 条 UX 准则、25 种图表类型、161 条行业专属推理规则。最终效果：界面看起来是经过深思熟虑设计的，符合无障碍规范，摆脱「AI 一眼可辨」的通用感。",
+      "overview": "上游发布版提供 [[styles]] 种可搜索风格（[[activeStyles]] 种活跃、[[supplementalStyles]] 种补充）、[[palettes]] 套配色、[[fonts]] 组字体配对、[[ux]] 条 UX 指南和 [[stacks]] 种技术栈。这些是上游数据，不是本站创作成果。",
       "problem": {
         "title": "为什么设计智能对 AI 编码很重要",
         "lead": "现代 AI 助手写组件代码已经很强，但 UI 设计的「品味」非常不稳定。没有外部知识支撑时，模型对差异极大的产品也倾向于复用同一批布局和配色。医疗仪表盘最后长得像加密货币应用；儿童 App 却用了金融科技灰。UI UX Pro Max Skill 的作用，就是把模型的设计选择锚定在「有证据支撑、懂行业」的设计知识上。",
         "points": [
           {
             "title": "通用模板",
-            "body": "缺乏上下文时，模型默认会输出居中 Hero + 三个特性卡片 + 一个 CTA。技能内置 24 套落地页模式和 67 种视觉风格，让模型对每个项目都有真正可以推理的选项池。"
+            "body": "缺乏上下文时，模型默认会输出居中 Hero + 三个特性卡片 + 一个 CTA。技能内置 [[landing]] 套落地页模式和 [[styles]] 种视觉风格，让模型对每个项目都有真正可以推理的选项池。"
           },
           {
             "title": "缺少行业语境",
-            "body": "金融科技仪表盘和健康 App 在配色、密度、动效上的要求完全不同。161 条行业推理规则确保模型挑选的配色和模式天然契合具体领域。"
+            "body": "金融科技仪表盘和健康 App 在配色、密度、动效上的要求完全不同。[[reasoning]] 条行业推理规则确保模型挑选的配色和模式天然契合具体领域。"
           },
           {
             "title": "看不见的反模式",
-            "body": "AI 助手很容易写出对比度不足、字号过小、移动端无法点击的代码。技能内置 99 条 UX 准则和显式的反模式列表，让模型知道哪些坑必须绕开。"
+            "body": "AI 助手很容易写出对比度不足、字号过小、移动端无法点击的代码。技能内置 [[ux]] 条 UX 准则和显式的反模式列表，让模型知道哪些坑必须绕开。"
           },
           {
             "title": "会话间漂移",
-            "body": "没有持久化设计系统时，每次对话都会偏离。使用 --persist 会在仓库中生成 MASTER.md，后续所有会话都会引用，从而锁定 Token、字体、间距等关键决策。"
+            "body": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
           }
         ]
       },
@@ -143,15 +143,15 @@
         "items": [
           {
             "role": "独立开发者与 Indie Hacker",
-            "body": "你追求速度，没有专职设计师，又不希望每个项目都长得像 Tailwind 模板。技能让你用一条命令获得有辨识度的视觉身份。"
+            "body": "将建议作为起点，再审阅实际界面；框架版本、内容与无障碍需求都会影响结果。"
           },
           {
             "role": "设计工程团队",
-            "body": "你对 Token、密度、动效已经有明确主张。技能尊重 --persist 中的覆盖规则，让每次 AI 会话都遵循团队约定。"
+            "body": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
           },
           {
             "role": "外包与咨询公司",
-            "body": "你横跨多个行业交付界面。161 条行业推理规则和页面级覆盖，让你为不同领域快速拉起合适的起点，无需重复造系统。"
+            "body": "你横跨多个行业交付界面。[[reasoning]] 条行业推理规则和页面级覆盖，让你为不同领域快速拉起合适的起点，无需重复造系统。"
           },
           {
             "role": "开源维护者",
@@ -161,7 +161,7 @@
       },
       "architecture": {
         "title": "工作原理一览",
-        "body": "当你发出 UI 需求时，AI 助手加载技能，技能将你的请求解析为产品类型与意图信号，并行检索五个设计领域的内置知识库，应用行业专属推理规则对候选结果排序、过滤反模式，最终把结构化的设计系统交给 AI 助手用于生成代码。整个流程在本地完成，不会向任何外部服务发送数据。",
+        "body": "上游 Python 生成器检索内置的产品、风格、配色、落地页和字体数据，并结合行业规则组织建议。AI 助手再使用输出实现界面。耗时取决于查询和运行环境。 内置 Python 搜索在本地运行。AI 助手可能把提示词、文件和搜索输出发送给其服务商，具体取决于助手的隐私设置。CLI 安装和更新检查可能联网。",
         "labels": {
           "you": "你",
           "assistant": "AI 助手",
@@ -185,31 +185,31 @@
         "intro": "下面每一项都是一个独立策划的数据集，推理引擎可以对它们进行检索与组合。叠加起来，模型就有足够的素材产出像手工打磨过的设计系统，而不是模板感十足的成品。",
         "items": [
           {
-            "title": "67 种 UI 风格",
-            "desc": "从玻璃拟态 (Glassmorphism) 到粘土拟态 (Claymorphism)，从极简主义 (Minimalism) 到野兽派 (Brutalism)，还包含 AI 原生 UI、Bento Grid、深色模式、Aurora、拟物、新拟态、Flat 2.0 等。每种风格条目都包含描述、使用场景、视觉效果与栈兼容性。"
+            "title": "[[styles]] 种 UI 风格",
+            "desc": "常规推荐使用 [[activeStyles]] 种活跃风格，[[supplementalStyles]] 种补充风格用于明确的变体请求；[[deprecatedStyles]] 个弃用条目不参与常规排序。落地页结构是独立数据集。"
           },
           {
-            "title": "161 套配色方案",
-            "desc": "与 161 个产品类型对齐的行业专属配色，覆盖 SaaS、电商、医疗健康、金融科技、美容护肤、游戏、教育科技等。每套配色都附带无障碍对比配对、深色模式变体和适用情绪标签。"
+            "title": "[[palettes]] 套配色方案",
+            "desc": "上游配色提供面向产品类型的颜色建议。实现时仍需验证对比度并定义明暗主题语义 Token，不能假设每个条目都包含完整的双主题。"
           },
           {
-            "title": "57 组字体配对",
-            "desc": "精心挑选的 Google Fonts 排版组合，含 import 语句、推荐字重、行高比例，以及从 display 到 caption 的完整层级。"
+            "title": "[[fonts]] 组字体配对",
+            "desc": "上游目录提供标题与正文字体组合、使用说明及字体链接。请检查所支持语言的字形覆盖、字体许可与实际渲染。"
           },
           {
             "title": "25 种图表类型",
             "desc": "为仪表盘和数据分析提供可视化建议，含库推荐 (Recharts、Visx、Chart.js、ECharts) 和无障碍说明 (屏幕阅读器标签、色盲友好配色)。"
           },
           {
-            "title": "16 套技术栈指南",
-            "desc": "覆盖 React、Next.js、Astro、Vue、Nuxt.js、Nuxt UI、Svelte、SwiftUI、React Native、Flutter、HTML+Tailwind、shadcn/ui、Jetpack Compose、Angular、Laravel、Three.js。每套栈都涵盖惯用模式和推荐库。"
+            "title": "[[stacks]] 套技术栈指南",
+            "desc": "React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML + Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, Three.js, JavaFX, WPF, WinUI 3, UWP, Avalonia, Uno Platform."
           },
           {
-            "title": "99 条 UX 准则",
+            "title": "[[ux]] 条 UX 准则",
             "desc": "覆盖表单、导航、空状态、错误处理、加载模式、移动端手势、动效偏好和 WCAG 合规等场景的最佳实践、反模式纠正和无障碍规则。"
           },
           {
-            "title": "161 条推理规则",
+            "title": "[[reasoning]] 条推理规则",
             "desc": "行业专属推理规则把产品类型映射到模式、风格优先级、配色情绪、字体、效果和反模式。正是这些规则让模型能够说出「这是医疗 App，饱和度应该更低、密度应该适中」，而不是靠猜。"
           }
         ]
@@ -231,7 +231,7 @@
           {
             "approach": "Figma UI Kit",
             "strengths": "视觉还原度高，适合和人类设计师交接。",
-            "limits": "在你的代码仓库之外；AI 助手无法直接读取 Figma；从设计到代码还要再转一道手。"
+            "limits": "需要设计到代码的衔接流程，具体集成能力取决于助手和工具。"
           },
           {
             "approach": "Design Token 库",
@@ -252,36 +252,57 @@
       },
       "shouldYouUse": {
         "title": "你适合用它吗？",
-        "subtitle": "勾选符合你的描述。三条以上，安装这个技能能给你带来明显回报。",
+        "subtitle": "用以下问题判断是否值得尝试上游技能。",
         "items": [
-          { "id": "ai-coding", "label": "我每周至少用几次 AI 编码助手 (Claude Code、Cursor、Windsurf、Copilot 等)。" },
-          { "id": "ship-ui", "label": "我经常交付面向用户的界面：落地页、仪表盘、移动端、管理后台等。" },
-          { "id": "no-designer", "label": "我没有专职设计师覆盖每个项目，或者我自己就是设计工程师。" },
-          { "id": "generic-output", "label": "我发现 AI 生成的 UI 在差异很大的产品间感觉雷同、缺乏辨识度。" },
-          { "id": "want-consistency", "label": "我希望跨会话的设计决策保持一致，而不是每次对话都重头开始。" },
-          { "id": "industry-fit", "label": "我做的产品横跨多个行业 (SaaS、医疗、金融、电商)，需要每种都像「行业原住民」。" },
-          { "id": "tokens-already", "label": "我已经在用 Design Token 或 shadcn/ui，希望在它们之上再加一层推理。" }
+          {
+            "id": "ai-coding",
+            "label": "我每周至少用几次 AI 编码助手 (Claude Code、Cursor、Windsurf、Copilot 等)。"
+          },
+          {
+            "id": "ship-ui",
+            "label": "我经常交付面向用户的界面：落地页、仪表盘、移动端、管理后台等。"
+          },
+          {
+            "id": "no-designer",
+            "label": "我没有专职设计师覆盖每个项目，或者我自己就是设计工程师。"
+          },
+          {
+            "id": "generic-output",
+            "label": "我发现 AI 生成的 UI 在差异很大的产品间感觉雷同、缺乏辨识度。"
+          },
+          {
+            "id": "want-consistency",
+            "label": "我希望跨会话的设计决策保持一致，而不是每次对话都重头开始。"
+          },
+          {
+            "id": "industry-fit",
+            "label": "我做的产品横跨多个行业 (SaaS、医疗、金融、电商)，需要每种都像「行业原住民」。"
+          },
+          {
+            "id": "tokens-already",
+            "label": "我已经在用 Design Token 或 shadcn/ui，希望在它们之上再加一层推理。"
+          }
         ]
       },
       "next": "下一步：阅读「How It Works」了解 Design System Generator 接到请求时具体在做什么，或者直接跳到「安装指南」。"
     },
     "dsg": {
-      "overview": "Design System Generator 是 UI UX Pro Max Skill 的核心。当 AI 助手检测到 UI 需求时，生成器会解析你的真实意图，对五个设计领域并行检索，应用行业专属推理规则，最终把结构化的设计系统交给助手用于生成代码。整个流程在本地完成、几秒钟内结束。",
+      "overview": "上游 Python 生成器检索内置的产品、风格、配色、落地页和字体数据，并结合行业规则组织建议。AI 助手再使用输出实现界面。耗时取决于查询和运行环境。",
       "primer": {
         "title": "这里说的「设计系统」是什么",
         "lead": "在这里，设计系统不是 500 页的 Figma 组件库，而是一个紧凑、机器可读的「决策集合」：选哪套布局模式、哪套配色、哪种字体配对、哪套动效语言、偏好哪些交互、要避开哪些反模式。生成器为每次请求输出一份，按产品类型与意图量身定制。",
         "items": [
           {
             "title": "Pattern (模式)",
-            "body": "结构性选择——例如「Bento Grid + 粘性导航」「数据密集的后台布局」「移动端优先的卡片堆叠」等，来自 24 套落地与产品模式。"
+            "body": "结构性选择——例如「Bento Grid + 粘性导航」「数据密集的后台布局」「移动端优先的卡片堆叠」等，来自 [[landing]] 套落地与产品模式。"
           },
           {
             "title": "Style (风格)",
-            "body": "视觉处理——玻璃拟态、野兽派、极简、新拟态、粘土拟态、Aurora、AI 原生等 67 种风格之一。每种风格自带配套效果语言。"
+            "body": "常规推荐使用 [[activeStyles]] 种活跃风格，[[supplementalStyles]] 种补充风格用于明确的变体请求；[[deprecatedStyles]] 个弃用条目不参与常规排序。落地页结构是独立数据集。"
           },
           {
             "title": "Color & Typography (配色与字体)",
-            "body": "从 161 套配色与 57 组字体配对中匹配出符合行业的组合，并附带无障碍元数据：对比配对、推荐字重、行高。"
+            "body": "上游配色提供面向产品类型的颜色建议。实现时仍需验证对比度并定义明暗主题语义 Token，不能假设每个条目都包含完整的双主题。 上游目录提供标题与正文字体组合、使用说明及字体链接。请检查所支持语言的字形覆盖、字体许可与实际渲染。"
           },
           {
             "title": "Effects, Motion & Micro-interactions (效果、动效、微交互)",
@@ -305,12 +326,12 @@
           {
             "num": "2",
             "title": "多领域搜索",
-            "desc": "并行检索产品类型、UI 风格、配色、落地模式、字体、UX 准则。每个领域返回带元数据的候选集合。"
+            "desc": "上游 Python 生成器检索内置的产品、风格、配色、落地页和字体数据，并结合行业规则组织建议。AI 助手再使用输出实现界面。耗时取决于查询和运行环境。"
           },
           {
             "num": "3",
             "title": "推理引擎",
-            "desc": "应用 161 条行业专属规则对候选排序，解决跨领域冲突 (例如风格与配色不搭)，并按推断行业过滤反模式。"
+            "desc": "行业规则帮助选择布局模式、风格优先级与相关建议。反模式是供审阅的指导，不会自动证明生成代码正确或符合无障碍要求。"
           },
           {
             "num": "4",
@@ -325,41 +346,41 @@
         "stages": [
           {
             "label": "阶段 1 — 解析需求",
-            "body": "生成器从你的提示词中提取四类信号：产品类型 (SaaS、电商、医疗、金融、作品集等)、意图 (新建、改版、修复、优化)、显式风格提示 (玻璃拟态、深色模式)，以及目标界面 (落地、仪表盘、移动屏、单组件)。缺失的信号会回退到「安全且可访问」而不是「追求新奇」的默认值。"
+            "body": "查询用于匹配产品候选和行业规则。应写清产品、页面与约束，避免只用模糊形容词。"
           },
           {
-            "label": "阶段 2 — 并行搜索",
-            "body": "五个搜索并行作用在内置 CSV 数据集上：产品、风格、配色、落地、字体。每个搜索返回基于字符串相似度排序的 Top-N 候选 + 结构化元数据。这一步在普通笔记本上通常远低于 1 秒完成。"
+            "label": "阶段 2 — 数据目录检索",
+            "body": "Python 代码使用基于 BM25 的排序检索内置 CSV 目录。这是本地检索步骤，不是网络搜索，也不承诺并行执行。"
           },
           {
             "label": "阶段 3 — 推理与冲突解决",
-            "body": "161 条推理规则同时充当过滤器和打平裁判。例如：「医疗 + 仪表盘 → 偏好冷色、偏好 Inter 或 IBM Plex Sans、压制新拟态、压制野兽派、偏好中等密度」。两个候选打分相近时，行业规则挑出赢家。撞到已知反模式的组合会被直接淘汰。"
+            "body": "行业规则帮助选择布局模式、风格优先级与相关建议。反模式是供审阅的指导，不会自动证明生成代码正确或符合无障碍要求。"
           },
           {
             "label": "阶段 4 — 组装输出",
-            "body": "胜出的候选合并成一份设计系统，序列化为 JSON (供编程使用) 或 Markdown (供 AI 直接消费)。带 --persist 时还会写入 design-system/MASTER.md，未来会话无需重跑生成器即可读取。"
+            "body": "设计系统默认输出 ASCII；-f markdown 输出 Markdown，--json 输出 JSON。结果是待审阅的设计建议，不保证生成界面已经满足无障碍要求。"
           }
         ]
       },
       "anatomy": {
         "title": "输出长什么样",
-        "body": "下面是 design-system/MASTER.md 的浓缩示意——真实文件更长，但形态如此。",
-        "exampleTitle": "design-system/MASTER.md (节选)",
+        "body": "以下为学习用的说明性示例，并非生成器实录或已经验证的生产效果。请在自己的项目中检查对比度、布局与交互。",
+        "exampleTitle": "说明性节选",
         "exampleCode": "# Design System\n\n产品类型: SaaS 数据分析仪表盘\n行业:    B2B 金融科技\n生成时间: 2026-01-15\n\n## Pattern\n数据密集布局——粘性侧边栏、12 列网格、表头吸顶。\n参考: landing/data-dashboard-sticky-sidebar\n\n## Style\n极简为主，悬停卡片带克制玻璃质感。\n原因: 金融反模式禁止高饱和 Hero 渐变；\n      极简 + 克制玻璃既现代又显得可靠。\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald, KPI 变化值时少量使用)\nWCAG AA 配对已通过验证。\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / 1.55 行高\n数字:    IBM Plex Mono (表格数字)\n\n## Effects\n阴影刻度: 仅 0/1/2/4，避免厚重投影\n动效:    150-200ms ease-out，尊重 prefers-reduced-motion\n\n## 需要避开的反模式\n- 不用红色作为品牌主色 (暗示亏损)\n- 仪表盘不要自动轮播\n- 不要把批量操作只藏在 hover 后面\n\n## 交付前检查\n- [ ] 所有图表配色对色盲友好\n- [ ] 表格数字使用等宽字体\n- [ ] 空状态配插画和 CTA\n- [ ] 加载状态用骨架而非纯 spinner\n"
       },
       "persist": {
         "title": "持久化设计系统",
-        "body": "默认情况下，生成的设计系统只存在于当前 AI 会话中。添加 --persist 会把它写入项目根目录的 design-system/MASTER.md。此后该项目的每次新会话都会先读取 MASTER.md，按其中的决策行动，连重新设计一个按钮也仍会沿用项目的间距与配色 Token。",
+        "body": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。",
         "scopes": {
           "title": "项目级 vs 页面级覆盖",
-          "body": "MASTER.md 描述的是覆盖整个项目的决策。但有时单个页面需要打破规则——比如更活泼的营销活动页，或者适合打印的发票视图。添加 --page [name] 会在 design-system/pages/[name].md 写入页面级覆盖，叠加在 MASTER 之上：针对该页面的 AI 会话会合并两份文件，冲突时以页面文件为准。",
+          "body": "使用 --persist -p \"Acme\" --page pricing 时，页面文件位于 design-system/acme/pages/pricing.md，已有主文件保留。请明确让助手在该页优先应用页面规则，并在使用前检查生成的覆盖内容。",
           "commandTitle": "持久化命令示例",
-          "commands": "# 项目级：写入 design-system/MASTER.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"SaaS 数据分析仪表盘\" --design-system --persist -p \"Acme\"\n\n# 页面级覆盖：写入 design-system/pages/pricing.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"活泼的定价页，CTA 要突出\" --design-system \\\n  --persist -p \"Acme\" --page \"pricing\""
+          "commands": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"SaaS dashboard\" --design-system --persist -p \"Acme\" --output-dir .\n\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \"pricing page\" --design-system --persist -p \"Acme\" --page pricing --output-dir ."
         }
       },
       "tuning": {
         "title": "微调输出",
-        "subtitle": "如果第一次生成不太满意，在动手重写之前先试三种调节手段。",
+        "subtitle": "--variance、--motion、--density（1–10）与 --design-system 联用可调整建议。为现有应用换肤时，先检查框架版本与已有语义 Token，再让助手逐组修改组件并验证各主题。",
         "items": [
           {
             "title": "加显式风格关键词",
@@ -375,7 +396,7 @@
           },
           {
             "title": "用 --page 处理一次性差异",
-            "body": "如果 MASTER.md 90% 都很合适、只有一个页面想做点不同，用页面级覆盖而不是重新生成整套。"
+            "body": "使用 --persist -p \"Acme\" --page pricing 时，页面文件位于 design-system/acme/pages/pricing.md，已有主文件保留。请明确让助手在该页优先应用页面规则，并在使用前检查生成的覆盖内容。"
           }
         ]
       },
@@ -388,15 +409,15 @@
           },
           {
             "q": "配色和我的品牌不符。",
-            "a": "第一次 --persist 之后，手动把 design-system/MASTER.md 中的 Colors 段改成你的品牌色。后续会话会把它视为锁定 Token。"
+            "a": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
           },
           {
             "q": "完全不同的产品总是出同一套风格。",
-            "a": "通常两个原因：一是你没点明行业；二是 MASTER.md 是上一个项目留下的——生成新项目前先删除或改名。"
+            "a": "生成器依据查询和内置数据给出建议，不会读取已有 MASTER.md 来选择风格。请补充具体行业、受众和界面要求。如果是 AI 助手持续套用旧设计，应检查它读取的项目文件，并明确提供本次应遵循的主文件和页面规则。不要为了改变生成器推荐而删除设计文件。"
           },
           {
             "q": "标记的反模式我并不在意。",
-            "a": "反模式属于建议性输出，可以忽略，也可以直接编辑 MASTER.md 删掉你不认同的行——除非你再次跑 --persist，它们不会回来。"
+            "a": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
           }
         ]
       },
@@ -406,13 +427,13 @@
       "overview": "选择最适合你的安装方式，为你的 AI 助手注入设计灵魂。",
       "tabs": {
         "cliInstall": "CLI 安装 (推荐)",
-        "manualInstall": "手动安装",
+        "manualInstall": "复制已生成的技能（以 Claude Code 为例）",
         "prerequisites": "前置条件"
       },
       "cliInstall": {
         "step1": {
           "title": "全局安装 CLI 工具",
-          "code": "npm install -g uipro-cli"
+          "code": "npm install -g ui-ux-pro-max-cli@2.15.0"
         },
         "step2": {
           "title": "进入你的项目目录",
@@ -421,34 +442,36 @@
         "step3": {
           "title": "为指定 AI 助手安装技能",
           "commands": [
-            "uipro init --ai claude        # Claude Code",
-            "uipro init --ai cursor        # Cursor",
-            "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity",
-            "uipro init --ai copilot       # GitHub Copilot",
-            "uipro init --ai kiro          # Kiro",
-            "uipro init --ai codex         # Codex CLI",
-            "uipro init --ai qoder         # Qoder",
-            "uipro init --ai roocode       # Roo Code",
-            "uipro init --ai gemini        # Gemini CLI",
-            "uipro init --ai trae          # Trae",
-            "uipro init --ai opencode      # OpenCode",
-            "uipro init --ai continue      # Continue",
-            "uipro init --ai codebuddy     # CodeBuddy",
-            "uipro init --ai droid         # Droid (Factory)",
-            "uipro init --ai kilocode      # KiloCode",
-            "uipro init --ai warp          # Warp",
-            "uipro init --ai augment       # Augment",
-            "uipro init --ai all           # 所有 AI 助手"
+            "uipro init --ai claude",
+            "uipro init --ai cursor",
+            "uipro init --ai windsurf",
+            "uipro init --ai antigravity",
+            "uipro init --ai copilot",
+            "uipro init --ai kiro",
+            "uipro init --ai codex",
+            "uipro init --ai qoder",
+            "uipro init --ai roocode",
+            "uipro init --ai gemini",
+            "uipro init --ai trae",
+            "uipro init --ai opencode",
+            "uipro init --ai continue",
+            "uipro init --ai codebuddy",
+            "uipro init --ai droid",
+            "uipro init --ai kilocode",
+            "uipro init --ai warp",
+            "uipro init --ai augment",
+            "uipro init --ai codewhale",
+            "uipro init --ai universal",
+            "uipro init --ai all"
           ]
         }
       },
       "manualInstall": {
-        "description": "如果你更喜欢手动安装，只需将对应的文件夹复制到你的项目中：",
+        "description": "此方法需要另一台具备 Node.js、npm 且能获取安装包的准备电脑。目标电脑需要 Python 3 和所选 AI 助手，无需 npm。下方目录表仅用于查阅，不是可下载的安装文件。",
         "table": {
           "header": {
             "assistant": "AI 助手",
-            "folders": "需要复制的文件夹"
+            "folders": "生成的技能位置"
           },
           "rows": [
             {
@@ -457,18 +480,33 @@
             },
             {
               "assistant": "Cursor",
-              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".cursor/skills/ui-ux-pro-max/"
             },
             {
               "assistant": "Windsurf",
-              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".windsurf/skills/ui-ux-pro-max/"
             },
             {
-              "assistant": "Antigravity",
-              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "assistant": "Antigravity / Codex",
+              "folders": ".agents/skills/ui-ux-pro-max/"
             }
           ]
-        }
+        },
+        "steps": [
+          {
+            "text": "在准备电脑上新建并进入一个空的临时目录，运行下方固定版本命令，生成项目级 Claude Code 技能。",
+            "code": "npm exec --yes --package=ui-ux-pro-max-cli@2.15.0 -- uipro init --ai claude"
+          },
+          {
+            "text": "将生成的整个 .claude/skills/ui-ux-pro-max/ 目录（含 SKILL.md、data/ 和 scripts/）复制到目标项目的同一相对路径。传输时包含隐藏目录；替换已有安装前先备份。",
+            "code": ""
+          },
+          {
+            "text": "在目标项目根目录运行下方 Python 命令（Windows 可按环境将 python3 改为 python）。随后用 Claude Code 打开项目，明确要求使用 UI UX Pro Max。搜索成功只能验证复制的数据和脚本可用，不能证明助手已经加载技能。",
+            "code": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"accessible\" --stack html-tailwind"
+          }
+        ],
+        "otherAssistants": "其他助手：在单独的空目录中使用 CLI 清单对应的 --ai 值生成，并按原相对路径传输全部生成文件；部分平台还会生成命令或工作流文件。请按该助手的说明确认技能加载方式，下表只涵盖所列平台。"
       },
       "prerequisites": {
         "warning": "⚠️ 前置条件",
@@ -481,12 +519,13 @@
       "otherCommands": {
         "title": "其他 CLI 命令",
         "commands": [
-          "uipro versions              # 列出可用版本",
-          "uipro update                # 更新到最新版本",
-          "uipro init --offline        # 跳过 GitHub 下载，使用内置资源",
-          "uipro uninstall             # 移除技能（自动检测平台）",
-          "uipro uninstall --ai claude # 移除指定平台",
-          "uipro uninstall --global    # 移除全局安装"
+          "uipro init --ai claude --global",
+          "uipro update --ai claude",
+          "uipro init --ai claude --force",
+          "uipro versions",
+          "uipro uninstall --ai claude",
+          "uipro uninstall --ai claude --global",
+          "npm uninstall -g ui-ux-pro-max-cli"
         ]
       },
       "decision": {
@@ -496,17 +535,17 @@
           {
             "title": "CLI 安装 (推荐)",
             "when": "你有 npm，并希望更新由工具自动管理。",
-            "why": "uipro-cli 把下载、版本管理与更新封装为一条命令，还能让项目里所有 AI 助手保持同步。"
+            "why": "CLI 2.15.0 的 uipro update 会查询 GitHub Release；版本不同时尝试升级 CLI，再提示执行 uipro init --ai <assistant> --force。版本相同时刷新内置技能文件。覆盖前检查本地技能改动；--global 指定全局安装。"
           },
           {
-            "title": "手动安装",
-            "when": "你处在没有 npm 的环境 (受限企业网络、沙箱 CI)，或者想把技能作为 Vendor 内嵌到仓库里以保证可复现。",
-            "why": "直接复制文件夹给你完全控制权；代价是每次有新版本要重新复制。"
+            "title": "复制已生成的技能（以 Claude Code 为例）",
+            "when": "目标电脑没有 npm，但有另一台电脑可准备技能；或希望将生成后的安装文件纳入项目版本管理。",
+            "why": "先在准备电脑使用固定版本 CLI 生成，再完整复制安装文件。更新时重复这些步骤，并检查本地改动。"
           },
           {
             "title": "离线安装",
             "when": "你在严格的防火墙后面，或者飞行中没有 GitHub 网络。",
-            "why": "uipro init --offline 使用 CLI 包内置的资源，install 完成后不再发任何网络请求。"
+            "why": "CLI 2.15.0 默认从包内模板安装，--offline 是兼容参数，不是版本锁定。复现安装应固定 npm 包版本；获取包和查询发布版本仍需要网络，除非另有缓存。"
           }
         ]
       },
@@ -515,7 +554,7 @@
         "items": [
           {
             "os": "macOS",
-            "body": "新版 macOS 自带 Python 3.x，但通常版本偏旧，建议用 Homebrew：brew install python3。uipro-cli 通过 npm 安装；若没装 Node，可用 brew install node 或版本管理器 fnm / nvm。Apple Silicon 与 Intel 都支持。"
+            "body": "先检查 Python 3 与 Node.js；缺少时从官方发行渠道或包管理器安装。不要假设 macOS 已自带 Python 3。"
           },
           {
             "os": "Windows",
@@ -529,15 +568,15 @@
       },
       "updates": {
         "title": "更新与版本固定",
-        "body": "随时运行 uipro update 即可拉取最新技能资源。使用 uipro versions 查看所有可用版本。需要在团队内保持一致安装、或无法访问 GitHub 时，使用 uipro init --offline，它会从 CLI 包内置的资源中安装，不依赖网络。",
+        "body": "CLI 2.15.0 的 uipro update 会查询 GitHub Release；版本不同时尝试升级 CLI，再提示执行 uipro init --ai <assistant> --force。版本相同时刷新内置技能文件。覆盖前检查本地技能改动；--global 指定全局安装。",
         "commandsTitle": "常用更新命令",
-        "commands": "uipro versions        # 列出所有可用版本\nuipro update          # 更新到最新版本\nuipro init --offline  # 从内置资源安装（无需网络）"
+        "commands": "npm view ui-ux-pro-max-cli versions --json\nuipro update --ai claude\nuipro init --ai claude --force"
       },
       "uninstall": {
         "title": "卸载与清理",
-        "body": "卸载与安装对称：按助手卸载只移除对应助手的资源，其他助手和全局 CLI 不受影响；完全卸载则全部移除。",
+        "body": "前两条命令分别移除项目／全局技能文件，npm uninstall 才卸载 CLI 包。请保留存放自己设计约定的 design-system 目录。",
         "commandsTitle": "卸载命令",
-        "commands": "uipro uninstall                # 自动检测当前项目所有助手并卸载\nuipro uninstall --ai claude    # 只卸载 Claude Code 的安装\nuipro uninstall --global       # 移除全局 uipro-cli 工具\nrm -rf design-system           # 如需，可删除持久化的设计系统"
+        "commands": "uipro uninstall --ai claude\nuipro uninstall --ai claude --global\nnpm uninstall -g ui-ux-pro-max-cli"
       },
       "errors": {
         "title": "常见安装错误",
@@ -550,7 +589,7 @@
           {
             "error": "command not found: uipro",
             "cause": "npm 全局 bin 未加入 PATH，或安装时漏了 -g。",
-            "fix": "执行 npm config get prefix 找到全局 bin 路径并加入 PATH；或重新执行 npm install -g uipro-cli。"
+            "fix": "执行 npm config get prefix 找到全局 bin 路径并加入 PATH；或重新执行 npm install -g ui-ux-pro-max-cli。"
           },
           {
             "error": "EACCES: permission denied",
@@ -564,8 +603,8 @@
           },
           {
             "error": "Failed to fetch from GitHub",
-            "cause": "网络限制或 GitHub Raw 下载被限频。",
-            "fix": "改用 uipro init --offline 从内置资源安装；或设置 HTTPS_PROXY 走代理后重试。"
+            "cause": "CLI 2.15.0 的 uipro update 会查询 GitHub Release；版本不同时尝试升级 CLI，再提示执行 uipro init --ai <assistant> --force。版本相同时刷新内置技能文件。覆盖前检查本地技能改动；--global 指定全局安装。",
+            "fix": "CLI 2.15.0 默认从包内模板安装，--offline 是兼容参数，不是版本锁定。复现安装应固定 npm 包版本；获取包和查询发布版本仍需要网络，除非另有缓存。"
           },
           {
             "error": "AI 助手没识别到技能",
@@ -576,7 +615,7 @@
       },
       "offline": {
         "title": "离线模式详解",
-        "body": "uipro-cli 包内捆绑了一份完整技能资源。传入 --offline 时，CLI 会跳过 GitHub 拉取，直接读取这份内置资源。适合无法访问 GitHub 的场景，也适合希望每个开发者都装上你已经锁定的 CLI 版本所对应资源的场景。"
+        "body": "CLI 2.15.0 默认从包内模板安装，--offline 是兼容参数，不是版本锁定。复现安装应固定 npm 包版本；获取包和查询发布版本仍需要网络，除非另有缓存。"
       },
       "next": "下一步：查看「使用方式与提示词」，快速上手调用方式。"
     },
@@ -663,61 +702,61 @@
       },
       "worked": {
         "title": "端到端实例",
-        "subtitle": "每个案例展示提示词、生成器输出的设计系统、以及 AI 助手据此写出的代码大致样貌。",
+        "subtitle": "以下为学习用的说明性示例，并非生成器实录或已经验证的生产效果。请在自己的项目中检查对比度、布局与交互。",
         "items": [
           {
             "title": "SaaS 数据分析仪表盘",
             "prompt": "为一款 B2B 金融科技产品做 SaaS 数据分析仪表盘。表格要密、默认深色模式、必须达到 WCAG AA，技术栈 Next.js + shadcn/ui。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: 数据密集布局、粘性侧边栏、12 列网格\nStyle:   极简为主，悬停卡片带克制玻璃\nPalette: 冷蓝 + 翠绿强调色 (#2563EB / #10B981)\nType:    Inter 400/600/700 + IBM Plex Mono (数字)\nEffects: 阴影刻度 0/1/2/4，150-200ms ease-out\n避开:    红色作为品牌色、自动轮播、仅 hover 才显示的批量操作\n清单:    色盲友好图表、等宽表格数字、骨架加载"
           },
           {
             "title": "医疗患者门户",
             "prompt": "为某医院系统做患者门户。语气要安抚、触控目标要大、需支持多语言、严禁出现医疗安全反模式。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: 卡片式信息层级 + 常驻快捷操作\nStyle:   极简、低饱和、零花哨效果\nPalette: 柔和青绿 + 暖中性色 (#0E7C7B / #F5F1E8)\nType:    Source Sans Pro 400/600，宽行高 (1.7)\nEffects: 极简阴影、无视差、强制 prefers-reduced-motion\n避开:    红色作默认错误色 (暗示伤害)、红绿配对、落地页放密表\n清单:    尽量达 WCAG AAA、触控目标 ≥ 44px、RTL 就绪"
           },
           {
             "title": "深色模式创意作品集",
             "prompt": "创意开发者个人作品集。强视觉识别、玻璃拟态调性、默认深色模式 + 浅色回退。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: 滚动驱动的案例集 + 粘性项目导航\nStyle:   玻璃拟态 + Aurora 渐变背景\nPalette: 深靛蓝 + 紫色 Aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:    Sora 600/800 (display) + Inter 400 (body)\nEffects: backdrop-blur 12px、悬停柔光、400ms cubic ease-in-out\n避开:    噪点纹理过厚、跑马灯文字重叠、仅靠动效的导航\n清单:    尊重 prefers-reduced-motion、浅色模式对等、图片 alt"
           },
           {
             "title": "电商移动端结算",
             "prompt": "服饰电商的移动结算流程。最多三步、Apple Pay 优先、必须在弱 4G 下可用。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: 全屏分步页 + 常驻总价条，禁用模态堆叠\nStyle:   Flat 2.0 + 强字体、最小装饰\nPalette: 暖米白 + 品牌强调色 + 成功绿\nType:    系统字体优先 (San Francisco / Roboto)，正文 ≥ 16px\nEffects: 瞬时过渡、骨架占位、无轮播\n避开:    结算页加第三方脚本、遮 CTA 的促销条、强制注册才能付款\n清单:    实测 Payment Request API、地址自动填、错误可恢复"
           },
           {
             "title": "开源文档站",
             "prompt": "开源库的文档站。三栏 (sidebar + 内容 + on-this-page TOC)、干净、快速、带深色模式切换。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: 三栏文档、粘性顶栏\nStyle:   极简、慷慨留白、等宽代码块\nPalette: 中性灰 + 单一品牌强调色 (不要彩虹)\nType:    Inter 400/600 + JetBrains Mono (代码)\nEffects: 仅微妙 hover、不要滚动动效\n避开:    定高代码块 (要 overflow)、模态搜索、文档导航里塞营销\n清单:    cmd-K 搜索、代码可复制、移动端侧边抽屉"
           },
           {
             "title": "AI 聊天产品落地页",
             "prompt": "AI 聊天产品的落地页。要现场展示、要建立信任、要让定价显而易见。Bento Grid 风格。",
-            "outputTitle": "生成的设计系统",
+            "outputTitle": "说明性节选",
             "output": "Pattern: Hero 现场 demo + Bento 特性 + 社会认证 + 定价\nStyle:   AI 原生 + Bento Grid + 柔和渐变\nPalette: 冷蓝 + 暖珊瑚强调色，默认深色\nType:    Cal Sans (display) + Inter (body)，超大标题\nEffects: Bento 卡片悬停抬升、渐变描边、动态网点背景\n避开:    空白 Bento 卡、移动端崩坏的视差、把定价藏在「联系我们」\n清单:    现场 demo 在 2 秒内加载、桌面端定价首屏可见"
           }
         ]
       },
       "iterating": {
         "title": "在结果上迭代",
-        "lead": "第一次生成几乎不会完全到位。三种迭代模式覆盖绝大多数场景。",
+        "lead": "--variance、--motion、--density（1–10）与 --design-system 联用可调整建议。为现有应用换肤时，先检查框架版本与已有语义 Token，再让助手逐组修改组件并验证各主题。",
         "patterns": [
           {
             "title": "只调一个维度",
-            "body": "喜欢布局但想换配色？说：「保留 Pattern 和字体，把配色换成更暖的。」AI 只会重跑配色检索并合并结果。"
+            "body": "--variance、--motion、--density（1–10）与 --design-system 联用可调整建议。为现有应用换肤时，先检查框架版本与已有语义 Token，再让助手逐组修改组件并验证各主题。"
           },
           {
             "title": "加一个约束",
-            "body": "需要锁死无障碍？说：「同一套设计系统，但强制 WCAG AAA 与最小 16px 正文。」这是在已有候选上加过滤，而不是从头来。"
+            "body": "--variance、--motion、--density（1–10）与 --design-system 联用可调整建议。为现有应用换肤时，先检查框架版本与已有语义 Token，再让助手逐组修改组件并验证各主题。"
           },
           {
             "title": "在页面级覆盖",
-            "body": "如果 MASTER.md 90% 都合适，就用 --page 写页面级覆盖，而不是重新生成整个项目。"
+            "body": "使用 --persist -p \"Acme\" --page pricing 时，页面文件位于 design-system/acme/pages/pricing.md，已有主文件保留。请明确让助手在该页优先应用页面规则，并在使用前检查生成的覆盖内容。"
           }
         ]
       },
@@ -806,18 +845,18 @@
       "next": "下一步:如果遇到安装或命令问题,请查看常见问题。"
     },
     "faq": {
-      "overview": "围绕安装、配置和最佳实践的常见问题与速查答案，按主题分组方便定位。如果没找到你想要的答案，欢迎从任意文档页底部的反馈入口提交，我们会把它补进列表。",
+      "overview": "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。",
       "groups": [
         {
           "title": "安装与配置",
           "items": [
             {
               "q": "支持哪些 AI 助手？",
-              "a": "开箱即用：Claude Code、Cursor、Windsurf、Antigravity、GitHub Copilot、Kiro、Codex CLI、Qoder、Roo Code、Gemini CLI、Trae、OpenCode、Continue、CodeBuddy、Droid (Factory)、KiloCode、Warp、Augment。一条 uipro init --ai all 可以为项目里所有检测到的助手批量安装。"
+              "a": "CLI 2.15.0: claude, cursor, windsurf, antigravity, copilot, kiro, codex, qoder, roocode, gemini, trae, opencode, continue, codebuddy, droid, kilocode, warp, augment, codewhale, universal. --ai all 会生成全部受支持平台的安装，不只针对已检测到的助手。"
             },
             {
               "q": "用技能本身需要 Node.js 吗？",
-              "a": "不需要。技能在运行时通过 Python 执行。只有使用 uipro-cli (npm) 安装路径才需要 Node.js。手动安装路径除了 Python 3 之外别无依赖。"
+              "a": "不需要。技能在运行时通过 Python 执行。只有使用 ui-ux-pro-max-cli (npm) 安装路径才需要 Node.js。手动安装路径除了 Python 3 之外别无依赖。"
             },
             {
               "q": "为什么是 Python 3？能跑 Python 2 吗？",
@@ -825,15 +864,15 @@
             },
             {
               "q": "search.py 在哪里？",
-              "a": "Claude Code 在 .claude/skills/ui-ux-pro-max/scripts/search.py；共享 .shared 目录的助手 (Cursor、Windsurf、Antigravity) 在 .shared/ui-ux-pro-max/scripts/search.py。"
+              "a": "使用按平台生成的安装文件：Claude 位于 .claude/skills/ui-ux-pro-max/，Cursor 位于 .cursor/skills/ui-ux-pro-max/，Windsurf 位于 .windsurf/skills/ui-ux-pro-max/，Antigravity 与 Codex 位于 .agents/skills/ui-ux-pro-max/。search.py 在各技能目录的 scripts/ 下。此处路径对应 CLI 2.15.0。"
             },
             {
               "q": "无法访问 GitHub 也能安装吗？",
-              "a": "可以，使用 uipro init --offline 跳过 GitHub 下载，使用 npm 包内捆绑的资源。沙箱 CI 和气隙网络都适用。"
+              "a": "CLI 2.15.0 默认从包内模板安装，--offline 是兼容参数，不是版本锁定。复现安装应固定 npm 包版本；获取包和查询发布版本仍需要网络，除非另有缓存。"
             },
             {
               "q": "可以全局安装而不是按项目安装吗？",
-              "a": "部分可以。uipro-cli 工具是全局安装的 (npm install -g uipro-cli)，但技能资源故意按项目划分，每个仓库可以锁定自己的版本和设计系统。"
+              "a": "支持项目级和全局技能安装。例如 uipro init --ai claude --global 写入 ~/.claude/skills/。npm -g 安装 CLI 与 --global 安装技能是两个不同操作。"
             }
           ]
         },
@@ -842,23 +881,23 @@
           "items": [
             {
               "q": "需要指定技术栈吗？",
-              "a": "不需要。默认 HTML + Tailwind。指定栈 (Next.js、Nuxt、SvelteKit、SwiftUI、React Native、Flutter、Astro、Angular 等) 可以获得该栈惯用写法。"
+              "a": "CLI 2.15.0 中应单独执行技术栈搜索：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system 分支优先于 --stack，两者合用不会为生成过程增加技术栈过滤。请将两份输出一起交给助手。"
             },
             {
-              "q": "怎么输出 Markdown 而不是 JSON？",
-              "a": "在 --design-system 后加 -f markdown。Markdown 适合直接进文档或聊天；JSON 适合程序化使用。"
+              "q": "支持哪些输出格式？",
+              "a": "设计系统默认输出 ASCII；-f markdown 输出 Markdown，--json 输出 JSON。结果是待审阅的设计建议，不保证生成界面已经满足无障碍要求。"
             },
             {
               "q": "模型怎么判断我属于哪个行业？",
-              "a": "靠提示词里的关键词以及已持久化的 MASTER.md 上下文。如果不点明，会回退到偏保守的默认值。明确指出行业总能让输出更精准。"
+              "a": "上游 Python 生成器检索内置的产品、风格、配色、落地页和字体数据，并结合行业规则组织建议。AI 助手再使用输出实现界面。耗时取决于查询和运行环境。"
             },
             {
-              "q": "能锁定品牌色让模型不覆盖吗？",
-              "a": "可以。第一次 --persist 后打开 design-system/MASTER.md，把 Colors 段换成你的品牌 Token。模型在后续会话会把 MASTER.md 视为真实来源。"
+              "q": "如何保留品牌设计约定？",
+              "a": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
             },
             {
               "q": "能只生成某个页面的设计而不影响其他页面吗？",
-              "a": "可以。使用 --page [name] 配合 --persist。覆盖文件位于 design-system/pages/[name].md，只在以该页面为目标的会话中生效。"
+              "a": "使用 --persist -p \"Acme\" --page pricing 时，页面文件位于 design-system/acme/pages/pricing.md，已有主文件保留。请明确让助手在该页优先应用页面规则，并在使用前检查生成的覆盖内容。"
             }
           ]
         },
@@ -871,11 +910,11 @@
             },
             {
               "q": "能修改某个行业的反模式列表吗？",
-              "a": "生成后修改 design-system/MASTER.md，去掉你不认同的行即可。模型在后续会话会尊重修改后的文件。要做项目范围的修改可以编辑数据目录，但每次更新后需要重新应用。"
+              "a": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
             },
             {
               "q": "怎么让模型默认使用 shadcn/ui？",
-              "a": "要么在生成时传 --stack shadcn，要么在项目的 MASTER.md 里加一个「Conventions」段写「使用 shadcn/ui 原语」。模型会尊重 MASTER.md 中的散文约定。"
+              "a": "CLI 2.15.0 中应单独执行技术栈搜索：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system 分支优先于 --stack，两者合用不会为生成过程增加技术栈过滤。请将两份输出一起交给助手。"
             }
           ]
         },
@@ -884,7 +923,7 @@
           "items": [
             {
               "q": "技能会向外部服务发数据吗？",
-              "a": "不会。搜索、排序、推理全部在你的 AI 客户端本地运行。唯一的网络调用是安装时的初始下载 (可用 --offline 跳过)。"
+              "a": "内置 Python 搜索在本地运行。AI 助手可能把提示词、文件和搜索输出发送给其服务商，具体取决于助手的隐私设置。CLI 安装和更新检查可能联网。"
             },
             {
               "q": "技能本身要钱吗？",
@@ -892,7 +931,7 @@
             },
             {
               "q": "用了技能会显著增加 AI Token 消耗吗？",
-              "a": "略微增加。技能会把设计系统上下文注入提示词。但相对助手生成的代码体量来说增量很小，且常被「减少的纠错往返」抵消。"
+              "a": "搜索结果会增加上下文 Token，实际用量和费用取决于助手、模型与任务，不能保证减少修改轮次。"
             }
           ]
         },
@@ -901,15 +940,15 @@
           "items": [
             {
               "q": "技能多久更新一次？",
-              "a": "数据集每隔几周更新；CLI 按需更新。随时 uipro update 即可。需要离线可复现安装时，使用 uipro init --offline。"
+              "a": "发布节奏由上游作者决定，请查看链接中的发布记录；本站不承诺上游更新周期。"
             },
             {
               "q": "更新会覆盖我的 MASTER.md 吗？",
-              "a": "不会。更新只会改动 .claude/skills/ 或 .shared/ 下的技能资源。design-system/ 目录被视为用户内容，永远不会覆盖。"
+              "a": "--persist 将文件写入 --output-dir 下的 design-system/<project-slug>/MASTER.md，默认目录是当前工作目录。已有 MASTER.md 会保留，只有 --force 才覆盖。应明确让助手读取主文件及对应页面覆盖；保存文件不保证所有助手都会自动加载。"
             },
             {
               "q": "新版输出变差了，怎么降级？",
-              "a": "用 uipro versions 查看可用版本。回退时，用 npm install -g uipro-cli@[version] 安装旧版 CLI，再运行 uipro init --offline 解压其内置资源。若能提供复现，欢迎到项目仓库提 issue。"
+              "a": "选择版本前先查询 npm 发布版本；安装指定 ui-ux-pro-max-cli 版本，再刷新目标技能安装。先备份本地改动并阅读该版本帮助，GitHub 标签与 npm 版本不能直接混用。"
             }
           ]
         },
@@ -922,7 +961,7 @@
             },
             {
               "q": "uipro: command not found。",
-              "a": "npm 全局 bin 不在 PATH 上。npm config get prefix 找到 bin 路径并加入 PATH；或重新执行 npm install -g uipro-cli。如果你用了 sudo，看下一条。"
+              "a": "npm 全局 bin 不在 PATH 上。npm config get prefix 找到 bin 路径并加入 PATH；或重新执行 npm install -g ui-ux-pro-max-cli。如果你用了 sudo，看下一条。"
             },
             {
               "q": "全局安装报 EACCES 权限错误。",
@@ -930,20 +969,20 @@
             },
             {
               "q": "search.py 报 JSON 解析错误。",
-              "a": "通常是下载中断造成的资源损坏。跑 uipro update 或 uipro init --offline 重新解压一份干净的即可。"
+              "a": "记录命令和完整错误，先检查包版本及本地资源改动，再考虑重装。JSON 错误本身不能证明是下载损坏。"
             },
             {
               "q": "输出里引用了我的栈没有的库。",
-              "a": "生成时传 --stack <你的栈>，或在 MASTER.md 加一行 Stack。没有这个信号时模型会回退到 HTML + Tailwind。"
+              "a": "CLI 2.15.0 中应单独执行技术栈搜索：python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn。--design-system 分支优先于 --stack，两者合用不会为生成过程增加技术栈过滤。请将两份输出一起交给助手。"
             }
           ]
         }
       ],
-      "next": "如果列表里没有你的问题，请到项目仓库提 issue，或在任意文档页底部提交反馈。"
+      "next": "翻译或网页错误请使用下方本站反馈入口；技能或 CLI 缺陷请使用上游项目入口。本站不提供官方产品支持。"
     }
   },
   "stats": {
-    "styles": "UI 风格",
+    "styles": "可搜索风格",
     "palettes": "配色方案",
     "fonts": "字体搭配",
     "stacks": "技术栈",
@@ -957,7 +996,7 @@
     "sections": {
       "styles": {
         "title": "设计风格",
-        "description": "毛玻璃、新拟态、极简主义、粗野主义、极光 UI、AI 原生 UI 以及 60+ 种更多风格，包含颜色、效果和框架兼容性。",
+        "description": "常规推荐使用 [[activeStyles]] 种活跃风格，[[supplementalStyles]] 种补充风格用于明确的变体请求；[[deprecatedStyles]] 个弃用条目不参与常规排序。落地页结构是独立数据集。",
         "tags": [
           "毛玻璃",
           "深色模式",
@@ -966,7 +1005,7 @@
       },
       "colors": {
         "title": "配色方案",
-        "description": "161 套针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
+        "description": "[[palettes]] 套针对 SaaS、电商、医疗、金融科技等产品的特定配色系统。包含主色、辅助色、CTA、背景、文本和边框。",
         "tags": [
           "SaaS",
           "医疗",
@@ -975,7 +1014,7 @@
       },
       "typography": {
         "title": "字体排印",
-        "description": "57 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
+        "description": "[[fonts]] 种字体搭配，集成 Google Fonts，Tailwind 配置和基于情绪的推荐。",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -1015,7 +1054,7 @@
   "howItWorks": {
     "titlePrefix": "UI UX Pro Max Skill 工作",
     "titleAccent": "原理",
-    "subtitle": "UI UX Pro Max Skill 通过 6 个智能步骤，从提示词到生产级 UI",
+    "subtitle": "说明性流程：从提示词得到设计建议，再由助手实现并验证界面。链接中的演示是外部参考，不是这些步骤的运行实录。",
     "steps": {
       "1": {
         "title": "你的提示词",
@@ -1063,7 +1102,7 @@
         },
         "ux": {
           "label": "UX RULE",
-          "value": "Use animations for loading only"
+          "value": "尊重减少动态效果偏好"
         },
         "colorsLabel": "COLORS",
         "colors": [
@@ -1108,16 +1147,14 @@
         ]
       },
       "6": {
-        "title": "最终结果",
-        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
-        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "title": "外部演示参考",
         "imageAlt": "Pet Grooming & Spa Demo",
         "cta": "查看实时演示"
       }
     }
   },
   "techStacks": {
-    "title": "UI UX Pro Max Skill 支持 16 种技术栈",
+    "title": "UI UX Pro Max Skill 支持 [[stacks]] 种技术栈",
     "subtitle": "基于当前上游数据，为多种框架提供专属最佳实践、模式和代码示例。",
     "stacks": {
       "react": {
@@ -1183,12 +1220,36 @@
       "threejs": {
         "title": "Three.js",
         "desc": "3D 场景、WebGL、交互"
+      },
+      "javafx": {
+        "title": "JavaFX",
+        "desc": "桌面界面"
+      },
+      "wpf": {
+        "title": "WPF",
+        "desc": "Windows 应用"
+      },
+      "winui": {
+        "title": "WinUI 3",
+        "desc": "Windows 应用"
+      },
+      "uwp": {
+        "title": "UWP",
+        "desc": "Windows 应用"
+      },
+      "avalonia": {
+        "title": "Avalonia",
+        "desc": "跨平台桌面 UI"
+      },
+      "uno": {
+        "title": "Uno Platform",
+        "desc": "跨平台桌面 UI"
       }
     }
   },
   "gallery": {
-    "title": "39 个网站演示画廊",
-    "subtitle": "浏览使用 UI UX Pro Max Skill 构建的真实网站演示。点击查看实时演示。",
+    "title": "网站演示参考",
+    "subtitle": "外部演示参考。本站不主张这些示例的作者身份，也不认证其生成过程。",
     "searchPlaceholder": "搜索演示（名称、风格、分类、提示词）…",
     "clearSearch": "清除搜索",
     "filters": {
@@ -1219,7 +1280,7 @@
     "features": [
       "开源",
       "兼容 Claude Code",
-      "生产就绪"
+      "非官方多语言翻译"
     ]
   },
   "feedback": {
@@ -1235,18 +1296,19 @@
     "issueTitlePrefix": "【文档反馈】"
   },
   "footer": {
-    "description": "UI UX Pro Max Skill - Claude Code 的设计智能技能。可搜索 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南、25 种图表类型和 161 条推理规则。",
+    "description": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
     "resources": "资源",
     "database": "数据库",
     "about": "关于本站",
     "privacy": "隐私政策",
     "terms": "使用条款",
     "contact": "联系",
-    "builtWith": "使用 React + Tailwind CSS 构建 (by UI UX Pro Max)"
+    "builtWith": "独立翻译维护者 · 非官方多语言翻译",
+    "upstreamCredit": "原项目作者：Next Level Builder"
   },
   "blog": {
     "title": "博客",
-    "subtitle": "使用 UI UX Pro Max Skill 设计界面过程中的笔记、实验与一线踩坑记录。",
+    "subtitle": "本站整理的学习笔记与提示词示例，不代表官方发布。",
     "allTags": "全部",
     "empty": "暂无文章，请稍后再来。",
     "minRead": "约 {n} 分钟",
@@ -1254,13 +1316,13 @@
     "fallbackBanner": "这篇文章暂未翻译为中文，正在展示英文原文。",
     "tocTitle": "本文目录",
     "ctaEyebrow": "这篇看完了？",
-    "ctaTitle": "试试 Claude 用的这个 Skill",
-    "ctaDescription": "UI UX Pro Max 预置 50 种风格、21 套配色、50 套字体搭配、99 条 UX 规则——一组精选集合，让 Claude 不用对整个 Web 求平均。",
-    "ctaTry": "安装 Skill",
+    "ctaTitle": "了解上游技能",
+    "ctaDescription": "上游发布版提供 [[styles]] 种可搜索风格（[[activeStyles]] 种活跃、[[supplementalStyles]] 种补充）、[[palettes]] 套配色、[[fonts]] 组字体配对、[[ux]] 条 UX 指南和 [[stacks]] 种技术栈。这些是上游数据，不是本站创作成果。",
+    "ctaTry": "查看上游项目",
     "ctaRss": "订阅 RSS",
     "ctaMore": "更多文章",
     "latestTitle": "博客最新",
-    "latestSubtitle": "来自团队和社区的一线笔记与 Prompt 经验。",
+    "latestSubtitle": "本站整理的学习笔记与提示词示例，不代表官方发布。",
     "seeAll": "查看全部文章"
   },
   "tutorials": {
@@ -1285,5 +1347,17 @@
         "description": "把一个模糊的想法拆成 5 步，做出一个能上线的落地页。"
       }
     }
+  },
+  "provenance": {
+    "identity": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
+    "maintainer": "独立翻译维护者",
+    "reference": "上游参考资料",
+    "checked": "内容核对",
+    "siteFeedback": "翻译／网站反馈",
+    "upstreamFeedback": "技能／CLI 问题",
+    "pending": "本站学习资料，原始发表来源尚未核实，不作为官方译文发布。",
+    "translation": "翻译原文",
+    "editorial": "本站整理的学习笔记与提示词示例，不代表官方发布。",
+    "docsNote": "根据已发布 CLI 包核对的非官方翻译与整理资料。"
   }
 }

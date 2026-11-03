@@ -1,3 +1,6 @@
+import { localizedAlternates } from '@/lib/metadata';
+import { ContentProvenance } from '@/components/content/content-provenance';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -19,8 +22,7 @@ import {
   absoluteSiteUrl,
   DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_URL,
-  DEFAULT_TWITTER_IMAGE_URL,
-  SITE_URL
+  DEFAULT_TWITTER_IMAGE_URL
 } from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
@@ -47,22 +49,12 @@ export async function generateMetadata({
     title,
     description: metaDescription,
     keywords: tags.join(', '),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/blog/${slug}`,
-        en: `${SITE_URL}/blog/${slug}`,
-        zh: `${SITE_URL}/zh/blog/${slug}`,
-        vi: `${SITE_URL}/vi/blog/${slug}`,
-        ja: `${SITE_URL}/ja/blog/${slug}`,
-        hi: `${SITE_URL}/hi/blog/${slug}`,
-      },
-    },
+    alternates: localizedAlternates(`/blog/${slug}`, locale),
     openGraph: {
       title,
       description: metaDescription,
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale,
       type: 'article',
       publishedTime: date,
@@ -91,7 +83,7 @@ export default async function BlogPostPage({
   if (!post || !post.Body) notFound();
 
   const t = await getTranslations({ locale });
-  const author = getAuthor(post.frontmatter.author);
+  const author = getAuthor(post.frontmatter.author, locale);
   const showFallback = isFallback(typedLocale, post.sourceLocale);
   const canonicalUrl = absoluteSiteUrl(`/blog/${slug}`, locale);
 
@@ -125,6 +117,9 @@ export default async function BlogPostPage({
         description={post.frontmatter.summary}
         datePublished={post.frontmatter.date}
         dateModified={post.frontmatter.updated}
+        contentKind={post.frontmatter.contentKind}
+        sourceUrl={post.frontmatter.sourceUrl}
+        sourceAuthor={post.frontmatter.sourceAuthor}
         authorName={author.name}
         authorType={author.type}
         authorUrl={author.url}
@@ -205,6 +200,7 @@ export default async function BlogPostPage({
             </div>
           </div>
         </header>
+        <ContentProvenance locale={locale} content={post.frontmatter} />
 
         {/* Generous gap before the body so the header has room to land. */}
         <div className="mt-12">

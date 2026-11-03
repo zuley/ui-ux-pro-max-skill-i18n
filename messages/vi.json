@@ -1,9 +1,9 @@
 {
   "common": {
-    "title": "UI UX Pro Max Skill - Agent Skills",
+    "title": "UI UX Pro Max Skill — Bản dịch đa ngôn ngữ không chính thức",
     "navTitle": "UI UX Pro Max Skill",
-    "description": "Trí tuệ thiết kế cho Claude Code",
-    "metaDescription": "Trí tuệ thiết kế cho Claude Code, Cursor, Windsurf và các trợ lý AI khác, gồm 67 phong cách UI, 161 bảng màu, typography, quy tắc UX và hướng dẫn stack.",
+    "description": "Bản dịch đa ngôn ngữ không chính thức",
+    "metaDescription": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
     "keywords": "UI UX Pro Max Skill, Agent Skills, Claude Code, Cursor, Windsurf, thiết kế AI, phong cách UI, bảng màu, cặp font, hướng dẫn UX, trình tạo design system",
     "switchTheme": "Đổi giao diện",
     "switchToLight": "Chuyển sang chế độ sáng",
@@ -31,14 +31,14 @@
   },
   "hero": {
     "title1": "UI UX Pro Max",
-    "title2": "Trí tuệ thiết kế",
-    "subtitle": "UI UX Pro Max Skill cho Claude Code, Cursor, Windsurf và nhiều AI assistants khác. Bao gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types, 16 tech stacks và 161 reasoning rules để AI tạo giao diện đẹp hơn.",
+    "title2": "Bản dịch đa ngôn ngữ không chính thức",
+    "subtitle": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
     "btnHow": "Bắt đầu",
     "btnDemos": "Bắt đầu nhanh"
   },
   "quickStart": {
     "title": "Bắt đầu nhanh",
-    "subtitle": "Làm theo các bước để tạo design system chỉ trong vài phút.",
+    "subtitle": "Cài skill gốc và tạo đề xuất hệ thiết kế để xem xét.",
     "step1": {
       "title": "1) Cài đặt Skill",
       "body": "Cài UI UX Pro Max trực tiếp trong Claude Code.",
@@ -114,139 +114,311 @@
       }
     },
     "gettingStarted": {
-      "overview": "UI UX Pro Max Skill là một lớp design intelligence mở, có thể tìm kiếm, kết nối với các AI coding assistant như Claude Code, Cursor, Windsurf, GitHub Copilot và 15 công cụ khác. Thay vì để model nghĩ ra thiết kế từ đầu mỗi lần, skill cung cấp cho model một knowledge base được tuyển chọn: 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types và 161 industry-specific reasoning rules. Kết quả là giao diện trông có chủ đích, tuân thủ accessibility và tránh được vẻ ngoài 'do AI sinh' chung chung.",
+      "overview": "Bản phát hành gốc có [[styles]] phong cách tìm kiếm được ([[activeStyles]] hoạt động, [[supplementalStyles]] bổ sung), [[palettes]] bảng màu, [[fonts]] cặp phông, [[ux]] hướng dẫn UX và [[stacks]] stack. Đây là dữ liệu của dự án gốc, không phải do trang này tạo ra.",
       "problem": {
         "title": "Vì sao design intelligence quan trọng với AI coding",
         "lead": "AI assistant hiện đại viết component code rất giỏi, nhưng gu thiết kế thì không ổn định. Thiếu context, model có xu hướng tạo cùng một vài layout và bảng màu cho những sản phẩm rất khác nhau. Một dashboard y tế lại trông giống app crypto; app cho trẻ em lại dùng xám fintech. UI UX Pro Max Skill ra đời để vá khoảng trống đó bằng cách neo lựa chọn của model vào kiến thức thiết kế có căn cứ và am hiểu ngành.",
         "points": [
-          { "title": "Mẫu chung chung", "body": "Không có context, model mặc định ra hero ở giữa, ba feature card và một CTA. Skill cung cấp 24 landing pattern và 67 visual style để model có lựa chọn thực sự cho từng dự án." },
-          { "title": "Thiếu ngữ cảnh ngành", "body": "Fintech dashboard và wellness app có yêu cầu màu sắc, mật độ, motion hoàn toàn khác nhau. 161 reasoning rule theo ngành giúp model chọn palette và pattern phù hợp với lĩnh vực." },
-          { "title": "Anti-pattern ẩn", "body": "AI thường vô tư sinh code có contrast kém, font quá nhỏ, hoặc tương tác hỏng trên mobile. Skill đóng gói 99 UX guideline và danh sách anti-pattern rõ ràng để model biết cần tránh gì." },
-          { "title": "Trôi dạt giữa các phiên", "body": "Không có design system được lưu, mỗi cuộc trò chuyện sẽ trôi đi một hướng. Dùng --persist sẽ ghi MASTER.md vào repo của bạn để mọi phiên sau đều tham chiếu, khóa token, typography, spacing." }
+          {
+            "title": "Mẫu chung chung",
+            "body": "Không có context, model mặc định ra hero ở giữa, ba feature card và một CTA. Skill cung cấp [[landing]] landing pattern và [[styles]] visual style để model có lựa chọn thực sự cho từng dự án."
+          },
+          {
+            "title": "Thiếu ngữ cảnh ngành",
+            "body": "Fintech dashboard và wellness app có yêu cầu màu sắc, mật độ, motion hoàn toàn khác nhau. [[reasoning]] reasoning rule theo ngành giúp model chọn palette và pattern phù hợp với lĩnh vực."
+          },
+          {
+            "title": "Anti-pattern ẩn",
+            "body": "AI thường vô tư sinh code có contrast kém, font quá nhỏ, hoặc tương tác hỏng trên mobile. Skill đóng gói [[ux]] UX guideline và danh sách anti-pattern rõ ràng để model biết cần tránh gì."
+          },
+          {
+            "title": "Trôi dạt giữa các phiên",
+            "body": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+          }
         ]
       },
       "audience": {
         "title": "Phù hợp với ai",
         "subtitle": "Skill dành cho người ship UI nhanh nhờ AI nhưng vẫn quan tâm đến kết quả thực sự.",
         "items": [
-          { "role": "Developer độc lập & indie hacker", "body": "Bạn đi nhanh, không có designer, và không muốn dự án nào cũng trông giống template Tailwind. Skill cho bạn nhận diện thị giác chỉ với một lệnh." },
-          { "role": "Đội design-engineering", "body": "Bạn có quan điểm rõ ràng về token, mật độ, motion. Skill tôn trọng phần --persist, codify được những quyết định đó để mọi phiên AI tuân theo." },
-          { "role": "Agency & công ty tư vấn", "body": "Bạn ship giao diện cho nhiều ngành. 161 reasoning rule và override theo trang giúp bạn dựng starter phù hợp ngành mà không cần dựng lại hệ thống." },
-          { "role": "Maintainer open-source", "body": "Doc site, dashboard, admin panel đều hưởng lợi. Ghép skill với shadcn/ui hoặc stack bạn chọn để có doc và demo nhất quán mà không cần designer." }
+          {
+            "role": "Developer độc lập & indie hacker",
+            "body": "Dùng đề xuất làm điểm bắt đầu rồi kiểm tra UI thực tế; phiên bản framework, nội dung và yêu cầu tiếp cận ảnh hưởng kết quả."
+          },
+          {
+            "role": "Đội design-engineering",
+            "body": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+          },
+          {
+            "role": "Agency & công ty tư vấn",
+            "body": "Bạn ship giao diện cho nhiều ngành. [[reasoning]] reasoning rule và override theo trang giúp bạn dựng starter phù hợp ngành mà không cần dựng lại hệ thống."
+          },
+          {
+            "role": "Maintainer open-source",
+            "body": "Doc site, dashboard, admin panel đều hưởng lợi. Ghép skill với shadcn/ui hoặc stack bạn chọn để có doc và demo nhất quán mà không cần designer."
+          }
         ]
       },
       "architecture": {
         "title": "Hoạt động ra sao",
-        "body": "Khi bạn gửi yêu cầu UI, AI assistant load skill, skill phân tích yêu cầu thành tín hiệu product type và intent, chạy multi-domain search song song trên knowledge base nội bộ, áp industry rule để xếp hạng và lọc anti-pattern, rồi trả về design system có cấu trúc để assistant viết code. Toàn bộ pipeline chạy cục bộ trong AI client của bạn, không gửi gì ra ngoài.",
-        "labels": { "you": "Bạn", "assistant": "AI Assistant", "skill": "UI UX Pro Max", "kb": "Knowledge Base", "reasoning": "Reasoning Engine", "output": "Design System", "code": "Generated Code" },
-        "captions": { "step1": "Yêu cầu tự nhiên", "step2": "Load cục bộ", "step3": "Multi-domain search", "step4": "Rules + anti-patterns", "step5": "Bàn giao có cấu trúc", "step6": "Code production" }
+        "body": "Trình tạo Python của dự án gốc tìm trong dữ liệu sản phẩm, phong cách, màu sắc, landing và phông chữ rồi kết hợp đề xuất theo quy tắc ngành. Trợ lý AI dùng kết quả để triển khai giao diện. Thời gian phụ thuộc truy vấn và môi trường. Tìm kiếm Python chạy cục bộ. Trợ lý AI có thể gửi prompt, tệp và kết quả tới nhà cung cấp theo cài đặt riêng. Cài đặt CLI và kiểm tra cập nhật có thể dùng mạng.",
+        "labels": {
+          "you": "Bạn",
+          "assistant": "AI Assistant",
+          "skill": "UI UX Pro Max",
+          "kb": "Knowledge Base",
+          "reasoning": "Reasoning Engine",
+          "output": "Design System",
+          "code": "Generated Code"
+        },
+        "captions": {
+          "step1": "Yêu cầu tự nhiên",
+          "step2": "Load cục bộ",
+          "step3": "Multi-domain search",
+          "step4": "Rules + anti-patterns",
+          "step5": "Bàn giao có cấu trúc",
+          "step6": "Code production"
+        }
       },
       "features": {
         "title": "Bạn nhận được gì",
         "intro": "Mỗi mục dưới đây là một dataset được tuyển chọn riêng để reasoning engine có thể tìm và kết hợp. Cộng lại, chúng cho model đủ nguyên liệu để tạo design system mang cảm giác thủ công thay vì mẫu sẵn.",
         "items": [
-          { "title": "67 UI Styles", "desc": "Từ Glassmorphism đến Claymorphism, từ Minimalism đến Brutalism, kèm AI-Native UI, Bento Grid, Dark Mode, Aurora, Skeuomorphism, Neumorphism, Flat 2.0. Mỗi style có mô tả, khi nào dùng, hiệu ứng và stack tương thích." },
-          { "title": "161 Color Palettes", "desc": "Palette theo ngành, khớp 161 product type: SaaS, e-commerce, healthcare, fintech, beauty & wellness, gaming, edtech... Mỗi palette có cặp đối lập đạt accessibility, biến thể dark mode và sắc thái." },
-          { "title": "57 Font Pairings", "desc": "Cặp Google Fonts được tuyển chọn với import statement, font weight gợi ý, line-height và phân cấp từ display tới caption." },
-          { "title": "25 Chart Types", "desc": "Gợi ý visualization cho dashboard và analytics với thư viện đề xuất (Recharts, Visx, Chart.js, ECharts) và ghi chú accessibility (screen reader label, palette an toàn cho color blindness)." },
-          { "title": "16 Tech Stacks", "desc": "Hướng dẫn framework-specific cho React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, Three.js. Mỗi stack có pattern thường dùng và thư viện đề xuất." },
-          { "title": "99 UX Guidelines", "desc": "Best practice, sửa anti-pattern, rule accessibility cho form, navigation, empty state, error handling, loading, mobile gesture, motion preference, WCAG." },
-          { "title": "161 Reasoning Rules", "desc": "Rules theo ngành ánh xạ product type → pattern, style priority, color mood, typography, effect, anti-pattern. Đây là phần giúp model có thể nói 'đây là app y tế, độ bão hòa nên thấp, mật độ vừa' thay vì đoán." }
+          {
+            "title": "[[styles]] UI Styles",
+            "desc": "Đề xuất thông thường dùng [[activeStyles]] phong cách hoạt động. [[supplementalStyles]] phong cách bổ sung dành cho yêu cầu biến thể rõ ràng; [[deprecatedStyles]] mục ngừng dùng không tham gia xếp hạng thường. Mẫu landing page là dữ liệu riêng."
+          },
+          {
+            "title": "[[palettes]] Color Palettes",
+            "desc": "Bảng màu gốc gợi ý theo sản phẩm. Hãy kiểm tra tương phản và định nghĩa token sáng/tối; không phải mục nào cũng có đủ hai theme."
+          },
+          {
+            "title": "[[fonts]] Font Pairings",
+            "desc": "Danh mục gốc ghép phông tiêu đề và nội dung, kèm ghi chú và liên kết. Kiểm tra hỗ trợ chữ viết, giấy phép và hiển thị cho ngôn ngữ của bạn."
+          },
+          {
+            "title": "25 Chart Types",
+            "desc": "Gợi ý visualization cho dashboard và analytics với thư viện đề xuất (Recharts, Visx, Chart.js, ECharts) và ghi chú accessibility (screen reader label, palette an toàn cho color blindness)."
+          },
+          {
+            "title": "[[stacks]] Tech Stacks",
+            "desc": "React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, HTML + Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, Three.js, JavaFX, WPF, WinUI 3, UWP, Avalonia, Uno Platform."
+          },
+          {
+            "title": "[[ux]] UX Guidelines",
+            "desc": "Best practice, sửa anti-pattern, rule accessibility cho form, navigation, empty state, error handling, loading, mobile gesture, motion preference, WCAG."
+          },
+          {
+            "title": "[[reasoning]] Reasoning Rules",
+            "desc": "Rules theo ngành ánh xạ product type → pattern, style priority, color mood, typography, effect, anti-pattern. Đây là phần giúp model có thể nói 'đây là app y tế, độ bão hòa nên thấp, mật độ vừa' thay vì đoán."
+          }
         ]
       },
       "comparison": {
         "title": "So với các lựa chọn khác",
         "subtitle": "Có vài cách để mang gu thiết kế vào workflow AI. Dưới đây là điểm mạnh phù hợp của từng cách.",
-        "headers": { "approach": "Cách tiếp cận", "strengths": "Điểm mạnh", "limits": "Hạn chế" },
+        "headers": {
+          "approach": "Cách tiếp cận",
+          "strengths": "Điểm mạnh",
+          "limits": "Hạn chế"
+        },
         "rows": [
-          { "approach": "Prompt thuần", "strengths": "Không cần cài. Dùng được ở mọi assistant. Linh hoạt cho thử nghiệm.", "limits": "Kết quả trôi giữa các phiên. Không có reasoning theo ngành. Anti-pattern lọt qua. Phải giải thích gu mỗi lần." },
-          { "approach": "Figma UI kit", "strengths": "Độ trung thực thị giác cao. Tốt khi bàn giao cho người.", "limits": "Sống ngoài repo. AI assistant không đọc trực tiếp file Figma. Cần một bước dịch sang code." },
-          { "approach": "Design token", "strengths": "Codify được color, spacing, typography. Sống được giữa các phiên khi commit vào repo.", "limits": "Chỉ phủ token bề mặt. Không hướng dẫn layout, mật độ, motion hay chọn style nào." },
-          { "approach": "Component library (shadcn/ui, Chakra)", "strengths": "Primitive sẵn sàng production. Giải tốt phần triển khai.", "limits": "Cố ý trung lập về style. Vẫn cần bạn chọn màu, font, pattern theo từng product." },
-          { "approach": "UI UX Pro Max Skill", "strengths": "Sống trong AI client. Kết hợp style, palette, typography, pattern và reasoning. Tốt với shadcn/ui và token. Lưu được theo project.", "limits": "Tinh chỉnh cho web và app interface; không phải tool in ấn hay motion graphics. Bổ trợ component library, không thay thế." }
+          {
+            "approach": "Prompt thuần",
+            "strengths": "Không cần cài. Dùng được ở mọi assistant. Linh hoạt cho thử nghiệm.",
+            "limits": "Kết quả trôi giữa các phiên. Không có reasoning theo ngành. Anti-pattern lọt qua. Phải giải thích gu mỗi lần."
+          },
+          {
+            "approach": "Figma UI kit",
+            "strengths": "Độ trung thực thị giác cao. Tốt khi bàn giao cho người.",
+            "limits": "Cần quy trình từ thiết kế sang code; tích hợp phụ thuộc trợ lý và công cụ."
+          },
+          {
+            "approach": "Design token",
+            "strengths": "Codify được color, spacing, typography. Sống được giữa các phiên khi commit vào repo.",
+            "limits": "Chỉ phủ token bề mặt. Không hướng dẫn layout, mật độ, motion hay chọn style nào."
+          },
+          {
+            "approach": "Component library (shadcn/ui, Chakra)",
+            "strengths": "Primitive sẵn sàng production. Giải tốt phần triển khai.",
+            "limits": "Cố ý trung lập về style. Vẫn cần bạn chọn màu, font, pattern theo từng product."
+          },
+          {
+            "approach": "UI UX Pro Max Skill",
+            "strengths": "Sống trong AI client. Kết hợp style, palette, typography, pattern và reasoning. Tốt với shadcn/ui và token. Lưu được theo project.",
+            "limits": "Tinh chỉnh cho web và app interface; không phải tool in ấn hay motion graphics. Bổ trợ component library, không thay thế."
+          }
         ]
       },
       "shouldYouUse": {
         "title": "Bạn có nên dùng không?",
-        "subtitle": "Tick những gì đúng với bạn. Ba mục trở lên, cài skill sẽ rất đáng giá.",
+        "subtitle": "Dùng các câu hỏi để cân nhắc thử skill gốc.",
         "items": [
-          { "id": "ai-coding", "label": "Tôi dùng AI coding assistant (Claude Code, Cursor, Windsurf, Copilot...) ít nhất vài lần mỗi tuần." },
-          { "id": "ship-ui", "label": "Tôi ship giao diện cho người dùng đều đặn — landing, dashboard, mobile, admin panel." },
-          { "id": "no-designer", "label": "Tôi không có designer riêng cho mỗi dự án, hoặc tôi chính là designer-engineer." },
-          { "id": "generic-output", "label": "Tôi thấy UI AI sinh ra trông na ná nhau giữa các sản phẩm rất khác nhau." },
-          { "id": "want-consistency", "label": "Tôi muốn quyết định thiết kế nhất quán qua các phiên thay vì bắt đầu lại mỗi lần." },
-          { "id": "industry-fit", "label": "Sản phẩm tôi làm trải nhiều ngành (SaaS, healthcare, fintech, e-commerce) và cần đúng chất từng ngành." },
-          { "id": "tokens-already", "label": "Tôi đã dùng design token hoặc shadcn/ui và muốn thêm lớp reasoning ở trên." }
+          {
+            "id": "ai-coding",
+            "label": "Tôi dùng AI coding assistant (Claude Code, Cursor, Windsurf, Copilot...) ít nhất vài lần mỗi tuần."
+          },
+          {
+            "id": "ship-ui",
+            "label": "Tôi ship giao diện cho người dùng đều đặn — landing, dashboard, mobile, admin panel."
+          },
+          {
+            "id": "no-designer",
+            "label": "Tôi không có designer riêng cho mỗi dự án, hoặc tôi chính là designer-engineer."
+          },
+          {
+            "id": "generic-output",
+            "label": "Tôi thấy UI AI sinh ra trông na ná nhau giữa các sản phẩm rất khác nhau."
+          },
+          {
+            "id": "want-consistency",
+            "label": "Tôi muốn quyết định thiết kế nhất quán qua các phiên thay vì bắt đầu lại mỗi lần."
+          },
+          {
+            "id": "industry-fit",
+            "label": "Sản phẩm tôi làm trải nhiều ngành (SaaS, healthcare, fintech, e-commerce) và cần đúng chất từng ngành."
+          },
+          {
+            "id": "tokens-already",
+            "label": "Tôi đã dùng design token hoặc shadcn/ui và muốn thêm lớp reasoning ở trên."
+          }
         ]
       },
       "next": "Tiếp theo: đọc How It Works để xem Design System Generator làm gì khi nhận request, hoặc nhảy thẳng tới Hướng dẫn cài đặt."
     },
     "dsg": {
-      "overview": "Design System Generator là trái tim của UI UX Pro Max Skill. Khi AI assistant nhận yêu cầu UI, generator phân tích ý định, chạy multi-domain search song song trên 5 lĩnh vực thiết kế, áp reasoning rule theo ngành, rồi bàn giao một design system có cấu trúc để assistant viết code. Toàn bộ chạy cục bộ, xong trong vài giây.",
+      "overview": "Trình tạo Python của dự án gốc tìm trong dữ liệu sản phẩm, phong cách, màu sắc, landing và phông chữ rồi kết hợp đề xuất theo quy tắc ngành. Trợ lý AI dùng kết quả để triển khai giao diện. Thời gian phụ thuộc truy vấn và môi trường.",
       "primer": {
         "title": "Ở đây 'design system' nghĩa là gì",
         "lead": "Design system ở đây không phải thư viện Figma 500 trang. Nó là một bó quyết định gọn, máy đọc được: pattern nào, palette nào, font pairing nào, ngôn ngữ motion nào, tương tác nào ưu tiên, anti-pattern nào tránh. Generator tạo một bó như vậy mỗi request, may đo theo product type và intent.",
         "items": [
-          { "title": "Pattern", "body": "Lựa chọn cấu trúc — ví dụ 'bento grid với sticky nav', 'admin layout dày data', hay 'mobile-first card stack'. Rút ra từ 24 landing/product pattern." },
-          { "title": "Style", "body": "Xử lý thị giác — glassmorphism, brutalism, minimalism, neumorphism, claymorphism, aurora, AI-native, hoặc một trong 67 style. Mỗi style mang ngôn ngữ hiệu ứng riêng." },
-          { "title": "Color & typography", "body": "Palette phù hợp ngành từ 161 lựa chọn, font pairing từ 57. Đều kèm metadata accessibility: cặp đối lập, weight đề xuất, line-height." },
-          { "title": "Effects, motion, micro-interaction", "body": "Thang shadow, blur, hướng gradient, hover transition, page transition và fallback reduced-motion." },
-          { "title": "Anti-patterns", "body": "Những thứ cần tránh cho loại sản phẩm này — ví dụ đỏ bão hòa cao trong y tế, font cách điệu trong fintech, modal cascade chậm trong admin tool." }
+          {
+            "title": "Pattern",
+            "body": "Lựa chọn cấu trúc — ví dụ 'bento grid với sticky nav', 'admin layout dày data', hay 'mobile-first card stack'. Rút ra từ [[landing]] landing/product pattern."
+          },
+          {
+            "title": "Style",
+            "body": "Đề xuất thông thường dùng [[activeStyles]] phong cách hoạt động. [[supplementalStyles]] phong cách bổ sung dành cho yêu cầu biến thể rõ ràng; [[deprecatedStyles]] mục ngừng dùng không tham gia xếp hạng thường. Mẫu landing page là dữ liệu riêng."
+          },
+          {
+            "title": "Color & typography",
+            "body": "Bảng màu gốc gợi ý theo sản phẩm. Hãy kiểm tra tương phản và định nghĩa token sáng/tối; không phải mục nào cũng có đủ hai theme. Danh mục gốc ghép phông tiêu đề và nội dung, kèm ghi chú và liên kết. Kiểm tra hỗ trợ chữ viết, giấy phép và hiển thị cho ngôn ngữ của bạn."
+          },
+          {
+            "title": "Effects, motion, micro-interaction",
+            "body": "Thang shadow, blur, hướng gradient, hover transition, page transition và fallback reduced-motion."
+          },
+          {
+            "title": "Anti-patterns",
+            "body": "Những thứ cần tránh cho loại sản phẩm này — ví dụ đỏ bão hòa cao trong y tế, font cách điệu trong fintech, modal cascade chậm trong admin tool."
+          }
         ]
       },
       "workflow": {
         "title": "Quy trình tạo design system",
         "subtitle": "Từ prompt tới design system may đo, kèm reasoning, anti-pattern và hướng dẫn triển khai.",
         "steps": [
-          { "num": "1", "title": "User Request", "desc": "Yêu cầu một tác vụ UI/UX. Thêm product type, ngành, style keywords, page mục tiêu nếu được. Tín hiệu càng giàu, output càng chặt." },
-          { "num": "2", "title": "Multi-Domain Search", "desc": "Tìm song song product, style, color, landing, typography — 5 domain. Mỗi domain trả về top candidate kèm metadata." },
-          { "num": "3", "title": "Reasoning Engine", "desc": "Áp 161 rule theo ngành để xếp hạng, gỡ xung đột giữa domain (ví dụ style không hợp palette), và lọc anti-pattern theo ngành suy ra." },
-          { "num": "4", "title": "Design System Output", "desc": "Trả về pattern, style, color, typography, effect, anti-pattern và pre-delivery checklist. AI assistant dùng nó làm source of truth khi viết component." }
+          {
+            "num": "1",
+            "title": "User Request",
+            "desc": "Yêu cầu một tác vụ UI/UX. Thêm product type, ngành, style keywords, page mục tiêu nếu được. Tín hiệu càng giàu, output càng chặt."
+          },
+          {
+            "num": "2",
+            "title": "Multi-Domain Search",
+            "desc": "Trình tạo Python của dự án gốc tìm trong dữ liệu sản phẩm, phong cách, màu sắc, landing và phông chữ rồi kết hợp đề xuất theo quy tắc ngành. Trợ lý AI dùng kết quả để triển khai giao diện. Thời gian phụ thuộc truy vấn và môi trường."
+          },
+          {
+            "num": "3",
+            "title": "Reasoning Engine",
+            "desc": "Quy tắc ngành hỗ trợ chọn bố cục, ưu tiên style và đề xuất. Anti-pattern là hướng dẫn cần xem xét, không chứng minh code đúng hay đạt tiếp cận."
+          },
+          {
+            "num": "4",
+            "title": "Design System Output",
+            "desc": "Trả về pattern, style, color, typography, effect, anti-pattern và pre-delivery checklist. AI assistant dùng nó làm source of truth khi viết component."
+          }
         ]
       },
       "deepDive": {
         "title": "Mỗi giai đoạn thực sự làm gì",
         "subtitle": "Nếu bạn tò mò về bên trong, đây là bản dài.",
         "stages": [
-          { "label": "Giai đoạn 1 — Parse request", "body": "Generator rút từ prompt 4 tín hiệu: product type (SaaS, e-commerce, healthcare, fintech, portfolio...), intent (build, redesign, fix, optimize), style hint (glassmorphism, dark mode), và surface (landing, dashboard, mobile screen, single component). Tín hiệu thiếu rơi về default thiên về 'an toàn và accessible' hơn là 'mới lạ'." },
-          { "label": "Giai đoạn 2 — Tìm song song", "body": "Năm search chạy song song trên CSV dataset nội bộ — products, styles, colors, landings, typography. Mỗi search trả top-N candidate theo string similarity cộng metadata. Giai đoạn này thường xong dưới 1 giây trên laptop dev." },
-          { "label": "Giai đoạn 3 — Reasoning và gỡ xung đột", "body": "161 reasoning rule vừa là filter vừa là tie-breaker. Ví dụ: 'healthcare + dashboard → ưu tiên palette mát, ưu tiên Inter hoặc IBM Plex Sans, đè neumorphism, đè brutalism, ưu tiên mật độ trung bình'. Khi điểm gần nhau, rule ngành chọn người thắng. Anti-pattern đã biết cũng bị loại tại đây." },
-          { "label": "Giai đoạn 4 — Lắp output", "body": "Candidate thắng cuộc được gộp thành một design system bundle, serialize ra JSON (cho lập trình) hoặc Markdown (cho AI tiêu thụ trực tiếp). Với --persist, bundle cũng được ghi vào design-system/MASTER.md để các phiên sau dùng mà không cần chạy lại generator." }
+          {
+            "label": "Giai đoạn 1 — Parse request",
+            "body": "Truy vấn tìm sản phẩm và quy tắc ngành phù hợp. Nêu rõ sản phẩm, trang và ràng buộc thay vì tính từ mơ hồ."
+          },
+          {
+            "label": "Bước 2 — Tìm dữ liệu",
+            "body": "Python tìm trong CSV đi kèm bằng xếp hạng BM25. Đây là truy xuất cục bộ, không phải tìm web hay cam kết chạy song song."
+          },
+          {
+            "label": "Giai đoạn 3 — Reasoning và gỡ xung đột",
+            "body": "Quy tắc ngành hỗ trợ chọn bố cục, ưu tiên style và đề xuất. Anti-pattern là hướng dẫn cần xem xét, không chứng minh code đúng hay đạt tiếp cận."
+          },
+          {
+            "label": "Giai đoạn 4 — Lắp output",
+            "body": "Đầu ra hệ thiết kế mặc định là ASCII. Dùng -f markdown cho Markdown hoặc --json cho JSON. Đây là đề xuất cần xem xét, không bảo đảm giao diện đã đạt yêu cầu tiếp cận."
+          }
         ]
       },
       "anatomy": {
         "title": "Hình dạng output",
-        "body": "Dưới đây là bản rút gọn những gì được ghi vào design-system/MASTER.md. File thật dài hơn — đây là hình dạng, không phải khối lượng.",
-        "exampleTitle": "design-system/MASTER.md (trích)",
+        "body": "Đây là ví dụ minh họa để học, không phải đầu ra được ghi lại hay kết quả sản xuất đã kiểm chứng. Hãy kiểm tra tương phản, bố cục và tương tác trong dự án của bạn.",
+        "exampleTitle": "Đoạn minh họa",
         "exampleCode": "# Design System\n\nProduct type: SaaS analytics dashboard\nIndustry:    B2B fintech\nGenerated:   2026-01-15\n\n## Pattern\nLayout dày data — sticky sidebar, 12-column grid, sticky table header.\nReference: landing/data-dashboard-sticky-sidebar\n\n## Style\nMinimalism với glass nhẹ ở hover card.\nLý do: fintech anti-pattern cấm gradient hero bão hòa cao;\n       minimalism + glass tiết chế giữ vẻ đáng tin.\n\n## Colors\nPrimary:   #2563EB  (blue-600)\nSurface:   #FFFFFF / #0B1220\nText:      #0F172A / #E2E8F0\nAccent:    #10B981  (emerald, dùng nhẹ cho KPI delta)\nĐã kiểm WCAG AA.\n\n## Typography\nDisplay: Inter 700 / 48-56 px\nBody:    Inter 400 / 15-16 px / line-height 1.55\nNumeric: IBM Plex Mono cho số bảng\n\n## Effects\nShadow scale: chỉ 0/1/2/4. Tránh shadow sâu.\nMotion:      150-200ms ease-out. Tôn trọng prefers-reduced-motion.\n\n## Anti-pattern cần tránh\n- Không dùng đỏ làm brand color (gợi mất mát)\n- Không auto-rotate carousel trên dashboard\n- Không giấu bulk action sau hover-only UI\n\n## Pre-delivery checklist\n- [ ] Màu chart an toàn cho color blindness\n- [ ] Số bảng dùng font mono\n- [ ] Empty state có illustration và CTA\n- [ ] Loading dùng skeleton, không chỉ spinner\n"
       },
       "persist": {
         "title": "Persist Design System",
-        "body": "Mặc định, design system tạo ra chỉ tồn tại trong phiên AI hiện tại. Thêm --persist để ghi bundle vào design-system/MASTER.md ở project root. Từ đó, mọi phiên mới trong project sẽ đọc MASTER.md trước và làm theo, nên redesign một cái nút vẫn dùng spacing scale và color token của project.",
+        "body": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó.",
         "scopes": {
           "title": "Phạm vi project vs trang",
-          "body": "MASTER.md ghi quyết định áp cho toàn project. Đôi khi một trang cần phá luật — trang chiến dịch marketing vui nhộn, hay invoice in giấy. Thêm --page [name] để ghi design-system/pages/[name].md làm override chồng lên MASTER. Phiên AI nhắm trang đó sẽ gộp hai file, page file thắng khi xung đột.",
+          "body": "Với --persist -p \"Acme\" --page pricing, tệp trang là design-system/acme/pages/pricing.md; master có sẵn được giữ. Yêu cầu trợ lý ưu tiên quy tắc trang so với master và kiểm tra nội dung trước khi dùng.",
           "commandTitle": "Lệnh persist",
-          "commands": "# Cấp project: ghi design-system/MASTER.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"SaaS analytics dashboard\" --design-system --persist -p \"Acme\"\n\n# Override cấp trang: ghi design-system/pages/pricing.md\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \\\n  \"trang pricing vui, CTA mạnh\" --design-system \\\n  --persist -p \"Acme\" --page \"pricing\""
+          "commands": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"SaaS dashboard\" --design-system --persist -p \"Acme\" --output-dir .\n\npython3 .claude/skills/ui-ux-pro-max/scripts/search.py \"pricing page\" --design-system --persist -p \"Acme\" --page pricing --output-dir ."
         }
       },
       "tuning": {
         "title": "Tinh chỉnh output",
-        "subtitle": "Nếu lần đầu chưa ưng, có ba nút điều chỉnh trước khi nghĩ tới viết lại.",
+        "subtitle": "Dùng --variance, --motion và --density (1–10) với --design-system để chỉnh đề xuất. Khi đổi giao diện ứng dụng, kiểm tra phiên bản framework và token ngữ nghĩa, sửa từng nhóm thành phần rồi kiểm tra mọi theme.",
         "items": [
-          { "title": "Thêm style keyword cụ thể", "body": "Thêm các từ như 'glassmorphism', 'brutalist', 'bento grid', 'aurora' vào prompt để lệch style search theo hướng bạn muốn mà không đè rule khác." },
-          { "title": "Gọi tên ngành", "body": "'Healthcare', 'fintech', 'e-commerce', 'wellness', 'gaming' neo reasoning rule. Ngành càng cụ thể, lọc anti-pattern càng tự tin." },
-          { "title": "Chỉ rõ surface", "body": "'Landing page', 'dashboard', 'mobile screen', 'pricing page', 'settings page' — surface keyword chọn đúng subset pattern và mức mật độ." },
-          { "title": "Dùng --page cho khác biệt một lần", "body": "Thích 90% MASTER.md nhưng muốn một trang khác đi? Tạo override cấp trang thay vì regenerate toàn project." }
+          {
+            "title": "Thêm style keyword cụ thể",
+            "body": "Thêm các từ như 'glassmorphism', 'brutalist', 'bento grid', 'aurora' vào prompt để lệch style search theo hướng bạn muốn mà không đè rule khác."
+          },
+          {
+            "title": "Gọi tên ngành",
+            "body": "'Healthcare', 'fintech', 'e-commerce', 'wellness', 'gaming' neo reasoning rule. Ngành càng cụ thể, lọc anti-pattern càng tự tin."
+          },
+          {
+            "title": "Chỉ rõ surface",
+            "body": "'Landing page', 'dashboard', 'mobile screen', 'pricing page', 'settings page' — surface keyword chọn đúng subset pattern và mức mật độ."
+          },
+          {
+            "title": "Dùng --page cho khác biệt một lần",
+            "body": "Với --persist -p \"Acme\" --page pricing, tệp trang là design-system/acme/pages/pricing.md; master có sẵn được giữ. Yêu cầu trợ lý ưu tiên quy tắc trang so với master và kiểm tra nội dung trước khi dùng."
+          }
         ]
       },
       "troubleshooting": {
         "title": "Sự cố thường gặp về output",
         "items": [
-          { "q": "Output thấy chung chung.", "a": "Prompt có lẽ thiếu tín hiệu ngành hoặc surface. Thử 'Build a fintech analytics dashboard với bảng dày' thay vì 'Build a dashboard'." },
-          { "q": "Palette không khớp brand.", "a": "Sau lần --persist đầu tiên, viết màu brand vào design-system/MASTER.md. Model sẽ coi đó là token khóa cho phiên sau." },
-          { "q": "Vẫn ra cùng style cho những product rất khác.", "a": "Hai nguyên nhân thường: không gọi tên ngành, hoặc MASTER.md cũ từ project trước — xóa hoặc đổi tên trước khi tạo cái mới." },
-          { "q": "Anti-pattern bị cảnh báo mà tôi không quan tâm.", "a": "Anti-pattern chỉ là gợi ý. Có thể bỏ qua, hoặc sửa MASTER.md xóa dòng không đồng ý — chúng sẽ không quay lại trừ khi bạn chạy lại --persist." }
+          {
+            "q": "Output thấy chung chung.",
+            "a": "Prompt có lẽ thiếu tín hiệu ngành hoặc surface. Thử 'Build a fintech analytics dashboard với bảng dày' thay vì 'Build a dashboard'."
+          },
+          {
+            "q": "Palette không khớp brand.",
+            "a": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+          },
+          {
+            "q": "Vẫn ra cùng style cho những product rất khác.",
+            "a": "Trình tạo dùng truy vấn và dữ liệu đi kèm, không đọc MASTER.md hiện có để chọn đề xuất. Hãy nêu rõ ngành, đối tượng và yêu cầu giao diện. Nếu trợ lý AI vẫn áp dụng thiết kế cũ, hãy kiểm tra tệp dự án mà nó đọc và chỉ rõ tệp master cùng quy tắc trang cần dùng. Không xóa tệp thiết kế để thay đổi đề xuất của trình tạo."
+          },
+          {
+            "q": "Anti-pattern bị cảnh báo mà tôi không quan tâm.",
+            "a": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+          }
         ]
       },
       "next": "Tiếp theo: chọn AI assistant trong Hướng dẫn cài đặt và chạy skill cục bộ."
@@ -255,13 +427,13 @@
       "overview": "Chọn phương thức cài đặt phù hợp với quy trình làm việc của bạn và tích hợp trí tuệ thiết kế vào AI assistant.",
       "tabs": {
         "cliInstall": "Cài CLI (Khuyến nghị)",
-        "manualInstall": "Cài thủ công",
+        "manualInstall": "Sao chép skill đã tạo (ví dụ Claude Code)",
         "prerequisites": "Yêu cầu"
       },
       "cliInstall": {
         "step1": {
           "title": "Cài công cụ CLI toàn cục",
-          "code": "npm install -g uipro-cli"
+          "code": "npm install -g ui-ux-pro-max-cli@2.15.0"
         },
         "step2": {
           "title": "Điều hướng đến thư mục dự án",
@@ -270,34 +442,36 @@
         "step3": {
           "title": "Cài skill cho AI assistant",
           "commands": [
-            "uipro init --ai claude        # Claude Code",
-            "uipro init --ai cursor        # Cursor",
-            "uipro init --ai windsurf      # Windsurf",
-            "uipro init --ai antigravity   # Antigravity",
-            "uipro init --ai copilot       # GitHub Copilot",
-            "uipro init --ai kiro          # Kiro",
-            "uipro init --ai codex         # Codex CLI",
-            "uipro init --ai qoder         # Qoder",
-            "uipro init --ai roocode       # Roo Code",
-            "uipro init --ai gemini        # Gemini CLI",
-            "uipro init --ai trae          # Trae",
-            "uipro init --ai opencode      # OpenCode",
-            "uipro init --ai continue      # Continue",
-            "uipro init --ai codebuddy     # CodeBuddy",
-            "uipro init --ai droid         # Droid (Factory)",
-            "uipro init --ai kilocode      # KiloCode",
-            "uipro init --ai warp          # Warp",
-            "uipro init --ai augment       # Augment",
-            "uipro init --ai all           # Tất cả AI assistants"
+            "uipro init --ai claude",
+            "uipro init --ai cursor",
+            "uipro init --ai windsurf",
+            "uipro init --ai antigravity",
+            "uipro init --ai copilot",
+            "uipro init --ai kiro",
+            "uipro init --ai codex",
+            "uipro init --ai qoder",
+            "uipro init --ai roocode",
+            "uipro init --ai gemini",
+            "uipro init --ai trae",
+            "uipro init --ai opencode",
+            "uipro init --ai continue",
+            "uipro init --ai codebuddy",
+            "uipro init --ai droid",
+            "uipro init --ai kilocode",
+            "uipro init --ai warp",
+            "uipro init --ai augment",
+            "uipro init --ai codewhale",
+            "uipro init --ai universal",
+            "uipro init --ai all"
           ]
         }
       },
       "manualInstall": {
-        "description": "Nếu bạn thích cài thủ công, chỉ cần copy các thư mục tương ứng vào dự án:",
+        "description": "Cần một máy chuẩn bị có Node.js, npm và quyền tải gói. Máy đích cần Python 3 và trợ lý AI đã chọn, không cần npm. Bảng đường dẫn bên dưới chỉ để tham khảo, không phải bộ cài để tải xuống.",
         "table": {
           "header": {
             "assistant": "AI Assistant",
-            "folders": "Thư mục cần copy"
+            "folders": "Vị trí skill được tạo"
           },
           "rows": [
             {
@@ -306,18 +480,33 @@
             },
             {
               "assistant": "Cursor",
-              "folders": ".cursor/commands/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".cursor/skills/ui-ux-pro-max/"
             },
             {
               "assistant": "Windsurf",
-              "folders": ".windsurf/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "folders": ".windsurf/skills/ui-ux-pro-max/"
             },
             {
-              "assistant": "Antigravity",
-              "folders": ".agent/workflows/ui-ux-pro-max.md + .shared/ui-ux-pro-max/"
+              "assistant": "Antigravity / Codex",
+              "folders": ".agents/skills/ui-ux-pro-max/"
             }
           ]
-        }
+        },
+        "steps": [
+          {
+            "text": "Trên máy chuẩn bị, tạo và vào một thư mục tạm trống. Chạy lệnh cố định phiên bản bên dưới để tạo skill Claude Code cho dự án.",
+            "code": "npm exec --yes --package=ui-ux-pro-max-cli@2.15.0 -- uipro init --ai claude"
+          },
+          {
+            "text": "Sao chép toàn bộ .claude/skills/ui-ux-pro-max/, gồm SKILL.md, data/ và scripts/, vào cùng đường dẫn tương đối trong dự án đích. Bao gồm thư mục ẩn khi chuyển. Sao lưu bản cài hiện có trước khi thay thế.",
+            "code": ""
+          },
+          {
+            "text": "Tại thư mục gốc dự án đích, chạy lệnh Python bên dưới (trên Windows có thể dùng python thay python3). Mở dự án bằng Claude Code và yêu cầu dùng UI UX Pro Max. Tìm kiếm thành công chỉ xác nhận dữ liệu và script, không chứng minh trợ lý đã nạp skill.",
+            "code": "python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"accessible\" --stack html-tailwind"
+          }
+        ],
+        "otherAssistants": "Với trợ lý khác, dùng giá trị --ai trong danh sách CLI tại một thư mục trống riêng rồi chuyển mọi tệp được tạo, giữ nguyên đường dẫn tương đối. Một số nền tảng còn tạo tệp lệnh hoặc quy trình. Kiểm tra hướng dẫn nạp skill của trợ lý; bảng chỉ bao gồm các nền tảng được liệt kê."
       },
       "prerequisites": {
         "warning": "⚠️ Yêu cầu",
@@ -330,57 +519,103 @@
       "otherCommands": {
         "title": "Lệnh CLI khác",
         "commands": [
-          "uipro versions              # Liệt kê phiên bản",
-          "uipro update                # Cập nhật phiên bản mới nhất",
-          "uipro init --offline        # Bỏ qua GitHub download, dùng bundled assets",
-          "uipro uninstall             # Gỡ skill (auto-detect platform)",
-          "uipro uninstall --ai claude # Gỡ platform cụ thể",
-          "uipro uninstall --global    # Gỡ global install"
+          "uipro init --ai claude --global",
+          "uipro update --ai claude",
+          "uipro init --ai claude --force",
+          "uipro versions",
+          "uipro uninstall --ai claude",
+          "uipro uninstall --ai claude --global",
+          "npm uninstall -g ui-ux-pro-max-cli"
         ]
       },
       "decision": {
         "title": "Chọn phương thức cài phù hợp",
         "subtitle": "Ba lựa chọn, mỗi cái có ô áp dụng rõ ràng.",
         "options": [
-          { "title": "CLI install (khuyến nghị)", "when": "Bạn có npm và muốn update tự động.", "why": "uipro-cli gói download, version, update vào một lệnh. Còn giúp giữ skill đồng bộ giữa các AI assistant trong project." },
-          { "title": "Manual install", "when": "Bạn làm trong môi trường không có npm (mạng công ty bị khóa, sandbox CI) hoặc muốn vendor skill vào repo cho reproducible.", "why": "Copy folder cho bạn toàn quyền. Đổi lại, update phải copy lại tay khi có version mới." },
-          { "title": "Offline install", "when": "Bạn sau firewall chặt hoặc đang trên máy bay không có GitHub.", "why": "uipro init --offline dùng asset gói sẵn trong CLI package, không gọi mạng sau khi npm install." }
+          {
+            "title": "CLI install (khuyến nghị)",
+            "when": "Bạn có npm và muốn update tự động.",
+            "why": "Trong CLI 2.15.0, uipro update kiểm tra GitHub Release. Nếu phiên bản khác, nó thử nâng cấp CLI rồi yêu cầu chạy uipro init --ai <assistant> --force. Nếu cùng phiên bản, nó làm mới tệp skill tích hợp. Kiểm tra sửa đổi cục bộ trước khi ghi đè; --global chọn bản cài toàn cục."
+          },
+          {
+            "title": "Sao chép skill đã tạo (ví dụ Claude Code)",
+            "when": "Máy đích không có npm nhưng có máy khác để chuẩn bị skill, hoặc bạn muốn lưu bộ cài đã tạo trong kho mã.",
+            "why": "Tạo bằng CLI cố định phiên bản trên máy chuẩn bị rồi chuyển toàn bộ bộ cài. Khi cập nhật, lặp lại các bước và kiểm tra thay đổi cục bộ."
+          },
+          {
+            "title": "Offline install",
+            "when": "Bạn sau firewall chặt hoặc đang trên máy bay không có GitHub.",
+            "why": "CLI 2.15.0 mặc định cài từ mẫu đi kèm. --offline là cờ tương thích, không khóa phiên bản. Muốn tái lập, hãy cố định phiên bản npm. Tải gói và kiểm tra bản phát hành vẫn cần mạng nếu chưa có bộ nhớ đệm."
+          }
         ]
       },
       "platforms": {
         "title": "Ghi chú theo OS",
         "items": [
-          { "os": "macOS", "body": "macOS mới có sẵn Python 3.x nhưng thường cũ. Khuyến nghị Homebrew: brew install python3. uipro-cli cài qua npm; chưa có Node thì brew install node hoặc dùng version manager fnm/nvm. Hỗ trợ cả Apple Silicon và Intel." },
-          { "os": "Windows", "body": "Cài Python 3 từ python.org và tick 'Add Python to PATH'. Dùng PowerShell hoặc Windows Terminal cho npm và python3. Nếu python3 không nhận, thử py -3 --version. Thích shell kiểu Unix thì WSL2 chạy hệt như Linux." },
-          { "os": "Linux", "body": "Đa số distro đã có Python 3. Cài Node qua package manager (Debian/Ubuntu: apt install nodejs npm; Fedora: dnf install nodejs). Muốn Node mới nhất thì dùng fnm/nvm, bản distro thường cũ." }
+          {
+            "os": "macOS",
+            "body": "Kiểm tra Python 3 và Node.js; nếu thiếu, cài từ nguồn chính thức hoặc trình quản lý gói. Không mặc định macOS có Python 3."
+          },
+          {
+            "os": "Windows",
+            "body": "Cài Python 3 từ python.org và tick 'Add Python to PATH'. Dùng PowerShell hoặc Windows Terminal cho npm và python3. Nếu python3 không nhận, thử py -3 --version. Thích shell kiểu Unix thì WSL2 chạy hệt như Linux."
+          },
+          {
+            "os": "Linux",
+            "body": "Đa số distro đã có Python 3. Cài Node qua package manager (Debian/Ubuntu: apt install nodejs npm; Fedora: dnf install nodejs). Muốn Node mới nhất thì dùng fnm/nvm, bản distro thường cũ."
+          }
         ]
       },
       "updates": {
         "title": "Cập nhật và pin phiên bản",
-        "body": "Chạy uipro update bất cứ lúc nào để lấy asset skill mới nhất. Dùng uipro versions để xem tất cả release. Khi cần cài offline hoặc đảm bảo nhất quán trong team, dùng uipro init --offline — lệnh này đọc asset đóng gói sẵn trong CLI, không cần mạng.",
+        "body": "Trong CLI 2.15.0, uipro update kiểm tra GitHub Release. Nếu phiên bản khác, nó thử nâng cấp CLI rồi yêu cầu chạy uipro init --ai <assistant> --force. Nếu cùng phiên bản, nó làm mới tệp skill tích hợp. Kiểm tra sửa đổi cục bộ trước khi ghi đè; --global chọn bản cài toàn cục.",
         "commandsTitle": "Lệnh update thường dùng",
-        "commands": "uipro versions        # Liệt kê tất cả release\nuipro update          # Update tới release mới nhất\nuipro init --offline  # Cài từ asset đóng gói sẵn (không cần mạng)"
+        "commands": "npm view ui-ux-pro-max-cli versions --json\nuipro update --ai claude\nuipro init --ai claude --force"
       },
       "uninstall": {
         "title": "Gỡ và dọn dẹp",
-        "body": "Gỡ đối xứng với cài. Gỡ theo assistant giữ nguyên các assistant khác và CLI global; gỡ hoàn toàn xóa mọi thứ.",
+        "body": "Các lệnh đầu xóa skill dự án/toàn cục; npm uninstall xóa gói CLI. Giữ thư mục design-system chứa quyết định của bạn.",
         "commandsTitle": "Lệnh uninstall",
-        "commands": "uipro uninstall                # Gỡ ở các assistant auto-detect trong project\nuipro uninstall --ai claude    # Chỉ gỡ Claude Code install\nuipro uninstall --global       # Gỡ tool uipro-cli global\nrm -rf design-system           # Tùy chọn xóa design system đã persist"
+        "commands": "uipro uninstall --ai claude\nuipro uninstall --ai claude --global\nnpm uninstall -g ui-ux-pro-max-cli"
       },
       "errors": {
         "title": "Lỗi cài đặt thường gặp",
-        "headers": { "error": "Lỗi", "cause": "Nguyên nhân", "fix": "Khắc phục" },
+        "headers": {
+          "error": "Lỗi",
+          "cause": "Nguyên nhân",
+          "fix": "Khắc phục"
+        },
         "rows": [
-          { "error": "command not found: uipro", "cause": "npm global bin chưa nằm trong PATH, hoặc cài thiếu -g.", "fix": "Chạy npm config get prefix để tìm bin path và thêm vào PATH, hoặc cài lại bằng npm install -g uipro-cli." },
-          { "error": "EACCES: permission denied", "cause": "Global npm install đang ghi vào thư mục thuộc system.", "fix": "Ưu tiên Node version manager (fnm, nvm) để Node nằm dưới user. Tránh sudo npm install -g vì hay sinh thêm vấn đề." },
-          { "error": "python3: command not found", "cause": "Python 3 chưa cài hoặc không trong PATH (hay gặp ở Windows).", "fix": "macOS: brew install python3. Windows: cài từ python.org có 'Add to PATH'. Linux: dùng package manager." },
-          { "error": "Failed to fetch from GitHub", "cause": "Hạn chế mạng hoặc rate limit GitHub raw.", "fix": "Dùng uipro init --offline để cài từ bundled assets, hoặc export HTTPS_PROXY và retry qua proxy." },
-          { "error": "AI assistant không nhận skill", "cause": "Sai target folder cho assistant đó, hoặc assistant đã chạy trước khi cài.", "fix": "Chạy lại uipro init --ai [assistant] từ project root, sau đó khởi động lại assistant. Folder của mỗi assistant xem bảng Manual Install." }
+          {
+            "error": "command not found: uipro",
+            "cause": "npm global bin chưa nằm trong PATH, hoặc cài thiếu -g.",
+            "fix": "Chạy npm config get prefix để tìm bin path và thêm vào PATH, hoặc cài lại bằng npm install -g ui-ux-pro-max-cli."
+          },
+          {
+            "error": "EACCES: permission denied",
+            "cause": "Global npm install đang ghi vào thư mục thuộc system.",
+            "fix": "Ưu tiên Node version manager (fnm, nvm) để Node nằm dưới user. Tránh sudo npm install -g vì hay sinh thêm vấn đề."
+          },
+          {
+            "error": "python3: command not found",
+            "cause": "Python 3 chưa cài hoặc không trong PATH (hay gặp ở Windows).",
+            "fix": "macOS: brew install python3. Windows: cài từ python.org có 'Add to PATH'. Linux: dùng package manager."
+          },
+          {
+            "error": "Failed to fetch from GitHub",
+            "cause": "Trong CLI 2.15.0, uipro update kiểm tra GitHub Release. Nếu phiên bản khác, nó thử nâng cấp CLI rồi yêu cầu chạy uipro init --ai <assistant> --force. Nếu cùng phiên bản, nó làm mới tệp skill tích hợp. Kiểm tra sửa đổi cục bộ trước khi ghi đè; --global chọn bản cài toàn cục.",
+            "fix": "CLI 2.15.0 mặc định cài từ mẫu đi kèm. --offline là cờ tương thích, không khóa phiên bản. Muốn tái lập, hãy cố định phiên bản npm. Tải gói và kiểm tra bản phát hành vẫn cần mạng nếu chưa có bộ nhớ đệm."
+          },
+          {
+            "error": "AI assistant không nhận skill",
+            "cause": "Sai target folder cho assistant đó, hoặc assistant đã chạy trước khi cài.",
+            "fix": "Chạy lại uipro init --ai [assistant] từ project root, sau đó khởi động lại assistant. Folder của mỗi assistant xem bảng Manual Install."
+          }
         ]
       },
       "offline": {
         "title": "Offline mode chi tiết",
-        "body": "Package uipro-cli đã đi kèm một bản đầy đủ asset skill. Khi truyền --offline, CLI bỏ qua GitHub fetch và đọc thẳng asset đi kèm đó. Lựa chọn đúng khi không tới được GitHub hoặc khi muốn mọi dev cùng cài đúng version asset đi với CLI release đã pin."
+        "body": "CLI 2.15.0 mặc định cài từ mẫu đi kèm. --offline là cờ tương thích, không khóa phiên bản. Muốn tái lập, hãy cố định phiên bản npm. Tải gói và kiểm tra bản phát hành vẫn cần mạng nếu chưa có bộ nhớ đệm."
       },
       "next": "Tiếp theo: Cách dùng & Prompt để xem cách gọi và prompt mẫu."
     },
@@ -447,121 +682,307 @@
         "title": "Cấu trúc một prompt tốt",
         "lead": "Prompt yếu cho kết quả chung chung; prompt có cấu trúc cho kết quả may đo. Bốn tín hiệu làm hầu hết công việc — có 3 cái, chất lượng output đã nhảy hẳn.",
         "parts": [
-          { "label": "1. Product type", "body": "Là loại sản phẩm gì? SaaS, e-commerce, healthcare app, fintech, portfolio, blog, mobile marketplace. Tín hiệu này lái rule ngành và color mood." },
-          { "label": "2. Surface", "body": "Trang/màn nào? Landing, dashboard, settings, mobile checkout, pricing, blog template. Surface chọn subset pattern và mật độ." },
-          { "label": "3. Style hint (tùy chọn)", "body": "Glassmorphism, brutalist, bento grid, minimalist, aurora, dark mode. Không có ý thích thì bỏ qua." },
-          { "label": "4. Ràng buộc (tùy chọn)", "body": "Accessibility (WCAG AA, AAA), framework (Next.js + shadcn/ui), brand color, mobile-first, hoặc 'phải chạy không cần JavaScript'." }
+          {
+            "label": "1. Product type",
+            "body": "Là loại sản phẩm gì? SaaS, e-commerce, healthcare app, fintech, portfolio, blog, mobile marketplace. Tín hiệu này lái rule ngành và color mood."
+          },
+          {
+            "label": "2. Surface",
+            "body": "Trang/màn nào? Landing, dashboard, settings, mobile checkout, pricing, blog template. Surface chọn subset pattern và mật độ."
+          },
+          {
+            "label": "3. Style hint (tùy chọn)",
+            "body": "Glassmorphism, brutalist, bento grid, minimalist, aurora, dark mode. Không có ý thích thì bỏ qua."
+          },
+          {
+            "label": "4. Ràng buộc (tùy chọn)",
+            "body": "Accessibility (WCAG AA, AAA), framework (Next.js + shadcn/ui), brand color, mobile-first, hoặc 'phải chạy không cần JavaScript'."
+          }
         ]
       },
       "worked": {
         "title": "Ví dụ end-to-end",
-        "subtitle": "Mỗi ví dụ cho thấy prompt, design system generator sinh ra, và hình dạng code AI viết từ đó.",
+        "subtitle": "Đây là ví dụ minh họa để học, không phải đầu ra được ghi lại hay kết quả sản xuất đã kiểm chứng. Hãy kiểm tra tương phản, bố cục và tương tác trong dự án của bạn.",
         "items": [
-          { "title": "SaaS analytics dashboard", "prompt": "Build a SaaS analytics dashboard cho B2B fintech. Bảng dày, dark mode mặc định, WCAG AA, stack Next.js + shadcn/ui.", "outputTitle": "Design system sinh ra", "output": "Pattern: layout dày data, sticky sidebar, 12-col grid\nStyle:   minimalism + glass nhẹ ở hover card\nPalette: xanh mát + emerald accent (#2563EB / #10B981)\nType:    Inter 400/600/700 + IBM Plex Mono cho số\nEffects: shadow 0/1/2/4, 150-200ms ease-out\nTránh:   đỏ làm brand, carousel auto-rotate, hover-only bulk action\nChecklist: chart an toàn color blindness, số mono, skeleton loading" },
-          { "title": "Healthcare patient portal", "prompt": "Patient portal cho bệnh viện. Giọng trấn an, target chạm lớn, sẵn multilingual, tránh anti-pattern y tế.", "outputTitle": "Design system sinh ra", "output": "Pattern: card information hierarchy + quick-action thường trực\nStyle:   minimalism, độ bão hòa thấp, không hiệu ứng lạ\nPalette: teal nhạt + neutral ấm (#0E7C7B / #F5F1E8)\nType:    Source Sans Pro 400/600, line-height rộng (1.7)\nEffects: shadow tối thiểu, không parallax, prefers-reduced-motion bắt buộc\nTránh:   đỏ làm error default (gợi nguy hại), cặp red+green, bảng dày trên landing\nChecklist: WCAG AAA nếu được, target ≥ 44px, sẵn RTL" },
-          { "title": "Indie portfolio dark mode", "prompt": "Portfolio personal cho creative developer. Nhận diện thị giác mạnh, glassmorphism, dark mode mặc định + light fallback.", "outputTitle": "Design system sinh ra", "output": "Pattern: scroll-driven case study + sticky project nav\nStyle:   glassmorphism + aurora gradient nền\nPalette: indigo sâu + tím aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:    Sora 600/800 display + Inter 400 body\nEffects: backdrop-blur 12px, glow nhẹ hover, 400ms cubic\nTránh:   noise dày, marquee text chồng, nav dựa motion\nChecklist: tôn trọng prefers-reduced-motion, light parity, image alt" },
-          { "title": "E-commerce mobile checkout", "prompt": "Checkout mobile cho cửa hàng thời trang. Tối đa 3 bước, Apple Pay đầu tiên, chạy mượt 4G yếu.", "outputTitle": "Design system sinh ra", "output": "Pattern: full-screen step, total bar thường trực, không modal stack\nStyle:   flat 2.0 với typography mạnh, ít trang trí\nPalette: off-white ấm + brand accent + xanh success\nType:    system font cho tốc độ (San Francisco/Roboto), body ≥ 16px\nEffects: chuyển tức thì, skeleton placeholder, không carousel\nTránh:   script bên thứ ba trên checkout, banner đè CTA, ép tạo tài khoản\nChecklist: test Payment Request, autofill địa chỉ, khôi phục lỗi" },
-          { "title": "Doc site open-source", "prompt": "Documentation site cho thư viện OSS. Sidebar + search + content + on-this-page TOC. Sạch, nhanh, dark mode toggle.", "outputTitle": "Design system sinh ra", "output": "Pattern: 3 cột docs (sidebar + content + TOC), sticky header\nStyle:   minimalism, whitespace rộng, code block monospace\nPalette: gray trung tính + 1 brand accent (không cầu vồng)\nType:    Inter 400/600 + JetBrains Mono code\nEffects: chỉ hover nhẹ, không animation khi scroll\nTránh:   code block cố định cao (dùng overflow), modal search, marketing trong nav docs\nChecklist: cmd-K search, code copy được, mobile sidebar drawer" },
-          { "title": "AI chat product landing", "prompt": "Landing cho AI chat product. Demo live, tạo niềm tin, pricing rõ. Bento-grid style.", "outputTitle": "Design system sinh ra", "output": "Pattern: hero có demo live, bento feature, social proof, pricing\nStyle:   AI-native + bento grid + gradient mềm\nPalette: xanh mát + coral ấm, dark mặc định\nType:    Cal Sans display + Inter body, heading lớn\nEffects: bento card hover nâng, viền gradient, nền dot grid động\nTránh:   bento card trống, parallax hỏng mobile, pricing giấu sau 'Contact us'\nChecklist: demo live load dưới 2s, pricing nhìn thấy above fold desktop" }
+          {
+            "title": "SaaS analytics dashboard",
+            "prompt": "Build a SaaS analytics dashboard cho B2B fintech. Bảng dày, dark mode mặc định, WCAG AA, stack Next.js + shadcn/ui.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: layout dày data, sticky sidebar, 12-col grid\nStyle:   minimalism + glass nhẹ ở hover card\nPalette: xanh mát + emerald accent (#2563EB / #10B981)\nType:    Inter 400/600/700 + IBM Plex Mono cho số\nEffects: shadow 0/1/2/4, 150-200ms ease-out\nTránh:   đỏ làm brand, carousel auto-rotate, hover-only bulk action\nChecklist: chart an toàn color blindness, số mono, skeleton loading"
+          },
+          {
+            "title": "Healthcare patient portal",
+            "prompt": "Patient portal cho bệnh viện. Giọng trấn an, target chạm lớn, sẵn multilingual, tránh anti-pattern y tế.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: card information hierarchy + quick-action thường trực\nStyle:   minimalism, độ bão hòa thấp, không hiệu ứng lạ\nPalette: teal nhạt + neutral ấm (#0E7C7B / #F5F1E8)\nType:    Source Sans Pro 400/600, line-height rộng (1.7)\nEffects: shadow tối thiểu, không parallax, prefers-reduced-motion bắt buộc\nTránh:   đỏ làm error default (gợi nguy hại), cặp red+green, bảng dày trên landing\nChecklist: WCAG AAA nếu được, target ≥ 44px, sẵn RTL"
+          },
+          {
+            "title": "Indie portfolio dark mode",
+            "prompt": "Portfolio personal cho creative developer. Nhận diện thị giác mạnh, glassmorphism, dark mode mặc định + light fallback.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: scroll-driven case study + sticky project nav\nStyle:   glassmorphism + aurora gradient nền\nPalette: indigo sâu + tím aurora (#1E1B4B / #7C3AED / #06B6D4)\nType:    Sora 600/800 display + Inter 400 body\nEffects: backdrop-blur 12px, glow nhẹ hover, 400ms cubic\nTránh:   noise dày, marquee text chồng, nav dựa motion\nChecklist: tôn trọng prefers-reduced-motion, light parity, image alt"
+          },
+          {
+            "title": "E-commerce mobile checkout",
+            "prompt": "Checkout mobile cho cửa hàng thời trang. Tối đa 3 bước, Apple Pay đầu tiên, chạy mượt 4G yếu.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: full-screen step, total bar thường trực, không modal stack\nStyle:   flat 2.0 với typography mạnh, ít trang trí\nPalette: off-white ấm + brand accent + xanh success\nType:    system font cho tốc độ (San Francisco/Roboto), body ≥ 16px\nEffects: chuyển tức thì, skeleton placeholder, không carousel\nTránh:   script bên thứ ba trên checkout, banner đè CTA, ép tạo tài khoản\nChecklist: test Payment Request, autofill địa chỉ, khôi phục lỗi"
+          },
+          {
+            "title": "Doc site open-source",
+            "prompt": "Documentation site cho thư viện OSS. Sidebar + search + content + on-this-page TOC. Sạch, nhanh, dark mode toggle.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: 3 cột docs (sidebar + content + TOC), sticky header\nStyle:   minimalism, whitespace rộng, code block monospace\nPalette: gray trung tính + 1 brand accent (không cầu vồng)\nType:    Inter 400/600 + JetBrains Mono code\nEffects: chỉ hover nhẹ, không animation khi scroll\nTránh:   code block cố định cao (dùng overflow), modal search, marketing trong nav docs\nChecklist: cmd-K search, code copy được, mobile sidebar drawer"
+          },
+          {
+            "title": "AI chat product landing",
+            "prompt": "Landing cho AI chat product. Demo live, tạo niềm tin, pricing rõ. Bento-grid style.",
+            "outputTitle": "Đoạn minh họa",
+            "output": "Pattern: hero có demo live, bento feature, social proof, pricing\nStyle:   AI-native + bento grid + gradient mềm\nPalette: xanh mát + coral ấm, dark mặc định\nType:    Cal Sans display + Inter body, heading lớn\nEffects: bento card hover nâng, viền gradient, nền dot grid động\nTránh:   bento card trống, parallax hỏng mobile, pricing giấu sau 'Contact us'\nChecklist: demo live load dưới 2s, pricing nhìn thấy above fold desktop"
+          }
         ]
       },
       "iterating": {
         "title": "Lặp lại kết quả",
-        "lead": "Hiếm khi lần đầu đúng ý. Ba pattern refine phủ hầu hết tình huống.",
+        "lead": "Dùng --variance, --motion và --density (1–10) với --design-system để chỉnh đề xuất. Khi đổi giao diện ứng dụng, kiểm tra phiên bản framework và token ngữ nghĩa, sửa từng nhóm thành phần rồi kiểm tra mọi theme.",
         "patterns": [
-          { "title": "Siết một chiều", "body": "Thích layout nhưng muốn màu khác? 'Giữ pattern và typography, đổi palette sang ấm hơn.' AI chạy lại chỉ phần color và merge." },
-          { "title": "Thêm ràng buộc", "body": "Cần khóa accessibility? 'Cùng design system, nhưng ép WCAG AAA và body tối thiểu 16px.' Đây là lọc trên candidate hiện có, không làm lại từ đầu." },
-          { "title": "Override cấp trang", "body": "Nếu MASTER.md đúng 90% project, dùng --page để override per-page thay vì regenerate cả project." }
+          {
+            "title": "Siết một chiều",
+            "body": "Dùng --variance, --motion và --density (1–10) với --design-system để chỉnh đề xuất. Khi đổi giao diện ứng dụng, kiểm tra phiên bản framework và token ngữ nghĩa, sửa từng nhóm thành phần rồi kiểm tra mọi theme."
+          },
+          {
+            "title": "Thêm ràng buộc",
+            "body": "Dùng --variance, --motion và --density (1–10) với --design-system để chỉnh đề xuất. Khi đổi giao diện ứng dụng, kiểm tra phiên bản framework và token ngữ nghĩa, sửa từng nhóm thành phần rồi kiểm tra mọi theme."
+          },
+          {
+            "title": "Override cấp trang",
+            "body": "Với --persist -p \"Acme\" --page pricing, tệp trang là design-system/acme/pages/pricing.md; master có sẵn được giữ. Yêu cầu trợ lý ưu tiên quy tắc trang so với master và kiểm tra nội dung trước khi dùng."
+          }
         ]
       },
       "library": {
         "title": "Thư viện prompt theo lĩnh vực",
         "subtitle": "Copy làm điểm bắt đầu rồi chỉnh chi tiết.",
         "domains": [
-          { "name": "SaaS & B2B", "prompts": [ "Landing project-management SaaS, social proof và pricing above the fold", "Settings page B2B SaaS với sidebar nav và section nhóm", "Onboarding 3 bước cho dev-tool SaaS", "Analytics dashboard: KPI tile, trend chart, recent-activity feed" ] },
-          { "name": "Fintech", "prompts": [ "Personal-finance dashboard có budget, account, goal", "Mobile stock-trading với sparkline và order entry", "Fintech landing với trust badge, security highlight, pricing", "Admin panel monitor transaction với filter và bulk action" ] },
-          { "name": "Healthcare & wellness", "prompts": [ "Patient portal: appointment, record, message", "Meditation app home: thư viện session và streak tracker", "Telehealth landing: provider directory và booking", "Clinician dashboard: patient list, alert, note" ] },
-          { "name": "E-commerce", "prompts": [ "Product detail thời trang: variant select và review", "Mobile checkout tối ưu Apple Pay/Google Pay", "Category listing: filter, sort, infinite scroll", "Wishlist: share, move-to-cart, price-drop alert" ] },
-          { "name": "Portfolio & blog", "prompts": [ "Portfolio developer: case study và writing index", "Template blog dài: TOC, footnote, reading progress", "Portfolio designer: case nhiều ảnh và CTA contact", "Trang chủ multi-author: category và editor's picks" ] },
-          { "name": "Tools & utilities", "prompts": [ "Doc site OSS: sidebar, search, on-this-page TOC", "Homepage CLI tool: install, demo gif, FAQ", "Status page: uptime theo region, incident history, subscribe", "App share snippet: syntax highlight, filter theo ngôn ngữ" ] }
+          {
+            "name": "SaaS & B2B",
+            "prompts": [
+              "Landing project-management SaaS, social proof và pricing above the fold",
+              "Settings page B2B SaaS với sidebar nav và section nhóm",
+              "Onboarding 3 bước cho dev-tool SaaS",
+              "Analytics dashboard: KPI tile, trend chart, recent-activity feed"
+            ]
+          },
+          {
+            "name": "Fintech",
+            "prompts": [
+              "Personal-finance dashboard có budget, account, goal",
+              "Mobile stock-trading với sparkline và order entry",
+              "Fintech landing với trust badge, security highlight, pricing",
+              "Admin panel monitor transaction với filter và bulk action"
+            ]
+          },
+          {
+            "name": "Healthcare & wellness",
+            "prompts": [
+              "Patient portal: appointment, record, message",
+              "Meditation app home: thư viện session và streak tracker",
+              "Telehealth landing: provider directory và booking",
+              "Clinician dashboard: patient list, alert, note"
+            ]
+          },
+          {
+            "name": "E-commerce",
+            "prompts": [
+              "Product detail thời trang: variant select và review",
+              "Mobile checkout tối ưu Apple Pay/Google Pay",
+              "Category listing: filter, sort, infinite scroll",
+              "Wishlist: share, move-to-cart, price-drop alert"
+            ]
+          },
+          {
+            "name": "Portfolio & blog",
+            "prompts": [
+              "Portfolio developer: case study và writing index",
+              "Template blog dài: TOC, footnote, reading progress",
+              "Portfolio designer: case nhiều ảnh và CTA contact",
+              "Trang chủ multi-author: category và editor's picks"
+            ]
+          },
+          {
+            "name": "Tools & utilities",
+            "prompts": [
+              "Doc site OSS: sidebar, search, on-this-page TOC",
+              "Homepage CLI tool: install, demo gif, FAQ",
+              "Status page: uptime theo region, incident history, subscribe",
+              "App share snippet: syntax highlight, filter theo ngôn ngữ"
+            ]
+          }
         ]
       },
       "antiPrompts": {
         "title": "Prompt cho output yếu",
         "lead": "Những kiểu dưới đây bỏ sót tín hiệu generator cần. Tránh.",
         "items": [
-          { "bad": "Làm cho tôi một website.", "why": "Không product type, không surface, không ràng buộc. Model không neo được, rơi về template landing chung chung." },
-          { "bad": "Làm cho đẹp hơn.", "why": "'Đẹp hơn' không có mốc. Đẹp hơn cái gì? Theo hướng nào? Hãy nêu style hint hoặc chiều cần thay đổi." },
-          { "bad": "Làm dashboard đẹp, hiện đại, sạch sẽ, chuyên nghiệp.", "why": "Tính từ chồng chất, không thu hẹp tìm kiếm. Thay bằng ngành + surface + một style keyword cụ thể." },
-          { "bad": "Dùng xu hướng thiết kế mới nhất.", "why": "'Mới nhất' mơ hồ và mau lỗi. Nếu muốn bento grid hay glassmorphism, hãy nói thẳng." }
+          {
+            "bad": "Làm cho tôi một website.",
+            "why": "Không product type, không surface, không ràng buộc. Model không neo được, rơi về template landing chung chung."
+          },
+          {
+            "bad": "Làm cho đẹp hơn.",
+            "why": "'Đẹp hơn' không có mốc. Đẹp hơn cái gì? Theo hướng nào? Hãy nêu style hint hoặc chiều cần thay đổi."
+          },
+          {
+            "bad": "Làm dashboard đẹp, hiện đại, sạch sẽ, chuyên nghiệp.",
+            "why": "Tính từ chồng chất, không thu hẹp tìm kiếm. Thay bằng ngành + surface + một style keyword cụ thể."
+          },
+          {
+            "bad": "Dùng xu hướng thiết kế mới nhất.",
+            "why": "'Mới nhất' mơ hồ và mau lỗi. Nếu muốn bento grid hay glassmorphism, hãy nói thẳng."
+          }
         ]
       },
       "next": "Tiếp theo: xem FAQ nếu gặp lỗi khi cài đặt hoặc chạy lệnh."
     },
     "faq": {
-      "overview": "Tham chiếu thực dụng cho các câu hỏi thường gặp về cài đặt, cấu hình và tận dụng UI UX Pro Max Skill. Câu hỏi nhóm theo chủ đề để bạn quét nhanh. Nếu không có câu trả lời bạn cần, gửi feedback ở cuối trang và chúng tôi sẽ bổ sung.",
+      "overview": "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức.",
       "groups": [
         {
           "title": "Cài đặt và setup",
           "items": [
-            { "q": "Hỗ trợ những AI assistant nào?", "a": "Out of the box: Claude Code, Cursor, Windsurf, Antigravity, GitHub Copilot, Kiro, Codex CLI, Qoder, Roo Code, Gemini CLI, Trae, OpenCode, Continue, CodeBuddy, Droid (Factory), KiloCode, Warp, Augment. Chạy uipro init --ai all để cài cho mọi assistant được phát hiện trong project." },
-            { "q": "Skill cần Node.js không?", "a": "Không. Skill chạy qua Python khi nhận request. Bạn chỉ cần Node.js nếu cài qua uipro-cli (npm). Đường manual không cần gì ngoài Python 3." },
-            { "q": "Vì sao Python 3? Chạy Python 2 được không?", "a": "Chỉ Python 3. Search script dùng f-string, type hint, dict ordering hiện đại — Python 2 không có. Python 2 cũng đã EOL từ 2020 và hết hỗ trợ bảo mật." },
-            { "q": "search.py ở đâu?", "a": "Claude Code: .claude/skills/ui-ux-pro-max/scripts/search.py. Assistant chia sẻ folder .shared (Cursor, Windsurf, Antigravity): .shared/ui-ux-pro-max/scripts/search.py." },
-            { "q": "Cài được khi không truy cập GitHub?", "a": "Có. uipro init --offline bỏ qua download GitHub và dùng asset gói sẵn trong npm package. Phù hợp môi trường CI sandbox và mạng air-gapped." },
-            { "q": "Cài global thay vì per project được không?", "a": "Một phần. uipro-cli cài global qua npm install -g uipro-cli. Asset skill cố ý gắn theo project để mỗi repo pin được version và design system riêng." }
+            {
+              "q": "Hỗ trợ những AI assistant nào?",
+              "a": "CLI 2.15.0: claude, cursor, windsurf, antigravity, copilot, kiro, codex, qoder, roocode, gemini, trae, opencode, continue, codebuddy, droid, kilocode, warp, augment, codewhale, universal. --ai all tạo bản cài cho mọi nền tảng được hỗ trợ, không chỉ trợ lý đã phát hiện."
+            },
+            {
+              "q": "Skill cần Node.js không?",
+              "a": "Không. Skill chạy qua Python khi nhận request. Bạn chỉ cần Node.js nếu cài qua ui-ux-pro-max-cli (npm). Đường manual không cần gì ngoài Python 3."
+            },
+            {
+              "q": "Vì sao Python 3? Chạy Python 2 được không?",
+              "a": "Chỉ Python 3. Search script dùng f-string, type hint, dict ordering hiện đại — Python 2 không có. Python 2 cũng đã EOL từ 2020 và hết hỗ trợ bảo mật."
+            },
+            {
+              "q": "search.py ở đâu?",
+              "a": "Dùng tệp được tạo theo nền tảng: Claude tại .claude/skills/ui-ux-pro-max/, Cursor tại .cursor/skills/ui-ux-pro-max/, Windsurf tại .windsurf/skills/ui-ux-pro-max/, Antigravity và Codex tại .agents/skills/ui-ux-pro-max/. search.py nằm trong scripts/. Các đường dẫn áp dụng cho CLI 2.15.0."
+            },
+            {
+              "q": "Cài được khi không truy cập GitHub?",
+              "a": "CLI 2.15.0 mặc định cài từ mẫu đi kèm. --offline là cờ tương thích, không khóa phiên bản. Muốn tái lập, hãy cố định phiên bản npm. Tải gói và kiểm tra bản phát hành vẫn cần mạng nếu chưa có bộ nhớ đệm."
+            },
+            {
+              "q": "Cài global thay vì per project được không?",
+              "a": "Hỗ trợ cài skill theo dự án và toàn cục. Ví dụ uipro init --ai claude --global ghi vào ~/.claude/skills/. Cài CLI bằng npm -g khác với cài skill bằng --global."
+            }
           ]
         },
         {
           "title": "Sinh design system",
           "items": [
-            { "q": "Có cần chỉ định stack không?", "a": "Không. Bỏ qua thì mặc định HTML + Tailwind. Chỉ định stack (Next.js, Nuxt, SvelteKit, SwiftUI, React Native, Flutter, Astro, Angular...) để có output đúng idiom." },
-            { "q": "Xuất Markdown thay vì JSON?", "a": "Thêm -f markdown cùng --design-system. Markdown đẹp khi đưa thẳng vào doc/chat; JSON tiện cho programmatic use." },
-            { "q": "Model dựa vào đâu để biết ngành?", "a": "Từ keyword trong prompt và context MASTER.md đã persist. Nếu bạn không gọi tên ngành, generator rơi về default an toàn. Gọi tên thẳng luôn cho output chặt hơn." },
-            { "q": "Khóa brand color để model không đè?", "a": "Sau lần --persist đầu tiên, mở design-system/MASTER.md và thay block Colors bằng brand token. Model coi MASTER.md là source of truth ở phiên sau." },
-            { "q": "Sinh design cho một trang mà không ảnh hưởng trang khác?", "a": "Có. Dùng --page [name] kèm --persist. File override nằm trong design-system/pages/[name].md và chỉ áp khi trang đó là target của phiên." }
+            {
+              "q": "Có cần chỉ định stack không?",
+              "a": "Với CLI 2.15.0, tìm stack riêng: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn. Nhánh --design-system ưu tiên hơn --stack; kết hợp hai cờ không lọc bộ tạo theo stack. Đưa cả hai kết quả cho trợ lý."
+            },
+            {
+              "q": "Có những định dạng đầu ra nào?",
+              "a": "Đầu ra hệ thiết kế mặc định là ASCII. Dùng -f markdown cho Markdown hoặc --json cho JSON. Đây là đề xuất cần xem xét, không bảo đảm giao diện đã đạt yêu cầu tiếp cận."
+            },
+            {
+              "q": "Model dựa vào đâu để biết ngành?",
+              "a": "Trình tạo Python của dự án gốc tìm trong dữ liệu sản phẩm, phong cách, màu sắc, landing và phông chữ rồi kết hợp đề xuất theo quy tắc ngành. Trợ lý AI dùng kết quả để triển khai giao diện. Thời gian phụ thuộc truy vấn và môi trường."
+            },
+            {
+              "q": "Làm sao giữ quyết định thương hiệu?",
+              "a": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+            },
+            {
+              "q": "Sinh design cho một trang mà không ảnh hưởng trang khác?",
+              "a": "Với --persist -p \"Acme\" --page pricing, tệp trang là design-system/acme/pages/pricing.md; master có sẵn được giữ. Yêu cầu trợ lý ưu tiên quy tắc trang so với master và kiểm tra nội dung trước khi dùng."
+            }
           ]
         },
         {
           "title": "Output và tùy chỉnh",
           "items": [
-            { "q": "Output thiếu style tôi thích, thêm được không?", "a": "Chưa có API public. Cài local rồi sửa data/styles.csv nếu muốn mở rộng cho bản thân. Đóng góp upstream qua repo cũng được hoan nghênh." },
-            { "q": "Sửa danh sách anti-pattern cho một ngành?", "a": "Sửa design-system/MASTER.md sau khi sinh; xóa dòng không đồng ý. Model sẽ tôn trọng file đã chỉnh. Sửa catalog gốc thì áp dụng project-wide nhưng phải apply lại sau mỗi update." },
-            { "q": "Mặc định dùng shadcn/ui?", "a": "Hoặc thêm --stack shadcn khi sinh, hoặc thêm 'Use shadcn/ui primitives' vào mục Conventions trong MASTER.md của project. Model tôn trọng convention dạng văn xuôi trong MASTER.md." }
+            {
+              "q": "Output thiếu style tôi thích, thêm được không?",
+              "a": "Chưa có API public. Cài local rồi sửa data/styles.csv nếu muốn mở rộng cho bản thân. Đóng góp upstream qua repo cũng được hoan nghênh."
+            },
+            {
+              "q": "Sửa danh sách anti-pattern cho một ngành?",
+              "a": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+            },
+            {
+              "q": "Mặc định dùng shadcn/ui?",
+              "a": "Với CLI 2.15.0, tìm stack riêng: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn. Nhánh --design-system ưu tiên hơn --stack; kết hợp hai cờ không lọc bộ tạo theo stack. Đưa cả hai kết quả cho trợ lý."
+            }
           ]
         },
         {
           "title": "Privacy, chi phí, dữ liệu",
           "items": [
-            { "q": "Skill có gửi gì ra server ngoài không?", "a": "Không. Search, ranking, reasoning chạy hoàn toàn cục bộ trong AI client. Lần duy nhất gọi mạng là download cài đặt (bỏ được bằng --offline)." },
-            { "q": "Skill miễn phí không?", "a": "Có, skill miễn phí và open-source. Bạn vẫn trả cho AI assistant (Claude Code, Cursor...) theo giá thông thường." },
-            { "q": "Dùng skill có làm tăng token AI nhiều không?", "a": "Tăng nhẹ. Skill inject context design system vào prompt. Thực tế phần tăng nhỏ so với code assistant sinh ra và bù lại bằng số lần sửa back-and-forth giảm." }
+            {
+              "q": "Skill có gửi gì ra server ngoài không?",
+              "a": "Tìm kiếm Python chạy cục bộ. Trợ lý AI có thể gửi prompt, tệp và kết quả tới nhà cung cấp theo cài đặt riêng. Cài đặt CLI và kiểm tra cập nhật có thể dùng mạng."
+            },
+            {
+              "q": "Skill miễn phí không?",
+              "a": "Có, skill miễn phí và open-source. Bạn vẫn trả cho AI assistant (Claude Code, Cursor...) theo giá thông thường."
+            },
+            {
+              "q": "Dùng skill có làm tăng token AI nhiều không?",
+              "a": "Kết quả tìm kiếm thêm token ngữ cảnh. Chi phí phụ thuộc trợ lý, mô hình và tác vụ; không bảo đảm giảm số lần sửa."
+            }
           ]
         },
         {
           "title": "Update và versioning",
           "items": [
-            { "q": "Skill update bao lâu một lần?", "a": "Catalog vài tuần ship một lần; CLI khi cần. uipro update bất cứ lúc nào. Cần cài offline nhất quán, dùng uipro init --offline." },
-            { "q": "Update có ghi đè MASTER.md?", "a": "Không. Update chỉ chạm asset skill trong .claude/skills/ hoặc .shared/. Mọi thứ trong design-system/ là user content và không bị ghi đè." },
-            { "q": "Downgrade khi version mới làm output tệ đi?", "a": "Dùng uipro versions để xem release. Để rollback, cài CLI cũ bằng npm install -g uipro-cli@[version] rồi chạy uipro init --offline để giải nén asset nội bộ. Mở issue ở repo nếu bạn có repro." }
+            {
+              "q": "Skill update bao lâu một lần?",
+              "a": "Tác giả gốc quyết định lịch phát hành. Xem ghi chú phát hành; trang dịch không cam kết chu kỳ cập nhật."
+            },
+            {
+              "q": "Update có ghi đè MASTER.md?",
+              "a": "--persist ghi design-system/<project-slug>/MASTER.md trong --output-dir (mặc định là thư mục hiện tại). MASTER.md có sẵn được giữ lại trừ khi dùng --force. Hãy yêu cầu trợ lý đọc tệp này và phần ghi đè của trang; lưu tệp không bảo đảm mọi trợ lý tự tải nó."
+            },
+            {
+              "q": "Downgrade khi version mới làm output tệ đi?",
+              "a": "Kiểm tra phiên bản npm, cài đúng phiên bản ui-ux-pro-max-cli rồi làm mới skill đã chọn. Sao lưu sửa đổi và đọc trợ giúp của phiên bản đó; tag GitHub không đồng nhất với phiên bản npm."
+            }
           ]
         },
         {
           "title": "Sự cố thường gặp",
           "items": [
-            { "q": "AI assistant có vẻ không dùng skill.", "a": "Ba nguyên nhân hay gặp: (1) Assistant chạy trước khi cài skill — restart; (2) Sai target assistant — xem bảng Manual Install để biết folder assistant đó theo dõi; (3) Project root của assistant không phải nơi bạn chạy uipro init — đảm bảo cùng thư mục." },
-            { "q": "uipro: command not found.", "a": "npm global bin chưa trong PATH. npm config get prefix để biết bin path và thêm vào PATH, hoặc cài lại bằng npm install -g uipro-cli. Nếu bạn dùng sudo, xem câu hỏi sau." },
-            { "q": "Cài global báo EACCES.", "a": "Tránh sudo npm install -g. Dùng Node version manager (fnm, nvm) để Node ở dưới user. Tránh được vấn đề quyền và upgrade tương lai an toàn hơn." },
-            { "q": "search.py crash với JSON decode error.", "a": "Thường do asset bị hỏng do download dở. uipro update hoặc uipro init --offline để giải nén bản sạch." },
-            { "q": "Output dùng thư viện stack tôi không xài.", "a": "Truyền --stack [tên-stack] khi sinh, hoặc thêm dòng Stack vào MASTER.md. Không có tín hiệu, model rơi về HTML + Tailwind." }
+            {
+              "q": "AI assistant có vẻ không dùng skill.",
+              "a": "Ba nguyên nhân hay gặp: (1) Assistant chạy trước khi cài skill — restart; (2) Sai target assistant — xem bảng Manual Install để biết folder assistant đó theo dõi; (3) Project root của assistant không phải nơi bạn chạy uipro init — đảm bảo cùng thư mục."
+            },
+            {
+              "q": "uipro: command not found.",
+              "a": "npm global bin chưa trong PATH. npm config get prefix để biết bin path và thêm vào PATH, hoặc cài lại bằng npm install -g ui-ux-pro-max-cli. Nếu bạn dùng sudo, xem câu hỏi sau."
+            },
+            {
+              "q": "Cài global báo EACCES.",
+              "a": "Tránh sudo npm install -g. Dùng Node version manager (fnm, nvm) để Node ở dưới user. Tránh được vấn đề quyền và upgrade tương lai an toàn hơn."
+            },
+            {
+              "q": "search.py crash với JSON decode error.",
+              "a": "Ghi lại lệnh và lỗi đầy đủ, kiểm tra phiên bản và sửa đổi dữ liệu trước khi cài lại; lỗi JSON chưa chứng minh tải hỏng."
+            },
+            {
+              "q": "Output dùng thư viện stack tôi không xài.",
+              "a": "Với CLI 2.15.0, tìm stack riêng: python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"forms accessibility\" --stack shadcn. Nhánh --design-system ưu tiên hơn --stack; kết hợp hai cờ không lọc bộ tạo theo stack. Đưa cả hai kết quả cho trợ lý."
+            }
           ]
         }
       ],
-      "next": "Nếu chưa thấy câu hỏi của bạn, mở issue trên repo hoặc gửi feedback ở cuối trang."
+      "next": "Lỗi bản dịch hoặc trang web: dùng liên kết phản hồi của trang bên dưới. Lỗi skill hoặc CLI: dùng liên kết dự án gốc. Trang này không cung cấp hỗ trợ sản phẩm chính thức."
     }
   },
   "stats": {
-    "styles": "Phong cách UI",
+    "styles": "Phong cách có thể tìm kiếm",
     "palettes": "Bảng màu",
     "fonts": "Cặp font",
     "stacks": "Tech stack",
@@ -575,7 +996,7 @@
     "sections": {
       "styles": {
         "title": "Phong cách thiết kế",
-        "description": "Glassmorphism, Neumorphism, Minimalism, Brutalism, Aurora UI, AI-Native UI, và hơn 60 styles khác với colors, effects và framework compatibility.",
+        "description": "Đề xuất thông thường dùng [[activeStyles]] phong cách hoạt động. [[supplementalStyles]] phong cách bổ sung dành cho yêu cầu biến thể rõ ràng; [[deprecatedStyles]] mục ngừng dùng không tham gia xếp hạng thường. Mẫu landing page là dữ liệu riêng.",
         "tags": [
           "Glassmorphism",
           "Dark Mode",
@@ -584,7 +1005,7 @@
       },
       "colors": {
         "title": "Bảng màu",
-        "description": "161 hệ màu theo từng loại sản phẩm cho SaaS, E-commerce, Healthcare, Fintech và nhiều lĩnh vực khác. Bao gồm Primary, Secondary, CTA, Background, Text và Border.",
+        "description": "[[palettes]] hệ màu theo từng loại sản phẩm cho SaaS, E-commerce, Healthcare, Fintech và nhiều lĩnh vực khác. Bao gồm Primary, Secondary, CTA, Background, Text và Border.",
         "tags": [
           "SaaS",
           "Healthcare",
@@ -593,7 +1014,7 @@
       },
       "typography": {
         "title": "Typography",
-        "description": "57 cặp font với Google Fonts, cấu hình Tailwind và gợi ý theo mood.",
+        "description": "[[fonts]] cặp font với Google Fonts, cấu hình Tailwind và gợi ý theo mood.",
         "tags": [
           "Space Grotesk",
           "Inter",
@@ -633,7 +1054,7 @@
   "howItWorks": {
     "titlePrefix": "Cách ",
     "titleAccent": "hoạt động",
-    "subtitle": "Từ prompt đến UI sẵn sàng production qua 6 bước thông minh",
+    "subtitle": "Quy trình minh họa: từ prompt đến đề xuất và UI cần kiểm tra. Demo liên kết là tham khảo bên ngoài, không phải kết quả ghi lại của các bước này.",
     "steps": {
       "1": {
         "title": "Prompt của bạn",
@@ -681,7 +1102,7 @@
         },
         "ux": {
           "label": "UX RULE",
-          "value": "Use animations for loading only"
+          "value": "Tôn trọng tùy chọn giảm chuyển động"
         },
         "colorsLabel": "COLORS",
         "colors": [
@@ -726,16 +1147,14 @@
         ]
       },
       "6": {
-        "title": "Kết quả cuối cùng",
-        "href": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming",
-        "image": "https://ui-ux-pro-max-skill.nextlevelbuilder.io/thumbnails/pet-grooming.png",
+        "title": "Demo tham khảo bên ngoài",
         "imageAlt": "Pet Grooming & Spa Demo",
         "cta": "Xem demo"
       }
     }
   },
   "techStacks": {
-    "title": "Hỗ trợ 16 tech stack",
+    "title": "Hỗ trợ [[stacks]] tech stack",
     "subtitle": "Framework-specific best practices, patterns, và code examples từ dữ liệu upstream hiện tại.",
     "stacks": {
       "react": {
@@ -801,12 +1220,36 @@
       "threejs": {
         "title": "Three.js",
         "desc": "3D scenes, WebGL, interactions"
+      },
+      "javafx": {
+        "title": "JavaFX",
+        "desc": "Giao diện desktop"
+      },
+      "wpf": {
+        "title": "WPF",
+        "desc": "Ứng dụng Windows"
+      },
+      "winui": {
+        "title": "WinUI 3",
+        "desc": "Ứng dụng Windows"
+      },
+      "uwp": {
+        "title": "UWP",
+        "desc": "Ứng dụng Windows"
+      },
+      "avalonia": {
+        "title": "Avalonia",
+        "desc": "UI desktop đa nền tảng"
+      },
+      "uno": {
+        "title": "Uno Platform",
+        "desc": "UI desktop đa nền tảng"
       }
     }
   },
   "gallery": {
-    "title": "Thư viện 39 demo website",
-    "subtitle": "Khám phá các demo website thực tế được xây bằng UI UX Pro Max. Nhấp để xem demo trực tiếp.",
+    "title": "Tham khảo demo website",
+    "subtitle": "Tham khảo demo bên ngoài. Trang dịch không nhận là tác giả hay xác nhận cách tạo các ví dụ này.",
     "searchPlaceholder": "Search demos (name, style, category, prompt)…",
     "clearSearch": "Xóa tìm kiếm",
     "filters": {
@@ -837,7 +1280,7 @@
     "features": [
       "Mã nguồn mở",
       "Tương thích Claude Code",
-      "Sẵn sàng production"
+      "Bản dịch đa ngôn ngữ không chính thức"
     ]
   },
   "feedback": {
@@ -853,18 +1296,19 @@
     "issueTitlePrefix": "[Docs Feedback]"
   },
   "footer": {
-    "description": "Skill trí tuệ thiết kế cho Claude Code. Database có thể tìm kiếm gồm 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, 25 chart types và 161 reasoning rules.",
+    "description": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
     "resources": "Tài nguyên",
     "database": "Database",
     "about": "Về trang này",
     "privacy": "Quyền riêng tư",
     "terms": "Điều khoản",
     "contact": "Liên hệ",
-    "builtWith": "Xây dựng bằng React + Tailwind CSS (bởi UI UX Pro Max)"
+    "builtWith": "Nhóm duy trì bản dịch độc lập · Bản dịch đa ngôn ngữ không chính thức",
+    "upstreamCredit": "Dự án gốc: Next Level Builder"
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Ghi chú, thử nghiệm và bài học khi thiết kế cùng UI UX Pro Max Skill.",
+    "subtitle": "Ghi chú học tập và prompt được trang tổng hợp độc lập, không phải thông báo chính thức.",
     "allTags": "Tất cả",
     "empty": "Chưa có bài viết — hãy quay lại sau.",
     "minRead": "Đọc {n} phút",
@@ -872,13 +1316,13 @@
     "fallbackBanner": "Bài viết này chưa được dịch — đang hiển thị bản tiếng Anh.",
     "tocTitle": "Trong bài viết này",
     "ctaEyebrow": "Thích bài này?",
-    "ctaTitle": "Thử Skill mà Claude đang dùng",
-    "ctaDescription": "UI UX Pro Max đi kèm 50 styles, 21 palettes, 50 font pairings và 99 UX guidelines — một bộ chọn lọc để Claude không phải nội suy giá trị trung bình của cả web.",
-    "ctaTry": "Cài đặt Skill",
+    "ctaTitle": "Khám phá skill gốc",
+    "ctaDescription": "Bản phát hành gốc có [[styles]] phong cách tìm kiếm được ([[activeStyles]] hoạt động, [[supplementalStyles]] bổ sung), [[palettes]] bảng màu, [[fonts]] cặp phông, [[ux]] hướng dẫn UX và [[stacks]] stack. Đây là dữ liệu của dự án gốc, không phải do trang này tạo ra.",
+    "ctaTry": "Xem dự án gốc",
     "ctaRss": "Đăng ký RSS",
     "ctaMore": "Bài khác",
     "latestTitle": "Mới nhất từ blog",
-    "latestSubtitle": "Ghi chú thực địa và kỹ thuật Prompt từ team và cộng đồng.",
+    "latestSubtitle": "Ghi chú học tập và prompt được trang tổng hợp độc lập, không phải thông báo chính thức.",
     "seeAll": "Xem tất cả bài viết"
   },
   "tutorials": {
@@ -903,5 +1347,17 @@
         "description": "Từ một ý tưởng mơ hồ đến landing page xuất bản được, qua 5 bước."
       }
     }
+  },
+  "provenance": {
+    "identity": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
+    "maintainer": "Nhóm duy trì bản dịch độc lập",
+    "reference": "Tài liệu gốc",
+    "checked": "Đã kiểm tra",
+    "siteFeedback": "Phản hồi bản dịch / website",
+    "upstreamFeedback": "Vấn đề skill / CLI",
+    "pending": "Tài liệu học trên trang; nguồn xuất bản ban đầu chưa xác minh, không được giới thiệu là bản dịch chính thức.",
+    "translation": "Nguồn bản dịch",
+    "editorial": "Ghi chú học tập và prompt được trang tổng hợp độc lập, không phải thông báo chính thức.",
+    "docsNote": "Tài liệu dịch và tổng hợp không chính thức, đối chiếu với gói CLI đã phát hành."
   }
 }

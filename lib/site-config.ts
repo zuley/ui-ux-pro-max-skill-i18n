@@ -4,8 +4,10 @@
  * import from here instead of hardcoding the domain.
  */
 export const SITE_URL = 'https://ui-ux-pro-max-skill.com';
+export const SITE_REPOSITORY_URL = 'https://github.com/zuley/ui-ux-pro-max-skill-i18n';
+export const SITE_ISSUES_URL = `${SITE_REPOSITORY_URL}/issues`;
 export const SITE_NAME = 'UI UX Pro Max Skill — Unofficial Translation';
-export const SITE_PUBLISHER_NAME = 'Team';
+export const SITE_PUBLISHER_NAME = 'Unofficial Translation Maintainers';
 export const OFFICIAL_PROJECT_URL =
   'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill';
 
@@ -16,7 +18,7 @@ export const DEFAULT_OG_IMAGE = {
   url: DEFAULT_OG_IMAGE_URL,
   width: 1200,
   height: 630,
-  alt: 'UI UX Pro Max Skill — design intelligence for AI coding assistants',
+  alt: 'UI UX Pro Max Skill — Unofficial Multilingual Translation',
   type: 'image/png'
 };
 

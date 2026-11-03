@@ -484,10 +484,7 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
                   <div>
                     <div className="text-gray-500 dark:text-gray-400 mb-2"># {t('docs.cli.cliInstall.step1.title')}</div>
                     <div className="text-gray-900 dark:text-gray-100">
-                      <span className="text-purple-600 dark:text-purple-400">npm</span>{' '}
-                      <span className="text-blue-600 dark:text-blue-400">install</span>{' '}
-                      <span className="text-pink-600 dark:text-pink-400">-g</span>{' '}
-                      <span className="text-cyan-600 dark:text-cyan-400">uipro-cli</span>
+                      {t('docs.cli.cliInstall.step1.code')}
                     </div>
                   </div>
                   <div>
@@ -529,6 +526,17 @@ export function getDocDefinition(slug: DocSlug, t: Translator): { toc: TocItem[]
             </h2>
             <div className="space-y-4">
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{t('docs.cli.manualInstall.description')}</p>
+              <ol className="list-decimal space-y-4 pl-6 text-gray-600 dark:text-gray-400">
+                {(t.raw('docs.cli.manualInstall.steps') as { text: string; code: string }[]).map((step, index) => (
+                  <li key={index} className="leading-relaxed">
+                    <p>{step.text}</p>
+                    {step.code && (
+                      <pre className="mt-2 overflow-x-auto rounded-lg bg-gray-100 p-4 text-sm text-gray-900 dark:bg-gray-900 dark:text-gray-100"><code>{step.code}</code></pre>
+                    )}
+                  </li>
+                ))}
+              </ol>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{t('docs.cli.manualInstall.otherAssistants')}</p>
               <div className="rounded-xl border border-gray-200/70 dark:border-white/10 overflow-hidden">
                 <table className="w-full">
                   <thead className="bg-gray-100/50 dark:bg-white/5">

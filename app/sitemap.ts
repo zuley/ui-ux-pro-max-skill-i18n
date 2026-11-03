@@ -78,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const slug of slugs) {
     const path = `/blog/${slug}`;
     const meta = postBySlug.get(slug);
-    const lastModified = meta ? new Date(meta.frontmatter.date) : undefined;
+    const lastModified = meta ? new Date(meta.frontmatter.updated ?? meta.frontmatter.date) : undefined;
     for (const locale of routing.locales) {
       entries.push({
         url: absoluteSiteUrl(path, locale),
@@ -106,7 +106,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const steps = await getSeriesSteps(routing.defaultLocale as Locale, s.slug);
     for (const step of steps) {
       const stepPath = `/tutorials/${s.slug}/${step.stepSlug}`;
-      const lastModified = new Date(step.frontmatter.date);
+      const lastModified = new Date(step.frontmatter.updated ?? step.frontmatter.date);
       for (const locale of routing.locales) {
         entries.push({
           url: absoluteSiteUrl(stepPath, locale),

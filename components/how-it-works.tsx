@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { DEMO_BASE_URL } from '@/lib/site-config';
 
 export function HowItWorks() {
   const t = useTranslations('howItWorks');
@@ -142,13 +143,13 @@ export function HowItWorks() {
               <h3 className="font-heading text-base font-bold text-gray-900 dark:text-white">{t('steps.6.title')}</h3>
             </div>
             <a
-              href={t('steps.6.href')}
+              href={`${DEMO_BASE_URL}/demo/pet-grooming`}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="block relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
             >
               <Image
-                src={t('steps.6.image')}
+                src="/thumbnails/pet-grooming.avif"
                 alt={t('steps.6.imageAlt')}
                 fill
                 sizes="(min-width: 768px) 768px, 92vw"

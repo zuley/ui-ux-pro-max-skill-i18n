@@ -1,3 +1,6 @@
+import { absoluteSiteUrl } from '@/lib/site-config';
+import { localizedAlternates } from '@/lib/metadata';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from "next";
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -22,7 +25,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const currentUrl = locale === 'en' ? SITE_URL : `${SITE_URL}/${locale}`;
+  const currentUrl = absoluteSiteUrl('/', locale);
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -30,22 +33,12 @@ export async function generateMetadata({
     title: `${t('common.navTitle')} — ${t('common.description')}`,
     description: t('common.metaDescription'),
     keywords: t('common.keywords'),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': SITE_URL,
-        'en': SITE_URL,
-        'zh': `${SITE_URL}/zh`,
-        'vi': `${SITE_URL}/vi`,
-        'ja': `${SITE_URL}/ja`,
-        'hi': `${SITE_URL}/hi`,
-      },
-    },
+    alternates: localizedAlternates('/', locale),
     openGraph: {
       title: `${t('common.navTitle')} — ${t('common.description')}`,
       description: t('common.metaDescription'),
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale: locale,
       type: 'website',
       images: [DEFAULT_OG_IMAGE],

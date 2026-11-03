@@ -1,3 +1,5 @@
+import { getTranslations } from 'next-intl/server';
+import { SITE_NAME } from '@/lib/site-config';
 import { prefixedLocales } from '@/i18n/routing';
 import { getAllPosts } from '@/lib/content/blog';
 import { getAuthor } from '@/lib/authors';
@@ -28,6 +30,7 @@ export async function GET(
   { params }: { params: Promise<{ locale: string }> }
 ) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'blog' });
   const posts = await getAllPosts(locale as Locale);
   const channelLink = absoluteSiteUrl('/blog', locale);
   const pubDate = posts.length > 0
@@ -39,7 +42,7 @@ export async function GET(
   const itemsXml = posts
     .map((post) => {
       const url = absoluteSiteUrl(`/blog/${post.slug}`, locale);
-      const author = getAuthor(post.frontmatter.author);
+      const author = getAuthor(post.frontmatter.author, locale);
       const postDate = new Date(post.frontmatter.date).toUTCString();
       return `    <item>
       <title>${escapeXml(post.frontmatter.title)}</title>
@@ -47,7 +50,7 @@ export async function GET(
       <guid isPermaLink="true">${url}</guid>
       <description>${escapeXml(post.frontmatter.summary)}</description>
       <pubDate>${postDate}</pubDate>
-      <dc:creator>${escapeXml(author.name)}</dc:creator>${post.frontmatter.tags
+      <dc:contributor>${escapeXml(author.name)}</dc:contributor>${post.frontmatter.tags
         .map((tag) => `\n      <category>${escapeXml(tag)}</category>`)
         .join('')}
     </item>`;
@@ -57,9 +60,9 @@ export async function GET(
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>UI UX Pro Max Skill — Blog</title>
+    <title>${escapeXml(SITE_NAME)} — ${escapeXml(t('title'))}</title>
     <link>${channelLink}</link>
-    <description>Notes, experiments, and field reports from designing with the UI UX Pro Max Skill.</description>
+    <description>${escapeXml(t('subtitle'))}</description>
     <language>${locale}</language>
     <lastBuildDate>${pubDate}</lastBuildDate>
     <atom:link href="${absoluteSiteUrl('/blog/rss.xml', locale)}" rel="self" type="application/rss+xml" />

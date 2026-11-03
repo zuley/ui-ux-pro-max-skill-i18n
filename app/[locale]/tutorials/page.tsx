@@ -1,3 +1,5 @@
+import { localizedAlternates } from '@/lib/metadata';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { prefixedLocales } from '@/i18n/routing';
@@ -32,22 +34,12 @@ export async function generateMetadata({
   return {
     title: `${t('tutorials.title')} | UI UX Pro Max Skill`,
     description: t('tutorials.subtitle'),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/tutorials`,
-        en: `${SITE_URL}/tutorials`,
-        zh: `${SITE_URL}/zh/tutorials`,
-        vi: `${SITE_URL}/vi/tutorials`,
-        ja: `${SITE_URL}/ja/tutorials`,
-        hi: `${SITE_URL}/hi/tutorials`,
-      },
-    },
+    alternates: localizedAlternates('/tutorials', locale),
     openGraph: {
       title: `${t('tutorials.title')} | UI UX Pro Max Skill`,
       description: t('tutorials.subtitle'),
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale,
       type: 'website',
       images: [{ ...DEFAULT_OG_IMAGE, alt: t('tutorials.subtitle') }],

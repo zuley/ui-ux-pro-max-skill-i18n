@@ -12,6 +12,9 @@ export function ArticleJsonLd({
   description,
   datePublished,
   dateModified = datePublished,
+  contentKind,
+  sourceUrl,
+  sourceAuthor,
   authorName,
   authorType = 'Person',
   authorUrl,
@@ -25,6 +28,9 @@ export function ArticleJsonLd({
   description: string;
   datePublished: string;
   dateModified?: string;
+  contentKind: 'translation' | 'editorial' | 'unverified';
+  sourceUrl?: string;
+  sourceAuthor?: string;
   authorName: string;
   authorType?: 'Person' | 'Organization';
   authorUrl?: string;
@@ -41,7 +47,7 @@ export function ArticleJsonLd({
     datePublished,
     dateModified,
     inLanguage,
-    author: {
+    [contentKind === 'editorial' ? 'author' : 'editor']: {
       '@type': authorType,
       name: authorName,
       ...(authorUrl ? { url: authorUrl } : {}),
@@ -57,6 +63,10 @@ export function ArticleJsonLd({
       },
     },
   };
+  if (contentKind === 'translation' && sourceUrl && sourceAuthor) {
+    data.translationOfWork = { '@type': 'CreativeWork', url: sourceUrl, author: { '@type': 'Person', name: sourceAuthor } };
+    data.translator = data.editor;
+  }
   if (keywords && keywords.length > 0) data.keywords = keywords.join(', ');
   if (image) data.image = image;
 

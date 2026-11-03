@@ -5,7 +5,13 @@ date: 2026-05-22
 tags: [tutorial, design-system, prompt]
 author: team
 step: 1
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
+
+Dùng script gốc với --domain style, --domain color hoặc --domain typography. Kiểm tra độ phù hợp của kết quả; trang không cung cấp danh mục thiết kế riêng.
+
 
 Một landing page là một màn hình với một nhiệm vụ. Phần khó nhất không
 phải là viết prompt — mà là **quyết định trang đó phải có cảm giác như
@@ -24,7 +30,7 @@ làm: mặc định về những pattern phổ biến nhất hai năm gần đâ
 hợp lý khi bạn không có gì để dựa vào, nhưng nó là sai khi **chính bạn**
 là người có thương hiệu.
 
-Skill mang sẵn **50 style** và **21 palette** chính vì lý do này:
+Skill mang sẵn **các style** và **các palette** chính vì lý do này:
 việc chọn nên là một thao tác chọn từ bộ đã tuyển, không phải nội
 suy cảm tính.
 
@@ -36,8 +42,8 @@ suy cảm tính.
   items={[
     { id: 'audience', label: 'Trang này dành cho ai? (một câu, không phải tài liệu persona)' },
     { id: 'feeling', label: 'Khách phải cảm thấy gì trong 2 giây đầu? (một tính từ)' },
-    { id: 'style', label: 'Trong 50 style, bạn chọn cái nào? Viết tên ra.' },
-    { id: 'palette', label: 'Trong 21 palette, cái nào? Viết tên ra.' },
+    { id: 'style', label: 'Trong các style, bạn chọn cái nào? Viết tên ra.' },
+    { id: 'palette', label: 'Trong các palette, cái nào? Viết tên ra.' },
     { id: 'forbidden', label: 'Ba thứ rõ ràng bạn không muốn có trên trang này.' }
   ]}
 />
@@ -50,14 +56,13 @@ không phải là cái gì**.
 
 Chạy tìm kiếm trong database và đọc các style card thực, đừng đoán:
 
+Sau khi cài skill Claude, chạy lệnh trong terminal tại thư mục dự án; trợ lý khác dùng đường dẫn riêng. Truy vấn tìm bằng từ khóa, không lọc tag. Xem kết quả trước khi chọn.
+
 <CodeBlock
   title="Xem các style"
   language="bash"
-  code={`# Trong Claude Code
-+style list
-
-# Hoặc lọc theo tag
-+style list --tag editorial --tag asymmetric`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "editorial asymmetric" --domain style`}
 />
 
 Chọn **một**, không phải ba. Mục đích của bộ đã tuyển là phần khó —
@@ -65,10 +70,7 @@ Chọn **một**, không phải ba. Mục đích của bộ đã tuyển là ph�
 chọn duy nhất**, không phải lấy trung bình của chúng.
 
 <Callout tone="info" title="Một mặc định tốt nếu bạn bí">
-  Cho landing page B2B SaaS, "Editorial Brutalist" + palette "Slate
-  Ink" là một combo mạnh ra khỏi hộp: tiêu đề display serif, nhiều
-  khoảng trắng, một accent color duy nhất, không gradient trang trí.
-  Trông như có người ra quyết định ngay cả trước khi bạn thêm nội dung.
+  Có thể thử hướng tối giản cho trang B2B SaaS rồi so sánh kết quả. Tên style và từ khóa sản phẩm là đầu vào tìm kiếm, không phải cặp preset đã thử nghiệm. Chọn phông và màu theo nội dung và thương hiệu.
 </Callout>
 
 ## Cách chọn palette
@@ -81,8 +83,8 @@ viết trong checklist ở trên.
 <CodeBlock
   title="Xem palette"
   language="bash"
-  code={`+palette list --style editorial-brutalist
-+palette show slate-ink`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --domain color
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --design-system`}
 />
 
 ## Bước này kết thúc thì bạn có gì

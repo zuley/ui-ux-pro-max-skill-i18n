@@ -1,4 +1,5 @@
 import { getRequestConfig } from 'next-intl/server';
+import { resolveCatalogMessages } from '@/lib/upstream-content';
 import { routing } from './routing';
 
 type AppLocale = (typeof routing.locales)[number];
@@ -12,7 +13,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: (await import(`../messages/${locale}.json`)).default,
+    messages: resolveCatalogMessages((await import(`../messages/${locale}.json`)).default),
     timeZone: 'UTC',
     now: new Date()
   };

@@ -1,3 +1,4 @@
+import siteCopy from '@/lib/site-copy.json';
 /**
  * Single source of truth for content authors.
  *
@@ -32,7 +33,8 @@ export const AUTHORS: Record<string, Author> = {
 
 export const DEFAULT_AUTHOR_ID = 'team';
 
-export function getAuthor(id?: string | null): Author {
-  if (id && AUTHORS[id]) return AUTHORS[id];
-  return AUTHORS[DEFAULT_AUTHOR_ID]!;
+export function getAuthor(id?: string | null, locale = 'en'): Author {
+  const author = (id && AUTHORS[id]) || AUTHORS[DEFAULT_AUTHOR_ID]!;
+  const copy = siteCopy[locale as keyof typeof siteCopy] ?? siteCopy.en;
+  return author.id === 'team' ? { ...author, name: copy.maintainer } : author;
 }

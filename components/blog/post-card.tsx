@@ -18,7 +18,7 @@ export function PostCard({
   minReadLabel: (n: number) => string;
 }) {
   const { frontmatter } = post;
-  const author = getAuthor(frontmatter.author);
+  const author = getAuthor(frontmatter.author, locale);
 
   return (
     <Link

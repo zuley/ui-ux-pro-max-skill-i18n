@@ -4,6 +4,9 @@ summary: "Most AI-generated dark mode is just light mode with the saturation pul
 date: 2026-05-27
 tags: [dark-mode, design-system, prompt]
 author: team
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
 
 You ask Claude for "the same page in dark mode" and it gives you something
@@ -125,8 +128,4 @@ its own opinions.
 
 ---
 
-If you want the curated version of this — palettes that already have
-dark-mode siblings designed in parallel, not derived — that is what
-`+palette show <name> --variant dark` ships. The 21 palettes each have
-a hand-tuned dark variant, so you do not have to write the prompt
-above from scratch every time.
+For palette suggestions, run the upstream search script with --domain color. A palette result is not a verified dark-theme variant: define semantic tokens for each theme and test contrast on the actual rendered surfaces.

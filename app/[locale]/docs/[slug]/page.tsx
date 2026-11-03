@@ -1,3 +1,6 @@
+import { localizedAlternates } from '@/lib/metadata';
+import { ContentProvenance } from '@/components/content/content-provenance';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
@@ -11,8 +14,7 @@ import { BreadcrumbJsonLd } from '@/components/content/breadcrumb-jsonld';
 import {
   absoluteSiteUrl,
   DEFAULT_OG_IMAGE,
-  DEFAULT_TWITTER_IMAGE_URL,
-  SITE_URL
+  DEFAULT_TWITTER_IMAGE_URL
 } from '@/lib/site-config';
 
 type PageParams = { locale: string; slug: string };
@@ -36,7 +38,7 @@ export async function generateMetadata({
   if (!isDocSlug(slug)) return {};
   const nav = docsNav.find((n) => n.slug === slug)!;
 
-  const currentUrl = locale === 'en' ? `${SITE_URL}/docs/${slug}` : `${SITE_URL}/${locale}/docs/${slug}`;
+  const currentUrl = absoluteSiteUrl(`/docs/${slug}`, locale);
   const pageTitle = `${t(nav.titleKey)} | UI UX Pro Max Skill`;
   const pageDescription = `${t(nav.descriptionKey)} - ${t('common.description')}.`;
 
@@ -44,22 +46,12 @@ export async function generateMetadata({
     title: pageTitle,
     description: pageDescription,
     keywords: `UI UX Pro Max Skill, ${t(nav.titleKey)}, Agent Skills, Claude Code, ${t('common.description')}`,
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'x-default': `${SITE_URL}/docs/${slug}`,
-        'en': `${SITE_URL}/docs/${slug}`,
-        'zh': `${SITE_URL}/zh/docs/${slug}`,
-        'vi': `${SITE_URL}/vi/docs/${slug}`,
-        'ja': `${SITE_URL}/ja/docs/${slug}`,
-        'hi': `${SITE_URL}/hi/docs/${slug}`,
-      },
-    },
+    alternates: localizedAlternates(`/docs/${slug}`, locale),
     openGraph: {
       title: pageTitle,
       description: pageDescription,
       url: currentUrl,
-      siteName: 'UI UX Pro Max Skill',
+      siteName: SITE_NAME,
       locale: locale,
       type: 'article',
       images: [{ ...DEFAULT_OG_IMAGE, alt: pageDescription }],
@@ -120,6 +112,7 @@ export default async function DocPage({
           {t(current.descriptionKey)}
         </p>
 
+        <ContentProvenance locale={locale} />
         {content}
 
         <div className="mt-10 pt-6 border-t border-gray-200/70 dark:border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3">

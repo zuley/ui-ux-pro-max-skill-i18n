@@ -5,7 +5,13 @@ date: 2026-05-22
 tags: [tutorial, design-system, prompt]
 author: team
 step: 1
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
+
+मूल खोज स्क्रिप्ट में --domain style, --domain color या --domain typography दें। परिणाम की उपयुक्तता जाँचें; साइट अपना डिज़ाइन कैटलॉग नहीं देती।
+
 
 Landing page एक screen है, जिसका एक काम है। सबसे कठिन भाग prompt लिखना नहीं—**prompting शुरू करने से पहले तय करना है कि page कैसा महसूस हो**। यह चरण छोड़ेंगे तो मॉडल खाली जगह अपनी house style से भर देगा और एक और purple-gradient hero बन जाएगा।
 
@@ -15,7 +21,7 @@ Landing page एक screen है, जिसका एक काम है। �
 
 Claude (या किसी मॉडल) से “मेरे SaaS landing page की style चुनो” कहने पर वह लगभग वही करता है जो taste से रहित junior designer करेगा: पिछले दो वर्षों के सबसे अधिक देखे गए patterns चुनना। कोई और आधार न हो तो यह उचित है; लेकिन brand **आपका** हो तो यह गलत है।
 
-Skill में **50 styles** और **21 palettes** इसलिए हैं कि चुनाव curated pick हो, vibes पर आधारित interpolation नहीं।
+Skill में **catalog styles** और **catalog palettes** इसलिए हैं कि चुनाव curated pick हो, vibes पर आधारित interpolation नहीं।
 
 ## Prompt से पहले तीन बातें तय करें
 
@@ -25,8 +31,8 @@ Skill में **50 styles** और **21 palettes** इसलिए हैं �
   items={[
     { id: 'audience', label: 'यह page किसके लिए है? (एक sentence, persona document नहीं)' },
     { id: 'feeling', label: 'पहले 2 seconds में visitor को क्या महसूस हो? (एक adjective)' },
-    { id: 'style', label: '50 styles में से कौन-सी चाहिए? नाम लिखें।' },
-    { id: 'palette', label: '21 palettes में से कौन-सी? नाम लिखें।' },
+    { id: 'style', label: 'catalog styles में से कौन-सी चाहिए? नाम लिखें।' },
+    { id: 'palette', label: 'catalog palettes में से कौन-सी? नाम लिखें।' },
     { id: 'forbidden', label: 'तीन चीज़ें जो इस page पर साफ़ तौर पर नहीं चाहिए।' }
   ]}
 />
@@ -37,20 +43,19 @@ Checklist तब तक मामूली लगती है जब तक आ
 
 अनुमान लगाने के बजाय database search चलाकर असली style cards पढ़ें:
 
+Claude skill इंस्टॉल करने के बाद प्रोजेक्ट root के terminal में चलाएँ; दूसरे सहायकों का पथ अलग है। ये keyword खोज हैं, tag फ़िल्टर नहीं। परिणाम देखकर शैली और रंग चुनें।
+
 <CodeBlock
   title="Styles देखें"
   language="bash"
-  code={`# Inside Claude Code
-+style list
-
-# Or filter by attribute
-+style list --tag editorial --tag asymmetric`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism" --domain style
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "editorial asymmetric" --domain style`}
 />
 
 तीन नहीं, **एक** चुनें। Curated set का अर्थ है taste पर कठिन निर्णय पहले ही हो चुका है—आपका काम एक विकल्प के प्रति commit करना है, उनका औसत बनाना नहीं।
 
 <Callout tone="info" title="अटकने पर उपयोगी default">
-  B2B SaaS landing page के लिए “Editorial Brutalist” + “Slate Ink” palette मज़बूत ready-made combination है: serif display headings, भरपूर whitespace, केवल एक accent color और decorative gradients नहीं। Content जोड़ने से पहले भी यह सोच-समझकर बना लगता है।
+  B2B SaaS के लिए minimal दिशा आज़माकर खोज परिणाम तुलना करें। Style नाम और उत्पाद शब्द खोज inputs हैं, जाँची हुई preset जोड़ी नहीं। सामग्री और ब्रांड के अनुसार फ़ॉन्ट और रंग चुनें।
 </Callout>
 
 ## Palette कैसे चुनें
@@ -60,8 +65,8 @@ Palette का निर्णय style के बाद आता है। क
 <CodeBlock
   title="Palettes देखें"
   language="bash"
-  code={`+palette list --style editorial-brutalist
-+palette show slate-ink`}
+  code={`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --domain color
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "SaaS" --design-system`}
 />
 
 ## इस चरण के अंत में हमारे पास क्या है

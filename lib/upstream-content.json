@@ -1,0 +1,22 @@
+{
+  "release": "v2.15.0",
+  "package": "ui-ux-pro-max-cli",
+  "packageVersion": "2.15.0",
+  "checkedAt": "2026-11-03",
+  "catalogVerifiedAt": "2026-08-13",
+  "counts": {
+    "styles": 79,
+    "activeStyles": 50,
+    "supplementalStyles": 29,
+    "deprecatedStyles": 9,
+    "products": 192,
+    "palettes": 192,
+    "fonts": 74,
+    "ux": 119,
+    "stacks": 22,
+    "charts": 25,
+    "reasoning": 192,
+    "landing": 34,
+    "stackGuidelines": 1260
+  }
+}

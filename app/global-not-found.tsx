@@ -4,7 +4,7 @@ import { fontBodyClassName } from '@/lib/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '404 | UI UX Pro Max Skill',
+  title: '404 | UI UX Pro Max Skill — Unofficial Translation',
   description: 'The requested page could not be found.'
 };
 

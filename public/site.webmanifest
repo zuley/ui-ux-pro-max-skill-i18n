@@ -1,7 +1,7 @@
 {
-  "name": "UI UX Pro Max Skill",
-  "short_name": "UI UX Pro Max",
-  "description": "Design intelligence for Claude Code, Cursor, Windsurf, and other AI assistants. 67 UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and more.",
+  "name": "UI UX Pro Max Skill \u2014 Unofficial Translation",
+  "short_name": "UI UX Translations",
+  "description": "Independent multilingual translations and learning notes about UI UX Pro Max Skill. Not affiliated with the original project.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -14,5 +14,9 @@
     }
   ],
   "lang": "en",
-  "categories": ["developer tools", "design", "productivity"]
+  "categories": [
+    "developer tools",
+    "design",
+    "productivity"
+  ]
 }

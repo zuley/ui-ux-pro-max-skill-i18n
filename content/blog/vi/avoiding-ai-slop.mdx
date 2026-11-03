@@ -1,25 +1,15 @@
 ---
 title: "Tránh AI slop: 7 kỹ thuật prompt để giao diện của bạn không còn giống như do AI làm"
-summary: "Gradient tím, font Inter, ba thẻ trên nền trắng — đó là chữ ký thị giác của giao diện do AI tạo. Bài này nói cách chúng tôi bảo Skill thoát khỏi khuôn mẫu đó và làm ra cái gì đó thực sự có người quyết định."
+summary: "Tham chiếu cụ thể, ràng buộc rõ ràng và lựa chọn có chủ đích có thể giúp UI bớt chung chung. Bài viết tổng hợp bảy kỹ thuật prompt để thử và kiểm tra trong dự án của bạn."
 date: 2026-05-22
 tags: [prompt, design-system, claude-skills]
 author: team
+updated: 2026-11-03
+contentKind: unverified
+reviewedAt: 2026-11-03
 ---
 
-Nếu bạn đã từng dùng trợ lý AI để tạo vài giao diện, hẳn bạn quá quen
-với cảnh này: ba thẻ tính năng trên nền trắng, Hero gradient từ tím sang
-chàm, tiêu đề `Inter` đặt trên một câu phụ hứa hẹn "thay đổi cách bạn
-làm việc". Trong nội bộ chúng tôi gọi cái này là **AI slop** — chữ ký
-thị giác của một giao diện mà **chẳng ai thực sự đưa ra quyết định nào**.
-
-Không phải lỗi của model. Khi bạn yêu cầu "một landing page hiện đại",
-bạn đang yêu cầu nó nội suy từ trung bình của mọi thứ nó từng thấy. Và
-trung bình của web hiện đại chính xác là cái này: an toàn, mềm mại, bóng
-bẩy, và quên ngay sau khi rời mắt.
-
-Bài này liệt kê 7 kỹ thuật prompt chúng tôi liên tục dùng khi muốn output
-trông như **có một designer thực sự ra quyết định**, chứ không phải như
-một model lấy trung bình của một nghìn cái.
+Tham chiếu cụ thể, ràng buộc rõ ràng và lựa chọn có chủ đích có thể giúp UI bớt chung chung. Bài viết tổng hợp bảy kỹ thuật prompt để thử và kiểm tra trong dự án của bạn.
 
 ## 1. Neo vào một tham chiếu cụ thể, không phải "hiện đại"
 
@@ -54,14 +44,9 @@ tác dụng hơn ba đoạn chỉ dẫn tích cực.
 
 ## 3. Chọn từ một bộ đã được tuyển, đừng để AI tự chọn
 
-Skill mang sẵn **50 style**, **21 palette** và **50 cặp font** chính vì
-lý do này: bạn không nên giao việc chọn màu và chữ cho một lần nội suy
-cảm tính. Khi bạn yêu cầu model **chọn**, bạn nhận được trung bình. Khi
-bạn yêu cầu nó **áp dụng một mục cụ thể từ một bộ đã tuyển**, bạn nhận
-được thứ đã có người thẩm định là có gu.
+Dùng script gốc với --domain style, --domain color hoặc --domain typography. Kiểm tra độ phù hợp của kết quả; trang không cung cấp danh mục thiết kế riêng.
 
-Đây chính là lý do `+style`, `+palette`, `+font` tồn tại như những núm
-vặn rõ ràng. Dùng chúng đi.
+Dùng script gốc với --domain style, --domain color hoặc --domain typography. Kiểm tra độ phù hợp của kết quả; trang không cung cấp danh mục thiết kế riêng.
 
 ## 4. Yêu cầu mỗi màn một quyết định thị giác mạnh
 

@@ -9,7 +9,7 @@
 - **i18n**：使用 `next-intl` v4，`localePrefix: 'as-needed'`。默认语言 `en` 无前缀。支持语言：`en`、`zh`、`vi`、`ja`、`hi`。无 middleware（与 `output: 'export'` 不兼容），语言切换通过链接完成。
 - **构建后脚本**（`scripts/postbuild.mjs`）：只做两件事——(1) 防止 `out/en` 重复内容的守卫检查；(2) 为 Next 16 静态导出生成 segment-prefetch 别名文件（修复静态托管下 `<Link>` 预取 404）。升级 Next 后请验证该 hack 是否仍然必要。
 - **站点 URL**：所有绝对 URL（metadata、sitemap、RSS、JSON-LD、gallery 链接）统一从 `lib/site-config.ts` 导入（`SITE_URL` / `DEMO_BASE_URL`），不要硬编码域名。
-- **404**：当前为 Next 默认导出的 `404.html`（wrangler `not_found_handling = "404-page"`）。仓库中没有自定义 `not-found.tsx`。
+- **404**：由 `app/global-not-found.tsx` 导出 `404.html`（wrangler `not_found_handling = "404-page"`），使用共享的非官方翻译站身份文案。
 - **安全响应头**：`public/_headers` 由 Cloudflare Workers Static Assets 提供服务，修改响应头在此文件进行。
 
 ## 添加新语言
@@ -38,3 +38,10 @@
 - 无 Prettier/Biome——仅依赖 ESLint
 - 路径别名：`@/*` 映射到项目根目录（`./`）
 - 组件放在 `components/`，工具函数放在 `lib/`
+
+## 内容身份与上游同步
+
+- 本站是非官方多语言翻译站，不是技能或 CLI 的作者；“我们”仅指本站翻译与维护。
+- 上游发布包基线与目录数量统一维护在 `lib/upstream-content.json`；语言文件使用 `[[styles]]` 等目录 token，由 `resolveCatalogMessages` 解析。
+- 来源未核实的学习材料不得标成官方译文；文章出处状态记录在 frontmatter。本站问题与上游问题使用各自的反馈入口。
+- 内容修改运行 `pnpm run check:content`、lint 与静态构建，并验证五语言页面。

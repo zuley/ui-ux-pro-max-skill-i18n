@@ -1,5 +1,7 @@
 'use client';
 
+import { UPSTREAM } from '@/lib/upstream-content';
+import { OFFICIAL_PROJECT_URL } from '@/lib/site-config';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
@@ -13,6 +15,7 @@ import {
 
 export function Footer() {
   const t = useTranslations('footer');
+  const tStats = useTranslations('stats');
   const tCommon = useTranslations('common');
   const tNav = useTranslations('navbar');
   const locale = useLocale();
@@ -61,12 +64,9 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-semibold text-gray-900 dark:text-white mb-4">{t('database')}</h3>
             <ul className="space-y-3">
-              <li className="text-gray-600 dark:text-gray-400">67 UI Styles</li>
-              <li className="text-gray-600 dark:text-gray-400">161 Color Palettes</li>
-              <li className="text-gray-600 dark:text-gray-400">57 Font Pairings</li>
-              <li className="text-gray-600 dark:text-gray-400">25 Chart Types</li>
-              <li className="text-gray-600 dark:text-gray-400">16 Tech Stacks</li>
-              <li className="text-gray-600 dark:text-gray-400">161 Reasoning Rules</li>
+              {(['styles', 'palettes', 'fonts', 'charts', 'stacks', 'reasoning'] as const).map((key) => (
+                <li key={key} className="text-gray-600 dark:text-gray-400">{UPSTREAM.counts[key]} {tStats(key)}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -77,6 +77,9 @@ export function Footer() {
               <span key={idx} className="block">{line}</span>
             ))}
           </p>
+          <a href={OFFICIAL_PROJECT_URL} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-gray-600 underline underline-offset-4 dark:text-gray-300">
+            {t('upstreamCredit')}
+          </a>
         </div>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+import { localizedAlternates } from '@/lib/metadata';
+import { SITE_NAME } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { PageContent } from '@/components/page-content';
@@ -15,22 +17,12 @@ export const metadata: Metadata = {
   title: `${messages.common.navTitle} — ${messages.common.description}`,
   description: messages.common.metaDescription,
   keywords: messages.common.keywords,
-  alternates: {
-    canonical: SITE_URL,
-    languages: {
-      'x-default': SITE_URL,
-      en: SITE_URL,
-      zh: `${SITE_URL}/zh`,
-      vi: `${SITE_URL}/vi`,
-      ja: `${SITE_URL}/ja`,
-      hi: `${SITE_URL}/hi`
-    }
-  },
+  alternates: localizedAlternates('/', 'en'),
   openGraph: {
     title: `${messages.common.navTitle} — ${messages.common.description}`,
     description: messages.common.metaDescription,
     url: SITE_URL,
-    siteName: 'UI UX Pro Max Skill',
+    siteName: SITE_NAME,
     locale: 'en',
     type: 'website',
     images: [DEFAULT_OG_IMAGE]

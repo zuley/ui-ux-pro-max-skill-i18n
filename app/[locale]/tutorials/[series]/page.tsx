@@ -1,5 +1,5 @@
+import { localizedAlternates } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import { SITE_URL } from '@/lib/site-config';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
@@ -29,24 +29,10 @@ export async function generateMetadata({
   if (!meta) return {};
   const t = await getTranslations({ locale });
 
-  const currentUrl =
-    locale === 'en'
-      ? `${SITE_URL}/tutorials/${series}`
-      : `${SITE_URL}/${locale}/tutorials/${series}`;
-
   return {
     title: `${t(meta.titleKey)} | UI UX Pro Max Skill`,
     description: t(meta.descriptionKey),
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        en: `${SITE_URL}/tutorials/${series}`,
-        zh: `${SITE_URL}/zh/tutorials/${series}`,
-        vi: `${SITE_URL}/vi/tutorials/${series}`,
-        ja: `${SITE_URL}/ja/tutorials/${series}`,
-        hi: `${SITE_URL}/hi/tutorials/${series}`,
-      },
-    },
+    alternates: localizedAlternates(`/tutorials/${series}`, locale),
   };
 }
 

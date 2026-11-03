@@ -24,15 +24,25 @@ const baseSchema = z.object({
   updated: isoDate.optional(),
   tags: z.array(z.string().min(1)).default([]),
   author: authorEnum.default(DEFAULT_AUTHOR_ID),
+  contentKind: z.enum(['unverified', 'translation', 'editorial']),
+  reviewedAt: isoDate,
+  sourceUrl: z.url().optional(),
+  sourceAuthor: z.string().min(1).optional(),
+  sourceRef: z.string().min(1).optional(),
   cover: z.string().optional(),
   draft: z.boolean().optional(),
 });
 
-const postSchema = baseSchema;
+function checkSource(data: z.infer<typeof baseSchema>, ctx: z.RefinementCtx) {
+  if (data.contentKind === 'translation' && (!data.sourceUrl || !data.sourceAuthor || !data.sourceRef)) {
+    ctx.addIssue({ code: 'custom', message: 'Translations require sourceUrl, sourceAuthor and sourceRef' });
+  }
+}
+const postSchema = baseSchema.superRefine(checkSource);
 
 const tutorialStepSchema = baseSchema.extend({
   step: z.number().int().positive(),
-});
+}).superRefine(checkSource);
 
 /**
  * Parse and validate raw MDX source. Throws a descriptive error so any

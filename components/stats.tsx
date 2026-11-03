@@ -1,17 +1,18 @@
 'use client';
 
+import { UPSTREAM } from '@/lib/upstream-content';
 import { useTranslations } from 'next-intl';
 
 export function Stats() {
   const t = useTranslations('stats');
 
   const stats = [
-    { value: '67', label: t('styles') },
-    { value: '161', label: t('palettes') },
-    { value: '57', label: t('fonts') },
-    { value: '16', label: t('stacks') },
-    { value: '25', label: t('charts') },
-    { value: '161', label: t('reasoning') },
+    { value: UPSTREAM.counts.styles, label: t('styles') },
+    { value: UPSTREAM.counts.palettes, label: t('palettes') },
+    { value: UPSTREAM.counts.fonts, label: t('fonts') },
+    { value: UPSTREAM.counts.stacks, label: t('stacks') },
+    { value: UPSTREAM.counts.charts, label: t('charts') },
+    { value: UPSTREAM.counts.reasoning, label: t('reasoning') },
   ];
 
   return (
