@@ -31,10 +31,12 @@
   },
   "hero": {
     "title1": "UI UX Pro Max Skill",
-    "title2": "非官方多语言翻译",
-    "subtitle": "本站是 UI UX Pro Max Skill 的非官方多语言翻译站，负责翻译与整理文档。技能、CLI 和数据集由原作者维护；本站与原项目无隶属关系，也不代表官方。",
+    "title2": "设计智能",
+    "subtitle": "UI UX Pro Max Skill - 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills。提供 [[styles]] 种 UI 风格、[[palettes]] 种配色方案、[[fonts]] 种字体搭配、[[ux]] 条 UX 指南、[[charts]] 种图表类型、[[stacks]] 种技术栈和 [[reasoning]] 条推理规则，让 AI 生成精美界面。",
     "btnHow": "开始上手",
-    "btnDemos": "快速上手"
+    "btnDemos": "快速上手",
+    "metaTitle": "UI UX Pro Max Skill — Claude Code 的设计智能助手",
+    "metaDescription": "为 Claude Code、Cursor、Windsurf 等 AI 助手提供设计智能，包含 [[styles]] 种 UI 风格、[[palettes]] 套配色、字体搭配、UX 指南与技术栈建议。"
   },
   "quickStart": {
     "title": "快速上手 UI UX Pro Max Skill",

@@ -31,10 +31,12 @@
   },
   "hero": {
     "title1": "UI UX Pro Max",
-    "title2": "Bản dịch đa ngôn ngữ không chính thức",
-    "subtitle": "Đây là trang dịch đa ngôn ngữ không chính thức về UI UX Pro Max Skill. Trang dịch và sắp xếp tài liệu; tác giả gốc duy trì skill, CLI và dữ liệu. Trang không trực thuộc hay được dự án gốc bảo trợ.",
+    "title2": "Trí tuệ thiết kế",
+    "subtitle": "UI UX Pro Max Skill cho Claude Code, Cursor, Windsurf và nhiều AI assistants khác. Bao gồm [[styles]] UI styles, [[palettes]] color palettes, [[fonts]] font pairings, [[ux]] UX guidelines, [[charts]] chart types, [[stacks]] tech stacks và [[reasoning]] reasoning rules để AI tạo giao diện đẹp hơn.",
     "btnHow": "Bắt đầu",
-    "btnDemos": "Bắt đầu nhanh"
+    "btnDemos": "Bắt đầu nhanh",
+    "metaTitle": "UI UX Pro Max Skill — Trí tuệ thiết kế cho Claude Code",
+    "metaDescription": "Trí tuệ thiết kế cho Claude Code, Cursor, Windsurf và các trợ lý AI khác, gồm [[styles]] phong cách UI, [[palettes]] bảng màu, typography, quy tắc UX và hướng dẫn stack."
   },
   "quickStart": {
     "title": "Bắt đầu nhanh",

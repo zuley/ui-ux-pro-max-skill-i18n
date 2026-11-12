@@ -31,10 +31,12 @@
   },
   "hero": {
     "title1": "UI UX Pro Max Skill",
-    "title2": "Unofficial multilingual translation",
-    "subtitle": "An unofficial multilingual translation site for UI UX Pro Max Skill. We translate and organize documentation; the original authors maintain the skill, CLI and datasets. We are not affiliated with or endorsed by the original project.",
+    "title2": "Design Intelligence",
+    "subtitle": "UI UX Pro Max Skill - Agent Skills for Claude Code, Cursor, Windsurf & more AI assistants. Includes [[styles]] UI styles, [[palettes]] color palettes, [[fonts]] font pairings, [[ux]] UX guidelines, [[charts]] chart types, [[stacks]] tech stacks, and [[reasoning]] reasoning rules to help AI build beautiful interfaces.",
     "btnHow": "Get Started",
-    "btnDemos": "Quick Start"
+    "btnDemos": "Quick Start",
+    "metaTitle": "UI UX Pro Max Skill — Design Intelligence for Claude Code",
+    "metaDescription": "Design intelligence for Claude Code, Cursor, Windsurf, and other AI assistants, with [[styles]] UI styles, [[palettes]] palettes, typography, UX rules, and stack guidance."
   },
   "quickStart": {
     "title": "Quick Start with UI UX Pro Max Skill",
